@@ -1,0 +1,25 @@
+experiment:
+  name: "Final Validation - All Fixes Applied"
+
+model:
+  name: "gpt-4o"
+  temperature: 0.7
+
+prompts:
+  daily_template: "daily_summary_v4.txt"
+  weekly_template: "weekly_summary_v2.txt"
+
+test_data:
+  senior_id: "A_LK611111SGPD_senior_1744703199152"
+
+  behaviors:
+    - category: "bathroom"
+      stat_id: "hygiene usage"
+    - category: "sleep"
+      stat_id: "Sleep duration"
+    - category: "distress"
+      stat_id: "Falls detected"
+
+  date_range:
+    start: "2025-09-05"
+    end: "2025-09-09"  # 5 days to validate across multiple scenarios

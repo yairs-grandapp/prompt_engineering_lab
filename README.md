@@ -145,13 +145,135 @@ Open both reports side-by-side:
 - `experiments/exp_001_baseline/report.md`
 - `experiments/exp_002_warmer_tone/report.md`
 
-### 5. Copy Winner Back to Dart
-Once you find the best prompt:
+### 5. Sync Winner to Dart Production
+Once you find the best prompt, use the automated sync script:
+
+```bash
+# Update the SYNC_CONFIG in sync_prompts_to_dart.py to point to your winning template
+# Then run:
+python sync_prompts_to_dart.py
+```
+
+This will automatically:
+- Convert `{variable}` syntax to Dart `$variable` syntax
+- Generate type-safe Dart functions with named parameters
+- Update the production code in `utils/prompts/daily_prompt.dart` and `weekly_prompt.dart`
+- Add metadata headers showing source and sync date
+
+**Manual Alternative (Not Recommended):**
 1. Open the winning template (e.g., `prompts/daily_summary_v3.txt`)
 2. Copy the content
 3. Open `picmein_device/lib/managers/.../gpt_handler.dart`
 4. Paste into `createPrompt()` method
 5. Replace Python `{variables}` with Dart `$variables`
+
+## Syncing Prompts to Dart Production
+
+### Automated Sync Workflow
+
+The `sync_prompts_to_dart.py` script automates the process of deploying tested prompts from the lab to the Dart production code:
+
+**How It Works:**
+1. Reads template files from `prompts/` directory
+2. Extracts all `{variable}` placeholders
+3. Converts to Dart `$variable` syntax
+4. Generates type-safe Dart functions with required named parameters
+5. Writes to production Dart files with metadata headers
+
+**Running the Sync:**
+```bash
+python sync_prompts_to_dart.py
+```
+
+**Output Example:**
+```
+######################################################################
+# Prompt Engineering Lab → Dart Production Sync
+######################################################################
+
+Syncing: prompts/daily_summary_v4.txt
+Target:  ../grandappflutter/.../utils/prompts/daily_prompt.dart
+✓ Read source template (6974 chars)
+✓ Extracted variables: ['date_string', 'statistic_id', ...]
+✓ Written to: .../daily_prompt.dart
+✓ Function: getDailySummaryPrompt
+✓ Parameters: ['dateString', 'statisticId', ...]
+
+✅ All 2 prompts synced successfully!
+```
+
+**Configuring the Sync:**
+
+Edit `SYNC_CONFIG` in `sync_prompts_to_dart.py`:
+```python
+SYNC_CONFIG = [
+    {
+        "source": "prompts/daily_summary_v4.txt",  # Your best prompt
+        "target": "../grandappflutter/.../daily_prompt.dart",
+        "function_name": "getDailySummaryPrompt",
+        "variable_mappings": {
+            "date_string": "dateString",      # Python → Dart conversion
+            "statistic_id": "statisticId",
+            # ... more mappings
+        }
+    },
+    # ... weekly config
+]
+```
+
+**Generated Dart Files:**
+
+The sync creates clean, documented Dart files:
+```dart
+/// Daily summary prompt for behavioral statistics.
+///
+/// This file is AUTO-GENERATED from the prompt engineering lab.
+/// DO NOT EDIT MANUALLY - use sync_prompts_to_dart.py instead.
+///
+/// Source: prompts/daily_summary_v4.txt
+/// Last synced: 2025-10-15
+
+String getDailySummaryPrompt({
+  required String dateString,
+  required String statisticId,
+  required String statisticExplanation,
+  required String additionalGuidelines,
+  required String dailyValuesJson,
+}) {
+  return '''
+<context>
+You are an expert in Senior care writing summaries...
+$dateString... $statisticId... $statisticExplanation...
+</context>
+'''.trim();
+}
+```
+
+**Benefits:**
+- ✅ **Type Safety**: Dart compiler catches missing parameters at compile time
+- ✅ **No Manual Errors**: Automated conversion eliminates copy-paste mistakes
+- ✅ **Clear Separation**: Prompts isolated from business logic
+- ✅ **Easy Updates**: One command syncs all prompts
+- ✅ **Version Tracking**: Metadata headers show source and sync date
+- ✅ **Clean Diffs**: Git shows exactly what changed in prompts
+
+**Integration with Production Code:**
+
+The `gpt_handler.dart` now uses these generated functions:
+```dart
+import 'prompts/daily_prompt.dart';
+import 'prompts/weekly_prompt.dart';
+
+String createPrompt(...) {
+  return getDailySummaryPrompt(
+    statisticId: statisticId,
+    statisticExplanation: statisticExplanation,
+    dateString: dateString,
+    dailyValuesJson: jsonEncode(dailyValuesForBehavior),
+    additionalGuidelines: additionalGuidelines,
+  );
+}
+```
 
 ## Configuration Options
 
