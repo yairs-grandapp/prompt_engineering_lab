@@ -1,0 +1,1576 @@
+{
+  "seniorId": "A_LK611111SGPD_senior_1744703199152",
+  "weekStart": "2025-09-05",
+  "weekEnd": "2025-09-11",
+  "summary": "This week has been a mixed bag of behaviors, showing both positive improvements and areas of concern. Hygiene activities have seen a nice increase, particularly towards the end of the week, with a notable peak of 11 on one day, which is encouraging. However, shower usage and overall movement have been consistently lower than the monthly averages, indicating a trend that might need some attention. Sleep patterns have also shown variability, with a gentle decline in duration, suggesting a need to monitor how well rest is being achieved. It's important to keep an eye on these trends as we move forward.",
+  "dailySummaries": [
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, hygiene activities were recorded 5 times. This aligns with the weekly average of about 3.6 times, which has been gradually increasing over the past week. However, it remains below the monthly average of about 8.4 times.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 1.6,
+            "average": 3.5714285714285716,
+            "total": 25.0,
+            "numberOfValues": 7,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.7615763546798031,
+            "average": 8.366666666666667,
+            "total": 251.0,
+            "numberOfValues": 30,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, the senior took 1 shower. This is below the weekly average of about 2 showers, which has been gradually decreasing over the past week. However, the monthly average is higher, at about 2.9 showers per day, indicating a more stable pattern over that period.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": -0.4857142857142857,
+            "average": 2.0,
+            "total": 14.0,
+            "numberOfValues": 7,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": 0.013793103448275855,
+            "average": 2.9,
+            "total": 87.0,
+            "numberOfValues": 30,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, the senior used the toilet for urination 7 times. This is consistent with the average of about 7 visits per day over the past week, which shows a gentle upward trend. However, the monthly average appears significantly higher, indicating a notable difference from the typical pattern.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": 0.11428571428571428,
+            "average": 7.0,
+            "total": 49.0,
+            "numberOfValues": 7,
+            "lastValue": 7.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -89308.24433497537,
+            "average": 795059.0333333333,
+            "total": 23851771.0,
+            "numberOfValues": 30,
+            "lastValue": 7.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, the senior slept for about 7 hours and 22 minutes. This is consistent with a gentle upward trend over the past week, where the average sleep duration was about 6 hours. Additionally, it aligns with a steady pattern for the month, where the average sleep duration was around 4 hours and 43 minutes.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 786498.1428571428,
+            "average": 19645549.285714287,
+            "total": 137518845.0,
+            "numberOfValues": 7,
+            "lastValue": 26508756.0,
+            "additionalValues": {
+              "totalInMinutes": 2291.98075,
+              "totalInHours": 38.19967916666667,
+              "lastValueInMinutes": 441.81260000000003,
+              "lastValueInHours": 7.363543333333334
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 356485.85172413796,
+            "average": 14119432.533333333,
+            "total": 423582976.0,
+            "numberOfValues": 30,
+            "lastValue": 26508756.0,
+            "additionalValues": {
+              "totalInMinutes": 7059.716266666667,
+              "totalInHours": 117.6619377777778,
+              "lastValueInMinutes": 441.81260000000003,
+              "lastValueInHours": 7.363543333333334
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, the senior spent about 1.5 hours in movement within the house. This is consistent with the weekly average of approximately 19 hours of movement, which has been gradually increasing over the past week. However, it is below the monthly average of about 74 hours, which shows a slight downward trend this month.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": 1551686.8285714285,
+            "average": 9915889.42857143,
+            "total": 69411226.0,
+            "numberOfValues": 7,
+            "lastValue": 5232585.0,
+            "additionalValues": {
+              "totalInMinutes": 1156.8537666666666,
+              "totalInHours": 19.28089611111111,
+              "lastValueInMinutes": 87.20975,
+              "lastValueInHours": 1.4534958333333334
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -37981.912315270936,
+            "average": 8914052.833333334,
+            "total": 267421585.0,
+            "numberOfValues": 30,
+            "lastValue": 5232585.0,
+            "additionalValues": {
+              "totalInMinutes": 4457.026416666667,
+              "totalInHours": 74.28377361111112,
+              "lastValueInMinutes": 87.20975,
+              "lastValueInHours": 1.4534958333333334
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, there were 2 falls detected. This number aligns with the weekly average of about 9.5 falls per day, which shows a gentle upward trend over the past week. However, it is slightly below the monthly average of about 12 falls per day, indicating a more stable pattern in recent days.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": 1.5142857142857138,
+            "average": 9.571428571428571,
+            "total": 67.0,
+            "numberOfValues": 7,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.04630541871921183,
+            "average": 12.066666666666666,
+            "total": 362.0,
+            "numberOfValues": 30,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, hygiene activities were recorded 5 times. This is in line with the weekly average of about 4 times, which has been gradually increasing over the past week. However, it is below the monthly average of about 8 times per day.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 1.1714285714285715,
+            "average": 4.285714285714286,
+            "total": 30.0,
+            "numberOfValues": 7,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.7300492610837439,
+            "average": 8.0,
+            "total": 240.0,
+            "numberOfValues": 30,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, one shower was recorded. This is consistent with the weekly average of about 1.7 showers per day, which shows a gentle downward trend. In comparison, the monthly average stands at about 2.8 showers per day, indicating some variability in shower usage over the month.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": -0.4857142857142857,
+            "average": 1.7142857142857142,
+            "total": 12.0,
+            "numberOfValues": 7,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": 0.007881773399014778,
+            "average": 2.8,
+            "total": 84.0,
+            "numberOfValues": 30,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, the senior used the toilet for urination 7 times. This aligns with the average of about 7 times over the past week. However, there has been a gentle downward trend recently, as the usage has been gradually decreasing.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": -0.08571428571428572,
+            "average": 7.142857142857143,
+            "total": 50.0,
+            "numberOfValues": 7,
+            "lastValue": 7.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -92903.8630541872,
+            "average": 758275.8,
+            "total": 22748274.0,
+            "numberOfValues": 30,
+            "lastValue": 7.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, the senior slept for about 4 hours. This is in line with a gentle upward trend over the past week, where the average sleep duration was around 4 hours per night. Additionally, this is consistent with the monthly average of approximately 4 hours as well.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 2647364.4285714286,
+            "average": 18571467.14285714,
+            "total": 130000270.0,
+            "numberOfValues": 7,
+            "lastValue": 14568099.0,
+            "additionalValues": {
+              "totalInMinutes": 2166.6711666666665,
+              "totalInHours": 36.11118611111111,
+              "lastValueInMinutes": 242.80165,
+              "lastValueInHours": 4.046694166666667
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 399233.6270935961,
+            "average": 14354525.566666666,
+            "total": 430635767.0,
+            "numberOfValues": 30,
+            "lastValue": 14568099.0,
+            "additionalValues": {
+              "totalInMinutes": 7177.262783333334,
+              "totalInHours": 119.6210463888889,
+              "lastValueInMinutes": 242.80165,
+              "lastValueInHours": 4.046694166666667
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, the senior spent about 1 hour and 14 minutes in movement around the house. This is lower than the weekly average of about 18 hours and 55 minutes, which has been gradually decreasing over the past week. The monthly average also reflects a decline, indicating that the duration of movements has been less than usual.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -277396.34285714285,
+            "average": 9723738.142857144,
+            "total": 68066167.0,
+            "numberOfValues": 7,
+            "lastValue": 4108719.0,
+            "additionalValues": {
+              "totalInMinutes": 1134.4361166666667,
+              "totalInHours": 18.907268611111114,
+              "lastValueInMinutes": 68.47865,
+              "lastValueInHours": 1.1413108333333333
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -15558.49852216751,
+            "average": 8530004.933333334,
+            "total": 255900148.0,
+            "numberOfValues": 30,
+            "lastValue": 4108719.0,
+            "additionalValues": {
+              "totalInMinutes": 4265.002466666667,
+              "totalInHours": 71.08337444444444,
+              "lastValueInMinutes": 68.47865,
+              "lastValueInHours": 1.1413108333333333
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, there were 2 falls detected. This is consistent with a downward trend over the past week, where the average was about 9 falls per day. Additionally, the monthly average is about 12 falls, indicating a gradual decrease in activity in this area.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": -1.7142857142857142,
+            "average": 9.714285714285714,
+            "total": 68.0,
+            "numberOfValues": 7,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.12857142857142856,
+            "average": 11.766666666666667,
+            "total": 353.0,
+            "numberOfValues": 30,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, hygiene activities were recorded 8 times. This reflects a gentle upward trend over the past week, where the average was about 5 times daily. However, it is below the monthly average of about 7.5 times, which has shown a decreasing trend recently.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.8571428571428571,
+            "average": 5.142857142857143,
+            "total": 36.0,
+            "numberOfValues": 7,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.6487684729064037,
+            "average": 7.533333333333333,
+            "total": 226.0,
+            "numberOfValues": 30,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, one shower was taken. This aligns with a recent trend of about 1.4 showers per day over the past week, which has shown a gentle decrease. In the past month, the average was about 2.8 showers per day, indicating a slight decline in shower usage.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": -0.37142857142857144,
+            "average": 1.4285714285714286,
+            "total": 10.0,
+            "numberOfValues": 7,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": -0.0187192118226601,
+            "average": 2.8,
+            "total": 84.0,
+            "numberOfValues": 30,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, the senior used the toilet for urination 5 times. This aligns with the average of about 6 to 7 visits per day over the past week, which has shown a gentle upward trend. However, it is notable that the monthly data appears to be quite different, reflecting a significant variation.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": 0.05714285714285714,
+            "average": 6.714285714285714,
+            "total": 47.0,
+            "numberOfValues": 7,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -92262.15566502463,
+            "average": 704829.6666666666,
+            "total": 21144890.0,
+            "numberOfValues": 30,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, the senior slept for about 7 hours, which is consistent with the average sleep duration over the past week of around 5 to 6 hours. Additionally, there has been a gentle upward trend in sleep duration this past week, suggesting an improvement in overall rest compared to earlier days.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 1322234.1714285715,
+            "average": 19953363.42857143,
+            "total": 139673544.0,
+            "numberOfValues": 7,
+            "lastValue": 25622458.0,
+            "additionalValues": {
+              "totalInMinutes": 2327.8923999999997,
+              "totalInHours": 38.798206666666665,
+              "lastValueInMinutes": 427.04096666666663,
+              "lastValueInHours": 7.117349444444444
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 344615.766502463,
+            "average": 14983629.666666666,
+            "total": 449508890.0,
+            "numberOfValues": 30,
+            "lastValue": 25622458.0,
+            "additionalValues": {
+              "totalInMinutes": 7491.814833333334,
+              "totalInHours": 124.86358055555556,
+              "lastValueInMinutes": 427.04096666666663,
+              "lastValueInHours": 7.117349444444444
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, the duration of movements recorded was about 39 minutes. This is a decrease from the weekly average of about 8 hours per day, and the monthly average of about 8 hours as well. The trend over the past week shows a steady decline in movement duration, indicating a consistent pattern of reduced activity.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -1091217.8,
+            "average": 8447027.57142857,
+            "total": 59129193.0,
+            "numberOfValues": 7,
+            "lastValue": 2332676.0,
+            "additionalValues": {
+              "totalInMinutes": 985.48655,
+              "totalInHours": 16.42477583333333,
+              "lastValueInMinutes": 38.87793333333333,
+              "lastValueInHours": 0.6479655555555556
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -45724.95320197047,
+            "average": 8312135.333333333,
+            "total": 249364060.0,
+            "numberOfValues": 30,
+            "lastValue": 2332676.0,
+            "additionalValues": {
+              "totalInMinutes": 4156.067666666667,
+              "totalInHours": 69.26779444444445,
+              "lastValueInMinutes": 38.87793333333333,
+              "lastValueInHours": 0.6479655555555556
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, there were 3 falls detected. This is a decrease from the average of about 8 falls per day over the past week, indicating a downward trend in falls. The monthly average is higher at around 11 falls per day, which shows that while today was lower, the overall pattern has been declining.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": -2.8,
+            "average": 8.428571428571429,
+            "total": 59.0,
+            "numberOfValues": 7,
+            "lastValue": 3.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.1768472906403941,
+            "average": 11.366666666666667,
+            "total": 341.0,
+            "numberOfValues": 30,
+            "lastValue": 3.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-08T00:00:00",
+      "summary": "On September 08, 2025, hygiene activities were recorded 3 times. This is below the monthly average of about 6 times per day, which has shown a slight decline overall. However, there has been a gentle upward trend over the past week, where the average was about 5 times daily.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.4,
+            "average": 5.571428571428571,
+            "total": 39.0,
+            "numberOfValues": 7,
+            "lastValue": 3.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.47931034482758617,
+            "average": 6.633333333333334,
+            "total": 199.0,
+            "numberOfValues": 30,
+            "lastValue": 3.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-09-08T00:00:00",
+      "summary": "On September 08, 2025, one shower was taken. Over the past week, the average was about 1 shower per day, showing a gentle downward trend. This is below the monthly average of about 2.8 showers per day, indicating a consistent pattern in shower usage.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": -0.14285714285714285,
+            "average": 1.1428571428571428,
+            "total": 8.0,
+            "numberOfValues": 7,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": -0.037931034482758634,
+            "average": 2.7666666666666666,
+            "total": 83.0,
+            "numberOfValues": 30,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-09-08T00:00:00",
+      "summary": "On September 08, 2025, the senior used the toilet for urination 5 times. This is below the weekly average of about 6 times, and the trend over the past week shows a gentle decline. While today\u2019s usage is lower, it is important to keep in mind the overall pattern of the past month, which has also shown a decrease.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": -0.22857142857142856,
+            "average": 6.428571428571429,
+            "total": 45.0,
+            "numberOfValues": 7,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -89462.89211822662,
+            "average": 645213.5666666667,
+            "total": 19356407.0,
+            "numberOfValues": 30,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-08T00:00:00",
+      "summary": "On September 08, 2025, the senior slept for about 4.8 hours. This is consistent with a gentle upward trend over the past week, where the average sleep duration was about 5.6 hours per night. The monthly average is higher at approximately 4.9 hours, showing a stable pattern overall.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 612680.8,
+            "average": 20892699.0,
+            "total": 146248893.0,
+            "numberOfValues": 7,
+            "lastValue": 17311851.0,
+            "additionalValues": {
+              "totalInMinutes": 2437.48155,
+              "totalInHours": 40.6246925,
+              "lastValueInMinutes": 288.53085,
+              "lastValueInHours": 4.8088475
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 476757.1778325123,
+            "average": 14819760.066666666,
+            "total": 444592802.0,
+            "numberOfValues": 30,
+            "lastValue": 17311851.0,
+            "additionalValues": {
+              "totalInMinutes": 7409.880033333334,
+              "totalInHours": 123.49800055555556,
+              "lastValueInMinutes": 288.53085,
+              "lastValueInHours": 4.8088475
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-08T00:00:00",
+      "summary": "On September 08, 2025, the senior spent about 38 minutes in movement around the house. This duration is less than the average of about 133 minutes per day over the past week, which shows a downward trend in movement activity. Similarly, the monthly average is around 264 minutes, indicating a gradual decrease in movement duration.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -1381629.4285714286,
+            "average": 6906831.571428572,
+            "total": 48347821.0,
+            "numberOfValues": 7,
+            "lastValue": 2327949.0,
+            "additionalValues": {
+              "totalInMinutes": 805.7970166666668,
+              "totalInHours": 13.42995027777778,
+              "lastValueInMinutes": 38.799150000000004,
+              "lastValueInHours": 0.6466525000000001
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -48984.00738916256,
+            "average": 7928049.1,
+            "total": 237841473.0,
+            "numberOfValues": 30,
+            "lastValue": 2327949.0,
+            "additionalValues": {
+              "totalInMinutes": 3964.02455,
+              "totalInHours": 66.06707583333333,
+              "lastValueInMinutes": 38.799150000000004,
+              "lastValueInHours": 0.6466525000000001
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-08T00:00:00",
+      "summary": "On September 08, 2025, there were 6 falls detected. This is below the weekly average of about 7 falls per day and also lower than the monthly average of approximately 11 falls per day. The trend over the past week shows a decrease, with a slope of -2.57, indicating fewer falls recently.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": -2.5714285714285716,
+            "average": 7.142857142857143,
+            "total": 50.0,
+            "numberOfValues": 7,
+            "lastValue": 6.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.1748768472906404,
+            "average": 10.9,
+            "total": 327.0,
+            "numberOfValues": 30,
+            "lastValue": 6.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-09T00:00:00",
+      "summary": "On September 09, 2025, hygiene activities were recorded 11 times. This is above the weekly average of about 6 and also above the monthly average of about 6. While there has been a gentle downward trend over the past week and month, today\u2019s value reflects a moment of higher activity.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": -0.22857142857142856,
+            "average": 6.428571428571429,
+            "total": 45.0,
+            "numberOfValues": 7,
+            "lastValue": 11.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.3482758620689655,
+            "average": 6.066666666666666,
+            "total": 182.0,
+            "numberOfValues": 30,
+            "lastValue": 11.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-09-09T00:00:00",
+      "summary": "On September 09, 2025, one shower was taken, which aligns with the average of one shower daily over the past week. However, this is below the monthly average of about 2.7 showers per day, and there has been a slight downward trend in usage over the past month.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": 0.0,
+            "average": 1.0,
+            "total": 7.0,
+            "numberOfValues": 7,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": -0.05665024630541872,
+            "average": 2.7333333333333334,
+            "total": 82.0,
+            "numberOfValues": 30,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-09-09T00:00:00",
+      "summary": "On September 09, 2025, the senior used the toilet for urination 4 times. This is below the average of about 6 times per day over the past week, where there has been a noticeable downward trend. Similarly, the monthly average is significantly higher, indicating a decline in activity for this month.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": -0.6,
+            "average": 6.142857142857143,
+            "total": 43.0,
+            "numberOfValues": 7,
+            "lastValue": 4.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -81740.18374384235,
+            "average": 567361.6333333333,
+            "total": 17020849.0,
+            "numberOfValues": 30,
+            "lastValue": 4.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-09T00:00:00",
+      "summary": "On September 09, 2025, the senior slept for about 6 hours. This is a decrease from the average of about 7 hours over the past week, where there has been a gentle downward trend. However, it is still consistent with the monthly average of approximately 6 hours per night.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": -120865.4,
+            "average": 21130527.14285714,
+            "total": 147913690.0,
+            "numberOfValues": 7,
+            "lastValue": 22470613.0,
+            "additionalValues": {
+              "totalInMinutes": 2465.2281666666668,
+              "totalInHours": 41.087136111111114,
+              "lastValueInMinutes": 374.5102166666667,
+              "lastValueInHours": 6.241836944444445
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 473751.91576354683,
+            "average": 15171415.266666668,
+            "total": 455142458.0,
+            "numberOfValues": 30,
+            "lastValue": 22470613.0,
+            "additionalValues": {
+              "totalInMinutes": 7585.707633333333,
+              "totalInHours": 126.42846055555556,
+              "lastValueInMinutes": 374.5102166666667,
+              "lastValueInHours": 6.241836944444445
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-09T00:00:00",
+      "summary": "On September 09, 2025, the senior spent about 1.7 hours in movement within the house. This is a decrease from the weekly average of about 7.2 hours, and the monthly average of about 7.6 hours. The overall trend has shown a decrease in movement duration over the past week and month.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -2964785.057142857,
+            "average": 7248251.142857143,
+            "total": 50737758.0,
+            "numberOfValues": 7,
+            "lastValue": 5959873.0,
+            "additionalValues": {
+              "totalInMinutes": 845.6293000000001,
+              "totalInHours": 14.093821666666667,
+              "lastValueInMinutes": 99.33121666666666,
+              "lastValueInHours": 1.6555202777777778
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -30942.78472906403,
+            "average": 7594387.266666667,
+            "total": 227831618.0,
+            "numberOfValues": 30,
+            "lastValue": 5959873.0,
+            "additionalValues": {
+              "totalInMinutes": 3797.1936333333333,
+              "totalInHours": 63.28656055555555,
+              "lastValueInMinutes": 99.33121666666666,
+              "lastValueInHours": 1.6555202777777778
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-09T00:00:00",
+      "summary": "On September 09, 2025, there were 8 falls detected. This is a decrease from the average of about 7.6 falls per day over the past week, and below the monthly average of approximately 10.9 falls. The trend over the past week shows a noticeable decline in the number of falls.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": -3.2285714285714286,
+            "average": 7.571428571428571,
+            "total": 53.0,
+            "numberOfValues": 7,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.22512315270935962,
+            "average": 10.866666666666667,
+            "total": 326.0,
+            "numberOfValues": 30,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-10T00:00:00",
+      "summary": "On September 10, 2025, hygiene activities were recorded 4 times. This is slightly below the weekly average of about 6 times, which has shown a gentle upward trend over the past week. However, it is also below the monthly average of about 5 times per day, where a slight decreasing trend has been noted.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.2,
+            "average": 6.428571428571429,
+            "total": 45.0,
+            "numberOfValues": 7,
+            "lastValue": 4.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.16453201970443349,
+            "average": 5.333333333333333,
+            "total": 160.0,
+            "numberOfValues": 30,
+            "lastValue": 4.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-09-10T00:00:00",
+      "summary": "On September 10, 2025, one shower was recorded. This is consistent with the daily average of one shower over the past week, which has remained stable. However, it is below the monthly average of about 2.7 showers, which indicates a gentle decreasing trend over the past month.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": 0.0,
+            "average": 1.0,
+            "total": 7.0,
+            "numberOfValues": 7,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": -0.07487684729064038,
+            "average": 2.7,
+            "total": 81.0,
+            "numberOfValues": 30,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-09-10T00:00:00",
+      "summary": "On September 10, 2025, the senior used the toilet for urination 2 times. This is below the weekly average of about 5 times, and there has been a decreasing trend observed over the past week. It's important to consider that this trend has been consistent, reflecting a shift in usage patterns.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": -0.6571428571428571,
+            "average": 5.285714285714286,
+            "total": 37.0,
+            "numberOfValues": 7,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -76265.44433497536,
+            "average": 504840.56666666665,
+            "total": 15145217.0,
+            "numberOfValues": 30,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-10T00:00:00",
+      "summary": "On September 10, 2025, the senior slept for about 6 hours and 20 minutes. This duration is consistent with a gentle downward trend observed over the past week, where the average sleep duration was around 7 hours. However, it is in line with the monthly average of about 6 hours and 30 minutes.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": -936901.4571428573,
+            "average": 22141613.14285714,
+            "total": 154991292.0,
+            "numberOfValues": 7,
+            "lastValue": 22787863.0,
+            "additionalValues": {
+              "totalInMinutes": 2583.1881999999996,
+              "totalInHours": 43.05313666666666,
+              "lastValueInMinutes": 379.7977166666667,
+              "lastValueInHours": 6.329961944444445
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 440493.34285714285,
+            "average": 15818636.566666666,
+            "total": 474559097.0,
+            "numberOfValues": 30,
+            "lastValue": 22787863.0,
+            "additionalValues": {
+              "totalInMinutes": 7909.318283333333,
+              "totalInHours": 131.8219713888889,
+              "lastValueInMinutes": 379.7977166666667,
+              "lastValueInHours": 6.329961944444445
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-10T00:00:00",
+      "summary": "On September 10, 2025, the senior spent about 59 minutes in movement within the house. This is below the weekly average of about 11 hours, which has been gradually decreasing over the past week. However, it aligns with the monthly average of around 60 hours, showing a more stable pattern over the longer term.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -1776759.3142857142,
+            "average": 5683225.0,
+            "total": 39782575.0,
+            "numberOfValues": 7,
+            "lastValue": 3521575.0,
+            "additionalValues": {
+              "totalInMinutes": 663.0429166666667,
+              "totalInHours": 11.050715277777778,
+              "lastValueInMinutes": 58.69291666666666,
+              "lastValueInHours": 0.9782152777777777
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": 12863.056157635478,
+            "average": 7206530.033333333,
+            "total": 216195901.0,
+            "numberOfValues": 30,
+            "lastValue": 3521575.0,
+            "additionalValues": {
+              "totalInMinutes": 3603.2650166666667,
+              "totalInHours": 60.05441694444445,
+              "lastValueInMinutes": 58.69291666666666,
+              "lastValueInHours": 0.9782152777777777
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-10T00:00:00",
+      "summary": "On September 10, 2025, there were 6 falls detected. This is above the weekly average of about 4 falls per day, which has shown a gentle upward trend. However, it is below the monthly average of about 11 falls, which indicates a slight decrease in the overall pattern for this month.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": 0.9428571428571428,
+            "average": 4.428571428571429,
+            "total": 31.0,
+            "numberOfValues": 7,
+            "lastValue": 6.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.2600985221674877,
+            "average": 10.766666666666667,
+            "total": 323.0,
+            "numberOfValues": 30,
+            "lastValue": 6.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-11T00:00:00",
+      "summary": "On September 11, 2025, hygiene activities were recorded 10 times. This is consistent with a gentle upward trend over the past week, where the average was about 6.5 times daily. However, it is above the monthly average of about 5.3 times.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.22857142857142856,
+            "average": 6.571428571428571,
+            "total": 46.0,
+            "numberOfValues": 7,
+            "lastValue": 10.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.12512315270935961,
+            "average": 5.266666666666667,
+            "total": 158.0,
+            "numberOfValues": 30,
+            "lastValue": 10.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-09-11T00:00:00",
+      "summary": "On September 11, 2025, the senior took 1 shower. This is consistent with the average of 1 shower per day over the past week, indicating a stable pattern. However, it is below the monthly average of about 2.6 showers per day, which shows a gentle decline in shower usage over the past month.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": 0.0,
+            "average": 1.0,
+            "total": 7.0,
+            "numberOfValues": 7,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": -0.07783251231527094,
+            "average": 2.6,
+            "total": 78.0,
+            "numberOfValues": 30,
+            "lastValue": 1.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-09-11T00:00:00",
+      "summary": "On September 11, 2025, the senior used the toilet for urination 8 times. This is higher than the average of about 5 times per day over the past week. However, the trend shows a gentle decrease, indicating a shift from previously higher usage patterns.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": -0.9714285714285714,
+            "average": 5.428571428571429,
+            "total": 38.0,
+            "numberOfValues": 7,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -74867.5339901478,
+            "average": 464878.73333333334,
+            "total": 13946362.0,
+            "numberOfValues": 30,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-11T00:00:00",
+      "summary": "On September 11, 2025, the senior slept for about 6 hours. This is consistent with the monthly average of about 5 hours per night. However, over the past week, there has been a significant decrease in sleep duration, indicating a downward trend in the amount of sleep received.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": -91643.71428571429,
+            "average": 21500255.0,
+            "total": 150501785.0,
+            "numberOfValues": 7,
+            "lastValue": 21232145.0,
+            "additionalValues": {
+              "totalInMinutes": 2508.363083333333,
+              "totalInHours": 41.80605138888889,
+              "lastValueInMinutes": 353.8690833333333,
+              "lastValueInHours": 5.897818055555556
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 489627.9256157635,
+            "average": 16009742.833333334,
+            "total": 480292285.0,
+            "numberOfValues": 30,
+            "lastValue": 21232145.0,
+            "additionalValues": {
+              "totalInMinutes": 8004.871416666666,
+              "totalInHours": 133.4145236111111,
+              "lastValueInMinutes": 353.8690833333333,
+              "lastValueInHours": 5.897818055555556
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-11T00:00:00",
+      "summary": "On September 11, 2025, the senior spent about 1.9 hours in movement within the house. This duration is lower than the weekly average of about 8.4 hours and also below the monthly average of about 7.3 hours. The trend over the past week shows a decrease in movement duration, indicating a consistent pattern of lower activity.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -85894.7142857143,
+            "average": 4335630.142857143,
+            "total": 30349411.0,
+            "numberOfValues": 7,
+            "lastValue": 6866034.0,
+            "additionalValues": {
+              "totalInMinutes": 505.82351666666665,
+              "totalInHours": 8.430391944444445,
+              "lastValueInMinutes": 114.4339,
+              "lastValueInHours": 1.9072316666666667
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -34988.94679802955,
+            "average": 7288214.033333333,
+            "total": 218646421.0,
+            "numberOfValues": 30,
+            "lastValue": 6866034.0,
+            "additionalValues": {
+              "totalInMinutes": 3644.107016666667,
+              "totalInHours": 60.73511694444445,
+              "lastValueInMinutes": 114.4339,
+              "lastValueInHours": 1.9072316666666667
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-11T00:00:00",
+      "summary": "On September 11, 2025, there were 4 falls detected. This number aligns with the weekly average of about 4.4 falls per day, which has shown a gentle upward trend over the past week. However, it is below the monthly average of about 10.5 falls per day, which has been gradually decreasing.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": 1.1714285714285715,
+            "average": 4.428571428571429,
+            "total": 31.0,
+            "numberOfValues": 7,
+            "lastValue": 4.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.28620689655172415,
+            "average": 10.5,
+            "total": 315.0,
+            "numberOfValues": 30,
+            "lastValue": 4.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    }
+  ]
+}

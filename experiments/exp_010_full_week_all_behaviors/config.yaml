@@ -1,0 +1,38 @@
+experiment:
+  name: "Full Week Test - All Behaviors Including Distress"
+
+model:
+  name: "gpt-4o-mini"
+  temperature: 0.7
+
+prompts:
+  daily_template: "daily_summary_v4.txt"
+  weekly_template: "weekly_summary_v1.txt"
+
+test_data:
+  senior_id: "A_LK611111SGPD_senior_1744703199152"
+
+  behaviors:
+    # Daily living activities
+    - category: "bathroom"
+      stat_id: "hygiene usage"
+    - category: "bathroom"
+      stat_id: "Shower usage"
+    - category: "toilet"
+      stat_id: "Toilet usage (urination)"
+    - category: "sleep"
+      stat_id: "Sleep duration"
+    - category: "movement"
+      stat_id: "Movements duration"
+
+    # Distress behaviors (important to test tone with concerning events)
+    - category: "distress"
+      stat_id: "Falls detected"
+    - category: "distress"
+      stat_id: "Falls from bed detected"
+    - category: "distress"
+      stat_id: "Panic button pressed"
+
+  date_range:
+    start: "2025-09-05"
+    end: "2025-09-11"  # Full 7 days

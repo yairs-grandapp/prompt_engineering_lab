@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-10-01T00:00:00",
+  "summary": "No sleep duration was recorded on October 1, 2025. While this may seem concerning, it's worth noting that there has been a gentle upward trend in sleep duration over the past month. This reflects a more positive pattern, suggesting that on average, sleep has been improving recently.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -58426.833333333336,
+        "average": 20278513.5,
+        "total": 162228108.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 2703.8018,
+          "totalInHours": 45.063363333333335,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": 154927.34798387098,
+        "average": 19355182.741935484,
+        "total": 600010665.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 10000.17775,
+          "totalInHours": 166.66962916666668,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

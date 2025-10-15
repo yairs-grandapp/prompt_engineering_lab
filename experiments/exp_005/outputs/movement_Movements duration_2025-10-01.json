@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "movement",
+  "behaviorName": "Movements duration",
+  "date": "2025-10-01T00:00:00",
+  "summary": "No movements were recorded on October 1, 2025. While this is a change from the typical activity level, it's important to note that there has been a gentle upward trend in movement duration over the past week and month. The overall pattern shows that while activity may have dipped today, the recent weeks have reflected more engagement in movement, which is a positive sign.",
+  "inputData": {
+    "explanation": "The duration spent in movement by the senior in the house.",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInWeek",
+        "slope": 941521.3214285715,
+        "average": 5323736.375,
+        "total": 42589891.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 709.8315166666667,
+          "totalInHours": 11.83052527777778,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInMonth",
+        "slope": 7204.372580645147,
+        "average": 4223175.322580645,
+        "total": 130918435.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 2181.973916666667,
+          "totalInHours": 36.36623194444444,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

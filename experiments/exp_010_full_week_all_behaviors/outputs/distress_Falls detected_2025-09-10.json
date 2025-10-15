@@ -1,0 +1,34 @@
+{
+  "behaviorCategory": "distress",
+  "behaviorName": "Falls detected",
+  "date": "2025-09-10T00:00:00",
+  "summary": "On September 10, 2025, there were 6 falls detected. This is above the weekly average of about 4 falls per day, which has shown a gentle upward trend. However, it is below the monthly average of about 11 falls, which indicates a slight decrease in the overall pattern for this month.",
+  "inputData": {
+    "explanation": "The number of falls detected.",
+    "statisticType": "quantitative",
+    "dailyStats": [
+      {
+        "statisticName": "distress",
+        "statisticId": "Falls detected",
+        "type": "DaysInWeek",
+        "slope": 0.9428571428571428,
+        "average": 4.428571428571429,
+        "total": 31.0,
+        "numberOfValues": 7,
+        "lastValue": 6.0,
+        "additionalValues": {}
+      },
+      {
+        "statisticName": "distress",
+        "statisticId": "Falls detected",
+        "type": "DaysInMonth",
+        "slope": -0.2600985221674877,
+        "average": 10.766666666666667,
+        "total": 323.0,
+        "numberOfValues": 30,
+        "lastValue": 6.0,
+        "additionalValues": {}
+      }
+    ]
+  }
+}

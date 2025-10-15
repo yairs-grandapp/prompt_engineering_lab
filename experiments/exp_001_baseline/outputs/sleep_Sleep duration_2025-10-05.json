@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-10-05T00:00:00",
+  "summary": "On October 05, 2025, the senior experienced a notable change in sleep duration, with no hours of sleep recorded for the night. This marks a significant drop compared to the past week and month, where they had been averaging around 18 to 19 hours of sleep weekly. It's important to keep an eye on this change and consider discussing it with a healthcare professional, as consistent sleep is vital for overall well-being.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -4016477.345238095,
+        "average": 8241816.125,
+        "total": 65934529.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 1098.9088166666666,
+          "totalInHours": 18.315146944444443,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": -92035.06048387103,
+        "average": 16903183.48387097,
+        "total": 523998688.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 8733.311466666668,
+          "totalInHours": 145.55519111111113,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

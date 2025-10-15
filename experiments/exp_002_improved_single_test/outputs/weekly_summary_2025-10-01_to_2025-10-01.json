@@ -1,0 +1,42 @@
+{
+  "seniorId": "A_LK611111SGPD_senior_1744703199152",
+  "weekStart": "2025-10-01",
+  "weekEnd": "2025-10-01",
+  "summary": "This week showed a concerning decline in hygiene practices, with the senior using the bathroom for hygiene much less frequently than usual. On October 1st, there was a significant drop to zero uses, which is quite different from the average of about 3 times a day over the past month. It\u2019s important to keep an eye on this change, as it may indicate a need for additional support or encouragement in maintaining personal care routines.",
+  "dailySummaries": [
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-10-01T00:00:00",
+      "summary": "On October 01, 2025, the senior used the bathroom for hygiene 0 times, which marks a noticeable drop compared to the weekly average of about 3.1 times. This decrease comes after a month where the average was around 5.2 times per day, indicating a decline in hygiene usage recently. It's important to acknowledge this change, as it differs from the more consistent patterns seen previously.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.20238095238095238,
+            "average": 3.125,
+            "total": 25.0,
+            "numberOfValues": 8,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.10967741935483873,
+            "average": 5.225806451612903,
+            "total": 162.0,
+            "numberOfValues": 31,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    }
+  ]
+}

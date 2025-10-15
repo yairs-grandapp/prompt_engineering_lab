@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-09-05T00:00:00",
+  "summary": "On September 05, 2025, the senior enjoyed about 7 hours and 22 minutes of sleep, which is quite a healthy amount. This aligns with a gentle upward trend in sleep duration over the past week, suggesting that rest has been gradually improving. It's heartening to see this positive pattern continuing, as consistent sleep can be so beneficial.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": 786498.1428571428,
+        "average": 19645549.285714287,
+        "total": 137518845.0,
+        "numberOfValues": 7,
+        "lastValue": 26508756.0,
+        "additionalValues": {
+          "totalInMinutes": 2291.98075,
+          "totalInHours": 38.19967916666667,
+          "lastValueInMinutes": 441.81260000000003,
+          "lastValueInHours": 7.363543333333334
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": 356485.85172413796,
+        "average": 14119432.533333333,
+        "total": 423582976.0,
+        "numberOfValues": 30,
+        "lastValue": 26508756.0,
+        "additionalValues": {
+          "totalInMinutes": 7059.716266666667,
+          "totalInHours": 117.6619377777778,
+          "lastValueInMinutes": 441.81260000000003,
+          "lastValueInHours": 7.363543333333334
+        }
+      }
+    ]
+  }
+}

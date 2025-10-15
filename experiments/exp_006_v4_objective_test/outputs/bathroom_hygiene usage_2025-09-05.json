@@ -1,0 +1,34 @@
+{
+  "behaviorCategory": "bathroom",
+  "behaviorName": "hygiene usage",
+  "date": "2025-09-05T00:00:00",
+  "summary": "On September 05, 2025, hygiene activities were recorded 5 times. This is consistent with the trend over the past week, which has shown a gentle upward trend in hygiene usage, averaging about 3.5 times per day. However, it is below the monthly average of 8.4 times, which indicates a slight decrease in activity over the month. It's important to note the recent improvement in the weekly pattern.",
+  "inputData": {
+    "explanation": "number of hygienes taken by the senior",
+    "statisticType": "quantitative",
+    "dailyStats": [
+      {
+        "statisticName": "bathroom",
+        "statisticId": "hygiene usage",
+        "type": "DaysInWeek",
+        "slope": 1.6,
+        "average": 3.5714285714285716,
+        "total": 25.0,
+        "numberOfValues": 7,
+        "lastValue": 5.0,
+        "additionalValues": {}
+      },
+      {
+        "statisticName": "bathroom",
+        "statisticId": "hygiene usage",
+        "type": "DaysInMonth",
+        "slope": -0.7615763546798031,
+        "average": 8.366666666666667,
+        "total": 251.0,
+        "numberOfValues": 30,
+        "lastValue": 5.0,
+        "additionalValues": {}
+      }
+    ]
+  }
+}

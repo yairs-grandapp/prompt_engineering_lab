@@ -1,0 +1,374 @@
+{
+  "seniorId": "A_LK611111SGPD_senior_1744703199152",
+  "weekStart": "2025-09-05",
+  "weekEnd": "2025-09-07",
+  "summary": "This week showed some encouraging trends in hygiene and sleep patterns, with a noticeable increase in hygiene activities on the last day and consistent sleep durations around 7 hours. However, movement levels have been declining, particularly towards the end of the week, which may be something to keep an eye on. Overall, while there are positive developments, the drop in activity suggests a need for gentle encouragement to maintain mobility and engagement.",
+  "dailySummaries": [
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, there were 5 hygiene activities recorded. This aligns with the recent weekly average of about 3.6 per day, which has been gradually increasing over the past week. However, it is below the monthly average of approximately 8.4, which has shown a downward trend recently.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 1.6,
+            "average": 3.5714285714285716,
+            "total": 25.0,
+            "numberOfValues": 7,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.7615763546798031,
+            "average": 8.366666666666667,
+            "total": 251.0,
+            "numberOfValues": 30,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, the senior slept for about 7 hours and 22 minutes. This amount of sleep aligns with a gentle upward trend observed over the past week, where sleep duration has been gradually increasing. Comparatively, the monthly average has also shown a steady pattern, providing a comforting consistency in their sleep habits.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 786498.1428571428,
+            "average": 19645549.285714287,
+            "total": 137518845.0,
+            "numberOfValues": 7,
+            "lastValue": 26508756.0,
+            "additionalValues": {
+              "totalInMinutes": 2291.98075,
+              "totalInHours": 38.19967916666667,
+              "lastValueInMinutes": 441.81260000000003,
+              "lastValueInHours": 7.363543333333334
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 356485.85172413796,
+            "average": 14119432.533333333,
+            "total": 423582976.0,
+            "numberOfValues": 30,
+            "lastValue": 26508756.0,
+            "additionalValues": {
+              "totalInMinutes": 7059.716266666667,
+              "totalInHours": 117.6619377777778,
+              "lastValueInMinutes": 441.81260000000003,
+              "lastValueInHours": 7.363543333333334
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, the senior spent about 1.5 hours in movement within the house. This is consistent with the weekly average of about 19 hours of movement, which has been gradually increasing over the past week. However, the monthly trend shows a slight decrease, indicating that the overall activity levels have varied this month.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": 1551686.8285714285,
+            "average": 9915889.42857143,
+            "total": 69411226.0,
+            "numberOfValues": 7,
+            "lastValue": 5232585.0,
+            "additionalValues": {
+              "totalInMinutes": 1156.8537666666666,
+              "totalInHours": 19.28089611111111,
+              "lastValueInMinutes": 87.20975,
+              "lastValueInHours": 1.4534958333333334
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -37981.912315270936,
+            "average": 8914052.833333334,
+            "total": 267421585.0,
+            "numberOfValues": 30,
+            "lastValue": 5232585.0,
+            "additionalValues": {
+              "totalInMinutes": 4457.026416666667,
+              "totalInHours": 74.28377361111112,
+              "lastValueInMinutes": 87.20975,
+              "lastValueInHours": 1.4534958333333334
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, hygiene activities were recorded 5 times. This is consistent with the average of about 4 to 5 times seen over the past week, where there has been a gentle upward trend. However, it's worth noting that the monthly average is higher at around 8 times per day, indicating some fluctuations in usage.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 1.1714285714285715,
+            "average": 4.285714285714286,
+            "total": 30.0,
+            "numberOfValues": 7,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.7300492610837439,
+            "average": 8.0,
+            "total": 240.0,
+            "numberOfValues": 30,
+            "lastValue": 5.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, the senior slept for about 4 hours. This is consistent with the average sleep duration over the past week, which has shown a steady pattern of around 4 hours each night. The overall trend indicates a gradual increase in sleep duration over the past month, suggesting a gentle upward movement in sleep habits.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 2647364.4285714286,
+            "average": 18571467.14285714,
+            "total": 130000270.0,
+            "numberOfValues": 7,
+            "lastValue": 14568099.0,
+            "additionalValues": {
+              "totalInMinutes": 2166.6711666666665,
+              "totalInHours": 36.11118611111111,
+              "lastValueInMinutes": 242.80165,
+              "lastValueInHours": 4.046694166666667
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 399233.6270935961,
+            "average": 14354525.566666666,
+            "total": 430635767.0,
+            "numberOfValues": 30,
+            "lastValue": 14568099.0,
+            "additionalValues": {
+              "totalInMinutes": 7177.262783333334,
+              "totalInHours": 119.6210463888889,
+              "lastValueInMinutes": 242.80165,
+              "lastValueInHours": 4.046694166666667
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, the senior spent about 1 hour and 14 minutes in movement around the house. This is a decrease compared to the average movement duration over the past week and month, which has shown a gradual decline in activity levels. While today\u2019s movement was lower, it reflects a continuing trend that has been consistent over recent days.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -277396.34285714285,
+            "average": 9723738.142857144,
+            "total": 68066167.0,
+            "numberOfValues": 7,
+            "lastValue": 4108719.0,
+            "additionalValues": {
+              "totalInMinutes": 1134.4361166666667,
+              "totalInHours": 18.907268611111114,
+              "lastValueInMinutes": 68.47865,
+              "lastValueInHours": 1.1413108333333333
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -15558.49852216751,
+            "average": 8530004.933333334,
+            "total": 255900148.0,
+            "numberOfValues": 30,
+            "lastValue": 4108719.0,
+            "additionalValues": {
+              "totalInMinutes": 4265.002466666667,
+              "totalInHours": 71.08337444444444,
+              "lastValueInMinutes": 68.47865,
+              "lastValueInHours": 1.1413108333333333
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, the senior engaged in hygiene activities 8 times. This daily count is above the average of about 5 for the past week, which shows a gentle upward trend in hygiene use. However, the monthly trend indicates a decline, averaging about 7.5, suggesting some fluctuations in usage patterns.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.8571428571428571,
+            "average": 5.142857142857143,
+            "total": 36.0,
+            "numberOfValues": 7,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.6487684729064037,
+            "average": 7.533333333333333,
+            "total": 226.0,
+            "numberOfValues": 30,
+            "lastValue": 8.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, the senior slept for about 7 hours. This is consistent with a steady pattern over the past week, where sleep duration has been gradually increasing. The overall trend for the past month also shows a gentle upward movement in sleep duration, indicating a positive change in sleep habits.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 1322234.1714285715,
+            "average": 19953363.42857143,
+            "total": 139673544.0,
+            "numberOfValues": 7,
+            "lastValue": 25622458.0,
+            "additionalValues": {
+              "totalInMinutes": 2327.8923999999997,
+              "totalInHours": 38.798206666666665,
+              "lastValueInMinutes": 427.04096666666663,
+              "lastValueInHours": 7.117349444444444
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 344615.766502463,
+            "average": 14983629.666666666,
+            "total": 449508890.0,
+            "numberOfValues": 30,
+            "lastValue": 25622458.0,
+            "additionalValues": {
+              "totalInMinutes": 7491.814833333334,
+              "totalInHours": 124.86358055555556,
+              "lastValueInMinutes": 427.04096666666663,
+              "lastValueInHours": 7.117349444444444
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, the senior spent about 39 minutes in movement around the house. This duration is below the typical levels observed recently, as the trend over the past week shows a gradual decrease in movement duration. Similarly, the monthly average has also been declining, indicating a consistent pattern in lower activity levels.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": -1091217.8,
+            "average": 8447027.57142857,
+            "total": 59129193.0,
+            "numberOfValues": 7,
+            "lastValue": 2332676.0,
+            "additionalValues": {
+              "totalInMinutes": 985.48655,
+              "totalInHours": 16.42477583333333,
+              "lastValueInMinutes": 38.87793333333333,
+              "lastValueInHours": 0.6479655555555556
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": -45724.95320197047,
+            "average": 8312135.333333333,
+            "total": 249364060.0,
+            "numberOfValues": 30,
+            "lastValue": 2332676.0,
+            "additionalValues": {
+              "totalInMinutes": 4156.067666666667,
+              "totalInHours": 69.26779444444445,
+              "lastValueInMinutes": 38.87793333333333,
+              "lastValueInHours": 0.6479655555555556
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

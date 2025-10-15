@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-10-02T00:00:00",
+  "summary": "On October 02, 2025, the senior did not get any sleep, which is quite concerning, especially as it follows a week where sleep patterns were not very consistent. Over the past month, there was an average of about 5.5 hours of sleep each night, indicating a gradual decline in sleep duration recently. It might be helpful to explore any potential reasons behind this change to ensure they get the rest they need.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -3334965.5476190476,
+        "average": 22329637.0,
+        "total": 178637096.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 2977.2849333333334,
+          "totalInHours": 49.62141555555556,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": 164948.56209677414,
+        "average": 19054774.225806452,
+        "total": 590698001.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 9844.966683333334,
+          "totalInHours": 164.08277805555556,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

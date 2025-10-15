@@ -1,0 +1,34 @@
+{
+  "behaviorCategory": "bathroom",
+  "behaviorName": "hygiene usage",
+  "date": "2025-10-05T00:00:00",
+  "summary": "On October 05, 2025, the senior had a significant drop in hygiene usage, with no instances recorded for the day. This is concerning, especially considering the average for the past week was about 2.75 times per day, and the monthly average was higher at around 4.5. It\u2019s important to keep an eye on this change, as maintaining good hygiene is essential for overall well-being.",
+  "inputData": {
+    "explanation": "number of hygienes taken by the senior",
+    "statisticType": "quantitative",
+    "dailyStats": [
+      {
+        "statisticName": "bathroom",
+        "statisticId": "hygiene usage",
+        "type": "DaysInWeek",
+        "slope": -1.3095238095238095,
+        "average": 2.75,
+        "total": 22.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {}
+      },
+      {
+        "statisticName": "bathroom",
+        "statisticId": "hygiene usage",
+        "type": "DaysInMonth",
+        "slope": -0.1596774193548387,
+        "average": 4.516129032258065,
+        "total": 140.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {}
+      }
+    ]
+  }
+}

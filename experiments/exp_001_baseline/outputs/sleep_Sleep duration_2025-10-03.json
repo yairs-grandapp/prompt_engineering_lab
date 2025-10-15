@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-10-03T00:00:00",
+  "summary": "On October 03, 2025, the senior did not sleep at all, which is concerning given that the average sleep duration over the past month has been around 5.2 hours per night. This lack of sleep is a notable change, as there was a gradual increase in sleep duration earlier in the month. It's important to monitor this closely and consider reaching out to a healthcare professional if this pattern continues.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -7582553.416666667,
+        "average": 22323014.625,
+        "total": 178584117.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 2976.40195,
+          "totalInHours": 49.606699166666665,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": 97788.11653225814,
+        "average": 18199653.06451613,
+        "total": 564189245.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 9403.154083333333,
+          "totalInHours": 156.7192347222222,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

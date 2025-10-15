@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-09-10T00:00:00",
+  "summary": "On September 10, 2025, the senior slept for about 6 hours and 20 minutes. This duration is consistent with a gentle downward trend observed over the past week, where the average sleep duration was around 7 hours. However, it is in line with the monthly average of about 6 hours and 30 minutes.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -936901.4571428573,
+        "average": 22141613.14285714,
+        "total": 154991292.0,
+        "numberOfValues": 7,
+        "lastValue": 22787863.0,
+        "additionalValues": {
+          "totalInMinutes": 2583.1881999999996,
+          "totalInHours": 43.05313666666666,
+          "lastValueInMinutes": 379.7977166666667,
+          "lastValueInHours": 6.329961944444445
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": 440493.34285714285,
+        "average": 15818636.566666666,
+        "total": 474559097.0,
+        "numberOfValues": 30,
+        "lastValue": 22787863.0,
+        "additionalValues": {
+          "totalInMinutes": 7909.318283333333,
+          "totalInHours": 131.8219713888889,
+          "lastValueInMinutes": 379.7977166666667,
+          "lastValueInHours": 6.329961944444445
+        }
+      }
+    ]
+  }
+}

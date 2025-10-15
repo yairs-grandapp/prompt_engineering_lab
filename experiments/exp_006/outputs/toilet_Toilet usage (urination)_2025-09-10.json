@@ -1,0 +1,34 @@
+{
+  "behaviorCategory": "toilet",
+  "behaviorName": "Toilet usage (urination)",
+  "date": "2025-09-10T00:00:00",
+  "summary": "On September 10, 2025, there were 2 visits to the toilet for urination. While this is lower than the weekly average of about 5 visits per day, it's important to note that there has been a noticeable downward trend in usage over the past week. This pattern indicates a shift, but it\u2019s essential to remember that fluctuations can happen and we can focus on providing comfort and support.",
+  "inputData": {
+    "explanation": "The number of times the senior used the toilet for urinations.",
+    "statisticType": "quantitative",
+    "dailyStats": [
+      {
+        "statisticName": "toilet",
+        "statisticId": "Toilet usage (urination)",
+        "type": "DaysInWeek",
+        "slope": -0.6571428571428571,
+        "average": 5.285714285714286,
+        "total": 37.0,
+        "numberOfValues": 7,
+        "lastValue": 2.0,
+        "additionalValues": {}
+      },
+      {
+        "statisticName": "toilet",
+        "statisticId": "Toilet usage (urination)",
+        "type": "DaysInMonth",
+        "slope": -76265.44433497536,
+        "average": 504840.56666666665,
+        "total": 15145217.0,
+        "numberOfValues": 30,
+        "lastValue": 2.0,
+        "additionalValues": {}
+      }
+    ]
+  }
+}

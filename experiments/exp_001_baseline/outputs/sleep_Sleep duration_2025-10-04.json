@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-10-04T00:00:00",
+  "summary": "On October 04, 2025, sleep duration was concerningly low, with no recorded hours of sleep for the night. This marks a noticeable decline from earlier in the week, where the average was significantly higher. It's important to monitor this and ensure comfort and support, as consistent sleep is vital for overall well-being.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -11832383.023809524,
+        "average": 22320479.25,
+        "total": 178563834.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 2976.0639,
+          "totalInHours": 49.601065,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": -35719.811290322614,
+        "average": 17729714.387096774,
+        "total": 549621146.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 9160.352433333332,
+          "totalInHours": 152.6725405555555,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

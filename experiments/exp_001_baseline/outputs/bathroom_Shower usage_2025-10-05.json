@@ -1,0 +1,34 @@
+{
+  "behaviorCategory": "bathroom",
+  "behaviorName": "Shower usage",
+  "date": "2025-10-05T00:00:00",
+  "summary": "On October 05, 2025, the senior did not take any showers, which reflects a continued decline in shower usage over the past week where the average dropped to around 0.4 showers per day. This trend has been fairly consistent over the past month, with an average of about 0.5 showers daily. It's important to keep an eye on this behavior, as it may indicate changes in comfort or willingness to engage in personal care.",
+  "inputData": {
+    "explanation": "number of showers taken by the senior",
+    "statisticType": "quantitative",
+    "dailyStats": [
+      {
+        "statisticName": "bathroom",
+        "statisticId": "Shower usage",
+        "type": "DaysInWeek",
+        "slope": -0.17857142857142858,
+        "average": 0.375,
+        "total": 3.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {}
+      },
+      {
+        "statisticName": "bathroom",
+        "statisticId": "Shower usage",
+        "type": "DaysInMonth",
+        "slope": -0.014516129032258065,
+        "average": 0.5483870967741935,
+        "total": 17.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {}
+      }
+    ]
+  }
+}

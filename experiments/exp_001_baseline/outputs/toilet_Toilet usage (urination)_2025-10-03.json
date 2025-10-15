@@ -1,0 +1,34 @@
+{
+  "behaviorCategory": "toilet",
+  "behaviorName": "Toilet usage (urination)",
+  "date": "2025-10-03T00:00:00",
+  "summary": "On October 03, 2025, the senior used the toilet for urination a total of 2 to 3 times, which aligns with the average from the past week. However, there's been a slight decline in usage over the last week, suggesting a decreasing trend compared to earlier days. It's important to keep an eye on these patterns to ensure their comfort and health.",
+  "inputData": {
+    "explanation": "The number of times the senior used the toilet for urinations.",
+    "statisticType": "quantitative",
+    "dailyStats": [
+      {
+        "statisticName": "toilet",
+        "statisticId": "Toilet usage (urination)",
+        "type": "DaysInWeek",
+        "slope": -0.5119047619047619,
+        "average": 2.625,
+        "total": 21.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {}
+      },
+      {
+        "statisticName": "toilet",
+        "statisticId": "Toilet usage (urination)",
+        "type": "DaysInMonth",
+        "slope": -0.0810483870967742,
+        "average": 3.4516129032258065,
+        "total": 107.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {}
+      }
+    ]
+  }
+}

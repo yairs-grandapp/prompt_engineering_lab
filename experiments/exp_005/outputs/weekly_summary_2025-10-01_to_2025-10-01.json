@@ -1,0 +1,198 @@
+{
+  "seniorId": "A_LK611111SGPD_senior_1744703199152",
+  "weekStart": "2025-10-01",
+  "weekEnd": "2025-10-01",
+  "summary": "This week showed some fluctuations in daily activities, with a noticeable dip in hygiene and movement on October 1st. However, overall trends indicate a gentle improvement in these areas over the past month, which is encouraging. While there were days with little to no activity, the recent patterns suggest that there have been moments of higher engagement, particularly in movement. It's important to keep an eye on these behaviors and maintain supportive routines to encourage consistency.",
+  "dailySummaries": [
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-10-01T00:00:00",
+      "summary": "No hygiene activities were recorded on October 1, 2025. While this is below the monthly average of about 5 per day, the overall pattern over the past week has shown a gentle upward trend, which is encouraging. It's important to remember that fluctuations can happen, and the recent increase in activity gives a positive outlook.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.20238095238095238,
+            "average": 3.125,
+            "total": 25.0,
+            "numberOfValues": 8,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.10967741935483873,
+            "average": 5.225806451612903,
+            "total": 162.0,
+            "numberOfValues": 31,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "Shower usage",
+      "date": "2025-10-01T00:00:00",
+      "summary": "No showers were recorded on October 1, 2025. While this is below the weekly average of about 0.5 showers per day, it's important to note that there has been a gentle downward trend in shower usage over the past week. However, the overall monthly average remains at around 0.6, which suggests there have been days with more activity in this area. It's encouraging to see that there have been moments of higher engagement recently.",
+      "inputData": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInWeek",
+            "slope": -0.023809523809523808,
+            "average": 0.5,
+            "total": 4.0,
+            "numberOfValues": 8,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "Shower usage",
+            "type": "DaysInMonth",
+            "slope": -0.014516129032258065,
+            "average": 0.6451612903225806,
+            "total": 20.0,
+            "numberOfValues": 31,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "toilet",
+      "behaviorName": "Toilet usage (urination)",
+      "date": "2025-10-01T00:00:00",
+      "summary": "No toilet usage for urination was recorded on October 1, 2025. While this is below the monthly average of about 4 visits per day, it's important to note that there has been a gentle upward trend in toilet usage over the past week. This suggests that there may be positive movement in this area, encouraging signs for the days ahead.",
+      "inputData": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInWeek",
+            "slope": 0.13095238095238096,
+            "average": 2.625,
+            "total": 21.0,
+            "numberOfValues": 8,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "toilet",
+            "statisticId": "Toilet usage (urination)",
+            "type": "DaysInMonth",
+            "slope": -0.09354838709677421,
+            "average": 3.806451612903226,
+            "total": 118.0,
+            "numberOfValues": 31,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-10-01T00:00:00",
+      "summary": "No sleep duration was recorded on October 1, 2025. While this may seem concerning, it's worth noting that there has been a gentle upward trend in sleep duration over the past month. This reflects a more positive pattern, suggesting that on average, sleep has been improving recently.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": -58426.833333333336,
+            "average": 20278513.5,
+            "total": 162228108.0,
+            "numberOfValues": 8,
+            "lastValue": 0.0,
+            "additionalValues": {
+              "totalInMinutes": 2703.8018,
+              "totalInHours": 45.063363333333335,
+              "lastValueInMinutes": 0.0,
+              "lastValueInHours": 0.0
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 154927.34798387098,
+            "average": 19355182.741935484,
+            "total": 600010665.0,
+            "numberOfValues": 31,
+            "lastValue": 0.0,
+            "additionalValues": {
+              "totalInMinutes": 10000.17775,
+              "totalInHours": 166.66962916666668,
+              "lastValueInMinutes": 0.0,
+              "lastValueInHours": 0.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "movement",
+      "behaviorName": "Movements duration",
+      "date": "2025-10-01T00:00:00",
+      "summary": "No movements were recorded on October 1, 2025. While this is a change from the typical activity level, it's important to note that there has been a gentle upward trend in movement duration over the past week and month. The overall pattern shows that while activity may have dipped today, the recent weeks have reflected more engagement in movement, which is a positive sign.",
+      "inputData": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInWeek",
+            "slope": 941521.3214285715,
+            "average": 5323736.375,
+            "total": 42589891.0,
+            "numberOfValues": 8,
+            "lastValue": 0.0,
+            "additionalValues": {
+              "totalInMinutes": 709.8315166666667,
+              "totalInHours": 11.83052527777778,
+              "lastValueInMinutes": 0.0,
+              "lastValueInHours": 0.0
+            }
+          },
+          {
+            "statisticName": "movement",
+            "statisticId": "Movements duration",
+            "type": "DaysInMonth",
+            "slope": 7204.372580645147,
+            "average": 4223175.322580645,
+            "total": 130918435.0,
+            "numberOfValues": 31,
+            "lastValue": 0.0,
+            "additionalValues": {
+              "totalInMinutes": 2181.973916666667,
+              "totalInHours": 36.36623194444444,
+              "lastValueInMinutes": 0.0,
+              "lastValueInHours": 0.0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

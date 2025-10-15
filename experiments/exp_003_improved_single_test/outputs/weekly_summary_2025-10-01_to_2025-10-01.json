@@ -1,0 +1,42 @@
+{
+  "seniorId": "A_LK611111SGPD_senior_1744703199152",
+  "weekStart": "2025-10-01",
+  "weekEnd": "2025-10-01",
+  "summary": "This week showed a gentle upward trend in hygiene activities, which is a positive sign and suggests gradual improvement. Although there were no hygiene activities recorded on October 1st, the overall increase over the past week is encouraging. It's important to continue monitoring this to ensure the positive trend continues, but it's reassuring to see signs of progress.",
+  "dailySummaries": [
+    {
+      "behaviorCategory": "bathroom",
+      "behaviorName": "hygiene usage",
+      "date": "2025-10-01T00:00:00",
+      "summary": "On October 1, 2025, there were no hygiene activities recorded. While this is below the monthly average of about 5 per day, it's worth noting that there has been a gentle upward trend in hygiene use over the past week. This pattern suggests a gradual improvement, which is encouraging.",
+      "inputData": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInWeek",
+            "slope": 0.20238095238095238,
+            "average": 3.125,
+            "total": 25.0,
+            "numberOfValues": 8,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "bathroom",
+            "statisticId": "hygiene usage",
+            "type": "DaysInMonth",
+            "slope": -0.10967741935483873,
+            "average": 5.225806451612903,
+            "total": 162.0,
+            "numberOfValues": 31,
+            "lastValue": 0.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    }
+  ]
+}

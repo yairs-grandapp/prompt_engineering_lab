@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "movement",
+  "behaviorName": "Movements duration",
+  "date": "2025-10-01T00:00:00",
+  "summary": "On October 01, 2025, the senior showed a remarkable amount of movement, with a total of about 12 hours spent in motion throughout the day. This aligns with a positive trend, as movement duration has gradually increased over the past week and month, which is truly encouraging to see. It's wonderful to note that this level of activity reflects a consistent effort to stay engaged and active at home.",
+  "inputData": {
+    "explanation": "The duration spent in movement by the senior in the house.",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInWeek",
+        "slope": 941521.3214285715,
+        "average": 5323736.375,
+        "total": 42589891.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 709.8315166666667,
+          "totalInHours": 11.83052527777778,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInMonth",
+        "slope": 7204.372580645147,
+        "average": 4223175.322580645,
+        "total": 130918435.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 2181.973916666667,
+          "totalInHours": 36.36623194444444,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-09-11T00:00:00",
+  "summary": "On September 11, 2025, the senior slept for about 6 hours, which is consistent with the typical pattern seen over the past week. While there has been a slight decline in sleep duration recently, the monthly trend shows a gentle upward movement, suggesting improvements overall. It's encouraging to see this consistency and gradual increase as we look at the broader picture.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -91643.71428571429,
+        "average": 21500255.0,
+        "total": 150501785.0,
+        "numberOfValues": 7,
+        "lastValue": 21232145.0,
+        "additionalValues": {
+          "totalInMinutes": 2508.363083333333,
+          "totalInHours": 41.80605138888889,
+          "lastValueInMinutes": 353.8690833333333,
+          "lastValueInHours": 5.897818055555556
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": 489627.9256157635,
+        "average": 16009742.833333334,
+        "total": 480292285.0,
+        "numberOfValues": 30,
+        "lastValue": 21232145.0,
+        "additionalValues": {
+          "totalInMinutes": 8004.871416666666,
+          "totalInHours": 133.4145236111111,
+          "lastValueInMinutes": 353.8690833333333,
+          "lastValueInHours": 5.897818055555556
+        }
+      }
+    ]
+  }
+}

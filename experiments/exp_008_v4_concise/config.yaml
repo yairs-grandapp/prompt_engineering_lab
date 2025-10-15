@@ -1,0 +1,25 @@
+experiment:
+  name: "Concise v4 - Shorter Summaries Without Interpretations"
+
+model:
+  name: "gpt-4o-mini"
+  temperature: 0.7
+
+prompts:
+  daily_template: "daily_summary_v4.txt"
+  weekly_template: "weekly_summary_v1.txt"
+
+test_data:
+  senior_id: "A_LK611111SGPD_senior_1744703199152"
+
+  behaviors:
+    - category: "bathroom"
+      stat_id: "hygiene usage"
+    - category: "sleep"
+      stat_id: "Sleep duration"
+    - category: "movement"
+      stat_id: "Movements duration"
+
+  date_range:
+    start: "2025-09-05"
+    end: "2025-09-07"  # 3 days to validate concise format

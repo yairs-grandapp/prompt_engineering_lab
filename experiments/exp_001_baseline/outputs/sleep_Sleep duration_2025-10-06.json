@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-10-06T00:00:00",
+  "summary": "On October 06, 2025, sleep duration was notably concerning, as it recorded no hours of sleep at all. This is a significant change from the past week and month, where there had been a consistent average of nearly 20 hours of sleep weekly and around 15 hours monthly. It\u2019s important to monitor this closely, as such a drop can impact overall well-being.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": -2963121.964285714,
+        "average": 8982088.375,
+        "total": 71856707.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 1197.6117833333333,
+          "totalInHours": 19.96019638888889,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": -56507.96653225802,
+        "average": 17258520.129032258,
+        "total": 535014124.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 8916.902066666666,
+          "totalInHours": 148.61503444444443,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

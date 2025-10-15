@@ -1,0 +1,22 @@
+experiment:
+  name: "Improved Prompt v2 - Single Test (1 day, 1 behavior)"
+  date: "2025-10-14"
+
+model:
+  name: "gpt-4o-mini"
+  temperature: 0.7
+
+prompts:
+  daily_template: "daily_summary_v2.txt"
+  weekly_template: "weekly_summary_v1.txt"
+
+test_data:
+  senior_id: "A_LK611111SGPD_senior_1744703199152"
+
+  behaviors:
+    - category: "bathroom"
+      stat_id: "hygiene usage"
+
+  date_range:
+    start: "2025-10-01"
+    end: "2025-10-01"  # Just 1 day for quick testing

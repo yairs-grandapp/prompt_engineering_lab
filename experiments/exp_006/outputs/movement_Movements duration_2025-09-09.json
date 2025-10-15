@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "movement",
+  "behaviorName": "Movements duration",
+  "date": "2025-09-09T00:00:00",
+  "summary": "On September 09, 2025, there was about 1 hour and 40 minutes of movement recorded, which is a lovely sign of engagement within the home. However, it's worth noting that this duration reflects a decline from the weekly trend, which has been gradually decreasing. While this might seem concerning, it's part of a broader pattern, and we can look forward to seeing how movement levels evolve in the coming days.",
+  "inputData": {
+    "explanation": "The duration spent in movement by the senior in the house.",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInWeek",
+        "slope": -2964785.057142857,
+        "average": 7248251.142857143,
+        "total": 50737758.0,
+        "numberOfValues": 7,
+        "lastValue": 5959873.0,
+        "additionalValues": {
+          "totalInMinutes": 845.6293000000001,
+          "totalInHours": 14.093821666666667,
+          "lastValueInMinutes": 99.33121666666666,
+          "lastValueInHours": 1.6555202777777778
+        }
+      },
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInMonth",
+        "slope": -30942.78472906403,
+        "average": 7594387.266666667,
+        "total": 227831618.0,
+        "numberOfValues": 30,
+        "lastValue": 5959873.0,
+        "additionalValues": {
+          "totalInMinutes": 3797.1936333333333,
+          "totalInHours": 63.28656055555555,
+          "lastValueInMinutes": 99.33121666666666,
+          "lastValueInHours": 1.6555202777777778
+        }
+      }
+    ]
+  }
+}

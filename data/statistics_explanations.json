@@ -1,0 +1,147 @@
+{
+  "version": "573",
+  "data": {
+    "Falls detected": "Number of falls detected.",
+    "Rests taken": "number of rests taken by the senior",
+    "Sleep duration": "The number of hours the senior slept at night",
+    "Sleep Restlessness": "The number of times the senior moved in bed during the night sleep",
+    "distress quantity": "amount of times fell from bed",
+    "Rests duration": "duration of rests taken by the senior in milliseconds",
+    "Movements amount": "Number of times the senior moved around the house",
+    "Movements duration": "Duration of movements taken by the senior in milliseconds",
+    "visitors quantity": "amount of visitors were detected in the apartment",
+    "Panic button pressed": "how many times the senior pressed the panic button",
+    "hygiene usage": "number of hygienes taken by the senior",
+    "hygiene duration": "duration of hygienes taken by the senior in minutes",
+    "Shower usage": "number of showers taken by the senior",
+    "Shower duration": "duration of showers taken by the senior in minutes",
+    "Toilet usage (urination)": "Number of times senior used the toilet for urinations",
+    "Toilet usage (bowel movement)": "Number of times senior used the toilet for bowel movements",
+    "Nightly wakeups": "number of times the senior woke up in the middle of the night",
+    "working duration": "duration of working",
+    "working quantity": "amount of times worked",
+    "Toilet duration (urination)": "Duration of senior duration of the toilet for urinations",
+    "Toilet duration (bowel movement)": "Duration of senior duration of the toilet for bowel movements",
+    "Falls from bed detected": "Number of falls from bed detected.",
+    "Meals taken": "number of meals eaten by the senior",
+    "Meal duration": "length of the time eating",
+    "sleep": {
+      "Sleep duration": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration"
+      },
+      "Sleep Restlessness": {
+        "explanation": "The number of times the senior moved in bed during the night sleep",
+        "statisticType": "quantitative"
+      },
+      "Nightly wakeups": {
+        "explanation": "The number of times the senior woke up in the middle of the night.",
+        "statisticType": "quantitative"
+      }
+    },
+    "distress": {
+      "Falls from bed detected": {
+        "explanation": "The number of falls from bed detected.",
+        "statisticType": "quantitative"
+      },
+      "Falls detected": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative"
+      },
+      "Panic button pressed": {
+        "explanation": "The number of times the senior pressed the panic button.",
+        "statisticType": "quantitative"
+      }
+    },
+    "rest": {
+      "Rests taken": {
+        "explanation": "The number of rests taken by the senior.",
+        "statisticType": "quantitative"
+      },
+      "Rests duration": {
+        "explanation": "The duration spent by the senior resting.",
+        "statisticType": "duration"
+      }
+    },
+    "movement": {
+      "Movements amount": {
+        "explanation": "The number of times the senior has been detected moving in the house.",
+        "statisticType": "quantitative"
+      },
+      "Movements duration": {
+        "explanation": "The duration spent in movement by the senior in the house.",
+        "statisticType": "duration"
+      }
+    },
+    "toilet": {
+      "Toilet usage (urination)": {
+        "explanation": "The number of times the senior used the toilet for urinations.",
+        "statisticType": "quantitative"
+      },
+      "Toilet duration (urination)": {
+        "explanation": "The duration of the senior's toilet usage for urinations",
+        "statisticType": "duration"
+      },
+      "Toilet usage (bowel movement)": {
+        "explanation": "Number of times senior used the toilet for bowel movements",
+        "statisticType": "quantitative"
+      },
+      "Toilet duration (bowel movement)": {
+        "explanation": "The duration of the senior's toilet usage for bowel movements",
+        "statisticType": "duration"
+      }
+    },
+    "bathroom": {
+      "hygiene usage": {
+        "explanation": "number of hygienes taken by the senior",
+        "statisticType": "quantitative"
+      },
+      "hygiene duration": {
+        "explanation": "duration of hygienes taken by the senior in minutes",
+        "statisticType": "duration"
+      },
+      "Shower usage": {
+        "explanation": "number of showers taken by the senior",
+        "statisticType": "quantitative"
+      },
+      "Shower duration": {
+        "explanation": "duration of showers taken by the senior in minutes",
+        "statisticType": "duration"
+      }
+    },
+    "eating": {
+      "Meals taken": {
+        "explanation": "The number of meals eaten by the senior.",
+        "statisticType": "quantitative"
+      },
+      "Meal duration": {
+        "explanation": "The duration spent by the senior eating.",
+        "statisticType": "duration"
+      }
+    },
+    "visitors": {
+      "visitors quantity": {
+        "explanation": "The number of visitors detected in the apartment.",
+        "statisticType": "quantitative"
+      }
+    },
+    "work": {
+      "working duration": {
+        "explanation": "The duration spent by the senior working.",
+        "statisticType": "duration"
+      },
+      "working quantity": {
+        "explanation": "The number of times the senior has been detected working.",
+        "statisticType": "quantitative"
+      }
+    },
+    "medicines": {
+      "medicines missed": {
+        "explanation": "The number of times the senior missed their medicine.",
+        "statisticType": "quantitative"
+      }
+    }
+  },
+  "updateTime": 1758453427179,
+  "updater": "$server"
+}

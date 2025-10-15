@@ -1,0 +1,242 @@
+{
+  "seniorId": "A_LK611111SGPD_senior_1744703199152",
+  "weekStart": "2025-09-05",
+  "weekEnd": "2025-09-07",
+  "summary": "This week showed some encouraging trends, particularly in sleep patterns, with the senior experiencing longer, more restful nights overall. While there were a few falls detected, the total number decreased compared to previous weeks, suggesting a gradual improvement in stability. However, it's important to remain vigilant and continue supporting safe mobility to help further reduce the risk of falls. Overall, the week ended positively, with a return to healthier sleep duration and a noticeable decrease in falls.",
+  "dailySummaries": [
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, the senior slept for about 7 hours and 22 minutes. This is above the average sleep duration of about 4 hours and 41 minutes over the past month, and there has been a gentle upward trend in sleep duration over the past week, indicating a consistent pattern of longer sleep.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 786498.1428571428,
+            "average": 19645549.285714287,
+            "total": 137518845.0,
+            "numberOfValues": 7,
+            "lastValue": 26508756.0,
+            "additionalValues": {
+              "totalInMinutes": 2291.98075,
+              "totalInHours": 38.19967916666667,
+              "lastValueInMinutes": 441.81260000000003,
+              "lastValueInHours": 7.363543333333334
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 356485.85172413796,
+            "average": 14119432.533333333,
+            "total": 423582976.0,
+            "numberOfValues": 30,
+            "lastValue": 26508756.0,
+            "additionalValues": {
+              "totalInMinutes": 7059.716266666667,
+              "totalInHours": 117.6619377777778,
+              "lastValueInMinutes": 441.81260000000003,
+              "lastValueInHours": 7.363543333333334
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-05T00:00:00",
+      "summary": "On September 05, 2025, there were 2 falls detected. This represents a gentle increase from the average of about 9 falls per day over the past week. However, it is below the monthly average of approximately 12 falls per day, which has shown a stable trend overall.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": 1.5142857142857138,
+            "average": 9.571428571428571,
+            "total": 67.0,
+            "numberOfValues": 7,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.04630541871921183,
+            "average": 12.066666666666666,
+            "total": 362.0,
+            "numberOfValues": 30,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, the senior slept for about 4 hours. This is below the monthly average of about 5 hours per night. However, over the past week, there has been a gentle upward trend in sleep duration, suggesting a gradual increase in the number of hours slept.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 2647364.4285714286,
+            "average": 18571467.14285714,
+            "total": 130000270.0,
+            "numberOfValues": 7,
+            "lastValue": 14568099.0,
+            "additionalValues": {
+              "totalInMinutes": 2166.6711666666665,
+              "totalInHours": 36.11118611111111,
+              "lastValueInMinutes": 242.80165,
+              "lastValueInHours": 4.046694166666667
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 399233.6270935961,
+            "average": 14354525.566666666,
+            "total": 430635767.0,
+            "numberOfValues": 30,
+            "lastValue": 14568099.0,
+            "additionalValues": {
+              "totalInMinutes": 7177.262783333334,
+              "totalInHours": 119.6210463888889,
+              "lastValueInMinutes": 242.80165,
+              "lastValueInHours": 4.046694166666667
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-06T00:00:00",
+      "summary": "On September 06, 2025, 2 falls were detected. This is below the weekly average of about 9 falls and the monthly average of approximately 12 falls. The trend over the past week shows a decreasing pattern, indicating fewer falls occurring recently.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": -1.7142857142857142,
+            "average": 9.714285714285714,
+            "total": 68.0,
+            "numberOfValues": 7,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.12857142857142856,
+            "average": 11.766666666666667,
+            "total": 353.0,
+            "numberOfValues": 30,
+            "lastValue": 2.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "sleep",
+      "behaviorName": "Sleep duration",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, the senior slept for about 7 hours, which is above the average of about 5 hours for the past week. Additionally, there has been a gentle upward trend in sleep duration over the past week, indicating a more consistent pattern in restful nights.",
+      "inputData": {
+        "explanation": "The number of hours the senior slept at night",
+        "statisticType": "duration",
+        "dailyStats": [
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInWeek",
+            "slope": 1322234.1714285715,
+            "average": 19953363.42857143,
+            "total": 139673544.0,
+            "numberOfValues": 7,
+            "lastValue": 25622458.0,
+            "additionalValues": {
+              "totalInMinutes": 2327.8923999999997,
+              "totalInHours": 38.798206666666665,
+              "lastValueInMinutes": 427.04096666666663,
+              "lastValueInHours": 7.117349444444444
+            }
+          },
+          {
+            "statisticName": "sleep",
+            "statisticId": "Sleep duration",
+            "type": "DaysInMonth",
+            "slope": 344615.766502463,
+            "average": 14983629.666666666,
+            "total": 449508890.0,
+            "numberOfValues": 30,
+            "lastValue": 25622458.0,
+            "additionalValues": {
+              "totalInMinutes": 7491.814833333334,
+              "totalInHours": 124.86358055555556,
+              "lastValueInMinutes": 427.04096666666663,
+              "lastValueInHours": 7.117349444444444
+            }
+          }
+        ]
+      }
+    },
+    {
+      "behaviorCategory": "distress",
+      "behaviorName": "Falls detected",
+      "date": "2025-09-07T00:00:00",
+      "summary": "On September 07, 2025, there were 3 falls detected. This is below the weekly average of about 8 falls, and the trend over the past week shows a steady decline. Over the past month, the average was approximately 11 falls per day, indicating a decrease in activity.",
+      "inputData": {
+        "explanation": "The number of falls detected.",
+        "statisticType": "quantitative",
+        "dailyStats": [
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInWeek",
+            "slope": -2.8,
+            "average": 8.428571428571429,
+            "total": 59.0,
+            "numberOfValues": 7,
+            "lastValue": 3.0,
+            "additionalValues": {}
+          },
+          {
+            "statisticName": "distress",
+            "statisticId": "Falls detected",
+            "type": "DaysInMonth",
+            "slope": -0.1768472906403941,
+            "average": 11.366666666666667,
+            "total": 341.0,
+            "numberOfValues": 30,
+            "lastValue": 3.0,
+            "additionalValues": {}
+          }
+        ]
+      }
+    }
+  ]
+}

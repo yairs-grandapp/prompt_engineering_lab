@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "movement",
+  "behaviorName": "Movements duration",
+  "date": "2025-10-05T00:00:00",
+  "summary": "On October 05, 2025, the senior did not engage in any movement throughout the day, which is concerning given the recent trend. Over the past week, there has been a noticeable decrease in movement duration, and while the monthly average shows some activity, today's total of zero hours is a significant drop. It's important to keep an eye on this and ensure they're comfortable and safe.",
+  "inputData": {
+    "explanation": "The duration spent in movement by the senior in the house.",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInWeek",
+        "slope": -2256282.2976190476,
+        "average": 5451372.375,
+        "total": 43610979.0,
+        "numberOfValues": 8,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 726.84965,
+          "totalInHours": 12.114160833333333,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      },
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInMonth",
+        "slope": 53223.538709677436,
+        "average": 3722801.9032258065,
+        "total": 115406859.0,
+        "numberOfValues": 31,
+        "lastValue": 0.0,
+        "additionalValues": {
+          "totalInMinutes": 1923.4476499999998,
+          "totalInHours": 32.05746083333333,
+          "lastValueInMinutes": 0.0,
+          "lastValueInHours": 0.0
+        }
+      }
+    ]
+  }
+}

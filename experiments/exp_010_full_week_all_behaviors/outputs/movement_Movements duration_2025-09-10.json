@@ -1,0 +1,44 @@
+{
+  "behaviorCategory": "movement",
+  "behaviorName": "Movements duration",
+  "date": "2025-09-10T00:00:00",
+  "summary": "On September 10, 2025, the senior spent about 59 minutes in movement within the house. This is below the weekly average of about 11 hours, which has been gradually decreasing over the past week. However, it aligns with the monthly average of around 60 hours, showing a more stable pattern over the longer term.",
+  "inputData": {
+    "explanation": "The duration spent in movement by the senior in the house.",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInWeek",
+        "slope": -1776759.3142857142,
+        "average": 5683225.0,
+        "total": 39782575.0,
+        "numberOfValues": 7,
+        "lastValue": 3521575.0,
+        "additionalValues": {
+          "totalInMinutes": 663.0429166666667,
+          "totalInHours": 11.050715277777778,
+          "lastValueInMinutes": 58.69291666666666,
+          "lastValueInHours": 0.9782152777777777
+        }
+      },
+      {
+        "statisticName": "movement",
+        "statisticId": "Movements duration",
+        "type": "DaysInMonth",
+        "slope": 12863.056157635478,
+        "average": 7206530.033333333,
+        "total": 216195901.0,
+        "numberOfValues": 30,
+        "lastValue": 3521575.0,
+        "additionalValues": {
+          "totalInMinutes": 3603.2650166666667,
+          "totalInHours": 60.05441694444445,
+          "lastValueInMinutes": 58.69291666666666,
+          "lastValueInHours": 0.9782152777777777
+        }
+      }
+    ]
+  }
+}
