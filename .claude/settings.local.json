@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Read(//Users/yairs/data/grandapp/data/projects/grandappflutter/picmein/picmein_device_apps/picmein_device/lib/managers/senior_behaviors_managers/behavioral_statistics_summary_manager/utils/**)"
+      "Read(//Users/yairs/data/grandapp/data/projects/grandappflutter/picmein/picmein_device_apps/picmein_device/lib/managers/senior_behaviors_managers/behavioral_statistics_summary_manager/utils/**)",
+      "Bash(python:*)",
+      "Read(//Users/yairs/data/grandapp/data/projects/grandappflutter/picmein/picmein_device_apps/picmein_device/lib/managers/senior_behaviors_managers/behavioral_statistics_summary_manager/**)",
+      "Read(//Users/yairs/data/grandapp/data/projects/grandappflutter/picmein/picmein_device_apps/picmein_device/**)",
+      "Read(//Users/yairs/data/grandapp/data/projects/grandappflutter/picmein/packages/picmein_backend_and_services/picmein_backend/PicmeinCommon/com_ddd_picmein_common_device_objectmodel/lib/objectModels/**)"
     ],
     "deny": [],
     "ask": []

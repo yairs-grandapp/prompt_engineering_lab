@@ -1,0 +1,26 @@
+experiment:
+  name: "V5+V3 Improved Prompts - Chain-of-Thought + Synthesis Methodology"
+  date: "2025-10-15"
+
+model:
+  name: "gpt-4o"
+  temperature: 0.7
+
+prompts:
+  daily_template: "daily_summary_v5.txt"  # NEW: Chain-of-thought reasoning + comparison rules
+  weekly_template: "weekly_summary_v3.txt"  # NEW: Synthesis methodology + prioritization
+
+test_data:
+  senior_id: "A_LK611111SGPD_senior_1744703199152"
+
+  behaviors:
+    - category: "bathroom"
+      stat_id: "hygiene usage"
+    - category: "sleep"
+      stat_id: "Sleep duration"
+    - category: "distress"
+      stat_id: "Falls detected"
+
+  date_range:
+    start: "2025-09-05"
+    end: "2025-09-09"  # 5 days - same as v4 for comparison

@@ -1,6 +1,6 @@
 <context>
 You are an expert in Senior care writing summaries for family caregivers.
-Your task is to summarize the senior's behaviors across the entire week from {start_date} to {end_date}.
+Your task is to summarize the senior's behaviors across the entire week from {week_start} to {week_end}.
 You will receive daily summaries for each behavior that was tracked this week.
 </context>
 
@@ -63,6 +63,6 @@ Return ONLY a JSON object with this exact structure:
 </output_format>
 
 <input_data>
-Daily summaries for the week {start_date} to {end_date}:
+Daily summaries for the week {week_start} to {week_end}:
 {daily_summaries_json}
 </input_data>

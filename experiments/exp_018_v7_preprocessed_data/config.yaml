@@ -1,0 +1,34 @@
+experiment:
+  name: "V7 - Preprocessed Data (Hours + Trend Classification)"
+  date: "2025-10-15"
+  description: |
+    Tests if pre-processing the data eliminates calculation errors:
+    - Duration stats: average/lastValue converted to hours (not milliseconds)
+    - All stats: slope classified into "increasing"/"decreasing"/"stable"
+    - Model only needs to do simple arithmetic comparison
+
+    Expected: Should fix the remaining 2 errors from v6 (Sept 05, Sept 06)
+    Target accuracy: 95%+ (was 87% in v6)
+
+model:
+  name: "gpt-4o"
+  temperature: 0.7
+
+prompts:
+  daily_template: "daily_summary_v7.txt"  # Simplified for preprocessed data
+  weekly_template: "weekly_summary_v4.txt"  # Keep v4 for now
+
+test_data:
+  senior_id: "A_LK611111SGPD_senior_1744703199152"
+
+  behaviors:
+    - category: "bathroom"
+      stat_id: "hygiene usage"
+    - category: "sleep"
+      stat_id: "Sleep duration"
+    - category: "distress"
+      stat_id: "Falls detected"
+
+  date_range:
+    start: "2025-09-05"
+    end: "2025-09-09"

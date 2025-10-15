@@ -19,9 +19,10 @@ from typing import List, Dict, Tuple
 
 
 # Configuration: Map Python template files to Dart output files
+# To deploy a new version: Change "source" from v4 to v5 below, then run: python sync_prompts_to_dart.py
 SYNC_CONFIG = [
     {
-        "source": "prompts/daily_summary_v4.txt",
+        "source": "prompts/daily_summary_v4.txt",  # Change to v5 to deploy improved prompt
         "target": "../grandappflutter/picmein/picmein_device_apps/picmein_device/lib/managers/senior_behaviors_managers/behavioral_statistics_summary_manager/utils/prompts/daily_prompt.dart",
         "function_name": "getDailySummaryPrompt",
         "description": "Daily summary prompt for behavioral statistics.",

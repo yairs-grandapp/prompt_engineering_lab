@@ -177,23 +177,54 @@ class DataLoader:
         stat_type: Optional[str]
     ) -> List[StatisticsCalculation]:
         """
-        Add duration conversions if statistic is duration type.
+        Add duration conversions and trend classification.
 
-        Mirrors: behavioral_statistics_summary_manager.dart lines 323-335
+        For duration stats:
+        - Converts average and lastValue from milliseconds to hours
+        - Keeps raw values in additional_values for reference
+
+        For all stats:
+        - Classifies slope into trend: "increasing", "stable", or "decreasing"
+
+        Mirrors: behavioral_statistics_summary_manager.dart lines 323-335 (enhanced)
         """
-        if stat_type == 'duration':
-            for stat in stats:
-                # Convert from milliseconds to minutes and hours
-                total_in_minutes = stat.total / 1000 / 60
-                total_in_hours = stat.total / 1000 / 60 / 60
-                last_value_in_minutes = stat.last_value / 1000 / 60
-                last_value_in_hours = stat.last_value / 1000 / 60 / 60
+        for stat in stats:
+            # Classify trend based on slope threshold
+            slope_threshold = 0.05  # Same threshold used in prompt
+            if stat.slope > slope_threshold:
+                trend = "increasing"
+            elif stat.slope < -slope_threshold:
+                trend = "decreasing"
+            else:
+                trend = "stable"
 
+            if stat_type == 'duration':
+                # Store raw millisecond values for reference
+                raw_average = stat.average
+                raw_last_value = stat.last_value
+                raw_total = stat.total
+                raw_slope = stat.slope
+
+                # Convert main fields from milliseconds to hours
+                stat.average = stat.average / 1000 / 60 / 60  # ms → hours
+                stat.last_value = stat.last_value / 1000 / 60 / 60  # ms → hours
+                stat.total = stat.total / 1000 / 60 / 60  # ms → hours
+                stat.slope = stat.slope / 1000 / 60 / 60  # ms/day → hours/day
+
+                # Keep raw values and add trend in additional_values
                 stat.additional_values = {
-                    'totalInMinutes': total_in_minutes,
-                    'totalInHours': total_in_hours,
-                    'lastValueInMinutes': last_value_in_minutes,
-                    'lastValueInHours': last_value_in_hours
+                    'averageMs': raw_average,
+                    'lastValueMs': raw_last_value,
+                    'totalMs': raw_total,
+                    'slopeMs': raw_slope,
+                    'trend': trend,
+                    'unit': 'hours'
+                }
+            else:
+                # For count-based stats, just add trend
+                stat.additional_values = {
+                    'trend': trend,
+                    'unit': 'count'
                 }
 
         return stats

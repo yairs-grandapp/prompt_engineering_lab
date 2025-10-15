@@ -1,0 +1,48 @@
+{
+  "behaviorCategory": "sleep",
+  "behaviorName": "Sleep duration",
+  "date": "2025-09-07T00:00:00",
+  "summary": "On September 07, 2025, sleep duration was about 7.1 hours. This is above the weekly average of about 5.5 hours, with a gradually increasing trend over the past week.",
+  "inputData": {
+    "explanation": "The number of hours the senior slept at night",
+    "statisticType": "duration",
+    "dailyStats": [
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInWeek",
+        "slope": 0.3672872698412698,
+        "average": 5.542600952380952,
+        "total": 38.798206666666665,
+        "numberOfValues": 7,
+        "lastValue": 7.117349444444444,
+        "additionalValues": {
+          "averageMs": 19953363.42857143,
+          "lastValueMs": 25622458.0,
+          "totalMs": 139673544.0,
+          "slopeMs": 1322234.1714285715,
+          "trend": "increasing",
+          "unit": "hours"
+        }
+      },
+      {
+        "statisticName": "sleep",
+        "statisticId": "Sleep duration",
+        "type": "DaysInMonth",
+        "slope": 0.09572660180623974,
+        "average": 4.162119351851851,
+        "total": 124.86358055555556,
+        "numberOfValues": 30,
+        "lastValue": 7.117349444444444,
+        "additionalValues": {
+          "averageMs": 14983629.666666666,
+          "lastValueMs": 25622458.0,
+          "totalMs": 449508890.0,
+          "slopeMs": 344615.766502463,
+          "trend": "increasing",
+          "unit": "hours"
+        }
+      }
+    ]
+  }
+}

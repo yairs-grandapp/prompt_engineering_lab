@@ -1,0 +1,34 @@
+experiment:
+  name: "V7 + gpt-5-nano - Ultra-Cheap Model Test"
+  date: "2025-10-15"
+  description: |
+    Tests if gpt-5-nano (50x cheaper than gpt-4o) can handle our structured summarization task.
+
+    Same setup as exp_018 but with gpt-5-nano instead of gpt-4o.
+
+    If this works, massive cost savings:
+    - gpt-4o: $2.50 input / $10.00 output
+    - gpt-5-nano: $0.05 input / $0.40 output (50x cheaper input, 25x cheaper output!)
+
+model:
+  name: "gpt-5-nano"
+  temperature: 1.0  # Only supported value for gpt-5-nano
+
+prompts:
+  daily_template: "daily_summary_v7.txt"  # Preprocessed data (hours + trend)
+  weekly_template: "weekly_summary_v4.txt"  # Pattern verification
+
+test_data:
+  senior_id: "A_LK611111SGPD_senior_1744703199152"
+
+  behaviors:
+    - category: "bathroom"
+      stat_id: "hygiene usage"
+    - category: "sleep"
+      stat_id: "Sleep duration"
+    - category: "distress"
+      stat_id: "Falls detected"
+
+  date_range:
+    start: "2025-09-05"
+    end: "2025-09-09"
