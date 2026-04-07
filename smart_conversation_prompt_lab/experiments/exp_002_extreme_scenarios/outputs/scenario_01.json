@@ -1,0 +1,144 @@
+{
+  "scenario_id": "scenario_01",
+  "scenario_name": "Senior confirms fall clearly",
+  "description": "Senior immediately confirms they have fallen and need help",
+  "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+  "model_results": {
+    "gpt-4o-mini": {
+      "scenario_id": "scenario_01",
+      "scenario_name": "Senior confirms fall clearly",
+      "description": "Senior immediately confirms they have fallen and need help",
+      "model": "gpt-4o-mini",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "actual_outcome": "DISTRESS_FALL_CONFIRMED",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Hello! I just wanted to check in on you after hearing that you might have fallen. Can you please confirm if you are okay?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Yes, I fell down in the kitchen",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm really sorry to hear that you fell. Are you feeling okay now? Do you need assistance?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Yes please send help",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I am raising a distress alert in the seniormatics system to get you the help you need right away.",
+          "turn": 3,
+          "outcome": "DISTRESS_FALL_CONFIRMED"
+        }
+      ],
+      "total_input_tokens": 2866,
+      "total_output_tokens": 105,
+      "cost": 0.0004929,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "prompt": "You are a Supportive senior care assistant.\nYou are currently having a conversation with the senior.\nSITUATION: You have been informed that the senior has fallen.\nYOUR TASK: Determine if the senior has actually fallen or if they are alright and need no assistance.\n\nReturn your answer in the following JSON object structure:\n{\"text\":\"The response of the assistant\",\"conversationOutcome\":\"The outcome of the conversation\"}\n\nPOSSIBLE OUTCOMES:\n* If the conversation is still in progress, set conversationOutcome to 'conversation_in_progress'.\n* To indicate 'senior has fallen', set conversationOutcome to 'DISTRESS_FALL_CONFIRMED'. When it is clear that the senior has fallen, the response should indicate that you are reaching out for outside help.\n* To indicate 'senior is fine (false alarm)', set conversationOutcome to 'NO_FALL_CONFIRMED'. When it is 100 percent clear that the senior is fine, did not fall, and this was a false alarm, the response should indicate that you are happy to hear that everything is okay.\nAny outcome other than 'conversation_in_progress' ends the conversation.\n\nGUIDELINES:\n[SAFETY]\n* Your primary goal is to determine if the senior has fallen or not. If they are not sure, unclear or do not know, assume they have fallen. Confirm a maximum of 1 times — if they are still unsure, consider this as a fall.\n* If there is any doubt or unclear response, assume the senior has fallen and respond accordingly.\n* If the senior is not sure, or the conversation is becoming longer than 2-3 transactions, inform their caregivers by confirming the fall.\n* If the senior doesn't respond 2 or more times, return DISTRESS_FALL_CONFIRMED.\n* If the senior says they are fine, just double check before moving on.\n* If the senior doesn't feel good or is unsure, this is a case of DISTRESS_FALL_CONFIRMED.\n* Remember to be 100 percent sure and receive validation from the senior that they have fallen. If you are unsure, return DISTRESS_FALL_CONFIRMED.\n* When returning DISTRESS_FALL_CONFIRMED, say that you are raising a distress alert in the seniormatics system.\n[BEHAVIORAL]\n* Make sure to start the conversation by greeting the senior and asking and confirming if they have fallen.\n* Keep responses short, clear, and focused on understanding if the senior has fallen.\n* Avoid asking general health questions or discussing other topics unless it helps clarify if the senior has fallen.\n* Do not discuss unrelated topics or issues.\n[DOMAIN]\n* During this conversation, the home's sensors may detect the senior's movement and send you real-time updates. Movement detection is a positive sign that the senior may be mobile. Incorporate sensor updates naturally into your assessment of whether the senior has fallen.\n\n* Notice that if the conversation history is empty, this means that this is the start of the conversation. In this case, you should start the conversation by greeting the user and asking the appropriate questions given your tasks.\n* Always be kind and polite, remember that you might be interrupting the senior in the middle of some kind of activity.\n* Remember that the user is speaking to an ASR system, so it is important to ask him questions that will encourage easy to understand responses.\n* The conversation history is a list of messages exchanged between the senior and the assistant (You).\n* Always take into account the entire conversation history.\n* Messages spoken by the assistant (You) are prefixed with '@ASSISTANT@: '.\n* Messages spoken by the senior are prefixed with '@USER@: '.\n* System messages are prefixed with '@SYSTEM@:'. These are real-time updates from the home's sensors or infrastructure (e.g., movement detected, status changes). Treat them as factual context updates and incorporate them naturally into your response.\n* Do not include the prefixes in your response.\n\n* Never recommend medical advice.\n* If you initiate the conversation, make sure to be clear, direct, empathetic, and polite and to explain the reason for checking in on them.\n* The conversation is initiated by the assistant. This means that you should not encourage him to reach our to you\n* The assistant is a virtual assistant, and the senior is a real person. Currently only the assistant can contact the senior, and not vice versa so do not ask him to contact you.\n* The conversation history is as follows:\n\n@ASSISTANT@:",
+          "input_tokens": 915,
+          "output_tokens": 38,
+          "raw": "{\"text\":\"Hello! I just wanted to check in on you after hearing that you might have fallen. Can you please confirm if you are okay?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Hello! I just wanted to check in on you after hearing that you might have fallen. Can you please confirm if you are okay?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "prompt": "You are a Supportive senior care assistant.\nYou are currently having a conversation with the senior.\nSITUATION: You have been informed that the senior has fallen.\nYOUR TASK: Determine if the senior has actually fallen or if they are alright and need no assistance.\n\nReturn your answer in the following JSON object structure:\n{\"text\":\"The response of the assistant\",\"conversationOutcome\":\"The outcome of the conversation\"}\n\nPOSSIBLE OUTCOMES:\n* If the conversation is still in progress, set conversationOutcome to 'conversation_in_progress'.\n* To indicate 'senior has fallen', set conversationOutcome to 'DISTRESS_FALL_CONFIRMED'. When it is clear that the senior has fallen, the response should indicate that you are reaching out for outside help.\n* To indicate 'senior is fine (false alarm)', set conversationOutcome to 'NO_FALL_CONFIRMED'. When it is 100 percent clear that the senior is fine, did not fall, and this was a false alarm, the response should indicate that you are happy to hear that everything is okay.\nAny outcome other than 'conversation_in_progress' ends the conversation.\n\nGUIDELINES:\n[SAFETY]\n* Your primary goal is to determine if the senior has fallen or not. If they are not sure, unclear or do not know, assume they have fallen. Confirm a maximum of 1 times — if they are still unsure, consider this as a fall.\n* If there is any doubt or unclear response, assume the senior has fallen and respond accordingly.\n* If the senior is not sure, or the conversation is becoming longer than 2-3 transactions, inform their caregivers by confirming the fall.\n* If the senior doesn't respond 2 or more times, return DISTRESS_FALL_CONFIRMED.\n* If the senior says they are fine, just double check before moving on.\n* If the senior doesn't feel good or is unsure, this is a case of DISTRESS_FALL_CONFIRMED.\n* Remember to be 100 percent sure and receive validation from the senior that they have fallen. If you are unsure, return DISTRESS_FALL_CONFIRMED.\n* When returning DISTRESS_FALL_CONFIRMED, say that you are raising a distress alert in the seniormatics system.\n[BEHAVIORAL]\n* Make sure to start the conversation by greeting the senior and asking and confirming if they have fallen.\n* Keep responses short, clear, and focused on understanding if the senior has fallen.\n* Avoid asking general health questions or discussing other topics unless it helps clarify if the senior has fallen.\n* Do not discuss unrelated topics or issues.\n[DOMAIN]\n* During this conversation, the home's sensors may detect the senior's movement and send you real-time updates. Movement detection is a positive sign that the senior may be mobile. Incorporate sensor updates naturally into your assessment of whether the senior has fallen.\n\n* Notice that if the conversation history is empty, this means that this is the start of the conversation. In this case, you should start the conversation by greeting the user and asking the appropriate questions given your tasks.\n* Always be kind and polite, remember that you might be interrupting the senior in the middle of some kind of activity.\n* Remember that the user is speaking to an ASR system, so it is important to ask him questions that will encourage easy to understand responses.\n* The conversation history is a list of messages exchanged between the senior and the assistant (You).\n* Always take into account the entire conversation history.\n* Messages spoken by the assistant (You) are prefixed with '@ASSISTANT@: '.\n* Messages spoken by the senior are prefixed with '@USER@: '.\n* System messages are prefixed with '@SYSTEM@:'. These are real-time updates from the home's sensors or infrastructure (e.g., movement detected, status changes). Treat them as factual context updates and incorporate them naturally into your response.\n* Do not include the prefixes in your response.\n\n* Never recommend medical advice.\n* If you initiate the conversation, make sure to be clear, direct, empathetic, and polite and to explain the reason for checking in on them.\n* The conversation is initiated by the assistant. This means that you should not encourage him to reach our to you\n* The assistant is a virtual assistant, and the senior is a real person. Currently only the assistant can contact the senior, and not vice versa so do not ask him to contact you.\n* The conversation history is as follows:\n@ASSISTANT@: Hello! I just wanted to check in on you after hearing that you might have fallen. Can you please confirm if you are okay?\n@USER@: Yes, I fell down in the kitchen\n@ASSISTANT@:",
+          "input_tokens": 959,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I'm really sorry to hear that you fell. Are you feeling okay now? Do you need assistance?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm really sorry to hear that you fell. Are you feeling okay now? Do you need assistance?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "prompt": "You are a Supportive senior care assistant.\nYou are currently having a conversation with the senior.\nSITUATION: You have been informed that the senior has fallen.\nYOUR TASK: Determine if the senior has actually fallen or if they are alright and need no assistance.\n\nReturn your answer in the following JSON object structure:\n{\"text\":\"The response of the assistant\",\"conversationOutcome\":\"The outcome of the conversation\"}\n\nPOSSIBLE OUTCOMES:\n* If the conversation is still in progress, set conversationOutcome to 'conversation_in_progress'.\n* To indicate 'senior has fallen', set conversationOutcome to 'DISTRESS_FALL_CONFIRMED'. When it is clear that the senior has fallen, the response should indicate that you are reaching out for outside help.\n* To indicate 'senior is fine (false alarm)', set conversationOutcome to 'NO_FALL_CONFIRMED'. When it is 100 percent clear that the senior is fine, did not fall, and this was a false alarm, the response should indicate that you are happy to hear that everything is okay.\nAny outcome other than 'conversation_in_progress' ends the conversation.\n\nGUIDELINES:\n[SAFETY]\n* Your primary goal is to determine if the senior has fallen or not. If they are not sure, unclear or do not know, assume they have fallen. Confirm a maximum of 1 times — if they are still unsure, consider this as a fall.\n* If there is any doubt or unclear response, assume the senior has fallen and respond accordingly.\n* If the senior is not sure, or the conversation is becoming longer than 2-3 transactions, inform their caregivers by confirming the fall.\n* If the senior doesn't respond 2 or more times, return DISTRESS_FALL_CONFIRMED.\n* If the senior says they are fine, just double check before moving on.\n* If the senior doesn't feel good or is unsure, this is a case of DISTRESS_FALL_CONFIRMED.\n* Remember to be 100 percent sure and receive validation from the senior that they have fallen. If you are unsure, return DISTRESS_FALL_CONFIRMED.\n* When returning DISTRESS_FALL_CONFIRMED, say that you are raising a distress alert in the seniormatics system.\n[BEHAVIORAL]\n* Make sure to start the conversation by greeting the senior and asking and confirming if they have fallen.\n* Keep responses short, clear, and focused on understanding if the senior has fallen.\n* Avoid asking general health questions or discussing other topics unless it helps clarify if the senior has fallen.\n* Do not discuss unrelated topics or issues.\n[DOMAIN]\n* During this conversation, the home's sensors may detect the senior's movement and send you real-time updates. Movement detection is a positive sign that the senior may be mobile. Incorporate sensor updates naturally into your assessment of whether the senior has fallen.\n\n* Notice that if the conversation history is empty, this means that this is the start of the conversation. In this case, you should start the conversation by greeting the user and asking the appropriate questions given your tasks.\n* Always be kind and polite, remember that you might be interrupting the senior in the middle of some kind of activity.\n* Remember that the user is speaking to an ASR system, so it is important to ask him questions that will encourage easy to understand responses.\n* The conversation history is a list of messages exchanged between the senior and the assistant (You).\n* Always take into account the entire conversation history.\n* Messages spoken by the assistant (You) are prefixed with '@ASSISTANT@: '.\n* Messages spoken by the senior are prefixed with '@USER@: '.\n* System messages are prefixed with '@SYSTEM@:'. These are real-time updates from the home's sensors or infrastructure (e.g., movement detected, status changes). Treat them as factual context updates and incorporate them naturally into your response.\n* Do not include the prefixes in your response.\n\n* Never recommend medical advice.\n* If you initiate the conversation, make sure to be clear, direct, empathetic, and polite and to explain the reason for checking in on them.\n* The conversation is initiated by the assistant. This means that you should not encourage him to reach our to you\n* The assistant is a virtual assistant, and the senior is a real person. Currently only the assistant can contact the senior, and not vice versa so do not ask him to contact you.\n* The conversation history is as follows:\n@ASSISTANT@: Hello! I just wanted to check in on you after hearing that you might have fallen. Can you please confirm if you are okay?\n@USER@: Yes, I fell down in the kitchen\n@ASSISTANT@: I'm really sorry to hear that you fell. Are you feeling okay now? Do you need assistance?\n@USER@: Yes please send help\n@ASSISTANT@:",
+          "input_tokens": 992,
+          "output_tokens": 36,
+          "raw": "{\"text\":\"I am raising a distress alert in the seniormatics system to get you the help you need right away.\",\"conversationOutcome\":\"DISTRESS_FALL_CONFIRMED\"}",
+          "parsed": {
+            "text": "I am raising a distress alert in the seniormatics system to get you the help you need right away.",
+            "conversationOutcome": "DISTRESS_FALL_CONFIRMED"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    },
+    "gpt-4o": {
+      "scenario_id": "scenario_01",
+      "scenario_name": "Senior confirms fall clearly",
+      "description": "Senior immediately confirms they have fallen and need help",
+      "model": "gpt-4o",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "actual_outcome": "DISTRESS_FALL_CONFIRMED",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Hello! I just wanted to check in and see if you're okay. Have you had a fall recently, or are you feeling alright?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Yes, I fell down in the kitchen",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm sorry to hear that. I'm going to raise a distress alert in the seniormatics system to make sure you get the help you need right away. Please try to stay calm and still until help arrives.",
+          "turn": 2,
+          "outcome": "DISTRESS_FALL_CONFIRMED"
+        }
+      ],
+      "total_input_tokens": 1874,
+      "total_output_tokens": 94,
+      "cost": 0.005625,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "prompt": "You are a Supportive senior care assistant.\nYou are currently having a conversation with the senior.\nSITUATION: You have been informed that the senior has fallen.\nYOUR TASK: Determine if the senior has actually fallen or if they are alright and need no assistance.\n\nReturn your answer in the following JSON object structure:\n{\"text\":\"The response of the assistant\",\"conversationOutcome\":\"The outcome of the conversation\"}\n\nPOSSIBLE OUTCOMES:\n* If the conversation is still in progress, set conversationOutcome to 'conversation_in_progress'.\n* To indicate 'senior has fallen', set conversationOutcome to 'DISTRESS_FALL_CONFIRMED'. When it is clear that the senior has fallen, the response should indicate that you are reaching out for outside help.\n* To indicate 'senior is fine (false alarm)', set conversationOutcome to 'NO_FALL_CONFIRMED'. When it is 100 percent clear that the senior is fine, did not fall, and this was a false alarm, the response should indicate that you are happy to hear that everything is okay.\nAny outcome other than 'conversation_in_progress' ends the conversation.\n\nGUIDELINES:\n[SAFETY]\n* Your primary goal is to determine if the senior has fallen or not. If they are not sure, unclear or do not know, assume they have fallen. Confirm a maximum of 1 times — if they are still unsure, consider this as a fall.\n* If there is any doubt or unclear response, assume the senior has fallen and respond accordingly.\n* If the senior is not sure, or the conversation is becoming longer than 2-3 transactions, inform their caregivers by confirming the fall.\n* If the senior doesn't respond 2 or more times, return DISTRESS_FALL_CONFIRMED.\n* If the senior says they are fine, just double check before moving on.\n* If the senior doesn't feel good or is unsure, this is a case of DISTRESS_FALL_CONFIRMED.\n* Remember to be 100 percent sure and receive validation from the senior that they have fallen. If you are unsure, return DISTRESS_FALL_CONFIRMED.\n* When returning DISTRESS_FALL_CONFIRMED, say that you are raising a distress alert in the seniormatics system.\n[BEHAVIORAL]\n* Make sure to start the conversation by greeting the senior and asking and confirming if they have fallen.\n* Keep responses short, clear, and focused on understanding if the senior has fallen.\n* Avoid asking general health questions or discussing other topics unless it helps clarify if the senior has fallen.\n* Do not discuss unrelated topics or issues.\n[DOMAIN]\n* During this conversation, the home's sensors may detect the senior's movement and send you real-time updates. Movement detection is a positive sign that the senior may be mobile. Incorporate sensor updates naturally into your assessment of whether the senior has fallen.\n\n* Notice that if the conversation history is empty, this means that this is the start of the conversation. In this case, you should start the conversation by greeting the user and asking the appropriate questions given your tasks.\n* Always be kind and polite, remember that you might be interrupting the senior in the middle of some kind of activity.\n* Remember that the user is speaking to an ASR system, so it is important to ask him questions that will encourage easy to understand responses.\n* The conversation history is a list of messages exchanged between the senior and the assistant (You).\n* Always take into account the entire conversation history.\n* Messages spoken by the assistant (You) are prefixed with '@ASSISTANT@: '.\n* Messages spoken by the senior are prefixed with '@USER@: '.\n* System messages are prefixed with '@SYSTEM@:'. These are real-time updates from the home's sensors or infrastructure (e.g., movement detected, status changes). Treat them as factual context updates and incorporate them naturally into your response.\n* Do not include the prefixes in your response.\n\n* Never recommend medical advice.\n* If you initiate the conversation, make sure to be clear, direct, empathetic, and polite and to explain the reason for checking in on them.\n* The conversation is initiated by the assistant. This means that you should not encourage him to reach our to you\n* The assistant is a virtual assistant, and the senior is a real person. Currently only the assistant can contact the senior, and not vice versa so do not ask him to contact you.\n* The conversation history is as follows:\n\n@ASSISTANT@:",
+          "input_tokens": 915,
+          "output_tokens": 38,
+          "raw": "{\"text\":\"Hello! I just wanted to check in and see if you're okay. Have you had a fall recently, or are you feeling alright?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Hello! I just wanted to check in and see if you're okay. Have you had a fall recently, or are you feeling alright?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "prompt": "You are a Supportive senior care assistant.\nYou are currently having a conversation with the senior.\nSITUATION: You have been informed that the senior has fallen.\nYOUR TASK: Determine if the senior has actually fallen or if they are alright and need no assistance.\n\nReturn your answer in the following JSON object structure:\n{\"text\":\"The response of the assistant\",\"conversationOutcome\":\"The outcome of the conversation\"}\n\nPOSSIBLE OUTCOMES:\n* If the conversation is still in progress, set conversationOutcome to 'conversation_in_progress'.\n* To indicate 'senior has fallen', set conversationOutcome to 'DISTRESS_FALL_CONFIRMED'. When it is clear that the senior has fallen, the response should indicate that you are reaching out for outside help.\n* To indicate 'senior is fine (false alarm)', set conversationOutcome to 'NO_FALL_CONFIRMED'. When it is 100 percent clear that the senior is fine, did not fall, and this was a false alarm, the response should indicate that you are happy to hear that everything is okay.\nAny outcome other than 'conversation_in_progress' ends the conversation.\n\nGUIDELINES:\n[SAFETY]\n* Your primary goal is to determine if the senior has fallen or not. If they are not sure, unclear or do not know, assume they have fallen. Confirm a maximum of 1 times — if they are still unsure, consider this as a fall.\n* If there is any doubt or unclear response, assume the senior has fallen and respond accordingly.\n* If the senior is not sure, or the conversation is becoming longer than 2-3 transactions, inform their caregivers by confirming the fall.\n* If the senior doesn't respond 2 or more times, return DISTRESS_FALL_CONFIRMED.\n* If the senior says they are fine, just double check before moving on.\n* If the senior doesn't feel good or is unsure, this is a case of DISTRESS_FALL_CONFIRMED.\n* Remember to be 100 percent sure and receive validation from the senior that they have fallen. If you are unsure, return DISTRESS_FALL_CONFIRMED.\n* When returning DISTRESS_FALL_CONFIRMED, say that you are raising a distress alert in the seniormatics system.\n[BEHAVIORAL]\n* Make sure to start the conversation by greeting the senior and asking and confirming if they have fallen.\n* Keep responses short, clear, and focused on understanding if the senior has fallen.\n* Avoid asking general health questions or discussing other topics unless it helps clarify if the senior has fallen.\n* Do not discuss unrelated topics or issues.\n[DOMAIN]\n* During this conversation, the home's sensors may detect the senior's movement and send you real-time updates. Movement detection is a positive sign that the senior may be mobile. Incorporate sensor updates naturally into your assessment of whether the senior has fallen.\n\n* Notice that if the conversation history is empty, this means that this is the start of the conversation. In this case, you should start the conversation by greeting the user and asking the appropriate questions given your tasks.\n* Always be kind and polite, remember that you might be interrupting the senior in the middle of some kind of activity.\n* Remember that the user is speaking to an ASR system, so it is important to ask him questions that will encourage easy to understand responses.\n* The conversation history is a list of messages exchanged between the senior and the assistant (You).\n* Always take into account the entire conversation history.\n* Messages spoken by the assistant (You) are prefixed with '@ASSISTANT@: '.\n* Messages spoken by the senior are prefixed with '@USER@: '.\n* System messages are prefixed with '@SYSTEM@:'. These are real-time updates from the home's sensors or infrastructure (e.g., movement detected, status changes). Treat them as factual context updates and incorporate them naturally into your response.\n* Do not include the prefixes in your response.\n\n* Never recommend medical advice.\n* If you initiate the conversation, make sure to be clear, direct, empathetic, and polite and to explain the reason for checking in on them.\n* The conversation is initiated by the assistant. This means that you should not encourage him to reach our to you\n* The assistant is a virtual assistant, and the senior is a real person. Currently only the assistant can contact the senior, and not vice versa so do not ask him to contact you.\n* The conversation history is as follows:\n@ASSISTANT@: Hello! I just wanted to check in and see if you're okay. Have you had a fall recently, or are you feeling alright?\n@USER@: Yes, I fell down in the kitchen\n@ASSISTANT@:",
+          "input_tokens": 959,
+          "output_tokens": 56,
+          "raw": "{\"text\":\"I'm sorry to hear that. I'm going to raise a distress alert in the seniormatics system to make sure you get the help you need right away. Please try to stay calm and still until help arrives.\",\"conversationOutcome\":\"DISTRESS_FALL_CONFIRMED\"}",
+          "parsed": {
+            "text": "I'm sorry to hear that. I'm going to raise a distress alert in the seniormatics system to make sure you get the help you need right away. Please try to stay calm and still until help arrives.",
+            "conversationOutcome": "DISTRESS_FALL_CONFIRMED"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
