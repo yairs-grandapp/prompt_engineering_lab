@@ -51,42 +51,71 @@ class ExperimentRunner:
 
     def run(self) -> Dict[str, Any]:
         """
-        Run all scenarios and collect results.
+        Run all scenarios with all models and collect results.
 
-        Returns dict with config, results list, summary, and total cost.
+        Each scenario is run independently with each model.
+        Results are grouped by scenario, with each scenario containing
+        results from all models for side-by-side comparison.
         """
+        model_names = [m.name for m in self.config.models]
+
         print(f"\n{'#' * 70}")
         print(f"# Experiment: {self.config.name}")
         print(f"# Date: {self.config.date}")
-        print(f"# Model: {self.config.model.name} (temp={self.config.model.temperature})")
+        print(f"# Models: {', '.join(model_names)}")
         print(f"# Prompt: {self.config.prompt.template}")
-        print(f"# Language: {self.config.prompt.language}")
         print(f"# Scenarios: {len(self.scenarios)}")
         print(f"{'#' * 70}\n")
 
-        results: List[ConversationResult] = []
+        # results_by_scenario[scenario_id][model_name] = ConversationResult
+        all_results: List[Dict[str, Any]] = []
 
         for i, scenario in enumerate(self.scenarios, 1):
             print(f"[{i}/{len(self.scenarios)}] {scenario['id']}")
-            result = self.conversation_runner.run_scenario(scenario)
-            results.append(result)
 
-            # Save individual transcript
+            scenario_results = {}
+            for model in self.config.models:
+                result = self.conversation_runner.run_scenario(scenario, model)
+                scenario_results[model.name] = result
+
+            # Save per-scenario output with all model results
+            output_data = {
+                "scenario_id": scenario["id"],
+                "scenario_name": scenario["name"],
+                "description": scenario.get("description", ""),
+                "expected_outcome": scenario["expected_outcome"],
+                "model_results": {
+                    model_name: r.to_dict()
+                    for model_name, r in scenario_results.items()
+                }
+            }
             output_path = self.outputs_dir / f"{scenario['id']}.json"
             with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(result.to_dict(), f, indent=2, ensure_ascii=False)
+                json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-        # Summary
-        passed = sum(1 for r in results if r.passed)
-        failed = len(results) - passed
-        total_cost = sum(r.cost for r in results)
+            all_results.append(output_data)
+
+        # Build summary per model
+        model_summaries = {}
+        for model in self.config.models:
+            model_results = [
+                r["model_results"][model.name] for r in all_results
+            ]
+            passed = sum(1 for r in model_results if r["passed"])
+            failed = len(model_results) - passed
+            model_summaries[model.name] = {
+                "total": len(model_results),
+                "passed": passed,
+                "failed": failed,
+                "pass_rate": f"{100 * passed / len(model_results):.0f}%"
+            }
 
         print(f"\n{'=' * 70}")
         print(f"Experiment Complete")
         print(f"{'=' * 70}")
-        print(f"Scenarios: {len(results)} total, {passed} passed, {failed} failed")
-        print(f"Pass rate: {passed}/{len(results)} ({100 * passed / len(results):.0f}%)")
-        print(f"Estimated cost: ${total_cost:.4f}")
+        for model_name, summary in model_summaries.items():
+            print(f"  [{model_name}] {summary['passed']}/{summary['total']} passed "
+                  f"({summary['pass_rate']})")
         print(f"Results saved to: {self.outputs_dir}")
         print(f"{'=' * 70}\n")
 
@@ -94,18 +123,9 @@ class ExperimentRunner:
             "config": {
                 "name": self.config.name,
                 "date": self.config.date,
-                "model": self.config.model.name,
-                "temperature": self.config.model.temperature,
+                "models": model_names,
                 "prompt_template": self.config.prompt.template,
-                "language": self.config.prompt.language,
-                "assistant_gender": self.config.prompt.assistant_gender,
             },
-            "results": [r.to_dict() for r in results],
-            "summary": {
-                "total": len(results),
-                "passed": passed,
-                "failed": failed,
-                "pass_rate": f"{100 * passed / len(results):.0f}%"
-            },
-            "total_cost": total_cost
+            "results": all_results,
+            "model_summaries": model_summaries,
         }

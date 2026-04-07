@@ -2,9 +2,11 @@ experiment:
   name: "Baseline - Production Fall Detection Prompt v0"
   date: "2026-04-07"
 
-model:
-  name: "gpt-4o-mini"
-  temperature: 0.7
+models:
+  - name: "gpt-4o-mini"
+    temperature: 0.7
+  - name: "gpt-4o"
+    temperature: 0.7
 
 prompt:
   template: "prompt_v0.txt"
@@ -18,4 +20,4 @@ conversation:
   max_turns: 10
   extra_silence_turns: 2
 
-inputs_file: "inputs_v0.json"
+inputs_file: "inputs_baseline.json"

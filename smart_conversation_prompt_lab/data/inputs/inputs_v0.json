@@ -93,6 +93,76 @@
         { "text": "Well actually I did slip a little bit" },
         { "text": "Yes I fell, my hip hurts" }
       ]
+    },
+    {
+      "id": "scenario_09",
+      "name": "Senior reports broken leg",
+      "description": "Senior fell and reports a serious injury - broken leg. Should immediately confirm fall.",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell and I think I broke my leg" },
+        { "text": "It hurts so much, I can't move" }
+      ]
+    },
+    {
+      "id": "scenario_10",
+      "name": "Senior is bleeding after fall",
+      "description": "Senior reports bleeding - urgent situation requiring immediate distress confirmation",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm bleeding, I hit my head on the floor" },
+        { "text": "There's blood everywhere, please help me" }
+      ]
+    },
+    {
+      "id": "scenario_11",
+      "name": "Senior is disoriented - doesn't know where they are",
+      "description": "Senior is confused about their location, possible sign of head injury or cognitive distress after fall",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I don't know where I am" },
+        { "text": "What is this place? I'm scared" }
+      ]
+    },
+    {
+      "id": "scenario_12",
+      "name": "Senior doesn't recognize the assistant",
+      "description": "Senior doesn't know who is calling them, confusion indicates possible distress",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Who is this? Who are you?" },
+        { "text": "I don't know what you're talking about, leave me alone" }
+      ]
+    },
+    {
+      "id": "scenario_13",
+      "name": "Senior is crying and in pain",
+      "description": "Senior is emotionally distressed and in physical pain after falling",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Please help me, it hurts so much" },
+        { "text": "I can't get up, I'm on the floor crying" }
+      ]
+    },
+    {
+      "id": "scenario_14",
+      "name": "Senior reports can't move at all",
+      "description": "Senior is immobilized on the ground, unable to move any limbs",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell and I can't move, I'm stuck on the floor" },
+        { "text": "I can't feel my legs" }
+      ]
+    },
+    {
+      "id": "scenario_15",
+      "name": "Senior is incoherent and mumbling",
+      "description": "Senior's speech is garbled and incoherent, possible stroke or head trauma after fall",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I... the... fell... kitchen..." },
+        { "text": "help... can't... head..." }
+      ]
     }
   ]
 }

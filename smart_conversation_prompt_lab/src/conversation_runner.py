@@ -11,7 +11,7 @@ from typing import List, Dict, Any, Optional
 import openai
 
 from .prompt_builder import PromptBuilder
-from .config import ExperimentConfig
+from .config import ExperimentConfig, ModelConfig
 
 
 OUTCOME_IN_PROGRESS = "conversation_in_progress"
@@ -31,6 +31,7 @@ class ConversationResult:
     scenario_id: str
     scenario_name: str
     description: str
+    model: str
     expected_outcome: str
     actual_outcome: str
     passed: bool
@@ -47,6 +48,7 @@ class ConversationResult:
             "scenario_id": self.scenario_id,
             "scenario_name": self.scenario_name,
             "description": self.description,
+            "model": self.model,
             "expected_outcome": self.expected_outcome,
             "actual_outcome": self.actual_outcome,
             "passed": self.passed,
@@ -77,19 +79,19 @@ class ConversationRunner:
         self.prompt_builder = prompt_builder
         self.config = config
 
-    def _call_llm(self, prompt: str) -> Dict[str, Any]:
+    def _call_llm(self, prompt: str, model: ModelConfig) -> Dict[str, Any]:
         """
         Call the LLM with the assembled prompt.
 
         Returns dict with: response (parsed JSON), input_tokens, output_tokens, cost
         """
         response = self.client.chat.completions.create(
-            model=self.config.model.name,
+            model=model.name,
             messages=[
                 {"role": "user", "content": prompt}
             ],
             response_format={"type": "json_object"},
-            temperature=self.config.model.temperature
+            temperature=model.temperature
         )
 
         input_tokens = response.usage.prompt_tokens
@@ -100,7 +102,7 @@ class ConversationRunner:
         parsed = self._parse_json_response(raw_content)
 
         # Calculate cost
-        pricing = MODEL_PRICING.get(self.config.model.name, {"input": 0, "output": 0})
+        pricing = MODEL_PRICING.get(model.name, {"input": 0, "output": 0})
         cost = (input_tokens / 1_000_000) * pricing["input"] + \
                (output_tokens / 1_000_000) * pricing["output"]
 
@@ -130,20 +132,9 @@ class ConversationRunner:
         """Check if an outcome ends the conversation."""
         return not self._matches_outcome(outcome, OUTCOME_IN_PROGRESS)
 
-    def run_scenario(self, scenario: Dict[str, Any]) -> ConversationResult:
+    def run_scenario(self, scenario: Dict[str, Any], model: ModelConfig) -> ConversationResult:
         """
-        Run a single multi-turn conversation scenario.
-
-        The loop:
-        1. Build full prompt with current conversation_history
-        2. Call LLM (json_object mode)
-        3. Parse {"text": ..., "conversationOutcome": ...}
-        4. Add "@ASSISTANT@: {text}" to history
-        5. If outcome != conversation_in_progress -> done
-        6. Get next user turn from scenario
-        7. If system_events exist on this turn, add "@SYSTEM@: {event}" to history
-        8. Add "@USER@: {text}" to history
-        9. Repeat from step 1
+        Run a single multi-turn conversation scenario with a specific model.
         """
         scenario_id = scenario["id"]
         scenario_name = scenario["name"]
@@ -166,7 +157,7 @@ class ConversationRunner:
         max_turns = self.config.conversation.max_turns
         extra_silence = self.config.conversation.extra_silence_turns
 
-        print(f"  Running scenario: {scenario_name}")
+        print(f"    [{model.name}] Running scenario: {scenario_name}")
 
         for turn_num in range(1, max_turns + 1):
             # Build prompt with current history
@@ -180,9 +171,9 @@ class ConversationRunner:
 
             # Call LLM
             try:
-                llm_result = self._call_llm(prompt)
+                llm_result = self._call_llm(prompt, model)
             except Exception as e:
-                print(f"    Turn {turn_num}: LLM error - {e}")
+                print(f"      Turn {turn_num}: LLM error - {e}")
                 transcript.append({
                     "role": "error",
                     "text": str(e),
@@ -218,7 +209,7 @@ class ConversationRunner:
                 "outcome": outcome
             })
 
-            print(f"    Turn {turn_num}: Assistant -> {assistant_text[:80]}... [{outcome}]")
+            print(f"      Turn {turn_num}: Assistant -> {assistant_text[:80]}... [{outcome}]")
 
             # Check if conversation ended
             if self._is_terminal_outcome(outcome):
@@ -239,7 +230,7 @@ class ConversationRunner:
                         "text": sys_msg,
                         "turn": turn_num
                     })
-                    print(f"    Turn {turn_num}: [SYSTEM] {sys_msg[:60]}...")
+                    print(f"      Turn {turn_num}: [SYSTEM] {sys_msg[:60]}...")
 
                 user_text = turn_data["text"]
                 user_turn_index += 1
@@ -260,22 +251,23 @@ class ConversationRunner:
             })
 
             if user_text:
-                print(f"    Turn {turn_num}: User -> {user_text[:80]}")
+                print(f"      Turn {turn_num}: User -> {user_text[:80]}")
             else:
-                print(f"    Turn {turn_num}: User -> (silence)")
+                print(f"      Turn {turn_num}: User -> (silence)")
 
         # Determine pass/fail
         passed = self._matches_outcome(actual_outcome, expected_outcome)
         turn_count = len([t for t in transcript if t["role"] == "assistant"])
 
         result_icon = "PASS" if passed else "FAIL"
-        print(f"  [{result_icon}] Expected: {expected_outcome}, Got: {actual_outcome} "
+        print(f"    [{model.name}] [{result_icon}] Expected: {expected_outcome}, Got: {actual_outcome} "
               f"({turn_count} turns, {termination_reason})\n")
 
         return ConversationResult(
             scenario_id=scenario_id,
             scenario_name=scenario_name,
             description=description,
+            model=model.name,
             expected_outcome=expected_outcome,
             actual_outcome=actual_outcome,
             passed=passed,

@@ -3,14 +3,14 @@ Configuration loader for smart conversation prompt experiments.
 """
 import yaml
 from dataclasses import dataclass, field
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from pathlib import Path
 from datetime import datetime
 
 
 @dataclass
 class ModelConfig:
-    """Configuration for the LLM model."""
+    """Configuration for a single LLM model."""
     name: str
     temperature: float = 0.7
 
@@ -19,8 +19,8 @@ class ModelConfig:
 class PromptConfig:
     """Configuration for the prompt template and its variables."""
     template: str
-    language: str = "Hebrew"
-    assistant_gender: str = "female"
+    language: Optional[str] = None
+    assistant_gender: Optional[str] = None
     additional_information: Optional[Dict[str, Any]] = None
 
 
@@ -36,7 +36,7 @@ class ExperimentConfig:
     """Main experiment configuration."""
     name: str
     date: str
-    model: ModelConfig
+    models: List[ModelConfig]
     prompt: PromptConfig
     conversation: ConversationConfig
     inputs_file: str
@@ -49,17 +49,26 @@ class ExperimentConfig:
 
         exp_info = data['experiment']
 
-        model_data = data['model']
-        model = ModelConfig(
-            name=model_data['name'],
-            temperature=model_data.get('temperature', 0.7)
-        )
+        # Support both 'models' (list) and 'model' (single) in config
+        models = []
+        if 'models' in data:
+            for m in data['models']:
+                models.append(ModelConfig(
+                    name=m['name'],
+                    temperature=m.get('temperature', 0.7)
+                ))
+        elif 'model' in data:
+            m = data['model']
+            models.append(ModelConfig(
+                name=m['name'],
+                temperature=m.get('temperature', 0.7)
+            ))
 
         prompt_data = data['prompt']
         prompt = PromptConfig(
             template=prompt_data['template'],
-            language=prompt_data.get('language', 'Hebrew'),
-            assistant_gender=prompt_data.get('assistant_gender', 'female'),
+            language=prompt_data.get('language', None),
+            assistant_gender=prompt_data.get('assistant_gender', None),
             additional_information=prompt_data.get('additional_information', None)
         )
 
@@ -74,7 +83,7 @@ class ExperimentConfig:
         return cls(
             name=exp_info['name'],
             date=date,
-            model=model,
+            models=models,
             prompt=prompt,
             conversation=conversation,
             inputs_file=data['inputs_file']

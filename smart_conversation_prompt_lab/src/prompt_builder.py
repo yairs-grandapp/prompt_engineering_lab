@@ -45,26 +45,29 @@ class PromptBuilder:
         self,
         template_path: str,
         conversation_history: List[str],
-        language: str,
-        assistant_gender: str,
+        language: Optional[str] = None,
+        assistant_gender: Optional[str] = None,
         additional_information: Optional[Dict[str, Any]] = None
     ) -> str:
         """
         Load template and render with conversation history and variables.
 
         The template contains the full prompt structure (task definition, JSON format,
-        outcomes, guidelines, context guidelines). Only conversation_history and
-        configurable variables are injected.
+        outcomes, guidelines, context guidelines). Only the placeholders present
+        in the template are injected.
         """
         template = self.load_template(template_path)
         history_str = "\n".join(conversation_history)
-        additional_info_guidelines = self.build_additional_info_guidelines(
-            additional_information
-        )
 
-        return template.format(
-            language=language,
-            assistant_gender=assistant_gender,
-            additional_information_guidelines=additional_info_guidelines,
-            conversation_history=history_str
-        )
+        format_vars = {"conversation_history": history_str}
+
+        if language is not None:
+            format_vars["language"] = language
+        if assistant_gender is not None:
+            format_vars["assistant_gender"] = assistant_gender
+        if additional_information is not None or "{additional_information_guidelines}" in template:
+            format_vars["additional_information_guidelines"] = (
+                self.build_additional_info_guidelines(additional_information)
+            )
+
+        return template.format(**format_vars)
