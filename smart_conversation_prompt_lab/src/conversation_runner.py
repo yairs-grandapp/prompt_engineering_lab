@@ -1,0 +1,289 @@
+"""
+Multi-turn conversation runner.
+
+Simulates the full conversation loop that the Java SmartConversation system
+performs in production, using pre-scripted user inputs from test scenarios.
+"""
+import json
+import re
+from dataclasses import dataclass, field
+from typing import List, Dict, Any, Optional
+import openai
+
+from .prompt_builder import PromptBuilder
+from .config import ExperimentConfig
+
+
+OUTCOME_IN_PROGRESS = "conversation_in_progress"
+
+# Pricing per 1M tokens (as of 2025)
+MODEL_PRICING = {
+    "gpt-4o-mini": {"input": 0.150, "output": 0.600},
+    "gpt-4o": {"input": 2.50, "output": 10.00},
+    "gpt-4.1-mini": {"input": 0.40, "output": 1.60},
+    "gpt-4.1": {"input": 2.00, "output": 8.00},
+}
+
+
+@dataclass
+class ConversationResult:
+    """Result of running a single multi-turn conversation scenario."""
+    scenario_id: str
+    scenario_name: str
+    description: str
+    expected_outcome: str
+    actual_outcome: str
+    passed: bool
+    turn_count: int
+    transcript: List[Dict[str, Any]]
+    total_input_tokens: int = 0
+    total_output_tokens: int = 0
+    cost: float = 0.0
+    raw_responses: List[Dict[str, Any]] = field(default_factory=list)
+    termination_reason: str = ""
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "scenario_id": self.scenario_id,
+            "scenario_name": self.scenario_name,
+            "description": self.description,
+            "expected_outcome": self.expected_outcome,
+            "actual_outcome": self.actual_outcome,
+            "passed": self.passed,
+            "turn_count": self.turn_count,
+            "transcript": self.transcript,
+            "total_input_tokens": self.total_input_tokens,
+            "total_output_tokens": self.total_output_tokens,
+            "cost": self.cost,
+            "raw_responses": self.raw_responses,
+            "termination_reason": self.termination_reason
+        }
+
+
+class ConversationRunner:
+    """Runs a single multi-turn conversation for a test scenario."""
+
+    ASSISTANT_PREFIX = "@ASSISTANT@: "
+    USER_PREFIX = "@USER@: "
+    SYSTEM_PREFIX = "@SYSTEM@: "
+
+    def __init__(
+        self,
+        client: openai.OpenAI,
+        prompt_builder: PromptBuilder,
+        config: ExperimentConfig
+    ):
+        self.client = client
+        self.prompt_builder = prompt_builder
+        self.config = config
+
+    def _call_llm(self, prompt: str) -> Dict[str, Any]:
+        """
+        Call the LLM with the assembled prompt.
+
+        Returns dict with: response (parsed JSON), input_tokens, output_tokens, cost
+        """
+        response = self.client.chat.completions.create(
+            model=self.config.model.name,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            response_format={"type": "json_object"},
+            temperature=self.config.model.temperature
+        )
+
+        input_tokens = response.usage.prompt_tokens
+        output_tokens = response.usage.completion_tokens
+        raw_content = response.choices[0].message.content
+
+        # Parse JSON response, handle potential markdown fences
+        parsed = self._parse_json_response(raw_content)
+
+        # Calculate cost
+        pricing = MODEL_PRICING.get(self.config.model.name, {"input": 0, "output": 0})
+        cost = (input_tokens / 1_000_000) * pricing["input"] + \
+               (output_tokens / 1_000_000) * pricing["output"]
+
+        return {
+            "response": parsed,
+            "raw_content": raw_content,
+            "prompt": prompt,
+            "input_tokens": input_tokens,
+            "output_tokens": output_tokens,
+            "cost": cost
+        }
+
+    def _parse_json_response(self, raw: str) -> Dict[str, Any]:
+        """Parse JSON from LLM response, stripping markdown fences if present."""
+        cleaned = raw.strip()
+        # Strip markdown code fences
+        if cleaned.startswith("```"):
+            cleaned = re.sub(r'^```(?:json)?\s*\n?', '', cleaned)
+            cleaned = re.sub(r'\n?```\s*$', '', cleaned)
+        return json.loads(cleaned)
+
+    def _matches_outcome(self, actual: str, expected: str) -> bool:
+        """Case-insensitive outcome matching, mirroring Java findMatchingOutcome."""
+        return actual.strip().upper() == expected.strip().upper()
+
+    def _is_terminal_outcome(self, outcome: str) -> bool:
+        """Check if an outcome ends the conversation."""
+        return not self._matches_outcome(outcome, OUTCOME_IN_PROGRESS)
+
+    def run_scenario(self, scenario: Dict[str, Any]) -> ConversationResult:
+        """
+        Run a single multi-turn conversation scenario.
+
+        The loop:
+        1. Build full prompt with current conversation_history
+        2. Call LLM (json_object mode)
+        3. Parse {"text": ..., "conversationOutcome": ...}
+        4. Add "@ASSISTANT@: {text}" to history
+        5. If outcome != conversation_in_progress -> done
+        6. Get next user turn from scenario
+        7. If system_events exist on this turn, add "@SYSTEM@: {event}" to history
+        8. Add "@USER@: {text}" to history
+        9. Repeat from step 1
+        """
+        scenario_id = scenario["id"]
+        scenario_name = scenario["name"]
+        description = scenario.get("description", "")
+        expected_outcome = scenario["expected_outcome"]
+        user_turns = scenario["user_turns"]
+
+        conversation_history: List[str] = []
+        transcript: List[Dict[str, Any]] = []
+        raw_responses: List[Dict[str, Any]] = []
+        total_input_tokens = 0
+        total_output_tokens = 0
+        total_cost = 0.0
+
+        user_turn_index = 0
+        silence_count = 0
+        actual_outcome = "TIMEOUT"
+        termination_reason = "max_turns"
+
+        max_turns = self.config.conversation.max_turns
+        extra_silence = self.config.conversation.extra_silence_turns
+
+        print(f"  Running scenario: {scenario_name}")
+
+        for turn_num in range(1, max_turns + 1):
+            # Build prompt with current history
+            prompt = self.prompt_builder.build_prompt(
+                template_path=self.config.prompt.template,
+                conversation_history=conversation_history,
+                language=self.config.prompt.language,
+                assistant_gender=self.config.prompt.assistant_gender,
+                additional_information=self.config.prompt.additional_information
+            )
+
+            # Call LLM
+            try:
+                llm_result = self._call_llm(prompt)
+            except Exception as e:
+                print(f"    Turn {turn_num}: LLM error - {e}")
+                transcript.append({
+                    "role": "error",
+                    "text": str(e),
+                    "turn": turn_num
+                })
+                actual_outcome = "ERROR"
+                termination_reason = f"llm_error: {e}"
+                break
+
+            parsed = llm_result["response"]
+            total_input_tokens += llm_result["input_tokens"]
+            total_output_tokens += llm_result["output_tokens"]
+            total_cost += llm_result["cost"]
+
+            assistant_text = parsed.get("text", "")
+            outcome = parsed.get("conversationOutcome", OUTCOME_IN_PROGRESS)
+
+            raw_responses.append({
+                "turn": turn_num,
+                "prompt": llm_result["prompt"],
+                "input_tokens": llm_result["input_tokens"],
+                "output_tokens": llm_result["output_tokens"],
+                "raw": llm_result["raw_content"],
+                "parsed": parsed
+            })
+
+            # Add assistant response to history and transcript
+            conversation_history.append(f"{self.ASSISTANT_PREFIX}{assistant_text}")
+            transcript.append({
+                "role": "assistant",
+                "text": assistant_text,
+                "turn": turn_num,
+                "outcome": outcome
+            })
+
+            print(f"    Turn {turn_num}: Assistant -> {assistant_text[:80]}... [{outcome}]")
+
+            # Check if conversation ended
+            if self._is_terminal_outcome(outcome):
+                actual_outcome = outcome
+                termination_reason = "outcome_reached"
+                break
+
+            # Get next user input
+            if user_turn_index < len(user_turns):
+                turn_data = user_turns[user_turn_index]
+
+                # Inject system events if present
+                for event in turn_data.get("system_events", []):
+                    sys_msg = event["message"]
+                    conversation_history.append(f"{self.SYSTEM_PREFIX}{sys_msg}")
+                    transcript.append({
+                        "role": "system",
+                        "text": sys_msg,
+                        "turn": turn_num
+                    })
+                    print(f"    Turn {turn_num}: [SYSTEM] {sys_msg[:60]}...")
+
+                user_text = turn_data["text"]
+                user_turn_index += 1
+            else:
+                # User turns exhausted — inject silence
+                user_text = ""
+                silence_count += 1
+                if silence_count > extra_silence:
+                    actual_outcome = "TIMEOUT"
+                    termination_reason = "user_turns_exhausted"
+                    break
+
+            conversation_history.append(f"{self.USER_PREFIX}{user_text}")
+            transcript.append({
+                "role": "user",
+                "text": user_text if user_text else "(silence)",
+                "turn": turn_num
+            })
+
+            if user_text:
+                print(f"    Turn {turn_num}: User -> {user_text[:80]}")
+            else:
+                print(f"    Turn {turn_num}: User -> (silence)")
+
+        # Determine pass/fail
+        passed = self._matches_outcome(actual_outcome, expected_outcome)
+        turn_count = len([t for t in transcript if t["role"] == "assistant"])
+
+        result_icon = "PASS" if passed else "FAIL"
+        print(f"  [{result_icon}] Expected: {expected_outcome}, Got: {actual_outcome} "
+              f"({turn_count} turns, {termination_reason})\n")
+
+        return ConversationResult(
+            scenario_id=scenario_id,
+            scenario_name=scenario_name,
+            description=description,
+            expected_outcome=expected_outcome,
+            actual_outcome=actual_outcome,
+            passed=passed,
+            turn_count=turn_count,
+            transcript=transcript,
+            total_input_tokens=total_input_tokens,
+            total_output_tokens=total_output_tokens,
+            cost=total_cost,
+            raw_responses=raw_responses,
+            termination_reason=termination_reason
+        )
