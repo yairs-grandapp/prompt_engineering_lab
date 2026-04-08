@@ -1,0 +1,17 @@
+experiment:
+  name: "Mandatory Escalation Rules - Silence and turn-limit overrides"
+
+models:
+  - name: "gpt-4o-mini"
+    temperature: 0.7
+  - name: "gpt-4o"
+    temperature: 0.7
+
+prompt:
+  template: "prompt_v4.txt"
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+
+inputs_file: "inputs_v0.json"
