@@ -132,6 +132,84 @@ class ConversationRunner:
         """Check if an outcome ends the conversation."""
         return not self._matches_outcome(outcome, OUTCOME_IN_PROGRESS)
 
+    def _is_clear_confirmation(self, text: str) -> bool:
+        """Check if user text is a clear confirmation that they are fine."""
+        text_lower = text.strip().lower()
+        confirmation_phrases = [
+            "i'm fine", "i am fine", "i'm okay", "i am okay",
+            "i'm alright", "i am alright", "i'm ok", "i am ok",
+            "i did not fall", "i didn't fall", "no i didn't fall",
+            "everything is okay", "everything is fine", "everything is alright",
+            "i'm perfectly fine", "i am perfectly fine",
+            "yes i'm sure", "yes i am sure", "yes i'm fine",
+            "don't worry", "nothing happened", "it was nothing",
+        ]
+        return any(phrase in text_lower for phrase in confirmation_phrases)
+
+    def _is_tier1_trigger(self, text: str) -> bool:
+        """Check if user text contains a TIER 1 immediate escalation trigger."""
+        text_lower = text.strip().lower()
+        tier1_phrases = [
+            # Confirms fall
+            "i fell", "i've fallen", "i have fallen", "yes i fell",
+            "fell down", "i slipped", "i tripped",
+            # Reports injury
+            "broke my", "broken", "bleeding", "blood",
+            "can't move", "cannot move", "can't get up", "cannot get up",
+            "stuck on the floor", "on the floor",
+            "hurts", "hurt", "pain", "in pain",
+            "can't feel", "cannot feel",
+            # Feeling unwell
+            "don't feel good", "don't feel well", "do not feel good",
+            "feel dizzy", "feel sick", "feel faint",
+            "my head", "my leg", "my arm", "my hip", "my back",
+            # Distress
+            "help me", "send help", "need help", "please help",
+            "i'm scared", "i am scared",
+            # Implies was on the ground (fell and recovered)
+            "got up by myself", "got up on my own", "got back up",
+            "picked myself up", "managed to get up",
+        ]
+        return any(phrase in text_lower for phrase in tier1_phrases)
+
+    def _build_state_note(self, consecutive_silence_count: int, unclear_response_count: int, user_text: str) -> Optional[str]:
+        """Build a state note to inject into conversation history for escalation tracking."""
+        # TIER 1 takes highest priority — immediate escalation triggers
+        if user_text and user_text.strip() and self._is_tier1_trigger(user_text):
+            return (
+                "[ESCALATION STATE: The senior's response contains a TIER 1 trigger "
+                "(confirmed fall, injury, distress, or feeling unwell). "
+                "Per TIER 1 rules, you MUST return DISTRESS_FALL_CONFIRMED immediately on your next response. "
+                "Do NOT ask any follow-up questions. Escalate NOW.]"
+            )
+        # TIER 3 — silence tracking
+        if consecutive_silence_count >= 2:
+            return (
+                "[ESCALATION STATE: This is the senior's 2nd consecutive silence. "
+                "Per TIER 3 rules, you MUST return DISTRESS_FALL_CONFIRMED immediately on your next response. "
+                "Do NOT ask another question.]"
+            )
+        if consecutive_silence_count == 1:
+            return (
+                "[ESCALATION STATE: The senior did not respond (1st silence). "
+                "Per TIER 3 rules, ask once more with concern. "
+                "If the next response is also silence, you MUST escalate immediately.]"
+            )
+        # TIER 2 — confusion/unclear tracking
+        if unclear_response_count >= 2:
+            return (
+                "[ESCALATION STATE: The senior has now given 2 unclear/confused/evasive responses. "
+                "Per TIER 2 rules, you MUST return DISTRESS_FALL_CONFIRMED immediately on your next response. "
+                "Do NOT ask another clarifying question.]"
+            )
+        if unclear_response_count == 1 and user_text and not user_text.strip() == "":
+            return (
+                "[ESCALATION STATE: The senior's response is unclear/confused/evasive (1st unclear response). "
+                "Per TIER 2 rules, you may ask ONE clarifying question. "
+                "If the next response is still not a clear 'I'm fine', you MUST escalate immediately.]"
+            )
+        return None
+
     def run_scenario(self, scenario: Dict[str, Any], model: ModelConfig) -> ConversationResult:
         """
         Run a single multi-turn conversation scenario with a specific model.
@@ -151,6 +229,8 @@ class ConversationRunner:
 
         user_turn_index = 0
         silence_count = 0
+        consecutive_silence_count = 0
+        unclear_response_count = 0
         actual_outcome = "TIMEOUT"
         termination_reason = "max_turns"
 
@@ -243,12 +323,34 @@ class ConversationRunner:
                     termination_reason = "user_turns_exhausted"
                     break
 
+            # Track conversation state for escalation metadata
+            if not user_text or user_text.strip() == "":
+                consecutive_silence_count += 1
+            else:
+                consecutive_silence_count = 0
+
+            if user_text and not self._is_clear_confirmation(user_text):
+                unclear_response_count += 1
+            elif user_text and self._is_clear_confirmation(user_text):
+                unclear_response_count = 0
+
             conversation_history.append(f"{self.USER_PREFIX}{user_text}")
             transcript.append({
                 "role": "user",
                 "text": user_text if user_text else "(silence)",
                 "turn": turn_num
             })
+
+            # Inject escalation state notes into conversation history
+            state_note = self._build_state_note(consecutive_silence_count, unclear_response_count, user_text)
+            if state_note:
+                conversation_history.append(f"{self.SYSTEM_PREFIX}{state_note}")
+                transcript.append({
+                    "role": "system",
+                    "text": state_note,
+                    "turn": turn_num
+                })
+                print(f"      Turn {turn_num}: [STATE] {state_note}")
 
             if user_text:
                 print(f"      Turn {turn_num}: User -> {user_text[:80]}")

@@ -55,9 +55,9 @@
     },
     {
       "id": "scenario_06",
-      "name": "Movement detected - senior is fine",
-      "description": "Sensors detect movement mid-conversation, senior confirms they are okay and mobile",
-      "expected_outcome": "NO_FALL_CONFIRMED",
+      "name": "Movement detected - senior initially unsure then says fine",
+      "description": "Senior was initially unsure and later says they got up by themselves, implying they were on the ground. Should escalate as precaution even if senior says they are fine.",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
       "user_turns": [
         { "text": "I'm not sure what happened" },
         {
