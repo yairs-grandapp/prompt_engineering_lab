@@ -68,6 +68,7 @@ class ConversationRunner:
     ASSISTANT_PREFIX = "@ASSISTANT@: "
     USER_PREFIX = "@USER@: "
     SYSTEM_PREFIX = "@SYSTEM@: "
+    NO_RESPONSE_TOKEN = "<<NO RESPONSE>>"
 
     def __init__(
         self,
@@ -246,7 +247,9 @@ class ConversationRunner:
                 conversation_history=conversation_history,
                 language=self.config.prompt.language,
                 assistant_gender=self.config.prompt.assistant_gender,
-                additional_information=self.config.prompt.additional_information
+                additional_information=self.config.prompt.additional_information,
+                senior_name=self.config.prompt.senior_name,
+                assistant_name=self.config.prompt.assistant_name
             )
 
             # Call LLM
@@ -324,33 +327,37 @@ class ConversationRunner:
                     break
 
             # Track conversation state for escalation metadata
-            if not user_text or user_text.strip() == "":
+            is_silence = not user_text or user_text.strip() == ""
+            if is_silence:
                 consecutive_silence_count += 1
             else:
                 consecutive_silence_count = 0
 
-            if user_text and not self._is_clear_confirmation(user_text):
+            if not is_silence and not self._is_clear_confirmation(user_text):
                 unclear_response_count += 1
-            elif user_text and self._is_clear_confirmation(user_text):
+            elif not is_silence and self._is_clear_confirmation(user_text):
                 unclear_response_count = 0
 
-            conversation_history.append(f"{self.USER_PREFIX}{user_text}")
+            # Use <<NO RESPONSE>> for silence, matching Java SmartConversation behavior
+            history_text = self.NO_RESPONSE_TOKEN if is_silence else user_text
+            conversation_history.append(f"{self.USER_PREFIX}{history_text}")
             transcript.append({
                 "role": "user",
                 "text": user_text if user_text else "(silence)",
                 "turn": turn_num
             })
 
-            # Inject escalation state notes into conversation history
-            state_note = self._build_state_note(consecutive_silence_count, unclear_response_count, user_text)
-            if state_note:
-                conversation_history.append(f"{self.SYSTEM_PREFIX}{state_note}")
-                transcript.append({
-                    "role": "system",
-                    "text": state_note,
-                    "turn": turn_num
-                })
-                print(f"      Turn {turn_num}: [STATE] {state_note}")
+            # Inject escalation state notes into conversation history (if enabled)
+            if self.config.conversation.enable_state_injection:
+                state_note = self._build_state_note(consecutive_silence_count, unclear_response_count, user_text)
+                if state_note:
+                    conversation_history.append(f"{self.SYSTEM_PREFIX}{state_note}")
+                    transcript.append({
+                        "role": "system",
+                        "text": state_note,
+                        "turn": turn_num
+                    })
+                    print(f"      Turn {turn_num}: [STATE] {state_note}")
 
             if user_text:
                 print(f"      Turn {turn_num}: User -> {user_text[:80]}")

@@ -47,7 +47,9 @@ class PromptBuilder:
         conversation_history: List[str],
         language: Optional[str] = None,
         assistant_gender: Optional[str] = None,
-        additional_information: Optional[Dict[str, Any]] = None
+        additional_information: Optional[Dict[str, Any]] = None,
+        senior_name: Optional[str] = None,
+        assistant_name: Optional[str] = None
     ) -> str:
         """
         Load template and render with conversation history and variables.
@@ -65,6 +67,10 @@ class PromptBuilder:
             format_vars["language"] = language
         if assistant_gender is not None:
             format_vars["assistant_gender"] = assistant_gender
+        if senior_name is not None:
+            format_vars["senior_name"] = senior_name
+        if assistant_name is not None:
+            format_vars["assistant_name"] = assistant_name
         if additional_information is not None or "{additional_information_guidelines}" in template:
             format_vars["additional_information_guidelines"] = (
                 self.build_additional_info_guidelines(additional_information)

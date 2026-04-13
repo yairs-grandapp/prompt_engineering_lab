@@ -27,6 +27,16 @@ class ReportGenerator:
         lines.append(f"**Prompt Template:** {config['prompt_template']}\n")
         lines.append("---\n")
 
+        # Full prompt template
+        prompt_snapshot_path = self.experiment_dir / "prompt_snapshot.txt"
+        if prompt_snapshot_path.exists():
+            with open(prompt_snapshot_path, 'r', encoding='utf-8') as f:
+                prompt_text = f.read()
+            lines.append("## Prompt Template\n")
+            lines.append("The full prompt sent to the LLM (with conversation history placeholder):\n")
+            lines.append(f"```\n{prompt_text}\n```\n")
+            lines.append("---\n")
+
         # Summary per model
         lines.append("## Summary\n")
         for model_name, summary in model_summaries.items():

@@ -22,6 +22,8 @@ class PromptConfig:
     language: Optional[str] = None
     assistant_gender: Optional[str] = None
     additional_information: Optional[Dict[str, Any]] = None
+    senior_name: Optional[str] = None
+    assistant_name: Optional[str] = None
 
 
 @dataclass
@@ -29,6 +31,7 @@ class ConversationConfig:
     """Configuration for conversation behavior."""
     max_turns: int = 10
     extra_silence_turns: int = 2
+    enable_state_injection: bool = True
 
 
 @dataclass
@@ -69,13 +72,16 @@ class ExperimentConfig:
             template=prompt_data['template'],
             language=prompt_data.get('language', None),
             assistant_gender=prompt_data.get('assistant_gender', None),
-            additional_information=prompt_data.get('additional_information', None)
+            additional_information=prompt_data.get('additional_information', None),
+            senior_name=prompt_data.get('senior_name', None),
+            assistant_name=prompt_data.get('assistant_name', None)
         )
 
         conv_data = data.get('conversation', {})
         conversation = ConversationConfig(
             max_turns=conv_data.get('max_turns', 10),
-            extra_silence_turns=conv_data.get('extra_silence_turns', 2)
+            extra_silence_turns=conv_data.get('extra_silence_turns', 2),
+            enable_state_injection=conv_data.get('enable_state_injection', True)
         )
 
         date = exp_info.get('date', datetime.now().strftime('%Y-%m-%d'))

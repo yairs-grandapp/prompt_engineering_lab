@@ -1,0 +1,19 @@
+experiment:
+  name: "100 Scenarios Stress Test - Production readiness validation with varied inputs"
+
+models:
+  - name: "gpt-4o-mini"
+    temperature: 0.3
+  - name: "gpt-4o"
+    temperature: 0.7
+
+prompt:
+  template: "prompt_v8.txt"
+  senior_name: "Jake"
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v1.json"

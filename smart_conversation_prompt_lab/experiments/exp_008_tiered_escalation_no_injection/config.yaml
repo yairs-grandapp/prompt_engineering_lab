@@ -1,0 +1,20 @@
+experiment:
+  name: "Tiered Escalation (No State Injection) - LLM handles escalation rules independently"
+
+models:
+  - name: "gpt-4o-mini"
+    temperature: 0.3
+  - name: "gpt-4o"
+    temperature: 0.7
+
+prompt:
+  template: "prompt_v7.txt"
+  senior_name: "Jake"
+  assistant_name: "Sara"
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v0.json"

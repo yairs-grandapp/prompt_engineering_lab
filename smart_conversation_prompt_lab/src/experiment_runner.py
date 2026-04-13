@@ -67,6 +67,21 @@ class ExperimentRunner:
         print(f"# Scenarios: {len(self.scenarios)}")
         print(f"{'#' * 70}\n")
 
+        # Save the full rendered prompt template to experiment directory for review
+        rendered_prompt = self.prompt_builder.build_prompt(
+            template_path=self.config.prompt.template,
+            conversation_history=["(conversation history will appear here)"],
+            language=self.config.prompt.language,
+            assistant_gender=self.config.prompt.assistant_gender,
+            additional_information=self.config.prompt.additional_information,
+            senior_name=self.config.prompt.senior_name,
+            assistant_name=self.config.prompt.assistant_name
+        )
+        prompt_snapshot_path = self.experiment_dir / "prompt_snapshot.txt"
+        with open(prompt_snapshot_path, 'w', encoding='utf-8') as f:
+            f.write(rendered_prompt)
+        print(f"Prompt snapshot saved to: {prompt_snapshot_path}\n")
+
         # results_by_scenario[scenario_id][model_name] = ConversationResult
         all_results: List[Dict[str, Any]] = []
 
