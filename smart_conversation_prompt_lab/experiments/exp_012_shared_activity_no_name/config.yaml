@@ -1,0 +1,19 @@
+experiment:
+  name: "Shared Activity No Name - prompt_v9 suppresses the placeholder senior name"
+  date: "2026-07-29"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.7
+
+prompt:
+  template: "prompt_v9.txt"
+  senior_name: "Shared Activity Resident"
+  use_senior_name: false
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: true
+
+inputs_file: "inputs_v0.json"

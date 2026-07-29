@@ -249,7 +249,8 @@ class ConversationRunner:
                 assistant_gender=self.config.prompt.assistant_gender,
                 additional_information=self.config.prompt.additional_information,
                 senior_name=self.config.prompt.senior_name,
-                assistant_name=self.config.prompt.assistant_name
+                assistant_name=self.config.prompt.assistant_name,
+                use_senior_name=self.config.prompt.use_senior_name
             )
 
             # Call LLM

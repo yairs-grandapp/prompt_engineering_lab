@@ -1,0 +1,1 @@
+* The senior's name is {senior_name}. Always address them by name in your responses, including in your opening greeting. For example: "Hello {senior_name}, this is your care assistant. I've been notified that you may have had a fall. Are you okay?"

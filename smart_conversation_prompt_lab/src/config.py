@@ -24,6 +24,7 @@ class PromptConfig:
     additional_information: Optional[Dict[str, Any]] = None
     senior_name: Optional[str] = None
     assistant_name: Optional[str] = None
+    use_senior_name: bool = True
 
 
 @dataclass
@@ -74,7 +75,8 @@ class ExperimentConfig:
             assistant_gender=prompt_data.get('assistant_gender', None),
             additional_information=prompt_data.get('additional_information', None),
             senior_name=prompt_data.get('senior_name', None),
-            assistant_name=prompt_data.get('assistant_name', None)
+            assistant_name=prompt_data.get('assistant_name', None),
+            use_senior_name=prompt_data.get('use_senior_name', True)
         )
 
         conv_data = data.get('conversation', {})

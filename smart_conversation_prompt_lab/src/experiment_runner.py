@@ -75,7 +75,8 @@ class ExperimentRunner:
             assistant_gender=self.config.prompt.assistant_gender,
             additional_information=self.config.prompt.additional_information,
             senior_name=self.config.prompt.senior_name,
-            assistant_name=self.config.prompt.assistant_name
+            assistant_name=self.config.prompt.assistant_name,
+            use_senior_name=self.config.prompt.use_senior_name
         )
         prompt_snapshot_path = self.experiment_dir / "prompt_snapshot.txt"
         with open(prompt_snapshot_path, 'w', encoding='utf-8') as f:

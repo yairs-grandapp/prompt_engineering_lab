@@ -1,0 +1,19 @@
+experiment:
+  name: "v9 Named Regression - prompt_v9 with a real senior name still greets by name"
+  date: "2026-07-29"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.7
+
+prompt:
+  template: "prompt_v9.txt"
+  senior_name: "Jake"
+  use_senior_name: true
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: true
+
+inputs_file: "inputs_v0.json"

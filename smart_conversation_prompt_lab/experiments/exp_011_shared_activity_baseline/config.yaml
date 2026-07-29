@@ -1,0 +1,18 @@
+experiment:
+  name: "Shared Activity Baseline - prompt_v8 unchanged with a placeholder senior name"
+  date: "2026-07-29"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.7
+
+prompt:
+  template: "prompt_v8.txt"
+  senior_name: "Shared Activity Resident"
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: true
+
+inputs_file: "inputs_v0.json"
