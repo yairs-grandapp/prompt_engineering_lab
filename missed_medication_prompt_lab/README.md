@@ -50,7 +50,7 @@ missed_medication_prompt_lab/
 │   ├── prompts/
 │   │   └── prompt_v0.txt               # Baseline prompt (exact production replica)
 │   └── inputs/
-│       └── inputs_v0.json              # Test scenarios (15 multi-turn conversations)
+│       └── inputs_v0.json              # Test scenarios (4 multi-turn conversations)
 ├── experiments/
 │   └── exp_001_baseline/
 │       ├── config.yaml                 # Experiment configuration
@@ -102,17 +102,6 @@ Each scenario defines a conversation with scripted senior responses and an expec
 | 2 | Senior forgot but will take it now | DID_NOT_TAKE_BUT_WILL_TAKE |
 | 3 | Senior refuses to take medication | DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE |
 | 4 | Senior doesn't respond (silence) | COULD_NOT_VALIDATE |
-| 5 | Senior cannot remember whether they took it | COULD_NOT_VALIDATE |
-| 6 | Senior confirms clearly they took it earlier | DID_TAKE |
-| 7 | Senior initially unsure then confirms they took it | DID_TAKE |
-| 8 | Senior will take it right away | DID_NOT_TAKE_BUT_WILL_TAKE |
-| 9 | Senior refuses because of side effects | DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE |
-| 10 | Senior is confused and disoriented | COULD_NOT_VALIDATE |
-| 11 | Senior is upset and defensive | COULD_NOT_VALIDATE |
-| 12 | ASR misrecognition ("dedication" → "medication") | DID_TAKE |
-| 13 | Senior talks about unrelated topics | COULD_NOT_VALIDATE |
-| 14 | Senior initially says no then agrees to take it | DID_NOT_TAKE_BUT_WILL_TAKE |
-| 15 | Senior firmly refuses repeatedly | DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE |
 
 Scenarios can optionally include system events (e.g., sensor updates) injected between turns via a `system_events` array on a user turn.
 
