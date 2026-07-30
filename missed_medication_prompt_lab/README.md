@@ -1,10 +1,10 @@
-# Smart Conversation Prompt Lab
+# Missed Medication Prompt Lab
 
-A multi-turn conversation testing tool for the SeniorMatics fall detection smart assistant prompt. Allows systematic iteration and validation of prompt changes before deploying to production.
+A multi-turn conversation testing tool for the SeniorMatics "missed medication" smart assistant prompt (Vega). Allows systematic iteration and validation of prompt changes before deploying to production.
 
 ## How It Works
 
-The tool simulates the full conversation loop that the production system (`ContextBase.buildPrompt()` + `FallDetectionScenarioAgent`) performs:
+The tool simulates the full conversation loop that the production system (`ContextBase.buildPrompt()` + `ContextMedicationMissed`) performs:
 
 1. Builds the prompt with conversation history
 2. Calls the LLM (OpenAI API)
@@ -42,7 +42,7 @@ Results are saved to:
 ## Project Structure
 
 ```
-smart_conversation_prompt_lab/
+missed_medication_prompt_lab/
 ├── test_prompt.py                      # CLI entry point
 ├── requirements.txt                    # Python dependencies
 ├── .env                                # OpenAI API key (not committed)
@@ -50,7 +50,7 @@ smart_conversation_prompt_lab/
 │   ├── prompts/
 │   │   └── prompt_v0.txt               # Baseline prompt (exact production replica)
 │   └── inputs/
-│       └── inputs_v0.json              # Test scenarios (8 multi-turn conversations)
+│       └── inputs_v0.json              # Test scenarios (15 multi-turn conversations)
 ├── experiments/
 │   └── exp_001_baseline/
 │       ├── config.yaml                 # Experiment configuration
@@ -70,7 +70,7 @@ Each experiment lives in `experiments/<name>/config.yaml`:
 
 ```yaml
 experiment:
-  name: "Baseline - Production Fall Detection Prompt v0"
+  name: "Baseline - Production Missed Medication Prompt v0"
   date: "2026-04-07"
 
 model:
@@ -82,7 +82,7 @@ prompt:
   language: "English"          # conversation language
   assistant_gender: "female"
   additional_information:      # optional JSON passed to the prompt
-    gender: "male"
+    scheduledTime: "2026-07-29T08:00"
     reminderCount: 0
 
 conversation:
@@ -98,22 +98,38 @@ Each scenario defines a conversation with scripted senior responses and an expec
 
 | # | Scenario | Expected Outcome |
 |---|----------|-----------------|
-| 1 | Senior confirms fall clearly | DISTRESS_FALL_CONFIRMED |
-| 2 | Senior denies fall (false alarm) | NO_FALL_CONFIRMED |
-| 3 | Senior is unsure/confused | DISTRESS_FALL_CONFIRMED |
-| 4 | Senior doesn't respond (silence) | DISTRESS_FALL_CONFIRMED |
-| 5 | Senior says fine but feels unwell | DISTRESS_FALL_CONFIRMED |
-| 6 | Movement detected + senior is fine | NO_FALL_CONFIRMED |
-| 7 | Senior talks about unrelated topics | DISTRESS_FALL_CONFIRMED |
-| 8 | Senior initially denies then admits fall | DISTRESS_FALL_CONFIRMED |
+| 1 | Senior already took medication | DID_TAKE |
+| 2 | Senior forgot but will take it now | DID_NOT_TAKE_BUT_WILL_TAKE |
+| 3 | Senior refuses to take medication | DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE |
+| 4 | Senior doesn't respond (silence) | COULD_NOT_VALIDATE |
+| 5 | Senior cannot remember whether they took it | COULD_NOT_VALIDATE |
+| 6 | Senior confirms clearly they took it earlier | DID_TAKE |
+| 7 | Senior initially unsure then confirms they took it | DID_TAKE |
+| 8 | Senior will take it right away | DID_NOT_TAKE_BUT_WILL_TAKE |
+| 9 | Senior refuses because of side effects | DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE |
+| 10 | Senior is confused and disoriented | COULD_NOT_VALIDATE |
+| 11 | Senior is upset and defensive | COULD_NOT_VALIDATE |
+| 12 | ASR misrecognition ("dedication" → "medication") | DID_TAKE |
+| 13 | Senior talks about unrelated topics | COULD_NOT_VALIDATE |
+| 14 | Senior initially says no then agrees to take it | DID_NOT_TAKE_BUT_WILL_TAKE |
+| 15 | Senior firmly refuses repeatedly | DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE |
 
-Scenarios can include system events (e.g., movement sensor updates) injected between turns.
+Scenarios can optionally include system events (e.g., sensor updates) injected between turns via a `system_events` array on a user turn.
 
 ## Possible Outcomes
 
-- `DISTRESS_FALL_CONFIRMED` — senior has fallen, raise distress alert
-- `NO_FALL_CONFIRMED` — false alarm, senior is fine
+The four terminal outcomes (any of these ends the conversation):
+
+- `DID_TAKE` — senior says they already took it, but the pillbox sensor never confirmed it
+- `DID_NOT_TAKE_BUT_WILL_TAKE` — senior commits to taking it now
+- `DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE` — senior explicitly refuses
+- `COULD_NOT_VALIDATE` — no answer / confused / can't remember / upset
+
+Plus the non-terminal state:
+
 - `conversation_in_progress` — conversation continues (next turn)
+
+Each terminal outcome has a designated standard message the assistant must deliver **before** returning it (clarification message → `DID_TAKE`, Reminder #2 → `DID_NOT_TAKE_BUT_WILL_TAKE`, Message #2 → `DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE`, soft message → `COULD_NOT_VALIDATE`). See `data/prompts/prompt_v0.txt`.
 
 ## Iterating on Prompts
 
@@ -135,24 +151,26 @@ Scenario format:
 
 ```json
 {
-  "id": "scenario_09",
+  "id": "scenario_16",
   "name": "Description of the scenario",
   "description": "What this scenario tests",
-  "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+  "expected_outcome": "DID_TAKE",
   "user_turns": [
     { "text": "First senior response" },
     {
       "text": "Second response after a system event",
       "system_events": [
         {
-          "type": "movement_detected",
-          "message": "Update: The home sensors have just detected movement..."
+          "type": "sensor_update",
+          "message": "Update: The home sensors have just detected activity..."
         }
       ]
     }
   ]
 }
 ```
+
+`expected_outcome` must be one of the four terminal outcomes listed above.
 
 ## Prompt Template Variables
 
