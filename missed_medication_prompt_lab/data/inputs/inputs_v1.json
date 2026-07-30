@@ -1,0 +1,1009 @@
+{
+  "version": "v1",
+  "description": "Fall detection multi-turn test scenarios - 100 scenario stress test",
+  "scenarios": [
+    {
+      "id": "scenario_001",
+      "name": "Clear yes confirmation",
+      "description": "Senior immediately confirms they fell with a simple yes",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Yes" },
+        { "text": "Yes I fell down" }
+      ]
+    },
+    {
+      "id": "scenario_002",
+      "name": "Tripped over rug in hallway",
+      "description": "Senior describes tripping on a rug and hurting their hip",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I tripped over the rug in the hallway" },
+        { "text": "My hip is really hurting" }
+      ]
+    },
+    {
+      "id": "scenario_003",
+      "name": "Clearly fine and confirms twice",
+      "description": "Senior says they are fine and confirms on second ask",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "No, I'm perfectly fine dear" },
+        { "text": "Yes I'm sure, everything is alright" }
+      ]
+    },
+    {
+      "id": "scenario_004",
+      "name": "Confused then more confused",
+      "description": "Senior gives confused responses both turns indicating disorientation",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "What? Who is this?" },
+        { "text": "I don't... where am I right now?" }
+      ]
+    },
+    {
+      "id": "scenario_005",
+      "name": "Two consecutive silences",
+      "description": "Senior does not respond to either prompt",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "" },
+        { "text": "" }
+      ]
+    },
+    {
+      "id": "scenario_006",
+      "name": "Dropped the remote control",
+      "description": "Senior dropped the TV remote and confirms they are fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Oh I just dropped the remote control, that's all" },
+        { "text": "I'm fine, really! Just butterfingers today" }
+      ]
+    },
+    {
+      "id": "scenario_007",
+      "name": "Slipped in bathroom",
+      "description": "Senior slipped on wet bathroom floor",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I slipped on the wet floor in the bathroom" },
+        { "text": "I think I hurt my wrist when I caught myself" }
+      ]
+    },
+    {
+      "id": "scenario_008",
+      "name": "Hostile dismissal but confirms okay",
+      "description": "Senior is angry about being checked on but ultimately says they are okay",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Oh for heaven's sake, stop bothering me! I'm fine!" },
+        { "text": "Yes yes, I'm perfectly alright. I was just watching my show." }
+      ]
+    },
+    {
+      "id": "scenario_009",
+      "name": "Feeling very dizzy",
+      "description": "Senior reports feeling dizzy and unsteady",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I feel really dizzy right now" },
+        { "text": "The room is spinning, I need to sit down" }
+      ]
+    },
+    {
+      "id": "scenario_010",
+      "name": "Was doing yoga exercises",
+      "description": "Senior was exercising on the floor, sensor triggered false alarm",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Ha! No, I was just doing my morning yoga stretches" },
+        { "text": "I'm absolutely fine, just staying active like the doctor said" }
+      ]
+    },
+    {
+      "id": "scenario_011",
+      "name": "Says fine but mentions pain",
+      "description": "Senior says they are okay but reveals knee pain indicating a fall",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm okay, don't worry about me" },
+        { "text": "Well... my knee does hurt quite a bit actually. I bumped it pretty hard." }
+      ]
+    },
+    {
+      "id": "scenario_012",
+      "name": "Explicit help request",
+      "description": "Senior asks for help immediately",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Help me! Please help!" },
+        { "text": "I can't get up off the floor" }
+      ]
+    },
+    {
+      "id": "scenario_013",
+      "name": "Talks about the weather",
+      "description": "Senior deflects with weather talk, avoids answering about fall",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Oh it's such a lovely day outside isn't it?" },
+        { "text": "Have you seen how nice the garden looks today?" }
+      ]
+    },
+    {
+      "id": "scenario_014",
+      "name": "No then changes to yes",
+      "description": "Senior initially denies falling but then admits it",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "No, no I didn't fall" },
+        { "text": "Well... actually yes. I did have a little tumble earlier." }
+      ]
+    },
+    {
+      "id": "scenario_015",
+      "name": "Cat knocked something over",
+      "description": "The cat caused the noise, senior is fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "That was just Whiskers knocking the vase off the shelf again" },
+        { "text": "I'm fine, the cat is the one causing trouble, not me!" }
+      ]
+    },
+    {
+      "id": "scenario_016",
+      "name": "Broken arm from fall",
+      "description": "Senior fell and suspects a broken arm",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell and I think my arm might be broken" },
+        { "text": "It's swelling up and I can't move it" }
+      ]
+    },
+    {
+      "id": "scenario_017",
+      "name": "Silence then responds fine",
+      "description": "Senior is silent at first but responds clearly fine on second turn",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "" },
+        { "text": "Oh sorry, I had the TV on loud. I'm fine!" }
+      ]
+    },
+    {
+      "id": "scenario_018",
+      "name": "Movement detected and says fine",
+      "description": "Movement sensor detects activity and senior confirms they are fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm doing just fine, don't worry about a thing", "system_events": [{"type": "movement_detected", "message": "Update: The home sensors have just detected movement from the senior (source: living room). This is a positive sign that they may be mobile. Please kindly mention this to the senior and check if they are feeling okay."}] },
+        { "text": "Yes I'm sure, I was just getting up to make some tea" }
+      ]
+    },
+    {
+      "id": "scenario_019",
+      "name": "Incoherent mumbling",
+      "description": "Senior is mumbling and not making sense",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Mmm... uhh... the... the thing..." },
+        { "text": "I... don't... mmm..." }
+      ]
+    },
+    {
+      "id": "scenario_020",
+      "name": "Bumped into coffee table",
+      "description": "Senior bumped into furniture but is okay",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I just bumped into the coffee table, no big deal" },
+        { "text": "I'm fine, just a small bruise. I'm standing and walking around." }
+      ]
+    },
+    {
+      "id": "scenario_021",
+      "name": "Twisted ankle on stairs",
+      "description": "Senior twisted their ankle coming down the stairs",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I twisted my ankle on the stairs" },
+        { "text": "It's really swollen, I'm sitting on the bottom step" }
+      ]
+    },
+    {
+      "id": "scenario_022",
+      "name": "Simple no and confirms",
+      "description": "Senior says no they didn't fall and confirms they are fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "No, I didn't fall" },
+        { "text": "No I'm fine, nothing happened" }
+      ]
+    },
+    {
+      "id": "scenario_023",
+      "name": "Fell in the kitchen",
+      "description": "Senior fell in the kitchen while cooking",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell in the kitchen" },
+        { "text": "I was reaching for something on the top shelf and lost my balance" }
+      ]
+    },
+    {
+      "id": "scenario_024",
+      "name": "Talks about grandchildren",
+      "description": "Senior avoids the question and talks about grandchildren",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "My grandson Tommy is coming to visit this weekend!" },
+        { "text": "He's such a good boy, always brings me flowers" }
+      ]
+    },
+    {
+      "id": "scenario_025",
+      "name": "Nauseous and unwell",
+      "description": "Senior feels nauseous and thinks they might pass out",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I feel really nauseous right now" },
+        { "text": "I think I might be sick, everything feels wrong" }
+      ]
+    },
+    {
+      "id": "scenario_026",
+      "name": "Moved a piece of furniture",
+      "description": "Senior was rearranging furniture, triggered sensor",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I was just moving the chair to vacuum behind it" },
+        { "text": "Everything is fine, I do this every week!" }
+      ]
+    },
+    {
+      "id": "scenario_027",
+      "name": "Got up by myself",
+      "description": "Senior implies they were on the ground but got up",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Don't worry, I managed to get up by myself" },
+        { "text": "It took a little while but I'm back in my chair now" }
+      ]
+    },
+    {
+      "id": "scenario_028",
+      "name": "Leave me alone response",
+      "description": "Senior is dismissive and hostile, refuses to engage",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Leave me alone!" },
+        { "text": "I said go away! Stop calling me!" }
+      ]
+    },
+    {
+      "id": "scenario_029",
+      "name": "Yes I fell clearly stated",
+      "description": "Senior clearly and calmly confirms they fell",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Yes, I fell" },
+        { "text": "I'm on the floor right now" }
+      ]
+    },
+    {
+      "id": "scenario_030",
+      "name": "Dropped the phone",
+      "description": "Senior dropped their phone which triggered the alert",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Oops, I just dropped my phone on the floor" },
+        { "text": "I picked it back up, I'm perfectly fine, just clumsy!" }
+      ]
+    },
+    {
+      "id": "scenario_031",
+      "name": "Can't breathe well",
+      "description": "Senior reports difficulty breathing",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm having trouble breathing" },
+        { "text": "It feels tight in my chest" }
+      ]
+    },
+    {
+      "id": "scenario_032",
+      "name": "Confused about day and time",
+      "description": "Senior is disoriented about what day it is",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "What day is it? Is it Tuesday?" },
+        { "text": "I can't remember... did I eat breakfast today?" }
+      ]
+    },
+    {
+      "id": "scenario_033",
+      "name": "Says maybe to fall question",
+      "description": "Senior gives uncertain response about falling",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Maybe... I'm not sure" },
+        { "text": "I think something happened but I can't quite remember" }
+      ]
+    },
+    {
+      "id": "scenario_034",
+      "name": "Fell and back hurts",
+      "description": "Senior fell and is experiencing back pain",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell down and my back is killing me" },
+        { "text": "I can barely move, the pain is terrible" }
+      ]
+    },
+    {
+      "id": "scenario_035",
+      "name": "Dog knocked them over",
+      "description": "Senior's dog knocked into them but they are fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "My silly dog Buster just ran into my legs but I caught myself on the counter" },
+        { "text": "I'm fine, he just got excited when he heard the mailman" }
+      ]
+    },
+    {
+      "id": "scenario_036",
+      "name": "Crying and distressed",
+      "description": "Senior is crying and unable to speak clearly",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I... *sobbing*... I fell..." },
+        { "text": "*crying* Please send someone..." }
+      ]
+    },
+    {
+      "id": "scenario_037",
+      "name": "Confused at first then clearly fine",
+      "description": "Senior was momentarily confused but then snaps out of it and confirms fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Huh? What? Oh!" },
+        { "text": "Oh sorry, I was half asleep on the couch. I'm fine, I'm fine, just dozed off." },
+        { "text": "Yes absolutely, I'm perfectly fine. No fall, nothing happened." }
+      ]
+    },
+    {
+      "id": "scenario_038",
+      "name": "Feeling faint and lightheaded",
+      "description": "Senior reports feeling faint",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I feel like I might faint" },
+        { "text": "Everything is going dark around the edges" }
+      ]
+    },
+    {
+      "id": "scenario_039",
+      "name": "No I didn't fall double confirm",
+      "description": "Senior denies fall confidently twice",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "No I didn't fall, I'm fine" },
+        { "text": "I'm absolutely sure, I'm sitting in my recliner reading" }
+      ]
+    },
+    {
+      "id": "scenario_040",
+      "name": "Slipped on ice outside",
+      "description": "Senior slipped on ice near the front door",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I slipped on some ice right outside my front door" },
+        { "text": "I'm sitting on the cold ground and my leg hurts badly" }
+      ]
+    },
+    {
+      "id": "scenario_041",
+      "name": "Silence then silence",
+      "description": "Complete silence both turns, different from scenario 5",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "" },
+        { "text": "" }
+      ]
+    },
+    {
+      "id": "scenario_042",
+      "name": "Was picking something up off floor",
+      "description": "Senior bent down to pick something up, false alarm",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I was just bending down to pick up my knitting needles" },
+        { "text": "All good here! I'm back in my chair working on my scarf." }
+      ]
+    },
+    {
+      "id": "scenario_043",
+      "name": "Please come quickly",
+      "description": "Urgent help request from senior",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Please come quickly, I need help" },
+        { "text": "I've been on the floor for a while now" }
+      ]
+    },
+    {
+      "id": "scenario_044",
+      "name": "Asks who you are",
+      "description": "Senior doesn't recognize the system and is confused",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Who are you? Who's talking to me?" },
+        { "text": "I don't understand what's happening" }
+      ]
+    },
+    {
+      "id": "scenario_045",
+      "name": "Casual yes I had a fall",
+      "description": "Senior casually admits to having a fall",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Yeah, I had a bit of a fall earlier" },
+        { "text": "I'm sitting down now but my side hurts" }
+      ]
+    },
+    {
+      "id": "scenario_046",
+      "name": "Movement detected but still confused",
+      "description": "Sensors detect movement but senior remains confused",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I... I don't know what happened...", "system_events": [{"type": "movement_detected", "message": "Update: The home sensors have just detected movement from the senior (source: living room). This is a positive sign that they may be mobile. Please kindly mention this to the senior and check if they are feeling okay."}] },
+        { "text": "Where is my daughter? I want my daughter" }
+      ]
+    },
+    {
+      "id": "scenario_047",
+      "name": "Exercising on the floor",
+      "description": "Senior was doing floor exercises",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm doing my physical therapy exercises on the floor" },
+        { "text": "The therapist told me to do these stretches every day. I'm fine!" }
+      ]
+    },
+    {
+      "id": "scenario_048",
+      "name": "Head injury from fall",
+      "description": "Senior fell and hit their head",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I bumped my head pretty hard" },
+        { "text": "I fell and hit it on the corner of the table" }
+      ]
+    },
+    {
+      "id": "scenario_049",
+      "name": "Talking about TV show",
+      "description": "Senior is talking about their TV show instead of answering",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Did you see that show last night? The one with the detective?" },
+        { "text": "It was so good, he caught the bad guy in the end" }
+      ]
+    },
+    {
+      "id": "scenario_050",
+      "name": "I need someone here",
+      "description": "Senior requests someone come to help them",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I need someone to come here" },
+        { "text": "I fell in the bedroom and I'm scared" }
+      ]
+    },
+    {
+      "id": "scenario_051",
+      "name": "Knee hurts after stumble",
+      "description": "Senior stumbled and knee is hurting",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I stumbled a bit and now my knee really hurts" },
+        { "text": "I can't put weight on it" }
+      ]
+    },
+    {
+      "id": "scenario_052",
+      "name": "Fine just startled",
+      "description": "Senior was startled by a loud noise but is fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Oh my! The neighbor's car backfired and I jumped. I'm fine though." },
+        { "text": "Yes, completely fine. Just got a fright is all." }
+      ]
+    },
+    {
+      "id": "scenario_053",
+      "name": "Silence then confused",
+      "description": "First turn silent, second turn confused response",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "" },
+        { "text": "Hmm? What... I don't know..." }
+      ]
+    },
+    {
+      "id": "scenario_054",
+      "name": "Managed to stand up",
+      "description": "Senior says they managed to get back up implying they were down",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I managed to stand back up on my own" },
+        { "text": "But my shoulder is very sore from the fall" }
+      ]
+    },
+    {
+      "id": "scenario_055",
+      "name": "Angry but confirms okay firmly",
+      "description": "Senior is irritated but clearly states they are okay multiple times",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm FINE! Why does this thing keep going off?!" },
+        { "text": "For the last time, I am absolutely fine. I just bumped the sensor by accident!" }
+      ]
+    },
+    {
+      "id": "scenario_056",
+      "name": "Fell off the bed",
+      "description": "Senior rolled off the bed during the night",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I rolled off the bed" },
+        { "text": "I'm on the floor next to my bed, my arm hurts" }
+      ]
+    },
+    {
+      "id": "scenario_057",
+      "name": "Says huh and what repeatedly",
+      "description": "Senior cannot understand or process the questions",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Huh?" },
+        { "text": "What? I don't... what are you saying?" }
+      ]
+    },
+    {
+      "id": "scenario_058",
+      "name": "Grandson was roughhousing",
+      "description": "Noise was from grandchildren playing, senior is fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Oh that was just my grandson playing around, he knocked over a lamp" },
+        { "text": "I'm sitting right here on the sofa watching him. Everything is fine." }
+      ]
+    },
+    {
+      "id": "scenario_059",
+      "name": "Fell and cannot move legs",
+      "description": "Senior fell and reports inability to move legs",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell down and I can't feel my legs properly" },
+        { "text": "Please send help, I'm frightened" }
+      ]
+    },
+    {
+      "id": "scenario_060",
+      "name": "Says fine first then reveals fall",
+      "description": "Senior initially says fine but then admits to a fall in second turn",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm alright, nothing to worry about" },
+        { "text": "Well actually... I did fall a little while ago. My ankle is swelling up." }
+      ]
+    },
+    {
+      "id": "scenario_061",
+      "name": "Yes I fell clearly with detail",
+      "description": "Senior confirms fall with specific details",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Yes, I fell in the living room about ten minutes ago" },
+        { "text": "I tripped on the edge of the carpet" }
+      ]
+    },
+    {
+      "id": "scenario_062",
+      "name": "Gardening on knees",
+      "description": "Senior was gardening and is fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm fine! I was just kneeling down in the garden planting tomatoes" },
+        { "text": "Yes, I'm perfectly alright. Just getting some dirt under my nails!" }
+      ]
+    },
+    {
+      "id": "scenario_063",
+      "name": "Chest pain after falling",
+      "description": "Senior reports chest pain following a fall",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell and now my chest hurts" },
+        { "text": "The pain is getting worse when I try to breathe" }
+      ]
+    },
+    {
+      "id": "scenario_064",
+      "name": "Long pause then fine with movement",
+      "description": "Senior takes a while but then responds fine with movement detected",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "", "system_events": [{"type": "movement_detected", "message": "Update: The home sensors have just detected movement from the senior (source: kitchen). This is a positive sign that they may be mobile. Please kindly mention this to the senior and check if they are feeling okay."}] },
+        { "text": "Sorry, I was in the other room! I'm completely fine, just making lunch." },
+        { "text": "Yes, I'm sure! No fall, I was just busy in the kitchen." }
+      ]
+    },
+    {
+      "id": "scenario_065",
+      "name": "Talks about food and meals",
+      "description": "Senior deflects by talking about what they ate",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I had the most wonderful soup for lunch today" },
+        { "text": "It was tomato basil, my favorite recipe" }
+      ]
+    },
+    {
+      "id": "scenario_066",
+      "name": "Whispering for help",
+      "description": "Senior is whispering weakly asking for help",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "help... please..." },
+        { "text": "i fell... can't get up..." }
+      ]
+    },
+    {
+      "id": "scenario_067",
+      "name": "Cat jumped on sensor",
+      "description": "Pet triggered the sensor, senior is reading",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "The cat jumped up on the shelf and must have set off the sensor" },
+        { "text": "I'm sitting here reading my book, absolutely fine!" }
+      ]
+    },
+    {
+      "id": "scenario_068",
+      "name": "Fell getting out of chair",
+      "description": "Senior fell trying to get out of their chair",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I tried to get out of my chair and fell" },
+        { "text": "My legs just gave out under me" }
+      ]
+    },
+    {
+      "id": "scenario_069",
+      "name": "No I'm okay emphatic",
+      "description": "Senior emphatically says they are okay",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "No! I'm okay, I promise!" },
+        { "text": "Truly, I am fine. I was just reaching for something and the alarm went off." }
+      ]
+    },
+    {
+      "id": "scenario_070",
+      "name": "Vision problems and disoriented",
+      "description": "Senior reports vision problems and confusion",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Everything looks blurry and strange" },
+        { "text": "I can't see properly and I feel very confused" }
+      ]
+    },
+    {
+      "id": "scenario_071",
+      "name": "Silence then falls during second turn",
+      "description": "Senior is silent first then reports a fall",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "" },
+        { "text": "I just fell... I was trying to get to the phone" }
+      ]
+    },
+    {
+      "id": "scenario_072",
+      "name": "I don't know what happened",
+      "description": "Senior is confused about what happened to them",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I don't know what happened" },
+        { "text": "I was standing and then I was on the floor somehow" }
+      ]
+    },
+    {
+      "id": "scenario_073",
+      "name": "Cleaning up a spill",
+      "description": "Senior spilled something and was cleaning it up",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I just spilled my juice and was mopping it up off the floor" },
+        { "text": "I'm fine! Just a mess to clean up, that's all." }
+      ]
+    },
+    {
+      "id": "scenario_074",
+      "name": "Screaming in pain",
+      "description": "Senior is screaming and in obvious pain",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "AAAHH! Oh god it hurts!" },
+        { "text": "My leg! I think I broke my leg!" }
+      ]
+    },
+    {
+      "id": "scenario_075",
+      "name": "Movement detected but mentions dizziness",
+      "description": "Movement detected but senior still reports feeling unwell",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm up but I feel very dizzy still", "system_events": [{"type": "movement_detected", "message": "Update: The home sensors have just detected movement from the senior (source: bedroom). This is a positive sign that they may be mobile. Please kindly mention this to the senior and check if they are feeling okay."}] },
+        { "text": "I had a fall earlier and I still don't feel right" }
+      ]
+    },
+    {
+      "id": "scenario_076",
+      "name": "Formal elderly no thank you",
+      "description": "Formal senior politely declines assistance, confirms fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "No, thank you dear, I'm quite alright" },
+        { "text": "I appreciate you checking but I assure you I am well. Just having my afternoon tea." }
+      ]
+    },
+    {
+      "id": "scenario_077",
+      "name": "Fell down the stairs",
+      "description": "Senior tumbled down a flight of stairs",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell down the stairs" },
+        { "text": "I'm at the bottom and everything hurts" }
+      ]
+    },
+    {
+      "id": "scenario_078",
+      "name": "Thinks it is a different year",
+      "description": "Senior is severely disoriented about the year",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Is this 1985? I need to call Harold" },
+        { "text": "Harold will know what to do, he always does" }
+      ]
+    },
+    {
+      "id": "scenario_079",
+      "name": "Doing laundry dropped basket",
+      "description": "Senior dropped laundry basket, making noise",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I just dropped the laundry basket, it was heavier than I thought!" },
+        { "text": "Haha, I'm fine! Just clothes everywhere. I'll pick them up." }
+      ]
+    },
+    {
+      "id": "scenario_080",
+      "name": "Says okay but reveals bleeding",
+      "description": "Senior claims to be okay but mentions they are bleeding",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm okay I think" },
+        { "text": "But there's some blood on my forehead from where I hit the shelf" }
+      ]
+    },
+    {
+      "id": "scenario_081",
+      "name": "Three turn silence then response",
+      "description": "Senior silent first turn, then gives alarming response",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "" },
+        { "text": "...help..." }
+      ]
+    },
+    {
+      "id": "scenario_082",
+      "name": "Was playing with grandkids",
+      "description": "Senior was playing with grandchildren on the floor",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "We were just playing with the building blocks on the floor!" },
+        { "text": "I'm fine! The kids and I are having a great time." }
+      ]
+    },
+    {
+      "id": "scenario_083",
+      "name": "Collapsed while walking",
+      "description": "Senior collapsed while walking to the bathroom",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I collapsed while walking to the bathroom" },
+        { "text": "My legs just stopped working and I went down" }
+      ]
+    },
+    {
+      "id": "scenario_084",
+      "name": "Responds with hmm I guess",
+      "description": "Vague uncertain responses from senior",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Hmm... I guess so..." },
+        { "text": "I'm not really sure to be honest" }
+      ]
+    },
+    {
+      "id": "scenario_085",
+      "name": "Was reaching for something high",
+      "description": "Senior was reaching for something on a high shelf, no fall",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I was just reaching for the biscuit tin on the top shelf" },
+        { "text": "Got it! And I'm perfectly fine. No falls here, just short arms!" }
+      ]
+    },
+    {
+      "id": "scenario_086",
+      "name": "Weak voice asking for ambulance",
+      "description": "Senior weakly asks for an ambulance",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Can you call an ambulance for me please" },
+        { "text": "I fell and I think something is very wrong" }
+      ]
+    },
+    {
+      "id": "scenario_087",
+      "name": "No response then clearly fine",
+      "description": "Silent first turn then senior responds that they are fine with explanation",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "" },
+        { "text": "Sorry I couldn't hear you, I had my hearing aid out. I'm fine!" }
+      ]
+    },
+    {
+      "id": "scenario_088",
+      "name": "Slipped in shower",
+      "description": "Senior slipped while in the shower",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I slipped in the shower" },
+        { "text": "I'm sitting in the tub and my hip is really sore" }
+      ]
+    },
+    {
+      "id": "scenario_089",
+      "name": "Rearranging bookshelves",
+      "description": "Senior was organizing books and caused a noise",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I was just reorganizing my bookshelves and a stack of books fell over" },
+        { "text": "Just the books fell, not me! I'm standing right here sorting them." }
+      ]
+    },
+    {
+      "id": "scenario_090",
+      "name": "Yes with minimal words",
+      "description": "Senior confirms fall with very few words",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Yes" },
+        { "text": "Fell. Hurts." }
+      ]
+    },
+    {
+      "id": "scenario_091",
+      "name": "Irritable but eventually says fine clearly",
+      "description": "Senior is grumpy but ultimately confirms they are okay",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "What now?! Can't an old man have some peace?" },
+        { "text": "I'm fine, I'm fine! I was just getting up to change the channel. Nothing happened." },
+        { "text": "Yes yes, I told you I'm fine! Now let me watch my show." }
+      ]
+    },
+    {
+      "id": "scenario_092",
+      "name": "Tripped over pet toy",
+      "description": "Senior tripped over a pet toy and fell",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I tripped over the dog's chew toy" },
+        { "text": "I went down hard and my wrist is swelling up" }
+      ]
+    },
+    {
+      "id": "scenario_093",
+      "name": "Confused first then denies and confirms fine",
+      "description": "Senior is briefly confused but then firmly says they are fine",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Oh what? Sorry, I was napping" },
+        { "text": "No no, I'm fine. I just woke up from a nap and was groggy. Everything is okay, I promise." }
+      ]
+    },
+    {
+      "id": "scenario_094",
+      "name": "Fell and heard a crack",
+      "description": "Senior fell and heard a cracking sound in their body",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell and I heard something crack" },
+        { "text": "I think it was my hip, I can't move without screaming" }
+      ]
+    },
+    {
+      "id": "scenario_095",
+      "name": "Deflects asking about the caller",
+      "description": "Senior keeps asking questions back instead of answering",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "How are you doing today?" },
+        { "text": "Are you having a nice day?" }
+      ]
+    },
+    {
+      "id": "scenario_096",
+      "name": "Movement plus double confirmation fine",
+      "description": "Movement detected and senior confirms fine twice, different wording",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Nothing happened, I'm doing great!", "system_events": [{"type": "movement_detected", "message": "Update: The home sensors have just detected movement from the senior (source: hallway). This is a positive sign that they may be mobile. Please kindly mention this to the senior and check if they are feeling okay."}] },
+        { "text": "Yep, all good! Just walked to the kitchen to get some water." }
+      ]
+    },
+    {
+      "id": "scenario_097",
+      "name": "Lost balance and grabbed furniture",
+      "description": "Senior lost balance but caught themselves and is okay",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I lost my balance for a second but I grabbed the table and steadied myself" },
+        { "text": "I didn't actually fall. I'm standing up and I feel fine now." }
+      ]
+    },
+    {
+      "id": "scenario_098",
+      "name": "Fell while getting mail",
+      "description": "Senior fell walking to get the mail",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I fell on the way to get the mail" },
+        { "text": "I'm lying on the walkway and my neighbors aren't home" }
+      ]
+    },
+    {
+      "id": "scenario_099",
+      "name": "Silence after initial fine",
+      "description": "Senior says fine initially but goes silent on follow-up",
+      "expected_outcome": "DISTRESS_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "I'm fine" },
+        { "text": "" }
+      ]
+    },
+    {
+      "id": "scenario_100",
+      "name": "Double no with clear explanation",
+      "description": "Senior clearly denies any issue with detailed explanation",
+      "expected_outcome": "NO_FALL_CONFIRMED",
+      "user_turns": [
+        { "text": "Nope, no fall here! I was just dancing to my favorite song on the radio" },
+        { "text": "I'm having a wonderful afternoon, really. No falls, no problems, just good music!" }
+      ]
+    }
+  ]
+}

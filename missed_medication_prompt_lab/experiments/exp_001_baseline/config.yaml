@@ -1,0 +1,23 @@
+experiment:
+  name: "Baseline - Production Fall Detection Prompt v0"
+  date: "2026-04-07"
+
+models:
+  - name: "gpt-4o-mini"
+    temperature: 0.7
+  - name: "gpt-4o"
+    temperature: 0.7
+
+prompt:
+  template: "prompt_v0.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    gender: "male"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+
+inputs_file: "inputs_baseline.json"
