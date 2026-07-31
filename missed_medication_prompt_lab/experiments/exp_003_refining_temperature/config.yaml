@@ -1,0 +1,22 @@
+experiment:
+  name: "Baseline - Production Missed Medication Prompt v2"
+  date: "2026-04-07"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v2.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v1.json"
