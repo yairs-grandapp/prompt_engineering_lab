@@ -274,9 +274,11 @@ class ConversationRunner:
             assistant_text = parsed.get("text", "")
             outcome = parsed.get("conversationOutcome", OUTCOME_IN_PROGRESS)
 
+            # Note: the full prompt is intentionally NOT stored per turn to keep
+            # the conversation transcripts small. A single copy of the assembled
+            # prompt is saved separately to experiments/<name>/prompt_snapshot.txt.
             raw_responses.append({
                 "turn": turn_num,
-                "prompt": llm_result["prompt"],
                 "input_tokens": llm_result["input_tokens"],
                 "output_tokens": llm_result["output_tokens"],
                 "raw": llm_result["raw_content"],

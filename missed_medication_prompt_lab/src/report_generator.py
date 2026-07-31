@@ -81,16 +81,9 @@ class ReportGenerator:
                 lines.append(f"**Tokens:** {r['total_input_tokens']} in / "
                               f"{r['total_output_tokens']} out\n")
 
-                # Prompts sent to LLM per turn
-                raw_responses = r.get('raw_responses', [])
-                if raw_responses:
-                    lines.append("**Prompts Sent to LLM:**\n")
-                    for rr in raw_responses:
-                        turn = rr['turn']
-                        prompt_text = rr.get('prompt', '(not captured)')
-                        lines.append(f"<details>\n<summary>Turn {turn} - Full Prompt</summary>\n")
-                        lines.append(f"```\n{prompt_text}\n```\n")
-                        lines.append(f"</details>\n")
+                # The full assembled prompt is shown once at the top of this
+                # report (from prompt_snapshot.txt); it is intentionally not
+                # repeated per turn here or in the conversation transcripts.
 
                 lines.append("**Transcript:**\n")
                 for entry in r['transcript']:
