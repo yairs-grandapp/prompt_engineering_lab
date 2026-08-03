@@ -1,8 +1,8 @@
-# Experiment: Baseline - Production Missed Medication Prompt v3
+# Experiment: Baseline - Production Missed Medication Prompt v4
 
 **Date:** 2026-04-07  
 **Models:** gpt-4o  
-**Prompt Template:** prompt_v2.txt
+**Prompt Template:** prompt_v3.txt
 
 ---
 
@@ -35,6 +35,7 @@ GUIDELINES:
   - Before DID_NOT_TAKE_BUT_WILL_TAKE, deliver Reminder #2: "Hello, this is Vega. I am just checking in with you gently. Have you taken your medication now? Please let me know when you have, so I can make sure everything is alright."
   - Before DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE, deliver Message #2: "I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well."
   - Before COULD_NOT_VALIDATE, deliver the soft message: "Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely."
+* UNIVERSAL RULE — DO NOT FINALIZE ON A PARTIAL OR INFERRED ANSWER: Only return a terminal outcome (DID_TAKE, DID_NOT_TAKE_BUT_WILL_TAKE, DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE, or COULD_NOT_VALIDATE) when the senior's intent is unambiguous. If their answer is partial, indirect, mixed, or you would have to ASSUME their intent (for example, "not yet" with no statement of what they will do), ask exactly ONE gentle clarifying question and stay conversation_in_progress. Finalize the outcome only after their reply.
 * CRITICAL — TIERED OUTCOME RULES (follow these in order of priority):
 
   TIER 1 — CLEAR STATEMENT, DECIDE ON THE SAME TURN:
@@ -150,7 +151,7 @@ GUIDELINES:
 
 **Actual:** DID_TAKE  
 **Turns:** 2  
-**Tokens:** 5200 in / 86 out
+**Tokens:** 5456 in / 86 out
 
 **Transcript:**
 
@@ -175,7 +176,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_BUT_WILL_TAKE  
 **Turns:** 2  
-**Tokens:** 5200 in / 89 out
+**Tokens:** 5456 in / 89 out
 
 **Transcript:**
 
@@ -200,7 +201,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE  
 **Turns:** 2  
-**Tokens:** 5200 in / 108 out
+**Tokens:** 5456 in / 108 out
 
 **Transcript:**
 
@@ -225,7 +226,7 @@ GUIDELINES:
 
 **Actual:** COULD_NOT_VALIDATE  
 **Turns:** 3  
-**Tokens:** 7841 in / 125 out
+**Tokens:** 8225 in / 125 out
 
 **Transcript:**
 
@@ -256,12 +257,12 @@ GUIDELINES:
 
 **Actual:** DID_TAKE  
 **Turns:** 2  
-**Tokens:** 5209 in / 95 out
+**Tokens:** 5456 in / 86 out
 
 **Transcript:**
 
 > **[Turn 1] ASSISTANT** [conversation_in_progress]:  
-> Good morning, it's Vega here! I just wanted to check in with you. It may be time for your medication. Have you already taken it?
+> Good morning, it's Vega here! It may be time for your medication. Have you already taken it?
 
 > **[Turn 1] USER:**  
 > I took it with my breakfast this morning
@@ -281,7 +282,7 @@ GUIDELINES:
 
 **Actual:** DID_TAKE  
 **Turns:** 2  
-**Tokens:** 5200 in / 86 out
+**Tokens:** 5456 in / 86 out
 
 **Transcript:**
 
@@ -306,7 +307,7 @@ GUIDELINES:
 
 **Actual:** DID_TAKE  
 **Turns:** 2  
-**Tokens:** 5203 in / 86 out
+**Tokens:** 5459 in / 86 out
 
 **Transcript:**
 
@@ -331,7 +332,7 @@ GUIDELINES:
 
 **Actual:** DID_TAKE  
 **Turns:** 2  
-**Tokens:** 5198 in / 86 out
+**Tokens:** 5454 in / 86 out
 
 **Transcript:**
 
@@ -356,7 +357,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_BUT_WILL_TAKE  
 **Turns:** 2  
-**Tokens:** 5201 in / 89 out
+**Tokens:** 5457 in / 89 out
 
 **Transcript:**
 
@@ -381,7 +382,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_BUT_WILL_TAKE  
 **Turns:** 2  
-**Tokens:** 5202 in / 89 out
+**Tokens:** 5458 in / 89 out
 
 **Transcript:**
 
@@ -406,7 +407,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_BUT_WILL_TAKE  
 **Turns:** 2  
-**Tokens:** 5197 in / 89 out
+**Tokens:** 5453 in / 89 out
 
 **Transcript:**
 
@@ -431,7 +432,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_BUT_WILL_TAKE  
 **Turns:** 2  
-**Tokens:** 5202 in / 89 out
+**Tokens:** 5458 in / 89 out
 
 **Transcript:**
 
@@ -456,12 +457,12 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE  
 **Turns:** 2  
-**Tokens:** 5200 in / 108 out
+**Tokens:** 5463 in / 115 out
 
 **Transcript:**
 
 > **[Turn 1] ASSISTANT** [conversation_in_progress]:  
-> Good morning, it's Vega here! It may be time for your medication. Have you already taken it?
+> Good morning, it's Vega here! I hope you're doing well. It may be time for your medication. Have you already taken it today?
 
 > **[Turn 1] USER:**  
 > No, I'm not going to take it
@@ -481,7 +482,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE  
 **Turns:** 2  
-**Tokens:** 5202 in / 108 out
+**Tokens:** 5458 in / 108 out
 
 **Transcript:**
 
@@ -506,12 +507,12 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE  
 **Turns:** 2  
-**Tokens:** 5197 in / 108 out
+**Tokens:** 5460 in / 115 out
 
 **Transcript:**
 
 > **[Turn 1] ASSISTANT** [conversation_in_progress]:  
-> Good morning, it's Vega here! It may be time for your medication. Have you already taken it?
+> Good morning, it's Vega here! I hope you're doing well today. It may be time for your medication. Have you already taken it?
 
 > **[Turn 1] USER:**  
 > Not today, absolutely not
@@ -531,7 +532,7 @@ GUIDELINES:
 
 **Actual:** DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE  
 **Turns:** 2  
-**Tokens:** 5201 in / 108 out
+**Tokens:** 5457 in / 108 out
 
 **Transcript:**
 
@@ -556,7 +557,7 @@ GUIDELINES:
 
 **Actual:** COULD_NOT_VALIDATE  
 **Turns:** 3  
-**Tokens:** 7871 in / 139 out
+**Tokens:** 8271 in / 155 out
 
 **Transcript:**
 
@@ -567,7 +568,7 @@ GUIDELINES:
 > What pills? I don't know what you mean
 
 > **[Turn 2] ASSISTANT** [conversation_in_progress]:  
-> I understand this can be confusing. Just to clarify, I'm referring to the medication you usually take around this time. Could you let me know if you've taken it today?
+> I understand this can be confusing. Just to clarify, I'm here to check if you've taken your scheduled medication today. It’s important for your health, and I want to make sure everything is on track. Do you remember if you've taken it yet?
 
 > **[Turn 2] USER:**  
 > I'm confused, what is this about?
@@ -587,7 +588,7 @@ GUIDELINES:
 
 **Actual:** COULD_NOT_VALIDATE  
 **Turns:** 3  
-**Tokens:** 7863 in / 133 out
+**Tokens:** 8252 in / 138 out
 
 **Transcript:**
 
@@ -598,7 +599,7 @@ GUIDELINES:
 > I can't remember if I took it
 
 > **[Turn 2] ASSISTANT** [conversation_in_progress]:  
-> I understand this can be confusing. Let's take a moment to think about it. Do you remember taking your medication from your medication box today?
+> I understand this can be confusing. Let's take a moment to check together. Could you have a look at your medication box to see if today's dose is still there?
 
 > **[Turn 2] USER:**  
 > My memory is bad, I really don't know
@@ -618,7 +619,7 @@ GUIDELINES:
 
 **Actual:** COULD_NOT_VALIDATE  
 **Turns:** 3  
-**Tokens:** 7860 in / 137 out
+**Tokens:** 8248 in / 141 out
 
 **Transcript:**
 
@@ -629,7 +630,7 @@ GUIDELINES:
 > Stop asking me about my pills
 
 > **[Turn 2] ASSISTANT** [conversation_in_progress]:  
-> I understand that it might be frustrating to be reminded. I just want to make sure you're supported. Could you let me know if you've taken your medication today?
+> I understand, and I'm sorry if it feels like I'm bothering you. I just want to ensure everything is alright. Could you please let me know if you've taken your medication today?
 
 > **[Turn 2] USER:**  
 > Leave me alone please
@@ -649,7 +650,7 @@ GUIDELINES:
 
 **Actual:** COULD_NOT_VALIDATE  
 **Turns:** 5  
-**Tokens:** 13336 in / 221 out
+**Tokens:** 13942 in / 209 out
 
 **Transcript:**
 
@@ -660,13 +661,13 @@ GUIDELINES:
 > Who is this again?
 
 > **[Turn 2] ASSISTANT** [conversation_in_progress]:  
-> I'm Vega, your supportive assistant here to help you with your daily routine. I just wanted to gently check if you've been able to take your medication today. Could you let me know if you have?
+> I'm Vega, your supportive assistant. I'm here to help ensure everything is going smoothly with your medication. Have you had a chance to take it yet?
 
 > **[Turn 2] USER:**  
 > I don't understand, what were we saying?
 
 > **[Turn 3] ASSISTANT** [conversation_in_progress]:  
-> I understand this can be a bit confusing. I'm here to help ensure everything is going smoothly with your medication. Could you let me know if you've taken your medication today?
+> I understand this can be a bit confusing. I'm here to gently check if you've taken your medication today. Could you let me know if you remember taking it?
 
 > **[Turn 3] USER:**  
 > (silence)

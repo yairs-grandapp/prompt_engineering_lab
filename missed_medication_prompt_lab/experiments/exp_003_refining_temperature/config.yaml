@@ -1,5 +1,16 @@
+# prompt_v2.txt — Refusal vs. disengagement fix (scenario_19)
+#   CHANGES FROM v1:
+#   1. TIER 1 refusal now requires an explicit refusal to TAKE the medication
+#      ("I won't take it", "I'm not taking those pills").
+#   2. Added carve-out: annoyance about being asked ("stop asking me about my
+#      pills", "leave me alone", "stop bothering me", "go away") is NOT a
+#      refusal -> do NOT return DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.
+#   3. TIER 2 updated to explicitly catch that annoyance/disengagement and
+#      route it to COULD_NOT_VALIDATE after one clarifying question.
+#   FIXES: scenario_19 (upset senior was being classified as a refusal).
+
 experiment:
-  name: "Baseline - Production Missed Medication Prompt v2"
+  name: "Baseline - Production Missed Medication Prompt v3"
   date: "2026-04-07"
 
 models:

@@ -1,0 +1,63 @@
+{
+  "scenario_id": "scenario_11",
+  "scenario_name": "Senior goes to get it",
+  "description": "Senior has not taken it and says they will fetch it this minute.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_11",
+      "scenario_name": "Senior goes to get it",
+      "description": "Senior has not taken it and says they will fetch it this minute.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Haven't taken it yet",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Hello, this is Vega. I am just checking in with you gently. Have you taken your medication now? Please let me know when you have, so I can make sure everything is alright.",
+          "turn": 2,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+        }
+      ],
+      "total_input_tokens": 5453,
+      "total_output_tokens": 89,
+      "cost": 0.0145225,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2709,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2744,
+          "output_tokens": 57,
+          "raw": "{\"text\":\"Hello, this is Vega. I am just checking in with you gently. Have you taken your medication now? Please let me know when you have, so I can make sure everything is alright.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Hello, this is Vega. I am just checking in with you gently. Have you taken your medication now? Please let me know when you have, so I can make sure everything is alright.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

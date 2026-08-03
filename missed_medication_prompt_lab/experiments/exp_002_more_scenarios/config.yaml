@@ -1,5 +1,25 @@
+# prompt_v1.txt — Reworded DID_TAKE + restructured to mirror smart_conversation prompt_v8
+#   CHANGES FROM v0:
+#   1. Reworded the DID_TAKE clarification message: dropped the confusing
+#      "misunderstanding" phrasing -> warm "That's great to hear, thank you for
+#      letting me know! ... could you confirm you took today's medication..."
+#   2. Restructured to match smart_conversation/prompt_v8 layout:
+#      - Added SITUATION / YOUR TASK header and a POSSIBLE OUTCOMES block.
+#      - Organized guidelines under [SAFETY] / [BEHAVIORAL] /
+#        [TONE AND COMMUNICATION] / [DOMAIN].
+#   3. Replaced the flat OUTCOME DETERMINATION list with TIERED OUTCOME RULES:
+#      - TIER 1: clear statement -> decide on the same turn.
+#      - TIER 2: unclear/confused -> one clarifying question, then
+#        COULD_NOT_VALIDATE.
+#      - TIER 3: silence ("<<NO RESPONSE>>") -> ask again, then
+#        COULD_NOT_VALIDATE on the 2nd silence.
+#   4. Added the @SYSTEM@ sensor system (adapted from v8's movement sensor):
+#      - Medication-box sensor may report the dose was taken.
+#      - "NEVER fabricate or assume sensor data" rule.
+#      - Defined the @SYSTEM@ message prefix in the general guidelines.
+
 experiment:
-  name: "Baseline - Production Missed Medication Prompt v1"
+  name: "Baseline - Production Missed Medication Prompt v2"
   date: "2026-04-07"
 
 models:

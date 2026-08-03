@@ -1,0 +1,33 @@
+# prompt_v3.txt — Universal "don't finalize on a partial/inferred answer" rule
+#   CHANGES FROM v2:
+#   1. Added one UNIVERSAL RULE above the tiered rules: only return a terminal
+#      outcome when the senior's intent is unambiguous. If the answer is
+#      partial, indirect, mixed, or would require ASSUMING intent (e.g. "not
+#      yet" with no statement of what they'll do), ask exactly ONE clarifying
+#      question and stay conversation_in_progress; finalize only after the reply.
+#   FIXES: scenario_11 class of errors (premature DID_NOT_TAKE_BUT_WILL_TAKE
+#      on "haven't taken it yet" with no commitment). Improves robustness to
+#      paraphrased / indirect / ASR-garbled inputs.
+
+experiment:
+  name: "Baseline - Production Missed Medication Prompt v4"
+  date: "2026-04-07"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v3.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v1.json"

@@ -16,7 +16,7 @@
       "transcript": [
         {
           "role": "assistant",
-          "text": "Good morning, it's Vega here! I just wanted to check in with you. It may be time for your medication. Have you already taken it?",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
           "turn": 1,
           "outcome": "conversation_in_progress"
         },
@@ -32,23 +32,23 @@
           "outcome": "DID_TAKE"
         }
       ],
-      "total_input_tokens": 5209,
-      "total_output_tokens": 95,
-      "cost": 0.013972499999999999,
+      "total_input_tokens": 5456,
+      "total_output_tokens": 86,
+      "cost": 0.014499999999999999,
       "raw_responses": [
         {
           "turn": 1,
-          "input_tokens": 2581,
-          "output_tokens": 41,
-          "raw": "{\"text\":\"Good morning, it's Vega here! I just wanted to check in with you. It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "input_tokens": 2709,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
           "parsed": {
-            "text": "Good morning, it's Vega here! I just wanted to check in with you. It may be time for your medication. Have you already taken it?",
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
             "conversationOutcome": "conversation_in_progress"
           }
         },
         {
           "turn": 2,
-          "input_tokens": 2628,
+          "input_tokens": 2747,
           "output_tokens": 54,
           "raw": "{\"text\":\"That's great to hear, thank you for letting me know! Just so I can make sure everything is recorded properly on my end, could you confirm you took today's medication from your medication box at the scheduled time?\",\"conversationOutcome\":\"DID_TAKE\"}",
           "parsed": {

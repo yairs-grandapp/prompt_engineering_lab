@@ -1,13 +1,13 @@
 {
-  "scenario_id": "scenario_05",
-  "scenario_name": "Senior took it with breakfast",
-  "description": "Senior took the medication with their breakfast.",
+  "scenario_id": "scenario_07",
+  "scenario_name": "Senior took it an hour ago",
+  "description": "Senior took the medication earlier and says so clearly in one turn.",
   "expected_outcome": "DID_TAKE",
   "model_results": {
     "gpt-4o": {
-      "scenario_id": "scenario_05",
-      "scenario_name": "Senior took it with breakfast",
-      "description": "Senior took the medication with their breakfast.",
+      "scenario_id": "scenario_07",
+      "scenario_name": "Senior took it an hour ago",
+      "description": "Senior took the medication earlier and says so clearly in one turn.",
       "model": "gpt-4o",
       "expected_outcome": "DID_TAKE",
       "actual_outcome": "DID_TAKE",
@@ -16,13 +16,13 @@
       "transcript": [
         {
           "role": "assistant",
-          "text": "Good morning, it's Vega here! I just wanted to check in with you. It may be time for your medication. Have you already taken it?",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
           "turn": 1,
           "outcome": "conversation_in_progress"
         },
         {
           "role": "user",
-          "text": "I took it with my breakfast this morning",
+          "text": "I had it about an hour ago, everything is fine",
           "turn": 1
         },
         {
@@ -32,23 +32,23 @@
           "outcome": "DID_TAKE"
         }
       ],
-      "total_input_tokens": 5209,
-      "total_output_tokens": 95,
-      "cost": 0.013972499999999999,
+      "total_input_tokens": 5459,
+      "total_output_tokens": 86,
+      "cost": 0.0145075,
       "raw_responses": [
         {
           "turn": 1,
-          "input_tokens": 2581,
-          "output_tokens": 41,
-          "raw": "{\"text\":\"Good morning, it's Vega here! I just wanted to check in with you. It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "input_tokens": 2709,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
           "parsed": {
-            "text": "Good morning, it's Vega here! I just wanted to check in with you. It may be time for your medication. Have you already taken it?",
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
             "conversationOutcome": "conversation_in_progress"
           }
         },
         {
           "turn": 2,
-          "input_tokens": 2628,
+          "input_tokens": 2750,
           "output_tokens": 54,
           "raw": "{\"text\":\"That's great to hear, thank you for letting me know! Just so I can make sure everything is recorded properly on my end, could you confirm you took today's medication from your medication box at the scheduled time?\",\"conversationOutcome\":\"DID_TAKE\"}",
           "parsed": {

@@ -16,7 +16,7 @@
       "transcript": [
         {
           "role": "assistant",
-          "text": "Good morning, it's Vega here! I hope you're doing well today. It may be time for your medication. Have you already taken it?",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
           "turn": 1,
           "outcome": "conversation_in_progress"
         },
@@ -27,7 +27,7 @@
         },
         {
           "role": "assistant",
-          "text": "I understand this can be confusing. Let's take a moment to think about it together. Do you remember if you took your medication from your medication box today?",
+          "text": "I understand this can be confusing. Let's take a moment to think about it. Do you remember taking your medication from your medication box today?",
           "turn": 2,
           "outcome": "conversation_in_progress"
         },
@@ -43,33 +43,33 @@
           "outcome": "COULD_NOT_VALIDATE"
         }
       ],
-      "total_input_tokens": 7880,
-      "total_output_tokens": 143,
-      "cost": 0.02113,
+      "total_input_tokens": 7863,
+      "total_output_tokens": 133,
+      "cost": 0.0209875,
       "raw_responses": [
         {
           "turn": 1,
           "input_tokens": 2581,
-          "output_tokens": 39,
-          "raw": "{\"text\":\"Good morning, it's Vega here! I hope you're doing well today. It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
           "parsed": {
-            "text": "Good morning, it's Vega here! I hope you're doing well today. It may be time for your medication. Have you already taken it?",
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
             "conversationOutcome": "conversation_in_progress"
           }
         },
         {
           "turn": 2,
-          "input_tokens": 2625,
-          "output_tokens": 42,
-          "raw": "{\"text\":\"I understand this can be confusing. Let's take a moment to think about it together. Do you remember if you took your medication from your medication box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "input_tokens": 2618,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"I understand this can be confusing. Let's take a moment to think about it. Do you remember taking your medication from your medication box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
           "parsed": {
-            "text": "I understand this can be confusing. Let's take a moment to think about it together. Do you remember if you took your medication from your medication box today?",
+            "text": "I understand this can be confusing. Let's take a moment to think about it. Do you remember taking your medication from your medication box today?",
             "conversationOutcome": "conversation_in_progress"
           }
         },
         {
           "turn": 3,
-          "input_tokens": 2674,
+          "input_tokens": 2664,
           "output_tokens": 62,
           "raw": "{\"text\":\"Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
           "parsed": {

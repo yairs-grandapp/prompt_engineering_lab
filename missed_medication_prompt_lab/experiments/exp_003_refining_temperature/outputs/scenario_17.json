@@ -27,7 +27,7 @@
         },
         {
           "role": "assistant",
-          "text": "I understand this can be confusing. Let me clarify — I'm referring to your scheduled medication for today. Have you had a chance to take it yet?",
+          "text": "I understand this can be confusing. Just to clarify, I'm referring to the medication you usually take around this time. Could you let me know if you've taken it today?",
           "turn": 2,
           "outcome": "conversation_in_progress"
         },
@@ -43,9 +43,9 @@
           "outcome": "COULD_NOT_VALIDATE"
         }
       ],
-      "total_input_tokens": 7867,
-      "total_output_tokens": 135,
-      "cost": 0.0210175,
+      "total_input_tokens": 7871,
+      "total_output_tokens": 139,
+      "cost": 0.0210675,
       "raw_responses": [
         {
           "turn": 1,
@@ -60,16 +60,16 @@
         {
           "turn": 2,
           "input_tokens": 2620,
-          "output_tokens": 41,
-          "raw": "{\"text\":\"I understand this can be confusing. Let me clarify — I'm referring to your scheduled medication for today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I understand this can be confusing. Just to clarify, I'm referring to the medication you usually take around this time. Could you let me know if you've taken it today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
           "parsed": {
-            "text": "I understand this can be confusing. Let me clarify — I'm referring to your scheduled medication for today. Have you had a chance to take it yet?",
+            "text": "I understand this can be confusing. Just to clarify, I'm referring to the medication you usually take around this time. Could you let me know if you've taken it today?",
             "conversationOutcome": "conversation_in_progress"
           }
         },
         {
           "turn": 3,
-          "input_tokens": 2666,
+          "input_tokens": 2670,
           "output_tokens": 62,
           "raw": "{\"text\":\"Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
           "parsed": {

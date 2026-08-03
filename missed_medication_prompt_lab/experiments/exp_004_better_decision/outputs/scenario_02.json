@@ -1,0 +1,63 @@
+{
+  "scenario_id": "scenario_02",
+  "scenario_name": "Senior forgot but will take it now",
+  "description": "Senior acknowledges they have not taken it yet and commits to taking it right away. Assistant should deliver Reminder #2, then return DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_02",
+      "scenario_name": "Senior forgot but will take it now",
+      "description": "Senior acknowledges they have not taken it yet and commits to taking it right away. Assistant should deliver Reminder #2, then return DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Oh no, I completely forgot about it",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Hello, this is Vega. I am just checking in with you gently. Have you taken your medication now? Please let me know when you have, so I can make sure everything is alright.",
+          "turn": 2,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+        }
+      ],
+      "total_input_tokens": 5456,
+      "total_output_tokens": 89,
+      "cost": 0.01453,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2709,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2747,
+          "output_tokens": 57,
+          "raw": "{\"text\":\"Hello, this is Vega. I am just checking in with you gently. Have you taken your medication now? Please let me know when you have, so I can make sure everything is alright.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Hello, this is Vega. I am just checking in with you gently. Have you taken your medication now? Please let me know when you have, so I can make sure everything is alright.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

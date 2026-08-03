@@ -1,13 +1,13 @@
 {
-  "scenario_id": "scenario_19",
-  "scenario_name": "Senior is upset and disengages",
-  "description": "Senior is upset and refuses to engage with the question.",
+  "scenario_id": "scenario_04",
+  "scenario_name": "Senior does not respond (silence)",
+  "description": "Senior gives no response across multiple turns. The situation cannot be resolved in conversation, so the assistant should deliver the soft message and return COULD_NOT_VALIDATE.",
   "expected_outcome": "COULD_NOT_VALIDATE",
   "model_results": {
     "gpt-4o": {
-      "scenario_id": "scenario_19",
-      "scenario_name": "Senior is upset and disengages",
-      "description": "Senior is upset and refuses to engage with the question.",
+      "scenario_id": "scenario_04",
+      "scenario_name": "Senior does not respond (silence)",
+      "description": "Senior gives no response across multiple turns. The situation cannot be resolved in conversation, so the assistant should deliver the soft message and return COULD_NOT_VALIDATE.",
       "model": "gpt-4o",
       "expected_outcome": "COULD_NOT_VALIDATE",
       "actual_outcome": "COULD_NOT_VALIDATE",
@@ -22,18 +22,18 @@
         },
         {
           "role": "user",
-          "text": "Stop asking me about my pills",
+          "text": "(silence)",
           "turn": 1
         },
         {
           "role": "assistant",
-          "text": "I understand that it might be frustrating to be reminded. I just want to make sure you're supported. Could you let me know if you've taken your medication today?",
+          "text": "I'm still here. It may be time for your medication — have you been able to take it?",
           "turn": 2,
           "outcome": "conversation_in_progress"
         },
         {
           "role": "user",
-          "text": "Leave me alone please",
+          "text": "(silence)",
           "turn": 2
         },
         {
@@ -43,13 +43,13 @@
           "outcome": "COULD_NOT_VALIDATE"
         }
       ],
-      "total_input_tokens": 7860,
-      "total_output_tokens": 137,
-      "cost": 0.02102,
+      "total_input_tokens": 8225,
+      "total_output_tokens": 125,
+      "cost": 0.0218125,
       "raw_responses": [
         {
           "turn": 1,
-          "input_tokens": 2581,
+          "input_tokens": 2709,
           "output_tokens": 32,
           "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
           "parsed": {
@@ -59,17 +59,17 @@
         },
         {
           "turn": 2,
-          "input_tokens": 2617,
-          "output_tokens": 43,
-          "raw": "{\"text\":\"I understand that it might be frustrating to be reminded. I just want to make sure you're supported. Could you let me know if you've taken your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "input_tokens": 2742,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I'm still here. It may be time for your medication — have you been able to take it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
           "parsed": {
-            "text": "I understand that it might be frustrating to be reminded. I just want to make sure you're supported. Could you let me know if you've taken your medication today?",
+            "text": "I'm still here. It may be time for your medication — have you been able to take it?",
             "conversationOutcome": "conversation_in_progress"
           }
         },
         {
           "turn": 3,
-          "input_tokens": 2662,
+          "input_tokens": 2774,
           "output_tokens": 62,
           "raw": "{\"text\":\"Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
           "parsed": {
