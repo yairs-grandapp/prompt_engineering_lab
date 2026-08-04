@@ -1,0 +1,78 @@
+========================================================================
+MISSED MEDICATION PROMPT LAB — EXPERIMENT CHANGELOG
+========================================================================
+Records the configuration changes made from one experiment to the next.
+Derived from each experiment's config.yaml and report.md.
+
+Constant across all experiments so far:
+  - Model:                 gpt-4o
+  - Language / gender:      English / female (Vega)
+  - additional_information: scheduledTime = 2026-07-29T08:00, reminderCount = 0
+  - conversation:           max_turns = 10, extra_silence_turns = 2,
+                            enable_state_injection = false
+
+------------------------------------------------------------------------
+exp_001_baseline                                        [starting point]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v0.txt
+  Temperature:      0.7
+  Inputs:           inputs_v0.json  (4 scenarios — one per outcome)
+  Result:           4/4 passed (100%)
+
+  Baseline run of the missed-medication prompt. Establishes the four
+  outcomes (DID_TAKE, DID_NOT_TAKE_BUT_WILL_TAKE,
+  DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE, COULD_NOT_VALIDATE) on a minimal
+  4-scenario set.
+
+------------------------------------------------------------------------
+exp_002_more_scenarios                    [changes from exp_001_baseline]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v0.txt   ->  prompt_v1.txt
+  Temperature:      0.7             (unchanged)
+  Inputs:           inputs_v0.json  ->  inputs_v1.json  (4 -> 20 scenarios,
+                                                         5 per outcome)
+  Result:           19/20 passed (95%)   [scenario_19 failed]
+
+  Prompt changes (v0 -> v1):
+    1. Reworded the DID_TAKE clarification message: dropped the confusing
+       "misunderstanding" phrasing -> warm "That's great to hear, thank you
+       for letting me know! ... could you confirm you took today's
+       medication..." wording.
+    2. Restructured to mirror smart_conversation/prompt_v8:
+         - Added SITUATION / YOUR TASK header and a POSSIBLE OUTCOMES block.
+         - Grouped guidelines under [SAFETY] / [BEHAVIORAL] /
+           [TONE AND COMMUNICATION] / [DOMAIN].
+    3. Replaced the flat OUTCOME DETERMINATION list with TIERED OUTCOME RULES:
+         - TIER 1: clear statement -> decide on the same turn.
+         - TIER 2: unclear/confused -> one clarifying question, then
+           COULD_NOT_VALIDATE.
+         - TIER 3: silence ("<<NO RESPONSE>>") -> ask again, then
+           COULD_NOT_VALIDATE on the 2nd silence.
+    4. Added the @SYSTEM@ sensor system (adapted from v8's movement sensor):
+         - Medication-box sensor may report the dose was taken.
+         - "NEVER fabricate or assume sensor data" rule.
+         - Defined the @SYSTEM@ message prefix in the general guidelines.
+
+  Inputs change: expanded the test set from 4 to 20 scenarios (the original
+  4 plus 16 new simple ones, 5 per outcome).
+
+------------------------------------------------------------------------
+exp_003_refining_temperature        [changes from exp_002_more_scenarios]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v1.txt   ->  prompt_v2.txt
+  Temperature:      0.7             ->  0.4
+  Inputs:           inputs_v1.json  (unchanged, 20 scenarios)
+  Result:           20/20 passed (100%)
+
+  Prompt changes (v1 -> v2):
+    1. TIER 1 refusal now requires an explicit refusal to TAKE the medication
+       ("I won't take it", "I'm not taking those pills").
+    2. Carve-out: annoyance about being asked ("stop asking me about my
+       pills", "leave me alone", "stop bothering me", "go away") is NOT a
+       refusal -> do NOT return DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.
+    3. TIER 2 updated to explicitly catch that annoyance/disengagement and
+       route it to COULD_NOT_VALIDATE after one clarifying question.
+    Fixes scenario_19 (upset senior was previously misclassified as a refusal).
+
+  Temperature change: lowered 0.7 -> 0.4 for more consistent, less random
+  outcome decisions.
