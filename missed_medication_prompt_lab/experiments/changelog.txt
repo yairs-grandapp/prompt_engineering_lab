@@ -17,7 +17,6 @@ exp_001_baseline                                        [starting point]
   Prompt template:  prompt_v0.txt
   Temperature:      0.7
   Inputs:           inputs_v0.json  (4 scenarios — one per outcome)
-  Result:           4/4 passed (100%)
 
   Baseline run of the missed-medication prompt. Establishes the four
   outcomes (DID_TAKE, DID_NOT_TAKE_BUT_WILL_TAKE,
@@ -29,9 +28,7 @@ exp_002_more_scenarios                    [changes from exp_001_baseline]
 ------------------------------------------------------------------------
   Prompt template:  prompt_v0.txt   ->  prompt_v1.txt
   Temperature:      0.7             (unchanged)
-  Inputs:           inputs_v0.json  ->  inputs_v1.json  (4 -> 20 scenarios,
-                                                         5 per outcome)
-  Result:           19/20 passed (95%)   [scenario_19 failed]
+  Inputs:           inputs_v0.json  ->  inputs_v1.json  (4 -> 20 scenarios, 5 per outcome)
 
   Prompt changes (v0 -> v1):
     1. Reworded the DID_TAKE clarification message: dropped the confusing
@@ -62,7 +59,6 @@ exp_003_refining_temperature        [changes from exp_002_more_scenarios]
   Prompt template:  prompt_v1.txt   ->  prompt_v2.txt
   Temperature:      0.7             ->  0.4
   Inputs:           inputs_v1.json  (unchanged, 20 scenarios)
-  Result:           20/20 passed (100%)
 
   Prompt changes (v1 -> v2):
     1. TIER 1 refusal now requires an explicit refusal to TAKE the medication
@@ -83,7 +79,6 @@ exp_004_commitment_and_message_fixes  [changes from exp_003_refining_temperature
   Prompt template:  prompt_v2.txt   ->  prompt_v3.txt
   Temperature:      0.4             (unchanged)
   Inputs:           inputs_v1.json  (unchanged, 20 scenarios)
-  Result:           (fill in after running)
 
   Prompt changes (v2 -> v3). Three correctness fixes found by auditing the
   exp_003 conversations themselves, not just the pass/fail labels:
@@ -106,3 +101,26 @@ exp_004_commitment_and_message_fixes  [changes from exp_003_refining_temperature
     3. TIER 2 tightened so a "who is this?" identity request plus the
        re-introduction counts as the single allowed clarifying turn.
        Fixes scenario_20 over-asking (it used 5 turns instead of the intended 3).
+
+------------------------------------------------------------------------
+exp_005_followup_confirmation      [changes from exp_004_commitment_and_message_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v3.txt   ->  prompt_v4.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged)
+
+  Prompt changes (v3 -> v4):
+    1. DID_TAKE now waits for a follow-up. The clarification message is a
+       QUESTION again; the assistant stays conversation_in_progress and returns
+       DID_TAKE only after the senior confirms on the next turn. (Fixes
+       scenario_01 — no longer asks and finalizes in the same breath.)
+    2. Refusal now waits for a follow-up. Message #2 is delivered, the assistant
+       stays in progress, and DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE is returned only
+       if the senior still refuses next turn. (Fixes scenario_03.)
+    Maintained from v3: WILL_TAKE commitment carve-out, TIER 2 tightening,
+    Reminder #2 as a statement.
+
+  Known effect (scenarios intentionally unchanged): scenario_07 (DID_TAKE) and
+  scenario_15 (refusal) have a single user turn, so the new follow-up hits
+  silence and is expected to resolve to COULD_NOT_VALIDATE — i.e. those two will
+  likely report FAIL until their scenarios gain a confirming second turn.
