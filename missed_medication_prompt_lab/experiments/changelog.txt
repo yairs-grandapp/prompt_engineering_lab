@@ -76,3 +76,33 @@ exp_003_refining_temperature        [changes from exp_002_more_scenarios]
 
   Temperature change: lowered 0.7 -> 0.4 for more consistent, less random
   outcome decisions.
+
+------------------------------------------------------------------------
+exp_004_commitment_and_message_fixes  [changes from exp_003_refining_temperature]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v2.txt   ->  prompt_v3.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged, 20 scenarios)
+  Result:           (fill in after running)
+
+  Prompt changes (v2 -> v3). Three correctness fixes found by auditing the
+  exp_003 conversations themselves, not just the pass/fail labels:
+
+    1. WILL_TAKE now requires an EXPLICIT commitment.
+       A bare "I forgot" / "not yet" / "haven't taken it" no longer finalizes
+       DID_NOT_TAKE_BUT_WILL_TAKE. The assistant stays conversation_in_progress,
+       asks "Would you like to take it now?", and only decides after the reply.
+       Fixes the FALSE POSITIVES in scenario_02 and scenario_11 (WILL_TAKE was
+       returned even though the senior never committed to taking it).
+
+    2. DID_TAKE clarification message and Reminder #2 reworded from questions
+       into warm closing STATEMENTS.
+       Previously they asked a question ("could you confirm...?" / "have you
+       taken it now?") and then ended on the same turn, so the answer was never
+       heard. As statements, finalizing same-turn is coherent.
+       Fixes the dangling-question defect in scenario_01/05/06/07/08 (DID_TAKE)
+       and scenario_09/10/12 (Reminder #2).
+
+    3. TIER 2 tightened so a "who is this?" identity request plus the
+       re-introduction counts as the single allowed clarifying turn.
+       Fixes scenario_20 over-asking (it used 5 turns instead of the intended 3).
