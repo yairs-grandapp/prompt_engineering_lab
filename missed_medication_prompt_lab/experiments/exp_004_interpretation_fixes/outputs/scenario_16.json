@@ -1,0 +1,63 @@
+{
+  "scenario_id": "scenario_16",
+  "scenario_name": "Senior stopped taking it",
+  "description": "Senior says they stopped taking it and will not take it now.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_16",
+      "scenario_name": "Senior stopped taking it",
+      "description": "Senior says they stopped taking it and will not take it now.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "No, I stopped taking those a while ago",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.",
+          "turn": 2,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+        }
+      ],
+      "total_input_tokens": 5557,
+      "total_output_tokens": 108,
+      "cost": 0.014972500000000001,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2759,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2798,
+          "output_tokens": 76,
+          "raw": "{\"text\":\"I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
