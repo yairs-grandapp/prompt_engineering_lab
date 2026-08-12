@@ -1,4 +1,4 @@
-# Experiment: Missed Medication — No Capability Overclaims (prompt_v5)
+# Experiment: Missed Medication — No Capability Overclaims (prompt_v6)
 
 **Date:** 2026-08-12  
 **Models:** gpt-4o  
