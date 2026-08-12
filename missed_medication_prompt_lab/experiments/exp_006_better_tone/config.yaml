@@ -1,0 +1,39 @@
+# prompt_v4.txt — DID_TAKE and refusal now wait for a follow-up
+#   CHANGES FROM v3:
+#   1. DID_TAKE: the clarification message is again a QUESTION; the assistant
+#      stays conversation_in_progress and returns DID_TAKE only after the senior
+#      confirms on the next turn.
+#   2. Refusal: Message #2 is delivered, the assistant stays in progress, and
+#      DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE is returned only if the senior still
+#      refuses on the next turn (change of mind -> DID_NOT_TAKE_BUT_WILL_TAKE;
+#      unclear / no answer -> COULD_NOT_VALIDATE).
+#   Kept from v3: WILL_TAKE explicit-commitment carve-out, TIER 2
+#   one-clarifying-question tightening, Reminder #2 as a statement.
+#
+# NOTE: scenarios 07 (DID_TAKE) and 15 (refusal) in inputs_v1.json have only a
+# single user turn, so the new follow-up will hit silence and likely resolve to
+# COULD_NOT_VALIDATE — expect those two to fail unless their scenarios gain a
+# second (confirming) turn. Scenarios are intentionally left unchanged here.
+
+experiment:
+  name: "Missed Medication — Better Tone (prompt_v5)"
+  date: "2026-08-04"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v5.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v1.json"

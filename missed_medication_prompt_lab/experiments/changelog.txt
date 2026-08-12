@@ -124,3 +124,19 @@ exp_005_followup_confirmation      [changes from exp_004_commitment_and_message_
   scenario_15 (refusal) have a single user turn, so the new follow-up hits
   silence and is expected to resolve to COULD_NOT_VALIDATE — i.e. those two will
   likely report FAIL until their scenarios gain a confirming second turn.
+
+------------------------------------------------------------------------
+exp_006_natural_clarifying_question   [changes from exp_005_followup_confirmation]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v4.txt   ->  prompt_v5.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged)
+
+  Prompt change (v4 -> v5):
+    1. De-scripted the WILL_TAKE clarifying question. The carve-out no longer
+       hands the assistant the fixed line "Would you like to take it now?";
+       instead it instructs the assistant to ask, in its own warm words,
+       whether the senior would like to take it now (with brief reassurance).
+       Fixes the robotic, verbatim clarifying question seen in exp_005
+       scenario_02 — the four scripted standard messages remain verbatim.
+    No logic changes; the wait-for-commitment flow from v4 is unchanged.
