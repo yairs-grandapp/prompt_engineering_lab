@@ -74,7 +74,7 @@ exp_003_refining_temperature        [changes from exp_002_more_scenarios]
   outcome decisions.
 
 ------------------------------------------------------------------------
-exp_004_commitment_and_message_fixes  [changes from exp_003_refining_temperature]
+exp_004_interpretation_fixes  [changes from exp_003_refining_temperature]
 ------------------------------------------------------------------------
   Prompt template:  prompt_v2.txt   ->  prompt_v3.txt
   Temperature:      0.4             (unchanged)
