@@ -39,9 +39,23 @@ class ReportGenerator:
 
         # Summary per model
         lines.append("## Summary\n")
+        grand_in = grand_out = 0
+        grand_cost = 0.0
         for model_name, summary in model_summaries.items():
             lines.append(f"**{model_name}:** {summary['passed']}/{summary['total']} "
                           f"passed ({summary['pass_rate']})  ")
+            # Token usage totalled across every scenario for this model.
+            tin = sum(s['model_results'][model_name]['total_input_tokens'] for s in scenarios)
+            tout = sum(s['model_results'][model_name]['total_output_tokens'] for s in scenarios)
+            tcost = sum(s['model_results'][model_name]['cost'] for s in scenarios)
+            grand_in += tin
+            grand_out += tout
+            grand_cost += tcost
+            lines.append(f"&nbsp;&nbsp;Tokens: {tin:,} in / {tout:,} out "
+                          f"({tin + tout:,} total) — approx cost ${tcost:.4f}  ")
+        if len(model_summaries) > 1:
+            lines.append(f"**All models — total tokens:** {grand_in + grand_out:,} "
+                          f"({grand_in:,} in / {grand_out:,} out) — approx cost ${grand_cost:.4f}  ")
         lines.append("")
 
         # Summary table with columns for each model
