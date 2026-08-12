@@ -147,7 +147,6 @@ exp_007_no_capability_overclaims   [changes from exp_006_natural_clarifying_ques
   Prompt template:  prompt_v5.txt   ->  prompt_v6.txt
   Temperature:      0.4             (unchanged)
   Inputs:           inputs_v1.json  (unchanged)
-  Result:           (fill in after running)
 
   Prompt changes (v5 -> v6):
     1. Added a [DOMAIN] guardrail against PRESENCE overclaims — Vega must not
