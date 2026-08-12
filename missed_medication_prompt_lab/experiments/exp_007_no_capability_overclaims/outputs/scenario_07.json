@@ -10,96 +10,21 @@
       "description": "Senior took the medication earlier and says so clearly in one turn.",
       "model": "gpt-4o",
       "expected_outcome": "DID_TAKE",
-      "actual_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "ERROR",
       "passed": false,
-      "turn_count": 4,
+      "turn_count": 0,
       "transcript": [
         {
-          "role": "assistant",
-          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
-          "turn": 1,
-          "outcome": "conversation_in_progress"
-        },
-        {
-          "role": "user",
-          "text": "I had it about an hour ago, everything is fine",
+          "role": "error",
+          "text": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
           "turn": 1
-        },
-        {
-          "role": "assistant",
-          "text": "That's great to hear, thank you for letting me know! Just to make sure everything is recorded properly on my end, could you confirm you took today's dose from your medication box?",
-          "turn": 2,
-          "outcome": "conversation_in_progress"
-        },
-        {
-          "role": "user",
-          "text": "(silence)",
-          "turn": 2
-        },
-        {
-          "role": "assistant",
-          "text": "I'm still here. It may be time for your medication — have you been able to take it?",
-          "turn": 3,
-          "outcome": "conversation_in_progress"
-        },
-        {
-          "role": "user",
-          "text": "(silence)",
-          "turn": 3
-        },
-        {
-          "role": "assistant",
-          "text": "Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.",
-          "turn": 4,
-          "outcome": "COULD_NOT_VALIDATE"
         }
       ],
-      "total_input_tokens": 13095,
-      "total_output_tokens": 172,
-      "cost": 0.0344575,
-      "raw_responses": [
-        {
-          "turn": 1,
-          "input_tokens": 3211,
-          "output_tokens": 32,
-          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
-          "parsed": {
-            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
-            "conversationOutcome": "conversation_in_progress"
-          }
-        },
-        {
-          "turn": 2,
-          "input_tokens": 3252,
-          "output_tokens": 47,
-          "raw": "{\"text\":\"That's great to hear, thank you for letting me know! Just to make sure everything is recorded properly on my end, could you confirm you took today's dose from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
-          "parsed": {
-            "text": "That's great to hear, thank you for letting me know! Just to make sure everything is recorded properly on my end, could you confirm you took today's dose from your medication box?",
-            "conversationOutcome": "conversation_in_progress"
-          }
-        },
-        {
-          "turn": 3,
-          "input_tokens": 3300,
-          "output_tokens": 31,
-          "raw": "{\"text\":\"I'm still here. It may be time for your medication — have you been able to take it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
-          "parsed": {
-            "text": "I'm still here. It may be time for your medication — have you been able to take it?",
-            "conversationOutcome": "conversation_in_progress"
-          }
-        },
-        {
-          "turn": 4,
-          "input_tokens": 3332,
-          "output_tokens": 62,
-          "raw": "{\"text\":\"Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
-          "parsed": {
-            "text": "Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.",
-            "conversationOutcome": "COULD_NOT_VALIDATE"
-          }
-        }
-      ],
-      "termination_reason": "outcome_reached"
+      "total_input_tokens": 0,
+      "total_output_tokens": 0,
+      "cost": 0.0,
+      "raw_responses": [],
+      "termination_reason": "llm_error: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
     }
   }
 }

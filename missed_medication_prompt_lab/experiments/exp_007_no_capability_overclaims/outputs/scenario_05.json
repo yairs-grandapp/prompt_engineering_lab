@@ -10,75 +10,21 @@
       "description": "Senior took the medication with their breakfast.",
       "model": "gpt-4o",
       "expected_outcome": "DID_TAKE",
-      "actual_outcome": "DID_TAKE",
-      "passed": true,
-      "turn_count": 3,
+      "actual_outcome": "ERROR",
+      "passed": false,
+      "turn_count": 0,
       "transcript": [
         {
-          "role": "assistant",
-          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
-          "turn": 1,
-          "outcome": "conversation_in_progress"
-        },
-        {
-          "role": "user",
-          "text": "I took it with my breakfast this morning",
+          "role": "error",
+          "text": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
           "turn": 1
-        },
-        {
-          "role": "assistant",
-          "text": "That's great to hear, thank you for letting me know! Just to make sure everything is recorded properly on my end, could you confirm you took today's dose from your medication box?",
-          "turn": 2,
-          "outcome": "conversation_in_progress"
-        },
-        {
-          "role": "user",
-          "text": "Yes, I'm certain I took it",
-          "turn": 2
-        },
-        {
-          "role": "assistant",
-          "text": "Thank you for confirming that. It's wonderful to know you've taken care of it. Have a lovely day!",
-          "turn": 3,
-          "outcome": "DID_TAKE"
         }
       ],
-      "total_input_tokens": 9761,
-      "total_output_tokens": 112,
-      "cost": 0.025522500000000004,
-      "raw_responses": [
-        {
-          "turn": 1,
-          "input_tokens": 3211,
-          "output_tokens": 32,
-          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
-          "parsed": {
-            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
-            "conversationOutcome": "conversation_in_progress"
-          }
-        },
-        {
-          "turn": 2,
-          "input_tokens": 3249,
-          "output_tokens": 47,
-          "raw": "{\"text\":\"That's great to hear, thank you for letting me know! Just to make sure everything is recorded properly on my end, could you confirm you took today's dose from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
-          "parsed": {
-            "text": "That's great to hear, thank you for letting me know! Just to make sure everything is recorded properly on my end, could you confirm you took today's dose from your medication box?",
-            "conversationOutcome": "conversation_in_progress"
-          }
-        },
-        {
-          "turn": 3,
-          "input_tokens": 3301,
-          "output_tokens": 33,
-          "raw": "{\"text\":\"Thank you for confirming that. It's wonderful to know you've taken care of it. Have a lovely day!\",\"conversationOutcome\":\"DID_TAKE\"}",
-          "parsed": {
-            "text": "Thank you for confirming that. It's wonderful to know you've taken care of it. Have a lovely day!",
-            "conversationOutcome": "DID_TAKE"
-          }
-        }
-      ],
-      "termination_reason": "outcome_reached"
+      "total_input_tokens": 0,
+      "total_output_tokens": 0,
+      "cost": 0.0,
+      "raw_responses": [],
+      "termination_reason": "llm_error: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
     }
   }
 }

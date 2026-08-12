@@ -149,10 +149,15 @@ exp_007_no_capability_overclaims   [changes from exp_006_natural_clarifying_ques
   Inputs:           inputs_v1.json  (unchanged)
   Result:           (fill in after running)
 
-  Prompt change (v5 -> v6):
-    1. Added a [DOMAIN] guardrail against capability overclaims. The assistant
-       must not imply it can wait, stay on the line, listen, watch, monitor, or
-       confirm in real time that the medication is taken, and must not offer
-       actions outside a brief reminder. Bans generic-assistant lines like
-       "I can wait while you do" (seen in exp_006 scenario_02).
-    No logic changes; outcomes and conversation flow are unchanged from v5.
+  Prompt changes (v5 -> v6):
+    1. Added a [DOMAIN] guardrail against PRESENCE overclaims — Vega must not
+       imply it can wait, stay on the line, watch, monitor, or confirm in real
+       time. Bans lines like "I can wait while you do" (exp_006 scenario_02).
+    2. Extended that guardrail to CONVERSATIONAL / counseling overclaims — Vega
+       is not a counselor and the call ends after the reminder, so it must not
+       invite the senior to "talk it through" or imply ongoing availability.
+       Bans lines like "we can talk about it", "I'm here to support you".
+    3. Reworded the scripted Message #2 (refusal) to remove the "please tell me
+       your reasons, and we can talk about it calmly" invitation, so it no
+       longer contradicts the guardrail.
+    No outcome/flow logic changes.

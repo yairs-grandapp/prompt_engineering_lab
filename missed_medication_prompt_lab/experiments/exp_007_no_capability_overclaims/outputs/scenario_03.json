@@ -10,75 +10,21 @@
       "description": "Senior explicitly refuses to take their medication. Assistant should deliver Message #2, then return DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
       "model": "gpt-4o",
       "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
-      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
-      "passed": true,
-      "turn_count": 3,
+      "actual_outcome": "ERROR",
+      "passed": false,
+      "turn_count": 0,
       "transcript": [
         {
-          "role": "assistant",
-          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
-          "turn": 1,
-          "outcome": "conversation_in_progress"
-        },
-        {
-          "role": "user",
-          "text": "No, I don't want to take it",
+          "role": "error",
+          "text": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
           "turn": 1
-        },
-        {
-          "role": "assistant",
-          "text": "I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.",
-          "turn": 2,
-          "outcome": "conversation_in_progress"
-        },
-        {
-          "role": "user",
-          "text": "I already told you, I won't take it today",
-          "turn": 2
-        },
-        {
-          "role": "assistant",
-          "text": "Thank you for sharing that with me. I respect your decision, but please remember that this medication is important for your health. If you change your mind or want to discuss it further, I'm here to support you.",
-          "turn": 3,
-          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
         }
       ],
-      "total_input_tokens": 9785,
-      "total_output_tokens": 161,
-      "cost": 0.026072500000000005,
-      "raw_responses": [
-        {
-          "turn": 1,
-          "input_tokens": 3211,
-          "output_tokens": 32,
-          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
-          "parsed": {
-            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
-            "conversationOutcome": "conversation_in_progress"
-          }
-        },
-        {
-          "turn": 2,
-          "input_tokens": 3249,
-          "output_tokens": 67,
-          "raw": "{\"text\":\"I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.\",\"conversationOutcome\":\"conversation_in_progress\"}",
-          "parsed": {
-            "text": "I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.",
-            "conversationOutcome": "conversation_in_progress"
-          }
-        },
-        {
-          "turn": 3,
-          "input_tokens": 3325,
-          "output_tokens": 62,
-          "raw": "{\"text\":\"Thank you for sharing that with me. I respect your decision, but please remember that this medication is important for your health. If you change your mind or want to discuss it further, I'm here to support you.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
-          "parsed": {
-            "text": "Thank you for sharing that with me. I respect your decision, but please remember that this medication is important for your health. If you change your mind or want to discuss it further, I'm here to support you.",
-            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
-          }
-        }
-      ],
-      "termination_reason": "outcome_reached"
+      "total_input_tokens": 0,
+      "total_output_tokens": 0,
+      "cost": 0.0,
+      "raw_responses": [],
+      "termination_reason": "llm_error: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
     }
   }
 }
