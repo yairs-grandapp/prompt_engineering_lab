@@ -140,3 +140,19 @@ exp_006_natural_clarifying_question   [changes from exp_005_followup_confirmatio
        Fixes the robotic, verbatim clarifying question seen in exp_005
        scenario_02 — the four scripted standard messages remain verbatim.
     No logic changes; the wait-for-commitment flow from v4 is unchanged.
+
+------------------------------------------------------------------------
+exp_007_no_capability_overclaims   [changes from exp_006_natural_clarifying_question]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v5.txt   ->  prompt_v6.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged)
+  Result:           (fill in after running)
+
+  Prompt change (v5 -> v6):
+    1. Added a [DOMAIN] guardrail against capability overclaims. The assistant
+       must not imply it can wait, stay on the line, listen, watch, monitor, or
+       confirm in real time that the medication is taken, and must not offer
+       actions outside a brief reminder. Bans generic-assistant lines like
+       "I can wait while you do" (seen in exp_006 scenario_02).
+    No logic changes; outcomes and conversation flow are unchanged from v5.

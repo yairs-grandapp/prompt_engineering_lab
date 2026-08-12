@@ -1,0 +1,33 @@
+# prompt_v6.txt — no capability overclaims
+#   CHANGES FROM v5:
+#   1. Added a [DOMAIN] guardrail forbidding the assistant from claiming
+#      abilities it does not have. Vega makes a brief reminder call and cannot
+#      wait on the line, stay present, listen, watch, monitor, or confirm in
+#      real time that the senior takes the medication. Bans generic-assistant
+#      phrases like "I can wait while you do", "I'll stay on the line", or
+#      "I'll check back later", and keeps every response to a short reminder.
+#      Targets the "I can wait while you do" line seen in exp_006 scenario_02.
+#   No logic changes; outcomes and conversation flow are unchanged from v5.
+
+experiment:
+  name: "Missed Medication — No Capability Overclaims (prompt_v5)"
+  date: "2026-08-12"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v6.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v1.json"
