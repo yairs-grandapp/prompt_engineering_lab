@@ -10,7 +10,7 @@
 #   FIXES: scenario_19 (upset senior was being classified as a refusal).
 
 experiment:
-  name: "Missed Medication - Interpretation Fixes (prompt_v4)"
+  name: "Missed Medication - Interpretation Fixes (prompt_v3)"
   date: "2026-04-07"
 
 models:
