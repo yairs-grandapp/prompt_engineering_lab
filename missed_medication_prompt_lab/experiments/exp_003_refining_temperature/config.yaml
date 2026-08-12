@@ -10,7 +10,7 @@
 #   FIXES: scenario_19 (upset senior was being classified as a refusal).
 
 experiment:
-  name: "Missed Medication - Refining Temperature (prompt_v3)"
+  name: "Missed Medication - Refining Temperature (prompt_v2)"
   date: "2026-04-07"
 
 models:
