@@ -17,7 +17,7 @@
 #   No outcome/flow logic changes; only tone/scope guardrails and Message #2.
 
 experiment:
-  name: "Missed Medication — No Capability Overclaims (prompt_v5)"
+  name: "Missed Medication — No Capability Overclaims (prompt_v6)"
   date: "2026-08-12"
 
 models:
