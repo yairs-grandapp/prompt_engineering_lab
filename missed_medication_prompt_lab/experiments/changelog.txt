@@ -103,7 +103,7 @@ exp_004_interpretation_fixes  [changes from exp_003_refining_temperature]
        Fixes scenario_20 over-asking (it used 5 turns instead of the intended 3).
 
 ------------------------------------------------------------------------
-exp_005_followup_confirmation      [changes from exp_004_commitment_and_message_fixes]
+exp_005_followup_confirmation      [changes from exp_004_interpretation_fixes]
 ------------------------------------------------------------------------
   Prompt template:  prompt_v3.txt   ->  prompt_v4.txt
   Temperature:      0.4             (unchanged)
