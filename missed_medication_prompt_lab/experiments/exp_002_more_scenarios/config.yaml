@@ -19,7 +19,7 @@
 #      - Defined the @SYSTEM@ message prefix in the general guidelines.
 
 experiment:
-  name: "Missed Medication - More Scenarios (prompt V1)"
+  name: "Missed Medication - More Scenarios (prompt_v1)"
   date: "2026-04-07"
 
 models:
