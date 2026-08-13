@@ -1,3 +1,6 @@
+The baseline only had four scenarios and the original prompt. 
+This time I rebuilt the prompt around the same structure as our smart-conversation v8 one — a clearer situation/task intro, the tiered outcome rules, and the sensor (@SYSTEM@) handling — and grew the test set to twenty scenarios, five per outcome, so a pass rate actually means something.
+
 # Experiment: Baseline - Production Missed Medication Prompt v1
 
 **Date:** 2026-04-07  
