@@ -1,3 +1,6 @@
+Same prompt as the last run — this was really about the test data and the reporting.
+I gave the two single-turn scenarios (the clear "I took it" and the flat refusal) a confirming second turn so they fit the follow-up structure and stop failing for the wrong reason, and I added the total token count and estimated cost to the top of the report so I can actually see what each run costs.
+
 # Experiment: Missed Medication — Scenario Fixes (prompt_v6)
 
 **Date:** 2026-08-12  
