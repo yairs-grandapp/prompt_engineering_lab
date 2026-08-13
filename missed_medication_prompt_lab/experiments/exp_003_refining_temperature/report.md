@@ -1,3 +1,6 @@
+Coming in from the restructured prompt and the bigger scenario set.
+Two things here: I stopped an annoyed senior ("stop asking me about my pills") from being read as a refusal, and I brought the temperature down from 0.7 to 0.4 so the model stops giving me different answers on the same scenario run to run.
+
 # Experiment: Baseline - Production Missed Medication Prompt v3
 
 **Date:** 2026-04-07  
