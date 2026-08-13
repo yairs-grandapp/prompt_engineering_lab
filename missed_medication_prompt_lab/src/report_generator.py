@@ -24,7 +24,14 @@ class ReportGenerator:
         lines.append(f"# Experiment: {config['name']}\n")
         lines.append(f"**Date:** {config['date']}  ")
         lines.append(f"**Models:** {', '.join(models)}  ")
-        lines.append(f"**Prompt Template:** {config['prompt_template']}\n")
+        lines.append(f"**Prompt Template:** {config['prompt_template']}  ")
+        # Total token usage and estimated cost across every scenario and model.
+        total_in = sum(r['total_input_tokens'] for s in scenarios for r in s['model_results'].values())
+        total_out = sum(r['total_output_tokens'] for s in scenarios for r in s['model_results'].values())
+        total_cost = sum(r['cost'] for s in scenarios for r in s['model_results'].values())
+        lines.append(f"**Total Tokens:** {total_in + total_out:,} "
+                     f"({total_in:,} in / {total_out:,} out)  ")
+        lines.append(f"**Estimated Cost:** ${total_cost:.4f}\n")
         lines.append("---\n")
 
         # Full prompt template
@@ -39,23 +46,9 @@ class ReportGenerator:
 
         # Summary per model
         lines.append("## Summary\n")
-        grand_in = grand_out = 0
-        grand_cost = 0.0
         for model_name, summary in model_summaries.items():
             lines.append(f"**{model_name}:** {summary['passed']}/{summary['total']} "
                           f"passed ({summary['pass_rate']})  ")
-            # Token usage totalled across every scenario for this model.
-            tin = sum(s['model_results'][model_name]['total_input_tokens'] for s in scenarios)
-            tout = sum(s['model_results'][model_name]['total_output_tokens'] for s in scenarios)
-            tcost = sum(s['model_results'][model_name]['cost'] for s in scenarios)
-            grand_in += tin
-            grand_out += tout
-            grand_cost += tcost
-            lines.append(f"&nbsp;&nbsp;Tokens: {tin:,} in / {tout:,} out "
-                          f"({tin + tout:,} total) — approx cost ${tcost:.4f}  ")
-        if len(model_summaries) > 1:
-            lines.append(f"**All models — total tokens:** {grand_in + grand_out:,} "
-                          f"({grand_in:,} in / {grand_out:,} out) — approx cost ${grand_cost:.4f}  ")
         lines.append("")
 
         # Summary table with columns for each model
@@ -91,9 +84,7 @@ class ReportGenerator:
                 result_icon = "PASS" if r['passed'] else "FAIL"
                 lines.append(f"#### {m} [{result_icon}]\n")
                 lines.append(f"**Actual:** {r['actual_outcome']}  ")
-                lines.append(f"**Turns:** {r['turn_count']}  ")
-                lines.append(f"**Tokens:** {r['total_input_tokens']} in / "
-                              f"{r['total_output_tokens']} out\n")
+                lines.append(f"**Turns:** {r['turn_count']}\n")
 
                 # The full assembled prompt is shown once at the top of this
                 # report (from prompt_snapshot.txt); it is intentionally not
