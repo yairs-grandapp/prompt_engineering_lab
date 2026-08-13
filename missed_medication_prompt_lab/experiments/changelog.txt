@@ -176,3 +176,19 @@ exp_008_scenario_fixes      [changes from exp_007_no_capability_overclaims]
     2. Report tooling: report_generator.py now adds an experiment-level token
        usage and approximate cost line (per model) to the report Summary.
     Prompt unchanged from exp_007 (prompt_v6).
+
+------------------------------------------------------------------------
+exp_009_refusal_reconsider_question   [changes from exp_008_scenario_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v6.txt   ->  prompt_v7.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt change (v6 -> v7):
+    1. Refusal Message #2 reworded from a statement into a gentle reconsider
+       question ("...would you be willing to take it now?"), so that in the
+       two-turn refusal flow the senior has something concrete to answer.
+    2. Adjusted the TIER 1 refusal rule text describing Message #2 to match
+       (dropped the "share any reason" wording that conflicted with the
+       no-conversational-overclaim guardrail).
+    No outcome/flow changes.
