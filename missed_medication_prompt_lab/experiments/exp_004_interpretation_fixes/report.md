@@ -1,3 +1,7 @@
+Last run cleaned up the annoyance-vs-refusal mix-up and settled the temperature.
+This time I actually read through the transcripts instead of trusting the pass/fail column, and fixed what it was hiding: the assistant was declaring "will take it" when the senior had only said "I forgot" — no real commitment — and the DID_TAKE and reminder lines were asking a question and then ending the call in the same breath.
+Tightened the commitment rule, turned those two messages into plain statements, and reined in the extra questioning on confused seniors.
+
 # Experiment: Baseline - Production Missed Medication Prompt v4
 
 **Date:** 2026-04-07  
