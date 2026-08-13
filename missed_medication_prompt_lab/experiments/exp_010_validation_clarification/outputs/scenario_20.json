@@ -1,0 +1,126 @@
+{
+  "scenario_id": "scenario_20",
+  "scenario_name": "Senior is disoriented",
+  "description": "Senior is disoriented and cannot follow the conversation.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_20",
+      "scenario_name": "Senior is disoriented",
+      "description": "Senior is disoriented and cannot follow the conversation.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Who is this again?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm Vega, your supportive care assistant. I'm just checking in to see if you've taken your medication today. Have you had a chance to take it yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I don't understand, what were we saying?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be a bit confusing. I'm here to help remind you about your medication. Could you let me know if you've taken your medication today? It's okay if you're not sure — just let me know what you remember.",
+          "turn": 3,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I'm still here. It may be time for your medication — have you been able to take it?",
+          "turn": 4,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "Please do not be concerned — these things can happen. Since I could not confirm whether your medication was taken today, I'm raising an alert in the SeniorMatics system so your caregiver can check in with you. There is no need to worry — someone will follow up to make sure you are alright.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 17128,
+      "total_output_tokens": 232,
+      "cost": 0.04513999999999999,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3340,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3374,
+          "output_tokens": 42,
+          "raw": "{\"text\":\"I'm Vega, your supportive care assistant. I'm just checking in to see if you've taken your medication today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm Vega, your supportive care assistant. I'm just checking in to see if you've taken your medication today. Have you had a chance to take it yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3422,
+          "output_tokens": 56,
+          "raw": "{\"text\":\"I understand this can be a bit confusing. I'm here to help remind you about your medication. Could you let me know if you've taken your medication today? It's okay if you're not sure — just let me know what you remember.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be a bit confusing. I'm here to help remind you about your medication. Could you let me know if you've taken your medication today? It's okay if you're not sure — just let me know what you remember.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 3480,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I'm still here. It may be time for your medication — have you been able to take it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm still here. It may be time for your medication — have you been able to take it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 3512,
+          "output_tokens": 71,
+          "raw": "{\"text\":\"Please do not be concerned — these things can happen. Since I could not confirm whether your medication was taken today, I'm raising an alert in the SeniorMatics system so your caregiver can check in with you. There is no need to worry — someone will follow up to make sure you are alright.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "Please do not be concerned — these things can happen. Since I could not confirm whether your medication was taken today, I'm raising an alert in the SeniorMatics system so your caregiver can check in with you. There is no need to worry — someone will follow up to make sure you are alright.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

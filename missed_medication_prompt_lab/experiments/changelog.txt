@@ -192,3 +192,19 @@ exp_009_refusal_reconsider_question   [changes from exp_008_scenario_fixes]
        (dropped the "share any reason" wording that conflicted with the
        no-conversational-overclaim guardrail).
     No outcome/flow changes.
+
+------------------------------------------------------------------------
+exp_010_validation_clarification      [changes from exp_009_reconsider_question]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v7.txt   ->  prompt_v8.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt change (v7 -> v8):
+    1. COULD_NOT_VALIDATE soft message reworded: it now tells the senior an
+       alert is being raised in the SeniorMatics system so a caregiver can
+       check in, replacing the vague "let us pause and check / we will resolve
+       this" wording (which also read oddly for the silence case).
+    Note: this is only the announcement — the actual alert must be raised by the
+    production system on the COULD_NOT_VALIDATE outcome; the prompt/LLM cannot.
+    No outcome/flow changes.

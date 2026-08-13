@@ -1,0 +1,32 @@
+# prompt_v8.txt — COULD_NOT_VALIDATE now escalates to SeniorMatics
+#   CHANGES FROM v7:
+#   1. Reworded the COULD_NOT_VALIDATE soft message. Instead of the vague
+#      "let us pause and check first ... we will resolve this" wording, it now
+#      tells the senior that an alert is being raised in the SeniorMatics system
+#      so a caregiver can follow up. Also fixes the odd fit for the silence case
+#      (the old message assumed the senior was present and collaborating).
+#   NOTE: the prompt only makes the assistant SAY this. The actual alert must be
+#   raised by the production system when it receives the COULD_NOT_VALIDATE
+#   outcome — confirm the backend escalates on that outcome, or the claim is false.
+experiment:
+  name: "Missed Medication — Validation Clarification (prompt_v8)"
+  date: "2026-08-13"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v8.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"
