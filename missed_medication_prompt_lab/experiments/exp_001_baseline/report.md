@@ -1,3 +1,6 @@
+Starting point.
+I took the production missed-medication prompt exactly as it is and ran it against a small set of four scenarios — one for each possible outcome — just to see how it behaves before changing anything.
+
 # Experiment: Baseline - Production Missed Medication Prompt v0
 
 **Date:** 2026-04-07  
