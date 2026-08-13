@@ -160,3 +160,19 @@ exp_007_no_capability_overclaims   [changes from exp_006_natural_clarifying_ques
        your reasons, and we can talk about it calmly" invitation, so it no
        longer contradicts the guardrail.
     No outcome/flow logic changes.
+
+------------------------------------------------------------------------
+exp_008_scenario_fixes      [changes from exp_007_no_capability_overclaims]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v6.txt   (unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  ->  inputs_v2.json
+
+  Changes from exp_007:
+    1. Inputs: switched to inputs_v2.json. The single-turn DID_TAKE (scenario_07)
+       and refusal (scenario_15) scenarios each gained a confirming second turn
+       so they fit the two-turn follow-up structure and stop false-failing.
+       The single-turn WILL_TAKE scenarios (10, 12) are intentionally unchanged.
+    2. Report tooling: report_generator.py now adds an experiment-level token
+       usage and approximate cost line (per model) to the report Summary.
+    Prompt unchanged from exp_007 (prompt_v6).
