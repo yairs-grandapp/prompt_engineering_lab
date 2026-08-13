@@ -1,4 +1,7 @@
-# Experiment: Missed Medication — No Capability Overclaims (prompt_v6)
+With the clarifying question sounding natural, I started noticing the assistant promising things it can't actually do — "I can wait while you do," "I'm here to support you," offering to talk things through. It makes a short reminder call; it's not sitting on the line or counseling anyone. 
+Added a guardrail telling it to drop those claims, and reworded the refusal message that was doing the same thing ("we can talk about it calmly").
+
+# Experiment: Missed Medication — No Capability Overclaims (prompt_v5)
 
 **Date:** 2026-08-12  
 **Models:** gpt-4o  
