@@ -1,3 +1,6 @@
+The follow-up flow was working, but the "would you like to take it now?" line came out stiff and robotic — it was basically hard-coded into the prompt, so the model just parroted it.
+I let it phrase that question in its own warm words instead, so it sounds like Vega and not a rude robot.
+
 # Experiment: Missed Medication — Better Tone (prompt_v5)
 
 **Date:** 2026-08-04  
