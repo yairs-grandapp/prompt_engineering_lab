@@ -1,3 +1,7 @@
+The wording and outcome logic were in good shape after the last run. 
+What bugged me was that everything got decided in one turn. 
+So now, for "already took it" and for a refusal, Vega says her piece, stays in the conversation, and only lands on the outcome after the senior actually replies.
+
 # Experiment: Missed Medication — Follow-up Confirmation (prompt_v4)
 
 **Date:** 2026-08-04  
