@@ -208,3 +208,46 @@ exp_010_validation_clarification      [changes from exp_009_reconsider_question]
     Note: this is only the announcement — the actual alert must be raised by the
     production system on the COULD_NOT_VALIDATE outcome; the prompt/LLM cannot.
     No outcome/flow changes.
+
+------------------------------------------------------------------------
+exp_011_adaptive_messages          [changes from exp_010_validation_clarification]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v8.txt   ->  prompt_v9.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v8 -> v9). Driven by a line-by-line audit of the exp_010
+  transcripts, which passed 20/20 but still leaked stylistic overclaims in the
+  model-generated lines.
+
+    1. De-scripted three of the four standard messages. The DID_TAKE
+       clarification, the WILL_TAKE closing, and the refusal reconsider question
+       are no longer fixed strings — they are now requirement-based guidelines
+       that state what each response MUST accomplish and let Vega compose the
+       wording adaptively. The COULD_NOT_VALIDATE soft message stays FIXED and
+       word-for-word (it makes a factual promise about the SeniorMatics alert, so
+       exact, auditable wording matters more than adaptiveness there).
+
+    2. Removed two "recording" overclaims Vega cannot back up:
+         - DID_TAKE clarification dropped "...everything is recorded properly on
+           my end..." -> now framed only as making sure Vega understood correctly.
+         - WILL_TAKE closing dropped "...and I'll make sure everything is noted."
+       Vega does not write to any record; the sensors and backend do that
+       separately.
+
+    3. [DOMAIN] tightened with three guardrails:
+         - Recording/logging: bans claiming Vega records, logs, notes, saves,
+           updates, or files anything ("recorded properly on my end", "I'll make
+           sure everything is noted", "I'll update your file", ...).
+         - Joint/shared actions: bans "let's check your medication box together"
+           and the like — Vega is not physically present. (exp_010 scenario_18.)
+         - Extended the counseling/availability ban to also catch "I'm here to
+           help you remember", "I'm here to gently remind you", and "whenever
+           you're ready" (exp_010 scenario_02/03/11).
+
+    4. TIER 3 first-silence re-check is now composed in Vega's own words rather
+       than a fixed quote, consistent with the de-scripting above.
+
+  No outcome/flow logic changes — the tiers, waits, and outcomes are identical to
+  v8; only the wording policy (adaptive vs. fixed) and the [DOMAIN] guardrails
+  changed.
