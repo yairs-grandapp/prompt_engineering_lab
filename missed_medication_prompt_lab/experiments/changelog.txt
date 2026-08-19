@@ -248,6 +248,33 @@ exp_011_adaptive_messages          [changes from exp_010_validation_clarificatio
     4. TIER 3 first-silence re-check is now composed in Vega's own words rather
        than a fixed quote, consistent with the de-scripting above.
 
-  No outcome/flow logic changes — the tiers, waits, and outcomes are identical to
-  v8; only the wording policy (adaptive vs. fixed) and the [DOMAIN] guardrails
+------------------------------------------------------------------------
+exp_012_refining_messages     [changes from exp_011_adaptive_messages]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v9.txt   ->  prompt_v10.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v9 -> v10). Two targeted wording fixes; no tier/outcome logic
   changed.
+
+    1. Locked the opening greeting word-for-word. In v9 the greeting was adaptive
+       (an example in [BEHAVIORAL]), which let it drift — e.g. the "I hope you're
+       doing well today" filler and reworded openers seen in the exp_010
+       transcripts. It is now a MANDATORY FIXED OPENING, delivered exactly:
+         "Good morning, it's Vega here! It may be time for your medication. Have
+          you already taken it?"
+       The redundant start-of-conversation note further down was pointed at this
+       fixed opener so the two no longer conflict.
+
+    2. Reworked the COULD_NOT_VALIDATE fixed message to be concise and human, and
+       to read correctly when the senior never spoke (silence cases 04, 20). The
+       old opener "Please do not be concerned — these things can happen" reacted to
+       a statement the senior may not have made, and the message doubled its
+       reassurance and used "raising an alert in the SeniorMatics system" jargon.
+       Now a single, plain sentence:
+         "I wasn't able to confirm whether you've taken today's medication, so I'll
+          let your caregiver know to check in with you soon."
+       This remains the ONE fixed outcome message (the DID_TAKE / WILL_TAKE /
+       refusal responses stay adaptive per v9). The spoken text no longer names
+       SeniorMatics; the backend must still raise the real alert on this outcome.
