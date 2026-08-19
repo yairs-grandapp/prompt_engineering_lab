@@ -349,3 +349,35 @@ exp_014_commitment_guard           [changes from exp_013_rule_overhaul]
   question -> commitment -> DID_NOT_TAKE_BUT_WILL_TAKE). Note the PASS/FAIL column
   checks only the final outcome label; this path error is visible only in the
   transcript, not the results table.
+
+------------------------------------------------------------------------
+exp_015_refusal_and_cnv_fixes      [changes from exp_014_commitment_guard]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v12.txt  ->  prompt_v13.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v12 -> v13). Two fixes from the exp_014 transcript review.
+
+    1. Refusal taken at face value (scenario_13). A clear refusal is a definitive
+       answer and no longer receives a reconsider/verifying question: the assistant
+       finalizes DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE immediately, with a respectful
+       acknowledgement and the caregiver alert. The prompt now explicitly contrasts
+       a settled refusal ("I WON'T take it") with "I haven't taken it / I forgot"
+       (no decision stated), which still requires the follow-up before
+       DID_NOT_TAKE_BUT_WILL_TAKE. Consequence: the reconsider question is removed
+       from the flow entirely; the discomfort exception is narrowed to the DID_TAKE
+       box-confirmation, and a stale routing note was corrected to TIER 2B.
+
+    2. Hardened COULD_NOT_VALIDATE message (scenario_17). In exp_014 the model
+       returned COULD_NOT_VALIDATE with self-authored text that (a) omitted the
+       mandatory fixed soft message and its caregiver-alert promise, (b) ended on a
+       question despite the conversation terminating, and (c) reintroduced a banned
+       [DOMAIN] phrase ("I'm here to gently remind you"). The requirement now
+       states the ENTIRE response must be the fixed soft message reproduced
+       verbatim — nothing added, no question, no replacement wording.
+
+  Effect: refusal scenarios (03, 13, 14, 15, 16) finalize in 2 turns; the terminal
+  could-not-validate turn (17, 18, 19, 20) must be exactly the fixed message. Both
+  are path-level behaviours not visible in the PASS/FAIL column — verify via the
+  transcripts.
