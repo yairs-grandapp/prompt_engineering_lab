@@ -316,3 +316,36 @@ exp_013_discomfort_exception       [changes from exp_012_refining_messages]
   BACKEND NOTE: the caregiver-alert promise now appears on BOTH
   DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE and COULD_NOT_VALIDATE. Confirm the
   production system escalates on both outcomes.
+
+------------------------------------------------------------------------
+exp_014_commitment_guard           [changes from exp_013_rule_overhaul]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v11.txt  ->  prompt_v12.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v11 -> v12). Single targeted reinforcement; no tier/outcome
+  logic changed.
+
+    1. Commitment guard for DID_NOT_TAKE_BUT_WILL_TAKE. In exp_013, scenario_02
+       finalized DID_NOT_TAKE_BUT_WILL_TAKE after the senior said only "Oh no, I
+       completely forgot about it" — an admission of forgetting, with no
+       commitment to take it now. The prompt already required an explicit
+       commitment, but the model did not adhere to it this run (temp 0.4). The
+       outcome label matched expected, so the harness marked it PASS, masking a
+       false positive in the conversation path.
+
+    2. Reinforcements applied:
+       - WILL_TAKE branch: added a precondition — only finalize if the senior has
+         actually said they will take it; merely admitting they forgot or have not
+         taken it is not a commitment.
+       - IMPORTANT note: added the failing phrases ("I completely forgot about
+         it", "oh no, I missed it") to the not-sufficient examples, and hardened
+         "do NOT finalize" to "MUST NOT finalize / MUST stay conversation_in_
+         progress and ask whether they want to take it now; finalize only after an
+         actual commitment on the next reply".
+
+  Expected effect: scenario_02 returns to a 3-turn path (forgot -> follow-up
+  question -> commitment -> DID_NOT_TAKE_BUT_WILL_TAKE). Note the PASS/FAIL column
+  checks only the final outcome label; this path error is visible only in the
+  transcript, not the results table.
