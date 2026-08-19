@@ -1,0 +1,43 @@
+# prompt_v11.txt — discomfort exception + no badgering for uncomfortable seniors
+#   CHANGES FROM v10:
+#   1. Added a DISCOMFORT EXCEPTION in TIER 1: if the senior sounds annoyed,
+#      angry, or uncomfortable but has still given a CLEAR answer (took it /
+#      will take it / refuses), take that answer at face value and finalize
+#      immediately — skip the normal follow-up validation question (the DID_TAKE
+#      box-confirmation or the refusal reconsider question). Don't press an
+#      uncomfortable senior once they've already answered clearly.
+#   2. Split the upset/annoyed case out of TIER 2 into a new TIER 2B: an upset or
+#      disengaged senior who has NOT given a clear answer (e.g. "leave me alone")
+#      now goes STRAIGHT to COULD_NOT_VALIDATE (raising the caregiver alert) with
+#      NO clarifying question. Only calm confusion / can't-remember / evasion
+#      still gets the one gentle clarifying question (TIER 2). Silence unchanged
+#      (TIER 3 double-check).
+#   3. The refusal (DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE) closing now tells the
+#      senior their caregiver will be notified to check in — the same promise the
+#      could-not-validate message makes. The reconsider question itself stays
+#      alert-free (you're still hoping they reconsider).
+#   NOTE: the caregiver-alert promise now appears on BOTH refusal and
+#   could-not-validate.
+
+experiment:
+  name: "Missed Medication — Rule Overhaul (prompt_v11)"
+  date: "2026-08-19"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v11.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

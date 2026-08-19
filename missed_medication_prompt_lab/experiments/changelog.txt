@@ -278,3 +278,41 @@ exp_012_refining_messages     [changes from exp_011_adaptive_messages]
        This remains the ONE fixed outcome message (the DID_TAKE / WILL_TAKE /
        refusal responses stay adaptive per v9). The spoken text no longer names
        SeniorMatics; the backend must still raise the real alert on this outcome.
+    
+------------------------------------------------------------------------
+exp_013_discomfort_exception       [changes from exp_012_refining_messages]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v10.txt  ->  prompt_v11.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v10 -> v11). Behavioural change around uncomfortable seniors;
+  the four outcomes themselves are unchanged.
+
+    1. DISCOMFORT EXCEPTION (TIER 1). If the senior sounds annoyed, angry, or
+       otherwise uncomfortable but has still given a clear answer (took it / will
+       take it / refuses), Vega takes that answer at face value and finalizes on
+       that turn — skipping the normal follow-up validation question (the DID_TAKE
+       box-confirmation and the refusal reconsider question). The principle: once
+       an uncomfortable senior has clearly answered, do not press them further.
+       Calm seniors are unaffected — they still get the normal follow-up.
+
+    2. New TIER 2B — upset/annoyed with NO clear answer. Pulled the upset/annoyed
+       case out of TIER 2's one-clarifying-question flow. An upset or disengaged
+       senior who has not said whether they took the medication (e.g. "leave me
+       alone", "stop bothering me") now goes straight to COULD_NOT_VALIDATE — no
+       clarifying question — which raises the caregiver alert. TIER 2 now covers
+       only calm confusion / can't-remember / evasive (still one clarifying
+       question). TIER 3 silence handling is unchanged.
+
+    3. Refusal now announces the caregiver alert. The DID_NOT_TAKE_IT_AND_WILL_
+       NOT_TAKE closing now tells the senior their caregiver will be notified to
+       check in, matching the could-not-validate message. The reconsider question
+       itself stays alert-free (still hoping they reconsider).
+
+  Net effect: an uncomfortable senior is never badgered with a follow-up — if
+  they answered, we take it; if they didn't, we validate and alert.
+
+  BACKEND NOTE: the caregiver-alert promise now appears on BOTH
+  DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE and COULD_NOT_VALIDATE. Confirm the
+  production system escalates on both outcomes.
