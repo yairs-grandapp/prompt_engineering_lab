@@ -381,3 +381,28 @@ exp_015_refusal_and_cnv_fixes      [changes from exp_014_commitment_guard]
   could-not-validate turn (17, 18, 19, 20) must be exactly the fixed message. Both
   are path-level behaviours not visible in the PASS/FAIL column — verify via the
   transcripts.
+
+------------------------------------------------------------------------
+exp_016_outcome_clarification            [changes from exp_015_refusal_and_cnv_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v13.txt  ->  prompt_v14.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v13 -> v14). Single change: the [TONE] rule for a confused
+  senior.
+
+    1. Bounded the "help a confused senior" instruction. v13 said "gently help
+       them without pressure", with no stopping point, which competed with the
+       TIER 2 requirement to validate after one clarifying question. In exp_015,
+       scenario_17 returned COULD_NOT_VALIDATE but its terminal turn kept
+       explaining instead of delivering the fixed soft message — omitting the
+       caregiver-alert promise and reusing a banned [DOMAIN] phrase ("I'm here to
+       gently remind you"). The fixed-message hardening in v13 did not hold
+       because the [TONE] instruction pulled the other way.
+
+    2. The rule now reads: acknowledge the senior's feelings, ask ONE clarifying
+       question, and once they still give no clear answer, deliver the
+       could-not-validate closing so their caregiver can follow up. No open-ended
+       "help"/"explain" framing remains. Nothing else changed from v13 (the fixed
+       COULD_NOT_VALIDATE message is retained).
