@@ -430,3 +430,46 @@ exp_017_100_scenarios_stress_test            [changes from exp_016_outcome_clari
        clear answer (must not be could-not-validate). Also discomfort-plus-clear-
        answer (take it, no follow-up) vs. upset-with-no-answer (immediate could-
        not-validate), a @SYSTEM@ sensor event, and caregiver-administered doses.
+
+------------------------------------------------------------------------
+exp_018_targeted_fixes             [changes from exp_017_100_scenarios_stress_test]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v14.txt  ->  prompt_v15.txt
+  Runner:           src/conversation_runner.py updated (COULD_NOT_VALIDATE injection)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Addresses the defects found in the exp_017 line-by-line review (97/100 label
+  pass rate, but ~28 unintended passes).
+
+  Prompt changes (v14 -> v15):
+    1. Reluctance is not a refusal. Added an explicit rule that reluctance/mood
+       ("I don't feel like it", "not in the mood", "I'd rather not") is not a
+       definitive refusal and must route to the offer question. Fixes the two
+       hard fails scenario_30 and scenario_50 (reluctance finalized as refusal).
+    3. Commitment guard reinforced. Added the non-commitment phrasings that were
+       finalized as WILL_TAKE in exp_017 ("haven't taken it yet", "not yet, I was
+       waiting", "busy/distracted/TV on/looking for glasses") and a rule that an
+       excuse for not taking it is not a commitment. Targets the false-positive
+       WILL_TAKE in scenario_11, 27, 77.
+    4. No self-referential sign-off. New [TONE] rule forbids ending a message with
+       "and I'm here to support you" / "I'm here to help" / "gently remind you"
+       and similar. exp_017 leaked "I'm here to support you" in 9 scenarios.
+    5. Volunteered "from the box" may finalize DID_TAKE without re-asking the box
+       confirmation. Makes scenario_52/60/67 intended rather than a shortcut.
+
+  Code change (#2, separate from the prompt):
+    - src/conversation_runner.py now injects the fixed COULD_NOT_VALIDATE message
+      deterministically: whenever the model returns COULD_NOT_VALIDATE, the runner
+      replaces the text with the canonical closing, guaranteeing the caregiver-
+      alert wording on every could-not-validate outcome. In exp_017 the model
+      dropped that closing (missing caregiver line, added a question) in
+      scenario_17 and scenario_43, and reworded/prepended it in 94, 35, 98.
+      Prompt-only hardening had failed to fix this across four experiments. The
+      model's original text is retained in outputs/*.json (raw_responses) and a
+      message_overridden flag marks each replacement. NOTE: the guarantee lives in
+      the lab runner; the production backend must mirror it.
+
+  Not addressed (cosmetic): over-asking (two clarifying questions before
+  validating) in some could-not-validate cases; outcome and alert are still
+  correct, so left as-is.
