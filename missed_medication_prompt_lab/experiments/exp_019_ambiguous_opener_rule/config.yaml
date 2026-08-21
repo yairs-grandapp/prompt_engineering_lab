@@ -1,0 +1,43 @@
+# prompt_v16.txt — ambiguous-opener rule + re-introduction sign-off ban
+#   CHANGES FROM v15:
+#   1. New RULE 0 (top of the tiered rules): do NOT finalize a terminal outcome on
+#      an ambiguous response. Only finalize when the meaning is unambiguous (clear
+#      took-it / explicit commitment / settled refusal / plainly confused or
+#      silent / explicit stop-signal). Ambiguous openers — bargaining ("do I really
+#      have to?", "must I?"), soft/reasoned declines ("I don't need them today"),
+#      and vague frustration ("I'm done with all this") — get ONE clarifying/offer
+#      question first, then classify from the reply. Targets exp_018 fails
+#      scenario_72, 56, 35.
+#   1b. TIER 2B tightened: immediate COULD_NOT_VALIDATE now requires an EXPLICIT
+#      stop-signal (leave me alone / go away); vague frustration routes to RULE 0.
+#   2. Re-introduction sign-off ban: when re-introducing after "who is this?" or
+#      confusion, state the role plainly ("I'm Vega, your care assistant") and ask
+#      the question — no "here to gently remind you about your medication" attached
+#      (exp_018 leaked this in 7 clarifying turns).
+#   UNCHANGED: src/conversation_runner.py still injects the fixed COULD_NOT_VALIDATE
+#   message deterministically (keep the updated runner in place for this run).
+#   Not addressed: the plain "I'm here to support you" sign-off (probabilistic
+#   lexical ban, already reduced 9->3 in exp_018) and over-asking (cosmetic).
+
+experiment:
+  name: "Missed Medication — Ambiguous Opener Rule (prompt_v16)"
+  date: "2026-08-21"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v16.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"
