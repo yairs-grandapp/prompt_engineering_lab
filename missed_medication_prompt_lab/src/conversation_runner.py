@@ -15,6 +15,20 @@ from .config import ExperimentConfig, ModelConfig
 
 
 OUTCOME_IN_PROGRESS = "conversation_in_progress"
+OUTCOME_COULD_NOT_VALIDATE = "COULD_NOT_VALIDATE"
+
+# Canonical text for the COULD_NOT_VALIDATE outcome.
+#
+# The prompt asks the model to produce this message, but a prompt instruction is
+# only a request — the model does not always comply (e.g., a confused-senior turn
+# can pull it into explaining instead of closing, dropping the caregiver-alert
+# promise). To make this safety-critical message truly fixed, the runner injects
+# it deterministically whenever the outcome is COULD_NOT_VALIDATE (see
+# run_scenario). Edit this one constant to change the wording everywhere.
+COULD_NOT_VALIDATE_MESSAGE = (
+    "I wasn't able to confirm whether you've taken today's medication, "
+    "so I'll let your caregiver know to check in with you soon."
+)
 
 # Pricing per 1M tokens (as of 2025)
 MODEL_PRICING = {
@@ -274,6 +288,19 @@ class ConversationRunner:
             assistant_text = parsed.get("text", "")
             outcome = parsed.get("conversationOutcome", OUTCOME_IN_PROGRESS)
 
+            # Deterministically enforce the canonical COULD_NOT_VALIDATE closing.
+            # The prompt instructs the model to emit this verbatim, but the model
+            # does not always comply (a confused-senior turn can pull it into
+            # explaining instead of closing, dropping the caregiver-alert promise).
+            # Overriding here guarantees the exact wording on every
+            # COULD_NOT_VALIDATE outcome. The model's original text is preserved
+            # untouched in raw_responses below for adherence review.
+            message_overridden = False
+            if self._matches_outcome(outcome, OUTCOME_COULD_NOT_VALIDATE):
+                if assistant_text.strip() != COULD_NOT_VALIDATE_MESSAGE:
+                    message_overridden = True
+                assistant_text = COULD_NOT_VALIDATE_MESSAGE
+
             # Note: the full prompt is intentionally NOT stored per turn to keep
             # the conversation transcripts small. A single copy of the assembled
             # prompt is saved separately to experiments/<name>/prompt_snapshot.txt.
@@ -291,7 +318,8 @@ class ConversationRunner:
                 "role": "assistant",
                 "text": assistant_text,
                 "turn": turn_num,
-                "outcome": outcome
+                "outcome": outcome,
+                "message_overridden": message_overridden
             })
 
             print(f"      Turn {turn_num}: Assistant -> {assistant_text[:80]}... [{outcome}]")
