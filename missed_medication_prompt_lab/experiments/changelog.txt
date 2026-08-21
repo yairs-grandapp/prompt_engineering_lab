@@ -473,3 +473,37 @@ exp_018_targeted_fixes             [changes from exp_017_100_scenarios_stress_te
   Not addressed (cosmetic): over-asking (two clarifying questions before
   validating) in some could-not-validate cases; outcome and alert are still
   correct, so left as-is.
+
+------------------------------------------------------------------------
+exp_019_ambiguous_opener_rule      [changes from exp_018_targeted_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v15.txt  ->  prompt_v16.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Addresses the three fails and the re-introduction leaks found in the exp_018
+  review. All three exp_018 fails shared one cause: an ambiguous first utterance
+  was finalized as a terminal outcome instead of prompting a clarifying question.
+
+  Prompt changes (v15 -> v16):
+    1. RULE 0 (new, top of the tiered rules): do NOT finalize a terminal outcome
+       on an ambiguous response. Finalize only when the meaning is unambiguous
+       (clear took-it / explicit commitment / settled refusal / plainly confused
+       or silent / explicit stop-signal). Ambiguous openers get exactly ONE
+       clarifying/offer question, then classify from the reply. Names the specific
+       openers that failed in exp_018: bargaining ("do I really have to?", "must
+       I?" -> scenario_72), soft/reasoned declines ("I don't need them today" ->
+       scenario_56), and vague frustration ("I'm done with all this" ->
+       scenario_35).
+    1b. TIER 2B tightened: immediate COULD_NOT_VALIDATE requires an EXPLICIT signal
+       to stop/leave/go away; vague frustration is routed to RULE 0 (one clarifying
+       question) rather than an immediate validate.
+    2. Re-introduction sign-off ban: when re-introducing during confusion, state
+       the role plainly ("I'm Vega, your care assistant") and ask the question, with
+       no "here to gently remind you about your medication" attached. Targets the
+       seven exp_018 clarifying-turn leaks (17, 20, 38, 41, 43, 51, 93).
+
+  Not addressed: the plain "I'm here to support you"
+  sign-off (probabilistic lexical ban, already reduced 9->3) and over-asking in
+  some could-not-validate cases (cosmetic; outcome and alert correct).
