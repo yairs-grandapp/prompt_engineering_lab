@@ -595,3 +595,28 @@ exp_022_vocabulary_fixes           [changes from exp_021_compaction_regression_f
   (100/100). Known residuals intentionally left as-is (cosmetic, at the prompt-only
   ceiling): the "I'm here to support you" sign-off on WILL_TAKE offer turns (~6), and
   over-asking (a second clarifying question) in some could-not-validate cases (~9).
+
+------------------------------------------------------------------------
+exp_023_reduce_overasking          [changes from exp_022_vocabulary_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v19.txt  ->  prompt_v20.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  One change: the TIER 2 clarifying-question cap was hardened to reduce over-asking
+  in could-not-validate cases (exp_022 had ~12 such cases running 4-5 turns, where
+  the model asked a second clarifying question before validating).
+
+    - TIER 2 now states the count explicitly (greeting reply = first unclear answer;
+      one clarifying question remains; then validate), forbids asking again
+      (no re-ask / re-offer / re-introduce / suggest checking the box), calls a
+      second clarifying question a violation, and adds that stopping after one
+      attempt is correct and kind. The "who is this?" + re-introduction still counts
+      as the single clarifying turn.
+
+  This is a probabilistic nudge on a counting/judgment behaviour, not a guarantee;
+  the expectation is a reduced over-asking count (roughly 12 -> 5-7), not zero.
+  Outcomes should remain 100/100 and the injected could-not-validate message is
+  unchanged. Other residual (occasional "I'm here to support you" sign-off) is not
+  addressed here.
