@@ -20,6 +20,37 @@ limitations are left unaddressed as non-material: an occasional self-referential
 closing ("I'm here to support you") and, in some could-not-validate cases, a second
 clarifying question that affects turn count only.
 
+exp_019 evaluated prompt_v16, together with the deterministic COULD_NOT_VALIDATE
+message injection introduced in exp_018, against the 100-scenario balanced set
+(inputs_v3.json). It resolved the three outcome-level failures observed in exp_018,
+producing a 100/100 outcome-label pass rate.
+
+All three prior failures shared one cause — an ambiguous first utterance being
+finalized as a terminal outcome — and all three were corrected by the new
+precedence rule (RULE 0), which requires the assistant to withhold any terminal
+outcome on an ambiguous response and instead ask exactly one clarifying or offer
+question before classifying. scenario_72 ("do I really have to?"), scenario_56 ("I
+don't need them today, I feel perfectly fine"), and scenario_35 ("I'm done with all
+this") each now resolve over three turns to their intended outcome. The narrowing of
+the immediate could-not-validate tier to require an explicit instruction to
+disengage contributed to this result.
+
+The safety-relevant COULD_NOT_VALIDATE closing was delivered correctly in every
+could-not-validate case, guaranteed by the runner-level injection rather than by
+model compliance; the model's original text is retained in the per-scenario outputs
+for review. The self-referential closing phrase targeted in prompt_v15 continued to
+decline, from nine scenarios (exp_017) to one (exp_019).
+
+Two non-material limitations remain and are accepted. First, when re-introducing
+itself during confusion, the assistant still occasionally attaches a "here to
+gently remind you about your medication" phrase to its self-introduction, despite
+an explicit prohibition; these occurrences are confined to non-terminal clarifying
+turns and do not affect the outcome or the caregiver notification. Second, in some
+could-not-validate cases the assistant asks a second clarifying question before
+validating, which affects turn count only. Both are instances of probabilistic
+instruction-following that prompt wording cannot fully constrain, consistent with
+the earlier finding that a fixed safety message could only be guaranteed in code.
+
 # Experiment: Missed Medication — Ambiguous Opener Rule (prompt_v16)
 
 **Date:** 2026-08-21  
