@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_50",
+  "scenario_name": "Reluctant mood, then commits",
+  "description": "Senior expresses a reluctant mood ('not in the mood'), which is not a definitive refusal, then commits to taking it now. Resolves to DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_50",
+      "scenario_name": "Reluctant mood, then commits",
+      "description": "Senior expresses a reluctant mood ('not in the mood'), which is not a definitive refusal, then commits to taking it now. Resolves to DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I'm not really in the mood for them",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand you might not feel like taking them right now, but it's important for your health. Would you like to take them now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Oh, alright then, I'll take them now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for deciding to take your medication now. It's important for your well-being, and I appreciate you taking care of yourself.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 15193,
+      "total_output_tokens": 114,
+      "cost": 0.039122500000000004,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5024,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5062,
+          "output_tokens": 38,
+          "raw": "{\"text\":\"I understand you might not feel like taking them right now, but it's important for your health. Would you like to take them now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand you might not feel like taking them right now, but it's important for your health. Would you like to take them now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5107,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"Thank you for deciding to take your medication now. It's important for your well-being, and I appreciate you taking care of yourself.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for deciding to take your medication now. It's important for your well-being, and I appreciate you taking care of yourself.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
