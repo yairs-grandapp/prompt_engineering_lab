@@ -1,3 +1,25 @@
+This experiment addresses the three outcome-level failures observed in exp_018,
+which shared a single cause: an ambiguous first utterance was finalized as a terminal
+outcome rather than prompting a clarifying question. In scenario_72 a bargaining
+statement ("do I really have to?") was classified as a refusal; in scenario_56 a
+soft, reasoned decline ("I don't need them today, I feel perfectly fine") and in
+scenario_35 a vague expression of frustration ("I'm done with all this") were
+classified as could-not-validate. In each case the intended behaviour was to ask one
+clarifying or offer question and classify from the subsequent reply.
+
+Prompt_v16 introduces a precedence rule (RULE 0) stating that a terminal outcome may
+be finalized only when the senior's meaning is unambiguous; otherwise the assistant
+must ask exactly one clarifying/offer question before classifying. The immediate
+could-not-validate tier is correspondingly narrowed to require an explicit
+instruction to disengage, so that vague frustration is routed through the clarifying
+step. A secondary change requires the assistant, when re-introducing itself during
+confusion, to state its role plainly without appending a "here to gently remind you"
+phrase, addressing a recurring wording leak in the clarifying turns. The deterministic
+could-not-validate message injection introduced in exp_018 remains in place. Two known
+limitations are left unaddressed as non-material: an occasional self-referential
+closing ("I'm here to support you") and, in some could-not-validate cases, a second
+clarifying question that affects turn count only.
+
 # Experiment: Missed Medication — Ambiguous Opener Rule (prompt_v16)
 
 **Date:** 2026-08-21  
