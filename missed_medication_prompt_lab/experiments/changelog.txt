@@ -567,3 +567,31 @@ exp_021_compaction_regression_fixes  [changes from exp_020_prompt_compaction]
   PURPOSE: A/B against exp_019 (v16, 100/100) and exp_020 (v17, 98/100). Target:
   recover 100/100 outcomes and a low sign-off-leak count while keeping ~58% lower
   prompt input cost. The could-not-validate injection remains in place.
+
+------------------------------------------------------------------------
+exp_022_vocabulary_fixes           [changes from exp_021_compaction_regression_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v18.txt  ->  prompt_v19.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Three additive path clarifications from the exp_021 line-by-line review (which was
+  100/100 on outcomes but had a few unintended-path passes). No structural change;
+  v19 is still ~56% smaller than v16.
+
+    1. "I was about to / just about to" added to the not-a-commitment list for
+       DID_NOT_TAKE_BUT_WILL_TAKE. Fixes exp_021 scenario_32, where "I was just about
+       to when the phone rang" was finalized as WILL_TAKE with no offer question.
+    2. Emphatic refusals ("not today, absolutely not", "no, definitely not") added
+       to the clear-settled-refusal examples, with an explicit note that an emphatic
+       "no" finalizes immediately and is not reluctance. Fixes exp_021 scenario_15,
+       where RULE 0 over-fired and asked an offer question on a clear refusal.
+    3. Box-confirmation skip tightened: only an explicit "from the box" statement
+       lets you skip; other evidence ("gone from the pack", "slot is empty", "had it
+       with breakfast") still gets the one confirmation. Fixes exp_021 scenario_62.
+
+  PURPOSE: validate that the three paths tighten and nothing regresses vs exp_021
+  (100/100). Known residuals intentionally left as-is (cosmetic, at the prompt-only
+  ceiling): the "I'm here to support you" sign-off on WILL_TAKE offer turns (~6), and
+  over-asking (a second clarifying question) in some could-not-validate cases (~9).
