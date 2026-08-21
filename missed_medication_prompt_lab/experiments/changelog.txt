@@ -507,3 +507,36 @@ exp_019_ambiguous_opener_rule      [changes from exp_018_targeted_fixes]
   Not addressed: the plain "I'm here to support you"
   sign-off (probabilistic lexical ban, already reduced 9->3) and over-asking in
   some could-not-validate cases (cosmetic; outcome and alert correct).
+
+------------------------------------------------------------------------
+exp_020_prompt_compaction          [changes from exp_019_ambiguous_opener_rule]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v16.txt  ->  prompt_v17.txt  (compaction, ~63% smaller)
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  No intended behavioural change. prompt_v17 is a structural compaction of
+  prompt_v16: ~63% fewer tokens (4014 -> 1456 words) with every behavioural rule
+  retained.
+
+    - Removed the MANDATORY RESPONSE REQUIREMENTS block (it duplicated the tier
+      logic); each outcome's requirements now appear once under DECISION RULES.
+    - Replaced the verbatim COULD_NOT_VALIDATE message with a one-line pointer;
+      the runner supplies the exact closing text via injection.
+    - De-duplicated the fixed greeting, the @SYSTEM/sensor handling, and the
+      "do not ask the senior to contact you" rule; trimmed generic boilerplate
+      (prefix explanations, JSON-object note, etc.) while keeping the behavioural
+      context (ASR-misrecognition guidance, never reveal the medicine name).
+    - Reorganized into DECISION RULES / STYLE & CONSTRAINTS / CONTEXT.
+
+  Retained in full: RULE 0 (ambiguous openers + examples), DID_TAKE box-confirmation
+  and both skip cases, the DID_NOT_TAKE_BUT_WILL_TAKE not-a-commitment list,
+  reluctance-is-not-refusal, annoyance-is-not-refusal, TIER 2 / 2B / 3, the fixed
+  greeting, the sign-off and re-introduction bans, and all [DOMAIN] guardrails.
+
+  PURPOSE: A/B validation against exp_019. Compare directly: outcome pass rate
+  should stay 100/100 and the residual profile (occasional re-introduction wording;
+  over-asking) should be unchanged. A regression on any scenario indicates that rule
+  lost necessary emphasis in compaction and should be restored. Secondary benefit:
+  ~63% lower prompt input tokens per turn.
