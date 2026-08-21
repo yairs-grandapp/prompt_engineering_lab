@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_41",
+  "scenario_name": "Silence, a stray non-answer, then silence",
+  "description": "Senior is mostly silent, with one stray non-answer that does not address the medication. Resolves to could-not-validate via the silence path.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_41",
+      "scenario_name": "Silence, a stray non-answer, then silence",
+      "description": "Senior is mostly silent, with one stray non-answer that does not address the medication. Resolves to could-not-validate via the silence path.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Hello again! I just wanted to check in to see if you've been able to take your medication today. Let me know if you need any assistance.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Who's there?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I'm Vega, your care assistant. I just wanted to make sure you've taken your medication today. Have you already done that, or would you like to take it now?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 10977,
+      "total_output_tokens": 159,
+      "cost": 0.029032500000000003,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2720,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"Hello again! I just wanted to check in to see if you've been able to take your medication today. Let me know if you need any assistance.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Hello again! I just wanted to check in to see if you've been able to take your medication today. Let me know if you need any assistance.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2762,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I'm Vega, your care assistant. I just wanted to make sure you've taken your medication today. Have you already done that, or would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm Vega, your care assistant. I just wanted to make sure you've taken your medication today. Have you already done that, or would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2808,
+          "output_tokens": 42,
+          "raw": "{\"text\":\"I understand it might be a bit confusing. Since I haven't heard back from you, I'll let your caregiver know so they can check in. Take care.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand it might be a bit confusing. Since I haven't heard back from you, I'll let your caregiver know so they can check in. Take care.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

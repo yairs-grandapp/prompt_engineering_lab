@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_18",
+  "scenario_name": "Senior cannot remember",
+  "description": "Senior cannot recall whether they took it.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_18",
+      "scenario_name": "Senior cannot remember",
+      "description": "Senior cannot recall whether they took it.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I can't remember if I took it",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can be hard to remember sometimes. Could you please check your medication box to see if today's dose is still there?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "My memory is bad, I really don't know",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 8179,
+      "total_output_tokens": 112,
+      "cost": 0.0215675,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2724,
+          "output_tokens": 37,
+          "raw": "{\"text\":\"I understand it can be hard to remember sometimes. Could you please check your medication box to see if today's dose is still there?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can be hard to remember sometimes. Could you please check your medication box to see if today's dose is still there?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2768,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"I understand, it can be difficult to keep track sometimes. Since we're not sure, I'll let your caregiver know so they can assist you further. Take care.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand, it can be difficult to keep track sometimes. Since we're not sure, I'll let your caregiver know so they can assist you further. Take care.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
