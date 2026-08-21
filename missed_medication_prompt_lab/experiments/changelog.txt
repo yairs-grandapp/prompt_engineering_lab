@@ -540,3 +540,30 @@ exp_020_prompt_compaction          [changes from exp_019_ambiguous_opener_rule]
   over-asking) should be unchanged. A regression on any scenario indicates that rule
   lost necessary emphasis in compaction and should be restored. Secondary benefit:
   ~63% lower prompt input tokens per turn.
+
+------------------------------------------------------------------------
+exp_021_compaction_regression_fixes  [changes from exp_020_prompt_compaction]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v17.txt  ->  prompt_v18.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Fixes the two regressions and the sign-off leak that the v17 compaction
+  introduced (exp_020: 98/100, and "I'm here to support you" leaked 15x vs 1 in
+  exp_019). v18 restores emphasis on three spots only; ~90% of the compaction is
+  kept (v18 is ~58% smaller than v16).
+
+    1. Sign-off ban restored as a forceful CRITICAL rule with the full phrase list.
+       The single compressed line in v17 was too weak.
+    2. WILL_TAKE vs DID_TAKE boundary made explicit: "on it now", "doing it now",
+       "I'm taking it now" are commitments (DID_NOT_TAKE_BUT_WILL_TAKE), not
+       already-taken. Fixes exp_020 scenario_75.
+    3. DID_TAKE box-confirmation is asked at most once: a clear statement that the
+       dose came from the box (including in reply to the clarifying question)
+       finalizes DID_TAKE immediately, no re-ask. Fixes exp_020 scenario_45
+       (re-asked, then fell to could-not-validate via silence).
+
+  PURPOSE: A/B against exp_019 (v16, 100/100) and exp_020 (v17, 98/100). Target:
+  recover 100/100 outcomes and a low sign-off-leak count while keeping ~58% lower
+  prompt input cost. The could-not-validate injection remains in place.
