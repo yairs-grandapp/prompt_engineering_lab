@@ -406,3 +406,27 @@ exp_016_outcome_clarification            [changes from exp_015_refusal_and_cnv_f
        could-not-validate closing so their caregiver can follow up. No open-ended
        "help"/"explain" framing remains. Nothing else changed from v13 (the fixed
        COULD_NOT_VALIDATE message is retained).
+
+------------------------------------------------------------------------
+exp_017_100_scenarios_stress_test            [changes from exp_016_outcome_clarification]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v14.txt  (unchanged from exp_016)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  ->  inputs_v3.json
+
+  No prompt change. This experiment stress-tests prompt_v14 against a much larger,
+  harder, balanced scenario set.
+
+    1. inputs_v3.json: 100 scenarios, 25 per outcome (DID_TAKE, DID_NOT_TAKE_BUT_
+       WILL_TAKE, DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE, COULD_NOT_VALIDATE). Contains
+       the original 20 (scenario_01..20) unchanged plus 80 new, more intricate
+       cases.
+
+    2. The new cases target known-hard judgments: mid-conversation outcome switches
+       (claim-took-it -> will-take / could-not-validate; soft-maybe -> refusal;
+       forgot -> refusal), reluctance vs. definitive refusal, "forgot / not yet"
+       with no commitment (must not finalize as will-take), and
+       confusion/identity/hard-of-hearing/silence/ASR noise that RESOLVES into a
+       clear answer (must not be could-not-validate). Also discomfort-plus-clear-
+       answer (take it, no follow-up) vs. upset-with-no-answer (immediate could-
+       not-validate), a @SYSTEM@ sensor event, and caregiver-administered doses.
