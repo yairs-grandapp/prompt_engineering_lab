@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_57",
+  "scenario_name": "Hard of hearing, then confirms took it",
+  "description": "Senior does not hear the greeting at first and asks the assistant to repeat; after the single clarifying re-ask, they clearly confirm taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_57",
+      "scenario_name": "Hard of hearing, then confirms took it",
+      "description": "Senior does not hear the greeting at first and asks the assistant to repeat; after the single clarifying re-ask, they clearly confirm taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Take my what? Speak up, dear",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing sometimes. I'm Vega, your care assistant. I was just checking if you've taken your medication today. Would you like to take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Oh, my pills — yes, I took them from the box this morning",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Thank you for letting me know. Have a wonderful day!",
+          "turn": 3,
+          "outcome": "DID_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 7880,
+      "total_output_tokens": 106,
+      "cost": 0.02076,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2620,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I understand this can be confusing sometimes. I'm Vega, your care assistant. I was just checking if you've taken your medication today. Would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing sometimes. I'm Vega, your care assistant. I was just checking if you've taken your medication today. Would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2678,
+          "output_tokens": 29,
+          "raw": "{\"text\":\"That's great to hear! Thank you for letting me know. Have a wonderful day!\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "That's great to hear! Thank you for letting me know. Have a wonderful day!",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
