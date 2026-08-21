@@ -1,0 +1,131 @@
+{
+  "scenario_id": "scenario_48",
+  "scenario_name": "Claims took it, then becomes unsure",
+  "description": "Senior first claims they took it; when asked to confirm, they become genuinely unsure and cannot confirm. Resolves to could-not-validate.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_48",
+      "scenario_name": "Claims took it, then becomes unsure",
+      "description": "Senior first claims they took it; when asked to confirm, they become genuinely unsure and cannot confirm. Resolves to could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Yes, I'm sure I took it",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Hmm, actually... now I'm not sure I did",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "No worries, it can be easy to forget. Would you like to take your medication now? It’s important to stay on track, and I'm here to support you.",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "Just checking in again to see if you’ve had a chance to take your medication. It’s important for your health, and I’m here to support you.",
+          "turn": 4,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 11352,
+      "total_output_tokens": 187,
+      "cost": 0.03025,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2189,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2226,
+          "output_tokens": 33,
+          "raw": "{\"text\":\"That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2267,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"No worries, it can be easy to forget. Would you like to take your medication now? It’s important to stay on track, and I'm here to support you.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "No worries, it can be easy to forget. Would you like to take your medication now? It’s important to stay on track, and I'm here to support you.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2313,
+          "output_tokens": 42,
+          "raw": "{\"text\":\"Just checking in again to see if you’ve had a chance to take your medication. It’s important for your health, and I’m here to support you.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Just checking in again to see if you’ve had a chance to take your medication. It’s important for your health, and I’m here to support you.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 2357,
+          "output_tokens": 36,
+          "raw": "{\"text\":\"I couldn't confirm whether you've taken your medication, so I'll let your caregiver know to check in with you. Take care!\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I couldn't confirm whether you've taken your medication, so I'll let your caregiver know to check in with you. Take care!",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
