@@ -1,0 +1,1264 @@
+{
+  "version": "v3",
+  "description": "Missed medication multi-turn test scenarios - v3. Contains the original 20 scenarios from v2 unchanged (scenario_01..scenario_20), plus 40 more intricate/harder scenarios (scenario_21..scenario_60) intended to stress the model's classification. The harder set includes: mid-conversation outcome switches (claims-took-it that collapses to will-take or could-not-validate; commit that retracts to refusal; forgot that becomes refusal); reluctance vs. definitive refusal; 'I forgot / not yet' with NO commitment (must NOT be finalized as WILL_TAKE without an explicit commitment); confusion, identity-confusion, hard-of-hearing, ASR noise, evasion, and silence that RESOLVE into a clear answer (must NOT be COULD_NOT_VALIDATE); discomfort/anger paired with a clear answer (take the answer, no follow-up); upset-with-no-answer (immediate COULD_NOT_VALIDATE); a sensor @SYSTEM@ event; and caregiver-administered doses. expected_outcome is the semantically correct outcome per the prompt rules; difficulty lies in the model reaching it, not in ambiguity of the label.",
+  "scenarios": [
+    {
+      "id": "scenario_01",
+      "name": "Senior already took medication",
+      "description": "Senior clearly states they already took their medication - sensor simply missed it. Assistant should deliver the clarification message, then return DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "Yes, I already took it this morning"
+        },
+        {
+          "text": "Yes I'm sure, I took it from the box with my breakfast"
+        }
+      ]
+    },
+    {
+      "id": "scenario_02",
+      "name": "Senior forgot but will take it now",
+      "description": "Senior acknowledges they have not taken it yet and commits to taking it right away. Assistant should deliver Reminder #2, then return DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Oh no, I completely forgot about it"
+        },
+        {
+          "text": "You're right, I'll go take it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_03",
+      "name": "Senior refuses to take medication",
+      "description": "Senior explicitly refuses to take their medication. Assistant should deliver Message #2, then return DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "No, I don't want to take it"
+        },
+        {
+          "text": "I already told you, I won't take it today"
+        }
+      ]
+    },
+    {
+      "id": "scenario_04",
+      "name": "Senior does not respond (silence)",
+      "description": "Senior gives no response across multiple turns. The situation cannot be resolved in conversation, so the assistant should deliver the soft message and return COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": ""
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "id": "scenario_05",
+      "name": "Senior took it with breakfast",
+      "description": "Senior took the medication with their breakfast.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "I took it with my breakfast this morning"
+        },
+        {
+          "text": "Yes, I'm certain I took it"
+        }
+      ]
+    },
+    {
+      "id": "scenario_06",
+      "name": "Senior confirms pills are done",
+      "description": "Senior states plainly they already took their pills.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "Already took my pills, thank you dear"
+        },
+        {
+          "text": "Yes, all done"
+        }
+      ]
+    },
+    {
+      "id": "scenario_07",
+      "name": "Senior took it an hour ago",
+      "description": "Senior took the medication earlier and clearly says so; after the assistant asks them to confirm it came from the box, they confirm. Assistant returns DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "I had it about an hour ago, everything is fine"
+        },
+        {
+          "text": "Yes, I'm sure — I took it from the box this morning"
+        }
+      ]
+    },
+    {
+      "id": "scenario_08",
+      "name": "DID_TAKE with ASR misrecognition",
+      "description": "Speech recognition mishears 'medication' as 'dedication'; assistant should read it in context as the senior confirming they took it.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "I already took my dedication today"
+        },
+        {
+          "text": "That's right, I book it every morning"
+        }
+      ]
+    },
+    {
+      "id": "scenario_09",
+      "name": "Senior will take it right away",
+      "description": "Senior has not taken it and commits to doing so immediately.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Not yet, but I'll take it right away"
+        },
+        {
+          "text": "Going to get it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_10",
+      "name": "Senior forgot and takes it now",
+      "description": "Senior forgot and immediately agrees to take it.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Oh, I forgot! Let me take it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_11",
+      "name": "Senior goes to get it",
+      "description": "Senior has not taken it and says they will fetch it this minute.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Haven't taken it yet"
+        },
+        {
+          "text": "I'll go get it this minute"
+        }
+      ]
+    },
+    {
+      "id": "scenario_12",
+      "name": "Senior was about to take it",
+      "description": "Senior was about to take it and commits to doing it now.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "I was just about to. I'll do it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_13",
+      "name": "Senior declines flatly",
+      "description": "Senior refuses and confirms the refusal.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "No, I'm not going to take it"
+        },
+        {
+          "text": "Yes, I'm sure. No."
+        }
+      ]
+    },
+    {
+      "id": "scenario_14",
+      "name": "Senior refuses over how it feels",
+      "description": "Senior refuses because it makes them feel sick and holds firm.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I won't take it, it makes me feel sick"
+        },
+        {
+          "text": "No, my decision is final"
+        }
+      ]
+    },
+    {
+      "id": "scenario_15",
+      "name": "Senior refuses for today",
+      "description": "Senior firmly declines for the day and, after the assistant delivers Message #2 asking them to reconsider, holds firm. Assistant returns DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "Not today, absolutely not"
+        },
+        {
+          "text": "No, I'm certain — I won't be taking it today"
+        }
+      ]
+    },
+    {
+      "id": "scenario_16",
+      "name": "Senior stopped taking it",
+      "description": "Senior says they stopped taking it and will not take it now.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "No, I stopped taking those a while ago"
+        },
+        {
+          "text": "I won't be taking it"
+        }
+      ]
+    },
+    {
+      "id": "scenario_17",
+      "name": "Senior is confused about the topic",
+      "description": "Senior does not understand the question and stays confused after a clarifying attempt.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "What pills? I don't know what you mean"
+        },
+        {
+          "text": "I'm confused, what is this about?"
+        }
+      ]
+    },
+    {
+      "id": "scenario_18",
+      "name": "Senior cannot remember",
+      "description": "Senior cannot recall whether they took it.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "I can't remember if I took it"
+        },
+        {
+          "text": "My memory is bad, I really don't know"
+        }
+      ]
+    },
+    {
+      "id": "scenario_19",
+      "name": "Senior is upset and disengages",
+      "description": "Senior is upset and refuses to engage with the question.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Stop asking me about my pills"
+        },
+        {
+          "text": "Leave me alone please"
+        }
+      ]
+    },
+    {
+      "id": "scenario_20",
+      "name": "Senior is disoriented",
+      "description": "Senior is disoriented and cannot follow the conversation.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Who is this again?"
+        },
+        {
+          "text": "I don't understand, what were we saying?"
+        }
+      ]
+    },
+    {
+      "id": "scenario_21",
+      "name": "Took it, vague phrasing with ASR noise",
+      "description": "Senior confirms they took it using colloquial, ASR-noisy phrasing ('tablets after me tea'), then confirms it came from the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "Aye, I had me tablets after me tea"
+        },
+        {
+          "text": "Yes, from the box, I'm certain"
+        }
+      ]
+    },
+    {
+      "id": "scenario_22",
+      "name": "Distracted, then commits to take it",
+      "description": "Senior has not taken it (was distracted looking for their glasses) - not a commitment - then explicitly commits to take it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Not yet, I've been hunting for my glasses all morning"
+        },
+        {
+          "text": "Found them — yes, I'll take it right now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_23",
+      "name": "Hedges then confirms clearly",
+      "description": "Senior sounds unsure at first but then gives a clear confirmation that today's slot is empty. Should resolve to DID_TAKE, not COULD_NOT_VALIDATE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "I think so... yes, I definitely took it"
+        },
+        {
+          "text": "Today's slot in the box is empty, so yes, I took it"
+        }
+      ]
+    },
+    {
+      "id": "scenario_24",
+      "name": "Sensor event confirms dose taken",
+      "description": "A @SYSTEM@ sensor update reports today's dose was taken, and the senior confirms. Assistant may reference the sensor warmly and returns DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "system_events": [
+            {
+              "message": "The home medication box sensor has registered that today's dose was removed and taken."
+            }
+          ],
+          "text": "Yes, I've taken it"
+        },
+        {
+          "text": "Yes, from the box, this morning"
+        }
+      ]
+    },
+    {
+      "id": "scenario_25",
+      "name": "Refuses, prefers natural remedies",
+      "description": "Senior clearly declines the medication in favor of their own remedies. A clear refusal is taken at face value. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I don't take those anymore, I manage with my herbal teas"
+        },
+        {
+          "text": "No, I won't be taking them"
+        }
+      ]
+    },
+    {
+      "id": "scenario_26",
+      "name": "Reminisces, never answers",
+      "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Back in my day we never needed all these pills, you know"
+        },
+        {
+          "text": "My late husband, now he never saw a doctor once in his life..."
+        }
+      ]
+    },
+    {
+      "id": "scenario_27",
+      "name": "Waiting until after breakfast, then commits",
+      "description": "Senior has not taken it (was waiting), which is NOT a commitment; after the assistant asks, they explicitly commit. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Not yet, I was waiting until after breakfast"
+        },
+        {
+          "text": "Alright, I'll go take it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_28",
+      "name": "Annoyed but commits clearly",
+      "description": "Senior is impatient/annoyed but gives a clear commitment to take it now. Per the discomfort exception, take the answer at face value without further follow-up. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Yes yes, I'll take it now, stop fussing over me"
+        },
+        {
+          "text": "I said I'll take it, alright?"
+        }
+      ]
+    },
+    {
+      "id": "scenario_29",
+      "name": "Not yet, then agrees",
+      "description": "Senior says 'not yet' (no commitment) and then agrees to do it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Not yet"
+        },
+        {
+          "text": "Okay, fine, I'll do it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_30",
+      "name": "Reluctant, then commits",
+      "description": "Senior expresses reluctance ('don't feel like it') which is NOT a definitive refusal, then commits to taking it. Should resolve to DID_NOT_TAKE_BUT_WILL_TAKE, not a refusal.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "I don't really feel like it right now"
+        },
+        {
+          "text": "...oh alright, I'll take it now then"
+        }
+      ]
+    },
+    {
+      "id": "scenario_31",
+      "name": "'I suppose I should', then commits",
+      "description": "Senior gives a soft, non-explicit intention first (not a commitment), then explicitly commits. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "I suppose I ought to take them, yes"
+        },
+        {
+          "text": "Yes, I'm going to take it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_32",
+      "name": "Was about to, phone interrupted",
+      "description": "Senior was about to take it when the phone rang (not yet an explicit commitment to do it now), then commits. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "I was just about to when the phone rang"
+        },
+        {
+          "text": "Yes, let me go do it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_33",
+      "name": "Refuses, distrusts the doctor",
+      "description": "Senior clearly refuses, citing distrust of the doctor. A clear refusal is definitive and finalized immediately. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "The doctor's got it all wrong, I'm not taking them"
+        },
+        {
+          "text": "No, I've made up my mind"
+        }
+      ]
+    },
+    {
+      "id": "scenario_34",
+      "name": "Refuses, calls them useless",
+      "description": "Senior dismisses the medication and clearly refuses. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "Those things are useless, I won't be taking them"
+        },
+        {
+          "text": "No, that's final"
+        }
+      ]
+    },
+    {
+      "id": "scenario_35",
+      "name": "Vague complaint that resolves to refusal",
+      "description": "Senior first gives a vague, non-committal complaint (unclear), then clearly refuses to take the medication. Should resolve to a refusal, not could-not-validate.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I'm done with all this"
+        },
+        {
+          "text": "I won't take the medication, I mean it"
+        }
+      ]
+    },
+    {
+      "id": "scenario_36",
+      "name": "Threw the pills away",
+      "description": "Senior says they discarded the pills and clearly refuses. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I got rid of those pills, I'm not taking them"
+        },
+        {
+          "text": "No."
+        }
+      ]
+    },
+    {
+      "id": "scenario_37",
+      "name": "Angry but clearly refuses",
+      "description": "Senior is angry AND states a clear refusal. Per the discomfort exception plus the refusal rule, take the refusal at face value and finalize immediately. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE. (Contrast with upset-with-no-answer, which is could-not-validate.)",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "Stop pushing them on me — I am NOT taking them"
+        },
+        {
+          "text": "No, and that's the end of it"
+        }
+      ]
+    },
+    {
+      "id": "scenario_38",
+      "name": "Confused and off-topic throughout",
+      "description": "Senior mixes unrelated questions with confusion and never gives a clear answer. After one clarifier, could-not-validate.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Is it raining out? Who is this? What pills?"
+        },
+        {
+          "text": "I don't understand any of this"
+        }
+      ]
+    },
+    {
+      "id": "scenario_39",
+      "name": "Evasive, keeps changing the subject",
+      "description": "Senior repeatedly talks about the garden and weather, never answering about medication. After one clarifier, could-not-validate.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Did you see the garden? The roses are lovely this year"
+        },
+        {
+          "text": "Oh, the weather's been so nice, hasn't it"
+        }
+      ]
+    },
+    {
+      "id": "scenario_40",
+      "name": "Contradictory, cannot commit either way",
+      "description": "Senior gives contradictory answers and cannot say whether they took it. could-not-validate.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Yes... no... I don't know if I did"
+        },
+        {
+          "text": "I really can't say"
+        }
+      ]
+    },
+    {
+      "id": "scenario_41",
+      "name": "Silence, a stray non-answer, then silence",
+      "description": "Senior is mostly silent, with one stray non-answer that does not address the medication. Resolves to could-not-validate via the silence path.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": ""
+        },
+        {
+          "text": "Who's there?"
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "id": "scenario_42",
+      "name": "Upset, no answer given",
+      "description": "Senior is upset and disengages without ever saying whether they took the medication. Per TIER 2B, validate immediately with no clarifying question. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Why do you keep calling me? Leave me be"
+        },
+        {
+          "text": "Just stop"
+        }
+      ]
+    },
+    {
+      "id": "scenario_43",
+      "name": "Disoriented, mistakes the caller",
+      "description": "Senior is disoriented, thinks the assistant is someone else, and cannot follow the conversation. could-not-validate.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Martha? Is that you, Martha?"
+        },
+        {
+          "text": "Where am I? What's happening?"
+        }
+      ]
+    },
+    {
+      "id": "scenario_44",
+      "name": "Unclear then silent",
+      "description": "Senior gives one unclear response, then falls silent. After the single clarifier and no clear answer, could-not-validate.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "I... I don't know what you're asking"
+        },
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "id": "scenario_45",
+      "name": "Confused at first, then clearly took it",
+      "description": "Senior is initially confused ('what pills?') but then recognizes the topic and clearly confirms taking today's dose from the box. Must resolve to DID_TAKE, NOT could-not-validate.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "What pills? ... oh, THOSE pills"
+        },
+        {
+          "text": "Yes, I took them from the box this morning"
+        }
+      ]
+    },
+    {
+      "id": "scenario_46",
+      "name": "Forgot, then refuses",
+      "description": "Senior first says they forgot (no commitment, needs follow-up), then on the follow-up refuses outright. Resolves to a refusal, not will-take.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I forgot all about them"
+        },
+        {
+          "text": "Actually, no — I don't want them anymore, I won't take them"
+        }
+      ]
+    },
+    {
+      "id": "scenario_47",
+      "name": "Claims took it, then admits not, commits",
+      "description": "Senior first claims they took it; when asked to confirm from the box they admit they could not and had not taken it, then commit to taking it now. Resolves to DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "Yes, I took it"
+        },
+        {
+          "text": "Well... actually I couldn't find the box, so no, I haven't — but I'll go take it now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_48",
+      "name": "Claims took it, then becomes unsure",
+      "description": "Senior first claims they took it; when asked to confirm, they become genuinely unsure and cannot confirm. Resolves to could-not-validate.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Yes, I'm sure I took it"
+        },
+        {
+          "text": "Hmm, actually... now I'm not sure I did"
+        }
+      ]
+    },
+    {
+      "id": "scenario_49",
+      "name": "Soft maybe, then refuses",
+      "description": "Senior gives a soft, non-committal 'I suppose I could' (not an explicit commitment), then changes their mind and clearly refuses. Resolves to a refusal.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I suppose I could take them..."
+        },
+        {
+          "text": "No, actually — I've changed my mind, I won't"
+        }
+      ]
+    },
+    {
+      "id": "scenario_50",
+      "name": "Reluctant mood, then commits",
+      "description": "Senior expresses a reluctant mood ('not in the mood'), which is not a definitive refusal, then commits to taking it now. Resolves to DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "I'm not really in the mood for them"
+        },
+        {
+          "text": "Oh, alright then, I'll take them now"
+        }
+      ]
+    },
+    {
+      "id": "scenario_51",
+      "name": "Mishears as 'bills', never resolves",
+      "description": "ASR-style mishearing: the senior hears 'pills' as 'bills' and stays on that track, never giving a clear answer about the medication even after a clarifier. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        {
+          "text": "Bills? I paid all the bills last week"
+        },
+        {
+          "text": "What bills are you on about now?"
+        }
+      ]
+    },
+    {
+      "id": "scenario_52",
+      "name": "Evasive question first, then confirms took it",
+      "description": "Senior first deflects with a question ('why do you need to know?'), then clearly confirms taking it and confirms the box. Resolves to DID_TAKE, not could-not-validate.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "Why do you need to know that?"
+        },
+        {
+          "text": "...fine, yes, I took it, from the box this morning"
+        },
+        {
+          "text": "Yes, I'm certain"
+        }
+      ]
+    },
+    {
+      "id": "scenario_53",
+      "name": "Caregiver administered the dose",
+      "description": "Senior's daughter gave them today's dose from the box this morning. The senior took it, so DID_TAKE after confirmation.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "My daughter gave them to me this morning"
+        },
+        {
+          "text": "Yes, from the box, she took today's out for me"
+        }
+      ]
+    },
+    {
+      "id": "scenario_54",
+      "name": "Unusual routine but took today's",
+      "description": "Senior usually takes medication at night but has already had today's dose. They took it, so DID_TAKE after confirmation.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "I usually take them at night, but I've had today's already"
+        },
+        {
+          "text": "Yes, from the box"
+        }
+      ]
+    },
+    {
+      "id": "scenario_55",
+      "name": "Will take right after the call",
+      "description": "Senior commits to taking it as soon as the call ends. This is an explicit commitment to take it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        {
+          "text": "I'll take it as soon as we hang up"
+        },
+        {
+          "text": "Yes, right after this"
+        }
+      ]
+    },
+    {
+      "id": "scenario_56",
+      "name": "'Don't need them', then refuses",
+      "description": "Senior claims they don't need the medication today, then clearly refuses to take it. Resolves to a refusal.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I don't need them today, I feel perfectly fine"
+        },
+        {
+          "text": "No, I won't be taking them"
+        }
+      ]
+    },
+    {
+      "id": "scenario_57",
+      "name": "Hard of hearing, then confirms took it",
+      "description": "Senior does not hear the greeting at first and asks the assistant to repeat; after the single clarifying re-ask, they clearly confirm taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "Take my what? Speak up, dear"
+        },
+        {
+          "text": "Oh, my pills — yes, I took them from the box this morning"
+        },
+        {
+          "text": "Yes, I'm certain"
+        }
+      ]
+    },
+    {
+      "id": "scenario_58",
+      "name": "Silent at first, then clearly took it",
+      "description": "Senior is silent on the first prompt (was away), then returns and clearly confirms taking today's dose from the box. Resolves to DID_TAKE, not could-not-validate.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": ""
+        },
+        {
+          "text": "Sorry, I was in the kitchen — yes, I took it from the box"
+        },
+        {
+          "text": "Yes, certain"
+        }
+      ]
+    },
+    {
+      "id": "scenario_59",
+      "name": "Frustrated by the calls, refuses clearly",
+      "description": "Senior is frustrated about the calls AND clearly refuses the medication in the same breath. Take the clear refusal at face value. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        {
+          "text": "I'm sick of these calls — I am NOT taking those pills"
+        },
+        {
+          "text": "No, I mean it"
+        }
+      ]
+    },
+    {
+      "id": "scenario_60",
+      "name": "Doesn't know the caller, but clearly took it",
+      "description": "Senior does not recognize the assistant but, in the same turn, clearly states they took their tablets from the box. Identity confusion must NOT trigger could-not-validate when a clear medication answer is given. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        {
+          "text": "I don't know who you are, but yes — I took my tablets from the box"
+        },
+        {
+          "text": "Yes, I'm certain, this morning"
+        }
+      ]
+    },
+    {
+      "id": "scenario_61",
+      "name": "Sarcastic but confirms",
+      "description": "Senior answers with mild sarcasm but clearly affirms taking it, then confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "Of course I took it, what do you take me for?" },
+        { "text": "Yes, from the box, this morning" }
+      ]
+    },
+    {
+      "id": "scenario_62",
+      "name": "Confirms via empty slot",
+      "description": "Senior confirms taking it by noting today's dose is gone from the pack, then confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "I took it, today's is gone from the pack" },
+        { "text": "Yes, from the box, I'm certain" }
+      ]
+    },
+    {
+      "id": "scenario_63",
+      "name": "Broken English, clearly took it",
+      "description": "Non-native speaker confirms taking the medication in broken but clear English, then confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "Yes yes, medicine finish, I take this morning" },
+        { "text": "Yes, from box, correct" }
+      ]
+    },
+    {
+      "id": "scenario_64",
+      "name": "Split the pill, still took it",
+      "description": "Senior took today's dose, splitting the pill as instructed; still counts as taken. Confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "I took it, I split it in half like the nurse showed me" },
+        { "text": "Yes, from the box" }
+      ]
+    },
+    {
+      "id": "scenario_65",
+      "name": "Very terse confirmation",
+      "description": "Senior answers extremely briefly but affirmatively, then confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "Done." },
+        { "text": "From the box, yes" }
+      ]
+    },
+    {
+      "id": "scenario_66",
+      "name": "Spouse set it out, senior took it",
+      "description": "Senior's spouse set the dose out and the senior took it. They took it, so DID_TAKE after box confirmation.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "My wife set it out and I took it" },
+        { "text": "Yes, from the box this morning" }
+      ]
+    },
+    {
+      "id": "scenario_67",
+      "name": "Asks to repeat, then confirms took it",
+      "description": "Senior asks the assistant to repeat, then clearly confirms taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "Sorry, could you say that again?" },
+        { "text": "Ah yes — I took my medication from the box already" },
+        { "text": "Yes, certain" }
+      ]
+    },
+    {
+      "id": "scenario_68",
+      "name": "Claim plus sensor confirmation",
+      "description": "Senior believes they took it; a @SYSTEM@ sensor update then confirms the dose was taken and the senior confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "I believe I took it earlier" },
+        {
+          "system_events": [
+            { "message": "The home medication box sensor has registered that today's dose was taken." }
+          ],
+          "text": "Yes, from the box"
+        }
+      ]
+    },
+    {
+      "id": "scenario_69",
+      "name": "Confident, took it first thing",
+      "description": "Senior confidently confirms taking it first thing, then confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "Absolutely, took it first thing" },
+        { "text": "Yes, straight from the box" }
+      ]
+    },
+    {
+      "id": "scenario_70",
+      "name": "Took with tea, heavy dialect",
+      "description": "Senior confirms taking today's dose with heavy dialect, then confirms the box. DID_TAKE.",
+      "expected_outcome": "DID_TAKE",
+      "user_turns": [
+        { "text": "Had 'em with me cuppa this mornin" },
+        { "text": "Aye, from the box" }
+      ]
+    },
+    {
+      "id": "scenario_71",
+      "name": "Will do it in a moment",
+      "description": "Senior commits to taking it momentarily. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "I'll do it in just a moment" },
+        { "text": "Yes, taking it right now" }
+      ]
+    },
+    {
+      "id": "scenario_72",
+      "name": "Bargains, then commits",
+      "description": "Senior first pushes back ('do I really have to?'), which is not a refusal, then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "Do I really have to?" },
+        { "text": "...fine, I'll take it now" }
+      ]
+    },
+    {
+      "id": "scenario_73",
+      "name": "Gets water first, then takes it",
+      "description": "Senior needs a moment to get water and then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "Let me grab some water first, then I'll take it now" },
+        { "text": "Alright, taking it now" }
+      ]
+    },
+    {
+      "id": "scenario_74",
+      "name": "Wasn't going to, changes mind to take",
+      "description": "Senior initially wasn't going to take it (not a firm refusal here) but changes their mind and commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "I wasn't going to, but alright — I'll take it now" },
+        { "text": "Yes, doing it now" }
+      ]
+    },
+    {
+      "id": "scenario_75",
+      "name": "Terse commitment",
+      "description": "Senior commits very briefly. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "Right, on it now" },
+        { "text": "Yes, doing it" }
+      ]
+    },
+    {
+      "id": "scenario_76",
+      "name": "Embarrassed it slipped mind, commits",
+      "description": "Senior is embarrassed to have forgotten (no commitment yet), then commits to taking it immediately. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "Goodness, it slipped my mind entirely" },
+        { "text": "Yes of course, I'll take it this instant" }
+      ]
+    },
+    {
+      "id": "scenario_77",
+      "name": "Distracted by TV, then commits",
+      "description": "Senior was distracted and has not taken it (not a commitment), then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "Sorry, I had the telly on — haven't taken it" },
+        { "text": "I'll take it now" }
+      ]
+    },
+    {
+      "id": "scenario_78",
+      "name": "Taking it right now",
+      "description": "Senior states they are taking it right now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "Yes, doing it right now as we speak" },
+        { "text": "There, taking it" }
+      ]
+    },
+    {
+      "id": "scenario_79",
+      "name": "Worried about side effects, still commits",
+      "description": "Senior voices worry about side effects but then commits to taking it now (not a refusal). DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "I worry about the side effects..." },
+        { "text": "but alright, I'll take it now" }
+      ]
+    },
+    {
+      "id": "scenario_80",
+      "name": "Sits down first, then takes it",
+      "description": "Senior needs a moment to sit, then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "user_turns": [
+        { "text": "Give me a second to sit down..." },
+        { "text": "Okay, taking it now" }
+      ]
+    },
+    {
+      "id": "scenario_81",
+      "name": "Refuses over cost",
+      "description": "Senior clearly refuses, citing cost. Taken at face value. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "I can't afford to keep taking these, I won't" },
+        { "text": "No, that's decided" }
+      ]
+    },
+    {
+      "id": "scenario_82",
+      "name": "Doesn't believe in pills",
+      "description": "Senior clearly refuses on principle. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "I don't believe in all these pills, I'm not taking them" },
+        { "text": "No" }
+      ]
+    },
+    {
+      "id": "scenario_83",
+      "name": "Polite but firm refusal",
+      "description": "Senior declines politely but firmly for the day. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "No thank you, dear, not for me today" },
+        { "text": "No, I'm sure" }
+      ]
+    },
+    {
+      "id": "scenario_84",
+      "name": "Son told them to stop",
+      "description": "Senior refuses, saying a family member told them to stop. Clear refusal. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "My son told me to stop them, so I won't be taking them" },
+        { "text": "No, I'm following his advice" }
+      ]
+    },
+    {
+      "id": "scenario_85",
+      "name": "Too many pills already",
+      "description": "Senior refuses, saying they already take too many. Clear refusal. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "I take far too many pills already, I'm not taking that one" },
+        { "text": "No, absolutely not" }
+      ]
+    },
+    {
+      "id": "scenario_86",
+      "name": "Feels fine, refuses",
+      "description": "Senior refuses because they feel fine without it. Clear refusal (contrast with 'don't need it' that stays ambiguous). DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "I feel perfectly fine without them, I won't take it" },
+        { "text": "No, I've decided" }
+      ]
+    },
+    {
+      "id": "scenario_87",
+      "name": "'I'll pass on those'",
+      "description": "Senior declines with a casual but clear refusal. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "I'll pass on those, thanks" },
+        { "text": "No, I mean it" }
+      ]
+    },
+    {
+      "id": "scenario_88",
+      "name": "Vents, then refuses clearly",
+      "description": "Senior vents about not being listened to, then clearly refuses. Resolves to a refusal.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "Nobody listens to me anyway" },
+        { "text": "No, I'm not taking them" }
+      ]
+    },
+    {
+      "id": "scenario_89",
+      "name": "Against their wishes",
+      "description": "Senior firmly refuses on personal grounds. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "It's against my wishes, I won't be taking it" },
+        { "text": "No" }
+      ]
+    },
+    {
+      "id": "scenario_90",
+      "name": "Told the nurse the same",
+      "description": "Senior refuses firmly and notes they told the nurse the same. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "user_turns": [
+        { "text": "Absolutely not, I've told the nurse the same" },
+        { "text": "No, my mind's made up" }
+      ]
+    },
+    {
+      "id": "scenario_91",
+      "name": "Answers unrelated questions",
+      "description": "Senior answers with unrelated questions and never addresses the medication. After one clarifier, COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "What's for lunch today?" },
+        { "text": "Is the post here yet?" }
+      ]
+    },
+    {
+      "id": "scenario_92",
+      "name": "Drowsy, trails off",
+      "description": "Senior is very drowsy and trails off without answering. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "I'm so tired... mmm... what were you..." },
+        { "text": "...so sleepy..." }
+      ]
+    },
+    {
+      "id": "scenario_93",
+      "name": "Identity loop, never answers",
+      "description": "Senior keeps asking who is calling and never gives a medication answer even after re-introduction. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "Who's calling please?" },
+        { "text": "I'm sorry, who did you say you were?" }
+      ]
+    },
+    {
+      "id": "scenario_94",
+      "name": "Distracted talking to someone else",
+      "description": "Senior is preoccupied talking to another person in the room and never answers. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "Hold on — Margaret, have you seen my glasses?" },
+        { "text": "What? Oh, I'm busy right now" }
+      ]
+    },
+    {
+      "id": "scenario_95",
+      "name": "'Maybe, maybe not'",
+      "description": "Senior gives non-answers and cannot say. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "Maybe, maybe not" },
+        { "text": "Couldn't tell you" }
+      ]
+    },
+    {
+      "id": "scenario_96",
+      "name": "Loses their train of thought",
+      "description": "Senior is disoriented, loses their thread, and never answers. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "One, two, three... where was I?" },
+        { "text": "I've lost my thread completely" }
+      ]
+    },
+    {
+      "id": "scenario_97",
+      "name": "Silence, stray remark, silence",
+      "description": "Senior is mostly silent with one unrelated remark; never answers. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "" },
+        { "text": "The kettle's boiling" },
+        { "text": "" }
+      ]
+    },
+    {
+      "id": "scenario_98",
+      "name": "Confuses yesterday with today",
+      "description": "Senior cannot distinguish whether they took today's dose or yesterday's and cannot confirm today. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "I took it yesterday... or was that today?" },
+        { "text": "I really can't tell the days apart anymore" }
+      ]
+    },
+    {
+      "id": "scenario_99",
+      "name": "Line breaking up",
+      "description": "The line is breaking up and only partial, unintelligible fragments come through; no clear answer. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "...can you... hear..." },
+        { "text": "...breaking up..." }
+      ]
+    },
+    {
+      "id": "scenario_100",
+      "name": "Hums, ignores the question",
+      "description": "Senior hums and chats about a tune, never engaging with the medication question. COULD_NOT_VALIDATE.",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "user_turns": [
+        { "text": "Hmm hmm hmm..." },
+        { "text": "La la la, lovely tune isn't it" }
+      ]
+    }
+  ]
+}
