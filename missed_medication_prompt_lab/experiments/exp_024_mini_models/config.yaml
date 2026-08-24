@@ -1,3 +1,10 @@
+# exp_024_mini_models/config.yaml
+# prompt_v20.txt on gpt-4.1-mini @ temp 0.0 — model/cost parity check
+#   No prompt change from exp_023. Ports the validated v20 prompt to the cheaper
+#   gpt-4.1-mini model at temperature 0.0 to test label parity and cost. Runner:
+#   COULD_NOT_VALIDATE injection only (unchanged). Result: 100/100 outcomes,
+#   $0.3599. Weaker path discipline on the mini model — 21/100 scenarios ran
+#   4-5 turns (over-asking in CNV cases).
 
 experiment:
   name: "Missed Medication — Mini Models (prompt_v20)"
