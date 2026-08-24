@@ -1,0 +1,23 @@
+
+experiment:
+  name: "Missed Medication — Mini Models (prompt_v20)"
+  date: "2026-08-21"
+
+models:
+  - name: "gpt-4.1-mini"
+    temperature: 0.0
+
+prompt:
+  template: "prompt_v20.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"
