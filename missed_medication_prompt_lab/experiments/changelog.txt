@@ -621,7 +621,7 @@ exp_023_reduce_overasking          [changes from exp_022_vocabulary_fixes]
   unchanged. Other residual (occasional "I'm here to support you" sign-off) is not
   addressed here.
 
-------------------------------------------------------------------------
+  ------------------------------------------------------------------------
 exp_024_mini_models                [changes from exp_023_reduce_overasking]
 ------------------------------------------------------------------------
   Prompt template:  prompt_v20.txt  (unchanged)
@@ -684,3 +684,32 @@ exp_025_hard_fixes                 [changes from exp_024_mini_models]
   PURPOSE: validate the runner guardrails against exp_024. Over-asking and
   terminal-wording residuals closed; reconsider residual remains and now carries a
   label cost, motivating a refusal-path fix next.
+
+------------------------------------------------------------------------
+exp_026_better_final_phrase        [changes from exp_025_hard_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v21.txt  (unchanged)
+  Model/Temp:       gpt-4.1-mini, 0.0  (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+  Runner:           patched conversation_runner.py — same guardrails as exp_025
+                    (four-outcome injection + hard in-progress turn budget +
+                    sign-off scrubber), with revised fixed messages + a dash
+                    normalizer. enable_state_injection: false (unchanged).
+
+  No prompt change. Three runner/report changes only:
+    1. DID_NOT_TAKE_BUT_WILL_TAKE reworded to be warmer / less abrupt:
+       "Thank you for letting me know and for taking it now. Take good care of
+       yourself, and have a lovely day!" (was "Please go ahead and take it
+       now — take care!").
+    2. Em dashes removed from every injected message (DID_TAKE also carried
+       one), plus a runner-side normalizer that converts any em/en dash in ANY
+       assistant turn to a comma, so no dash can reach the transcript.
+    3. report_generator now emits per-scenario cost (a Cost column in the
+       summary table and a Cost line in each scenario's transcript header).
+
+  PURPOSE: confirm the reworded terminal closings read naturally and that no em
+  dash appears anywhere in the report, with outcomes holding at the exp_025
+  level. Because only the fixed messages and report output change — not the
+  prompt, the decision logic, or the guardrails — outcome labels and turn
+  counts are expected to be unchanged from exp_025 (~99/100). After running,
+  replace this Result line and add the measured outcome/cost figures.

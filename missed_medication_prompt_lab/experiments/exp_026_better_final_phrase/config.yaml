@@ -1,0 +1,43 @@
+# prompt_v21.txt + revised fixed terminal messages — dash-free, warmer closings
+#   CHANGES FROM exp_025_hard_fixes (same prompt, same model/temp/inputs; the
+#   only differences are in the runner's fixed messages and report output):
+#     1. DID_NOT_TAKE_BUT_WILL_TAKE reworded to be warmer / less abrupt:
+#        "Thank you for letting me know and for taking it now. Take good care of
+#        yourself, and have a lovely day!" (was "Please go ahead and take it
+#        now — take care!").
+#     2. Em dashes removed from every injected message (DID_TAKE also had one),
+#        plus a runner-side normalizer that converts any em/en dash in ANY
+#        assistant turn to a comma, so a stray dash cannot reach the transcript.
+#     3. report_generator now emits per-scenario cost (a Cost column in the
+#        summary table and a Cost line in each scenario's transcript header).
+#   Runner: patched conversation_runner.py (four-outcome injection + hard
+#   in-progress turn budget + sign-off scrubber + dash normalizer).
+#   enable_state_injection: false (soft [STATE] note off; the hard cap is
+#   independent of that flag).
+#
+#   PURPOSE: confirm the reworded terminal closings read naturally and that no
+#   em dash appears anywhere in the report, with outcomes holding at the
+#   exp_025 level (99-100/100) and per-scenario cost now visible.
+
+experiment:
+  name: "Missed Medication — Better Final Phrase (prompt_v21)"
+  date: "2026-08-24"
+
+models:
+  - name: "gpt-4.1-mini"
+    temperature: 0.0
+
+prompt:
+  template: "prompt_v21.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"
