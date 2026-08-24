@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_46",
+  "scenario_name": "Forgot, then refuses",
+  "description": "Senior first says they forgot (no commitment, needs follow-up), then on the follow-up refuses outright. Resolves to a refusal, not will-take.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_46",
+      "scenario_name": "Forgot, then refuses",
+      "description": "Senior first says they forgot (no commitment, needs follow-up), then on the follow-up refuses outright. Resolves to a refusal, not will-take.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I forgot all about them",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "That's alright, it happens to the best of us. Would you like to take your medication now? It's important for your health, and I'm here to support you in any way I can.",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Actually, no — I don't want them anymore, I won't take them",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, and I respect your decision. I'll let your caregiver know so they can check in with you. Take care.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+        }
+      ],
+      "total_input_tokens": 13877,
+      "total_output_tokens": 124,
+      "cost": 0.0359325,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 4582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 4617,
+          "output_tokens": 48,
+          "raw": "{\"text\":\"That's alright, it happens to the best of us. Would you like to take your medication now? It's important for your health, and I'm here to support you in any way I can.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's alright, it happens to the best of us. Would you like to take your medication now? It's important for your health, and I'm here to support you in any way I can.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 4678,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand, and I respect your decision. I'll let your caregiver know so they can check in with you. Take care.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I understand, and I respect your decision. I'll let your caregiver know so they can check in with you. Take care.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

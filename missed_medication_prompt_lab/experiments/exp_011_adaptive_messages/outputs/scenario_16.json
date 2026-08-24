@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_16",
+  "scenario_name": "Senior stopped taking it",
+  "description": "Senior says they stopped taking it and will not take it now.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_16",
+      "scenario_name": "Senior stopped taking it",
+      "description": "Senior says they stopped taking it and will not take it now.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! I just wanted to check in and see if you've had a chance to take your medication today. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "No, I stopped taking those a while ago",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand that you've decided not to take your medication, and I respect your decision. However, it's important for your health. Would you be willing to reconsider and take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I won't be taking it",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for letting me know. I understand your decision and respect it. If you have any concerns or need support, please feel free to reach out to your caregiver. Take care.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+        }
+      ],
+      "total_input_tokens": 11835,
+      "total_output_tokens": 146,
+      "cost": 0.0310475,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3895,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"Good morning, it's Vega here! I just wanted to check in and see if you've had a chance to take your medication today. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! I just wanted to check in and see if you've had a chance to take your medication today. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3945,
+          "output_tokens": 47,
+          "raw": "{\"text\":\"I understand that you've decided not to take your medication, and I respect your decision. However, it's important for your health. Would you be willing to reconsider and take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand that you've decided not to take your medication, and I respect your decision. However, it's important for your health. Would you be willing to reconsider and take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3995,
+          "output_tokens": 56,
+          "raw": "{\"text\":\"Thank you for letting me know. I understand your decision and respect it. If you have any concerns or need support, please feel free to reach out to your caregiver. Take care.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for letting me know. I understand your decision and respect it. If you have any concerns or need support, please feel free to reach out to your caregiver. Take care.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

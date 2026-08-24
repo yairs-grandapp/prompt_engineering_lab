@@ -1,0 +1,40 @@
+# prompt_v10.txt — locked opening greeting + concise, human COULD_NOT_VALIDATE message
+#   CHANGES FROM v9:
+#   1. Locked the opening greeting word-for-word. It was an adaptive example, which
+#      drifted in earlier runs (filler like "I hope you're doing well today", and
+#      reworded openers). It is now a MANDATORY FIXED OPENING, delivered exactly:
+#      "Good morning, it's Vega here! It may be time for your medication. Have you
+#      already taken it?"
+#   2. Reworked the COULD_NOT_VALIDATE fixed message to be shorter and more human,
+#      and to fit the silence cases (where the senior never spoke, so it must not
+#      open by reacting to a statement). Dropped the dismissive "these things can
+#      happen", the doubled reassurance, and the "raising an alert in the
+#      SeniorMatics system" jargon. Now a single sentence:
+#      "I wasn't able to confirm whether you've taken today's medication, so I'll
+#      let your caregiver know to check in with you soon."
+#   NOTE: same as before — the message is only what the assistant SAYS. The
+#   production backend must still raise the real caregiver alert on the
+#   COULD_NOT_VALIDATE outcome, regardless of the spoken wording.
+
+experiment:
+  name: "Missed Medication — Refining Messages (prompt_v10)"
+  date: "2026-08-19"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v10.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

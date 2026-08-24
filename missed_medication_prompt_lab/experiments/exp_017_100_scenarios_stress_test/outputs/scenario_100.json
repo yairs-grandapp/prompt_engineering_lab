@@ -1,0 +1,105 @@
+{
+  "scenario_id": "scenario_100",
+  "scenario_name": "Hums, ignores the question",
+  "description": "Senior hums and chats about a tune, never engaging with the medication question. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_100",
+      "scenario_name": "Hums, ignores the question",
+      "description": "Senior hums and chats about a tune, never engaging with the medication question. COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Hmm hmm hmm...",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it might be a bit early. Just to make sure, have you had a chance to take your medication from your box today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "La la la, lovely tune isn't it",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "That does sound like a lovely tune! Just a gentle reminder, though, about your medication. Have you been able to take it today? It's important for your health, and I'm here to help if you need any assistance.",
+          "turn": 3,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 18574,
+      "total_output_tokens": 161,
+      "cost": 0.048045000000000004,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 4582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 4615,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"I understand it might be a bit early. Just to make sure, have you had a chance to take your medication from your box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it might be a bit early. Just to make sure, have you had a chance to take your medication from your box today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 4660,
+          "output_tokens": 55,
+          "raw": "{\"text\":\"That does sound like a lovely tune! Just a gentle reminder, though, about your medication. Have you been able to take it today? It's important for your health, and I'm here to help if you need any assistance.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That does sound like a lovely tune! Just a gentle reminder, though, about your medication. Have you been able to take it today? It's important for your health, and I'm here to help if you need any assistance.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 4717,
+          "output_tokens": 35,
+          "raw": "{\"text\":\"I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+# prompt_v14.txt — bounded confused-senior tone rule
+#   CHANGES FROM v13:
+#   1. Narrowed the [TONE] rule for a confused senior. It previously said "gently
+#      help them without pressure", which is open-ended and competed with the
+#      TIER 2 requirement to validate after one clarifying question. In exp_015
+#      scenario_17 the model kept explaining/re-teaching on the terminal turn and
+#      did not deliver the fixed COULD_NOT_VALIDATE message (dropping its
+#      caregiver-alert promise and reusing a banned phrase).
+#   2. The rule now bounds the behaviour: acknowledge feelings, ask ONE clarifying
+#      question, and once the senior still gives no clear answer, deliver the
+#      could-not-validate closing. No open-ended "help"/"explain" framing remains.
+
+experiment:
+  name: "Missed Medication — Outcome Clarification (prompt_v14)"
+  date: "2026-08-20"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v14.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

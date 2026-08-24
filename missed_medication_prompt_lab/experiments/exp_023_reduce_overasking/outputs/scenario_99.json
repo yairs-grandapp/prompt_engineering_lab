@@ -1,0 +1,131 @@
+{
+  "scenario_id": "scenario_99",
+  "scenario_name": "Line breaking up",
+  "description": "The line is breaking up and only partial, unintelligible fragments come through; no clear answer. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_99",
+      "scenario_name": "Line breaking up",
+      "description": "The line is breaking up and only partial, unintelligible fragments come through; no clear answer. COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "...can you... hear...",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I can hear you. Just to make sure we're on the same page, have you had a chance to take your medication today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "...breaking up...",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "It seems like we're having some trouble with the connection. If you can hear me, could you please let me know if you've taken your medication today?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I understand there might be some connection issues. If you can hear me, please let me know if you've been able to take your medication today.",
+          "turn": 4,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 13814,
+      "total_output_tokens": 197,
+      "cost": 0.036504999999999996,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2722,
+          "output_tokens": 37,
+          "raw": "{\"text\":\"I can hear you. Just to make sure we're on the same page, have you had a chance to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I can hear you. Just to make sure we're on the same page, have you had a chance to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2760,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"It seems like we're having some trouble with the connection. If you can hear me, could you please let me know if you've taken your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "It seems like we're having some trouble with the connection. If you can hear me, could you please let me know if you've taken your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2802,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"I understand there might be some connection issues. If you can hear me, please let me know if you've been able to take your medication today.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand there might be some connection issues. If you can hear me, please let me know if you've been able to take your medication today.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 2843,
+          "output_tokens": 48,
+          "raw": "{\"text\":\"It seems we're having continued trouble with the connection. Since I can't confirm if you've taken your medication, I'll let your caregiver know so they can follow up with you. Take care!\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "It seems we're having continued trouble with the connection. Since I can't confirm if you've taken your medication, I'll let your caregiver know so they can follow up with you. Take care!",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

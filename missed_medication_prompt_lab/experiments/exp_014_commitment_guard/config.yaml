@@ -1,0 +1,41 @@
+# prompt_v12.txt — commitment guard for DID_NOT_TAKE_BUT_WILL_TAKE
+#   CHANGES FROM v11:
+#   1. Reinforced the explicit-commitment requirement for the
+#      DID_NOT_TAKE_BUT_WILL_TAKE outcome. In exp_013, scenario_02 finalized this
+#      outcome after the senior only said "I completely forgot about it" — an
+#      admission of forgetting, not a commitment to take it now. The label matched
+#      the expected outcome (so the harness marked it PASS), but the path was a
+#      false positive: the assistant assumed a commitment that was never made.
+#   2. Fix: on the WILL_TAKE branch, added an explicit precondition; and in the
+#      IMPORTANT note, added the failing phrases ("I completely forgot about it",
+#      "oh no, I missed it") to the not-sufficient list and hardened the wording
+#      to "MUST NOT finalize" / "MUST stay conversation_in_progress and ask
+#      whether they want to take it now; finalize only after an actual commitment
+#      on the next reply".
+#   NOTE: this is a prompt-adherence reinforcement of an existing rule, not a new
+#      rule. The PASS/FAIL column checks only the final outcome label, so this
+#      class of path error is not visible there — verify via the transcript (the
+#      turn-2 follow-up question).
+
+experiment:
+  name: "Missed Medication — Commitment Guard (prompt_v12)"
+  date: "2026-08-19"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v12.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

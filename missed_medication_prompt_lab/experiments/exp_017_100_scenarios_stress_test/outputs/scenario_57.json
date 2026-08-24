@@ -1,0 +1,105 @@
+{
+  "scenario_id": "scenario_57",
+  "scenario_name": "Hard of hearing, then confirms took it",
+  "description": "Senior does not hear the greeting at first and asks the assistant to repeat; after the single clarifying re-ask, they clearly confirm taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_57",
+      "scenario_name": "Hard of hearing, then confirms took it",
+      "description": "Senior does not hear the greeting at first and asks the assistant to repeat; after the single clarifying re-ask, they clearly confirm taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Take my what? Speak up, dear",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it might be a bit hard to hear me. I'm asking if you've had a chance to take your medication today. Would you like to check your medication box to see if today's dose has been taken?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Oh, my pills — yes, I took them from the box this morning",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear that you've taken your pills this morning! Just to make sure I understood correctly, did you take today's dose from your medication box?",
+          "turn": 3,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Yes, I'm certain",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for confirming that. It's wonderful to know you've taken your medication today. If you need anything else, feel free to let your caregiver know. Have a lovely day!",
+          "turn": 4,
+          "outcome": "DID_TAKE"
+        }
+      ],
+      "total_input_tokens": 18617,
+      "total_output_tokens": 173,
+      "cost": 0.048272499999999996,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 4582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 4620,
+          "output_tokens": 53,
+          "raw": "{\"text\":\"I understand it might be a bit hard to hear me. I'm asking if you've had a chance to take your medication today. Would you like to check your medication box to see if today's dose has been taken?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it might be a bit hard to hear me. I'm asking if you've had a chance to take your medication today. Would you like to check your medication box to see if today's dose has been taken?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 4686,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"That's great to hear that you've taken your pills this morning! Just to make sure I understood correctly, did you take today's dose from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's great to hear that you've taken your pills this morning! Just to make sure I understood correctly, did you take today's dose from your medication box?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 4729,
+          "output_tokens": 47,
+          "raw": "{\"text\":\"Thank you for confirming that. It's wonderful to know you've taken your medication today. If you need anything else, feel free to let your caregiver know. Have a lovely day!\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for confirming that. It's wonderful to know you've taken your medication today. If you need anything else, feel free to let your caregiver know. Have a lovely day!",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

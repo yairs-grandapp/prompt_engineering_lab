@@ -1,0 +1,32 @@
+# prompt_v5.txt — natural (de-scripted) WILL_TAKE clarifying question
+#   CHANGES FROM v4:
+#   1. De-scripted the WILL_TAKE clarifying question. The commitment carve-out
+#      no longer hands the assistant the fixed line "Would you like to take it
+#      now?"; instead it instructs the assistant to ask, in its own warm words,
+#      whether the senior would like to take it now (with brief reassurance).
+#   Kept from v4: DID_TAKE and refusal wait for a follow-up before finalizing;
+#   WILL_TAKE explicit-commitment carve-out; TIER 2 one-clarifying-question
+#   tightening; Reminder #2 as a statement.
+
+experiment:
+  name: "Missed Medication — Natural Clarifying Question (prompt_v5)"
+  date: "2026-08-04"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v5.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v1.json"

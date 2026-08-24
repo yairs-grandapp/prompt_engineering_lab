@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_15",
+  "scenario_name": "Senior refuses for today",
+  "description": "Senior firmly declines for the day and, after the assistant delivers Message #2 asking them to reconsider, holds firm. Assistant returns DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_15",
+      "scenario_name": "Senior refuses for today",
+      "description": "Senior firmly declines for the day and, after the assistant delivers Message #2 asking them to reconsider, holds firm. Assistant returns DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! I hope you're having a lovely day. I'm just checking in to see if you've taken your medication today. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Not today, absolutely not",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, and I respect your decision. However, it's important for your health to take your medication as prescribed. Would you be willing to take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "No, I'm certain — I won't be taking it today",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I respect your decision and understand that you have chosen not to take your medication today. If you change your mind or have any concerns, please feel free to let your caregiver know. Take care.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+        }
+      ],
+      "total_input_tokens": 11833,
+      "total_output_tokens": 146,
+      "cost": 0.0310425,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3895,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"Good morning, it's Vega here! I hope you're having a lovely day. I'm just checking in to see if you've taken your medication today. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! I hope you're having a lovely day. I'm just checking in to see if you've taken your medication today. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3943,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"I understand, and I respect your decision. However, it's important for your health to take your medication as prescribed. Would you be willing to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand, and I respect your decision. However, it's important for your health to take your medication as prescribed. Would you be willing to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3995,
+          "output_tokens": 58,
+          "raw": "{\"text\":\"I respect your decision and understand that you have chosen not to take your medication today. If you change your mind or have any concerns, please feel free to let your caregiver know. Take care.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I respect your decision and understand that you have chosen not to take your medication today. If you change your mind or have any concerns, please feel free to let your caregiver know. Take care.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

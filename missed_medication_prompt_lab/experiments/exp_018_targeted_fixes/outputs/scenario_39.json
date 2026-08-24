@@ -1,0 +1,131 @@
+{
+  "scenario_id": "scenario_39",
+  "scenario_name": "Evasive, keeps changing the subject",
+  "description": "Senior repeatedly talks about the garden and weather, never answering about medication. After one clarifier, could-not-validate.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_39",
+      "scenario_name": "Evasive, keeps changing the subject",
+      "description": "Senior repeatedly talks about the garden and weather, never answering about medication. After one clarifier, could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Did you see the garden? The roses are lovely this year",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "The roses must be beautiful this time of year! Just to make sure we're on track, have you had a chance to take your medication today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Oh, the weather's been so nice, hasn't it",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "It sounds like you're enjoying the lovely weather! Just to gently check in, have you been able to take your medication today? It's important to stay on track with it.",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I just want to make sure you're doing well. Have you managed to take your medication today?",
+          "turn": 4,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 25558,
+      "total_output_tokens": 181,
+      "cost": 0.065705,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5024,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5066,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"The roses must be beautiful this time of year! Just to make sure we're on track, have you had a chance to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "The roses must be beautiful this time of year! Just to make sure we're on track, have you had a chance to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5115,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"It sounds like you're enjoying the lovely weather! Just to gently check in, have you been able to take your medication today? It's important to stay on track with it.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "It sounds like you're enjoying the lovely weather! Just to gently check in, have you been able to take your medication today? It's important to stay on track with it.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 5161,
+          "output_tokens": 30,
+          "raw": "{\"text\":\"I just want to make sure you're doing well. Have you managed to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I just want to make sure you're doing well. Have you managed to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 5192,
+          "output_tokens": 35,
+          "raw": "{\"text\":\"I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

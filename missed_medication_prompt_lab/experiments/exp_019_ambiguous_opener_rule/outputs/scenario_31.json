@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_31",
+  "scenario_name": "'I suppose I should', then commits",
+  "description": "Senior gives a soft, non-explicit intention first (not a commitment), then explicitly commits. DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_31",
+      "scenario_name": "'I suppose I should', then commits",
+      "description": "Senior gives a soft, non-explicit intention first (not a commitment), then explicitly commits. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I suppose I ought to take them, yes",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "It's great that you're considering taking your medication. Would you like to go ahead and take it now? It's important to stay on track with your schedule.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Yes, I'm going to take it now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for letting me know. Please go ahead and take it now. It's important to keep on track with your medication schedule. I appreciate your commitment to your health.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 16682,
+      "total_output_tokens": 124,
+      "cost": 0.042945,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5519,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5558,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"It's great that you're considering taking your medication. Would you like to go ahead and take it now? It's important to stay on track with your schedule.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "It's great that you're considering taking your medication. Would you like to go ahead and take it now? It's important to stay on track with your schedule.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5605,
+          "output_tokens": 52,
+          "raw": "{\"text\":\"Thank you for letting me know. Please go ahead and take it now. It's important to keep on track with your medication schedule. I appreciate your commitment to your health.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for letting me know. Please go ahead and take it now. It's important to keep on track with your medication schedule. I appreciate your commitment to your health.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

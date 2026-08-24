@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_92",
+  "scenario_name": "Drowsy, trails off",
+  "description": "Senior is very drowsy and trails off without answering. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_92",
+      "scenario_name": "Drowsy, trails off",
+      "description": "Senior is very drowsy and trails off without answering. COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I'm so tired... mmm... what were you...",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, it can be a bit confusing when you're tired. I'm Vega, your care assistant. I just wanted to check if you've taken your medication today. Could you let me know if you remember taking it?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "...so sleepy...",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 6702,
+      "total_output_tokens": 142,
+      "cost": 0.018174999999999997,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2189,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2229,
+          "output_tokens": 54,
+          "raw": "{\"text\":\"I understand, it can be a bit confusing when you're tired. I'm Vega, your care assistant. I just wanted to check if you've taken your medication today. Could you let me know if you remember taking it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand, it can be a bit confusing when you're tired. I'm Vega, your care assistant. I just wanted to check if you've taken your medication today. Could you let me know if you remember taking it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2284,
+          "output_tokens": 56,
+          "raw": "{\"text\":\"I understand, it sounds like you're feeling quite tired right now. If you're not sure about the medication, that's okay. I'll let your caregiver know, and they can check in with you later. Take care and rest well.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand, it sounds like you're feeling quite tired right now. If you're not sure about the medication, that's okay. I'll let your caregiver know, and they can check in with you later. Take care and rest well.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

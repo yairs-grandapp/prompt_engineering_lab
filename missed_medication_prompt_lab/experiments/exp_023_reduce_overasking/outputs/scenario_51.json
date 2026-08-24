@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_51",
+  "scenario_name": "Mishears as 'bills', never resolves",
+  "description": "ASR-style mishearing: the senior hears 'pills' as 'bills' and stays on that track, never giving a clear answer about the medication even after a clarifier. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_51",
+      "scenario_name": "Mishears as 'bills', never resolves",
+      "description": "ASR-style mishearing: the senior hears 'pills' as 'bills' and stays on that track, never giving a clear answer about the medication even after a clarifier. COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Bills? I paid all the bills last week",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, sometimes it can be a bit confusing. I'm asking about your medication for today. Have you had a chance to take it from your medication box yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "What bills are you on about now?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 8188,
+      "total_output_tokens": 119,
+      "cost": 0.02166,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2726,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand, sometimes it can be a bit confusing. I'm asking about your medication for today. Have you had a chance to take it from your medication box yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand, sometimes it can be a bit confusing. I'm asking about your medication for today. Have you had a chance to take it from your medication box yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2775,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"I was referring to your medication, not bills. If you're unsure, would you like to check your medication box to see if today's dose has been taken?\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I was referring to your medication, not bills. If you're unsure, would you like to check your medication box to see if today's dose has been taken?",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

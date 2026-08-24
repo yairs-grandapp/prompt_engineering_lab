@@ -1,0 +1,30 @@
+{
+  "scenario_id": "scenario_18",
+  "scenario_name": "Senior cannot remember",
+  "description": "Senior cannot recall whether they took it.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_18",
+      "scenario_name": "Senior cannot remember",
+      "description": "Senior cannot recall whether they took it.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "ERROR",
+      "passed": false,
+      "turn_count": 0,
+      "transcript": [
+        {
+          "role": "error",
+          "text": "Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}",
+          "turn": 1
+        }
+      ],
+      "total_input_tokens": 0,
+      "total_output_tokens": 0,
+      "cost": 0.0,
+      "raw_responses": [],
+      "termination_reason": "llm_error: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}"
+    }
+  }
+}

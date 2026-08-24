@@ -1,0 +1,126 @@
+{
+  "scenario_id": "scenario_38",
+  "scenario_name": "Confused and off-topic throughout",
+  "description": "Senior mixes unrelated questions with confusion and never gives a clear answer. After one clarifier, could-not-validate.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_38",
+      "scenario_name": "Confused and off-topic throughout",
+      "description": "Senior mixes unrelated questions with confusion and never gives a clear answer. After one clarifier, could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Is it raining out? Who is this? What pills?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Hello again! It's Vega, your care assistant. I'm here to check if you've taken your scheduled medication today. If you're unsure, you might want to have a look at your medication box to see if today's dose has been taken. Let me know if you need any help with that.",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I don't understand any of this",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be a bit confusing. Let's take it one step at a time. Could you please check your medication box to see if today's dose has been taken?",
+          "turn": 3,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I'm still here if you need any assistance. Could you let me know if you've been able to check your medication box to see if today's dose has been taken?",
+          "turn": 4,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 23426,
+      "total_output_tokens": 222,
+      "cost": 0.060785000000000006,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 4582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 4623,
+          "output_tokens": 67,
+          "raw": "{\"text\":\"Hello again! It's Vega, your care assistant. I'm here to check if you've taken your scheduled medication today. If you're unsure, you might want to have a look at your medication box to see if today's dose has been taken. Let me know if you need any help with that.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Hello again! It's Vega, your care assistant. I'm here to check if you've taken your scheduled medication today. If you're unsure, you might want to have a look at your medication box to see if today's dose has been taken. Let me know if you need any help with that.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 4695,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I understand this can be a bit confusing. Let's take it one step at a time. Could you please check your medication box to see if today's dose has been taken?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be a bit confusing. Let's take it one step at a time. Could you please check your medication box to see if today's dose has been taken?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 4741,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"I'm still here if you need any assistance. Could you let me know if you've been able to check your medication box to see if today's dose has been taken?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm still here if you need any assistance. Could you let me know if you've been able to check your medication box to see if today's dose has been taken?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 4785,
+          "output_tokens": 35,
+          "raw": "{\"text\":\"I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

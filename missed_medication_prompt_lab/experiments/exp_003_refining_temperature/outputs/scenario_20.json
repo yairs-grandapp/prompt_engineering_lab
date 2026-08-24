@@ -1,0 +1,126 @@
+{
+  "scenario_id": "scenario_20",
+  "scenario_name": "Senior is disoriented",
+  "description": "Senior is disoriented and cannot follow the conversation.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_20",
+      "scenario_name": "Senior is disoriented",
+      "description": "Senior is disoriented and cannot follow the conversation.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Who is this again?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm Vega, your supportive assistant here to help you with your daily routine. I just wanted to gently check if you've been able to take your medication today. Could you let me know if you have?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I don't understand, what were we saying?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be a bit confusing. I'm here to help ensure everything is going smoothly with your medication. Could you let me know if you've taken your medication today?",
+          "turn": 3,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I'm still here. It may be time for your medication — have you been able to take it?",
+          "turn": 4,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 13336,
+      "total_output_tokens": 221,
+      "cost": 0.03555,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2581,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2615,
+          "output_tokens": 51,
+          "raw": "{\"text\":\"I'm Vega, your supportive assistant here to help you with your daily routine. I just wanted to gently check if you've been able to take your medication today. Could you let me know if you have?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm Vega, your supportive assistant here to help you with your daily routine. I just wanted to gently check if you've been able to take your medication today. Could you let me know if you have?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2672,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I understand this can be a bit confusing. I'm here to help ensure everything is going smoothly with your medication. Could you let me know if you've taken your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be a bit confusing. I'm here to help ensure everything is going smoothly with your medication. Could you let me know if you've taken your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2718,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I'm still here. It may be time for your medication — have you been able to take it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm still here. It may be time for your medication — have you been able to take it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 2750,
+          "output_tokens": 62,
+          "raw": "{\"text\":\"Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

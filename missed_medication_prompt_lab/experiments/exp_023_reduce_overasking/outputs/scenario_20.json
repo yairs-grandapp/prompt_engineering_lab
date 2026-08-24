@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_20",
+  "scenario_name": "Senior is disoriented",
+  "description": "Senior is disoriented and cannot follow the conversation.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_20",
+      "scenario_name": "Senior is disoriented",
+      "description": "Senior is disoriented and cannot follow the conversation.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Who is this again?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm Vega, your care assistant. I'm just checking in to see if you've taken your medication today. Have you had a chance to take it yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I don't understand, what were we saying?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 8176,
+      "total_output_tokens": 122,
+      "cost": 0.02166,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2721,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"I'm Vega, your care assistant. I'm just checking in to see if you've taken your medication today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm Vega, your care assistant. I'm just checking in to see if you've taken your medication today. Have you had a chance to take it yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2768,
+          "output_tokens": 49,
+          "raw": "{\"text\":\"I understand this can be confusing. I'm here to see if you've taken your medication today. Could you let me know if you've already taken it or if you'd like to take it now?\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. I'm here to see if you've taken your medication today. Could you let me know if you've already taken it or if you'd like to take it now?",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

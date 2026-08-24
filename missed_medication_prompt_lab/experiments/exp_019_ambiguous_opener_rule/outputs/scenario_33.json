@@ -1,0 +1,65 @@
+{
+  "scenario_id": "scenario_33",
+  "scenario_name": "Refuses, distrusts the doctor",
+  "description": "Senior clearly refuses, citing distrust of the doctor. A clear refusal is definitive and finalized immediately. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_33",
+      "scenario_name": "Refuses, distrusts the doctor",
+      "description": "Senior clearly refuses, citing distrust of the doctor. A clear refusal is definitive and finalized immediately. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "The doctor's got it all wrong, I'm not taking them",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand your feelings and respect your decision. I'll make sure your caregiver is informed so they can check in with you about this. Take care.",
+          "turn": 2,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 11079,
+      "total_output_tokens": 80,
+      "cost": 0.028497499999999995,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5519,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5560,
+          "output_tokens": 48,
+          "raw": "{\"text\":\"I understand your feelings and respect your decision. I'll make sure your caregiver is informed so they can check in with you about this. Take care.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I understand your feelings and respect your decision. I'll make sure your caregiver is informed so they can check in with you about this. Take care.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

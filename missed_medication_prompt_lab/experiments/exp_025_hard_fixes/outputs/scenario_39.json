@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_39",
+  "scenario_name": "Evasive, keeps changing the subject",
+  "description": "Senior repeatedly talks about the garden and weather, never answering about medication. After one clarifier, could-not-validate.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_39",
+      "scenario_name": "Evasive, keeps changing the subject",
+      "description": "Senior repeatedly talks about the garden and weather, never answering about medication. After one clarifier, could-not-validate.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Did you see the garden? The roses are lovely this year",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "The roses do sound beautiful! Just to check, have you taken your medication from the box today, or would you like to take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Oh, the weather's been so nice, hasn't it",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": true
+        }
+      ],
+      "total_input_tokens": 8791,
+      "total_output_tokens": 112,
+      "cost": 0.0036956000000000003,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2928,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"The roses do sound beautiful! Just to check, have you taken your medication from the box today, or would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "The roses do sound beautiful! Just to check, have you taken your medication from the box today, or would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2977,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"I understand the weather is lovely! When you have a moment, could you please let me know if you've taken your medication from the box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand the weather is lovely! When you have a moment, could you please let me know if you've taken your medication from the box today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        }
+      ],
+      "termination_reason": "budget_forced_could_not_validate"
+    }
+  }
+}
