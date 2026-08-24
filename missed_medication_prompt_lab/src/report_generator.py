@@ -55,8 +55,8 @@ class ReportGenerator:
         header = "| # | Scenario | Expected |"
         separator = "|---|----------|----------|"
         for m in models:
-            header += f" {m} Outcome | {m} Result | {m} Turns |"
-            separator += "--------|--------|-------|"
+            header += f" {m} Outcome | {m} Result | {m} Turns | {m} Cost |"
+            separator += "--------|--------|-------|--------|"
         lines.append(header)
         lines.append(separator)
 
@@ -65,7 +65,7 @@ class ReportGenerator:
             for m in models:
                 r = s['model_results'][m]
                 result_icon = "PASS" if r['passed'] else "FAIL"
-                row += f" {r['actual_outcome']} | {result_icon} | {r['turn_count']} |"
+                row += f" {r['actual_outcome']} | {result_icon} | {r['turn_count']} | ${r['cost']:.4f} |"
             lines.append(row)
 
         lines.append("")
@@ -84,7 +84,8 @@ class ReportGenerator:
                 result_icon = "PASS" if r['passed'] else "FAIL"
                 lines.append(f"#### {m} [{result_icon}]\n")
                 lines.append(f"**Actual:** {r['actual_outcome']}  ")
-                lines.append(f"**Turns:** {r['turn_count']}\n")
+                lines.append(f"**Turns:** {r['turn_count']}  ")
+                lines.append(f"**Cost:** ${r['cost']:.4f}\n")
 
                 # The full assembled prompt is shown once at the top of this
                 # report (from prompt_snapshot.txt); it is intentionally not

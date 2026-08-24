@@ -37,11 +37,12 @@ OUTCOME_COULD_NOT_VALIDATE = "COULD_NOT_VALIDATE"
 # change the wording everywhere.
 OUTCOME_MESSAGES = {
     OUTCOME_DID_TAKE: (
-        "Thank you for confirming — I'm glad today's medication is taken care of. "
-        "Take care and have a lovely day!"
+        "Thank you for confirming. I'm glad today's medication is taken care of. "
+        "Take care, and have a lovely day!"
     ),
     OUTCOME_WILL_TAKE: (
-        "Thank you for letting me know. Please go ahead and take it now — take care!"
+        "Thank you for letting me know and for taking it now. "
+        "Take good care of yourself, and have a lovely day!"
     ),
     OUTCOME_WILL_NOT_TAKE: (
         "I understand, and I respect your decision. I'll let your caregiver know "
@@ -387,6 +388,9 @@ class ConversationRunner:
                 "raw": llm_result["raw_content"],
                 "parsed": parsed
             })
+
+            # Normalize em/en dashes so they never reach the transcript.
+            assistant_text = re.sub(r"\s*[—–]\s*", ", ", assistant_text)
 
             # Add assistant response to history and transcript
             conversation_history.append(f"{self.ASSISTANT_PREFIX}{assistant_text}")
