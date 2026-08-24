@@ -1,3 +1,30 @@
+This experiment paired the revised prompt with deterministic runner controls to
+close the two turn-level residuals identified in exp_024. Outcome-label accuracy
+was 99/100 (99%).
+
+Two effects were confirmed. First, over-asking was eliminated: the turn-count
+distribution was 2 turns (21 scenarios) and 3 turns (79), with no four- or
+five-turn conversations, compared with 21 such cases in exp_024. The hard
+in-progress budget terminates every trajectory by the third assistant turn.
+Second, terminal wording became fully deterministic: four-outcome injection
+replaced every closing with canonical text, removing the terminal banned-phrase
+leaks (sign-offs, record claims, availability offers) observed under the prompt
+alone. The shorter conversations also reduced cost (866,575 -> 824,504 tokens;
+$0.3599 -> $0.3410).
+
+The single regression (scenario_36) is diagnostic. On the clear refusal "I got
+rid of those pills, I'm not taking them," the model issued a negated verifying
+question ("you are choosing not to take it, is that right?") — the
+reconsider-on-a-clear-refusal behaviour that prompt v21 was intended to suppress
+but did not. The senior's reply, "No.", is ambiguous against the negation, and
+with the one-question budget already spent the third turn resolved to
+COULD_NOT_VALIDATE rather than the refusal. The turn budget did not cause the
+misclassification but converted an unresolved reconsider exchange into a
+non-refusal label. The controls remove the over-asking and terminal-wording
+residuals deterministically, while the reconsider-on-refusal residual persists in
+the prompt layer and now carries a label cost — indicating a refusal-path fix (a
+stronger prompt signal or a lexical refusal detector) as the next step.
+
 # Experiment: Missed Medication — Hard Fixes (prompt_v21)
 
 **Date:** 2026-08-21  
