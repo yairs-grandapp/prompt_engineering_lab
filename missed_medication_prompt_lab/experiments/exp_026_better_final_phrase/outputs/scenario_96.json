@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_96",
+  "scenario_name": "Loses their train of thought",
+  "description": "Senior is disoriented, loses their thread, and never answers. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_96",
+      "scenario_name": "Loses their train of thought",
+      "description": "Senior is disoriented, loses their thread, and never answers. COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "One, two, three... where was I?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing. Can you tell me if you took your medication from the box today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "I've lost my thread completely",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": false
+        }
+      ],
+      "total_input_tokens": 8771,
+      "total_output_tokens": 123,
+      "cost": 0.0037051999999999996,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2925,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"I understand this can be confusing. Can you tell me if you took your medication from the box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. Can you tell me if you took your medication from the box today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2960,
+          "output_tokens": 59,
+          "raw": "{\"text\":\"I understand this can be confusing. Since you're not sure, I can't tell if you've taken it or not. If you'd like, I can help remind you to take it now, or if you prefer, we can check in another time.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. Since you're not sure, I can't tell if you've taken it or not. If you'd like, I can help remind you to take it now, or if you prefer, we can check in another time.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

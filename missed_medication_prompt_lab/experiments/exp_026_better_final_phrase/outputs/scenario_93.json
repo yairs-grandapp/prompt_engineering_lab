@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_93",
+  "scenario_name": "Identity loop, never answers",
+  "description": "Senior keeps asking who is calling and never gives a medication answer even after re-introduction. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_93",
+      "scenario_name": "Identity loop, never answers",
+      "description": "Senior keeps asking who is calling and never gives a medication answer even after re-introduction. COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Who's calling please?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm Vega, your care assistant. Have you had a chance to take your medication today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "I'm sorry, who did you say you were?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": true
+        }
+      ],
+      "total_input_tokens": 8762,
+      "total_output_tokens": 87,
+      "cost": 0.0036440000000000005,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2920,
+          "output_tokens": 29,
+          "raw": "{\"text\":\"I'm Vega, your care assistant. Have you had a chance to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm Vega, your care assistant. Have you had a chance to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2956,
+          "output_tokens": 26,
+          "raw": "{\"text\":\"I'm Vega, your care assistant. Have you taken your medication today yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm Vega, your care assistant. Have you taken your medication today yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        }
+      ],
+      "termination_reason": "budget_forced_could_not_validate"
+    }
+  }
+}

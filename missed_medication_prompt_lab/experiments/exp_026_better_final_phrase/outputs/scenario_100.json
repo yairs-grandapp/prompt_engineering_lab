@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_100",
+  "scenario_name": "Hums, ignores the question",
+  "description": "Senior hums and chats about a tune, never engaging with the medication question. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_100",
+      "scenario_name": "Hums, ignores the question",
+      "description": "Senior hums and chats about a tune, never engaging with the medication question. COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Hmm hmm hmm...",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing. Could you please tell me if you took your medication from your box today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "La la la, lovely tune isn't it",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": true
+        }
+      ],
+      "total_input_tokens": 8763,
+      "total_output_tokens": 117,
+      "cost": 0.0036924,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2919,
+          "output_tokens": 33,
+          "raw": "{\"text\":\"I understand this can be confusing. Could you please tell me if you took your medication from your box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. Could you please tell me if you took your medication from your box today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2958,
+          "output_tokens": 52,
+          "raw": "{\"text\":\"I understand it might be hard to focus right now. If you’re not sure whether you took your medication today, that’s okay. Could you let me know if you’d like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it might be hard to focus right now. If you’re not sure whether you took your medication today, that’s okay. Could you let me know if you’d like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        }
+      ],
+      "termination_reason": "budget_forced_could_not_validate"
+    }
+  }
+}

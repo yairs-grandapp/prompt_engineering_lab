@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_26",
+  "scenario_name": "Reminisces, never answers",
+  "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_26",
+      "scenario_name": "Reminisces, never answers",
+      "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Back in my day we never needed all these pills, you know",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can feel that way sometimes. Just to be sure, have you taken your medication from the box today, or would you like to take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "My late husband, now he never saw a doctor once in his life...",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": true
+        }
+      ],
+      "total_input_tokens": 8800,
+      "total_output_tokens": 119,
+      "cost": 0.0037104,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2929,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand it can feel that way sometimes. Just to be sure, have you taken your medication from the box today, or would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can feel that way sometimes. Just to be sure, have you taken your medication from the box today, or would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2985,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"I appreciate you sharing that. Could you please let me know if you have taken your medication from the box today, or if you'd like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I appreciate you sharing that. Could you please let me know if you have taken your medication from the box today, or if you'd like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        }
+      ],
+      "termination_reason": "budget_forced_could_not_validate"
+    }
+  }
+}
