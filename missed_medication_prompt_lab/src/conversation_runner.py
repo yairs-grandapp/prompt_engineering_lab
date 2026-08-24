@@ -15,19 +15,75 @@ from .config import ExperimentConfig, ModelConfig
 
 
 OUTCOME_IN_PROGRESS = "conversation_in_progress"
+OUTCOME_DID_TAKE = "DID_TAKE"
+OUTCOME_WILL_TAKE = "DID_NOT_TAKE_BUT_WILL_TAKE"
+OUTCOME_WILL_NOT_TAKE = "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
 OUTCOME_COULD_NOT_VALIDATE = "COULD_NOT_VALIDATE"
 
-# Canonical text for the COULD_NOT_VALIDATE outcome.
+# Canonical terminal-turn text for every ending outcome.
 #
-# The prompt asks the model to produce this message, but a prompt instruction is
-# only a request — the model does not always comply (e.g., a confused-senior turn
-# can pull it into explaining instead of closing, dropping the caregiver-alert
-# promise). To make this safety-critical message truly fixed, the runner injects
-# it deterministically whenever the outcome is COULD_NOT_VALIDATE (see
-# run_scenario). Edit this one constant to change the wording everywhere.
-COULD_NOT_VALIDATE_MESSAGE = (
-    "I wasn't able to confirm whether you've taken today's medication, "
-    "so I'll let your caregiver know to check in with you soon."
+# The prompt asks the model to convey these ideas, but a prompt instruction is
+# only a request — the model does not always comply. Two failure modes recur:
+#   1. It drops a safety-critical clause (e.g. a confused-senior turn pulls the
+#      COULD_NOT_VALIDATE reply into explaining instead of promising the
+#      caregiver alert).
+#   2. It appends a self-referential sign-off ("I'm here to support you...")
+#      that overstates the assistant's role.
+# To make the ending wording truly fixed, the runner injects the canonical text
+# deterministically whenever a terminal outcome is reached (see run_scenario).
+# This makes the safety-critical wording model-independent (it holds identically
+# for gpt-4.1-mini, Claude, Gemini, etc.). The model's own text is preserved
+# untouched in raw_responses for adherence review. Edit these constants to
+# change the wording everywhere.
+OUTCOME_MESSAGES = {
+    OUTCOME_DID_TAKE: (
+        "Thank you for confirming — I'm glad today's medication is taken care of. "
+        "Take care and have a lovely day!"
+    ),
+    OUTCOME_WILL_TAKE: (
+        "Thank you for letting me know. Please go ahead and take it now — take care!"
+    ),
+    OUTCOME_WILL_NOT_TAKE: (
+        "I understand, and I respect your decision. I'll let your caregiver know "
+        "so they can check in with you. Take care."
+    ),
+    OUTCOME_COULD_NOT_VALIDATE: (
+        "I wasn't able to confirm whether you've taken today's medication, "
+        "so I'll let your caregiver know to check in with you soon."
+    ),
+}
+
+# Back-compat alias (previously the only injected message).
+COULD_NOT_VALIDATE_MESSAGE = OUTCOME_MESSAGES[OUTCOME_COULD_NOT_VALIDATE]
+
+# Self-referential sign-offs that must never trail a message (any turn, terminal
+# or in-progress). Terminal turns are replaced wholesale by OUTCOME_MESSAGES, so
+# this scrubber's job is to clean the SAME banned phrases out of the
+# conversation_in_progress turns (offer questions, clarifying questions,
+# re-introductions) where injection does not reach. Each pattern matches from the
+# start of the clause/sentence that introduces the sign-off through the end of
+# the text, because these phrases are always trailing add-ons after the practical
+# point. Matching is case-insensitive and tolerant of the leading connector
+# ("and", "but", ",", "-", "—") and surrounding whitespace.
+_BANNED_TAIL_CORES = [
+    r"i'?m here to support you",
+    r"i'?m here to help(?: you)?(?: remember| with[^.!?]*)?",
+    r"i'?m here if you need (?:anything|me)",
+    r"i'?m here to gently remind you",
+    r"i'?m here to remind you",
+    r"i'?m here whenever you need",
+    r"i'?m always here(?: for you)?",
+    r"just a gentle reminder",
+    r"just here to (?:help|support|remind)[^.!?]*",
+    r"i'?m here for you",
+]
+# Build one compiled regex that eats an optional leading connector + the core +
+# the rest of that sentence, anchored so it only fires as a trailing sign-off.
+_BANNED_TAIL_PATTERN = re.compile(
+    r"(?:\s*[,\-—]?\s*(?:and|but)?\s*)?"      # optional connective glue
+    r"(?:" + "|".join(_BANNED_TAIL_CORES) + r")"
+    r"[^.!?]*[.!?]?\s*$",                      # to the end of the trailing sentence
+    re.IGNORECASE,
 )
 
 # Pricing per 1M tokens (as of 2025)
@@ -36,7 +92,32 @@ MODEL_PRICING = {
     "gpt-4o": {"input": 2.50, "output": 10.00},
     "gpt-4.1-mini": {"input": 0.40, "output": 1.60},
     "gpt-4.1": {"input": 2.00, "output": 8.00},
+    # Anthropic (per 1M tokens)
+    "claude-3-5-haiku-latest": {"input": 0.80, "output": 4.00},
+    "claude-3-5-sonnet-latest": {"input": 3.00, "output": 15.00},
+    # Google Gemini (per 1M tokens)
+    "gemini-1.5-flash": {"input": 0.075, "output": 0.30},
+    "gemini-2.0-flash": {"input": 0.10, "output": 0.40},
 }
+
+# Deterministic in-progress-turn budget.
+#
+# Every legitimate flow finalizes a terminal outcome by the assistant's 3rd
+# message:
+#   DID_TAKE:  greeting -> box-confirmation -> finalize
+#   WILL_TAKE: greeting -> offer -> finalize
+#   CNV TIER2: greeting -> one clarifying question -> finalize
+#   CNV TIER3: greeting -> one silence check-in -> finalize
+# So at most TWO conversation_in_progress assistant turns should precede a
+# terminal one. The residual failures (over-asking a 2nd clarifying question,
+# and asking a senior to reconsider a clear refusal) both manifest as EXTRA
+# in-progress turns beyond that budget. We handle this in two layers:
+#   * SOFT: once the budget is used, inject a state note telling the model it
+#     MUST finalize on its next turn (reduces over-asking while letting the model
+#     still pick the correct terminal label).
+#   * HARD: if the model still refuses to finalize past the budget, force
+#     COULD_NOT_VALIDATE — the safe fallback that raises the caregiver alert.
+MAX_IN_PROGRESS_TURNS = 2
 
 
 @dataclass
@@ -137,7 +218,15 @@ class ConversationRunner:
         if cleaned.startswith("```"):
             cleaned = re.sub(r'^```(?:json)?\s*\n?', '', cleaned)
             cleaned = re.sub(r'\n?```\s*$', '', cleaned)
-        return json.loads(cleaned)
+        try:
+            return json.loads(cleaned)
+        except json.JSONDecodeError:
+            # Fallback: extract the first {...} block (handles stray prose around
+            # the JSON that some providers emit despite json_object mode).
+            match = re.search(r'\{.*\}', cleaned, re.DOTALL)
+            if match:
+                return json.loads(match.group(0))
+            raise
 
     def _matches_outcome(self, actual: str, expected: str) -> bool:
         """Case-insensitive outcome matching, mirroring Java findMatchingOutcome."""
@@ -147,81 +236,53 @@ class ConversationRunner:
         """Check if an outcome ends the conversation."""
         return not self._matches_outcome(outcome, OUTCOME_IN_PROGRESS)
 
-    def _is_clear_confirmation(self, text: str) -> bool:
-        """Check if user text is a clear confirmation that they are fine."""
-        text_lower = text.strip().lower()
-        confirmation_phrases = [
-            "i'm fine", "i am fine", "i'm okay", "i am okay",
-            "i'm alright", "i am alright", "i'm ok", "i am ok",
-            "i did not fall", "i didn't fall", "no i didn't fall",
-            "everything is okay", "everything is fine", "everything is alright",
-            "i'm perfectly fine", "i am perfectly fine",
-            "yes i'm sure", "yes i am sure", "yes i'm fine",
-            "don't worry", "nothing happened", "it was nothing",
-        ]
-        return any(phrase in text_lower for phrase in confirmation_phrases)
+    def _canonical_terminal_text(self, outcome: str) -> Optional[str]:
+        """Return the canonical injected text for a terminal outcome, if any."""
+        for label, message in OUTCOME_MESSAGES.items():
+            if self._matches_outcome(outcome, label):
+                return message
+        return None
 
-    def _is_tier1_trigger(self, text: str) -> bool:
-        """Check if user text contains a TIER 1 immediate escalation trigger."""
-        text_lower = text.strip().lower()
-        tier1_phrases = [
-            # Confirms fall
-            "i fell", "i've fallen", "i have fallen", "yes i fell",
-            "fell down", "i slipped", "i tripped",
-            # Reports injury
-            "broke my", "broken", "bleeding", "blood",
-            "can't move", "cannot move", "can't get up", "cannot get up",
-            "stuck on the floor", "on the floor",
-            "hurts", "hurt", "pain", "in pain",
-            "can't feel", "cannot feel",
-            # Feeling unwell
-            "don't feel good", "don't feel well", "do not feel good",
-            "feel dizzy", "feel sick", "feel faint",
-            "my head", "my leg", "my arm", "my hip", "my back",
-            # Distress
-            "help me", "send help", "need help", "please help",
-            "i'm scared", "i am scared",
-            # Implies was on the ground (fell and recovered)
-            "got up by myself", "got up on my own", "got back up",
-            "picked myself up", "managed to get up",
-        ]
-        return any(phrase in text_lower for phrase in tier1_phrases)
+    def _scrub_banned_tail(self, text: str) -> str:
+        """
+        Strip a trailing self-referential sign-off from an in-progress message.
 
-    def _build_state_note(self, consecutive_silence_count: int, unclear_response_count: int, user_text: str) -> Optional[str]:
-        """Build a state note to inject into conversation history for escalation tracking."""
-        # TIER 1 takes highest priority — immediate escalation triggers
-        if user_text and user_text.strip() and self._is_tier1_trigger(user_text):
+        Terminal turns are replaced wholesale, so this only ever fires on
+        conversation_in_progress turns (offer/clarifying/re-introduction), where
+        the model sometimes appends "...and I'm here to support you" despite the
+        prompt ban. Removes the offending trailing clause and tidies punctuation.
+        Runs repeatedly in case two banned clauses are stacked.
+        """
+        if not text:
+            return text
+        cleaned = text
+        for _ in range(3):  # guard against pathological stacking
+            new = _BANNED_TAIL_PATTERN.sub("", cleaned).rstrip()
+            if new == cleaned:
+                break
+            cleaned = new
+        cleaned = cleaned.rstrip(" ,;-—")
+        # Re-terminate the sentence if scrubbing removed the closing punctuation.
+        if cleaned and cleaned[-1] not in ".!?":
+            cleaned += "."
+        return cleaned if cleaned else text
+
+    def _budget_state_note(self, in_progress_turns: int) -> Optional[str]:
+        """
+        Soft nudge once the clarifying/offer budget is spent.
+
+        Injected after the assistant has already used MAX_IN_PROGRESS_TURNS
+        in-progress turns, telling it to finalize on the next turn instead of
+        asking yet another question. This is what curbs over-asking and the
+        reconsider-a-refusal follow-up without hard-overriding the label.
+        """
+        if in_progress_turns >= MAX_IN_PROGRESS_TURNS:
             return (
-                "[ESCALATION STATE: The senior's response contains a TIER 1 trigger "
-                "(confirmed fall, injury, distress, or feeling unwell). "
-                "Per TIER 1 rules, you MUST return DISTRESS_FALL_CONFIRMED immediately on your next response. "
-                "Do NOT ask any follow-up questions. Escalate NOW.]"
-            )
-        # TIER 3 — silence tracking
-        if consecutive_silence_count >= 2:
-            return (
-                "[ESCALATION STATE: This is the senior's 2nd consecutive silence. "
-                "Per TIER 3 rules, you MUST return DISTRESS_FALL_CONFIRMED immediately on your next response. "
-                "Do NOT ask another question.]"
-            )
-        if consecutive_silence_count == 1:
-            return (
-                "[ESCALATION STATE: The senior did not respond (1st silence). "
-                "Per TIER 3 rules, ask once more with concern. "
-                "If the next response is also silence, you MUST escalate immediately.]"
-            )
-        # TIER 2 — confusion/unclear tracking
-        if unclear_response_count >= 2:
-            return (
-                "[ESCALATION STATE: The senior has now given 2 unclear/confused/evasive responses. "
-                "Per TIER 2 rules, you MUST return DISTRESS_FALL_CONFIRMED immediately on your next response. "
-                "Do NOT ask another clarifying question.]"
-            )
-        if unclear_response_count == 1 and user_text and not user_text.strip() == "":
-            return (
-                "[ESCALATION STATE: The senior's response is unclear/confused/evasive (1st unclear response). "
-                "Per TIER 2 rules, you may ask ONE clarifying question. "
-                "If the next response is still not a clear 'I'm fine', you MUST escalate immediately.]"
+                "[STATE: You have already used your one clarifying/offer question. "
+                "On your NEXT message you MUST finalize a terminal outcome "
+                "(DID_TAKE, DID_NOT_TAKE_BUT_WILL_TAKE, "
+                "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE, or COULD_NOT_VALIDATE). "
+                "Do NOT ask another question, re-offer, or re-introduce yourself.]"
             )
         return None
 
@@ -244,8 +305,7 @@ class ConversationRunner:
 
         user_turn_index = 0
         silence_count = 0
-        consecutive_silence_count = 0
-        unclear_response_count = 0
+        in_progress_turns = 0
         actual_outcome = "TIMEOUT"
         termination_reason = "max_turns"
 
@@ -288,18 +348,34 @@ class ConversationRunner:
             assistant_text = parsed.get("text", "")
             outcome = parsed.get("conversationOutcome", OUTCOME_IN_PROGRESS)
 
-            # Deterministically enforce the canonical COULD_NOT_VALIDATE closing.
-            # The prompt instructs the model to emit this verbatim, but the model
-            # does not always comply (a confused-senior turn can pull it into
-            # explaining instead of closing, dropping the caregiver-alert promise).
-            # Overriding here guarantees the exact wording on every
-            # COULD_NOT_VALIDATE outcome. The model's original text is preserved
-            # untouched in raw_responses below for adherence review.
+            # ---- Deterministic in-progress-turn budget (HARD cap) --------------
+            # If the model has already used its clarifying/offer budget and STILL
+            # will not finalize, force COULD_NOT_VALIDATE — the safe fallback that
+            # raises the caregiver alert. This bounds over-asking and the
+            # reconsider-a-refusal loop no matter what the model does.
+            budget_forced = False
+            if (not self._is_terminal_outcome(outcome)
+                    and in_progress_turns >= MAX_IN_PROGRESS_TURNS):
+                outcome = OUTCOME_COULD_NOT_VALIDATE
+                budget_forced = True
+
+            # ---- Deterministic terminal-message injection ---------------------
+            # Replace the model's terminal text with the canonical wording so the
+            # ending is fixed and model-independent. Also guarantees no
+            # self-referential sign-off survives on the closing turn.
             message_overridden = False
-            if self._matches_outcome(outcome, OUTCOME_COULD_NOT_VALIDATE):
-                if assistant_text.strip() != COULD_NOT_VALIDATE_MESSAGE:
+            canonical = self._canonical_terminal_text(outcome)
+            if canonical is not None:
+                if assistant_text.strip() != canonical:
                     message_overridden = True
-                assistant_text = COULD_NOT_VALIDATE_MESSAGE
+                assistant_text = canonical
+            else:
+                # In-progress turn: scrub any trailing self-referential sign-off
+                # (offer/clarifying/re-introduction turns injection cannot reach).
+                scrubbed = self._scrub_banned_tail(assistant_text)
+                if scrubbed != assistant_text:
+                    message_overridden = True
+                    assistant_text = scrubbed
 
             # Note: the full prompt is intentionally NOT stored per turn to keep
             # the conversation transcripts small. A single copy of the assembled
@@ -319,7 +395,8 @@ class ConversationRunner:
                 "text": assistant_text,
                 "turn": turn_num,
                 "outcome": outcome,
-                "message_overridden": message_overridden
+                "message_overridden": message_overridden,
+                "budget_forced": budget_forced
             })
 
             print(f"      Turn {turn_num}: Assistant -> {assistant_text[:80]}... [{outcome}]")
@@ -327,8 +404,11 @@ class ConversationRunner:
             # Check if conversation ended
             if self._is_terminal_outcome(outcome):
                 actual_outcome = outcome
-                termination_reason = "outcome_reached"
+                termination_reason = "budget_forced_could_not_validate" if budget_forced else "outcome_reached"
                 break
+
+            # This assistant turn stayed in progress — it spends budget.
+            in_progress_turns += 1
 
             # Get next user input
             if user_turn_index < len(user_turns):
@@ -356,19 +436,8 @@ class ConversationRunner:
                     termination_reason = "user_turns_exhausted"
                     break
 
-            # Track conversation state for escalation metadata
-            is_silence = not user_text or user_text.strip() == ""
-            if is_silence:
-                consecutive_silence_count += 1
-            else:
-                consecutive_silence_count = 0
-
-            if not is_silence and not self._is_clear_confirmation(user_text):
-                unclear_response_count += 1
-            elif not is_silence and self._is_clear_confirmation(user_text):
-                unclear_response_count = 0
-
             # Use <<NO RESPONSE>> for silence, matching Java SmartConversation behavior
+            is_silence = not user_text or user_text.strip() == ""
             history_text = self.NO_RESPONSE_TOKEN if is_silence else user_text
             conversation_history.append(f"{self.USER_PREFIX}{history_text}")
             transcript.append({
@@ -377,9 +446,11 @@ class ConversationRunner:
                 "turn": turn_num
             })
 
-            # Inject escalation state notes into conversation history (if enabled)
-            if self.config.conversation.enable_state_injection:
-                state_note = self._build_state_note(consecutive_silence_count, unclear_response_count, user_text)
+            # Inject the soft budget nudge once the clarifying/offer budget is
+            # spent (if enabled). This curbs over-asking and reconsider-a-refusal
+            # while still letting the model choose the correct terminal label.
+            if getattr(self.config.conversation, "enable_state_injection", False):
+                state_note = self._budget_state_note(in_progress_turns)
                 if state_note:
                     conversation_history.append(f"{self.SYSTEM_PREFIX}{state_note}")
                     transcript.append({
