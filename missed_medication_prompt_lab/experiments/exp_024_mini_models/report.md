@@ -1,3 +1,19 @@
+The v20 prompt, previously validated on the larger model, was evaluated on
+gpt-4.1-mini at temperature 0.0 to assess label parity and cost. Outcome-label
+accuracy was 100/100 (100%), establishing that the smaller model reproduces the
+full outcome logic on the 100-scenario suite at approximately $0.36 for the
+complete run.
+
+Path-level behaviour was weaker than on the larger model. The turn-count
+distribution was 2 turns (22 scenarios), 3 turns (57), 4 turns (7), and 5 turns
+(14); the 21 scenarios running four or five turns indicate elevated over-asking
+— a second or third clarifying question in COULD_NOT_VALIDATE cases before
+termination — which reached the terminal label only because the scripted senior
+eventually fell silent. The reconsider-question-on-a-clear-refusal and
+self-referential sign-off residuals were likewise present. The run confirmed the
+mini model as a viable, low-cost target while quantifying the path residuals that
+motivated the runner-side controls introduced in exp_025.
+
 # Experiment: Missed Medication — Mini Models (prompt_v20)
 
 **Date:** 2026-08-21  
