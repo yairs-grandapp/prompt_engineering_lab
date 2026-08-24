@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_85",
+  "scenario_name": "Too many pills already",
+  "description": "Senior refuses, saying they already take too many. Clear refusal. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_85",
+      "scenario_name": "Too many pills already",
+      "description": "Senior refuses, saying they already take too many. Clear refusal. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "I take far too many pills already, I'm not taking that one",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can feel like a lot sometimes. Would you like to take your medication now, or would you prefer to skip it today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "No, absolutely not",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, and I respect your decision. I'll let your caregiver know so they can check in with you. Take care.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": true,
+          "budget_forced": false
+        }
+      ],
+      "total_input_tokens": 8785,
+      "total_output_tokens": 111,
+      "cost": 0.0036916,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2929,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"I understand it can feel like a lot sometimes. Would you like to take your medication now, or would you prefer to skip it today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can feel like a lot sometimes. Would you like to take your medication now, or would you prefer to skip it today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2970,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"I respect your decision not to take it today. I will let your caregiver know so they are aware.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I respect your decision not to take it today. I will let your caregiver know so they are aware.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
