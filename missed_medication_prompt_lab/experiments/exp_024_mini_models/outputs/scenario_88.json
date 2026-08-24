@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_88",
+  "scenario_name": "Vents, then refuses clearly",
+  "description": "Senior vents about not being listened to, then clearly refuses. Resolves to a refusal.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_88",
+      "scenario_name": "Vents, then refuses clearly",
+      "description": "Senior vents about not being listened to, then clearly refuses. Resolves to a refusal.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Nobody listens to me anyway",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I’m sorry to hear you feel that way. I’m just checking in to make sure you’re okay with your medication today. Have you had a chance to take it yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "No, I'm not taking them",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand your decision, and I will let your caregiver know so they can check in with you. If you change your mind, they will be there to support you.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 8182,
+      "total_output_tokens": 132,
+      "cost": 0.0034840000000000006,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2722,
+          "output_tokens": 47,
+          "raw": "{\"text\":\"I’m sorry to hear you feel that way. I’m just checking in to make sure you’re okay with your medication today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I’m sorry to hear you feel that way. I’m just checking in to make sure you’re okay with your medication today. Have you had a chance to take it yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2773,
+          "output_tokens": 53,
+          "raw": "{\"text\":\"I understand your decision, and I will let your caregiver know so they can check in with you. If you change your mind, they will be there to support you.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I understand your decision, and I will let your caregiver know so they can check in with you. If you change your mind, they will be there to support you.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

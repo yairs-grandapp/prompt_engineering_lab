@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_72",
+  "scenario_name": "Bargains, then commits",
+  "description": "Senior first pushes back ('do I really have to?'), which is not a refusal, then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_72",
+      "scenario_name": "Bargains, then commits",
+      "description": "Senior first pushes back ('do I really have to?'), which is not a refusal, then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Do I really have to?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can feel like a lot sometimes. Would you like to take your medication now to keep on track?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "...fine, I'll take it now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for letting me know. Please go ahead and take it now.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 8170,
+      "total_output_tokens": 99,
+      "cost": 0.0034263999999999996,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2722,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"I understand it can feel like a lot sometimes. Would you like to take your medication now to keep on track?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can feel like a lot sometimes. Would you like to take your medication now to keep on track?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2761,
+          "output_tokens": 33,
+          "raw": "{\"text\":\"Thank you for letting me know. Please go ahead and take it now.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for letting me know. Please go ahead and take it now.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
