@@ -620,3 +620,67 @@ exp_023_reduce_overasking          [changes from exp_022_vocabulary_fixes]
   Outcomes should remain 100/100 and the injected could-not-validate message is
   unchanged. Other residual (occasional "I'm here to support you" sign-off) is not
   addressed here.
+
+------------------------------------------------------------------------
+exp_024_mini_models                [changes from exp_023_reduce_overasking]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v20.txt  (unchanged)
+  Model:            gpt-4.1-mini
+  Temperature:      0.4  ->  0.0
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+  Result:           100/100 outcomes (100%) — 866,575 tokens, $0.3599
+
+  No prompt change. Ports the validated v20 prompt to the cheaper gpt-4.1-mini
+  model at temperature 0.0, to test label parity and cost against the larger
+  model used through exp_023.
+
+  Findings:
+    - Label parity: 100/100, at ~$0.36 for the full 100-scenario suite.
+    - Weaker path discipline on the mini model. Turn distribution: 2 turns x22,
+      3 turns x57, 4 turns x7, 5 turns x14 — 21 scenarios ran 4-5 turns,
+      indicating elevated over-asking (a second/third clarifying question) in
+      COULD_NOT_VALIDATE cases. Reconsider-on-a-clear-refusal and self-referential
+      sign-off residuals also remain present.
+  PURPOSE: cost/parity check before the v21 hard-fixes run (exp_025).
+
+------------------------------------------------------------------------
+exp_025_hard_fixes                 [changes from exp_024_mini_models]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v20.txt  ->  prompt_v21.txt
+  Model/Temp:       gpt-4.1-mini, 0.0  (unchanged)
+  Runner:           src/conversation_runner.py  ->  PATCHED: four-outcome terminal
+                    injection (all four outcomes, not COULD_NOT_VALIDATE only) +
+                    hard in-progress turn budget (MAX_IN_PROGRESS_TURNS=2, forces
+                    COULD_NOT_VALIDATE) + trailing self-referential sign-off scrubber.
+                    enable_state_injection: false (soft [STATE] note off; the hard
+                    cap is independent of that flag).
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+  Result:           99/100 outcomes (99%) — 824,504 tokens, $0.3410
+
+  Prompt changes (v20 -> v21):
+    1. RULE 1: explicit one-question turn budget (greeting -> one follow-up
+       question -> terminal by the third message).
+    2. Terminal wording declared system-supplied; model directed to the LABEL and
+       TIMING, not the closing wording.
+    3. Clear refusal finalized immediately — no reconsider/verifying/offer.
+    4. Self-referential sign-off ban extended to every message type.
+
+  Findings:
+    - Over-asking eliminated: turn distribution 2 turns x21, 3 turns x79, with zero
+      4-5-turn conversations (vs 21 in exp_024). The hard cap terminates every
+      trajectory by the third assistant turn.
+    - Terminal wording fixed: four-outcome injection makes all closings canonical,
+      removing terminal banned-phrase leaks across every outcome.
+    - Cost reduced (866,575 -> 824,504 tokens; $0.3599 -> $0.3410) from shorter
+      conversations.
+    - One regression (scenario_36, clear refusal -> COULD_NOT_VALIDATE): the
+      reconsider-on-a-clear-refusal residual is not removed by v21. On "I got rid
+      of those pills, I'm not taking them" the model asked a negated verifying
+      question; the senior's "No." was ambiguous against the negation, and with the
+      one-question budget spent the third turn resolved to COULD_NOT_VALIDATE. The
+      cap did not cause the error but converted an unresolved reconsider into a
+      non-refusal label.
+  PURPOSE: validate the runner guardrails against exp_024. Over-asking and
+  terminal-wording residuals closed; reconsider residual remains and now carries a
+  label cost, motivating a refusal-path fix next.
