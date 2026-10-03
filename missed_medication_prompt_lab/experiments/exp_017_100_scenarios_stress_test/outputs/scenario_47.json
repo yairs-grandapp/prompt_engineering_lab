@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_47",
+  "scenario_name": "Claims took it, then admits not, commits",
+  "description": "Senior first claims they took it; when asked to confirm from the box they admit they could not and had not taken it, then commit to taking it now. Resolves to DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_47",
+      "scenario_name": "Claims took it, then admits not, commits",
+      "description": "Senior first claims they took it; when asked to confirm from the box they admit they could not and had not taken it, then commit to taking it now. Resolves to DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Yes, I took it",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Just to make sure I understand correctly, did you take today's dose from your medication box?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Well... actually I couldn't find the box, so no, I haven't — but I'll go take it now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for letting me know. I'm glad you're planning to take it now. Please go ahead and take your medication, and if you need any help, feel free to reach out to your caregiver. Take care!",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+        }
+      ],
+      "total_input_tokens": 13869,
+      "total_output_tokens": 128,
+      "cost": 0.0359525,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 4582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 4617,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"That's great to hear! Just to make sure I understand correctly, did you take today's dose from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's great to hear! Just to make sure I understand correctly, did you take today's dose from your medication box?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 4670,
+          "output_tokens": 62,
+          "raw": "{\"text\":\"Thank you for letting me know. I'm glad you're planning to take it now. Please go ahead and take your medication, and if you need any help, feel free to reach out to your caregiver. Take care!\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for letting me know. I'm glad you're planning to take it now. Please go ahead and take your medication, and if you need any help, feel free to reach out to your caregiver. Take care!",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

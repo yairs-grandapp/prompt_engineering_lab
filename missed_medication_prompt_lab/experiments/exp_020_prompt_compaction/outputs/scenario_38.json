@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_38",
+  "scenario_name": "Confused and off-topic throughout",
+  "description": "Senior mixes unrelated questions with confusion and never gives a clear answer. After one clarifier, could-not-validate.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_38",
+      "scenario_name": "Confused and off-topic throughout",
+      "description": "Senior mixes unrelated questions with confusion and never gives a clear answer. After one clarifier, could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Is it raining out? Who is this? What pills?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm Vega, your care assistant. I'm here to check if you've taken your medication today. Have you had a chance to take it yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I don't understand any of this",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing. Just to clarify, I'm checking if you've taken your medication today. Could you let me know if you've been able to do that?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 9010,
+      "total_output_tokens": 160,
+      "cost": 0.024125,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2189,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2230,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"I'm Vega, your care assistant. I'm here to check if you've taken your medication today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm Vega, your care assistant. I'm here to check if you've taken your medication today. Have you had a chance to take it yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2273,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand this can be confusing. Just to clarify, I'm checking if you've taken your medication today. Could you let me know if you've been able to do that?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. Just to clarify, I'm checking if you've taken your medication today. Could you let me know if you've been able to do that?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2318,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"It seems like we might be having a bit of a connection issue or some confusion. I'll let your caregiver know so they can check in with you. Take care!\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "It seems like we might be having a bit of a connection issue or some confusion. I'll let your caregiver know so they can check in with you. Take care!",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

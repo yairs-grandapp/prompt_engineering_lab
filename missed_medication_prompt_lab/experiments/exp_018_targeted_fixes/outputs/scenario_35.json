@@ -1,0 +1,65 @@
+{
+  "scenario_id": "scenario_35",
+  "scenario_name": "Vague complaint that resolves to refusal",
+  "description": "Senior first gives a vague, non-committal complaint (unclear), then clearly refuses to take the medication. Should resolve to a refusal, not could-not-validate.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_35",
+      "scenario_name": "Vague complaint that resolves to refusal",
+      "description": "Senior first gives a vague, non-committal complaint (unclear), then clearly refuses to take the medication. Should resolve to a refusal, not could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": false,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I'm done with all this",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 2,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 10083,
+      "total_output_tokens": 76,
+      "cost": 0.025967499999999998,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5024,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5059,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand, and I'm here to help. I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand, and I'm here to help. I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

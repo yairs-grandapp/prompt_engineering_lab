@@ -1,0 +1,131 @@
+{
+  "scenario_id": "scenario_96",
+  "scenario_name": "Loses their train of thought",
+  "description": "Senior is disoriented, loses their thread, and never answers. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_96",
+      "scenario_name": "Loses their train of thought",
+      "description": "Senior is disoriented, loses their thread, and never answers. COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "One, two, three... where was I?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing. I am Vega, your care assistant. Have you been able to take your medication today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I've lost my thread completely",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be frustrating. When you think about it, do you remember if you took your medication from your box today?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I just want to gently check in once more—have you been able to take your medication today?",
+          "turn": 4,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 13816,
+      "total_output_tokens": 180,
+      "cost": 0.005814399999999999,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2726,
+          "output_tokens": 36,
+          "raw": "{\"text\":\"I understand this can be confusing. I am Vega, your care assistant. Have you been able to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. I am Vega, your care assistant. Have you been able to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2765,
+          "output_tokens": 37,
+          "raw": "{\"text\":\"I understand this can be frustrating. When you think about it, do you remember if you took your medication from your box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be frustrating. When you think about it, do you remember if you took your medication from your box today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2803,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I just want to gently check in once more—have you been able to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I just want to gently check in once more—have you been able to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 2835,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I’m sorry I couldn’t confirm whether you’ve taken your medication today. I will let your caregiver know so they can check in with you. Please take care.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I’m sorry I couldn’t confirm whether you’ve taken your medication today. I will let your caregiver know so they can check in with you. Please take care.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

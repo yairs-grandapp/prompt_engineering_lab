@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_42",
+  "scenario_name": "Upset, no answer given",
+  "description": "Senior is upset and disengages without ever saying whether they took the medication. Per TIER 2B, validate immediately with no clarifying question. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_42",
+      "scenario_name": "Upset, no answer given",
+      "description": "Senior is upset and disengages without ever saying whether they took the medication. Per TIER 2B, validate immediately with no clarifying question. COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Why do you keep calling me? Leave me be",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be frustrating. I am not checking up on you, I just want to make sure you are supported. Have you been able to take your medication today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Just stop",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": false
+        }
+      ],
+      "total_input_tokens": 8784,
+      "total_output_tokens": 123,
+      "cost": 0.0037104,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2926,
+          "output_tokens": 46,
+          "raw": "{\"text\":\"I understand this can be frustrating. I am not checking up on you — I just want to make sure you are supported. Have you been able to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be frustrating. I am not checking up on you — I just want to make sure you are supported. Have you been able to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2972,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I understand you want me to stop. I'll respect that. Since I can't confirm if you've taken your medication today, I'll let your caregiver know to check in with you.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand you want me to stop. I'll respect that. Since I can't confirm if you've taken your medication today, I'll let your caregiver know to check in with you.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

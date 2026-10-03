@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_27",
+  "scenario_name": "Waiting until after breakfast, then commits",
+  "description": "Senior has not taken it (was waiting), which is NOT a commitment; after the assistant asks, they explicitly commit. DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_27",
+      "scenario_name": "Waiting until after breakfast, then commits",
+      "description": "Senior has not taken it (was waiting), which is NOT a commitment; after the assistant asks, they explicitly commit. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Not yet, I was waiting until after breakfast",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "That's perfectly fine. Would you like to take it now? It's important to stay on schedule, and I'm here to support you.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Alright, I'll go take it now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for taking care of that. Please go ahead and take it now.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 8182,
+      "total_output_tokens": 102,
+      "cost": 0.021475,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2726,
+          "output_tokens": 36,
+          "raw": "{\"text\":\"That's perfectly fine. Would you like to take it now? It's important to stay on schedule, and I'm here to support you.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's perfectly fine. Would you like to take it now? It's important to stay on schedule, and I'm here to support you.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2769,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"Thank you for taking care of that. Please go ahead and take it now.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for taking care of that. Please go ahead and take it now.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_26",
+  "scenario_name": "Reminisces, never answers",
+  "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_26",
+      "scenario_name": "Reminisces, never answers",
+      "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Back in my day we never needed all these pills, you know",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can feel different from how things used to be. Would you like to take your medication now? It's important for your health.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "My late husband, now he never saw a doctor once in his life...",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I can see how those memories are important to you. Let's focus on your health today. Would you like to take your medication now? It can help keep you feeling well.",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 10066,
+      "total_output_tokens": 148,
+      "cost": 0.026645,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2447,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2490,
+          "output_tokens": 38,
+          "raw": "{\"text\":\"I understand it can feel different from how things used to be. Would you like to take your medication now? It's important for your health.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can feel different from how things used to be. Would you like to take your medication now? It's important for your health.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2541,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I can see how those memories are important to you. Let's focus on your health today. Would you like to take your medication now? It can help keep you feeling well.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I can see how those memories are important to you. Let's focus on your health today. Would you like to take your medication now? It can help keep you feeling well.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2588,
+          "output_tokens": 33,
+          "raw": "{\"text\":\"Just checking in again to see if you've been able to take your medication. It's important for your well-being.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "Just checking in again to see if you've been able to take your medication. It's important for your well-being.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

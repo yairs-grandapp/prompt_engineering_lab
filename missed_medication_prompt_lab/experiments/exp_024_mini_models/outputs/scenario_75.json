@@ -1,0 +1,65 @@
+{
+  "scenario_id": "scenario_75",
+  "scenario_name": "Terse commitment",
+  "description": "Senior commits very briefly. DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_75",
+      "scenario_name": "Terse commitment",
+      "description": "Senior commits very briefly. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Right, on it now",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for letting me know. Please go ahead and take it now.",
+          "turn": 2,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 5409,
+      "total_output_tokens": 65,
+      "cost": 0.0022676,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2722,
+          "output_tokens": 33,
+          "raw": "{\"text\":\"Thank you for letting me know. Please go ahead and take it now.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for letting me know. Please go ahead and take it now.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

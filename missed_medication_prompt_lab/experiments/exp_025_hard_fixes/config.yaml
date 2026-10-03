@@ -1,0 +1,34 @@
+# exp_025_hard_fixes/config.yaml
+# prompt_v21.txt + PATCHED runner — closing the turn-level residuals
+#   Prompt v20 -> v21: RULE 1 one-question turn budget; terminal wording declared
+#   system-supplied; clear refusal finalized immediately; sign-off ban extended to
+#   every message. Runner PATCHED: four-outcome terminal injection (not CNV-only) +
+#   hard in-progress turn budget (MAX_IN_PROGRESS_TURNS=2 -> forces
+#   COULD_NOT_VALIDATE) + trailing sign-off scrubber. enable_state_injection: false
+#   (soft [STATE] note off; hard cap independent). Result: 99/100 outcomes, $0.3410.
+#   Over-asking eliminated (0 scenarios at 4-5 turns) and terminal wording fixed;
+#   one regression (scenario_36) where a reconsider question on a clear refusal
+#   resolved to COULD_NOT_VALIDATE.
+
+experiment:
+  name: "Missed Medication — Hard Fixes (prompt_v21)"
+  date: "2026-08-21"
+
+models:
+  - name: "gpt-4.1-mini"
+    temperature: 0.0
+
+prompt:
+  template: "prompt_v21.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"

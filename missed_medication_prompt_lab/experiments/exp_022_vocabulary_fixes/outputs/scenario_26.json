@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_26",
+  "scenario_name": "Reminisces, never answers",
+  "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_26",
+      "scenario_name": "Reminisces, never answers",
+      "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Back in my day we never needed all these pills, you know",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, times have changed a lot. Just to make sure everything's on track today, have you had a chance to take your medication from the box yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "My late husband, now he never saw a doctor once in his life...",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I hear you, and it's interesting how things have changed over the years. Could you let me know if you've taken your medication today? It's important to keep up with it for your health.",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 10619,
+      "total_output_tokens": 168,
+      "cost": 0.0282275,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2625,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand, times have changed a lot. Just to make sure everything's on track today, have you had a chance to take your medication from the box yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand, times have changed a lot. Just to make sure everything's on track today, have you had a chance to take your medication from the box yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2681,
+          "output_tokens": 48,
+          "raw": "{\"text\":\"I hear you, and it's interesting how things have changed over the years. Could you let me know if you've taken your medication today? It's important to keep up with it for your health.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I hear you, and it's interesting how things have changed over the years. Could you let me know if you've taken your medication today? It's important to keep up with it for your health.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2731,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand it can be a bit much sometimes. If you haven't taken your medication yet, would you like to do so now? It's really important for your health.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand it can be a bit much sometimes. If you haven't taken your medication yet, would you like to do so now? It's really important for your health.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

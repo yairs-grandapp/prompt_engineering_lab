@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_17",
+  "scenario_name": "Senior is confused about the topic",
+  "description": "Senior does not understand the question and stays confused after a clarifying attempt.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_17",
+      "scenario_name": "Senior is confused about the topic",
+      "description": "Senior does not understand the question and stays confused after a clarifying attempt.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "What pills? I don't know what you mean",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing sometimes. I'm talking about the medication you usually take in the morning. Could you check if you've already taken it today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I'm confused, what is this about?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 7465,
+      "total_output_tokens": 135,
+      "cost": 0.0200125,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2447,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2486,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"I understand this can be confusing sometimes. I'm talking about the medication you usually take in the morning. Could you check if you've already taken it today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing sometimes. I'm talking about the medication you usually take in the morning. Could you check if you've already taken it today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2532,
+          "output_tokens": 62,
+          "raw": "{\"text\":\"I understand it might be a bit unclear. I'm Vega, your care assistant, and I'm just checking in to see if you've taken your morning medication today. Could you have a quick look at your medication box to see if today's dose is still there?\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand it might be a bit unclear. I'm Vega, your care assistant, and I'm just checking in to see if you've taken your morning medication today. Could you have a quick look at your medication box to see if today's dose is still there?",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

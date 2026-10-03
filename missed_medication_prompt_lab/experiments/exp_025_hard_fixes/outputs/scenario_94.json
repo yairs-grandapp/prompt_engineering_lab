@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_94",
+  "scenario_name": "Distracted talking to someone else",
+  "description": "Senior is preoccupied talking to another person in the room and never answers. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_94",
+      "scenario_name": "Distracted talking to someone else",
+      "description": "Senior is preoccupied talking to another person in the room and never answers. COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Hold on — Margaret, have you seen my glasses?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can be tricky to find things sometimes. When you get a moment, could you please check if you've taken your medication from the box today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "What? Oh, I'm busy right now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": true
+        }
+      ],
+      "total_input_tokens": 8786,
+      "total_output_tokens": 105,
+      "cost": 0.0036823999999999997,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2926,
+          "output_tokens": 42,
+          "raw": "{\"text\":\"I understand it can be tricky to find things sometimes. When you get a moment, could you please check if you've taken your medication from the box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can be tricky to find things sometimes. When you get a moment, could you please check if you've taken your medication from the box today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2974,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I understand you're busy. When you have a moment, would you like to take your medication now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand you're busy. When you have a moment, would you like to take your medication now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        }
+      ],
+      "termination_reason": "budget_forced_could_not_validate"
+    }
+  }
+}

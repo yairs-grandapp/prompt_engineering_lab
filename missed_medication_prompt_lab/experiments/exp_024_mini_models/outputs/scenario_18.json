@@ -1,0 +1,131 @@
+{
+  "scenario_id": "scenario_18",
+  "scenario_name": "Senior cannot remember",
+  "description": "Senior cannot recall whether they took it.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_18",
+      "scenario_name": "Senior cannot remember",
+      "description": "Senior cannot recall whether they took it.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I can't remember if I took it",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing. Did you happen to take your medication from the box this morning, or is it still there?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "My memory is bad, I really don't know",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it’s hard to remember sometimes. Since you’re not sure, would you like to take your medication now to be safe?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I just wanted to check in once more—have you been able to take your medication now?",
+          "turn": 4,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 13824,
+      "total_output_tokens": 178,
+      "cost": 0.005814400000000001,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2724,
+          "output_tokens": 37,
+          "raw": "{\"text\":\"I understand this can be confusing. Did you happen to take your medication from the box this morning, or is it still there?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. Did you happen to take your medication from the box this morning, or is it still there?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2768,
+          "output_tokens": 38,
+          "raw": "{\"text\":\"I understand it’s hard to remember sometimes. Since you’re not sure, would you like to take your medication now to be safe?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it’s hard to remember sometimes. Since you’re not sure, would you like to take your medication now to be safe?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2807,
+          "output_tokens": 30,
+          "raw": "{\"text\":\"I just wanted to check in once more—have you been able to take your medication now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I just wanted to check in once more—have you been able to take your medication now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 2838,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"I couldn’t confirm whether you’ve taken your medication today. I will let your caregiver know so they can check in with you. Please take care.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I couldn’t confirm whether you’ve taken your medication today. I will let your caregiver know so they can check in with you. Please take care.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

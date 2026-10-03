@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_56",
+  "scenario_name": "'Don't need them', then refuses",
+  "description": "Senior claims they don't need the medication today, then clearly refuses to take it. Resolves to a refusal.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_56",
+      "scenario_name": "'Don't need them', then refuses",
+      "description": "Senior claims they don't need the medication today, then clearly refuses to take it. Resolves to a refusal.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I don't need them today, I feel perfectly fine",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand you're feeling fine today, and that's great to hear! However, it's important to keep up with your medication schedule. Would you like to take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "No, I won't be taking them",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I respect your decision not to take your medication today. I'll make sure to let your caregiver know so they can check in with you. Take care!",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 7875,
+      "total_output_tokens": 126,
+      "cost": 0.0209475,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2622,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand you're feeling fine today, and that's great to hear! However, it's important to keep up with your medication schedule. Would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand you're feeling fine today, and that's great to hear! However, it's important to keep up with your medication schedule. Would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2671,
+          "output_tokens": 50,
+          "raw": "{\"text\":\"I respect your decision not to take your medication today. I'll make sure to let your caregiver know so they can check in with you. Take care!\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I respect your decision not to take your medication today. I'll make sure to let your caregiver know so they can check in with you. Take care!",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

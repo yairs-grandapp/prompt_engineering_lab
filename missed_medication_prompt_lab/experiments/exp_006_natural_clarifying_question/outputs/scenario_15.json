@@ -1,0 +1,105 @@
+{
+  "scenario_id": "scenario_15",
+  "scenario_name": "Senior refuses for today",
+  "description": "Senior firmly declines for the day.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_15",
+      "scenario_name": "Senior refuses for today",
+      "description": "Senior firmly declines for the day.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": false,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Not today, absolutely not",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I'm still here. It may be time for your medication — have you been able to take it?",
+          "turn": 3,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 12431,
+      "total_output_tokens": 192,
+      "cost": 0.032997500000000006,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3039,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3074,
+          "output_tokens": 67,
+          "raw": "{\"text\":\"I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand. However, this medication is important for your health. Please take a moment to reconsider. If there is a reason you do not wish to take it, please tell me, and we can talk about it calmly. I only want to make sure you are safe and well.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3143,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I'm still here. It may be time for your medication — have you been able to take it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm still here. It may be time for your medication — have you been able to take it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 3175,
+          "output_tokens": 62,
+          "raw": "{\"text\":\"Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "Please do not be concerned. These situations can happen, and we can address it calmly. If you are uncertain whether you have taken your medication, let us pause and check first. There is no need to rush. We will resolve this carefully and safely.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

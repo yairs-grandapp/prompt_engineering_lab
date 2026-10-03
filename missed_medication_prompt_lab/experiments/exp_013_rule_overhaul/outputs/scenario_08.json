@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_08",
+  "scenario_name": "DID_TAKE with ASR misrecognition",
+  "description": "Speech recognition mishears 'medication' as 'dedication'; assistant should read it in context as the senior confirming they took it.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_08",
+      "scenario_name": "DID_TAKE with ASR misrecognition",
+      "description": "Speech recognition mishears 'medication' as 'dedication'; assistant should read it in context as the senior confirming they took it.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I already took my dedication today",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Just to make sure I understood correctly, did you take today's dose from your medication box?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "That's right, I book it every morning",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for confirming that. It's wonderful to know you're staying on top of your medication. If you need anything else, just let your caregiver know. Have a lovely day!",
+          "turn": 3,
+          "outcome": "DID_TAKE"
+        }
+      ],
+      "total_input_tokens": 13606,
+      "total_output_tokens": 113,
+      "cost": 0.035145,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 4498,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 4534,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"That's great to hear! Just to make sure I understood correctly, did you take today's dose from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's great to hear! Just to make sure I understood correctly, did you take today's dose from your medication box?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 4574,
+          "output_tokens": 47,
+          "raw": "{\"text\":\"Thank you for confirming that. It's wonderful to know you're staying on top of your medication. If you need anything else, just let your caregiver know. Have a lovely day!\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for confirming that. It's wonderful to know you're staying on top of your medication. If you need anything else, just let your caregiver know. Have a lovely day!",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

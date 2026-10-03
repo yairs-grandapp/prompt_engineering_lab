@@ -1,0 +1,43 @@
+# prompt_v13.txt — refusal taken at face value + hardened could-not-validate message
+#   CHANGES FROM v12:
+#   1. Refusals no longer receive a reconsider/verifying question. A clear refusal
+#      ("I won't take it", "I'm not taking those") is a definitive answer, so it is
+#      taken at face value and DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE is returned
+#      immediately, with a respectful acknowledgement plus the caregiver alert.
+#      This is contrasted explicitly with "I haven't taken it / I forgot", which is
+#      NOT a refusal and still requires the follow-up before DID_NOT_TAKE_BUT_WILL_
+#      TAKE (the v12 commitment guard is unchanged).
+#   2. Because all refusals now skip the follow-up unconditionally, the discomfort
+#      exception was narrowed to the DID_TAKE box-confirmation only; a routing note
+#      for the uncomfortable-with-no-answer case was corrected to point to TIER 2B
+#      (validate immediately), not the one-clarifying-question tier.
+#   3. Hardened the COULD_NOT_VALIDATE requirement. The entire response must be the
+#      fixed soft message reproduced verbatim — nothing prepended or appended, no
+#      question, and no free-form replacement. In exp_014 scenario_17, the model
+#      returned COULD_NOT_VALIDATE with self-authored text that omitted the fixed
+#      message (and its caregiver-alert promise) and ended on a question.
+#   NOTE: the caregiver-alert promise appears on both DID_NOT_TAKE_IT_AND_WILL_NOT_
+#      TAKE and COULD_NOT_VALIDATE. The production backend must escalate on both.
+
+experiment:
+  name: "Missed Medication — Rule Overhaul (prompt_v13)"
+  date: "2026-08-19"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v13.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

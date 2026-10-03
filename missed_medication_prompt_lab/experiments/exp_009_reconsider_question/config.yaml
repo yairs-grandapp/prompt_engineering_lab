@@ -1,0 +1,32 @@
+# prompt_v7.txt — refusal Message #2 is now a reconsider question
+#   CHANGES FROM v6:
+#   1. Reworded the refusal Message #2 from a closing statement into a gentle
+#      reconsider QUESTION ("...would you be willing to take it now?"). In the
+#      two-turn refusal flow the assistant delivers Message #2 and waits for the
+#      senior's reply, so it needs to ask something answerable.
+#   2. Updated the TIER 1 refusal rule's description of Message #2 to match — it
+#      no longer says the message "asks them to share any reason", which would
+#      conflict with the no-conversational-overclaim guardrail.
+
+experiment:
+  name: "Missed Medication — Reconsider Question (prompt_v7)"
+  date: "2026-08-13"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v7.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

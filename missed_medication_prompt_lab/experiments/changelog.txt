@@ -1,0 +1,715 @@
+========================================================================
+MISSED MEDICATION PROMPT LAB — EXPERIMENT CHANGELOG
+========================================================================
+Records the configuration changes made from one experiment to the next.
+Derived from each experiment's config.yaml and report.md.
+
+Constant across all experiments so far:
+  - Model:                 gpt-4o
+  - Language / gender:      English / female (Vega)
+  - additional_information: scheduledTime = 2026-07-29T08:00, reminderCount = 0
+  - conversation:           max_turns = 10, extra_silence_turns = 2,
+                            enable_state_injection = false
+
+------------------------------------------------------------------------
+exp_001_baseline                                        [starting point]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v0.txt
+  Temperature:      0.7
+  Inputs:           inputs_v0.json  (4 scenarios — one per outcome)
+
+  Baseline run of the missed-medication prompt. Establishes the four
+  outcomes (DID_TAKE, DID_NOT_TAKE_BUT_WILL_TAKE,
+  DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE, COULD_NOT_VALIDATE) on a minimal
+  4-scenario set.
+
+------------------------------------------------------------------------
+exp_002_more_scenarios                    [changes from exp_001_baseline]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v0.txt   ->  prompt_v1.txt
+  Temperature:      0.7             (unchanged)
+  Inputs:           inputs_v0.json  ->  inputs_v1.json  (4 -> 20 scenarios, 5 per outcome)
+
+  Prompt changes (v0 -> v1):
+    1. Reworded the DID_TAKE clarification message: dropped the confusing
+       "misunderstanding" phrasing -> warm "That's great to hear, thank you
+       for letting me know! ... could you confirm you took today's
+       medication..." wording.
+    2. Restructured to mirror smart_conversation/prompt_v8:
+         - Added SITUATION / YOUR TASK header and a POSSIBLE OUTCOMES block.
+         - Grouped guidelines under [SAFETY] / [BEHAVIORAL] /
+           [TONE AND COMMUNICATION] / [DOMAIN].
+    3. Replaced the flat OUTCOME DETERMINATION list with TIERED OUTCOME RULES:
+         - TIER 1: clear statement -> decide on the same turn.
+         - TIER 2: unclear/confused -> one clarifying question, then
+           COULD_NOT_VALIDATE.
+         - TIER 3: silence ("<<NO RESPONSE>>") -> ask again, then
+           COULD_NOT_VALIDATE on the 2nd silence.
+    4. Added the @SYSTEM@ sensor system (adapted from v8's movement sensor):
+         - Medication-box sensor may report the dose was taken.
+         - "NEVER fabricate or assume sensor data" rule.
+         - Defined the @SYSTEM@ message prefix in the general guidelines.
+
+  Inputs change: expanded the test set from 4 to 20 scenarios (the original
+  4 plus 16 new simple ones, 5 per outcome).
+
+------------------------------------------------------------------------
+exp_003_refining_temperature        [changes from exp_002_more_scenarios]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v1.txt   ->  prompt_v2.txt
+  Temperature:      0.7             ->  0.4
+  Inputs:           inputs_v1.json  (unchanged, 20 scenarios)
+
+  Prompt changes (v1 -> v2):
+    1. TIER 1 refusal now requires an explicit refusal to TAKE the medication
+       ("I won't take it", "I'm not taking those pills").
+    2. Carve-out: annoyance about being asked ("stop asking me about my
+       pills", "leave me alone", "stop bothering me", "go away") is NOT a
+       refusal -> do NOT return DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.
+    3. TIER 2 updated to explicitly catch that annoyance/disengagement and
+       route it to COULD_NOT_VALIDATE after one clarifying question.
+    Fixes scenario_19 (upset senior was previously misclassified as a refusal).
+
+  Temperature change: lowered 0.7 -> 0.4 for more consistent, less random
+  outcome decisions.
+
+------------------------------------------------------------------------
+exp_004_interpretation_fixes  [changes from exp_003_refining_temperature]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v2.txt   ->  prompt_v3.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged, 20 scenarios)
+
+  Prompt changes (v2 -> v3). Three correctness fixes found by auditing the
+  exp_003 conversations themselves, not just the pass/fail labels:
+
+    1. WILL_TAKE now requires an EXPLICIT commitment.
+       A bare "I forgot" / "not yet" / "haven't taken it" no longer finalizes
+       DID_NOT_TAKE_BUT_WILL_TAKE. The assistant stays conversation_in_progress,
+       asks "Would you like to take it now?", and only decides after the reply.
+       Fixes the FALSE POSITIVES in scenario_02 and scenario_11 (WILL_TAKE was
+       returned even though the senior never committed to taking it).
+
+    2. DID_TAKE clarification message and Reminder #2 reworded from questions
+       into warm closing STATEMENTS.
+       Previously they asked a question ("could you confirm...?" / "have you
+       taken it now?") and then ended on the same turn, so the answer was never
+       heard. As statements, finalizing same-turn is coherent.
+       Fixes the dangling-question defect in scenario_01/05/06/07/08 (DID_TAKE)
+       and scenario_09/10/12 (Reminder #2).
+
+    3. TIER 2 tightened so a "who is this?" identity request plus the
+       re-introduction counts as the single allowed clarifying turn.
+       Fixes scenario_20 over-asking (it used 5 turns instead of the intended 3).
+
+------------------------------------------------------------------------
+exp_005_followup_confirmation      [changes from exp_004_interpretation_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v3.txt   ->  prompt_v4.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged)
+
+  Prompt changes (v3 -> v4):
+    1. DID_TAKE now waits for a follow-up. The clarification message is a
+       QUESTION again; the assistant stays conversation_in_progress and returns
+       DID_TAKE only after the senior confirms on the next turn. (Fixes
+       scenario_01 — no longer asks and finalizes in the same breath.)
+    2. Refusal now waits for a follow-up. Message #2 is delivered, the assistant
+       stays in progress, and DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE is returned only
+       if the senior still refuses next turn. (Fixes scenario_03.)
+    Maintained from v3: WILL_TAKE commitment carve-out, TIER 2 tightening,
+    Reminder #2 as a statement.
+
+  Known effect (scenarios intentionally unchanged): scenario_07 (DID_TAKE) and
+  scenario_15 (refusal) have a single user turn, so the new follow-up hits
+  silence and is expected to resolve to COULD_NOT_VALIDATE — i.e. those two will
+  likely report FAIL until their scenarios gain a confirming second turn.
+
+------------------------------------------------------------------------
+exp_006_natural_clarifying_question   [changes from exp_005_followup_confirmation]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v4.txt   ->  prompt_v5.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged)
+
+  Prompt change (v4 -> v5):
+    1. De-scripted the WILL_TAKE clarifying question. The carve-out no longer
+       hands the assistant the fixed line "Would you like to take it now?";
+       instead it instructs the assistant to ask, in its own warm words,
+       whether the senior would like to take it now (with brief reassurance).
+       Fixes the robotic, verbatim clarifying question seen in exp_005
+       scenario_02 — the four scripted standard messages remain verbatim.
+    No logic changes; the wait-for-commitment flow from v4 is unchanged.
+
+------------------------------------------------------------------------
+exp_007_no_capability_overclaims   [changes from exp_006_natural_clarifying_question]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v5.txt   ->  prompt_v6.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  (unchanged)
+
+  Prompt changes (v5 -> v6):
+    1. Added a [DOMAIN] guardrail against PRESENCE overclaims — Vega must not
+       imply it can wait, stay on the line, watch, monitor, or confirm in real
+       time. Bans lines like "I can wait while you do" (exp_006 scenario_02).
+    2. Extended that guardrail to CONVERSATIONAL / counseling overclaims — Vega
+       is not a counselor and the call ends after the reminder, so it must not
+       invite the senior to "talk it through" or imply ongoing availability.
+       Bans lines like "we can talk about it", "I'm here to support you".
+    3. Reworded the scripted Message #2 (refusal) to remove the "please tell me
+       your reasons, and we can talk about it calmly" invitation, so it no
+       longer contradicts the guardrail.
+    No outcome/flow logic changes.
+
+------------------------------------------------------------------------
+exp_008_scenario_fixes      [changes from exp_007_no_capability_overclaims]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v6.txt   (unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v1.json  ->  inputs_v2.json
+
+  Changes from exp_007:
+    1. Inputs: switched to inputs_v2.json. The single-turn DID_TAKE (scenario_07)
+       and refusal (scenario_15) scenarios each gained a confirming second turn
+       so they fit the two-turn follow-up structure and stop false-failing.
+       The single-turn WILL_TAKE scenarios (10, 12) are intentionally unchanged.
+    2. Report tooling: report_generator.py now adds an experiment-level token
+       usage and approximate cost line (per model) to the report Summary.
+    Prompt unchanged from exp_007 (prompt_v6).
+
+------------------------------------------------------------------------
+exp_009_refusal_reconsider_question   [changes from exp_008_scenario_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v6.txt   ->  prompt_v7.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt change (v6 -> v7):
+    1. Refusal Message #2 reworded from a statement into a gentle reconsider
+       question ("...would you be willing to take it now?"), so that in the
+       two-turn refusal flow the senior has something concrete to answer.
+    2. Adjusted the TIER 1 refusal rule text describing Message #2 to match
+       (dropped the "share any reason" wording that conflicted with the
+       no-conversational-overclaim guardrail).
+    No outcome/flow changes.
+
+------------------------------------------------------------------------
+exp_010_validation_clarification      [changes from exp_009_reconsider_question]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v7.txt   ->  prompt_v8.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt change (v7 -> v8):
+    1. COULD_NOT_VALIDATE soft message reworded: it now tells the senior an
+       alert is being raised in the SeniorMatics system so a caregiver can
+       check in, replacing the vague "let us pause and check / we will resolve
+       this" wording (which also read oddly for the silence case).
+    Note: this is only the announcement — the actual alert must be raised by the
+    production system on the COULD_NOT_VALIDATE outcome; the prompt/LLM cannot.
+    No outcome/flow changes.
+
+------------------------------------------------------------------------
+exp_011_adaptive_messages          [changes from exp_010_validation_clarification]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v8.txt   ->  prompt_v9.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v8 -> v9). Driven by a line-by-line audit of the exp_010
+  transcripts, which passed 20/20 but still leaked stylistic overclaims in the
+  model-generated lines.
+
+    1. De-scripted three of the four standard messages. The DID_TAKE
+       clarification, the WILL_TAKE closing, and the refusal reconsider question
+       are no longer fixed strings — they are now requirement-based guidelines
+       that state what each response MUST accomplish and let Vega compose the
+       wording adaptively. The COULD_NOT_VALIDATE soft message stays FIXED and
+       word-for-word (it makes a factual promise about the SeniorMatics alert, so
+       exact, auditable wording matters more than adaptiveness there).
+
+    2. Removed two "recording" overclaims Vega cannot back up:
+         - DID_TAKE clarification dropped "...everything is recorded properly on
+           my end..." -> now framed only as making sure Vega understood correctly.
+         - WILL_TAKE closing dropped "...and I'll make sure everything is noted."
+       Vega does not write to any record; the sensors and backend do that
+       separately.
+
+    3. [DOMAIN] tightened with three guardrails:
+         - Recording/logging: bans claiming Vega records, logs, notes, saves,
+           updates, or files anything ("recorded properly on my end", "I'll make
+           sure everything is noted", "I'll update your file", ...).
+         - Joint/shared actions: bans "let's check your medication box together"
+           and the like — Vega is not physically present. (exp_010 scenario_18.)
+         - Extended the counseling/availability ban to also catch "I'm here to
+           help you remember", "I'm here to gently remind you", and "whenever
+           you're ready" (exp_010 scenario_02/03/11).
+
+    4. TIER 3 first-silence re-check is now composed in Vega's own words rather
+       than a fixed quote, consistent with the de-scripting above.
+
+------------------------------------------------------------------------
+exp_012_refining_messages     [changes from exp_011_adaptive_messages]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v9.txt   ->  prompt_v10.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v9 -> v10). Two targeted wording fixes; no tier/outcome logic
+  changed.
+
+    1. Locked the opening greeting word-for-word. In v9 the greeting was adaptive
+       (an example in [BEHAVIORAL]), which let it drift — e.g. the "I hope you're
+       doing well today" filler and reworded openers seen in the exp_010
+       transcripts. It is now a MANDATORY FIXED OPENING, delivered exactly:
+         "Good morning, it's Vega here! It may be time for your medication. Have
+          you already taken it?"
+       The redundant start-of-conversation note further down was pointed at this
+       fixed opener so the two no longer conflict.
+
+    2. Reworked the COULD_NOT_VALIDATE fixed message to be concise and human, and
+       to read correctly when the senior never spoke (silence cases 04, 20). The
+       old opener "Please do not be concerned — these things can happen" reacted to
+       a statement the senior may not have made, and the message doubled its
+       reassurance and used "raising an alert in the SeniorMatics system" jargon.
+       Now a single, plain sentence:
+         "I wasn't able to confirm whether you've taken today's medication, so I'll
+          let your caregiver know to check in with you soon."
+       This remains the ONE fixed outcome message (the DID_TAKE / WILL_TAKE /
+       refusal responses stay adaptive per v9). The spoken text no longer names
+       SeniorMatics; the backend must still raise the real alert on this outcome.
+    
+------------------------------------------------------------------------
+exp_013_discomfort_exception       [changes from exp_012_refining_messages]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v10.txt  ->  prompt_v11.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v10 -> v11). Behavioural change around uncomfortable seniors;
+  the four outcomes themselves are unchanged.
+
+    1. DISCOMFORT EXCEPTION (TIER 1). If the senior sounds annoyed, angry, or
+       otherwise uncomfortable but has still given a clear answer (took it / will
+       take it / refuses), Vega takes that answer at face value and finalizes on
+       that turn — skipping the normal follow-up validation question (the DID_TAKE
+       box-confirmation and the refusal reconsider question). The principle: once
+       an uncomfortable senior has clearly answered, do not press them further.
+       Calm seniors are unaffected — they still get the normal follow-up.
+
+    2. New TIER 2B — upset/annoyed with NO clear answer. Pulled the upset/annoyed
+       case out of TIER 2's one-clarifying-question flow. An upset or disengaged
+       senior who has not said whether they took the medication (e.g. "leave me
+       alone", "stop bothering me") now goes straight to COULD_NOT_VALIDATE — no
+       clarifying question — which raises the caregiver alert. TIER 2 now covers
+       only calm confusion / can't-remember / evasive (still one clarifying
+       question). TIER 3 silence handling is unchanged.
+
+    3. Refusal now announces the caregiver alert. The DID_NOT_TAKE_IT_AND_WILL_
+       NOT_TAKE closing now tells the senior their caregiver will be notified to
+       check in, matching the could-not-validate message. The reconsider question
+       itself stays alert-free (still hoping they reconsider).
+
+  Net effect: an uncomfortable senior is never badgered with a follow-up — if
+  they answered, we take it; if they didn't, we validate and alert.
+
+  BACKEND NOTE: the caregiver-alert promise now appears on BOTH
+  DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE and COULD_NOT_VALIDATE. Confirm the
+  production system escalates on both outcomes.
+
+------------------------------------------------------------------------
+exp_014_commitment_guard           [changes from exp_013_rule_overhaul]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v11.txt  ->  prompt_v12.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v11 -> v12). Single targeted reinforcement; no tier/outcome
+  logic changed.
+
+    1. Commitment guard for DID_NOT_TAKE_BUT_WILL_TAKE. In exp_013, scenario_02
+       finalized DID_NOT_TAKE_BUT_WILL_TAKE after the senior said only "Oh no, I
+       completely forgot about it" — an admission of forgetting, with no
+       commitment to take it now. The prompt already required an explicit
+       commitment, but the model did not adhere to it this run (temp 0.4). The
+       outcome label matched expected, so the harness marked it PASS, masking a
+       false positive in the conversation path.
+
+    2. Reinforcements applied:
+       - WILL_TAKE branch: added a precondition — only finalize if the senior has
+         actually said they will take it; merely admitting they forgot or have not
+         taken it is not a commitment.
+       - IMPORTANT note: added the failing phrases ("I completely forgot about
+         it", "oh no, I missed it") to the not-sufficient examples, and hardened
+         "do NOT finalize" to "MUST NOT finalize / MUST stay conversation_in_
+         progress and ask whether they want to take it now; finalize only after an
+         actual commitment on the next reply".
+
+  Expected effect: scenario_02 returns to a 3-turn path (forgot -> follow-up
+  question -> commitment -> DID_NOT_TAKE_BUT_WILL_TAKE). Note the PASS/FAIL column
+  checks only the final outcome label; this path error is visible only in the
+  transcript, not the results table.
+
+------------------------------------------------------------------------
+exp_015_refusal_and_cnv_fixes      [changes from exp_014_commitment_guard]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v12.txt  ->  prompt_v13.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v12 -> v13). Two fixes from the exp_014 transcript review.
+
+    1. Refusal taken at face value (scenario_13). A clear refusal is a definitive
+       answer and no longer receives a reconsider/verifying question: the assistant
+       finalizes DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE immediately, with a respectful
+       acknowledgement and the caregiver alert. The prompt now explicitly contrasts
+       a settled refusal ("I WON'T take it") with "I haven't taken it / I forgot"
+       (no decision stated), which still requires the follow-up before
+       DID_NOT_TAKE_BUT_WILL_TAKE. Consequence: the reconsider question is removed
+       from the flow entirely; the discomfort exception is narrowed to the DID_TAKE
+       box-confirmation, and a stale routing note was corrected to TIER 2B.
+
+    2. Hardened COULD_NOT_VALIDATE message (scenario_17). In exp_014 the model
+       returned COULD_NOT_VALIDATE with self-authored text that (a) omitted the
+       mandatory fixed soft message and its caregiver-alert promise, (b) ended on a
+       question despite the conversation terminating, and (c) reintroduced a banned
+       [DOMAIN] phrase ("I'm here to gently remind you"). The requirement now
+       states the ENTIRE response must be the fixed soft message reproduced
+       verbatim — nothing added, no question, no replacement wording.
+
+  Effect: refusal scenarios (03, 13, 14, 15, 16) finalize in 2 turns; the terminal
+  could-not-validate turn (17, 18, 19, 20) must be exactly the fixed message. Both
+  are path-level behaviours not visible in the PASS/FAIL column — verify via the
+  transcripts.
+
+------------------------------------------------------------------------
+exp_016_outcome_clarification            [changes from exp_015_refusal_and_cnv_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v13.txt  ->  prompt_v14.txt
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  (unchanged)
+
+  Prompt changes (v13 -> v14). Single change: the [TONE] rule for a confused
+  senior.
+
+    1. Bounded the "help a confused senior" instruction. v13 said "gently help
+       them without pressure", with no stopping point, which competed with the
+       TIER 2 requirement to validate after one clarifying question. In exp_015,
+       scenario_17 returned COULD_NOT_VALIDATE but its terminal turn kept
+       explaining instead of delivering the fixed soft message — omitting the
+       caregiver-alert promise and reusing a banned [DOMAIN] phrase ("I'm here to
+       gently remind you"). The fixed-message hardening in v13 did not hold
+       because the [TONE] instruction pulled the other way.
+
+    2. The rule now reads: acknowledge the senior's feelings, ask ONE clarifying
+       question, and once they still give no clear answer, deliver the
+       could-not-validate closing so their caregiver can follow up. No open-ended
+       "help"/"explain" framing remains. Nothing else changed from v13 (the fixed
+       COULD_NOT_VALIDATE message is retained).
+
+------------------------------------------------------------------------
+exp_017_100_scenarios_stress_test            [changes from exp_016_outcome_clarification]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v14.txt  (unchanged from exp_016)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v2.json  ->  inputs_v3.json
+
+  No prompt change. This experiment stress-tests prompt_v14 against a much larger,
+  harder, balanced scenario set.
+
+    1. inputs_v3.json: 100 scenarios, 25 per outcome (DID_TAKE, DID_NOT_TAKE_BUT_
+       WILL_TAKE, DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE, COULD_NOT_VALIDATE). Contains
+       the original 20 (scenario_01..20) unchanged plus 80 new, more intricate
+       cases.
+
+    2. The new cases target known-hard judgments: mid-conversation outcome switches
+       (claim-took-it -> will-take / could-not-validate; soft-maybe -> refusal;
+       forgot -> refusal), reluctance vs. definitive refusal, "forgot / not yet"
+       with no commitment (must not finalize as will-take), and
+       confusion/identity/hard-of-hearing/silence/ASR noise that RESOLVES into a
+       clear answer (must not be could-not-validate). Also discomfort-plus-clear-
+       answer (take it, no follow-up) vs. upset-with-no-answer (immediate could-
+       not-validate), a @SYSTEM@ sensor event, and caregiver-administered doses.
+
+------------------------------------------------------------------------
+exp_018_targeted_fixes             [changes from exp_017_100_scenarios_stress_test]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v14.txt  ->  prompt_v15.txt
+  Runner:           src/conversation_runner.py updated (COULD_NOT_VALIDATE injection)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Addresses the defects found in the exp_017 line-by-line review (97/100 label
+  pass rate, but ~28 unintended passes).
+
+  Prompt changes (v14 -> v15):
+    1. Reluctance is not a refusal. Added an explicit rule that reluctance/mood
+       ("I don't feel like it", "not in the mood", "I'd rather not") is not a
+       definitive refusal and must route to the offer question. Fixes the two
+       hard fails scenario_30 and scenario_50 (reluctance finalized as refusal).
+    3. Commitment guard reinforced. Added the non-commitment phrasings that were
+       finalized as WILL_TAKE in exp_017 ("haven't taken it yet", "not yet, I was
+       waiting", "busy/distracted/TV on/looking for glasses") and a rule that an
+       excuse for not taking it is not a commitment. Targets the false-positive
+       WILL_TAKE in scenario_11, 27, 77.
+    4. No self-referential sign-off. New [TONE] rule forbids ending a message with
+       "and I'm here to support you" / "I'm here to help" / "gently remind you"
+       and similar. exp_017 leaked "I'm here to support you" in 9 scenarios.
+    5. Volunteered "from the box" may finalize DID_TAKE without re-asking the box
+       confirmation. Makes scenario_52/60/67 intended rather than a shortcut.
+
+  Code change (#2, separate from the prompt):
+    - src/conversation_runner.py now injects the fixed COULD_NOT_VALIDATE message
+      deterministically: whenever the model returns COULD_NOT_VALIDATE, the runner
+      replaces the text with the canonical closing, guaranteeing the caregiver-
+      alert wording on every could-not-validate outcome. In exp_017 the model
+      dropped that closing (missing caregiver line, added a question) in
+      scenario_17 and scenario_43, and reworded/prepended it in 94, 35, 98.
+      Prompt-only hardening had failed to fix this across four experiments. The
+      model's original text is retained in outputs/*.json (raw_responses) and a
+      message_overridden flag marks each replacement. NOTE: the guarantee lives in
+      the lab runner; the production backend must mirror it.
+
+  Not addressed (cosmetic): over-asking (two clarifying questions before
+  validating) in some could-not-validate cases; outcome and alert are still
+  correct, so left as-is.
+
+------------------------------------------------------------------------
+exp_019_ambiguous_opener_rule      [changes from exp_018_targeted_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v15.txt  ->  prompt_v16.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Addresses the three fails and the re-introduction leaks found in the exp_018
+  review. All three exp_018 fails shared one cause: an ambiguous first utterance
+  was finalized as a terminal outcome instead of prompting a clarifying question.
+
+  Prompt changes (v15 -> v16):
+    1. RULE 0 (new, top of the tiered rules): do NOT finalize a terminal outcome
+       on an ambiguous response. Finalize only when the meaning is unambiguous
+       (clear took-it / explicit commitment / settled refusal / plainly confused
+       or silent / explicit stop-signal). Ambiguous openers get exactly ONE
+       clarifying/offer question, then classify from the reply. Names the specific
+       openers that failed in exp_018: bargaining ("do I really have to?", "must
+       I?" -> scenario_72), soft/reasoned declines ("I don't need them today" ->
+       scenario_56), and vague frustration ("I'm done with all this" ->
+       scenario_35).
+    1b. TIER 2B tightened: immediate COULD_NOT_VALIDATE requires an EXPLICIT signal
+       to stop/leave/go away; vague frustration is routed to RULE 0 (one clarifying
+       question) rather than an immediate validate.
+    2. Re-introduction sign-off ban: when re-introducing during confusion, state
+       the role plainly ("I'm Vega, your care assistant") and ask the question, with
+       no "here to gently remind you about your medication" attached. Targets the
+       seven exp_018 clarifying-turn leaks (17, 20, 38, 41, 43, 51, 93).
+
+  Not addressed: the plain "I'm here to support you"
+  sign-off (probabilistic lexical ban, already reduced 9->3) and over-asking in
+  some could-not-validate cases (cosmetic; outcome and alert correct).
+
+------------------------------------------------------------------------
+exp_020_prompt_compaction          [changes from exp_019_ambiguous_opener_rule]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v16.txt  ->  prompt_v17.txt  (compaction, ~63% smaller)
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  No intended behavioural change. prompt_v17 is a structural compaction of
+  prompt_v16: ~63% fewer tokens (4014 -> 1456 words) with every behavioural rule
+  retained.
+
+    - Removed the MANDATORY RESPONSE REQUIREMENTS block (it duplicated the tier
+      logic); each outcome's requirements now appear once under DECISION RULES.
+    - Replaced the verbatim COULD_NOT_VALIDATE message with a one-line pointer;
+      the runner supplies the exact closing text via injection.
+    - De-duplicated the fixed greeting, the @SYSTEM/sensor handling, and the
+      "do not ask the senior to contact you" rule; trimmed generic boilerplate
+      (prefix explanations, JSON-object note, etc.) while keeping the behavioural
+      context (ASR-misrecognition guidance, never reveal the medicine name).
+    - Reorganized into DECISION RULES / STYLE & CONSTRAINTS / CONTEXT.
+
+  Retained in full: RULE 0 (ambiguous openers + examples), DID_TAKE box-confirmation
+  and both skip cases, the DID_NOT_TAKE_BUT_WILL_TAKE not-a-commitment list,
+  reluctance-is-not-refusal, annoyance-is-not-refusal, TIER 2 / 2B / 3, the fixed
+  greeting, the sign-off and re-introduction bans, and all [DOMAIN] guardrails.
+
+  PURPOSE: A/B validation against exp_019. Compare directly: outcome pass rate
+  should stay 100/100 and the residual profile (occasional re-introduction wording;
+  over-asking) should be unchanged. A regression on any scenario indicates that rule
+  lost necessary emphasis in compaction and should be restored. Secondary benefit:
+  ~63% lower prompt input tokens per turn.
+
+------------------------------------------------------------------------
+exp_021_compaction_regression_fixes  [changes from exp_020_prompt_compaction]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v17.txt  ->  prompt_v18.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Fixes the two regressions and the sign-off leak that the v17 compaction
+  introduced (exp_020: 98/100, and "I'm here to support you" leaked 15x vs 1 in
+  exp_019). v18 restores emphasis on three spots only; ~90% of the compaction is
+  kept (v18 is ~58% smaller than v16).
+
+    1. Sign-off ban restored as a forceful CRITICAL rule with the full phrase list.
+       The single compressed line in v17 was too weak.
+    2. WILL_TAKE vs DID_TAKE boundary made explicit: "on it now", "doing it now",
+       "I'm taking it now" are commitments (DID_NOT_TAKE_BUT_WILL_TAKE), not
+       already-taken. Fixes exp_020 scenario_75.
+    3. DID_TAKE box-confirmation is asked at most once: a clear statement that the
+       dose came from the box (including in reply to the clarifying question)
+       finalizes DID_TAKE immediately, no re-ask. Fixes exp_020 scenario_45
+       (re-asked, then fell to could-not-validate via silence).
+
+  PURPOSE: A/B against exp_019 (v16, 100/100) and exp_020 (v17, 98/100). Target:
+  recover 100/100 outcomes and a low sign-off-leak count while keeping ~58% lower
+  prompt input cost. The could-not-validate injection remains in place.
+
+------------------------------------------------------------------------
+exp_022_vocabulary_fixes           [changes from exp_021_compaction_regression_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v18.txt  ->  prompt_v19.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  Three additive path clarifications from the exp_021 line-by-line review (which was
+  100/100 on outcomes but had a few unintended-path passes). No structural change;
+  v19 is still ~56% smaller than v16.
+
+    1. "I was about to / just about to" added to the not-a-commitment list for
+       DID_NOT_TAKE_BUT_WILL_TAKE. Fixes exp_021 scenario_32, where "I was just about
+       to when the phone rang" was finalized as WILL_TAKE with no offer question.
+    2. Emphatic refusals ("not today, absolutely not", "no, definitely not") added
+       to the clear-settled-refusal examples, with an explicit note that an emphatic
+       "no" finalizes immediately and is not reluctance. Fixes exp_021 scenario_15,
+       where RULE 0 over-fired and asked an offer question on a clear refusal.
+    3. Box-confirmation skip tightened: only an explicit "from the box" statement
+       lets you skip; other evidence ("gone from the pack", "slot is empty", "had it
+       with breakfast") still gets the one confirmation. Fixes exp_021 scenario_62.
+
+  PURPOSE: validate that the three paths tighten and nothing regresses vs exp_021
+  (100/100). Known residuals intentionally left as-is (cosmetic, at the prompt-only
+  ceiling): the "I'm here to support you" sign-off on WILL_TAKE offer turns (~6), and
+  over-asking (a second clarifying question) in some could-not-validate cases (~9).
+
+------------------------------------------------------------------------
+exp_023_reduce_overasking          [changes from exp_022_vocabulary_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v19.txt  ->  prompt_v20.txt
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Temperature:      0.4             (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+
+  One change: the TIER 2 clarifying-question cap was hardened to reduce over-asking
+  in could-not-validate cases (exp_022 had ~12 such cases running 4-5 turns, where
+  the model asked a second clarifying question before validating).
+
+    - TIER 2 now states the count explicitly (greeting reply = first unclear answer;
+      one clarifying question remains; then validate), forbids asking again
+      (no re-ask / re-offer / re-introduce / suggest checking the box), calls a
+      second clarifying question a violation, and adds that stopping after one
+      attempt is correct and kind. The "who is this?" + re-introduction still counts
+      as the single clarifying turn.
+
+  This is a probabilistic nudge on a counting/judgment behaviour, not a guarantee;
+  the expectation is a reduced over-asking count (roughly 12 -> 5-7), not zero.
+  Outcomes should remain 100/100 and the injected could-not-validate message is
+  unchanged. Other residual (occasional "I'm here to support you" sign-off) is not
+  addressed here.
+
+  ------------------------------------------------------------------------
+exp_024_mini_models                [changes from exp_023_reduce_overasking]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v20.txt  (unchanged)
+  Model:            gpt-4.1-mini
+  Temperature:      0.4  ->  0.0
+  Runner:           src/conversation_runner.py (COULD_NOT_VALIDATE injection, unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+  Result:           100/100 outcomes (100%) — 866,575 tokens, $0.3599
+
+  No prompt change. Ports the validated v20 prompt to the cheaper gpt-4.1-mini
+  model at temperature 0.0, to test label parity and cost against the larger
+  model used through exp_023.
+
+  Findings:
+    - Label parity: 100/100, at ~$0.36 for the full 100-scenario suite.
+    - Weaker path discipline on the mini model. Turn distribution: 2 turns x22,
+      3 turns x57, 4 turns x7, 5 turns x14 — 21 scenarios ran 4-5 turns,
+      indicating elevated over-asking (a second/third clarifying question) in
+      COULD_NOT_VALIDATE cases. Reconsider-on-a-clear-refusal and self-referential
+      sign-off residuals also remain present.
+  PURPOSE: cost/parity check before the v21 hard-fixes run (exp_025).
+
+------------------------------------------------------------------------
+exp_025_hard_fixes                 [changes from exp_024_mini_models]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v20.txt  ->  prompt_v21.txt
+  Model/Temp:       gpt-4.1-mini, 0.0  (unchanged)
+  Runner:           src/conversation_runner.py  ->  PATCHED: four-outcome terminal
+                    injection (all four outcomes, not COULD_NOT_VALIDATE only) +
+                    hard in-progress turn budget (MAX_IN_PROGRESS_TURNS=2, forces
+                    COULD_NOT_VALIDATE) + trailing self-referential sign-off scrubber.
+                    enable_state_injection: false (soft [STATE] note off; the hard
+                    cap is independent of that flag).
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+  Result:           99/100 outcomes (99%) — 824,504 tokens, $0.3410
+
+  Prompt changes (v20 -> v21):
+    1. RULE 1: explicit one-question turn budget (greeting -> one follow-up
+       question -> terminal by the third message).
+    2. Terminal wording declared system-supplied; model directed to the LABEL and
+       TIMING, not the closing wording.
+    3. Clear refusal finalized immediately — no reconsider/verifying/offer.
+    4. Self-referential sign-off ban extended to every message type.
+
+  Findings:
+    - Over-asking eliminated: turn distribution 2 turns x21, 3 turns x79, with zero
+      4-5-turn conversations (vs 21 in exp_024). The hard cap terminates every
+      trajectory by the third assistant turn.
+    - Terminal wording fixed: four-outcome injection makes all closings canonical,
+      removing terminal banned-phrase leaks across every outcome.
+    - Cost reduced (866,575 -> 824,504 tokens; $0.3599 -> $0.3410) from shorter
+      conversations.
+    - One regression (scenario_36, clear refusal -> COULD_NOT_VALIDATE): the
+      reconsider-on-a-clear-refusal residual is not removed by v21. On "I got rid
+      of those pills, I'm not taking them" the model asked a negated verifying
+      question; the senior's "No." was ambiguous against the negation, and with the
+      one-question budget spent the third turn resolved to COULD_NOT_VALIDATE. The
+      cap did not cause the error but converted an unresolved reconsider into a
+      non-refusal label.
+  PURPOSE: validate the runner guardrails against exp_024. Over-asking and
+  terminal-wording residuals closed; reconsider residual remains and now carries a
+  label cost, motivating a refusal-path fix next.
+
+------------------------------------------------------------------------
+exp_026_better_final_phrase        [changes from exp_025_hard_fixes]
+------------------------------------------------------------------------
+  Prompt template:  prompt_v21.txt  (unchanged)
+  Model/Temp:       gpt-4.1-mini, 0.0  (unchanged)
+  Inputs:           inputs_v3.json  (unchanged, 100 scenarios)
+  Runner:           patched conversation_runner.py — same guardrails as exp_025
+                    (four-outcome injection + hard in-progress turn budget +
+                    sign-off scrubber), with revised fixed messages + a dash
+                    normalizer. enable_state_injection: false (unchanged).
+
+  No prompt change. Three runner/report changes only:
+    1. DID_NOT_TAKE_BUT_WILL_TAKE reworded to be warmer / less abrupt:
+       "Thank you for letting me know and for taking it now. Take good care of
+       yourself, and have a lovely day!" (was "Please go ahead and take it
+       now — take care!").
+    2. Em dashes removed from every injected message (DID_TAKE also carried
+       one), plus a runner-side normalizer that converts any em/en dash in ANY
+       assistant turn to a comma, so no dash can reach the transcript.
+    3. report_generator now emits per-scenario cost (a Cost column in the
+       summary table and a Cost line in each scenario's transcript header).
+
+  PURPOSE: confirm the reworded terminal closings read naturally and that no em
+  dash appears anywhere in the report, with outcomes holding at the exp_025
+  level. Because only the fixed messages and report output change — not the
+  prompt, the decision logic, or the guardrails — outcome labels and turn
+  counts are expected to be unchanged from exp_025 (~99/100). After running,
+  replace this Result line and add the measured outcome/cost figures.

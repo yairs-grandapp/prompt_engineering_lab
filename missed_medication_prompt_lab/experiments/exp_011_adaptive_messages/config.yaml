@@ -1,0 +1,39 @@
+# prompt_v9.txt — adaptive standard messages + tightened overclaim guardrails
+#   CHANGES FROM v8:
+#   1. De-scripted three of the four standard messages. The DID_TAKE
+#      clarification, the WILL_TAKE closing, and the refusal reconsider question
+#      are now requirement-based guidelines (what the response must accomplish),
+#      composed adaptively by Vega instead of fixed strings.
+#   2. The COULD_NOT_VALIDATE soft message stays FIXED word-for-word — it makes a
+#      factual promise about the SeniorMatics alert, so exact/auditable wording
+#      is kept on purpose.
+#   3. Removed "recorded properly on my end" (DID_TAKE) and "I'll make sure
+#      everything is noted" (WILL_TAKE) — Vega records nothing; sensors/backend do.
+#   4. [DOMAIN] tightened: bans recording/logging claims, joint "check it
+#      together" actions, and the "I'm here to..." / "whenever you're ready"
+#      leaks found auditing the exp_010 transcripts.
+#   NOTE: same as v8 — the SeniorMatics alert is only spoken by the assistant;
+#   the production backend must actually raise it on the COULD_NOT_VALIDATE outcome.
+
+experiment:
+  name: "Missed Medication — Adapative Messages (prompt_v9)"
+  date: "2026-08-18"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v9.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

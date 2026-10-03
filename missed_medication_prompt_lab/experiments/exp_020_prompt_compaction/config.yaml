@@ -1,0 +1,42 @@
+# prompt_v17.txt — compaction of prompt_v16 (A/B validation, no behavioural change intended)
+#   CHANGES FROM v16: structural only. prompt_v16 was restructured and de-duplicated
+#   to ~63% fewer tokens (4014 -> 1456 words) WITHOUT removing any behavioural rule:
+#     - Folded the duplicated MANDATORY RESPONSE REQUIREMENTS block into a single
+#       per-outcome spec under DECISION RULES.
+#     - Replaced the verbatim COULD_NOT_VALIDATE message with a one-line pointer
+#       (the runner supplies the exact text via injection).
+#     - De-duplicated the greeting, @SYSTEM/sensor handling, and "don't ask them to
+#       contact you" (each stated once) and trimmed boilerplate.
+#     - Reorganized into DECISION RULES / STYLE & CONSTRAINTS / CONTEXT.
+#   All rules retained: RULE 0 (ambiguous openers), box-confirmation + skip cases,
+#   the not-a-commitment list, reluctance-is-not-refusal, TIER 2/2B/3, fixed
+#   greeting, sign-off & re-introduction bans, and the [DOMAIN] guardrails.
+#   PURPOSE: A/B validation against exp_019 (prompt_v16). Intent is IDENTICAL
+#   behaviour at lower cost. Compaction removes repetition/emphasis that can aid
+#   compliance, so compare to exp_019 (100/100, same residual profile). A regression
+#   on any scenario means that rule's emphasis should be restored.
+#   UNCHANGED: src/conversation_runner.py still injects the COULD_NOT_VALIDATE
+#   message (keep the updated runner deployed).
+
+experiment:
+  name: "Missed Medication — Prompt Compaction A/B (prompt_v17)"
+  date: "2026-08-21"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v17.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"

@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_17",
+  "scenario_name": "Senior is confused about the topic",
+  "description": "Senior does not understand the question and stays confused after a clarifying attempt.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_17",
+      "scenario_name": "Senior is confused about the topic",
+      "description": "Senior does not understand the question and stays confused after a clarifying attempt.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "What pills? I don't know what you mean",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing. I'm talking about the medication you usually take around this time. Would you like to check if you've taken it today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I'm confused, what is this about?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, it can be a bit confusing sometimes. I'm here to help remind you about your regular medication. If it's okay, could you check your medication box to see if you've taken today's dose?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 10589,
+      "total_output_tokens": 173,
+      "cost": 0.0282025,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2621,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"I understand this can be confusing. I'm talking about the medication you usually take around this time. Would you like to check if you've taken it today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. I'm talking about the medication you usually take around this time. Would you like to check if you've taken it today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2667,
+          "output_tokens": 51,
+          "raw": "{\"text\":\"I understand, it can be a bit confusing sometimes. I'm here to help remind you about your regular medication. If it's okay, could you check your medication box to see if you've taken today's dose?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand, it can be a bit confusing sometimes. I'm here to help remind you about your regular medication. If it's okay, could you check your medication box to see if you've taken today's dose?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2719,
+          "output_tokens": 49,
+          "raw": "{\"text\":\"I understand if this is a bit unclear. If you could please take a moment to check your medication box to see if today's dose is still there, that would be helpful. Thank you.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand if this is a bit unclear. If you could please take a moment to check your medication box to see if today's dose is still there, that would be helpful. Thank you.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

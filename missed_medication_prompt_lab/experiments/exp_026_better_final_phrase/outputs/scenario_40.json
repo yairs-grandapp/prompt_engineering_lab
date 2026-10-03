@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_40",
+  "scenario_name": "Contradictory, cannot commit either way",
+  "description": "Senior gives contradictory answers and cannot say whether they took it. could-not-validate.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_40",
+      "scenario_name": "Contradictory, cannot commit either way",
+      "description": "Senior gives contradictory answers and cannot say whether they took it. could-not-validate.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "Yes... no... I don't know if I did",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing. Could you please check if your medication is still in the box or if the dose for today is missing?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "I really can't say",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true,
+          "budget_forced": true
+        }
+      ],
+      "total_input_tokens": 8779,
+      "total_output_tokens": 114,
+      "cost": 0.0036940000000000002,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2926,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"I understand this can be confusing. Could you please check if your medication is still in the box or if the dose for today is missing?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing. Could you please check if your medication is still in the box or if the dose for today is missing?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2967,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"I understand it’s hard to remember sometimes. Since you’re not sure, it’s safest to take your medication now. Would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it’s hard to remember sometimes. Since you’re not sure, it’s safest to take your medication now. Would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        }
+      ],
+      "termination_reason": "budget_forced_could_not_validate"
+    }
+  }
+}

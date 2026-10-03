@@ -1,0 +1,65 @@
+{
+  "scenario_id": "scenario_16",
+  "scenario_name": "Senior stopped taking it",
+  "description": "Senior says they stopped taking it and will not take it now.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_16",
+      "scenario_name": "Senior stopped taking it",
+      "description": "Senior says they stopped taking it and will not take it now.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "No, I stopped taking those a while ago",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand your decision, and I'll make sure to let your caregiver know so they can check in with you. Thank you for letting me know.",
+          "turn": 2,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 11077,
+      "total_output_tokens": 80,
+      "cost": 0.028492499999999997,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5519,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5558,
+          "output_tokens": 48,
+          "raw": "{\"text\":\"I understand your decision, and I'll make sure to let your caregiver know so they can check in with you. Thank you for letting me know.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I understand your decision, and I'll make sure to let your caregiver know so they can check in with you. Thank you for letting me know.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

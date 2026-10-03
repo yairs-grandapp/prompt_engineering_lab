@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_80",
+  "scenario_name": "Sits down first, then takes it",
+  "description": "Senior needs a moment to sit, then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_80",
+      "scenario_name": "Sits down first, then takes it",
+      "description": "Senior needs a moment to sit, then commits to taking it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Give me a second to sit down...",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Of course, take your time. Once you're settled, could you let me know if you've taken your medication today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Okay, taking it now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for letting me know. Please go ahead and take your medication now. I appreciate your cooperation.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 16668,
+      "total_output_tokens": 105,
+      "cost": 0.042719999999999994,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5519,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5556,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"Of course, take your time. Once you're settled, could you let me know if you've taken your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Of course, take your time. Once you're settled, could you let me know if you've taken your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5593,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"Thank you for letting me know. Please go ahead and take your medication now. I appreciate your cooperation.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for letting me know. Please go ahead and take your medication now. I appreciate your cooperation.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

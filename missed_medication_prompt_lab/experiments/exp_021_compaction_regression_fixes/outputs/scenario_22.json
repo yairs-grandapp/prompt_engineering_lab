@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_22",
+  "scenario_name": "Distracted, then commits to take it",
+  "description": "Senior has not taken it (was distracted looking for their glasses) - not a commitment - then explicitly commits to take it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_22",
+      "scenario_name": "Distracted, then commits to take it",
+      "description": "Senior has not taken it (was distracted looking for their glasses) - not a commitment - then explicitly commits to take it now. DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Not yet, I've been hunting for my glasses all morning",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, it can be frustrating when things are hard to find. Would you like to take your medication now? I'm sure you'll feel better once it's done.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Found them — yes, I'll take it right now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Please go ahead and take your medication now. Thank you for taking care of it.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 7474,
+      "total_output_tokens": 114,
+      "cost": 0.019825000000000002,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2447,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2488,
+          "output_tokens": 42,
+          "raw": "{\"text\":\"I understand, it can be frustrating when things are hard to find. Would you like to take your medication now? I'm sure you'll feel better once it's done.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand, it can be frustrating when things are hard to find. Would you like to take your medication now? I'm sure you'll feel better once it's done.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2539,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"That's great to hear! Please go ahead and take your medication now. Thank you for taking care of it.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "That's great to hear! Please go ahead and take your medication now. Thank you for taking care of it.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

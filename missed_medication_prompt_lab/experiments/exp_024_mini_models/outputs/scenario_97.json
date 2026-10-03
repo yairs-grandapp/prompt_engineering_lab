@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_97",
+  "scenario_name": "Silence, stray remark, silence",
+  "description": "Senior is mostly silent with one unrelated remark; never answers. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_97",
+      "scenario_name": "Silence, stray remark, silence",
+      "description": "Senior is mostly silent with one unrelated remark; never answers. COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I just wanted to check in gently—have you been able to take your medication yet this morning?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "The kettle's boiling",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be confusing sometimes. Just to be sure, have you taken your medication from your box today?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 10948,
+      "total_output_tokens": 144,
+      "cost": 0.0046096,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2720,
+          "output_tokens": 31,
+          "raw": "{\"text\":\"I just wanted to check in gently—have you been able to take your medication yet this morning?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I just wanted to check in gently—have you been able to take your medication yet this morning?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2753,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"I understand this can be confusing sometimes. Just to be sure, have you taken your medication from your box today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be confusing sometimes. Just to be sure, have you taken your medication from your box today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2788,
+          "output_tokens": 47,
+          "raw": "{\"text\":\"I haven't heard back from you about your medication. Since I can't confirm if you've taken it, I'll let your caregiver know so they can check in with you. Please take care.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I haven't heard back from you about your medication. Since I can't confirm if you've taken it, I'll let your caregiver know so they can check in with you. Please take care.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_04",
+  "scenario_name": "Senior does not respond (silence)",
+  "description": "Senior gives no response across multiple turns. The situation cannot be resolved in conversation, so the assistant should deliver the soft message and return COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_04",
+      "scenario_name": "Senior does not respond (silence)",
+      "description": "Senior gives no response across multiple turns. The situation cannot be resolved in conversation, so the assistant should deliver the soft message and return COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I just wanted to check in gently—have you been able to take your medication yet today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 8158,
+      "total_output_tokens": 108,
+      "cost": 0.0034360000000000003,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2720,
+          "output_tokens": 30,
+          "raw": "{\"text\":\"I just wanted to check in gently—have you been able to take your medication yet today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I just wanted to check in gently—have you been able to take your medication yet today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2751,
+          "output_tokens": 46,
+          "raw": "{\"text\":\"I haven't heard from you, so I can't be sure if you've taken your medication today. I'll let your caregiver know so they can check in with you. Please take care.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I haven't heard from you, so I can't be sure if you've taken your medication today. I'll let your caregiver know so they can check in with you. Please take care.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

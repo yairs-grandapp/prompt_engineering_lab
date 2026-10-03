@@ -1,0 +1,43 @@
+# prompt_v19.txt — three path micro-fixes on top of the compacted v18
+#   CHANGES FROM v18 (additive clarifications; ~56% smaller than v16, still compact):
+#   1. "I was about to / just about to" added to the DID_NOT_TAKE_BUT_WILL_TAKE
+#      not-a-commitment list — it describes prior intent, not agreement to take it
+#      now, so the offer question must be asked first (fixes exp_021 scenario_32,
+#      a false-positive WILL_TAKE).
+#   2. Emphatic refusals ("not today, absolutely not", "no, definitely not") added
+#      to the clear-settled-refusal examples, with a note that an emphatic "no"
+#      finalizes immediately and is not reluctance (fixes exp_021 scenario_15, where
+#      RULE 0 over-fired and asked an offer question on a clear refusal).
+#   3. Box-confirmation skip tightened: only an explicit "from the box" statement
+#      lets you skip; other evidence ("gone from the pack", "slot is empty", "had it
+#      with breakfast") still gets the one confirmation (fixes exp_021 scenario_62,
+#      a DID_TAKE finalized with no box-confirmation).
+#   UNCHANGED: all other v18 content; src/conversation_runner.py still injects the
+#   COULD_NOT_VALIDATE message (keep the updated runner deployed).
+#   PURPOSE: confirm the three paths tighten and nothing else regresses vs exp_021
+#   (100/100). Known residuals left as-is (cosmetic, at the prompt-only ceiling):
+#   the "I'm here to support you" sign-off on offer turns, and over-asking in some
+#   could-not-validate cases.
+
+experiment:
+  name: "Missed Medication — Vocabulary Fixes (prompt_v19)"
+  date: "2026-08-21"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v19.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"

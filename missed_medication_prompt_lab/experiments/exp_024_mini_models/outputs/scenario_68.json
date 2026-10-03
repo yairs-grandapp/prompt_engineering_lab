@@ -1,0 +1,92 @@
+{
+  "scenario_id": "scenario_68",
+  "scenario_name": "Claim plus sensor confirmation",
+  "description": "Senior believes they took it; a @SYSTEM@ sensor update then confirms the dose was taken and the senior confirms the box. DID_TAKE.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_68",
+      "scenario_name": "Claim plus sensor confirmation",
+      "description": "Senior believes they took it; a @SYSTEM@ sensor update then confirms the dose was taken and the senior confirms the box. DID_TAKE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I believe I took it earlier",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm glad to hear that. Just to be sure, did you take today's dose from your medication box?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "system",
+          "text": "The home medication box sensor has registered that today's dose was taken.",
+          "turn": 2
+        },
+        {
+          "role": "user",
+          "text": "Yes, from the box",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for confirming. It's great that you've taken your medication from the box today. Have a good day!",
+          "turn": 3,
+          "outcome": "DID_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 8184,
+      "total_output_tokens": 98,
+      "cost": 0.0034304,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2723,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"I'm glad to hear that. Just to be sure, did you take today's dose from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm glad to hear that. Just to be sure, did you take today's dose from your medication box?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2774,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"Thank you for confirming. It's great that you've taken your medication from the box today. Have a good day!\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for confirming. It's great that you've taken your medication from the box today. Have a good day!",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

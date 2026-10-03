@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_57",
+  "scenario_name": "Hard of hearing, then confirms took it",
+  "description": "Senior does not hear the greeting at first and asks the assistant to repeat; after the single clarifying re-ask, they clearly confirm taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_57",
+      "scenario_name": "Hard of hearing, then confirms took it",
+      "description": "Senior does not hear the greeting at first and asks the assistant to repeat; after the single clarifying re-ask, they clearly confirm taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Take my what? Speak up, dear",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I'm sorry if I wasn't clear earlier. I'm Vega, your care assistant, and I'm here to check if you've taken your scheduled medication today. Have you had a chance to take it yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Oh, my pills — yes, I took them from the box this morning",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear that you've taken your medication from the box this morning. Thank you for letting me know! If you need anything else, feel free to let your caregiver know.",
+          "turn": 3,
+          "outcome": "DID_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 16695,
+      "total_output_tokens": 128,
+      "cost": 0.0430175,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5519,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5557,
+          "output_tokens": 49,
+          "raw": "{\"text\":\"I'm sorry if I wasn't clear earlier. I'm Vega, your care assistant, and I'm here to check if you've taken your scheduled medication today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I'm sorry if I wasn't clear earlier. I'm Vega, your care assistant, and I'm here to check if you've taken your scheduled medication today. Have you had a chance to take it yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5619,
+          "output_tokens": 47,
+          "raw": "{\"text\":\"That's great to hear that you've taken your medication from the box this morning. Thank you for letting me know! If you need anything else, feel free to let your caregiver know.\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "That's great to hear that you've taken your medication from the box this morning. Thank you for letting me know! If you need anything else, feel free to let your caregiver know.",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

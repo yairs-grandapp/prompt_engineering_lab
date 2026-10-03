@@ -1,0 +1,35 @@
+# exp_008 — clean run of prompt_v6 with corrected inputs + token reporting
+#   PROMPT: prompt_v6.txt (unchanged from exp_007 — presence + conversational
+#           capability-overclaim guardrails and the reworded Message #2).
+#   CHANGES FROM exp_007:
+#   1. inputs_v1.json -> inputs_v2.json. The single-turn DID_TAKE (scenario_07)
+#      and refusal (scenario_15) scenarios each gained a confirming second turn
+#      so they fit the two-turn follow-up structure and no longer false-fail.
+#      The single-turn WILL_TAKE scenarios (10, 12) are left as-is — a clear
+#      commitment is correctly finalized in one turn.
+#   2. report_generator.py now adds an experiment-level TOKEN USAGE and
+#      approximate COST line (per model: input / output / total + cost) to the
+#      report Summary.
+
+experiment:
+  name: "Missed Medication — Scenario Fixes (prompt_v6)"
+  date: "2026-08-12"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v6.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v2.json"

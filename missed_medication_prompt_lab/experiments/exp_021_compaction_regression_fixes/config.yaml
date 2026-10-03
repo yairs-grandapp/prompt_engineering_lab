@@ -1,0 +1,41 @@
+# prompt_v18.txt — compaction with regression fixes (targeted emphasis restored)
+#   CHANGES FROM v17: three emphasis restorations to fix the two outcome
+#   regressions and the sign-off leak seen in exp_020, keeping ~90% of the
+#   compaction (v18 is still ~58% smaller than v16):
+#   1. Sign-off ban restored as a forceful CRITICAL rule with the full phrase list
+#      (exp_020 leaked "I'm here to support you" 15x after it was compressed to one
+#      line; exp_019 had 1).
+#   2. WILL_TAKE vs DID_TAKE clarified: "on it now / doing it now / I'm taking it
+#      now" are commitments (WILL_TAKE), not already-taken (fixes exp_020
+#      scenario_75, WILL_TAKE misread as DID_TAKE).
+#   3. DID_TAKE box-confirmation asked AT MOST ONCE: a clear "took it from the box"
+#      (even in reply to the clarifying question) finalizes DID_TAKE immediately, no
+#      re-ask (fixes exp_020 scenario_45, which re-asked and fell to could-not-
+#      validate via silence).
+#   UNCHANGED: all other v17 compaction; src/conversation_runner.py still injects
+#   the COULD_NOT_VALIDATE message (keep the updated runner deployed).
+#   PURPOSE: A/B against exp_019 (v16, 100/100) and exp_020 (v17, 98/100). Target:
+#   recover 100/100 and low sign-off leak while retaining ~58% lower prompt cost.
+
+experiment:
+  name: "Missed Medication — Compaction + Regression Fixes (prompt_v18)"
+  date: "2026-08-21"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v18.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"

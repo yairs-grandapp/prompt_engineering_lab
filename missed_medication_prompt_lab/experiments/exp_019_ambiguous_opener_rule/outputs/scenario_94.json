@@ -1,0 +1,131 @@
+{
+  "scenario_id": "scenario_94",
+  "scenario_name": "Distracted talking to someone else",
+  "description": "Senior is preoccupied talking to another person in the room and never answers. COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_94",
+      "scenario_name": "Distracted talking to someone else",
+      "description": "Senior is preoccupied talking to another person in the room and never answers. COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Hold on — Margaret, have you seen my glasses?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "It sounds like you're looking for your glasses. Once you find them, would you like to check if you've taken your medication today? No rush, just let me know when you're ready.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "What? Oh, I'm busy right now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand you're busy at the moment. When you have a moment, could you let me know if you've taken your medication today? It's important, and I'm here to help if you need any assistance.",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I just wanted to check in again to see if you've had a chance to take your medication today. Please let me know when you can.",
+          "turn": 4,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 28061,
+      "total_output_tokens": 202,
+      "cost": 0.0721725,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5519,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5559,
+          "output_tokens": 47,
+          "raw": "{\"text\":\"It sounds like you're looking for your glasses. Once you find them, would you like to check if you've taken your medication today? No rush, just let me know when you're ready.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "It sounds like you're looking for your glasses. Once you find them, would you like to check if you've taken your medication today? No rush, just let me know when you're ready.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5613,
+          "output_tokens": 50,
+          "raw": "{\"text\":\"I understand you're busy at the moment. When you have a moment, could you let me know if you've taken your medication today? It's important, and I'm here to help if you need any assistance.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand you're busy at the moment. When you have a moment, could you let me know if you've taken your medication today? It's important, and I'm here to help if you need any assistance.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 5665,
+          "output_tokens": 38,
+          "raw": "{\"text\":\"I just wanted to check in again to see if you've had a chance to take your medication today. Please let me know when you can.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I just wanted to check in again to see if you've had a chance to take your medication today. Please let me know when you can.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 5705,
+          "output_tokens": 35,
+          "raw": "{\"text\":\"I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

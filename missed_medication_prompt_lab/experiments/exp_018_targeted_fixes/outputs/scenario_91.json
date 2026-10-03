@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_91",
+  "scenario_name": "Answers unrelated questions",
+  "description": "Senior answers with unrelated questions and never addresses the medication. After one clarifier, COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_91",
+      "scenario_name": "Answers unrelated questions",
+      "description": "Senior answers with unrelated questions and never addresses the medication. After one clarifier, COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "What's for lunch today?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "It sounds like you might be thinking about lunch! Just a quick reminder to see if you've had a chance to take your medication today. Would you like to take it now? It's important to keep on track, and I'm here to help you with that.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Is the post here yet?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand you might be curious about the post, but let's make sure your health is taken care of first. Have you been able to take your medication today? It's important to stay on schedule, and I'm here to support you with that.",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 20388,
+      "total_output_tokens": 185,
+      "cost": 0.052820000000000006,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5024,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5058,
+          "output_tokens": 61,
+          "raw": "{\"text\":\"It sounds like you might be thinking about lunch! Just a quick reminder to see if you've had a chance to take your medication today. Would you like to take it now? It's important to keep on track, and I'm here to help you with that.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "It sounds like you might be thinking about lunch! Just a quick reminder to see if you've had a chance to take your medication today. Would you like to take it now? It's important to keep on track, and I'm here to help you with that.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5123,
+          "output_tokens": 58,
+          "raw": "{\"text\":\"I understand you might be curious about the post, but let's make sure your health is taken care of first. Have you been able to take your medication today? It's important to stay on schedule, and I'm here to support you with that.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand you might be curious about the post, but let's make sure your health is taken care of first. Have you been able to take your medication today? It's important to stay on schedule, and I'm here to support you with that.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 5183,
+          "output_tokens": 34,
+          "raw": "{\"text\":\"It seems like you might be busy at the moment. I'll let your caregiver know to check in with you soon.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "It seems like you might be busy at the moment. I'll let your caregiver know to check in with you soon.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "scenario_id": "scenario_67",
+  "scenario_name": "Asks to repeat, then confirms took it",
+  "description": "Senior asks the assistant to repeat, then clearly confirms taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_67",
+      "scenario_name": "Asks to repeat, then confirms took it",
+      "description": "Senior asks the assistant to repeat, then clearly confirms taking it from the box. Resolves to DID_TAKE, not could-not-validate.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Sorry, could you say that again?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Of course, I was just checking in to see if you've already taken your medication today. Have you had a chance to take it yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Ah yes — I took my medication from the box already",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Just to make sure I understood correctly, you took today's dose from your medication box, right?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Yes, certain",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for confirming that. I'm glad to hear everything is on track. Have a wonderful day!",
+          "turn": 4,
+          "outcome": "DID_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 22319,
+      "total_output_tokens": 138,
+      "cost": 0.05717749999999999,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 5519,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 5556,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"Of course, I was just checking in to see if you've already taken your medication today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Of course, I was just checking in to see if you've already taken your medication today. Have you had a chance to take it yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 5604,
+          "output_tokens": 35,
+          "raw": "{\"text\":\"That's great to hear! Just to make sure I understood correctly, you took today's dose from your medication box, right?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's great to hear! Just to make sure I understood correctly, you took today's dose from your medication box, right?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 5640,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Thank you for confirming that. I'm glad to hear everything is on track. Have a wonderful day!\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for confirming that. I'm glad to hear everything is on track. Have a wonderful day!",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

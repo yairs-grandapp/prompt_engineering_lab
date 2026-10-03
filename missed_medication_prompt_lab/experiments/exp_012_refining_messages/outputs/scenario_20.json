@@ -1,0 +1,105 @@
+{
+  "scenario_id": "scenario_20",
+  "scenario_name": "Senior is disoriented",
+  "description": "Senior is disoriented and cannot follow the conversation.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_20",
+      "scenario_name": "Senior is disoriented",
+      "description": "Senior is disoriented and cannot follow the conversation.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 4,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Who is this again?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Hello! I'm Vega, your senior care assistant. I'm just checking in to see if you've had a chance to take your medication today. Have you been able to do that?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I don't understand, what were we saying?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can be a bit confusing. I'm here to help remind you about your medication. Could you let me know if you've taken it today?",
+          "turn": 3,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I just wanted to gently check in again to see if you've been able to take your medication today. I'm here to help if you need any assistance.",
+          "turn": 4,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 15848,
+      "total_output_tokens": 160,
+      "cost": 0.04122000000000001,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3900,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3934,
+          "output_tokens": 46,
+          "raw": "{\"text\":\"Hello! I'm Vega, your senior care assistant. I'm just checking in to see if you've had a chance to take your medication today. Have you been able to do that?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Hello! I'm Vega, your senior care assistant. I'm just checking in to see if you've had a chance to take your medication today. Have you been able to do that?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3986,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"I understand it can be a bit confusing. I'm here to help remind you about your medication. Could you let me know if you've taken it today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can be a bit confusing. I'm here to help remind you about your medication. Could you let me know if you've taken it today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 4028,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"I just wanted to gently check in again to see if you've been able to take your medication today. I'm here to help if you need any assistance.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I just wanted to gently check in again to see if you've been able to take your medication today. I'm here to help if you need any assistance.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

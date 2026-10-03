@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_49",
+  "scenario_name": "Soft maybe, then refuses",
+  "description": "Senior gives a soft, non-committal 'I suppose I could' (not an explicit commitment), then changes their mind and clearly refuses. Resolves to a refusal.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_49",
+      "scenario_name": "Soft maybe, then refuses",
+      "description": "Senior gives a soft, non-committal 'I suppose I could' (not an explicit commitment), then changes their mind and clearly refuses. Resolves to a refusal.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "I suppose I could take them...",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Would you like to take your medication now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "No, actually — I've changed my mind, I won't",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, and I respect your decision. I'll let your caregiver know so they can check in with you. Take care.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": true,
+          "budget_forced": false
+        }
+      ],
+      "total_input_tokens": 8759,
+      "total_output_tokens": 87,
+      "cost": 0.0036428,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2922,
+          "output_tokens": 20,
+          "raw": "{\"text\":\"Would you like to take your medication now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Would you like to take your medication now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2951,
+          "output_tokens": 35,
+          "raw": "{\"text\":\"I understand. I will let your caregiver know about your decision. Take care.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I understand. I will let your caregiver know about your decision. Take care.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

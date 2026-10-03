@@ -1,0 +1,47 @@
+# prompt_v15.txt — targeted fixes from the exp_017 (100-scenario) review
+#   CHANGES FROM v14 (prompt):
+#   1. Reluctance is not a refusal. "I don't feel like it" / "not in the mood" /
+#      "I'd rather not" no longer finalize DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE; they
+#      route to the offer question (fixes exp_017 fails scenario_30, scenario_50).
+#   3. Stronger commitment guard. Added the non-commitment phrasings that slipped
+#      in exp_017 ("haven't taken it yet", "not yet, I was waiting", "busy /
+#      distracted / TV on / looking for glasses") and a rule that a reason/excuse
+#      for not taking it is not a commitment (fixes false-positive WILL_TAKE in
+#      scenario_11, 27, 77).
+#   4. No self-referential sign-off. New [TONE] rule bans ending a message with
+#      "and I'm here to support you" / "I'm here to help" / "gently remind you"
+#      etc. (exp_017 leaked "I'm here to support you" in 9 scenarios).
+#   5. A volunteered "from the box" may finalize DID_TAKE without re-asking the
+#      box-confirmation (makes scenario_52/60/67 intended).
+#   CODE CHANGE (separate, #2): src/conversation_runner.py now injects the fixed
+#   COULD_NOT_VALIDATE message deterministically — the runner overwrites the text
+#   whenever the outcome is COULD_NOT_VALIDATE, guaranteeing the caregiver-alert
+#   closing regardless of model wording (fixes scenario_17, 43, 94, 35, 98). The
+#   model's original text is preserved in outputs/*.json (raw_responses) and a
+#   message_overridden flag records when it was replaced.
+#   NOTE: the injection guarantee lives in the lab runner; production must mirror
+#   it in the backend. Left as-is: "over-asking" (a second clarifying question in
+#   some could-not-validate cases) is a cosmetic turn-count issue.
+
+experiment:
+  name: "Missed Medication — Targeted Fixes (prompt_v15)"
+  date: "2026-08-21"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v15.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"

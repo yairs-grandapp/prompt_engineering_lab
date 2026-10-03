@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_21",
+  "scenario_name": "Took it, vague phrasing with ASR noise",
+  "description": "Senior confirms they took it using colloquial, ASR-noisy phrasing ('tablets after me tea'), then confirms it came from the box. DID_TAKE.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_21",
+      "scenario_name": "Took it, vague phrasing with ASR noise",
+      "description": "Senior confirms they took it using colloquial, ASR-noisy phrasing ('tablets after me tea'), then confirms it came from the box. DID_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Aye, I had me tablets after me tea",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Yes, from the box, I'm certain",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for confirming that. I'm glad to hear you've taken your medication. Have a wonderful day!",
+          "turn": 3,
+          "outcome": "DID_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 6686,
+      "total_output_tokens": 97,
+      "cost": 0.017685,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2189,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2229,
+          "output_tokens": 33,
+          "raw": "{\"text\":\"That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2268,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Thank you for confirming that. I'm glad to hear you've taken your medication. Have a wonderful day!\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for confirming that. I'm glad to hear you've taken your medication. Have a wonderful day!",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

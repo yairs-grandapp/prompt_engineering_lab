@@ -1,0 +1,90 @@
+{
+  "scenario_id": "scenario_30",
+  "scenario_name": "Reluctant, then commits",
+  "description": "Senior expresses reluctance ('don't feel like it') which is NOT a definitive refusal, then commits to taking it. Should resolve to DID_NOT_TAKE_BUT_WILL_TAKE, not a refusal.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_30",
+      "scenario_name": "Reluctant, then commits",
+      "description": "Senior expresses reluctance ('don't feel like it') which is NOT a definitive refusal, then commits to taking it. Should resolve to DID_NOT_TAKE_BUT_WILL_TAKE, not a refusal.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "I don't really feel like it right now",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand it can be hard sometimes. Would you like to take your medication now, or would you prefer to wait a bit longer?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false,
+          "budget_forced": false
+        },
+        {
+          "role": "user",
+          "text": "...oh alright, I'll take it now then",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for letting me know. Please go ahead and take it now — take care!",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": true,
+          "budget_forced": false
+        }
+      ],
+      "total_input_tokens": 8779,
+      "total_output_tokens": 107,
+      "cost": 0.0036828,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2886,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2924,
+          "output_tokens": 38,
+          "raw": "{\"text\":\"I understand it can be hard sometimes. Would you like to take your medication now, or would you prefer to wait a bit longer?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand it can be hard sometimes. Would you like to take your medication now, or would you prefer to wait a bit longer?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2969,
+          "output_tokens": 37,
+          "raw": "{\"text\":\"Thank you for letting me know. Please go ahead and take your medication now when you're ready.\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for letting me know. Please go ahead and take your medication now when you're ready.",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "scenario_id": "scenario_26",
+  "scenario_name": "Reminisces, never answers",
+  "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4.1-mini": {
+      "scenario_id": "scenario_26",
+      "scenario_name": "Reminisces, never answers",
+      "description": "Senior drifts into nostalgic rambling and never says whether they took today's dose. After one clarifier and still no clear answer, COULD_NOT_VALIDATE.",
+      "model": "gpt-4.1-mini",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 5,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Back in my day we never needed all these pills, you know",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this can be frustrating sometimes. Just to be sure, have you taken your medication today, or would you like to take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "My late husband, now he never saw a doctor once in his life...",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I appreciate you sharing that with me. For now, could you please let me know if you have taken your medication today, or if you'd like to take it now?",
+          "turn": 3,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "text": "I just want to make sure you are supported. Have you been able to take your medication today, or would you like to take it now?",
+          "turn": 4,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "text": "I wasn't able to confirm whether you've taken today's medication, so I'll let your caregiver know to check in with you soon.",
+          "turn": 5,
+          "outcome": "COULD_NOT_VALIDATE",
+          "message_overridden": true
+        }
+      ],
+      "total_input_tokens": 13896,
+      "total_output_tokens": 196,
+      "cost": 0.0058720000000000005,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2687,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2730,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"I understand this can be frustrating sometimes. Just to be sure, have you taken your medication today, or would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand this can be frustrating sometimes. Just to be sure, have you taken your medication today, or would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2782,
+          "output_tokens": 45,
+          "raw": "{\"text\":\"I appreciate you sharing that with me. For now, could you please let me know if you have taken your medication today, or if you'd like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I appreciate you sharing that with me. For now, could you please let me know if you have taken your medication today, or if you'd like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 4,
+          "input_tokens": 2828,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"I just want to make sure you are supported. Have you been able to take your medication today, or would you like to take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I just want to make sure you are supported. Have you been able to take your medication today, or would you like to take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 5,
+          "input_tokens": 2869,
+          "output_tokens": 39,
+          "raw": "{\"text\":\"I couldn't confirm whether you have taken your medication today. I'll let your caregiver know so they can check in with you. Please take care.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I couldn't confirm whether you have taken your medication today. I'll let your caregiver know so they can check in with you. Please take care.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

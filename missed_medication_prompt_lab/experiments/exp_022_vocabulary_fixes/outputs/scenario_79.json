@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_79",
+  "scenario_name": "Worried about side effects, still commits",
+  "description": "Senior voices worry about side effects but then commits to taking it now (not a refusal). DID_NOT_TAKE_BUT_WILL_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_79",
+      "scenario_name": "Worried about side effects, still commits",
+      "description": "Senior voices worry about side effects but then commits to taking it now (not a refusal). DID_NOT_TAKE_BUT_WILL_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I worry about the side effects...",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand your concerns about the side effects. It's important to feel comfortable with your medication. Would you like to take it now, or is there anything specific you'd like to discuss with your caregiver about it?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "but alright, I'll take it now",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for deciding to take it now. Please go ahead and take your medication. If you have any further concerns, do let your caregiver know. Take care!",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_BUT_WILL_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 7875,
+      "total_output_tokens": 136,
+      "cost": 0.0210475,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2582,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2618,
+          "output_tokens": 52,
+          "raw": "{\"text\":\"I understand your concerns about the side effects. It's important to feel comfortable with your medication. Would you like to take it now, or is there anything specific you'd like to discuss with your caregiver about it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand your concerns about the side effects. It's important to feel comfortable with your medication. Would you like to take it now, or is there anything specific you'd like to discuss with your caregiver about it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2675,
+          "output_tokens": 52,
+          "raw": "{\"text\":\"Thank you for deciding to take it now. Please go ahead and take your medication. If you have any further concerns, do let your caregiver know. Take care!\",\"conversationOutcome\":\"DID_NOT_TAKE_BUT_WILL_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for deciding to take it now. Please go ahead and take your medication. If you have any further concerns, do let your caregiver know. Take care!",
+            "conversationOutcome": "DID_NOT_TAKE_BUT_WILL_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

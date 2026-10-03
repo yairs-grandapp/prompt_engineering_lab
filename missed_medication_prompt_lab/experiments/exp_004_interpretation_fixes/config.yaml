@@ -1,0 +1,38 @@
+# prompt_v3.txt — interpretation fixes
+#   CHANGES FROM v2:
+#   1. WILL_TAKE now requires an EXPLICIT commitment. A bare "I forgot" /
+#      "not yet" / "haven't taken it" no longer finalizes
+#      DID_NOT_TAKE_BUT_WILL_TAKE; the assistant stays conversation_in_progress,
+#      asks whether they would like to take it now, and only then decides.
+#      Fixes the false positives in scenario_02 and scenario_11 (WILL_TAKE was
+#      returned even though the senior never committed).
+#   2. DID_TAKE clarification message and Reminder #2 reworded from questions
+#      into warm closing STATEMENTS, so finalizing on the same turn is no longer
+#      a dangling, unanswered question.
+#      Fixes scenario_01/05/06/07/08 (DID_TAKE) and scenario_09/10/12 (Reminder #2).
+#   3. TIER 2 tightened: a "who is this?" identity request plus the
+#      re-introduction counts as the single allowed clarifying turn.
+#      Fixes scenario_20 over-asking (5 turns instead of 3).
+
+experiment:
+  name: "Missed Medication - Interpretation Fixes (prompt_v3)"
+  date: "2026-04-07"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v3.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v1.json"

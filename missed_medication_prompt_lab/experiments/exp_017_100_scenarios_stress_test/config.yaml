@@ -1,0 +1,38 @@
+# prompt_v14.txt — stress test on expanded scenario set (inputs_v3, 100 scenarios)
+#   NO prompt change from exp_016 (prompt_v14 unchanged). This experiment swaps the
+#   inputs to inputs_v3.json to stress-test the current prompt on a larger, harder,
+#   balanced set:
+#     - 100 scenarios, 25 per outcome (DID_TAKE / DID_NOT_TAKE_BUT_WILL_TAKE /
+#       DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE / COULD_NOT_VALIDATE).
+#     - The original 20 (scenario_01..20) plus 80 harder cases: mid-conversation
+#       outcome switches, reluctance vs. definitive refusal, "forgot/not yet" with
+#       no commitment, and confusion/identity/hearing/silence/ASR noise that
+#       RESOLVES to a clear answer (must not be could-not-validate); plus
+#       discomfort-with-a-clear-answer vs. upset-with-no-answer.
+#   PURPOSE: measure how well prompt_v14 generalizes beyond the 20 tuned scenarios.
+#   Expect real failures; review transcripts (not just PASS/FAIL) for path-level
+#   behaviour (tier timing, could-not-validate closing text).
+#   NOTE: 100 scenarios is ~5x the token/cost of a 20-scenario run.
+
+experiment:
+  name: "Missed Medication — 100 Scenarios Stress Test (prompt_v14)"
+  date: "2026-08-20"
+
+models:
+  - name: "gpt-4o"
+    temperature: 0.4
+
+prompt:
+  template: "prompt_v14.txt"
+  language: "English"
+  assistant_gender: "female"
+  additional_information:
+    scheduledTime: "2026-07-29T08:00"
+    reminderCount: 0
+
+conversation:
+  max_turns: 10
+  extra_silence_turns: 2
+  enable_state_injection: false
+
+inputs_file: "inputs_v3.json"

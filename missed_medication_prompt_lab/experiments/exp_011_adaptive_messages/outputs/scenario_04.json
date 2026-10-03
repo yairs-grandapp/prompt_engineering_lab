@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_04",
+  "scenario_name": "Senior does not respond (silence)",
+  "description": "Senior gives no response across multiple turns. The situation cannot be resolved in conversation, so the assistant should deliver the soft message and return COULD_NOT_VALIDATE.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_04",
+      "scenario_name": "Senior does not respond (silence)",
+      "description": "Senior gives no response across multiple turns. The situation cannot be resolved in conversation, so the assistant should deliver the soft message and return COULD_NOT_VALIDATE.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning! It's Vega here. I just wanted to check in and see if you've had a chance to take your medication today. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Hello again! I just wanted to gently remind you that I'm here to help ensure everything is okay. Have you had a chance to take your medication today?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "(silence)",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Please do not be concerned — these things can happen. Since I could not confirm whether your medication was taken today, I'm raising an alert in the SeniorMatics system so your caregiver can check in with you. There is no need to worry — someone will follow up to make sure you are alright.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 11816,
+      "total_output_tokens": 156,
+      "cost": 0.0311,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3895,
+          "output_tokens": 43,
+          "raw": "{\"text\":\"Good morning! It's Vega here. I just wanted to check in and see if you've had a chance to take your medication today. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning! It's Vega here. I just wanted to check in and see if you've had a chance to take your medication today. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3939,
+          "output_tokens": 42,
+          "raw": "{\"text\":\"Hello again! I just wanted to gently remind you that I'm here to help ensure everything is okay. Have you had a chance to take your medication today?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Hello again! I just wanted to gently remind you that I'm here to help ensure everything is okay. Have you had a chance to take your medication today?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3982,
+          "output_tokens": 71,
+          "raw": "{\"text\":\"Please do not be concerned — these things can happen. Since I could not confirm whether your medication was taken today, I'm raising an alert in the SeniorMatics system so your caregiver can check in with you. There is no need to worry — someone will follow up to make sure you are alright.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "Please do not be concerned — these things can happen. Since I could not confirm whether your medication was taken today, I'm raising an alert in the SeniorMatics system so your caregiver can check in with you. There is no need to worry — someone will follow up to make sure you are alright.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

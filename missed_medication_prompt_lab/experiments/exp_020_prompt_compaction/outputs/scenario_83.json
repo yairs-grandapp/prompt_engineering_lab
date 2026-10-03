@@ -1,0 +1,87 @@
+{
+  "scenario_id": "scenario_83",
+  "scenario_name": "Polite but firm refusal",
+  "description": "Senior declines politely but firmly for the day. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_83",
+      "scenario_name": "Polite but firm refusal",
+      "description": "Senior declines politely but firmly for the day. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "No thank you, dear, not for me today",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand, but it's important to stay on track with your medication for your health. Would you like to take it now? I'm here to support you in doing so.",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "No, I'm sure",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I respect your decision. I'll let your caregiver know so they can check in with you. Take care.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 6694,
+      "total_output_tokens": 116,
+      "cost": 0.017895,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2189,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2229,
+          "output_tokens": 44,
+          "raw": "{\"text\":\"I understand, but it's important to stay on track with your medication for your health. Would you like to take it now? I'm here to support you in doing so.\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand, but it's important to stay on track with your medication for your health. Would you like to take it now? I'm here to support you in doing so.",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2276,
+          "output_tokens": 40,
+          "raw": "{\"text\":\"I respect your decision. I'll let your caregiver know so they can check in with you. Take care.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I respect your decision. I'll let your caregiver know so they can check in with you. Take care.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

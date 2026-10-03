@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_20",
+  "scenario_name": "Senior is disoriented",
+  "description": "Senior is disoriented and cannot follow the conversation.",
+  "expected_outcome": "COULD_NOT_VALIDATE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_20",
+      "scenario_name": "Senior is disoriented",
+      "description": "Senior is disoriented and cannot follow the conversation.",
+      "model": "gpt-4o",
+      "expected_outcome": "COULD_NOT_VALIDATE",
+      "actual_outcome": "COULD_NOT_VALIDATE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning! It's Vega here. I'm just checking in to see if you've had a chance to take your medication today. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "Who is this again?",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "Oh, I'm sorry if I wasn't clear! It's Vega here, your care assistant. I'm just making sure everything is going smoothly with your medication today. Have you had a chance to take it yet?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I don't understand, what were we saying?",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I understand this might be a bit confusing. I'm here to gently remind you about your medication today. Do you remember if you've taken it yet? It's perfectly okay if you're unsure — just let me know how you're feeling about it.",
+          "turn": 3,
+          "outcome": "COULD_NOT_VALIDATE"
+        }
+      ],
+      "total_input_tokens": 11828,
+      "total_output_tokens": 149,
+      "cost": 0.031059999999999997,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3895,
+          "output_tokens": 41,
+          "raw": "{\"text\":\"Good morning! It's Vega here. I'm just checking in to see if you've had a chance to take your medication today. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning! It's Vega here. I'm just checking in to see if you've had a chance to take your medication today. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3938,
+          "output_tokens": 51,
+          "raw": "{\"text\":\"Oh, I'm sorry if I wasn't clear! It's Vega here, your care assistant. I'm just making sure everything is going smoothly with your medication today. Have you had a chance to take it yet?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Oh, I'm sorry if I wasn't clear! It's Vega here, your care assistant. I'm just making sure everything is going smoothly with your medication today. Have you had a chance to take it yet?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3995,
+          "output_tokens": 57,
+          "raw": "{\"text\":\"I understand this might be a bit confusing. I'm here to gently remind you about your medication today. Do you remember if you've taken it yet? It's perfectly okay if you're unsure — just let me know how you're feeling about it.\",\"conversationOutcome\":\"COULD_NOT_VALIDATE\"}",
+          "parsed": {
+            "text": "I understand this might be a bit confusing. I'm here to gently remind you about your medication today. Do you remember if you've taken it yet? It's perfectly okay if you're unsure — just let me know how you're feeling about it.",
+            "conversationOutcome": "COULD_NOT_VALIDATE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

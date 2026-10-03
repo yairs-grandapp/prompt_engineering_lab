@@ -1,0 +1,84 @@
+{
+  "scenario_id": "scenario_16",
+  "scenario_name": "Senior stopped taking it",
+  "description": "Senior says they stopped taking it and will not take it now.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_16",
+      "scenario_name": "Senior stopped taking it",
+      "description": "Senior says they stopped taking it and will not take it now.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "No, I stopped taking those a while ago",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand your decision and respect it. However, it's important to take your medication for your health. Would you be willing to reconsider and take it now?",
+          "turn": 2,
+          "outcome": "conversation_in_progress"
+        },
+        {
+          "role": "user",
+          "text": "I won't be taking it",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "I completely understand and respect your choice. If you ever change your mind or have any questions, feel free to let me know. Take care of yourself.",
+          "turn": 3,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+        }
+      ],
+      "total_input_tokens": 11823,
+      "total_output_tokens": 124,
+      "cost": 0.0307975,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 3900,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 3939,
+          "output_tokens": 42,
+          "raw": "{\"text\":\"I understand your decision and respect it. However, it's important to take your medication for your health. Would you be willing to reconsider and take it now?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "I understand your decision and respect it. However, it's important to take your medication for your health. Would you be willing to reconsider and take it now?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 3984,
+          "output_tokens": 50,
+          "raw": "{\"text\":\"I completely understand and respect your choice. If you ever change your mind or have any questions, feel free to let me know. Take care of yourself.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I completely understand and respect your choice. If you ever change your mind or have any questions, feel free to let me know. Take care of yourself.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

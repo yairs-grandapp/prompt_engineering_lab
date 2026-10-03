@@ -1,0 +1,65 @@
+{
+  "scenario_id": "scenario_25",
+  "scenario_name": "Refuses, prefers natural remedies",
+  "description": "Senior clearly declines the medication in favor of their own remedies. A clear refusal is taken at face value. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+  "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_25",
+      "scenario_name": "Refuses, prefers natural remedies",
+      "description": "Senior clearly declines the medication in favor of their own remedies. A clear refusal is taken at face value. DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "actual_outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+      "passed": true,
+      "turn_count": 2,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "I don't take those anymore, I manage with my herbal teas",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "I understand you prefer using herbal teas, and that's perfectly okay. I'll let your caregiver know about your decision. Thank you for sharing that with me.",
+          "turn": 2,
+          "outcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 4936,
+      "total_output_tokens": 81,
+      "cost": 0.013149999999999998,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2447,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2489,
+          "output_tokens": 49,
+          "raw": "{\"text\":\"I understand you prefer using herbal teas, and that's perfectly okay. I'll let your caregiver know about your decision. Thank you for sharing that with me.\",\"conversationOutcome\":\"DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE\"}",
+          "parsed": {
+            "text": "I understand you prefer using herbal teas, and that's perfectly okay. I'll let your caregiver know about your decision. Thank you for sharing that with me.",
+            "conversationOutcome": "DID_NOT_TAKE_IT_AND_WILL_NOT_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}

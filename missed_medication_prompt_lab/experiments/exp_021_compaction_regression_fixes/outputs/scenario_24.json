@@ -1,0 +1,92 @@
+{
+  "scenario_id": "scenario_24",
+  "scenario_name": "Sensor event confirms dose taken",
+  "description": "A @SYSTEM@ sensor update reports today's dose was taken, and the senior confirms. Assistant may reference the sensor warmly and returns DID_TAKE.",
+  "expected_outcome": "DID_TAKE",
+  "model_results": {
+    "gpt-4o": {
+      "scenario_id": "scenario_24",
+      "scenario_name": "Sensor event confirms dose taken",
+      "description": "A @SYSTEM@ sensor update reports today's dose was taken, and the senior confirms. Assistant may reference the sensor warmly and returns DID_TAKE.",
+      "model": "gpt-4o",
+      "expected_outcome": "DID_TAKE",
+      "actual_outcome": "DID_TAKE",
+      "passed": true,
+      "turn_count": 3,
+      "transcript": [
+        {
+          "role": "assistant",
+          "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+          "turn": 1,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "system",
+          "text": "The home medication box sensor has registered that today's dose was removed and taken.",
+          "turn": 1
+        },
+        {
+          "role": "user",
+          "text": "Yes, I've taken it",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "text": "That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?",
+          "turn": 2,
+          "outcome": "conversation_in_progress",
+          "message_overridden": false
+        },
+        {
+          "role": "user",
+          "text": "Yes, from the box, this morning",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "text": "Thank you for confirming that. I'm glad to hear everything is on track. Have a wonderful day!",
+          "turn": 3,
+          "outcome": "DID_TAKE",
+          "message_overridden": false
+        }
+      ],
+      "total_input_tokens": 7486,
+      "total_output_tokens": 97,
+      "cost": 0.019685,
+      "raw_responses": [
+        {
+          "turn": 1,
+          "input_tokens": 2447,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Good morning, it's Vega here! It may be time for your medication. Have you already taken it?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "Good morning, it's Vega here! It may be time for your medication. Have you already taken it?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 2,
+          "input_tokens": 2500,
+          "output_tokens": 33,
+          "raw": "{\"text\":\"That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?\",\"conversationOutcome\":\"conversation_in_progress\"}",
+          "parsed": {
+            "text": "That's great to hear! Just to make sure I understood correctly, did today's dose come from your medication box?",
+            "conversationOutcome": "conversation_in_progress"
+          }
+        },
+        {
+          "turn": 3,
+          "input_tokens": 2539,
+          "output_tokens": 32,
+          "raw": "{\"text\":\"Thank you for confirming that. I'm glad to hear everything is on track. Have a wonderful day!\",\"conversationOutcome\":\"DID_TAKE\"}",
+          "parsed": {
+            "text": "Thank you for confirming that. I'm glad to hear everything is on track. Have a wonderful day!",
+            "conversationOutcome": "DID_TAKE"
+          }
+        }
+      ],
+      "termination_reason": "outcome_reached"
+    }
+  }
+}
