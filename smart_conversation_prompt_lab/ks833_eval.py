@@ -54,6 +54,9 @@ BRAZILIAN = [
     (re.compile(r"\b(banheiro|celular|registro|ônibus|tchau|oi)\b"), "BR vocabulary"),
     (re.compile(r"\bdetect(amos|ei|ou|ado|ada)\b"), "BR spelling (detect-)"),
 ]
+# The prompt forbids promising that help is coming (CLOSE_POLITELY_GUIDELINE). Reported as a warning.
+PROMISES = re.compile(r"\b(algu[eé]m (ir[aá]|vai|v[eê]m|est[aá] a caminho)|a caminho|em breve|"
+                      r"j[aá] (vai|v[eê]m) (algu[eé]m|ajuda)|ajuda (vai|est[aá]) a chegar|v[aã]o ajud[aá]-l[oa])\b")
 INFORMAL = re.compile(r"\b(tu|estás|caíste|magoaste|consegues|podes|precisas|queres|te)\b")
 
 
@@ -109,7 +112,7 @@ def call_llm(client, model, prompt, temperature):
 
 
 def run_one(client, args, template, scenario, run_idx):
-    history, transcript, latencies, violations = [], [], [], []
+    history, transcript, latencies, violations, warnings = [], [], [], [], []
     tokens_in = tokens_out = 0
     turns = scenario["user_turns"]
     ui = silences_after = 0
@@ -131,6 +134,10 @@ def run_one(client, args, template, scenario, run_idx):
         transcript.append({"role": "assistant", "text": text, "outcome": out})
         violations += [f"turn {len(latencies)}: {v}" for v in check_line(text, out, args)]
         if out != IN_PROGRESS:
+            m = PROMISES.search((text or "").lower())
+            if m:
+                warnings.append(f"promises help: '{m.group(0)}'")
+        if out != IN_PROGRESS:
             outcome = out
             break
         if ui < len(turns):
@@ -146,10 +153,15 @@ def run_one(client, args, template, scenario, run_idx):
 
     expected = scenario["expected_outcome"].strip().lower()
     outcome_ok = outcome == expected
+    # A guessed reconstruction ("Não QI" -> "não caí") must never be enough to close as fine.
+    spoken = sum(1 for t in transcript if t["role"] == "user" and t["text"] != "(silence)")
+    min_fine = scenario.get("min_spoken_turns_before_fine")
+    if min_fine and outcome == "no_fall_confirmed" and spoken < min_fine:
+        violations.append(f"closed as fine after {spoken} spoken answer(s), needs {min_fine}")
     return {
         "scenario_id": scenario["id"], "category": scenario.get("category", ""), "run": run_idx,
         "expected": expected, "outcome": outcome, "outcome_ok": outcome_ok,
-        "language_ok": not violations, "violations": violations,
+        "language_ok": not violations, "violations": violations, "warnings": warnings,
         "passed": outcome_ok and not violations,
         "latencies_ms": latencies, "tokens_in": tokens_in, "tokens_out": tokens_out,
         "transcript": transcript,
@@ -238,6 +250,9 @@ def write_summary(out_dir, meta, results):
             viol[key] = viol.get(key, 0) + 1
     lines += ["", "## Language violations", ""] + [f"- {k}: {v}" for k, v in
                                                    sorted(viol.items(), key=lambda x: -x[1])]
+    warns = [w for r in results for w in r["warnings"]]
+    lines += ["", f"## Warnings: closing line promises help is coming ({len(warns)}/{n} runs)", ""]
+    lines += [f"- `{r['scenario_id']}#{r['run']}`: {'; '.join(r['warnings'])}" for r in results if r["warnings"]]
     lines += ["", "## Failing runs", ""]
     for r in results:
         if not r["passed"]:

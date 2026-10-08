@@ -111,6 +111,64 @@ SCENARIO_ASR_PT = (
     "confirm before closing — in Portuguese, e.g. \"Desculpe, disse que não caiu?\".\n")
 
 
+# --- v2: fixes from the first gpt-4o run (experiments/ks833/v1_male, v1_female) ------------------
+
+# v1 said a reconstructed "caí" MAY escalate; gpt-4o asked again instead ("QI na cozinha"), and after
+# a second "TI" told the senior "pode ter sido um erro na transcrição". v2 makes escalation mandatory
+# and keeps recognition talk away from the senior.
+V1_RECONSTRUCT = ("* A misrecognition you reconstruct this way may be acted on to ESCALATE (a reconstructed \"caí\" is "
+                  "a fall).")
+V2_RECONSTRUCT = ("* A reconstructed \"caí\" (I fell), \"dói\" (it hurts) or \"ajuda\" (help) counts as the senior "
+                  "SAYING it: escalate immediately with 'distress_fall_confirmed' — do not ask them to repeat it. "
+                  "Never mention transcription, recognition, the system or a \"mistake\" to the senior; they only "
+                  "know they are talking to you.\n"
+                  "* A misrecognition you reconstruct this way may be acted on to ESCALATE (a reconstructed \"caí\" is "
+                  "a fall).")
+
+# v1: "alguém irá ajudá-lo em breve" in 4/29 male runs, "Vou enviar um alerta" instead of the
+# mandated phrase. The prohibition existed only in English; v2 restates both in Portuguese terms.
+CLOSING_ANCHOR = ("    - Bad: \"Just to confirm, did you say you fell?\" paired with a fall-confirmed outcome — the "
+                  "senior is asked a question and the call ends before they can answer.\n")
+CLOSING_PT = (
+    "    - In Portuguese, the mandated phrases are said EXACTLY as given — \"Estou a enviar um alerta no "
+    "sistema SeniorMatics.\" (not \"Vou enviar…\") and \"Não consegui falar consigo, por isso estou a avisar "
+    "os seus cuidadores.\"\n"
+    "    - In Portuguese, NEVER promise that help is coming: no \"alguém vai/irá ajudá-lo\", \"em breve\", "
+    "\"a ajuda está a caminho\", \"já vem alguém\". The alert is raised; nothing guarantees anyone has seen it.\n")
+
+
+# --- v3: the two wrong clears in experiments/ks833/v2_male ---------------------------------------
+# 1. "Na na" was reconstructed as "não", then a second "Na na" to "are you hurt?" closed the call as
+#    fine — a guessed word cleared a senior, which the reconstruction rule already forbids.
+# 2. An off-topic senior was asked a LEADING question ("está a dizer que está tudo bem e que não
+#    precisa de ajuda?") and "Pois, era o que eu dizia" was taken as confirmation.
+# The fine path therefore needs the senior's OWN words; a bare yes/no or a guessed word never clears.
+VALIDATION_ANCHOR = ("    - A senior who has just fallen very often says they are fine at first — embarrassed, dazed, "
+                     "or not wanting to be a bother. Always check once more.\n")
+VALIDATION_PT = (
+    "    - In Portuguese, closing as fine requires the senior to have said it IN THEIR OWN WORDS — e.g. "
+    "\"estou bem\", \"não caí\", \"não me magoei\", \"está tudo bem\". None of these is enough on its own: "
+    "a bare \"sim\", \"pois\", \"é\", \"não\" or \"nã\"; an answer to a question that suggested they were fine; "
+    "or a word you reconstructed from a misrecognition (\"Na na\", \"Não QI\"). In those cases ask an OPEN "
+    "question (\"Como é que o senhor está?\"), never a leading one (\"Está a dizer que está tudo bem?\"); "
+    "if you still do not get a clear answer in their own words, treat it as a fall.\n")
+
+
+# --- v4: v3 still cleared "Na na" twice (3/4 runs, experiments/ks833/v3_*) ------------------------
+# VEGA confirmed the guess with the v1 example "Desculpe, disse que não caiu?" — itself a leading
+# question — and the second unclear "Na na" was read as "yes, I didn't fall". The "Na na" -> "nã"
+# mapping pointed it there. v4 drops that mapping and makes the confirmation an open question.
+NA_NA_LINE = "  - \"Na\" or \"Na na\" may actually be \"nã\" / \"não\" (no, Azorean)\n"
+V3_CONFIRM = ("say back what you think you heard and ask them to confirm before closing — in Portuguese, "
+              "e.g. \"Desculpe, disse que não caiu?\".\n")
+V4_CONFIRM = ("do not suggest the answer back to them — ask an OPEN question in Portuguese, e.g. "
+              "\"Desculpe, não percebi. Como é que o senhor está?\", and close as fine only on a clear answer "
+              "in their own words.\n"
+              "* A short unclear answer (\"Na na\", \"Hã\", a single garbled word) stays unclear even if it is "
+              "repeated after your question — it is never a confirmation. Two unclear answers in a row are a "
+              "fall ('distress_fall_confirmed').\n")
+
+
 def replace_once(text, old, new, what):
     n = text.count(old)
     if n != 1:
@@ -137,6 +195,26 @@ def build_v1(base, info):
     return p
 
 
+def build_v2(base, info):
+    p = build_v1(base, info)
+    p = replace_once(p, V1_RECONSTRUCT, V2_RECONSTRUCT, "reconstruction rule")
+    p = replace_once(p, CLOSING_ANCHOR, CLOSING_ANCHOR + CLOSING_PT, "closing rules")
+    return p
+
+
+def build_v3(base, info):
+    p = build_v2(base, info)
+    p = replace_once(p, VALIDATION_ANCHOR, VALIDATION_ANCHOR + VALIDATION_PT, "own-words rule")
+    return p
+
+
+def build_v4(base, info):
+    p = build_v3(base, info)
+    p = replace_once(p, NA_NA_LINE, "", "Na na mapping")
+    p = replace_once(p, V3_CONFIRM, V4_CONFIRM, "open confirmation")
+    return p
+
+
 def main():
     base = BASE.read_text(encoding="utf-8")
     asis = replace_once(build_asis(base), INFO_EN, INFO_PT_MALE, "additional information")
@@ -145,6 +223,17 @@ def main():
         "prompt_ks833_ptpt_v1_male.txt": build_v1(base, INFO_PT_MALE),
         "prompt_ks833_ptpt_v1_female.txt": build_v1(base, INFO_PT_FEMALE).replace(
             "Olá, senhor Manuel", "Olá, senhora Maria"),
+        "prompt_ks833_ptpt_v2_male.txt": build_v2(base, INFO_PT_MALE),
+        "prompt_ks833_ptpt_v2_female.txt": build_v2(base, INFO_PT_FEMALE).replace(
+            "Olá, senhor Manuel", "Olá, senhora Maria"),
+        "prompt_ks833_ptpt_v3_male.txt": build_v3(base, INFO_PT_MALE),
+        "prompt_ks833_ptpt_v3_female.txt": build_v3(base, INFO_PT_FEMALE).replace(
+            "Olá, senhor Manuel", "Olá, senhora Maria").replace(
+            "Como é que o senhor está?", "Como é que a senhora está?"),
+        "prompt_ks833_ptpt_v4_male.txt": build_v4(base, INFO_PT_MALE),
+        "prompt_ks833_ptpt_v4_female.txt": build_v4(base, INFO_PT_FEMALE).replace(
+            "Olá, senhor Manuel", "Olá, senhora Maria").replace(
+            "Como é que o senhor está?", "Como é que a senhora está?"),
     }
     for name, text in outputs.items():
         (PROMPTS / name).write_text(text, encoding="utf-8", newline="\n")
