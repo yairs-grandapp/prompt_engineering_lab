@@ -1,0 +1,7 @@
+azure-cognitiveservices-speech==1.52.0
+sounddevice
+soundfile
+numpy
+scipy
+jiwer
+python-dotenv

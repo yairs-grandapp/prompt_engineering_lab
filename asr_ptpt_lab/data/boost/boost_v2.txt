@@ -1,0 +1,30 @@
+# KS-834 boost v2: v1 plus the forms that failed on the synthetic baseline
+# (bare "Caí" -> "K í"/"QI", "Não caí" -> "Não QI", "Nã" -> "Na", "Pois" -> nothing)
+caí
+eu caí
+já caí
+caí no chão
+não caí
+queda
+dói
+dói-me
+dores
+magoei
+magoei-me
+não me magoei
+ajuda
+preciso de ajuda
+socorro
+não estou bem
+estou bem
+tou bem
+está tudo bem
+levantar
+não consigo levantar
+sangue
+partido
+tonturas
+sim
+não
+nã
+pois
