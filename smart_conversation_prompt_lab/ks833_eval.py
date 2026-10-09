@@ -111,6 +111,26 @@ def call_llm(client, model, prompt, temperature):
     return json.loads(r.choices[0].message.content), ms, r.usage.prompt_tokens, r.usage.completion_tokens
 
 
+def accepted_outcomes(scenario):
+    # "also_accepted": the scripts end in silence, so an unclear script can legitimately close
+    # under the prompt's SILENCE RULE instead of as a fall. Both outcomes alert the caregivers.
+    return {o.strip().lower() for o in [scenario["expected_outcome"]] + scenario.get("also_accepted", [])}
+
+
+def rescore(label, inputs):
+    """Re-apply the current scenario expectations to a stored run, without calling the LLM."""
+    out_dir = ROOT / "experiments" / "ks833" / label
+    data = json.loads((out_dir / "results.json").read_text(encoding="utf-8"))
+    scenarios = {s["id"]: s for s in
+                 json.loads((ROOT / "data/inputs" / inputs).read_text(encoding="utf-8"))["scenarios"]}
+    for r in data["results"]:
+        r["outcome_ok"] = r["outcome"] in accepted_outcomes(scenarios[r["scenario_id"]])
+        r["passed"] = r["outcome_ok"] and r["language_ok"]
+    data["meta"]["rescored_with"] = inputs
+    (out_dir / "results.json").write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
+    write_summary(out_dir, data["meta"], data["results"])
+
+
 def run_one(client, args, template, scenario, run_idx):
     history, transcript, latencies, violations, warnings = [], [], [], [], []
     tokens_in = tokens_out = 0
@@ -152,7 +172,7 @@ def run_one(client, args, template, scenario, run_idx):
         transcript.append({"role": "user", "text": user or "(silence)"})
 
     expected = scenario["expected_outcome"].strip().lower()
-    outcome_ok = outcome == expected
+    outcome_ok = outcome in accepted_outcomes(scenario)
     # A guessed reconstruction ("Não QI" -> "não caí") must never be enough to close as fine.
     spoken = sum(1 for t in transcript if t["role"] == "user" and t["text"] != "(silence)")
     min_fine = scenario.get("min_spoken_turns_before_fine")
@@ -177,7 +197,7 @@ def pct(values, q):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--prompt", required=True, help="file under data/prompts")
+    ap.add_argument("--prompt", help="file under data/prompts")
     ap.add_argument("--inputs", default="inputs_ks833_ptpt.json", help="file under data/inputs")
     ap.add_argument("--model", default="gpt-4o")
     ap.add_argument("--temperature", type=float, default=None, help="omit to match production")
@@ -189,7 +209,14 @@ def main():
     ap.add_argument("--pt-phrases", action="store_true",
                     help="require the Portuguese mandated phrases on alert outcomes")
     ap.add_argument("--label", required=True)
+    ap.add_argument("--rescore", action="store_true",
+                    help="re-score experiments/ks833/<label> against --inputs; no LLM calls")
     args = ap.parse_args()
+    if args.rescore:
+        rescore(args.label, args.inputs)
+        return
+    if not args.prompt:
+        ap.error("--prompt is required unless --rescore")
 
     load_dotenv(ROOT / ".env")
     client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])

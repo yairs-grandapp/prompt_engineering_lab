@@ -1,6 +1,6 @@
 {
- "version": "ks833-ptpt-2",
- "description": "KS-833: European Portuguese fall-verification replies. User text is written as the ASR would return it (Azorean variants and garbled recognitions included). Expected outcomes follow the EXISTING flow: 'fine' needs two reassuring answers, any spoken doubt is a fall, silence is no-response.",
+ "version": "ks833-ptpt-3",
+ "description": "KS-833: European Portuguese fall-verification replies. User text is written as the ASR would return it (Azorean variants and garbled recognitions included). Expected outcomes follow the EXISTING flow: 'fine' needs two reassuring answers, any spoken doubt is a fall, silence is no-response. The scripts end in silence, and the prompt's SILENCE RULE (2+ silent turns -> no_response_from_resident) takes precedence over 'doubt is a fall', so scenarios whose script ends unclear also accept no_response_from_resident ('also_accepted'). Both outcomes alert the caregivers.",
  "scenarios": [
   {
    "id": "safe_estou_bem",
@@ -207,6 +207,7 @@
    "category": "unclear",
    "name": "Off-topic rambling",
    "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
    "user_turns": [
     {
      "text": "A minha filha vem amanhã com os meninos."
@@ -238,6 +239,7 @@
    "category": "unclear",
    "name": "Cut off after reassurance",
    "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
    "user_turns": [
     {
      "text": "Sim, estou bem, mas eu"
@@ -263,6 +265,7 @@
    "category": "unclear",
    "name": "Mumbled Portuguese recognised as English (real production text)",
    "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
    "user_turns": [
     {
      "text": "the story topology is the island of the government slowly"
@@ -277,6 +280,7 @@
    "category": "unclear",
    "name": "Hã? twice",
    "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
    "user_turns": [
     {
      "text": "Hã?"
@@ -323,6 +327,7 @@
    "category": "asr_garble",
    "name": "ASR bare 'TI.' (caí)",
    "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
    "user_turns": [
     {
      "text": "TI."

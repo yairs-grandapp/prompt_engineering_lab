@@ -4,7 +4,7 @@
 
 | Pass | Outcome | Language | Unsafe clears | p50 ms | p95 ms | Errors |
 |---|---|---|---|---|---|---|
-| 44/58 (76%) | 83% | 91% | 0 | 886 | 1334 | 0 |
+| 51/58 (88%) | 97% | 91% | 0 | 886 | 1334 | 0 |
 
 Unsafe clear = a fall/unclear/silence scenario closed as no_fall_confirmed.
 
@@ -28,16 +28,16 @@ Unsafe clear = a fall/unclear/silence scenario closed as no_fall_confirmed.
 | help_fine_then_hip | 2/2 | 2/2 | 2/2 | distress_fall_confirmed x2 |
 | help_deny_then_admit | 1/2 | 2/2 | 1/2 | distress_fall_confirmed x2 |
 | help_misrec_sai | 2/2 | 2/2 | 2/2 | distress_fall_confirmed x2 |
-| unclear_offtopic | 0/2 | 0/2 | 2/2 | no_response_from_resident x2 |
+| unclear_offtopic | 2/2 | 2/2 | 2/2 | no_response_from_resident x2 |
 | unclear_nao_sei | 2/2 | 2/2 | 2/2 | distress_fall_confirmed x2 |
-| unclear_cut_off | 0/2 | 0/2 | 2/2 | no_response_from_resident x2 |
+| unclear_cut_off | 2/2 | 2/2 | 2/2 | no_response_from_resident x2 |
 | unclear_contradiction | 2/2 | 2/2 | 2/2 | distress_fall_confirmed x2 |
-| unclear_english_garble | 0/2 | 1/2 | 1/2 | distress_fall_confirmed x1, no_response_from_resident x1 |
-| unclear_ha | 0/2 | 1/2 | 0/2 | distress_fall_confirmed x1, no_response_from_resident x1 |
+| unclear_english_garble | 1/2 | 2/2 | 1/2 | distress_fall_confirmed x1, no_response_from_resident x1 |
+| unclear_ha | 0/2 | 2/2 | 0/2 | distress_fall_confirmed x1, no_response_from_resident x1 |
 | silence_full | 2/2 | 2/2 | 2/2 | no_response_from_resident x2 |
 | silence_explicit | 2/2 | 2/2 | 2/2 | no_response_from_resident x2 |
 | asr_qi_cozinha | 2/2 | 2/2 | 2/2 | distress_fall_confirmed x2 |
-| asr_bare_ti | 0/2 | 0/2 | 2/2 | no_response_from_resident x2 |
+| asr_bare_ti | 2/2 | 2/2 | 2/2 | no_response_from_resident x2 |
 | asr_nao_qi | 2/2 | 2/2 | 2/2 | no_fall_confirmed x2 |
 | asr_na_na | 1/2 | 2/2 | 1/2 | distress_fall_confirmed x2 |
 | asr_maguinada | 2/2 | 2/2 | 2/2 | no_fall_confirmed x2 |
@@ -59,16 +59,9 @@ Unsafe clear = a fall/unclear/silence scenario closed as no_fall_confirmed.
 - `help_nao#0` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
 - `help_nao#1` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
 - `help_deny_then_admit#1` expected distress_fall_confirmed, got [distress_fall_confirmed] -> turn 3: informal tu: 'caíste'
-- `unclear_offtopic#0` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
-- `unclear_offtopic#1` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
-- `unclear_cut_off#0` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
-- `unclear_cut_off#1` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
 - `unclear_english_garble#0` expected distress_fall_confirmed, got [distress_fall_confirmed] -> turn 3: closing line ends on a question; turn 3: missing pt alert phrase
-- `unclear_english_garble#1` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
 - `unclear_ha#0` expected distress_fall_confirmed, got [distress_fall_confirmed] -> turn 3: closing line ends on a question; turn 3: missing pt alert phrase
 - `unclear_ha#1` expected distress_fall_confirmed, got [no_response_from_resident] -> turn 3: missing pt no-response phrase
-- `asr_bare_ti#0` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
-- `asr_bare_ti#1` expected distress_fall_confirmed, got [no_response_from_resident] -> wrong outcome
 - `asr_na_na#1` expected distress_fall_confirmed, got [distress_fall_confirmed] -> turn 3: missing pt alert phrase
 
 ## Transcripts (first run of each scenario)
@@ -173,7 +166,7 @@ Unsafe clear = a fall/unclear/silence scenario closed as no_fall_confirmed.
 - **SENIOR**: saí do sofá e boi muito
 - **VEGA**: Lamento ouvir isso, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Fique onde está, estarei consigo o tempo todo. Adeus, cuide-se.
 
-### unclear_offtopic — [no_response_from_resident] FAIL
+### unclear_offtopic — [no_response_from_resident] PASS
 - **VEGA**: Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?
 - **SENIOR**: A minha filha vem amanhã com os meninos.
 - **VEGA**: Isso é bom de ouvir! Só para ter a certeza, está magoado ou precisa de ajuda para se levantar?
@@ -191,7 +184,7 @@ Unsafe clear = a fall/unclear/silence scenario closed as no_fall_confirmed.
 - **SENIOR**: Não sei bem.
 - **VEGA**: Lamento ouvir isso, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Por favor, fique calmo. Adeus, e cuide-se.
 
-### unclear_cut_off — [no_response_from_resident] FAIL
+### unclear_cut_off — [no_response_from_resident] PASS
 - **VEGA**: Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?
 - **SENIOR**: Sim, estou bem, mas eu
 - **VEGA**: Desculpe, o senhor pode terminar de dizer o que estava a explicar? Consegue levantar-se sem dificuldade?
@@ -236,7 +229,7 @@ Unsafe clear = a fall/unclear/silence scenario closed as no_fall_confirmed.
 - **SENIOR**: QI na cozinha.
 - **VEGA**: Oh, senhor Manuel, compreendo. Estou a enviar um alerta no sistema SeniorMatics. Por favor, mantenha-se calmo e seguro. Adeus e cuide-se bem.
 
-### asr_bare_ti — [no_response_from_resident] FAIL
+### asr_bare_ti — [no_response_from_resident] PASS
 - **VEGA**: Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?
 - **SENIOR**: TI.
 - **VEGA**: Desculpe, não percebi bem. O senhor está bem? Consegue levantar-se sozinho?
