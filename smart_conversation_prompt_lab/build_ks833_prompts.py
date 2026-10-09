@@ -169,6 +169,24 @@ V4_CONFIRM = ("do not suggest the answer back to them — ask an OPEN question i
               "fall ('distress_fall_confirmed').\n")
 
 
+# --- v5: gender-neutral Portuguese (decided at the daily, 2026-10-09) -----------------------------
+# v4 says "o senhor" / "a senhora" and agrees adjectives with seniorGender; the base prompt defaults to
+# male when the gender is missing, so a woman could be called "o senhor". v5 never genders the senior:
+# no senhor/senhora/Dona, the first name on its own, and verbs instead of gendered adjectives.
+ADDRESS_GENDERED = " as \"o senhor\" / \"a senhora\" (or by name)"
+GENDER_NEUTRAL_PT = (
+    "* Portuguese gender — ALWAYS GENDER-NEUTRAL: in Portuguese, ignore the senior's gender (and the "
+    "'default to male' rule above), even when it is provided. Never say \"o senhor\", \"a senhora\", "
+    "\"senhor\", \"senhora\" or \"Dona\"; use the senior's first name on its own, or no name. Never use a "
+    "gendered adjective or participle about the senior (magoado/a, sozinho/a, cansado/a, caído/a, "
+    "tranquilo/a, descansado/a, assustado/a) or a gendered pronoun (ajudá-lo/la, ouvi-lo/la): say it with "
+    "a verb or \"consigo\" instead — \"Magoou-se?\", \"Tem dores?\", \"Está alguém consigo?\", "
+    "\"Consegue levantar-se?\", \"Consegue ouvir-me?\", \"Fique com calma\", \"Estou aqui consigo\". "
+    "Your own words about yourself stay feminine (obrigada, preocupada).\n")
+OPEN_Q_GENDERED = "Como é que o senhor está?"
+OPEN_Q_NEUTRAL = "Como é que se sente?"
+
+
 def replace_once(text, old, new, what):
     n = text.count(old)
     if n != 1:
@@ -215,6 +233,16 @@ def build_v4(base, info):
     return p
 
 
+def build_v5(base, info, first_name):
+    p = build_v4(base, info)
+    p = replace_once(p, ADDRESS_GENDERED, "", "gendered address")
+    p = replace_once(p, GENDER_PT, GENDER_NEUTRAL_PT, "gender-neutral rule")
+    p = replace_once(p, "Olá, senhor Manuel", f"Olá, {first_name}", "neutral opening")
+    if p.count(OPEN_Q_GENDERED) != 2:
+        raise SystemExit("open question: expected 2 occurrences — v3/v4 text changed?")
+    return p.replace(OPEN_Q_GENDERED, OPEN_Q_NEUTRAL)
+
+
 def main():
     base = BASE.read_text(encoding="utf-8")
     asis = replace_once(build_asis(base), INFO_EN, INFO_PT_MALE, "additional information")
@@ -234,6 +262,9 @@ def main():
         "prompt_ks833_ptpt_v4_female.txt": build_v4(base, INFO_PT_FEMALE).replace(
             "Olá, senhor Manuel", "Olá, senhora Maria").replace(
             "Como é que o senhor está?", "Como é que a senhora está?"),
+        # Same text apart from the name and the gender field: the gender must not change anything.
+        "prompt_ks833_ptpt_v5_male.txt": build_v5(base, INFO_PT_MALE, "Manuel"),
+        "prompt_ks833_ptpt_v5_female.txt": build_v5(base, INFO_PT_FEMALE, "Maria"),
     }
     for name, text in outputs.items():
         (PROMPTS / name).write_text(text, encoding="utf-8", newline="\n")

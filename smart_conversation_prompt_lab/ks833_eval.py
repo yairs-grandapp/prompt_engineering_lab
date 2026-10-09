@@ -57,6 +57,11 @@ BRAZILIAN = [
 # The prompt forbids promising that help is coming (CLOSE_POLITELY_GUIDELINE). Reported as a warning.
 PROMISES = re.compile(r"\b(algu[eé]m (ir[aá]|vai|v[eê]m|est[aá] a caminho)|a caminho|em breve|"
                       r"j[aá] (vai|v[eê]m) (algu[eé]m|ajuda)|ajuda (vai|est[aá]) a chegar|v[aã]o ajud[aá]-l[oa])\b")
+# v5 (gender-neutral): gendered address or agreement about the senior. VEGA's own feminine words
+# (obrigada, preocupada) are allowed, so they are not listed.
+GENDERED = re.compile(r"\b(senhor|senhora|dona|magoad[oa]s?|sozinh[oa]s?|cansad[oa]s?|ca[ií]d[oa]s?|"
+                      r"tranquil[oa]s?|descansad[oa]s?|assustad[oa]s?|ferid[oa]s?|"
+                      r"\w+-l[oa]s?)\b")
 INFORMAL = re.compile(r"\b(tu|estás|caíste|magoaste|consegues|podes|precisas|queres|te)\b")
 
 
@@ -81,6 +86,10 @@ def check_line(text, outcome, args):
     m = INFORMAL.search(low)
     if m:
         violations.append(f"informal tu: '{m.group(0)}'")
+    if args.neutral:
+        m = GENDERED.search(low)
+        if m:
+            violations.append(f"gendered: '{m.group(0)}'")
     if outcome != IN_PROGRESS:
         if text.strip().endswith("?"):
             violations.append("closing line ends on a question")
@@ -208,9 +217,13 @@ def main():
     ap.add_argument("--only", default=None, help="comma-separated scenario ids")
     ap.add_argument("--pt-phrases", action="store_true",
                     help="require the Portuguese mandated phrases on alert outcomes")
+    ap.add_argument("--neutral", action="store_true",
+                    help="flag gendered address/agreement about the senior (v5 gender-neutral prompts)")
     ap.add_argument("--label", required=True)
     ap.add_argument("--rescore", action="store_true",
                     help="re-score experiments/ks833/<label> against --inputs; no LLM calls")
+    ap.add_argument("--retry-errors", action="store_true",
+                    help="re-run only the ERROR conversations of experiments/ks833/<label>, sequentially")
     args = ap.parse_args()
     if args.rescore:
         rescore(args.label, args.inputs)
@@ -227,17 +240,30 @@ def main():
         keep = set(args.only.split(","))
         scenarios = [s for s in scenarios if s["id"] in keep]
 
+    out_dir = ROOT / "experiments" / "ks833" / args.label
+    if args.retry_errors:
+        # Re-run only the conversations that hit an API error (e.g. 429 rate limit) and merge them back.
+        data = json.loads((out_dir / "results.json").read_text(encoding="utf-8"))
+        by_id = {s["id"]: s for s in scenarios}
+        for k, r in enumerate(data["results"]):
+            if r["outcome"] == "ERROR":
+                data["results"][k] = run_one(client, args, template, by_id[r["scenario_id"]], r["run"])
+                print(f"retried {r['scenario_id']}#{r['run']}: {data['results'][k]['outcome']}")
+        (out_dir / "results.json").write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
+        write_summary(out_dir, data["meta"], data["results"])
+        return
+
     jobs = [(s, i) for s in scenarios for i in range(args.runs)]
     print(f"{args.label}: {len(scenarios)} scenarios x {args.runs} runs = {len(jobs)} conversations "
           f"({args.model}, temperature={args.temperature}, prompt={args.prompt})")
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         results = list(pool.map(lambda j: run_one(client, args, template, *j), jobs))
 
-    out_dir = ROOT / "experiments" / "ks833" / args.label
     out_dir.mkdir(parents=True, exist_ok=True)
     meta = {"label": args.label, "date": datetime.now().isoformat(timespec="seconds"),
             "model": args.model, "temperature": args.temperature, "prompt": args.prompt,
-            "inputs": args.inputs, "runs": args.runs, "pt_phrases": args.pt_phrases}
+            "inputs": args.inputs, "runs": args.runs, "pt_phrases": args.pt_phrases,
+            "neutral": args.neutral}
     (out_dir / "results.json").write_text(json.dumps({"meta": meta, "results": results}, indent=1,
                                                      ensure_ascii=False), encoding="utf-8")
     write_summary(out_dir, meta, results)
