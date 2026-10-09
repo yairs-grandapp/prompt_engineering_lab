@@ -1,0 +1,9 @@
+{
+ "label": "azure_first_pass",
+ "date": "2026-10-09T11:40:52",
+ "region": "westeurope",
+ "sdk": "1.52.0",
+ "characters": 3042,
+ "source_rate": 24000,
+ "hub_rate": 16000
+}
