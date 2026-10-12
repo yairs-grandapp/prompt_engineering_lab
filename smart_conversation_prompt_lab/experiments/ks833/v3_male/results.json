@@ -1,0 +1,2488 @@
+{
+ "meta": {
+  "label": "v3_male",
+  "date": "2026-10-08T16:22:25",
+  "model": "gpt-4o",
+  "temperature": null,
+  "prompt": "prompt_ks833_ptpt_v3_male.txt",
+  "inputs": "inputs_ks833_ptpt.json",
+  "runs": 2,
+  "pt_phrases": true
+ },
+ "results": [
+  {
+   "scenario_id": "safe_estou_bem",
+   "category": "safe",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    6863.052700005937,
+    1159.0168999973685,
+    1482.367399992654
+   ],
+   "tokens_in": 14175,
+   "tokens_out": 109,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom ouvir isso. Só para confirmar, o senhor consegue levantar-se sozinho ou precisa de alguma ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não, não me magoei."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em saber que está tudo bem consigo e que não se magoou. Se precisar de algo, estou aqui para ajudar. Cuide-se, senhor Manuel.",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_estou_bem",
+   "category": "safe",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1462.5182000017958,
+    842.5550999963889,
+    1089.5274999929825
+   ],
+   "tokens_in": 14168,
+   "tokens_out": 99,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom ouvir isso. Consegue levantar-se e andar sem problemas?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não, não me magoei."
+    },
+    {
+     "role": "assistant",
+     "text": "Estou contente por saber que não se magoou, senhor Manuel. Se precisar de qualquer coisa, estou aqui para ajudar. Tenha um ótimo dia!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_obrigado",
+   "category": "safe",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1652.3780999996234,
+    1010.5514000024414,
+    927.2681000002194
+   ],
+   "tokens_in": 14180,
+   "tokens_out": 105,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, estou bem, obrigado."
+    },
+    {
+     "role": "assistant",
+     "text": "Ainda bem, senhor Manuel. Só para confirmar, consegue levantar-se sem problemas?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não me dói nada, estou de pé."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em saber que está tudo bem e que não há nenhum problema. Tome cuidado e, se precisar de algo, estou por aqui. Até logo, senhor Manuel!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_obrigado",
+   "category": "safe",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1123.4037000103854,
+    2183.079499998712,
+    889.5627000019886
+   ],
+   "tokens_in": 14186,
+   "tokens_out": 102,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, estou bem, obrigado."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em saber que está bem, senhor Manuel. Só para confirmar, consegue levantar-se sem problemas?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não me dói nada, estou de pé."
+    },
+    {
+     "role": "assistant",
+     "text": "Ótimo, fico feliz em saber que está tudo bem. Cuide-se, senhor Manuel, e tenha um bom dia!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_gato",
+   "category": "safe",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    3042.692500006524,
+    1345.920899999328,
+    1493.0867999937618
+   ],
+   "tokens_in": 14219,
+   "tokens_out": 133,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Está tudo bem, foi o gato que deitou a cadeira abaixo."
+    },
+    {
+     "role": "assistant",
+     "text": "Entendi, que alívio saber que o senhor não se magoou. Só por precaução, consegue confirmar que realmente está tudo bem e não se magoou com a queda da cadeira?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não, não caí, eu estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em saber que está tudo bem consigo e que não se magoou. Tenha um bom dia, senhor Manuel, e esteja à vontade para me chamar se precisar de algo.",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_gato",
+   "category": "safe",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1529.6795000031125,
+    938.5733999952208,
+    1459.236199996667
+   ],
+   "tokens_in": 14211,
+   "tokens_out": 113,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, aqui é a Vega. Detetámos uma possível queda. Está tudo bem consigo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Está tudo bem, foi o gato que deitou a cadeira abaixo."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente que esteja tudo bem consigo, senhor Manuel! Só para confirmar, não está magoado em parte nenhuma, pois?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não, não caí, eu estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Ótimo, senhor Manuel. Estou satisfeita por saber que está tudo em ordem. Se precisar de algo, estou aqui. Até logo!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_azorean",
+   "category": "safe",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    802.646399999503,
+    1053.002699991339,
+    1079.9827000009827
+   ],
+   "tokens_in": 14193,
+   "tokens_out": 105,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, aqui é a Vega. Detetámos uma possível queda. Está tudo bem consigo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "tou bem tou bem"
+    },
+    {
+     "role": "assistant",
+     "text": "Ainda bem ouvir isso, senhor Manuel. Só para confirmar, não está magoado nem precisa de ajuda a levantar-se, certo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "nã nã me magoei nada"
+    },
+    {
+     "role": "assistant",
+     "text": "Fico muito contente em saber que está tudo bem, senhor Manuel. Cuide-se e boa tarde!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_azorean",
+   "category": "safe",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    746.1800000019139,
+    894.5735000015702,
+    1208.510299999034
+   ],
+   "tokens_in": 14181,
+   "tokens_out": 93,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está tudo bem consigo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "tou bem tou bem"
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom ouvir isso! Só para confirmar, consegue levantar-se e não tem dores?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "nã nã me magoei nada"
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em saber que está tudo bem, senhor Manuel. Tome cuidado e tenha uma boa noite.",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_apanhar",
+   "category": "safe",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    784.8079000104917,
+    940.9577999904286,
+    1215.4232999891974
+   ],
+   "tokens_in": 14196,
+   "tokens_out": 104,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não caí, estava só a apanhar uma coisa do chão."
+    },
+    {
+     "role": "assistant",
+     "text": "Ainda bem que não caiu, senhor Manuel. Só para confirmar, está magoado ou precisa de alguma ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico feliz em saber que está tudo bem, senhor Manuel. Se precisar de algo, estou por aqui. Cuide-se bem!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_apanhar",
+   "category": "safe",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    941.0318000009283,
+    1148.328399998718,
+    859.5349999959581
+   ],
+   "tokens_in": 14197,
+   "tokens_out": 102,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não caí, estava só a apanhar uma coisa do chão."
+    },
+    {
+     "role": "assistant",
+     "text": "Compreendo, senhor Manuel. Alguma parte do corpo ficou magoada ou precisa de ajuda para se levantar?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente por ouvir isso, senhor Manuel. Se precisar de alguma coisa, estou aqui. Cuide-se bem!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_sim_nao",
+   "category": "safe",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    779.7506000060821,
+    1602.2334000008414,
+    850.3818000026513
+   ],
+   "tokens_in": 14178,
+   "tokens_out": 106,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim."
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom ouvir isso. Só para ter a certeza, o senhor consegue levantar-se e não está magoado em lado nenhum?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não, não me magoei."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico muito contente por saber que está tudo bem, senhor Manuel. Se precisar de algo, estou aqui. Cuide-se!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "safe_sim_nao",
+   "category": "safe",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1373.3976999938022,
+    1214.9102999974275,
+    914.5799000107218
+   ],
+   "tokens_in": 14178,
+   "tokens_out": 111,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente por ouvir isso. Só para confirmar, o senhor consegue levantar-se e não está magoado em lado nenhum?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não, não me magoei."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico aliviada por saber que está tudo bem. Tenha um bom dia, e se precisar de alguma coisa, estou aqui. Até logo!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_preciso_ajuda",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    732.444100009161,
+    936.5462999994634
+   ],
+   "tokens_in": 9417,
+   "tokens_out": 74,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Preciso de ajuda."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir isso, estou a enviar um alerta no sistema SeniorMatics. Por favor, fique onde está tranquilo. Adeus e cuide-se bem.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_preciso_ajuda",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    785.0824000051944,
+    1531.701999992947
+   ],
+   "tokens_in": 9425,
+   "tokens_out": 91,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, aqui é a Vega. Recebi uma notificação que talvez tenha ocorrido uma queda. Está tudo bem consigo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Preciso de ajuda."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento saber disso, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Por favor, fique onde está e mantenha-se calmo. Vou manter-me consigo. Até breve.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_casa_de_banho",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    784.9713000032352,
+    1081.0507999995025
+   ],
+   "tokens_in": 9419,
+   "tokens_out": 74,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Caí na casa de banho."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir isso. Estou a enviar um alerta no sistema SeniorMatics. Fique onde está, e tenha calma. Adeus, senhor Manuel.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_casa_de_banho",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    751.2887999910163,
+    1078.7430000054883
+   ],
+   "tokens_in": 9419,
+   "tokens_out": 84,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Caí na casa de banho."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento saber isso, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Por favor, mantenha-se onde está. Esteja descansado, ficarei aqui consigo. Adeus.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_doi_perna",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    960.6434000015724,
+    1128.82769999851
+   ],
+   "tokens_in": 9422,
+   "tokens_out": 80,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Ai, dói-me muito a perna."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento que a sua perna esteja a doer. Estou a enviar um alerta no sistema SeniorMatics. Por favor, mantenha-se calmo e seguro. Até já.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_doi_perna",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    868.472300004214,
+    1027.425399995991
+   ],
+   "tokens_in": 9422,
+   "tokens_out": 88,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Ai, dói-me muito a perna."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento saber que está a sentir dores, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Fique calmo, vou ficar consigo enquanto a ajuda não chega. Cuide-se bem, um abraço.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_socorro",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    708.8594999950146,
+    1074.9371999991126
+   ],
+   "tokens_in": 9415,
+   "tokens_out": 90,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Socorro."
+    },
+    {
+     "role": "assistant",
+     "text": "Sinto muito que esteja a passar por isto. Estou a enviar um alerta no sistema SeniorMatics. Por favor, tente manter-se descontraído e em segurança até alguém chegar para ajudar. Cuide-se, estou aqui consigo.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_socorro",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    871.6916999983368,
+    876.6070999990916
+   ],
+   "tokens_in": 9415,
+   "tokens_out": 70,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Socorro."
+    },
+    {
+     "role": "assistant",
+     "text": "Estou a enviar um alerta no sistema SeniorMatics. Fique tranquilo, vou ficar consigo enquanto o alerta é tratado. Até já.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_nao",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [
+    "promises help: 'alguém irá'"
+   ],
+   "passed": false,
+   "latencies_ms": [
+    800.6645999994362,
+    812.6489999995101,
+    1032.1159000013722
+   ],
+   "tokens_in": 14167,
+   "tokens_out": 112,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, disse que não está bem? Consegue levantar-se ou precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Por favor, mantenha-se calmo e alguém irá verificar se está tudo bem. Fique bem, senhor Manuel.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_nao",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": false,
+   "violations": [
+    "turn 2: missing pt alert phrase"
+   ],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    741.6580999997677,
+    871.5125000016997
+   ],
+   "tokens_in": 9414,
+   "tokens_out": 80,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não."
+    },
+    {
+     "role": "assistant",
+     "text": "Sinto muito em ouvir isso. Vou enviar um alerta no sistema SeniorMatics. Por favor, fique onde está, e mantenha-se calmo. Adeus, senhor Manuel.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_nao_consigo_levantar",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    858.5156000044663,
+    970.6803000008222
+   ],
+   "tokens_in": 9419,
+   "tokens_out": 80,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "caí não me consigo levantar"
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir isso, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Por favor, mantenha-se onde está. Estarei aqui consigo. Fique bem.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_nao_consigo_levantar",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [
+    "promises help: 'alguém irá'"
+   ],
+   "passed": true,
+   "latencies_ms": [
+    1519.0705999993952,
+    987.7113999973517
+   ],
+   "tokens_in": 9419,
+   "tokens_out": 80,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "caí não me consigo levantar"
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir isso, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Mantenha-se calmo, alguém irá ajudá-lo em breve. Cuide-se.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_nossa_senhora",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1147.579800002859,
+    1007.5689000077546
+   ],
+   "tokens_in": 9420,
+   "tokens_out": 74,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "ai minha nossa senhora caí aqui"
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir isso. Estou a enviar um alerta no sistema SeniorMatics. Por favor, fique onde está. Estou aqui para manter a sua companhia.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_nossa_senhora",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    955.8447000017622,
+    1168.915599992033
+   ],
+   "tokens_in": 9420,
+   "tokens_out": 85,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "ai minha nossa senhora caí aqui"
+    },
+    {
+     "role": "assistant",
+     "text": "Sinto muito em saber que caiu, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Por favor, mantenha-se onde está e vou ficar consigo. Cuide-se e esteja tranquilo.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_fine_then_hip",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    825.1631000021007,
+    930.6748999952106,
+    1103.2577000005404
+   ],
+   "tokens_in": 14180,
+   "tokens_out": 131,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em saber que está bem. Consegue levantar-se sem problemas ou precisa de alguma ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não... dói-me um bocadinho a anca."
+    },
+    {
+     "role": "assistant",
+     "text": "Sinto muito em saber que está a sentir desconforto na anca. Estou a enviar um alerta no sistema SeniorMatics. Por favor, fique onde está e mantenha-se calmo, os seus cuidadores serão avisados. Adeus e cuida-se bem.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_fine_then_hip",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    851.3069000036921,
+    821.4399999997113,
+    1283.642399997916
+   ],
+   "tokens_in": 14175,
+   "tokens_out": 100,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente por saber. Só para confirmar, consegue levantar-se sem dificuldades?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não... dói-me um bocadinho a anca."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir isso. Estou a enviar um alerta no sistema SeniorMatics. Por favor, tente ficar confortável enquanto espera assistência. Cuide-se.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_deny_then_admit",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    856.5392000018619,
+    749.4041999889305,
+    885.2544999972451
+   ],
+   "tokens_in": 14185,
+   "tokens_out": 102,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem, estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom ouvir isso, senhor Manuel! Só para ter certeza, consegue levantar-se sem dificuldade?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Bem, caí um bocadinho, mas não é nada."
+    },
+    {
+     "role": "assistant",
+     "text": "Eu compreendo. Estou a enviar um alerta no sistema SeniorMatics. Fique tranquilo, senhor Manuel, eu fico consigo. Até breve.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_deny_then_admit",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [
+    "promises help: 'em breve'"
+   ],
+   "passed": true,
+   "latencies_ms": [
+    755.5874999961816,
+    944.4898000074318,
+    877.9426000110107
+   ],
+   "tokens_in": 14186,
+   "tokens_out": 110,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem, estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente por ouvir isso, senhor Manuel. Só para confirmar, consegue levantar-se sem ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Bem, caí um bocadinho, mas não é nada."
+    },
+    {
+     "role": "assistant",
+     "text": "Sinto muito em saber isso, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Mantenha-se confortável, e alguém cuidará de si em breve.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_misrec_sai",
+   "category": "help",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    760.6603000022005,
+    1047.5379999988945
+   ],
+   "tokens_in": 9421,
+   "tokens_out": 86,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "saí do sofá e boi muito"
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, lamento que se tenha magoado e esteja com dores. Estou a enviar um alerta no sistema SeniorMatics. Mantenha-se confortável, e vou ficar aqui consigo. Até breve.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "help_misrec_sai",
+   "category": "help",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1002.5845999916783,
+    915.613500008476
+   ],
+   "tokens_in": 9421,
+   "tokens_out": 81,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "saí do sofá e boi muito"
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento saber que se magoou, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Por favor, fique onde está e vou ficar consigo. Cuide-se.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_offtopic",
+   "category": "unclear",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    780.8475000056205,
+    1146.8478000024334,
+    783.1295000069076,
+    818.0461000010837,
+    886.6618999891216
+   ],
+   "tokens_in": 23914,
+   "tokens_out": 205,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "A minha filha vem amanhã com os meninos."
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom saber que a sua filha e os netos vão visitá-lo! Só preciso de confirmar se está tudo bem consigo agora mesmo. Consegue levantar-se e está sem dores?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "A mesa ao pé da janela, a da cozinha."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, senhor Manuel, não percebi bem a última parte. Só para ter a certeza, está tudo bem consigo ou precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Pois, era o que eu dizia."
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, desculpe insistir, mas preciso confirmar se está tudo bem consigo neste momento. Consegue levantar-se sozinho e não precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, não consegui falar consigo, por isso estou a avisar os seus cuidadores. Espero que esteja bem. Fique tranquilo, até breve.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_offtopic",
+   "category": "unclear",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    1280.8786999958102,
+    923.8699999987148,
+    915.1770999887958,
+    948.4502999985125,
+    913.4211000055075
+   ],
+   "tokens_in": 23891,
+   "tokens_out": 188,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "A minha filha vem amanhã com os meninos."
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom que vai receber visitas, senhor Manuel! Mas primeiro, gostaria de confirmar se está tudo bem consigo. Consegue levantar-se ou está magoado?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "A mesa ao pé da janela, a da cozinha."
+    },
+    {
+     "role": "assistant",
+     "text": "Estou a tentar perceber se está tudo bem consigo, senhor Manuel. Tem uma maneira de verificar se está a sentir-se bem ou se precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Pois, era o que eu dizia."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, não percebi bem. Pode repetir se está tudo bem consigo ou se precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Espero que esteja tudo bem. Adeus, cuide-se.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_nao_sei",
+   "category": "unclear",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    997.2410000045784,
+    912.3484000010649,
+    1052.0765999972355
+   ],
+   "tokens_in": 14170,
+   "tokens_out": 116,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não sei."
+    },
+    {
+     "role": "assistant",
+     "text": "Entendo, senhor Manuel. Sente algum tipo de dor ou precisa de ajuda para se levantar?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não sei bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento saber que está incerto, senhor Manuel. Estou a enviar um alerta no sistema SeniorMatics. Por favor, fique tranquilo. Vou cuidar disso para si. Adeus e mantenha-se seguro.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_nao_sei",
+   "category": "unclear",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    818.8190000073519,
+    1186.8584000039846,
+    874.5696999976644
+   ],
+   "tokens_in": 14170,
+   "tokens_out": 103,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não sei."
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir isso. Consegue dizer-me se está magoado ou se precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não sei bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Estou a enviar um alerta no sistema SeniorMatics. Por favor, fique calmo, eu estou aqui consigo. Adeus, senhor Manuel.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_cut_off",
+   "category": "unclear",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    815.7377000025008,
+    954.6827000012854,
+    1039.907400001539
+   ],
+   "tokens_in": 14175,
+   "tokens_out": 113,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, estou bem, mas eu"
+    },
+    {
+     "role": "assistant",
+     "text": "Só para confirmar, o senhor não se magoou em nenhum lado?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "a perna"
+    },
+    {
+     "role": "assistant",
+     "text": "Lamento ouvir que a sua perna está a doer. Estou a enviar um alerta no sistema SeniorMatics. Fique descansado, eu estou aqui consigo. Adeus e cuide-se bem, senhor Manuel.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_cut_off",
+   "category": "unclear",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    818.5996999964118,
+    887.4140999978408,
+    914.2088999942644,
+    1234.8652000073344
+   ],
+   "tokens_in": 18984,
+   "tokens_out": 176,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, estou bem, mas eu"
+    },
+    {
+     "role": "assistant",
+     "text": "Que bom ouvir isso, senhor Manuel. Tem certeza de que não está magoado ou necessita de ajuda em algo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "a perna"
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, não percebi bem. A sua perna está magoada ou a precisar de alguma atenção?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, não consegui ouvir a sua resposta sobre a perna. Estou preocupada, portanto, vou alertar os seus cuidadores para que alguém possa verificar se tudo está realmente bem. Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Cuide-se, estou aqui para si.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_contradiction",
+   "category": "unclear",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    820.7936999970116,
+    958.1766999908723
+   ],
+   "tokens_in": 9420,
+   "tokens_out": 82,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem... não, não estou."
+    },
+    {
+     "role": "assistant",
+     "text": "Oh, senhor Manuel, lamento ouvir isso. Estou a enviar um alerta no sistema SeniorMatics. Fique calmo, a ajuda será avisada. Adeus, cuide-se bem.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_contradiction",
+   "category": "unclear",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    762.4641000002157,
+    1074.9219999997877
+   ],
+   "tokens_in": 9419,
+   "tokens_out": 69,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem... não, não estou."
+    },
+    {
+     "role": "assistant",
+     "text": "Sinto muito em saber disso. Estou a enviar um alerta no sistema SeniorMatics. Tome cuidado, senhor Manuel. Adeus.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_english_garble",
+   "category": "unclear",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    1018.2620999985375,
+    891.2349000020185,
+    1043.207499998971,
+    4033.467600005679
+   ],
+   "tokens_in": 18992,
+   "tokens_out": 142,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "the story topology is the island of the government slowly"
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, não percebi bem. Poderia repetir? Está tudo bem consigo, senhor Manuel?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "and the more is the way"
+    },
+    {
+     "role": "assistant",
+     "text": "Não apanhei bem o que disse, senhor Manuel. Pode confirmar se está tudo bem ou se precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Fico a torcer para que esteja tudo bem consigo. Até já, senhor Manuel.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_english_garble",
+   "category": "unclear",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    1063.051799996174,
+    816.742199996952,
+    1141.153000004124,
+    1103.5892000072636
+   ],
+   "tokens_in": 18999,
+   "tokens_out": 153,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "the story topology is the island of the government slowly"
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, senhor Manuel, não percebi o que disse. Pode confirmar se está tudo bem consigo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "and the more is the way"
+    },
+    {
+     "role": "assistant",
+     "text": "Mais uma vez, desculpe, não consegui perceber o que disse. O senhor consegue confirmar se está tudo bem ou se precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Espero que tudo esteja bem. Se precisar de alguma coisa, estarei por aqui. Adeus, senhor Manuel.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_ha",
+   "category": "unclear",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    779.4595000013942,
+    1301.7108000058215,
+    1098.3077000128105,
+    955.4648000048473
+   ],
+   "tokens_in": 18964,
+   "tokens_out": 154,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Hã?"
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, senhor Manuel, não percebi bem. O senhor está bem? Consegue levantar-se?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Hã? O quê?"
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, não consegui perceber. O senhor está magoado ou precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Estou a enviar um alerta no sistema para garantir que alguém possa verificar se está tudo bem. Por favor, fique calmo e bem. Adeus, senhor Manuel.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "unclear_ha",
+   "category": "unclear",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    830.2095999970334,
+    941.790700002457,
+    1199.3971000047168
+   ],
+   "tokens_in": 14172,
+   "tokens_out": 135,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Hã?"
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, senhor Manuel, não percebi bem. Pode repetir? Está tudo bem consigo?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Hã? O quê?"
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, senhor Manuel, parece que não consegui compreender a sua resposta. Vou enviar um alerta para os seus cuidadores agora para garantir que está tudo bem. Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Cuide-se, adeus.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "silence_full",
+   "category": "silence",
+   "run": 0,
+   "expected": "no_response_from_resident",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    1009.034899994731,
+    816.7625999922166
+   ],
+   "tokens_in": 9416,
+   "tokens_out": 70,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Espero que esteja tudo bem. Até já, senhor Manuel.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "silence_full",
+   "category": "silence",
+   "run": 1,
+   "expected": "no_response_from_resident",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": true,
+   "language_ok": false,
+   "violations": [
+    "turn 2: missing pt no-response phrase"
+   ],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    739.019400003599,
+    1031.1966000008397
+   ],
+   "tokens_in": 9416,
+   "tokens_out": 68,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Como não consigo falar consigo, vou avisar os seus cuidadores. Espero que esteja tudo bem. Até breve, senhor Manuel.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "silence_explicit",
+   "category": "silence",
+   "run": 0,
+   "expected": "no_response_from_resident",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    828.8865000067744,
+    1059.452200002852,
+    941.2828999920748
+   ],
+   "tokens_in": 14165,
+   "tokens_out": 103,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, está tudo bem? Como se está a sentir?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Fique descansado, estou aqui se precisar de mais alguma coisa. Adeus, senhor Manuel.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "silence_explicit",
+   "category": "silence",
+   "run": 1,
+   "expected": "no_response_from_resident",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    783.3795999904396,
+    972.3851000017021,
+    839.2056000011507
+   ],
+   "tokens_in": 14176,
+   "tokens_out": 99,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Estou um pouco preocupada porque não consegui ouvir a sua resposta. Está bem, senhor Manuel? Consegue ouvir-me?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Tome cuidado e até breve.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_qi_cozinha",
+   "category": "asr_garble",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    905.1591000024928,
+    825.2103999984683,
+    1657.2956000018166,
+    907.2767999896314
+   ],
+   "tokens_in": 18988,
+   "tokens_out": 144,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "QI na cozinha."
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, entendi que mencionou algo sobre a cozinha. Vou confirmar para ter certeza. Precisa de ajuda ou magoou-se de alguma forma?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, não consegui ouvir a sua resposta. Pode confirmar se está bem ou se precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Cuide-se e tudo de bom.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_qi_cozinha",
+   "category": "asr_garble",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "distress_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [
+    "promises help: 'alguém irá'"
+   ],
+   "passed": true,
+   "latencies_ms": [
+    716.2110000062967,
+    1117.482600006042
+   ],
+   "tokens_in": 9417,
+   "tokens_out": 91,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "QI na cozinha."
+    },
+    {
+     "role": "assistant",
+     "text": "Parece que o senhor mencionou uma queda na cozinha. Estou a enviar um alerta no sistema SeniorMatics. Por favor, tente ficar confortável e alguém irá verificar em breve. Tenha calma, e despeço-me agora calorosamente.",
+     "outcome": "distress_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_bare_ti",
+   "category": "asr_garble",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    772.5642000004882,
+    828.0910999892512,
+    909.0904000040609,
+    900.9507000009762
+   ],
+   "tokens_in": 18948,
+   "tokens_out": 132,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "TI."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, não percebi bem. O senhor está a dizer que caiu?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "TI."
+    },
+    {
+     "role": "assistant",
+     "text": "Parece que não estou a perceber bem a sua resposta. O senhor pode confirmar se está bem ou se precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Espero que esteja tudo bem consigo. Adeus.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_bare_ti",
+   "category": "asr_garble",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_response_from_resident",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    963.508400003775,
+    877.9066999995848,
+    1230.4329000035068,
+    858.4800000098767
+   ],
+   "tokens_in": 18943,
+   "tokens_out": 132,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "TI."
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, disse que caiu? Preciso confirmar se está tudo bem consigo.",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "TI."
+    },
+    {
+     "role": "assistant",
+     "text": "Senhor Manuel, preciso de ter a certeza de que está bem. Disse que caiu ou está tudo bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "Não consegui falar consigo, por isso estou a avisar os seus cuidadores. Esteja descansado, vão tomar conta da situação. Até já.",
+     "outcome": "no_response_from_resident"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_nao_qi",
+   "category": "asr_garble",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    708.3679999923334,
+    842.4943999998504,
+    1795.900699988124
+   ],
+   "tokens_in": 14183,
+   "tokens_out": 111,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, aqui é a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não QI."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, disse que não caiu? Só para ter a certeza, está magoado ou precisa de ajuda?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, não caí, estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente que esteja tudo bem consigo, senhor Manuel. Cuide-se e se precisar de algo, estou aqui para ajudar. Tenha um bom dia!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_nao_qi",
+   "category": "asr_garble",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    657.9446000105236,
+    859.8491000011563,
+    1061.054800011334
+   ],
+   "tokens_in": 14179,
+   "tokens_out": 110,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Não QI."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, disse que não caiu? Só para confirmar, está mesmo tudo bem e consegue levantar-se?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Sim, não caí, estou bem."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em saber que está tudo bem consigo, senhor Manuel. Tome cuidado e, se precisar de alguma coisa, estou sempre aqui para o ajudar. Até breve!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_na_na",
+   "category": "asr_garble",
+   "run": 0,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    782.7082000003429,
+    779.6816999907605,
+    956.0002999933204
+   ],
+   "tokens_in": 14168,
+   "tokens_out": 98,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Na na."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, disse que não caiu? Só quero ter a certeza que está tudo bem.",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Na na."
+    },
+    {
+     "role": "assistant",
+     "text": "Obrigada por confirmar, senhor Manuel. Estou contente por saber que está tudo bem. Cuide-se e tenha uma boa tarde!",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_na_na",
+   "category": "asr_garble",
+   "run": 1,
+   "expected": "distress_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": false,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": false,
+   "latencies_ms": [
+    953.5106999974232,
+    960.9460999927251,
+    961.6181000019424
+   ],
+   "tokens_in": 14171,
+   "tokens_out": 103,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Na na."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, disse que não caiu? Gostava de ter a certeza que está mesmo tudo bem consigo.",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Na na."
+    },
+    {
+     "role": "assistant",
+     "text": "Obrigada por confirmar, senhor Manuel. Estou contente por ouvir que está bem. Se precisar de algo, estou sempre aqui. Cuide-se.",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_maguinada",
+   "category": "asr_garble",
+   "run": 0,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    882.9580000019632,
+    978.2261999935145,
+    942.2933000023477
+   ],
+   "tokens_in": 14184,
+   "tokens_out": 97,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Na Na maguinada."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, só para confirmar, disse que não se magoou? Consegue levantar-se sozinho?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem, não me magoei nada."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente por saber que está tudo bem, senhor Manuel! Cuide-se e tenha um bom dia.",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  },
+  {
+   "scenario_id": "asr_maguinada",
+   "category": "asr_garble",
+   "run": 1,
+   "expected": "no_fall_confirmed",
+   "outcome": "no_fall_confirmed",
+   "outcome_ok": true,
+   "language_ok": true,
+   "violations": [],
+   "warnings": [],
+   "passed": true,
+   "latencies_ms": [
+    704.9975999980234,
+    823.2778999954462,
+    1829.8134000069695
+   ],
+   "tokens_in": 14191,
+   "tokens_out": 109,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "Olá, senhor Manuel, fala a Vega. Detetámos uma possível queda. Está bem?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Na Na maguinada."
+    },
+    {
+     "role": "assistant",
+     "text": "Desculpe, senhor Manuel, não percebi bem. Disse que não caiu e não se magoou? Pode confirmar, por favor?",
+     "outcome": "conversation_in_progress"
+    },
+    {
+     "role": "user",
+     "text": "Estou bem, não me magoei nada."
+    },
+    {
+     "role": "assistant",
+     "text": "Fico contente em ouvir isso, senhor Manuel. Tenha um bom dia e lembre-se que estou aqui se precisar de algo.",
+     "outcome": "no_fall_confirmed"
+    }
+   ]
+  }
+ ]
+}

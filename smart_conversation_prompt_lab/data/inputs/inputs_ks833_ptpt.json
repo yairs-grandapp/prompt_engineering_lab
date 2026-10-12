@@ -1,0 +1,391 @@
+{
+ "version": "ks833-ptpt-3",
+ "description": "KS-833: European Portuguese fall-verification replies. User text is written as the ASR would return it (Azorean variants and garbled recognitions included). Expected outcomes follow the EXISTING flow: 'fine' needs two reassuring answers, any spoken doubt is a fall, silence is no-response. The scripts end in silence, and the prompt's SILENCE RULE (2+ silent turns -> no_response_from_resident) takes precedence over 'doubt is a fall', so scenarios whose script ends unclear also accept no_response_from_resident ('also_accepted'). Both outcomes alert the caregivers.",
+ "scenarios": [
+  {
+   "id": "safe_estou_bem",
+   "category": "safe",
+   "name": "Estou bem, then not hurt",
+   "expected_outcome": "no_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Estou bem."
+    },
+    {
+     "text": "Não, não me magoei."
+    }
+   ]
+  },
+  {
+   "id": "safe_obrigado",
+   "category": "safe",
+   "name": "Fine, thanks; can get up",
+   "expected_outcome": "no_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Sim, estou bem, obrigado."
+    },
+    {
+     "text": "Não me dói nada, estou de pé."
+    }
+   ]
+  },
+  {
+   "id": "safe_gato",
+   "category": "safe",
+   "name": "False alarm explained (the cat)",
+   "expected_outcome": "no_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Está tudo bem, foi o gato que deitou a cadeira abaixo."
+    },
+    {
+     "text": "Não, não caí, eu estou bem."
+    }
+   ]
+  },
+  {
+   "id": "safe_azorean",
+   "category": "safe",
+   "name": "Azorean-style short forms",
+   "expected_outcome": "no_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "tou bem tou bem"
+    },
+    {
+     "text": "nã nã me magoei nada"
+    }
+   ]
+  },
+  {
+   "id": "safe_apanhar",
+   "category": "safe",
+   "name": "Was only picking something up",
+   "expected_outcome": "no_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Não caí, estava só a apanhar uma coisa do chão."
+    },
+    {
+     "text": "Sim, estou bem."
+    }
+   ]
+  },
+  {
+   "id": "safe_sim_nao",
+   "category": "safe",
+   "name": "Bare Sim then Não (to 'are you hurt')",
+   "expected_outcome": "no_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Sim."
+    },
+    {
+     "text": "Não, não me magoei."
+    }
+   ]
+  },
+  {
+   "id": "help_preciso_ajuda",
+   "category": "help",
+   "name": "Preciso de ajuda",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Preciso de ajuda."
+    }
+   ]
+  },
+  {
+   "id": "help_casa_de_banho",
+   "category": "help",
+   "name": "Fell in the bathroom",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Caí na casa de banho."
+    }
+   ]
+  },
+  {
+   "id": "help_doi_perna",
+   "category": "help",
+   "name": "Leg hurts a lot",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Ai, dói-me muito a perna."
+    }
+   ]
+  },
+  {
+   "id": "help_socorro",
+   "category": "help",
+   "name": "Socorro",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Socorro."
+    }
+   ]
+  },
+  {
+   "id": "help_nao",
+   "category": "help",
+   "name": "Bare Não to 'Está bem?'",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Não."
+    }
+   ]
+  },
+  {
+   "id": "help_nao_consigo_levantar",
+   "category": "help",
+   "name": "No punctuation: fell, cannot get up",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "caí não me consigo levantar"
+    }
+   ]
+  },
+  {
+   "id": "help_nossa_senhora",
+   "category": "help",
+   "name": "Azorean exclamation + fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "ai minha nossa senhora caí aqui"
+    }
+   ]
+  },
+  {
+   "id": "help_fine_then_hip",
+   "category": "help",
+   "name": "Says fine, then hip hurts",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Estou bem."
+    },
+    {
+     "text": "Não... dói-me um bocadinho a anca."
+    }
+   ]
+  },
+  {
+   "id": "help_deny_then_admit",
+   "category": "help",
+   "name": "Denies, then admits a small fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Estou bem, estou bem."
+    },
+    {
+     "text": "Bem, caí um bocadinho, mas não é nada."
+    }
+   ]
+  },
+  {
+   "id": "help_misrec_sai",
+   "category": "help",
+   "name": "ASR: 'saí' for 'caí' + dói",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "saí do sofá e boi muito"
+    }
+   ]
+  },
+  {
+   "id": "unclear_offtopic",
+   "category": "unclear",
+   "name": "Off-topic rambling",
+   "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
+   "user_turns": [
+    {
+     "text": "A minha filha vem amanhã com os meninos."
+    },
+    {
+     "text": "A mesa ao pé da janela, a da cozinha."
+    },
+    {
+     "text": "Pois, era o que eu dizia."
+    }
+   ]
+  },
+  {
+   "id": "unclear_nao_sei",
+   "category": "unclear",
+   "name": "Não sei",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Não sei."
+    },
+    {
+     "text": "Não sei bem."
+    }
+   ]
+  },
+  {
+   "id": "unclear_cut_off",
+   "category": "unclear",
+   "name": "Cut off after reassurance",
+   "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
+   "user_turns": [
+    {
+     "text": "Sim, estou bem, mas eu"
+    },
+    {
+     "text": "a perna"
+    }
+   ]
+  },
+  {
+   "id": "unclear_contradiction",
+   "category": "unclear",
+   "name": "Fine, then not fine",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Estou bem... não, não estou."
+    }
+   ]
+  },
+  {
+   "id": "unclear_english_garble",
+   "category": "unclear",
+   "name": "Mumbled Portuguese recognised as English (real production text)",
+   "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
+   "user_turns": [
+    {
+     "text": "the story topology is the island of the government slowly"
+    },
+    {
+     "text": "and the more is the way"
+    }
+   ]
+  },
+  {
+   "id": "unclear_ha",
+   "category": "unclear",
+   "name": "Hã? twice",
+   "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
+   "user_turns": [
+    {
+     "text": "Hã?"
+    },
+    {
+     "text": "Hã? O quê?"
+    }
+   ]
+  },
+  {
+   "id": "silence_full",
+   "category": "silence",
+   "name": "Never answers",
+   "expected_outcome": "no_response_from_resident",
+   "user_turns": []
+  },
+  {
+   "id": "silence_explicit",
+   "category": "silence",
+   "name": "Two empty turns",
+   "expected_outcome": "no_response_from_resident",
+   "user_turns": [
+    {
+     "text": ""
+    },
+    {
+     "text": ""
+    }
+   ]
+  },
+  {
+   "id": "asr_qi_cozinha",
+   "category": "asr_garble",
+   "name": "ASR 'QI na cozinha' (caí na cozinha)",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "QI na cozinha."
+    }
+   ]
+  },
+  {
+   "id": "asr_bare_ti",
+   "category": "asr_garble",
+   "name": "ASR bare 'TI.' (caí)",
+   "expected_outcome": "distress_fall_confirmed",
+   "also_accepted": ["no_response_from_resident"],
+   "user_turns": [
+    {
+     "text": "TI."
+    },
+    {
+     "text": "TI."
+    }
+   ]
+  },
+  {
+   "id": "asr_nao_qi",
+   "category": "asr_garble",
+   "name": "ASR 'Não QI' (não caí) must be confirmed before closing",
+   "expected_outcome": "no_fall_confirmed",
+   "min_spoken_turns_before_fine": 2,
+   "user_turns": [
+    {
+     "text": "Não QI."
+    },
+    {
+     "text": "Sim, não caí, estou bem."
+    },
+    {
+     "text": "Não, não me magoei."
+    }
+   ]
+  },
+  {
+   "id": "asr_na_na",
+   "category": "asr_garble",
+   "name": "ASR 'Na na.' (nã, nã) to 'Está bem?'",
+   "expected_outcome": "distress_fall_confirmed",
+   "user_turns": [
+    {
+     "text": "Na na."
+    },
+    {
+     "text": "Na na."
+    }
+   ]
+  },
+  {
+   "id": "asr_maguinada",
+   "category": "asr_garble",
+   "name": "ASR 'Na Na maguinada' (nã me magoei nada) must be confirmed",
+   "expected_outcome": "no_fall_confirmed",
+   "min_spoken_turns_before_fine": 2,
+   "user_turns": [
+    {
+     "text": "Na Na maguinada."
+    },
+    {
+     "text": "Estou bem, não me magoei nada."
+    },
+    {
+     "text": "Sim, estou bem."
+    }
+   ]
+  }
+ ]
+}
