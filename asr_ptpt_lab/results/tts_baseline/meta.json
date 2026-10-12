@@ -1,0 +1,32 @@
+{
+ "label": "tts_baseline",
+ "date": "2026-10-08T14:45:00",
+ "language": "pt-PT",
+ "speakers": [
+  "tts_pt-PT-RaquelNeural"
+ ],
+ "boost": "both",
+ "realtime": false,
+ "boost_phrases": [
+  "caí",
+  "queda",
+  "dói",
+  "dói-me",
+  "dores",
+  "magoei",
+  "magoei-me",
+  "ajuda",
+  "preciso de ajuda",
+  "socorro",
+  "não estou bem",
+  "estou bem",
+  "está tudo bem",
+  "não caí",
+  "levantar",
+  "sangue",
+  "partido",
+  "tonturas",
+  "sim",
+  "não"
+ ]
+}

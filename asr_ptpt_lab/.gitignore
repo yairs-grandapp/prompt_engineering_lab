@@ -1,0 +1,5 @@
+.venv/
+.env
+__pycache__/
+# Voice recordings of real people stay local — share them deliberately, not through git.
+recordings/

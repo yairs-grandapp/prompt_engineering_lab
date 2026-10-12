@@ -1,0 +1,42 @@
+{
+ "label": "v2_w15",
+ "date": "2026-10-08T15:14:23",
+ "language": "pt-PT",
+ "speakers": [
+  "tts_pt-PT-DuarteNeural",
+  "tts_pt-PT-RaquelNeural"
+ ],
+ "boost": "on",
+ "realtime": false,
+ "boost_phrases": [
+  "caí",
+  "eu caí",
+  "já caí",
+  "caí no chão",
+  "não caí",
+  "queda",
+  "dói",
+  "dói-me",
+  "dores",
+  "magoei",
+  "magoei-me",
+  "não me magoei",
+  "ajuda",
+  "preciso de ajuda",
+  "socorro",
+  "não estou bem",
+  "estou bem",
+  "tou bem",
+  "está tudo bem",
+  "levantar",
+  "não consigo levantar",
+  "sangue",
+  "partido",
+  "tonturas",
+  "sim",
+  "não",
+  "nã",
+  "pois"
+ ],
+ "weight": 1.5
+}

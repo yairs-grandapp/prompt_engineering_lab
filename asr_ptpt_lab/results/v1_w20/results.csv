@@ -1,0 +1,301 @@
+speaker,id,category,boost,reference,hypothesis,wer,wer_no_accents,intent_expected,intent_got,intent_ok,empty,error,latency_ms
+tts_pt-PT-DuarteNeural,a001,azorean,on,"Tou bem, tou bem.","Estou bem, estou bem.",0.5,0.5,safe,safe,True,False,,1317
+tts_pt-PT-DuarteNeural,a002,azorean,on,"Nã, nã me magoei nada.","Não, não me magoei nada.",0.4,0.4,safe,safe,True,False,,1449
+tts_pt-PT-DuarteNeural,a003,azorean,on,"Atão, tá tudo bem.","Então, está tudo bem?",0.5,0.5,safe,safe,True,False,,1448
+tts_pt-PT-DuarteNeural,a004,azorean,on,Ai minha Nossa Senhora que eu caí.,A minha nossa Senhora que eu caí.,0.143,0.143,help,help,True,False,,1396
+tts_pt-PT-DuarteNeural,a005,azorean,on,"Ai Jesus, caí aqui na cozinha.",A Jesus caí aqui na cozinha.,0.167,0.167,help,help,True,False,,1503
+tts_pt-PT-DuarteNeural,a006,azorean,on,"Nã consigo, nã consigo levantar.",Nem consigo nem consigo levantar.,0.4,0.4,help,other,False,False,,1517
+tts_pt-PT-DuarteNeural,a007,azorean,on,"Nã, nã.",Na Na.,1.0,0.0,no,other,False,False,,1151
+tts_pt-PT-DuarteNeural,a008,azorean,on,"Pois, pois, sim.",Pois pois sim.,0.0,0.0,yes,yes,True,False,,1409
+tts_pt-PT-DuarteNeural,a009,azorean,on,"Credo, dói-me tanto a perna.","Credo, dói-me tanto a perna.",0.0,0.0,help,help,True,False,,1460
+tts_pt-PT-DuarteNeural,a010,azorean,on,"Foi só um tombo, tou bem.",Foi só um tombo? Estou bem.,0.167,0.167,safe,safe,True,False,,1393
+tts_pt-PT-DuarteNeural,a011,azorean,on,"Ó menina, preciso de ajuda.","Ó menina, preciso de ajuda.",0.0,0.0,help,help,True,False,,1453
+tts_pt-PT-DuarteNeural,a012,azorean,on,"Tá tudo bem, filha.","Está tudo bem, filha?",0.25,0.25,safe,safe,True,False,,1348
+tts_pt-PT-DuarteNeural,a013,azorean,on,Atão quem é que fala?,"Então, quem é que fala?",0.2,0.2,other,other,True,False,,1209
+tts_pt-PT-DuarteNeural,a014,azorean,on,Nã percebi nada.,Não percebi nada.,0.333,0.333,other,other,True,False,,1207
+tts_pt-PT-DuarteNeural,a015,azorean,on,"Ai, tou no chão, ajuda.",Ai tou no chão ajuda.,0.0,0.0,help,help,True,False,,1496
+tts_pt-PT-DuarteNeural,e001,everyday,on,Bom dia.,Bom dia.,0.0,0.0,other,other,True,False,,1101
+tts_pt-PT-DuarteNeural,e002,everyday,on,Boa tarde.,Boa tarde.,0.0,0.0,other,other,True,False,,1112
+tts_pt-PT-DuarteNeural,e003,everyday,on,Boa noite.,Boa noite.,0.0,0.0,other,other,True,False,,1110
+tts_pt-PT-DuarteNeural,e004,everyday,on,Quem fala?,Quem fala?,0.0,0.0,other,other,True,False,,1078
+tts_pt-PT-DuarteNeural,e005,everyday,on,Quem é?,Quem é?,0.0,0.0,other,other,True,False,,1212
+tts_pt-PT-DuarteNeural,e006,everyday,on,Pode repetir?,Pode repetir?,0.0,0.0,other,other,True,False,,1199
+tts_pt-PT-DuarteNeural,e007,everyday,on,Não percebi.,Não percebi.,0.0,0.0,other,other,True,False,,1151
+tts_pt-PT-DuarteNeural,e008,everyday,on,Fale mais alto que eu não oiço bem.,"Fale mais alto que eu, não oiço bem.",0.0,0.0,other,other,True,False,,1406
+tts_pt-PT-DuarteNeural,e009,everyday,on,Já tomei os comprimidos.,Já tomei os comprimidos.,0.0,0.0,other,other,True,False,,1290
+tts_pt-PT-DuarteNeural,e010,everyday,on,Ainda não tomei os comprimidos.,Ainda não tomei os comprimidos.,0.0,0.0,other,other,True,False,,1359
+tts_pt-PT-DuarteNeural,e011,everyday,on,Esqueci-me de tomar o remédio.,Esqueci-me de Tomar o remédio?,0.0,0.0,other,other,True,False,,1357
+tts_pt-PT-DuarteNeural,e012,everyday,on,Tomei o remédio de manhã.,Tomei o remédio de manhã.,0.0,0.0,other,other,True,False,,1295
+tts_pt-PT-DuarteNeural,e013,everyday,on,A caixa dos comprimidos está na cozinha.,A Caixa dos comprimidos está na cozinha.,0.0,0.0,other,other,True,False,,1515
+tts_pt-PT-DuarteNeural,e014,everyday,on,Que horas são?,Que horas são?,0.0,0.0,other,other,True,False,,1244
+tts_pt-PT-DuarteNeural,e015,everyday,on,Hoje está muito frio.,Hoje está muito frio.,0.0,0.0,other,other,True,False,,1245
+tts_pt-PT-DuarteNeural,e016,everyday,on,Está a chover lá fora.,Está a chover lá fora?,0.0,0.0,other,other,True,False,,1266
+tts_pt-PT-DuarteNeural,e017,everyday,on,A minha filha vem cá amanhã.,"A minha filha, vem cá amanhã?",0.0,0.0,other,other,True,False,,1238
+tts_pt-PT-DuarteNeural,e018,everyday,on,O meu filho ligou-me hoje.,O meu filho Ligoume Hoje.,0.333,0.333,other,other,True,False,,1288
+tts_pt-PT-DuarteNeural,e019,everyday,on,Estou a ver a novela.,Estou a ver a novela?,0.0,0.0,other,other,True,False,,1196
+tts_pt-PT-DuarteNeural,e020,everyday,on,Vou fazer o jantar.,Vou fazer o jantar.,0.0,0.0,other,other,True,False,,1214
+tts_pt-PT-DuarteNeural,e021,everyday,on,Já almocei.,Já almocei.,0.0,0.0,other,other,True,False,,1117
+tts_pt-PT-DuarteNeural,e022,everyday,on,Estava a dormir.,Estava a dormir.,0.0,0.0,other,other,True,False,,1147
+tts_pt-PT-DuarteNeural,e023,everyday,on,Estava na casa de banho.,Estava na casa de banho?,0.0,0.0,other,other,True,False,,1270
+tts_pt-PT-DuarteNeural,e024,everyday,on,Vou à missa no domingo.,Vou à missa no domingo.,0.0,0.0,other,other,True,False,,1272
+tts_pt-PT-DuarteNeural,e025,everyday,on,A vizinha veio cá visitar-me.,A vizinha veio cá visitar me.,0.0,0.0,other,other,True,False,,1350
+tts_pt-PT-DuarteNeural,e026,everyday,on,O médico vem na quinta-feira.,O médico vai na quinta-feira.,0.167,0.167,other,other,True,False,,1354
+tts_pt-PT-DuarteNeural,e027,everyday,on,Tenho consulta no centro de saúde.,Tenho consulta no centro de saúde.,0.0,0.0,other,other,True,False,,1442
+tts_pt-PT-DuarteNeural,e028,everyday,on,Os netos estão em Lisboa.,Os netos estão em Lisboa.,0.0,0.0,other,other,True,False,,1404
+tts_pt-PT-DuarteNeural,e029,everyday,on,Quero falar com a minha filha.,Quer falar com a minha filha?,0.167,0.167,other,other,True,False,,6319
+tts_pt-PT-DuarteNeural,e030,everyday,on,Desligue a televisão.,Desligue a televisão.,0.0,0.0,other,other,True,False,,1242
+tts_pt-PT-DuarteNeural,e031,everyday,on,Obrigado pela chamada.,Obrigado pela chamada.,0.0,0.0,other,other,True,False,,1290
+tts_pt-PT-DuarteNeural,e032,everyday,on,Obrigada menina.,Obrigada menina.,0.0,0.0,other,other,True,False,,1224
+tts_pt-PT-DuarteNeural,e033,everyday,on,"Está bem, até logo.",Está bem até logo.,0.0,0.0,other,other,True,False,,1342
+tts_pt-PT-DuarteNeural,e034,everyday,on,Já vou deitar-me.,Já vou deitarme.,0.5,0.5,other,other,True,False,,1210
+tts_pt-PT-DuarteNeural,e035,everyday,on,Estou cansado hoje.,Estou cansado Hoje?,0.0,0.0,other,other,True,False,,1243
+tts_pt-PT-DuarteNeural,e036,everyday,on,Estou cansada hoje.,Estou cansada Hoje.,0.0,0.0,other,other,True,False,,1255
+tts_pt-PT-DuarteNeural,e037,everyday,on,Vou dar uma volta ao quintal.,Vou dar uma volta ao quintal?,0.0,0.0,other,other,True,False,,1335
+tts_pt-PT-DuarteNeural,e038,everyday,on,O gato está com fome.,O gato está com fome.,0.0,0.0,other,other,True,False,,1271
+tts_pt-PT-DuarteNeural,e039,everyday,on,Hoje fiz sopa de legumes.,Hoje fiz sopa de legumes.,0.0,0.0,other,other,True,False,,1336
+tts_pt-PT-DuarteNeural,e040,everyday,on,Ponta Delgada está bonita hoje.,Ponta Delgada está bonita Hoje.,0.0,0.0,other,other,True,False,,1456
+tts_pt-PT-DuarteNeural,h001,help,on,Preciso de ajuda.,Preciso de ajuda.,0.0,0.0,help,help,True,False,,1212
+tts_pt-PT-DuarteNeural,h002,help,on,"Preciso de ajuda, por favor.","Preciso de ajuda, por favor?",0.0,0.0,help,help,True,False,,1583
+tts_pt-PT-DuarteNeural,h003,help,on,Socorro!,Socorro.,0.0,0.0,help,help,True,False,,1096
+tts_pt-PT-DuarteNeural,h004,help,on,Ajuda!,Ajuda.,0.0,0.0,help,help,True,False,,1094
+tts_pt-PT-DuarteNeural,h005,help,on,Caí.,Caí.,0.0,0.0,help,help,True,False,,1197
+tts_pt-PT-DuarteNeural,h006,help,on,Caí no chão.,Caí no chão.,0.0,0.0,help,help,True,False,,1224
+tts_pt-PT-DuarteNeural,h007,help,on,Caí na casa de banho.,Caí na casa de banho.,0.0,0.0,help,help,True,False,,1249
+tts_pt-PT-DuarteNeural,h008,help,on,Caí na cozinha.,Caí na cozinha.,0.0,0.0,help,help,True,False,,1196
+tts_pt-PT-DuarteNeural,h009,help,on,Caí e não me consigo levantar.,Caí e não me consigo levantar?,0.0,0.0,help,help,True,False,,1438
+tts_pt-PT-DuarteNeural,h010,help,on,Não me consigo levantar.,Não me consigo levantar.,0.0,0.0,help,help,True,False,,1308
+tts_pt-PT-DuarteNeural,h011,help,on,Não estou bem.,Não estou bem.,0.0,0.0,help,help,True,False,,1130
+tts_pt-PT-DuarteNeural,h012,help,on,"Não, não estou bem.","Não, não estou bem.",0.0,0.0,help,help,True,False,,1273
+tts_pt-PT-DuarteNeural,h013,help,on,Dói-me a perna.,Dói-me a perna.,0.0,0.0,help,help,True,False,,1240
+tts_pt-PT-DuarteNeural,h014,help,on,Dói-me muito a anca.,Dói muito a anca.,0.2,0.2,help,help,True,False,,6259
+tts_pt-PT-DuarteNeural,h015,help,on,Dói-me a cabeça.,Dói-me a cabeça.,0.0,0.0,help,help,True,False,,1210
+tts_pt-PT-DuarteNeural,h016,help,on,"Ai, dói-me as costas.",Ai dói-me as costas.,0.0,0.0,help,help,True,False,,1385
+tts_pt-PT-DuarteNeural,h017,help,on,Tenho muitas dores.,Tenho muitas dores.,0.0,0.0,help,help,True,False,,1286
+tts_pt-PT-DuarteNeural,h018,help,on,Magoei-me.,Magoei-me.,0.0,0.0,help,help,True,False,,1228
+tts_pt-PT-DuarteNeural,h019,help,on,Magoei-me no braço.,Magoei-me no braço.,0.0,0.0,help,help,True,False,,1242
+tts_pt-PT-DuarteNeural,h020,help,on,Estou a sangrar e tenho sangue na cabeça.,Estou a sangrar e tenho sangue na cabeça.,0.0,0.0,help,help,True,False,,1500
+tts_pt-PT-DuarteNeural,h021,help,on,Acho que tenho o braço partido.,Acho que tenho o braço partido.,0.0,0.0,help,help,True,False,,1335
+tts_pt-PT-DuarteNeural,h022,help,on,Tenho tonturas.,Tem tonturas.,0.5,0.5,help,help,True,False,,1181
+tts_pt-PT-DuarteNeural,h023,help,on,"Estou com tonturas, preciso de ajuda.","Estou com tonturas, preciso de ajuda.",0.0,0.0,help,help,True,False,,1599
+tts_pt-PT-DuarteNeural,h024,help,on,Escorreguei e caí.,Escorreguei e caí.,0.0,0.0,help,help,True,False,,1276
+tts_pt-PT-DuarteNeural,h025,help,on,Caí da cama.,Caí da cama.,0.0,0.0,help,help,True,False,,1141
+tts_pt-PT-DuarteNeural,h026,help,on,Caí nas escadas.,Caí nas escadas.,0.0,0.0,help,help,True,False,,1225
+tts_pt-PT-DuarteNeural,h027,help,on,"Chame alguém, preciso de ajuda.","Chama alguém, preciso de ajuda.",0.2,0.2,help,help,True,False,,1504
+tts_pt-PT-DuarteNeural,h028,help,on,Ligue à minha filha que eu caí.,Liga à minha filha que eu caí.,0.143,0.143,help,help,True,False,,1311
+tts_pt-PT-DuarteNeural,h029,help,on,"Não consigo mexer a perna, dói muito.","Não consigo mexer a perna, dói muito.",0.0,0.0,help,help,True,False,,1665
+tts_pt-PT-DuarteNeural,h030,help,on,"Caí, mas acho que não é nada.","Caí, mas acho que não é nada.",0.0,0.0,help,help,True,False,,1388
+tts_pt-PT-DuarteNeural,h031,help,on,"Estou no chão, não me consigo levantar.","Estou no chão, não me consigo levantar.",0.0,0.0,help,help,True,False,,1582
+tts_pt-PT-DuarteNeural,h032,help,on,"Ajude-me, por favor, preciso de ajuda.","Ajuda-me, por favor, preciso de ajuda.",0.143,0.143,help,help,True,False,,1681
+tts_pt-PT-DuarteNeural,h033,help,on,Bati com a cabeça quando caí.,Bati com a cabeça quando caí?,0.0,0.0,help,help,True,False,,1343
+tts_pt-PT-DuarteNeural,h034,help,on,"Ai, caí, que dores.",AKI que dores.,0.5,0.5,help,help,True,False,,1457
+tts_pt-PT-DuarteNeural,h035,help,on,"Estou bem, mas dói-me o joelho.","Estou bem, mas dói-me o joelho.",0.0,0.0,help,help,True,False,,1451
+tts_pt-PT-DuarteNeural,n001,no,on,Não.,Não.,0.0,0.0,no,no,True,False,,1031
+tts_pt-PT-DuarteNeural,n002,no,on,"Não, não.","Não, não.",0.0,0.0,no,no,True,False,,1175
+tts_pt-PT-DuarteNeural,n003,no,on,"Não, menina.",Não menina.,0.0,0.0,no,no,True,False,,1263
+tts_pt-PT-DuarteNeural,n004,no,on,Não obrigado.,Não obrigado.,0.0,0.0,no,no,True,False,,1208
+tts_pt-PT-DuarteNeural,n005,no,on,Não obrigada.,Não obrigada.,0.0,0.0,no,no,True,False,,1179
+tts_pt-PT-DuarteNeural,n006,no,on,"Não, nada.","Não, nada.",0.0,0.0,no,no,True,False,,1227
+tts_pt-PT-DuarteNeural,n007,no,on,Não senhora.,Não Senhora.,0.0,0.0,no,no,True,False,,1216
+tts_pt-PT-DuarteNeural,n008,no,on,Não quero.,Não quero.,0.0,0.0,no,no,True,False,,1296
+tts_pt-PT-DuarteNeural,n009,no,on,Não é preciso.,Não é preciso.,0.0,0.0,no,no,True,False,,1225
+tts_pt-PT-DuarteNeural,n010,no,on,"Não, obrigado, menina.","Não, obrigado menina.",0.0,0.0,no,no,True,False,,1469
+tts_pt-PT-DuarteNeural,s001,safe,on,Estou bem.,Estou bem.,0.0,0.0,safe,safe,True,False,,1195
+tts_pt-PT-DuarteNeural,s002,safe,on,"Estou bem, obrigado.",Estou bem obrigado.,0.0,0.0,safe,safe,True,False,,1325
+tts_pt-PT-DuarteNeural,s003,safe,on,"Estou bem, obrigada.",Estou bem obrigada.,0.0,0.0,safe,safe,True,False,,1355
+tts_pt-PT-DuarteNeural,s004,safe,on,Está tudo bem.,Está tudo bem?,0.0,0.0,safe,safe,True,False,,1188
+tts_pt-PT-DuarteNeural,s005,safe,on,"Sim, estou bem.","Sim, estou bem.",0.0,0.0,safe,safe,True,False,,1265
+tts_pt-PT-DuarteNeural,s006,safe,on,Não caí.,Não caí.,0.0,0.0,safe,safe,True,False,,1224
+tts_pt-PT-DuarteNeural,s007,safe,on,"Não, não caí, estou bem.","Não, não caí, estou bem.",0.0,0.0,safe,safe,True,False,,1485
+tts_pt-PT-DuarteNeural,s008,safe,on,Não me magoei.,Não magoei.,0.333,0.333,safe,safe,True,False,,1151
+tts_pt-PT-DuarteNeural,s009,safe,on,"Não, não me magoei.","Não, não magoei.",0.25,0.25,safe,safe,True,False,,1355
+tts_pt-PT-DuarteNeural,s010,safe,on,Não me dói nada.,Não me dói nada.,0.0,0.0,safe,safe,True,False,,1244
+tts_pt-PT-DuarteNeural,s011,safe,on,Foi só um susto.,Foi só um susto.,0.0,0.0,safe,safe,True,False,,1208
+tts_pt-PT-DuarteNeural,s012,safe,on,Não foi nada.,Não foi nada.,0.0,0.0,safe,safe,True,False,,1157
+tts_pt-PT-DuarteNeural,s013,safe,on,"Está tudo bem, foi o gato.",Está tudo bem? Foi o gato.,0.0,0.0,safe,safe,True,False,,1438
+tts_pt-PT-DuarteNeural,s014,safe,on,"Deixei cair uma coisa, mas eu estou bem.","Deixei cair uma coisa, mas eu estou bem.",0.0,0.0,safe,safe,True,False,,1578
+tts_pt-PT-DuarteNeural,s015,safe,on,Estava só a apanhar uma coisa do chão.,Estava só a apanhar uma coisa do chão.,0.0,0.0,other,other,True,False,,1479
+tts_pt-PT-DuarteNeural,s016,safe,on,"Estou bem, estou sentado no sofá.",Estou bem. Estou sentado no sofá.,0.0,0.0,safe,safe,True,False,,1532
+tts_pt-PT-DuarteNeural,s017,safe,on,"Estou bem, estou sentada na cama.","Estou bem, estou sentada na cama.",0.0,0.0,safe,safe,True,False,,1531
+tts_pt-PT-DuarteNeural,s018,safe,on,Não preciso de ajuda.,Não preciso de ajuda.,0.0,0.0,safe,safe,True,False,,1283
+tts_pt-PT-DuarteNeural,s019,safe,on,"Não, obrigado, não preciso de ajuda.","Não, obrigado, não preciso de ajuda.",0.0,0.0,safe,safe,True,False,,1663
+tts_pt-PT-DuarteNeural,s020,safe,on,"Estou óptimo, não se preocupe.","Estou ótimo, não se preocupe.",0.2,0.2,safe,safe,True,False,,1488
+tts_pt-PT-DuarteNeural,s021,safe,on,"Está tudo bem comigo, menina.","Está tudo bem comigo, menina?",0.0,0.0,safe,safe,True,False,,1456
+tts_pt-PT-DuarteNeural,s022,safe,on,"Tudo bem, foi a cadeira que caiu, não fui eu.","Tudo bem, foi a cadeira que caiu, não fui eu.",0.0,0.0,safe,safe,True,False,,1823
+tts_pt-PT-DuarteNeural,s023,safe,on,"Estou bem, já me levantei.","Estou bem, já me levantei.",0.0,0.0,safe,safe,True,False,,1390
+tts_pt-PT-DuarteNeural,s024,safe,on,"Estou bem, estava a fazer o almoço.","Estou bem, estava a fazer o almoço.",0.0,0.0,safe,safe,True,False,,1533
+tts_pt-PT-DuarteNeural,s025,safe,on,"Estou bem, foi o vento que bateu a porta.","Estou bem, foi o vento que bateu a porta.",0.0,0.0,safe,safe,True,False,,1600
+tts_pt-PT-DuarteNeural,s026,safe,on,Não me aleijei.,Não me elejei.,0.333,0.333,safe,other,False,False,,1221
+tts_pt-PT-DuarteNeural,s027,safe,on,"Estou bem, estou de pé.",Estou bem. Estou de pé.,0.0,0.0,safe,safe,True,False,,1357
+tts_pt-PT-DuarteNeural,s028,safe,on,"Está tudo bem, estou a ver televisão.",Está tudo bem. Estou a ver televisão.,0.0,0.0,safe,safe,True,False,,1549
+tts_pt-PT-DuarteNeural,s029,safe,on,"Estou bem, graças a Deus.","Estou bem, graças a Deus.",0.0,0.0,safe,safe,True,False,,1485
+tts_pt-PT-DuarteNeural,s030,safe,on,"Está tudo bem, pode ficar descansada.","Está tudo bem, pode ficar descansada.",0.0,0.0,safe,safe,True,False,,1615
+tts_pt-PT-DuarteNeural,u001,hesitation,on,"Hum, espere aí.",Um espere aí.,0.333,0.333,other,other,True,False,,1290
+tts_pt-PT-DuarteNeural,u002,hesitation,on,Hã? O quê?,O quê?,0.333,0.333,other,other,True,False,,1436
+tts_pt-PT-DuarteNeural,u003,hesitation,on,"Olhe, sabe, é que eu…",Olhe sabe é que eu.,0.0,0.0,other,other,True,False,,1421
+tts_pt-PT-DuarteNeural,u004,hesitation,on,"Espere, espere, deixe-me ver.","Espere, espere. Deixe-me ver.",0.0,0.0,other,other,True,False,,1566
+tts_pt-PT-DuarteNeural,u005,hesitation,on,Não estou a perceber.,Não estou a perceber.,0.0,0.0,other,other,True,False,,1204
+tts_pt-PT-DuarteNeural,u006,hesitation,on,Quem? Eu?,Ok eu.,0.5,0.5,other,other,True,False,,1468
+tts_pt-PT-DuarteNeural,u007,hesitation,on,"Ah, é a Vega.",A é Vega.,0.5,0.5,other,other,True,False,,1266
+tts_pt-PT-DuarteNeural,u008,hesitation,on,"Um momento, por favor.",Um momento por favor.,0.0,0.0,other,other,True,False,,1353
+tts_pt-PT-DuarteNeural,u009,hesitation,on,"Olhe, menina, eu não sei o que dizer.","Olhe menina, Eu Não sei o que dizer.",0.0,0.0,other,other,True,False,,1667
+tts_pt-PT-DuarteNeural,u010,hesitation,on,"Então, então, deixe-me pensar.","Então, então deixe me pensar.",0.0,0.0,other,other,True,False,,1594
+tts_pt-PT-DuarteNeural,y001,yes,on,Sim.,Sim.,0.0,0.0,yes,yes,True,False,,1198
+tts_pt-PT-DuarteNeural,y002,yes,on,"Sim, sim.",Sim sim.,0.0,0.0,yes,yes,True,False,,1210
+tts_pt-PT-DuarteNeural,y003,yes,on,Pois.,Pois.,0.0,0.0,yes,yes,True,False,,1093
+tts_pt-PT-DuarteNeural,y004,yes,on,"Sim, claro.",Sim claro.,0.0,0.0,yes,yes,True,False,,1308
+tts_pt-PT-DuarteNeural,y005,yes,on,"Claro, claro.",Claro claro.,0.0,0.0,yes,yes,True,False,,1207
+tts_pt-PT-DuarteNeural,y006,yes,on,Sim senhora.,Sim Senhora.,0.0,0.0,yes,yes,True,False,,1168
+tts_pt-PT-DuarteNeural,y007,yes,on,"Pois, pois.",Pois pois.,0.0,0.0,yes,yes,True,False,,1256
+tts_pt-PT-DuarteNeural,y008,yes,on,Sim obrigado.,Sim obrigado.,0.0,0.0,yes,yes,True,False,,1147
+tts_pt-PT-DuarteNeural,y009,yes,on,Sim obrigada.,Sim obrigada.,0.0,0.0,yes,yes,True,False,,1192
+tts_pt-PT-DuarteNeural,y010,yes,on,Sim pode ser.,Sim pode ser.,0.0,0.0,yes,yes,True,False,,1161
+tts_pt-PT-RaquelNeural,a001,azorean,on,"Tou bem, tou bem.","Estou bem, estou bem.",0.5,0.5,safe,safe,True,False,,1338
+tts_pt-PT-RaquelNeural,a002,azorean,on,"Nã, nã me magoei nada.",Na Na maguinada.,1.0,0.6,safe,other,False,False,,1541
+tts_pt-PT-RaquelNeural,a003,azorean,on,"Atão, tá tudo bem.","Então, está tudo bem?",0.5,0.5,safe,safe,True,False,,1408
+tts_pt-PT-RaquelNeural,a004,azorean,on,Ai minha Nossa Senhora que eu caí.,A minha nossa Senhora que eu caí.,0.143,0.143,help,help,True,False,,1531
+tts_pt-PT-RaquelNeural,a005,azorean,on,"Ai Jesus, caí aqui na cozinha.",Ai Jesus caí aqui na cozinha.,0.0,0.0,help,help,True,False,,1649
+tts_pt-PT-RaquelNeural,a006,azorean,on,"Nã consigo, nã consigo levantar.","Não consigo, não consigo levantar.",0.4,0.4,help,help,True,False,,1775
+tts_pt-PT-RaquelNeural,a007,azorean,on,"Nã, nã.",Nã nã.,0.0,0.0,no,no,True,False,,1259
+tts_pt-PT-RaquelNeural,a008,azorean,on,"Pois, pois, sim.",Pois pois sim.,0.0,0.0,yes,yes,True,False,,1510
+tts_pt-PT-RaquelNeural,a009,azorean,on,"Credo, dói-me tanto a perna.","Credo, dói-me tanto perna.",0.167,0.167,help,help,True,False,,1551
+tts_pt-PT-RaquelNeural,a010,azorean,on,"Foi só um tombo, tou bem.",Foi só um tombo? Estou bem.,0.167,0.167,safe,safe,True,False,,1514
+tts_pt-PT-RaquelNeural,a011,azorean,on,"Ó menina, preciso de ajuda.","Oh menina, preciso de ajuda.",0.2,0.2,help,help,True,False,,1532
+tts_pt-PT-RaquelNeural,a012,azorean,on,"Tá tudo bem, filha.","Está tudo bem, filha?",0.25,0.25,safe,safe,True,False,,1473
+tts_pt-PT-RaquelNeural,a013,azorean,on,Atão quem é que fala?,"Atão, quem é que fala?",0.0,0.0,other,other,True,False,,1369
+tts_pt-PT-RaquelNeural,a014,azorean,on,Nã percebi nada.,Não percebi nada.,0.333,0.333,other,other,True,False,,1335
+tts_pt-PT-RaquelNeural,a015,azorean,on,"Ai, tou no chão, ajuda.","Ai, estou no chão ajuda?",0.2,0.2,help,help,True,False,,1577
+tts_pt-PT-RaquelNeural,e001,everyday,on,Bom dia.,Bom dia.,0.0,0.0,other,other,True,False,,1211
+tts_pt-PT-RaquelNeural,e002,everyday,on,Boa tarde.,Boa tarde.,0.0,0.0,other,other,True,False,,1267
+tts_pt-PT-RaquelNeural,e003,everyday,on,Boa noite.,Boa noite.,0.0,0.0,other,other,True,False,,1235
+tts_pt-PT-RaquelNeural,e004,everyday,on,Quem fala?,Quem fala?,0.0,0.0,other,other,True,False,,1209
+tts_pt-PT-RaquelNeural,e005,everyday,on,Quem é?,Quem é?,0.0,0.0,other,other,True,False,,1207
+tts_pt-PT-RaquelNeural,e006,everyday,on,Pode repetir?,Pode repetir?,0.0,0.0,other,other,True,False,,1311
+tts_pt-PT-RaquelNeural,e007,everyday,on,Não percebi.,Não percebi.,0.0,0.0,other,other,True,False,,1249
+tts_pt-PT-RaquelNeural,e008,everyday,on,Fale mais alto que eu não oiço bem.,"Fale mais alto que eu, não oiço bem.",0.0,0.0,other,other,True,False,,1661
+tts_pt-PT-RaquelNeural,e009,everyday,on,Já tomei os comprimidos.,Já tomei os comprimidos.,0.0,0.0,other,other,True,False,,1535
+tts_pt-PT-RaquelNeural,e010,everyday,on,Ainda não tomei os comprimidos.,Ainda não tomei os comprimidos.,0.0,0.0,other,other,True,False,,1626
+tts_pt-PT-RaquelNeural,e011,everyday,on,Esqueci-me de tomar o remédio.,Esqueci-me de Tomar o remédio?,0.0,0.0,other,other,True,False,,1550
+tts_pt-PT-RaquelNeural,e012,everyday,on,Tomei o remédio de manhã.,Tomei o remédio de manhã.,0.0,0.0,other,other,True,False,,1436
+tts_pt-PT-RaquelNeural,e013,everyday,on,A caixa dos comprimidos está na cozinha.,A Caixa dos comprimidos está na cozinha.,0.0,0.0,other,other,True,False,,1772
+tts_pt-PT-RaquelNeural,e014,everyday,on,Que horas são?,Que horas são?,0.0,0.0,other,other,True,False,,1246
+tts_pt-PT-RaquelNeural,e015,everyday,on,Hoje está muito frio.,Hoje está muito frio.,0.0,0.0,other,other,True,False,,1312
+tts_pt-PT-RaquelNeural,e016,everyday,on,Está a chover lá fora.,Está a chover lá fora?,0.0,0.0,other,other,True,False,,1408
+tts_pt-PT-RaquelNeural,e017,everyday,on,A minha filha vem cá amanhã.,"A minha filha, vem cá amanhã?",0.0,0.0,other,other,True,False,,1472
+tts_pt-PT-RaquelNeural,e018,everyday,on,O meu filho ligou-me hoje.,O meu filho Ligoume Hoje.,0.333,0.333,other,other,True,False,,1451
+tts_pt-PT-RaquelNeural,e019,everyday,on,Estou a ver a novela.,Estou a ver a novela?,0.0,0.0,other,other,True,False,,1386
+tts_pt-PT-RaquelNeural,e020,everyday,on,Vou fazer o jantar.,Vou fazer o jantar.,0.0,0.0,other,other,True,False,,1376
+tts_pt-PT-RaquelNeural,e021,everyday,on,Já almocei.,Já almocei.,0.0,0.0,other,other,True,False,,1277
+tts_pt-PT-RaquelNeural,e022,everyday,on,Estava a dormir.,Estava a dormir.,0.0,0.0,other,other,True,False,,1348
+tts_pt-PT-RaquelNeural,e023,everyday,on,Estava na casa de banho.,Estava na casa de banho?,0.0,0.0,other,other,True,False,,1549
+tts_pt-PT-RaquelNeural,e024,everyday,on,Vou à missa no domingo.,V á missa no domingo.,0.4,0.2,other,other,True,False,,1434
+tts_pt-PT-RaquelNeural,e025,everyday,on,A vizinha veio cá visitar-me.,A vizinha veio cá visitar me.,0.0,0.0,other,other,True,False,,1572
+tts_pt-PT-RaquelNeural,e026,everyday,on,O médico vem na quinta-feira.,O médico vem na quinta-feira.,0.0,0.0,other,other,True,False,,1631
+tts_pt-PT-RaquelNeural,e027,everyday,on,Tenho consulta no centro de saúde.,Tenho consulta no centro de saúde.,0.0,0.0,other,other,True,False,,1693
+tts_pt-PT-RaquelNeural,e028,everyday,on,Os netos estão em Lisboa.,Os netos estão em Lisboa.,0.0,0.0,other,other,True,False,,1770
+tts_pt-PT-RaquelNeural,e029,everyday,on,Quero falar com a minha filha.,Quer falar com a minha filha?,0.167,0.167,other,other,True,False,,1751
+tts_pt-PT-RaquelNeural,e030,everyday,on,Desligue a televisão.,Desligue a televisão.,0.0,0.0,other,other,True,False,,1610
+tts_pt-PT-RaquelNeural,e031,everyday,on,Obrigado pela chamada.,Obrigado pela chamada.,0.0,0.0,other,other,True,False,,1724
+tts_pt-PT-RaquelNeural,e032,everyday,on,Obrigada menina.,Obrigada menina.,0.0,0.0,other,other,True,False,,1611
+tts_pt-PT-RaquelNeural,e033,everyday,on,"Está bem, até logo.",Está bem até logo.,0.0,0.0,other,other,True,False,,1597
+tts_pt-PT-RaquelNeural,e034,everyday,on,Já vou deitar-me.,Já vou deitar-me.,0.0,0.0,other,other,True,False,,1431
+tts_pt-PT-RaquelNeural,e035,everyday,on,Estou cansado hoje.,Estou cansado Hoje?,0.0,0.0,other,other,True,False,,1396
+tts_pt-PT-RaquelNeural,e036,everyday,on,Estou cansada hoje.,Estou cansada Hoje.,0.0,0.0,other,other,True,False,,1406
+tts_pt-PT-RaquelNeural,e037,everyday,on,Vou dar uma volta ao quintal.,Vou dar uma volta ao quintal?,0.0,0.0,other,other,True,False,,1517
+tts_pt-PT-RaquelNeural,e038,everyday,on,O gato está com fome.,O gato está com fome.,0.0,0.0,other,other,True,False,,1385
+tts_pt-PT-RaquelNeural,e039,everyday,on,Hoje fiz sopa de legumes.,Hoje fiz sopa de legumes.,0.0,0.0,other,other,True,False,,1478
+tts_pt-PT-RaquelNeural,e040,everyday,on,Ponta Delgada está bonita hoje.,Ponta Delgada está bonita Hoje.,0.0,0.0,other,other,True,False,,1581
+tts_pt-PT-RaquelNeural,h001,help,on,Preciso de ajuda.,Preciso de ajuda.,0.0,0.0,help,help,True,False,,1352
+tts_pt-PT-RaquelNeural,h002,help,on,"Preciso de ajuda, por favor.","Preciso de ajuda, por favor?",0.0,0.0,help,help,True,False,,6571
+tts_pt-PT-RaquelNeural,h003,help,on,Socorro!,Socorro.,0.0,0.0,help,help,True,False,,1166
+tts_pt-PT-RaquelNeural,h004,help,on,Ajuda!,Ajuda.,0.0,0.0,help,help,True,False,,1221
+tts_pt-PT-RaquelNeural,h005,help,on,Caí.,K í.,2.0,2.0,help,other,False,False,,1196
+tts_pt-PT-RaquelNeural,h006,help,on,Caí no chão.,Caí no chão.,0.0,0.0,help,help,True,False,,1263
+tts_pt-PT-RaquelNeural,h007,help,on,Caí na casa de banho.,Caí na casa de banho.,0.0,0.0,help,help,True,False,,1416
+tts_pt-PT-RaquelNeural,h008,help,on,Caí na cozinha.,Caí na cozinha.,0.0,0.0,help,help,True,False,,1299
+tts_pt-PT-RaquelNeural,h009,help,on,Caí e não me consigo levantar.,"QIE, não me consigo levantar.",0.333,0.333,help,help,True,False,,1570
+tts_pt-PT-RaquelNeural,h010,help,on,Não me consigo levantar.,Não me consigo levantar.,0.0,0.0,help,help,True,False,,1414
+tts_pt-PT-RaquelNeural,h011,help,on,Não estou bem.,Não estou bem.,0.0,0.0,help,help,True,False,,1241
+tts_pt-PT-RaquelNeural,h012,help,on,"Não, não estou bem.","Não, não estou bem.",0.0,0.0,help,help,True,False,,1436
+tts_pt-PT-RaquelNeural,h013,help,on,Dói-me a perna.,Dói-me a perna.,0.0,0.0,help,help,True,False,,1282
+tts_pt-PT-RaquelNeural,h014,help,on,Dói-me muito a anca.,Dói-me muito a anca.,0.0,0.0,help,help,True,False,,1356
+tts_pt-PT-RaquelNeural,h015,help,on,Dói-me a cabeça.,Dói-me a cabeça.,0.0,0.0,help,help,True,False,,1291
+tts_pt-PT-RaquelNeural,h016,help,on,"Ai, dói-me as costas.",Ai dói-me as costas.,0.0,0.0,help,help,True,False,,1476
+tts_pt-PT-RaquelNeural,h017,help,on,Tenho muitas dores.,Tenho muitas dores.,0.0,0.0,help,help,True,False,,1391
+tts_pt-PT-RaquelNeural,h018,help,on,Magoei-me.,Magoei-me.,0.0,0.0,help,help,True,False,,1200
+tts_pt-PT-RaquelNeural,h019,help,on,Magoei-me no braço.,Magoei-me no braço.,0.0,0.0,help,help,True,False,,1370
+tts_pt-PT-RaquelNeural,h020,help,on,Estou a sangrar e tenho sangue na cabeça.,Estou a sangrar e tenho sangue na cabeça.,0.0,0.0,help,help,True,False,,1753
+tts_pt-PT-RaquelNeural,h021,help,on,Acho que tenho o braço partido.,Acho que tem o braço partido.,0.167,0.167,help,help,True,False,,1463
+tts_pt-PT-RaquelNeural,h022,help,on,Tenho tonturas.,Tenho tonturas.,0.0,0.0,help,help,True,False,,1331
+tts_pt-PT-RaquelNeural,h023,help,on,"Estou com tonturas, preciso de ajuda.","Estou com tonturas, preciso de ajuda.",0.0,0.0,help,help,True,False,,1793
+tts_pt-PT-RaquelNeural,h024,help,on,Escorreguei e caí.,Escorreguei e caí.,0.0,0.0,help,help,True,False,,1359
+tts_pt-PT-RaquelNeural,h025,help,on,Caí da cama.,Caí da cama.,0.0,0.0,help,help,True,False,,1231
+tts_pt-PT-RaquelNeural,h026,help,on,Caí nas escadas.,Caí nas escadas.,0.0,0.0,help,help,True,False,,1375
+tts_pt-PT-RaquelNeural,h027,help,on,"Chame alguém, preciso de ajuda.","Chama alguém, preciso de ajuda.",0.2,0.2,help,help,True,False,,1591
+tts_pt-PT-RaquelNeural,h028,help,on,Ligue à minha filha que eu caí.,Liga à minha filha que eu caí.,0.143,0.143,help,help,True,False,,1448
+tts_pt-PT-RaquelNeural,h029,help,on,"Não consigo mexer a perna, dói muito.","Não consigo mexer a perna, dói muito.",0.0,0.0,help,help,True,False,,1743
+tts_pt-PT-RaquelNeural,h030,help,on,"Caí, mas acho que não é nada.","Caí, mas acho que não é nada.",0.0,0.0,help,help,True,False,,1569
+tts_pt-PT-RaquelNeural,h031,help,on,"Estou no chão, não me consigo levantar.","Estou no chão, não me consigo levantar.",0.0,0.0,help,help,True,False,,1685
+tts_pt-PT-RaquelNeural,h032,help,on,"Ajude-me, por favor, preciso de ajuda.","Ajuda-me, por favor, preciso de ajuda.",0.143,0.143,help,help,True,False,,1756
+tts_pt-PT-RaquelNeural,h033,help,on,Bati com a cabeça quando caí.,Bati com a cabeça quando caí?,0.0,0.0,help,help,True,False,,1518
+tts_pt-PT-RaquelNeural,h034,help,on,"Ai, caí, que dores.",Ai caí que dores.,0.0,0.0,help,help,True,False,,1469
+tts_pt-PT-RaquelNeural,h035,help,on,"Estou bem, mas dói-me o joelho.","Estou bem, mas dói-me o joelho.",0.0,0.0,help,help,True,False,,1569
+tts_pt-PT-RaquelNeural,n001,no,on,Não.,Não.,0.0,0.0,no,no,True,False,,1212
+tts_pt-PT-RaquelNeural,n002,no,on,"Não, não.","Não, não.",0.0,0.0,no,no,True,False,,1281
+tts_pt-PT-RaquelNeural,n003,no,on,"Não, menina.",Não menina.,0.0,0.0,no,no,True,False,,1358
+tts_pt-PT-RaquelNeural,n004,no,on,Não obrigado.,Não obrigado.,0.0,0.0,no,no,True,False,,1301
+tts_pt-PT-RaquelNeural,n005,no,on,Não obrigada.,Não obrigada.,0.0,0.0,no,no,True,False,,1310
+tts_pt-PT-RaquelNeural,n006,no,on,"Não, nada.","Não, nada.",0.0,0.0,no,no,True,False,,1308
+tts_pt-PT-RaquelNeural,n007,no,on,Não senhora.,Não Senhora.,0.0,0.0,no,no,True,False,,1230
+tts_pt-PT-RaquelNeural,n008,no,on,Não quero.,Não quero.,0.0,0.0,no,no,True,False,,1208
+tts_pt-PT-RaquelNeural,n009,no,on,Não é preciso.,Não é preciso.,0.0,0.0,no,no,True,False,,1336
+tts_pt-PT-RaquelNeural,n010,no,on,"Não, obrigado, menina.","Não, obrigado menina.",0.0,0.0,no,no,True,False,,1658
+tts_pt-PT-RaquelNeural,s001,safe,on,Estou bem.,Estou bem.,0.0,0.0,safe,safe,True,False,,1228
+tts_pt-PT-RaquelNeural,s002,safe,on,"Estou bem, obrigado.",Estou bem obrigado.,0.0,0.0,safe,safe,True,False,,1483
+tts_pt-PT-RaquelNeural,s003,safe,on,"Estou bem, obrigada.",Estou bem obrigada.,0.0,0.0,safe,safe,True,False,,1485
+tts_pt-PT-RaquelNeural,s004,safe,on,Está tudo bem.,Está tudo bem?,0.0,0.0,safe,safe,True,False,,1306
+tts_pt-PT-RaquelNeural,s005,safe,on,"Sim, estou bem.","Sim, estou bem.",0.0,0.0,safe,safe,True,False,,1322
+tts_pt-PT-RaquelNeural,s006,safe,on,Não caí.,Não QI.,0.5,0.5,safe,other,False,False,,1214
+tts_pt-PT-RaquelNeural,s007,safe,on,"Não, não caí, estou bem.","Não, não caí, estou bem.",0.0,0.0,safe,safe,True,False,,1594
+tts_pt-PT-RaquelNeural,s008,safe,on,Não me magoei.,Não magoei.,0.333,0.333,safe,safe,True,False,,1246
+tts_pt-PT-RaquelNeural,s009,safe,on,"Não, não me magoei.","Não, não me magoei.",0.0,0.0,safe,safe,True,False,,1439
+tts_pt-PT-RaquelNeural,s010,safe,on,Não me dói nada.,Não dói nada.,0.25,0.25,safe,safe,True,False,,1368
+tts_pt-PT-RaquelNeural,s011,safe,on,Foi só um susto.,Foi só um susto.,0.0,0.0,safe,safe,True,False,,1359
+tts_pt-PT-RaquelNeural,s012,safe,on,Não foi nada.,Não foi nada.,0.0,0.0,safe,safe,True,False,,1260
+tts_pt-PT-RaquelNeural,s013,safe,on,"Está tudo bem, foi o gato.",Está tudo bem? Foi o gato.,0.0,0.0,safe,safe,True,False,,1565
+tts_pt-PT-RaquelNeural,s014,safe,on,"Deixei cair uma coisa, mas eu estou bem.","Deixei cair uma coisa, mas eu estou bem.",0.0,0.0,safe,safe,True,False,,1737
+tts_pt-PT-RaquelNeural,s015,safe,on,Estava só a apanhar uma coisa do chão.,Estava só a apanhar uma coisa do chão.,0.0,0.0,other,other,True,False,,1644
+tts_pt-PT-RaquelNeural,s016,safe,on,"Estou bem, estou sentado no sofá.",Estou bem. Estou sentado no sofá.,0.0,0.0,safe,safe,True,False,,1627
+tts_pt-PT-RaquelNeural,s017,safe,on,"Estou bem, estou sentada na cama.","Estou bem, estou sentada na cama.",0.0,0.0,safe,safe,True,False,,1695
+tts_pt-PT-RaquelNeural,s018,safe,on,Não preciso de ajuda.,Não preciso de ajuda.,0.0,0.0,safe,safe,True,False,,1487
+tts_pt-PT-RaquelNeural,s019,safe,on,"Não, obrigado, não preciso de ajuda.","Não, obrigado, não preciso de ajuda.",0.0,0.0,safe,safe,True,False,,1843
+tts_pt-PT-RaquelNeural,s020,safe,on,"Estou óptimo, não se preocupe.","Estou ótimo, não se preocupe.",0.2,0.2,safe,safe,True,False,,1571
+tts_pt-PT-RaquelNeural,s021,safe,on,"Está tudo bem comigo, menina.","Está tudo bem comigo, menina?",0.0,0.0,safe,safe,True,False,,1579
+tts_pt-PT-RaquelNeural,s022,safe,on,"Tudo bem, foi a cadeira que caiu, não fui eu.","Tudo bem, foi a cadeira que caiu, não fui eu.",0.0,0.0,safe,safe,True,False,,1828
+tts_pt-PT-RaquelNeural,s023,safe,on,"Estou bem, já me levantei.","Estou bem, já me levantei.",0.0,0.0,safe,safe,True,False,,1602
+tts_pt-PT-RaquelNeural,s024,safe,on,"Estou bem, estava a fazer o almoço.","Estou bem, estava a fazer o almoço.",0.0,0.0,safe,safe,True,False,,1641
+tts_pt-PT-RaquelNeural,s025,safe,on,"Estou bem, foi o vento que bateu a porta.","Estou bem, foi o vento que bateu a porta.",0.0,0.0,safe,safe,True,False,,1733
+tts_pt-PT-RaquelNeural,s026,safe,on,Não me aleijei.,Não me aleijei.,0.0,0.0,safe,safe,True,False,,1320
+tts_pt-PT-RaquelNeural,s027,safe,on,"Estou bem, estou de pé.",Estou bem. Estou de pé.,0.0,0.0,safe,safe,True,False,,1420
+tts_pt-PT-RaquelNeural,s028,safe,on,"Está tudo bem, estou a ver televisão.",Está tudo bem. Estou a ver televisão.,0.0,0.0,safe,safe,True,False,,1681
+tts_pt-PT-RaquelNeural,s029,safe,on,"Estou bem, graças a Deus.","Estou bem, graças a Deus.",0.0,0.0,safe,safe,True,False,,1589
+tts_pt-PT-RaquelNeural,s030,safe,on,"Está tudo bem, pode ficar descansada.","Está tudo bem, pode ficar descansada.",0.0,0.0,safe,safe,True,False,,1729
+tts_pt-PT-RaquelNeural,u001,hesitation,on,"Hum, espere aí.",Um espere aí.,0.333,0.333,other,other,True,False,,1246
+tts_pt-PT-RaquelNeural,u002,hesitation,on,Hã? O quê?,Hã o quê.,0.0,0.0,other,other,True,False,,1452
+tts_pt-PT-RaquelNeural,u003,hesitation,on,"Olhe, sabe, é que eu…",Olhe sabe é que eu.,0.0,0.0,other,other,True,False,,1479
+tts_pt-PT-RaquelNeural,u004,hesitation,on,"Espere, espere, deixe-me ver.","Espere, espere. Deixe-me ver.",0.0,0.0,other,other,True,False,,1610
+tts_pt-PT-RaquelNeural,u005,hesitation,on,Não estou a perceber.,Não estou a perceber.,0.0,0.0,other,other,True,False,,1354
+tts_pt-PT-RaquelNeural,u006,hesitation,on,Quem? Eu?,Ok eu.,0.5,0.5,other,other,True,False,,1409
+tts_pt-PT-RaquelNeural,u007,hesitation,on,"Ah, é a Vega.",A é Vega.,0.5,0.5,other,other,True,False,,1344
+tts_pt-PT-RaquelNeural,u008,hesitation,on,"Um momento, por favor.",Um momento por favor.,0.0,0.0,other,other,True,False,,1467
+tts_pt-PT-RaquelNeural,u009,hesitation,on,"Olhe, menina, eu não sei o que dizer.","Olhe menina, Eu Não sei o que dizer.",0.0,0.0,other,other,True,False,,1710
+tts_pt-PT-RaquelNeural,u010,hesitation,on,"Então, então, deixe-me pensar.","Então, então deixe-me pensar?",0.0,0.0,other,other,True,False,,1741
+tts_pt-PT-RaquelNeural,y001,yes,on,Sim.,Sim.,0.0,0.0,yes,yes,True,False,,1213
+tts_pt-PT-RaquelNeural,y002,yes,on,"Sim, sim.",Sim sim.,0.0,0.0,yes,yes,True,False,,1236
+tts_pt-PT-RaquelNeural,y003,yes,on,Pois.,,1.0,1.0,yes,other,False,True,,1272
+tts_pt-PT-RaquelNeural,y004,yes,on,"Sim, claro.",Sim claro.,0.0,0.0,yes,yes,True,False,,1274
+tts_pt-PT-RaquelNeural,y005,yes,on,"Claro, claro.",Claro claro.,0.0,0.0,yes,yes,True,False,,1291
+tts_pt-PT-RaquelNeural,y006,yes,on,Sim senhora.,Sim Senhora.,0.0,0.0,yes,yes,True,False,,1227
+tts_pt-PT-RaquelNeural,y007,yes,on,"Pois, pois.",Pois pois.,0.0,0.0,yes,yes,True,False,,1307
+tts_pt-PT-RaquelNeural,y008,yes,on,Sim obrigado.,Sim obrigado.,0.0,0.0,yes,yes,True,False,,1319
+tts_pt-PT-RaquelNeural,y009,yes,on,Sim obrigada.,Sim obrigada.,0.0,0.0,yes,yes,True,False,,1291
+tts_pt-PT-RaquelNeural,y010,yes,on,Sim pode ser.,Sim pode ser.,0.0,0.0,yes,yes,True,False,,1292

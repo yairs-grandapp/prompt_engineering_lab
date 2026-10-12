@@ -1,0 +1,151 @@
+id,category,intent,text
+s001,safe,safe,Estou bem.
+s002,safe,safe,"Estou bem, obrigado."
+s003,safe,safe,"Estou bem, obrigada."
+s004,safe,safe,Está tudo bem.
+s005,safe,safe,"Sim, estou bem."
+s006,safe,safe,Não caí.
+s007,safe,safe,"Não, não caí, estou bem."
+s008,safe,safe,Não me magoei.
+s009,safe,safe,"Não, não me magoei."
+s010,safe,safe,Não me dói nada.
+s011,safe,safe,Foi só um susto.
+s012,safe,safe,Não foi nada.
+s013,safe,safe,"Está tudo bem, foi o gato."
+s014,safe,safe,"Deixei cair uma coisa, mas eu estou bem."
+s015,safe,other,Estava só a apanhar uma coisa do chão.
+s016,safe,safe,"Estou bem, estou sentado no sofá."
+s017,safe,safe,"Estou bem, estou sentada na cama."
+s018,safe,safe,Não preciso de ajuda.
+s019,safe,safe,"Não, obrigado, não preciso de ajuda."
+s020,safe,safe,"Estou óptimo, não se preocupe."
+s021,safe,safe,"Está tudo bem comigo, menina."
+s022,safe,safe,"Tudo bem, foi a cadeira que caiu, não fui eu."
+s023,safe,safe,"Estou bem, já me levantei."
+s024,safe,safe,"Estou bem, estava a fazer o almoço."
+s025,safe,safe,"Estou bem, foi o vento que bateu a porta."
+s026,safe,safe,Não me aleijei.
+s027,safe,safe,"Estou bem, estou de pé."
+s028,safe,safe,"Está tudo bem, estou a ver televisão."
+s029,safe,safe,"Estou bem, graças a Deus."
+s030,safe,safe,"Está tudo bem, pode ficar descansada."
+h001,help,help,Preciso de ajuda.
+h002,help,help,"Preciso de ajuda, por favor."
+h003,help,help,Socorro!
+h004,help,help,Ajuda!
+h005,help,help,Caí.
+h006,help,help,Caí no chão.
+h007,help,help,Caí na casa de banho.
+h008,help,help,Caí na cozinha.
+h009,help,help,Caí e não me consigo levantar.
+h010,help,help,Não me consigo levantar.
+h011,help,help,Não estou bem.
+h012,help,help,"Não, não estou bem."
+h013,help,help,Dói-me a perna.
+h014,help,help,Dói-me muito a anca.
+h015,help,help,Dói-me a cabeça.
+h016,help,help,"Ai, dói-me as costas."
+h017,help,help,Tenho muitas dores.
+h018,help,help,Magoei-me.
+h019,help,help,Magoei-me no braço.
+h020,help,help,Estou a sangrar e tenho sangue na cabeça.
+h021,help,help,Acho que tenho o braço partido.
+h022,help,help,Tenho tonturas.
+h023,help,help,"Estou com tonturas, preciso de ajuda."
+h024,help,help,Escorreguei e caí.
+h025,help,help,Caí da cama.
+h026,help,help,Caí nas escadas.
+h027,help,help,"Chame alguém, preciso de ajuda."
+h028,help,help,Ligue à minha filha que eu caí.
+h029,help,help,"Não consigo mexer a perna, dói muito."
+h030,help,help,"Caí, mas acho que não é nada."
+h031,help,help,"Estou no chão, não me consigo levantar."
+h032,help,help,"Ajude-me, por favor, preciso de ajuda."
+h033,help,help,Bati com a cabeça quando caí.
+h034,help,help,"Ai, caí, que dores."
+h035,help,help,"Estou bem, mas dói-me o joelho."
+y001,yes,yes,Sim.
+y002,yes,yes,"Sim, sim."
+y003,yes,yes,Pois.
+y004,yes,yes,"Sim, claro."
+y005,yes,yes,"Claro, claro."
+y006,yes,yes,Sim senhora.
+y007,yes,yes,"Pois, pois."
+y008,yes,yes,Sim obrigado.
+y009,yes,yes,Sim obrigada.
+y010,yes,yes,Sim pode ser.
+n001,no,no,Não.
+n002,no,no,"Não, não."
+n003,no,no,"Não, menina."
+n004,no,no,Não obrigado.
+n005,no,no,Não obrigada.
+n006,no,no,"Não, nada."
+n007,no,no,Não senhora.
+n008,no,no,Não quero.
+n009,no,no,Não é preciso.
+n010,no,no,"Não, obrigado, menina."
+e001,everyday,other,Bom dia.
+e002,everyday,other,Boa tarde.
+e003,everyday,other,Boa noite.
+e004,everyday,other,Quem fala?
+e005,everyday,other,Quem é?
+e006,everyday,other,Pode repetir?
+e007,everyday,other,Não percebi.
+e008,everyday,other,Fale mais alto que eu não oiço bem.
+e009,everyday,other,Já tomei os comprimidos.
+e010,everyday,other,Ainda não tomei os comprimidos.
+e011,everyday,other,Esqueci-me de tomar o remédio.
+e012,everyday,other,Tomei o remédio de manhã.
+e013,everyday,other,A caixa dos comprimidos está na cozinha.
+e014,everyday,other,Que horas são?
+e015,everyday,other,Hoje está muito frio.
+e016,everyday,other,Está a chover lá fora.
+e017,everyday,other,A minha filha vem cá amanhã.
+e018,everyday,other,O meu filho ligou-me hoje.
+e019,everyday,other,Estou a ver a novela.
+e020,everyday,other,Vou fazer o jantar.
+e021,everyday,other,Já almocei.
+e022,everyday,other,Estava a dormir.
+e023,everyday,other,Estava na casa de banho.
+e024,everyday,other,Vou à missa no domingo.
+e025,everyday,other,A vizinha veio cá visitar-me.
+e026,everyday,other,O médico vem na quinta-feira.
+e027,everyday,other,Tenho consulta no centro de saúde.
+e028,everyday,other,Os netos estão em Lisboa.
+e029,everyday,other,Quero falar com a minha filha.
+e030,everyday,other,Desligue a televisão.
+e031,everyday,other,Obrigado pela chamada.
+e032,everyday,other,Obrigada menina.
+e033,everyday,other,"Está bem, até logo."
+e034,everyday,other,Já vou deitar-me.
+e035,everyday,other,Estou cansado hoje.
+e036,everyday,other,Estou cansada hoje.
+e037,everyday,other,Vou dar uma volta ao quintal.
+e038,everyday,other,O gato está com fome.
+e039,everyday,other,Hoje fiz sopa de legumes.
+e040,everyday,other,Ponta Delgada está bonita hoje.
+a001,azorean,safe,"Tou bem, tou bem."
+a002,azorean,safe,"Nã, nã me magoei nada."
+a003,azorean,safe,"Atão, tá tudo bem."
+a004,azorean,help,Ai minha Nossa Senhora que eu caí.
+a005,azorean,help,"Ai Jesus, caí aqui na cozinha."
+a006,azorean,help,"Nã consigo, nã consigo levantar."
+a007,azorean,no,"Nã, nã."
+a008,azorean,yes,"Pois, pois, sim."
+a009,azorean,help,"Credo, dói-me tanto a perna."
+a010,azorean,safe,"Foi só um tombo, tou bem."
+a011,azorean,help,"Ó menina, preciso de ajuda."
+a012,azorean,safe,"Tá tudo bem, filha."
+a013,azorean,other,Atão quem é que fala?
+a014,azorean,other,Nã percebi nada.
+a015,azorean,help,"Ai, tou no chão, ajuda."
+u001,hesitation,other,"Hum, espere aí."
+u002,hesitation,other,"Hã? O quê?"
+u003,hesitation,other,"Olhe, sabe, é que eu…"
+u004,hesitation,other,"Espere, espere, deixe-me ver."
+u005,hesitation,other,Não estou a perceber.
+u006,hesitation,other,"Quem? Eu?"
+u007,hesitation,other,"Ah, é a Vega."
+u008,hesitation,other,"Um momento, por favor."
+u009,hesitation,other,"Olhe, menina, eu não sei o que dizer."
+u010,hesitation,other,"Então, então, deixe-me pensar."
