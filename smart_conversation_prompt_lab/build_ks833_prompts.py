@@ -17,10 +17,15 @@ Outputs:
 Every insertion is an exact-match replace that must hit exactly once, so a change to the base
 prompt fails loudly instead of silently producing a different prompt.
 
+render_fall_prompt() builds the same prompt from a language pack (language_packs.py), the
+design approved for the Java port; main() checks that it reproduces v5 byte for byte.
+
 Usage:
     python build_ks833_prompts.py
 """
 from pathlib import Path
+
+from language_packs import resolve_language_pack
 
 PROMPTS = Path(__file__).parent / "data/prompts"
 BASE = PROMPTS / "prompt_ks833_base_en.txt"
@@ -243,6 +248,31 @@ def build_v5(base, info, first_name):
     return p.replace(OPEN_Q_GENDERED, OPEN_Q_NEUTRAL)
 
 
+def language_line(code):
+    return LANG_EN.replace(" en.", f" {code}.")
+
+
+def render_fall_prompt(base, pack, info, first_name):
+    """The fall prompt for any language, from the English base and a language pack.
+
+    No language checks: each slot takes the pack's text at the point where the Java places its
+    Hebrew branch (see language_packs.py). This is the shape the Java port follows.
+    """
+    p = replace_once(base, LANG_EN, language_line(pack.code()) + pack.language_register(), "language line")
+    p = replace_once(p, INFO_EN, info, "additional information")
+    p = replace_once(p, ALERT_EN, pack.alert_phrase(), "alert phrase")
+    p = replace_once(p, NORESP_EN, pack.no_response_phrase(), "no-response phrase")
+    p = replace_once(p, OPENING_ANCHOR, OPENING_ANCHOR + pack.opening_example(first_name), "opening example")
+    p = replace_once(p, ROLE_ANCHOR, ROLE_ANCHOR + pack.role_intro(), "role")
+    p = replace_once(p, ASR_ANCHOR, ASR_ANCHOR + pack.asr_guidance(), "asr guidance")
+    p = replace_once(p, GENDER_ANCHOR, GENDER_ANCHOR + pack.gender_rules(), "gender")
+    p = replace_once(p, TTS_ANCHOR, TTS_ANCHOR + pack.tts_rules(), "tts")
+    p = replace_once(p, SCENARIO_ASR_ANCHOR, SCENARIO_ASR_ANCHOR + pack.misheard_words(), "scenario asr")
+    p = replace_once(p, CLOSING_ANCHOR, CLOSING_ANCHOR + pack.closing_rules(), "closing rules")
+    p = replace_once(p, VALIDATION_ANCHOR, VALIDATION_ANCHOR + pack.own_words_rule(), "own-words rule")
+    return p
+
+
 def main():
     base = BASE.read_text(encoding="utf-8")
     asis = replace_once(build_asis(base), INFO_EN, INFO_PT_MALE, "additional information")
@@ -266,6 +296,12 @@ def main():
         "prompt_ks833_ptpt_v5_male.txt": build_v5(base, INFO_PT_MALE, "Manuel"),
         "prompt_ks833_ptpt_v5_female.txt": build_v5(base, INFO_PT_FEMALE, "Maria"),
     }
+    # The language-pack render must reproduce the evaluated v5 prompt exactly.
+    pt = resolve_language_pack("pt-PT")
+    for name, info, first_name in (("prompt_ks833_ptpt_v5_male.txt", INFO_PT_MALE, "Manuel"),
+                                   ("prompt_ks833_ptpt_v5_female.txt", INFO_PT_FEMALE, "Maria")):
+        if render_fall_prompt(base, pt, info, first_name) != outputs[name]:
+            raise SystemExit(f"{name}: language-pack render differs from v5")
     for name, text in outputs.items():
         (PROMPTS / name).write_text(text, encoding="utf-8", newline="\n")
         print(f"wrote {name} ({len(text)} chars)")
