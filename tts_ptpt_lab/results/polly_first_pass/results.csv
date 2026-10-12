@@ -1,0 +1,7 @@
+voice,line,ttfa_ms,total_ms,audio_s,error
+Ines,greeting,386,576,6.02,
+Ines,alert,78,169,4.78,
+Ines,no_response,76,172,4.24,
+Ines,clarify,82,255,6.05,
+Ines,reminder,75,284,8.36,
+Ines,azores,70,160,5.09,

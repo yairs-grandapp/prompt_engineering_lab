@@ -1,0 +1,17 @@
+{
+ "label": "polly_first_pass",
+ "date": "2026-10-09T14:01:41",
+ "region": "eu-south-2",
+ "boto3": "1.43.110",
+ "characters": 507,
+ "hub_rate": 16000,
+ "voices": [
+  {
+   "voice": "Ines",
+   "engine": "neural",
+   "kind": "native pt-PT neural (Polly)",
+   "status": "GA",
+   "note": ""
+  }
+ ]
+}

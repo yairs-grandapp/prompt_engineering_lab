@@ -1,0 +1,7 @@
+voice	kind	status	note
+pt-PT-RaquelNeural	native pt-PT neural	GA	used for the KS-834 ASR test set
+pt-PT-FernandaNeural	native pt-PT neural	GA
+pt-PT-Harper:MAI-Voice-2.1	native pt-PT HD (MAI)	Preview
+pt-PT-Harper:MAI-Voice-2.1-Flash	native pt-PT fast (MAI)	Preview
+en-US-Ava:DragonHDLatestNeural	multilingual HD speaking pt-PT	GA	check for a foreign accent
+pt-BR-Thalita:DragonHDLatestNeural	Brazilian HD speaking pt-PT	GA	check for a Brazilian accent

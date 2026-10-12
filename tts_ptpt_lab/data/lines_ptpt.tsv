@@ -1,0 +1,7 @@
+id	what it tests	text
+greeting	opening line, name, "Detetámos"	Olá, Manuel, fala a Vega. Detetámos uma possível queda. Está bem?
+alert	mandated alert phrase, brand name	Estou a enviar um alerta no sistema SeniorMatics. Estou aqui consigo.
+no_response	mandated no-response phrase	Não consegui falar consigo, por isso estou a avisar os seus cuidadores.
+clarify	question intonation, short words	Desculpe, não percebi. Como é que se sente? Magoou-se, ou consegue levantar-se?
+reminder	long sentence, numbers, time, name	Ainda bem que está tudo bem, Maria. Lembre-se de tomar os dois comprimidos às oito e meia da noite, e se precisar de alguma coisa, estou aqui.
+azores	place name, digits read aloud	Hoje em Ponta Delgada estão 19 graus, e amanhã à tarde pode chover em São Miguel.

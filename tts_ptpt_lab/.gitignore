@@ -1,0 +1,3 @@
+# Only the 16 kHz samples (hub playback rate, the ones judged) are committed; the 24 kHz originals stay local.
+*_24k.wav
+results/smoke/
