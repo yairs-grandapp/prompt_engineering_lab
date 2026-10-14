@@ -1,0 +1,319 @@
+diff -ruN a/com/ddd/services/smartconversation/context/ContextBase.java c/com/ddd/services/smartconversation/context/ContextBase.java
+--- a/com/ddd/services/smartconversation/context/ContextBase.java	2026-10-13 13:33:32.891464300 +0100
++++ c/com/ddd/services/smartconversation/context/ContextBase.java	2026-10-13 14:32:58.259439100 +0100
+@@ -133,29 +133,7 @@
+ 				+ "    - When greeting the senior, always introduce yourself by name (e.g., \"Hi, it's " + ASSISTANT_NAME + "!\").\n"
+ 				+ languagePack.roleIntro()
+ 				+ "    - Never refer to yourself as a \"virtual assistant\", \"AI\", \"bot\", or \"system\". Speak as a warm, caring person.";
+-		// KS-739: a live call closed correctly — the clear withheld, the late tail folded, the alert
+-		// raised and reported — on the words "just to confirm, did you say you fell?". Every decision
+-		// was right and the senior was left with a question nobody would ever answer, because the call
+-		// had already ended. The outcome decides whether she gets another turn; the wording has to
+-		// match that, and only the model can make it match.
+-		outcomeGuidelines = "* HOW YOUR MESSAGE MUST END — this depends on the outcome you choose:\n"
+-				+ "    - 'conversation_in_progress' is the ONLY outcome that keeps the conversation open. "
+-				+ "It is the only one where you may ask a question, because it is the only one where you "
+-				+ "will hear the answer.\n"
+-				+ "    - EVERY other outcome ENDS THE CONVERSATION IMMEDIATELY. The senior hears your "
+-				+ "message and then the call is over. There is no next turn.\n"
+-				+ "    - So when you choose any outcome other than 'conversation_in_progress', your "
+-				+ "message must be a FAREWELL that states what is happening. Tell the senior what you "
+-				+ "concluded and what you are doing about it, then close warmly.\n"
+-				+ "    - NEVER end on a question, and never ask for confirmation, when the outcome is not "
+-				+ "'conversation_in_progress'. If you still need something confirmed, that is exactly what "
+-				+ "'conversation_in_progress' is for — ask, and decide once you have the answer.\n"
+-				+ "    - Good: \"I'm raising an alert now and someone will be with you shortly. Stay where "
+-				+ "you are, I'm staying with you.\" / \"I'm so glad you're alright. Take care, and call me "
+-				+ "if you need anything.\"\n"
+-				+ "    - Bad: \"Just to confirm, did you say you fell?\" paired with a fall-confirmed "
+-				+ "outcome — the senior is asked a question and the call ends before they can answer."
+-				+ onNewLine(languagePack.closingRules());
++		outcomeGuidelines = buildOutcomeGuidelines();
+ 		startOfConversationGuidelines = "* Notice that if the conversation history is empty, this means that this is the start of the conversation. In this case, you should start the conversation by greeting the user and asking the appropriate questions given your tasks.";
+ 		asrGuidelines = "* Remember that the user is speaking to an ASR system, so it is important to ask him questions that will encourage easy to understand responses.\n"
+ 				+ "* IMPORTANT: The ASR transcription may contain misrecognitions, especially for words that sound similar. "
+@@ -260,6 +238,39 @@
+ 	}
+ 
+ 	/**
++	 * How a reply must end, given the outcome it carries. Overridable so a scenario can tighten its
++	 * own goodbye without changing every other scenario's (KS-831: fall calls only).
++	 *
++	 * <p>Called from the constructor, before subclass fields are initialised: an override may use
++	 * only {@link #getLanguagePack()} and static constants.
++	 */
++	protected String buildOutcomeGuidelines() {
++		// KS-739: a live call closed correctly — the clear withheld, the late tail folded, the alert
++		// raised and reported — on the words "just to confirm, did you say you fell?". Every decision
++		// was right and the senior was left with a question nobody would ever answer, because the call
++		// had already ended. The outcome decides whether she gets another turn; the wording has to
++		// match that, and only the model can make it match.
++		return "* HOW YOUR MESSAGE MUST END — this depends on the outcome you choose:\n"
++				+ "    - 'conversation_in_progress' is the ONLY outcome that keeps the conversation open. "
++				+ "It is the only one where you may ask a question, because it is the only one where you "
++				+ "will hear the answer.\n"
++				+ "    - EVERY other outcome ENDS THE CONVERSATION IMMEDIATELY. The senior hears your "
++				+ "message and then the call is over. There is no next turn.\n"
++				+ "    - So when you choose any outcome other than 'conversation_in_progress', your "
++				+ "message must be a FAREWELL that states what is happening. Tell the senior what you "
++				+ "concluded and what you are doing about it, then close warmly.\n"
++				+ "    - NEVER end on a question, and never ask for confirmation, when the outcome is not "
++				+ "'conversation_in_progress'. If you still need something confirmed, that is exactly what "
++				+ "'conversation_in_progress' is for — ask, and decide once you have the answer.\n"
++				+ "    - Good: \"I'm raising an alert now and someone will be with you shortly. Stay where "
++				+ "you are, I'm staying with you.\" / \"I'm so glad you're alright. Take care, and call me "
++				+ "if you need anything.\"\n"
++				+ "    - Bad: \"Just to confirm, did you say you fell?\" paired with a fall-confirmed "
++				+ "outcome — the senior is asked a question and the call ends before they can answer."
++				+ onNewLine(languagePack.closingRules());
++	}
++
++	/**
+ 	 * Appends scenario-specific ASR guidelines after the generic ones.
+ 	 * Called once during buildPrompt() — after allContextGuidelines are written.
+ 	 */
+diff -ruN a/com/ddd/services/smartconversation/context/distress_fall/ContextDistressFallDetected.java c/com/ddd/services/smartconversation/context/distress_fall/ContextDistressFallDetected.java
+--- a/com/ddd/services/smartconversation/context/distress_fall/ContextDistressFallDetected.java	2026-10-13 13:33:33.114378400 +0100
++++ c/com/ddd/services/smartconversation/context/distress_fall/ContextDistressFallDetected.java	2026-10-13 14:32:58.258430400 +0100
+@@ -75,6 +75,19 @@
+ 				+ onNewLine(getLanguagePack().fallMisheardWords());
+ 	}
+ 
++	/** KS-831: a language may replace the shared goodbye section for fall calls. */
++	@Override
++	protected String buildOutcomeGuidelines() {
++		String fallRules = getLanguagePack().fallGoodbyeRules();
++		return fallRules.isEmpty() ? super.buildOutcomeGuidelines() : fallRules;
++	}
++
++	/** KS-831: how the call closes after a mandated phrase; the shared guideline unless the language replaces it. */
++	private String goodbyeGuideline() {
++		String guideline = getLanguagePack().fallGoodbyeGuideline();
++		return guideline.isEmpty() ? CLOSE_POLITELY_GUIDELINE : guideline;
++	}
++
+ 	@Override
+ 	public String _buildPrompt() {
+ 
+@@ -88,11 +101,12 @@
+ 				"* If you are not sure if the senior has fallen or it is the start of the conversation, %s should be set to '%s', and the response should contain a response that will help understand if the senior has fallen or not.\n"
+ 						+ "* If it is clear that the senior has fallen, %s should be set to '%s', and the response should indicate that you are raising an alert for them.\n"
+ 						+ "* If it is 100 percent clear that the senior is fine, did not fall, and this was a false alarm, %s should be set to '%s', and the response should indicate that you are happy to hear that everything is okay.\n"
+-						+ "* If the senior has not answered you at all (silence / empty responses), %s should be set to '%s', and the response should say that you could not reach them and that you are alerting their caregivers.\n",
++						+ "* If the senior has not answered you at all (silence / empty responses), %s should be set to '%s', and the response should say that %s.\n",
+ 				AssistantResponse.CONVERSATION_OUTCOME_KEY, ConversationOutcome.CONVERSATION_IN_PROGRESS.getValue(),
+ 				AssistantResponse.CONVERSATION_OUTCOME_KEY, ConversationOutcome.DISTRESS_FALL_CONFIRMED.getValue(),
+ 				AssistantResponse.CONVERSATION_OUTCOME_KEY, ConversationOutcome.NO_FALL_CONFIRMED.getValue(),
+-				AssistantResponse.CONVERSATION_OUTCOME_KEY, ConversationOutcome.NO_RESPONSE_FROM_RESIDENT.getValue());
++				AssistantResponse.CONVERSATION_OUTCOME_KEY, ConversationOutcome.NO_RESPONSE_FROM_RESIDENT.getValue(),
++				getLanguagePack().fallNoResponseSummary());
+ 
+ 		// Define conversation history guidelines
+ 		String conversationHistoryGuidelines = String.join("\n",
+@@ -211,6 +225,7 @@
+ 				+ "The two rules above apply ONLY when the senior actually said something. If the senior never answered, return "
+ 				+ ConversationOutcome.NO_RESPONSE_FROM_RESIDENT.getValue() + " instead - never " + ConversationOutcome.DISTRESS_FALL_CONFIRMED.getValue() + ".\n"
+ 				+ "When returning " + ConversationOutcome.DISTRESS_FALL_CONFIRMED.getValue() + ", you may first empathize with the senior's situation, "
++				+ getLanguagePack().fallConfirmedReason()
+ 				+ "then you MUST include the following phrase (word for word): "
+ 				// The mandated phrase states only what the system actually does — raise the
+ 				// alert. It must not promise that help is on the way: nothing here guarantees
+@@ -220,7 +235,7 @@
+ 				// it ends the call on a flat, abrupt note. The warm sign-off is generated rather
+ 				// than mandated so it adapts to the senior's gender and to what was just said;
+ 				// a hard-coded Hebrew farewell could not (verb forms differ by addressee gender).
+-				+ " " + CLOSE_POLITELY_GUIDELINE + "\n"
++				+ " " + goodbyeGuideline() + "\n"
+ 				// This phrase must differ from the DISTRESS_FALL_CONFIRMED one. The old prompt
+ 				// bound that sentence to the confirmed branch only, so emitting it was itself a
+ 				// pull toward that outcome - and in the 2026-08-04 repro VEGA said "I haven't
+@@ -230,7 +245,7 @@
+ 				+ getLanguagePack().fallNoResponsePhrase()
+ 				// The senior may be listening but unable to answer, so this branch closes the
+ 				// same way rather than hanging up on a bare statement.
+-				+ " " + CLOSE_POLITELY_GUIDELINE;
++				+ " " + goodbyeGuideline();
+ 
+ 
+ 		// Combine all parts into the final prompt
+diff -ruN a/com/ddd/services/smartconversation/context/language/ConversationLanguagePack.java c/com/ddd/services/smartconversation/context/language/ConversationLanguagePack.java
+--- a/com/ddd/services/smartconversation/context/language/ConversationLanguagePack.java	2026-10-13 13:33:33.175611000 +0100
++++ c/com/ddd/services/smartconversation/context/language/ConversationLanguagePack.java	2026-10-13 14:32:58.262381200 +0100
+@@ -52,6 +52,30 @@
+ 	/** Fall check: the phrase mandated for no_response_from_resident, in quotes. */
+ 	public abstract String fallNoResponsePhrase();
+ 
++	/**
++	 * KS-831. Fall check: what the no_response_from_resident line of the outcome list says the
++	 * response must state, e.g. "you could not reach them and that you are alerting their caregivers".
++	 */
++	public abstract String fallNoResponseSummary();
++
++	/**
++	 * KS-831. Fall check: the whole "HOW YOUR MESSAGE MUST END" section, replacing the shared one in
++	 * ContextBase.outcomeGuidelines. Return "" to keep the shared section (and {@link #closingRules()}).
++	 */
++	public abstract String fallGoodbyeRules();
++
++	/**
++	 * KS-831. Fall check: the sentence after each mandated phrase saying how the call closes. Return ""
++	 * to keep the shared CLOSE_POLITELY_GUIDELINE.
++	 */
++	public abstract String fallGoodbyeGuideline();
++
++	/**
++	 * KS-831. Fall check: inserted after "you may first empathize with the senior's situation, " in the
++	 * distress_fall_confirmed rule, ending in ", " — how to say why the alert is raised. "" for none.
++	 */
++	public abstract String fallConfirmedReason();
++
+ 	/** Fall check: block after the VALIDATION RULE. */
+ 	public abstract String fallOwnWordsRule();
+ 
+diff -ruN a/com/ddd/services/smartconversation/context/language/EnglishPack.java c/com/ddd/services/smartconversation/context/language/EnglishPack.java
+--- a/com/ddd/services/smartconversation/context/language/EnglishPack.java	2026-10-13 13:33:33.321498500 +0100
++++ c/com/ddd/services/smartconversation/context/language/EnglishPack.java	2026-10-13 14:33:03.090341600 +0100
+@@ -57,7 +57,80 @@
+ 
+ 	@Override
+ 	public String fallNoResponsePhrase() {
+-		return "\"I could not reach you, so I am notifying your caregivers now.\"";
++		// KS-831: every alert goodbye carries the alert phrase, silent calls included. The opening is
++		// what still tells this phrase apart from the confirmed one. "Could not reach you" is banned,
++		// even on a silent call.
++		return "\"I haven't heard from you, and your safety is my top priority, so I'm raising an alert in the "
++				+ "SeniorMatics system.\" You may add the senior's name after \"from you\". Never say that you "
++				+ "could not reach them, in any wording (\"I could not reach you\", \"I couldn't reach you\", "
++				+ "\"I wasn't able to reach you\").";
++	}
++
++	@Override
++	public String fallNoResponseSummary() {
++		return "you haven't heard from them and that you are raising an alert";
++	}
++
++	/**
++	 * KS-831: the shared section's "Good" examples ("someone will be with you shortly", "I'm staying
++	 * with you", "call me if you need anything") are what the requirements forbid on a fall call; gpt-4o
++	 * copied "call me if you need anything" in 10 of 10 lab runs. On 2026-10-06 a call confirmed the
++	 * fall and ended on "Please let me know if you need help or if anything happened."
++	 */
++	@Override
++	public String fallGoodbyeRules() {
++		return "* HOW YOUR MESSAGE MUST END — this depends on the outcome you choose:\n"
++				+ "    - 'conversation_in_progress' is the ONLY outcome that keeps the conversation open. "
++				+ "It is the only one where you may ask a question, because it is the only one where you "
++				+ "will hear the answer.\n"
++				+ "    - EVERY other outcome ENDS THE CONVERSATION IMMEDIATELY. The senior hears your "
++				+ "message and then the call is over. There is no next turn.\n"
++				+ "    - So when you choose any outcome other than 'conversation_in_progress', your message "
++				+ "is your GOODBYE, and it is said only once:\n"
++				+ "        - at most 4 sentences, and its very last word is \"Goodbye\";\n"
++				+ "        - NEVER a question, never a request for confirmation, and never a request to tell "
++				+ "you or let you know anything. If you still need something confirmed, that is exactly what "
++				+ "'conversation_in_progress' is for — ask, and decide once you have the answer;\n"
++				+ "        - NEVER an offer of more help or of your presence: no \"let me know if you need "
++				+ "anything\", \"call me\", \"if you need help\", \"I'm here\", \"I'm here with you\", "
++				+ "\"I'm staying with you\", \"is there anything else\";\n"
++				+ "        - NEVER a promise that help is on the way, that someone is coming or will check on "
++				+ "them.\n"
++				+ "    - When the senior is fine, show you are glad and say goodbye, and do not mention any "
++				+ "alert.\n"
++				+ "    - Good: \"I'm having trouble understanding you, [name]. Your safety is my top priority, "
++				+ "so I'm raising an alert in the SeniorMatics system. Please take care, [name]. Goodbye.\" / "
++				+ "\"I'm happy everything is alright. Take care. Goodbye.\"\n"
++				+ "    - Bad: \"I'm concerned about your safety. Please let me know if you need help or if "
++				+ "anything happened.\" paired with a fall-confirmed outcome — it asks the senior for an answer, "
++				+ "and the call ends before they can give it. / \"Just to confirm, did you say you fell?\" "
++				+ "paired with a fall-confirmed outcome, for the same reason.";
++	}
++
++	/** KS-831: replaces "reassure by staying present", which gpt-4o turned into "I'm here with you". */
++	@Override
++	public String fallGoodbyeGuideline() {
++		return "After that phrase, close the conversation warmly with a short, caring goodbye whose very last "
++				+ "word is \"Goodbye\" (for example: \"Please take care, [name]. Goodbye.\"). The whole message "
++				+ "is at most 4 sentences: the examples are already that long, so do not add to them (not even "
++				+ "an apology). The call ends the moment you finish, so do NOT ask anything, do NOT "
++				+ "ask the senior to tell you or let you know anything, and do NOT offer more help or your "
++				+ "presence (never \"let me know\", \"if you need anything\", \"call me\", \"I'm here\", "
++				+ "\"I'm here to help\", \"I'm staying with you\"). Do NOT promise that help is on the way, that anyone has been "
++				+ "dispatched, is coming or will check on them, and do NOT give any estimate of when: the "
++				+ "alert has been raised, but nothing guarantees a caregiver has seen it yet.";
++	}
++
++	/** KS-831: say WHY the alert is raised. The openings are examples; only the alert phrase is word for word. */
++	@Override
++	public String fallConfirmedReason() {
++		return "briefly saying why (if the senior spoke but you could not understand them, begin your "
++				+ "message with it and put no sentence before it, for example: "
++				+ "\"I'm having trouble understanding you, [name]. Your safety is my top priority, so...\"; "
++				+ "if they told you they fell, are hurt or need help, say back only what THEY said: \"I'm sorry you "
++				+ "fell, [name].\" if they said they fell, \"I'm sorry you're hurt, [name].\" if they said they are "
++				+ "hurt or in pain, \"I'm sorry you need help, [name].\" if they asked for help; never say they fell "
++				+ "when they did not say so), ";
+ 	}
+ 
+ 	@Override
+diff -ruN a/com/ddd/services/smartconversation/context/language/HebrewPack.java c/com/ddd/services/smartconversation/context/language/HebrewPack.java
+--- a/com/ddd/services/smartconversation/context/language/HebrewPack.java	2026-10-13 13:33:33.415051100 +0100
++++ c/com/ddd/services/smartconversation/context/language/HebrewPack.java	2026-10-13 14:32:58.263397100 +0100
+@@ -79,6 +79,27 @@
+ 		return "\"לא הצלחתי ליצור איתך קשר, אני מעדכנת את המטפלים שלך.\"";
+ 	}
+ 
++	// KS-831: Hebrew keeps today's goodbye; it has its own ticket.
++	@Override
++	public String fallNoResponseSummary() {
++		return "you could not reach them and that you are alerting their caregivers";
++	}
++
++	@Override
++	public String fallGoodbyeRules() {
++		return "";
++	}
++
++	@Override
++	public String fallGoodbyeGuideline() {
++		return "";
++	}
++
++	@Override
++	public String fallConfirmedReason() {
++		return "";
++	}
++
+ 	@Override
+ 	public String fallOwnWordsRule() {
+ 		return "";
+diff -ruN a/com/ddd/services/smartconversation/context/language/PortuguesePack.java c/com/ddd/services/smartconversation/context/language/PortuguesePack.java
+--- a/com/ddd/services/smartconversation/context/language/PortuguesePack.java	2026-10-13 13:33:33.494834100 +0100
++++ c/com/ddd/services/smartconversation/context/language/PortuguesePack.java	2026-10-13 14:32:58.263397100 +0100
+@@ -95,6 +95,27 @@
+ 		return "\"Não consegui falar consigo, por isso estou a avisar os seus cuidadores.\"";
+ 	}
+ 
++	// KS-831: pt-PT keeps today's goodbye (the evaluated v5 prompt) until its scope is decided.
++	@Override
++	public String fallNoResponseSummary() {
++		return "you could not reach them and that you are alerting their caregivers";
++	}
++
++	@Override
++	public String fallGoodbyeRules() {
++		return "";
++	}
++
++	@Override
++	public String fallGoodbyeGuideline() {
++		return "";
++	}
++
++	@Override
++	public String fallConfirmedReason() {
++		return "";
++	}
++
+ 	@Override
+ 	public String fallOwnWordsRule() {
+ 		return "    - In Portuguese, closing as fine requires the senior to have said it IN THEIR OWN WORDS — e.g. "

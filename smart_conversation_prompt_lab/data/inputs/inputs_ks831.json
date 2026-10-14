@@ -1,0 +1,141 @@
+{
+  "version": "ks831",
+  "description": "KS-831: fall-call goodbyes. One group per QA category in the functional requirements (unclear, fell/hurt/help, fine, silent). An empty text is silence (<<NO RESPONSE>>). Talking over the goodbye is server behaviour and cannot be simulated here.",
+  "scenarios": [
+    {
+      "id": "u1_garbled_story",
+      "category": "unclear",
+      "name": "Garbled story, modelled on the ticket's call (invented text)",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "Gardens and she was one of twelve sisters. She was the only tall one."},
+        {"text": "You're a good teacher, right? And so then."},
+        {"text": "So it was complicating."},
+        {"text": "Ma as in."}
+      ]
+    },
+    {
+      "id": "u2_rambling_offtopic",
+      "category": "unclear",
+      "name": "Rambling about unrelated things",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "The bus didn't come on Tuesday and my sister said the market was closed."},
+        {"text": "We used to have a dog, a big one, brown."},
+        {"text": "The kettle is on the stove I think."},
+        {"text": "And then the man from the bank."}
+      ]
+    },
+    {
+      "id": "u3_broken_fragments",
+      "category": "unclear",
+      "name": "Broken half-words from a choppy line",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "Wha... the... um."},
+        {"text": "Is it the. No the."},
+        {"text": "Mm hm the floor ha."},
+        {"text": "Uh."}
+      ]
+    },
+    {
+      "id": "u4_confused",
+      "category": "unclear",
+      "name": "Confused, does not know what happened",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "I don't know. Where is Mary?"},
+        {"text": "I don't know what you mean."},
+        {"text": "Who is this?"},
+        {"text": "I don't know."}
+      ]
+    },
+    {
+      "id": "u5_asr_noise",
+      "category": "unclear",
+      "name": "ASR noise words",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "The story topology is the island of the government slowly."},
+        {"text": "Purple seven the window."},
+        {"text": "Okay the tomorrow the garden."},
+        {"text": "Yes no the."}
+      ]
+    },
+    {
+      "id": "f1_i_fell",
+      "category": "fell",
+      "name": "Says they fell",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "Yes, I fell in the kitchen."},
+        {"text": "I fell."}
+      ]
+    },
+    {
+      "id": "f2_hurt",
+      "category": "fell",
+      "name": "Says they are hurt",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "My hip hurts a lot, I can't get up."},
+        {"text": "It hurts."}
+      ]
+    },
+    {
+      "id": "f3_need_help",
+      "category": "fell",
+      "name": "Asks for help",
+      "expected_outcome": "distress_fall_confirmed",
+      "user_turns": [
+        {"text": "Please, I need help."},
+        {"text": "Help me."}
+      ]
+    },
+    {
+      "id": "ok1_fine",
+      "category": "fine",
+      "name": "Fine, then confirms not hurt",
+      "expected_outcome": "no_fall_confirmed",
+      "user_turns": [
+        {"text": "Yes, I'm fine, I didn't fall."},
+        {"text": "No, I'm not hurt at all, everything is fine."},
+        {"text": "Yes, I'm sure."}
+      ]
+    },
+    {
+      "id": "ok2_dropped_something",
+      "category": "fine",
+      "name": "Dropped a chair, is okay",
+      "expected_outcome": "no_fall_confirmed",
+      "user_turns": [
+        {"text": "Oh, that was just me dropping a chair. I'm okay."},
+        {"text": "No, I'm not hurt. I'm standing up, all good."},
+        {"text": "Yes, really, I'm fine."}
+      ]
+    },
+    {
+      "id": "s1_silent",
+      "category": "silent",
+      "name": "Never answers",
+      "expected_outcome": "no_response_from_resident",
+      "user_turns": [
+        {"text": ""},
+        {"text": ""},
+        {"text": ""}
+      ]
+    },
+    {
+      "id": "s2_silent_after_greeting_long",
+      "category": "silent",
+      "name": "Never answers (four silences available)",
+      "expected_outcome": "no_response_from_resident",
+      "user_turns": [
+        {"text": ""},
+        {"text": ""},
+        {"text": ""},
+        {"text": ""}
+      ]
+    }
+  ]
+}
