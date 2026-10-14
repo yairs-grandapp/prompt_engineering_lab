@@ -1,3 +1,6 @@
 .env
 .venv/
 __pycache__/
+
+# KS-831: full per-call results stay local; only summary.md is committed
+smart_conversation_prompt_lab/experiments/ks831/*/results.json

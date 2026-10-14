@@ -1,0 +1,30 @@
+{
+  "version": "ks831_he",
+  "description": "KS-831: the 12 English goodbye scenarios (inputs_ks831.json) in Hebrew, spoken by a male senior (the rendered prompt uses seniorGender=male). An empty text is silence (<<NO RESPONSE>>). Translations are the lab's own and need a native review.",
+  "scenarios": [
+    {"id": "u1_garbled_story", "category": "unclear", "name": "Garbled story, modelled on the ticket's call", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "גינות והיא הייתה אחת משתים עשרה אחיות. היא הייתה היחידה הגבוהה."}, {"text": "אתה מורה טוב, נכון? ואז אז."}, {"text": "אז זה היה מסובך."}, {"text": "מה כמו ב."}]},
+    {"id": "u2_rambling_offtopic", "category": "unclear", "name": "Rambling about unrelated things", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "האוטובוס לא הגיע ביום שלישי ואחותי אמרה שהשוק סגור."}, {"text": "פעם היה לנו כלב, גדול, חום."}, {"text": "הקומקום על הכיריים אני חושב."}, {"text": "ואז האיש מהבנק."}]},
+    {"id": "u3_broken_fragments", "category": "unclear", "name": "Broken half-words from a choppy line", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "מה... ה... אממ."}, {"text": "זה ה. לא ה."}, {"text": "ממ הממ הרצפה הא."}, {"text": "אה."}]},
+    {"id": "u4_confused", "category": "unclear", "name": "Confused, does not know what happened", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "אני לא יודע. איפה מרים?"}, {"text": "אני לא מבין מה את רוצה."}, {"text": "מי זאת?"}, {"text": "אני לא יודע."}]},
+    {"id": "u5_asr_noise", "category": "unclear", "name": "ASR noise words", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "הסיפור של הטופולוגיה הוא האי של הממשלה לאט."}, {"text": "סגול שבע החלון."}, {"text": "בסדר המחר הגינה."}, {"text": "כן לא ה."}]},
+    {"id": "f1_i_fell", "category": "fell", "name": "Says they fell", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "כן, נפלתי במטבח."}, {"text": "נפלתי."}]},
+    {"id": "f2_hurt", "category": "fell", "name": "Says they are hurt", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "הירך כואבת לי מאוד, אני לא מצליח לקום."}, {"text": "כואב."}]},
+    {"id": "f3_need_help", "category": "fell", "name": "Asks for help", "expected_outcome": "distress_fall_confirmed",
+     "user_turns": [{"text": "בבקשה, אני צריך עזרה."}, {"text": "תעזרי לי."}]},
+    {"id": "ok1_fine", "category": "fine", "name": "Fine, then confirms not hurt", "expected_outcome": "no_fall_confirmed",
+     "user_turns": [{"text": "כן, אני בסדר, לא נפלתי."}, {"text": "לא, לא נפגעתי בכלל, הכל בסדר."}, {"text": "כן, אני בטוח."}]},
+    {"id": "ok2_dropped_something", "category": "fine", "name": "Dropped a chair, is okay", "expected_outcome": "no_fall_confirmed",
+     "user_turns": [{"text": "אה, זה רק אני שהפלתי כיסא. אני בסדר."}, {"text": "לא, לא נפגעתי. אני עומד, הכל טוב."}, {"text": "כן, באמת, אני בסדר."}]},
+    {"id": "s1_silent", "category": "silent", "name": "Never answers", "expected_outcome": "no_response_from_resident",
+     "user_turns": [{"text": ""}, {"text": ""}, {"text": ""}]},
+    {"id": "s2_silent_after_greeting_long", "category": "silent", "name": "Never answers (four silences available)", "expected_outcome": "no_response_from_resident",
+     "user_turns": [{"text": ""}, {"text": ""}, {"text": ""}, {"text": ""}]}
+  ]
+}
