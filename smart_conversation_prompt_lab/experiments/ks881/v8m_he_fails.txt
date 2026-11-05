@@ -1,0 +1,4 @@
+# KS-881 v8m: the 3 Hebrew failures of the full round (5 Nov), 5 runs each
+fell/w3
+misheard_alert/w3
+fine_then_fell/w1

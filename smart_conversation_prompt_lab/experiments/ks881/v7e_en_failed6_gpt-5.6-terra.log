@@ -1,0 +1,19 @@
+v7e_en_failed6_gpt-5.6-terra: 6 scenarios, 6 wordings x 1 runs = 6 conversations (gpt-5.6-terra, temperature=0.0, prompt=v7e, inputs_ks881_en.json, server checks on)
+Estimated cost: ~$0.39 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+[1/6 4s] soso_twice/w1#0: PASS distress_assistance_requested@2
+[2/6 4s] still_unclear/w4#0: PASS distress_assistance_requested@2
+[3/6 5s] past_fall_now_fine/w1#0: PASS no_fall_confirmed@3
+[4/6 6s] hold_repeated/w1#0: PASS distress_unable_to_verify@4
+[5/6 9s] unclear_fine_then_hold/w1#0: PASS distress_unable_to_verify@3
+[6/6 9s] hold_silent_silent/w1#0: FAIL distress_unable_to_verify@3
+# KS-881 eval: v7e_en_failed6_gpt-5.6-terra — FAIL
+
+2026-11-03T11:11:39 | gpt-5.6-terra | temperature=0.0 | prompt=v7e | en | inputs_ks881_en.json | runs=1
+
+Pass rule (KS-881 TR v3): every wording passes every run.
+
+| Wordings passing every run | Runs passed | p50 ms | p95 ms | Errors | Cost |
+|---|---|---|---|---|---|
+| 5/6 | 5/6 | 1245 | 1693 | 0 | $0.25 |
+Summary: C:\Users\CMS\Desktop\prompt_engineering_lab\smart_conversation_prompt_lab\experiments\ks881\v7e_en_failed6_gpt-5.6-terra\summary.md

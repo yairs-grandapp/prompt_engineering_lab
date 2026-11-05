@@ -1,0 +1,3992 @@
+{
+ "version": "ks881-realistic-3",
+ "language": "en",
+ "description": "KS-881 realistic set: likely fall-call conversations (Yair, Alon, Tony 2026-11-03), named and unidentified callers; expectations from the v7 state machine with the 5-message limit. pt and he are the lab's own wordings, for native review.",
+ "scenarios": [
+  {
+   "id": "real_f",
+   "situation": "fall: F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I went down in the kitchen."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I took a tumble in the living room."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I had a fall."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Yes, I had a fall in the bedroom."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I fell on the stairs."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I fell backwards."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I slipped on the rug and fell."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I fell when I stood up."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I fell this morning."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I slipped and fell."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "I fell getting out of the bath."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "I slipped in the shower and fell."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "I fell by the door."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "I'm on the floor."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "I fell."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "I tripped and fell in the hallway."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I fell down in the kitchen."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "I lost my balance and fell."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Yes, I fell, I'm on the floor."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "Yes, I fell."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "I fell over the dog."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "I fell next to the bed."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Yes, I fell, but I'm okay."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "I fell off the chair."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "Yes, I've fallen."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "I fell, but I got back up."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "I fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "I fell over in the garden."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "I fell, I'm sitting on the floor now."
+     ]
+    },
+    {
+     "id": "w30",
+     "turns": [
+      "I fell out of bed."
+     ]
+    },
+    {
+     "id": "w31",
+     "turns": [
+      "I went down in the kitchen."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w32",
+     "turns": [
+      "I took a tumble in the living room."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w33",
+     "turns": [
+      "I had a fall."
+     ],
+     "repeat_of": "w3"
+    },
+    {
+     "id": "w34",
+     "turns": [
+      "Yes, I had a fall in the bedroom."
+     ],
+     "repeat_of": "w4"
+    },
+    {
+     "id": "w35",
+     "turns": [
+      "I fell on the stairs."
+     ],
+     "repeat_of": "w5"
+    },
+    {
+     "id": "w36",
+     "turns": [
+      "I fell backwards."
+     ],
+     "repeat_of": "w6"
+    },
+    {
+     "id": "w37",
+     "turns": [
+      "I slipped on the rug and fell."
+     ],
+     "repeat_of": "w7"
+    },
+    {
+     "id": "w38",
+     "turns": [
+      "I fell when I stood up."
+     ],
+     "repeat_of": "w8"
+    },
+    {
+     "id": "w39",
+     "turns": [
+      "I fell this morning."
+     ],
+     "repeat_of": "w9"
+    },
+    {
+     "id": "w40",
+     "turns": [
+      "I slipped and fell."
+     ],
+     "repeat_of": "w10"
+    },
+    {
+     "id": "w41",
+     "turns": [
+      "I fell getting out of the bath."
+     ],
+     "repeat_of": "w11"
+    },
+    {
+     "id": "w42",
+     "turns": [
+      "I slipped in the shower and fell."
+     ],
+     "repeat_of": "w12"
+    },
+    {
+     "id": "w43",
+     "turns": [
+      "I fell by the door."
+     ],
+     "repeat_of": "w13"
+    },
+    {
+     "id": "w44",
+     "turns": [
+      "I'm on the floor."
+     ],
+     "repeat_of": "w14"
+    },
+    {
+     "id": "w45",
+     "turns": [
+      "I fell."
+     ],
+     "repeat_of": "w15"
+    },
+    {
+     "id": "w46",
+     "turns": [
+      "I tripped and fell in the hallway."
+     ],
+     "repeat_of": "w16"
+    },
+    {
+     "id": "w47",
+     "turns": [
+      "I fell down in the kitchen."
+     ],
+     "repeat_of": "w17"
+    },
+    {
+     "id": "w48",
+     "turns": [
+      "I lost my balance and fell."
+     ],
+     "repeat_of": "w18"
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_fh",
+   "situation": "fall: FH",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I fell and I'm bleeding."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I fell and hurt my hip."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I fell and I can't stand up."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I fell and I can't move my leg."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I fell and I feel dizzy."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I fell and my arm hurts."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I fell, call my son please."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I fell on my back and it hurts."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I fell and hit my head."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I fell and my wrist hurts a lot."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "I fell and I can't get up."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "I fell in the bathroom and my head hurts."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "I fell, please help me."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "I've fallen and I need help."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "I fell, I need an ambulance."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Help, I fell down."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I fell and I'm bleeding."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "I fell and hurt my hip."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "I fell and I can't stand up."
+     ],
+     "repeat_of": "w3"
+    }
+   ],
+   "assistance_flag": true
+  },
+  {
+   "id": "real_mis_yf",
+   "situation": "fall: MIS > YF",
+   "truth": "fall",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I well over.",
+      "I did fall, yes."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I felt down in the kitchen.",
+      "Yes, I fell."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I well off the bed.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I well in the kitchen.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I felt in the hallway.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I well in the bathroom.",
+      "Yes, I fell."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I felt down in the kitchen.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I well down.",
+      "Yes, I fell."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I felt on the floor.",
+      "Yes, I fell."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I well in the bathroom.",
+      "I did fall, yes."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "I held down on the floor.",
+      "I did fall, yes."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "I held on the floor.",
+      "I did fall, yes."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "I well in the bathroom.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "I felt on the floor.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "I well down.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "I held down on the floor.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I well over.",
+      "Yes, I fell down."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "I well over.",
+      "Yes, I fell."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "I felt on the floor.",
+      "I did fall, yes."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_u_f",
+   "situation": "fall: U > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Hmm?",
+      "I fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Pardon?",
+      "I took a tumble in the living room."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "What did you say?",
+      "I slipped and fell."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "What?",
+      "I fell, I'm sitting on the floor now."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I can't hear you.",
+      "I fell getting out of the bath."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Sorry?",
+      "I slipped in the shower and fell."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "What?",
+      "Yes, I've fallen."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "What did you say?",
+      "I fell out of bed."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Pardon?",
+      "I had a fall."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "What?",
+      "I fell over in the garden."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "What did you say?",
+      "Yes, I fell, but I'm okay."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Hello?",
+      "I fell backwards."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "What did you say?",
+      "I fell when I stood up."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Sorry?",
+      "I fell over the dog."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Pardon?",
+      "Yes, I fell, I'm on the floor."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Hmm?",
+      "Yes, I've fallen."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I can't hear you.",
+      "Yes, I fell, but I'm okay."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_s_f",
+   "situation": "fall: S > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      "Yes, I had a fall in the bedroom."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      "I lost my balance and fell."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      "I fell next to the bed."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      "I fell backwards."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      "Yes, I've fallen."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      "I fell on the stairs."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      "I slipped on the rug and fell."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      "I fell down in the kitchen."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      "I slipped and fell."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      "Yes, I fell, but I'm okay."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "",
+      "I fell out of bed."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "",
+      "I fell getting out of the bath."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "",
+      "I'm on the floor."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "",
+      "I fell, but I got back up."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_ho_f",
+   "situation": "fall: HO > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Hold on.",
+      "I fell off the chair."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Hold on.",
+      "Yes, I fell, I'm on the floor."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Just a moment.",
+      "I fell when I stood up."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Wait a second.",
+      "I fell when I stood up."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "One moment, please.",
+      "I fell out of bed."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "One moment, please.",
+      "I went down in the kitchen."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Just a moment.",
+      "I fell over the dog."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "One moment, please.",
+      "Yes, I fell."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Just a moment.",
+      "I took a tumble in the living room."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "One moment, please.",
+      "Yes, I've fallen."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_ho_s_f",
+   "situation": "fall: HO > S > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "One moment, please.",
+      "",
+      "I fell on the stairs."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "One moment, please.",
+      "",
+      "I fell, I'm sitting on the floor now."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Hold on.",
+      "",
+      "I fell this morning."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Hold on.",
+      "",
+      "I fell."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Just a moment.",
+      "",
+      "I fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "One moment, please.",
+      "",
+      "I slipped on the rug and fell."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Hold on.",
+      "",
+      "I fell out of bed."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_fi_cfall",
+   "situation": "fall: FI > CFALL",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "Actually, I did fall."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "Actually, I did fall."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Yes, I'm okay.",
+      "Actually, I fell a minute ago."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I'm alright, thank you.",
+      "Actually, I did fall."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I'm doing fine.",
+      "Actually, I fell a minute ago."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I'm fine.",
+      "Actually, I did fall."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "All good here.",
+      "Well, I fell in the hallway."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I'm well, thanks.",
+      "Actually, I fell a minute ago."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I'm well, thanks.",
+      "Actually, I did fall."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I'm perfectly fine.",
+      "Well, I fell in the hallway."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_uns_f",
+   "situation": "fall: UNS > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I don't know.",
+      "I fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I don't know.",
+      "I fell over in the garden."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I'm not sure what happened.",
+      "I fell over the dog."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I'm not sure.",
+      "I slipped on the rug and fell."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I'm not sure what happened.",
+      "I slipped and fell."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I don't know.",
+      "I'm on the floor."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I'm not sure what happened.",
+      "I fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I'm not sure what happened.",
+      "I fell, but I got back up."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I'm not sure.",
+      "Yes, I fell, I'm on the floor."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I don't really know.",
+      "I fell out of bed."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_h",
+   "situation": "help: H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I feel sick."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I'm in pain."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Can you call my daughter?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I cut my hand."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "My arm hurts."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I can't stand up."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Please help me."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Please send someone."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I need someone to come."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "My chest hurts."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "I'm not feeling good."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "I hurt my knee."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "I can't get up."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "I feel faint."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "It hurts."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "I need help."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I hit my head."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "I need a doctor."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "I feel dizzy."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "I hurt my back."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "I can't breathe well."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "My head hurts."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Help."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "My back hurts."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "I don't feel well."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "I feel very weak."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "My leg hurts."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "Call an ambulance."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "I feel sick."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w30",
+     "turns": [
+      "I'm in pain."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w31",
+     "turns": [
+      "Can you call my daughter?"
+     ],
+     "repeat_of": "w3"
+    },
+    {
+     "id": "w32",
+     "turns": [
+      "I cut my hand."
+     ],
+     "repeat_of": "w4"
+    },
+    {
+     "id": "w33",
+     "turns": [
+      "My arm hurts."
+     ],
+     "repeat_of": "w5"
+    },
+    {
+     "id": "w34",
+     "turns": [
+      "I can't stand up."
+     ],
+     "repeat_of": "w6"
+    },
+    {
+     "id": "w35",
+     "turns": [
+      "Please help me."
+     ],
+     "repeat_of": "w7"
+    },
+    {
+     "id": "w36",
+     "turns": [
+      "Please send someone."
+     ],
+     "repeat_of": "w8"
+    },
+    {
+     "id": "w37",
+     "turns": [
+      "I need someone to come."
+     ],
+     "repeat_of": "w9"
+    },
+    {
+     "id": "w38",
+     "turns": [
+      "My chest hurts."
+     ],
+     "repeat_of": "w10"
+    },
+    {
+     "id": "w39",
+     "turns": [
+      "I'm not feeling good."
+     ],
+     "repeat_of": "w11"
+    },
+    {
+     "id": "w40",
+     "turns": [
+      "I hurt my knee."
+     ],
+     "repeat_of": "w12"
+    },
+    {
+     "id": "w41",
+     "turns": [
+      "I can't get up."
+     ],
+     "repeat_of": "w13"
+    }
+   ]
+  },
+  {
+   "id": "real_u_h",
+   "situation": "help: U > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I can't hear you.",
+      "My chest hurts."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Pardon?",
+      "I hit my head."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "What did you say?",
+      "Can you call my daughter?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Pardon?",
+      "I'm not feeling good."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Hello?",
+      "I'm in pain."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Hello?",
+      "I can't get up."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "What?",
+      "My chest hurts."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "What?",
+      "I hit my head."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "What did you say?",
+      "I hurt my back."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Who is this?",
+      "I feel dizzy."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Hmm?",
+      "My back hurts."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Hello?",
+      "I hurt my knee."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_s_h",
+   "situation": "help: S > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      "I cut my hand."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      "Call an ambulance."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      "I can't get up."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      "I don't feel well."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      "Please help me."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      "I feel very weak."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      "My arm hurts."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      "I feel dizzy."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      "I hit my head."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      "My back hurts."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_fi_cp",
+   "situation": "help: FI > CP",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Yes, I'm okay.",
+      "Actually, my hip hurts."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "All good here.",
+      "My knee is hurting."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Everything's fine here.",
+      "Actually, I do need some help."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I'm doing fine.",
+      "Actually, I can't get up."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Yes, I'm okay.",
+      "My wrist hurts."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Yeah, I'm good.",
+      "I feel a bit dizzy, to be honest."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "Well, my back hurts a bit."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "I feel a bit dizzy, to be honest."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Yeah, I'm good.",
+      "Actually, I can't get up."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I'm fine.",
+      "Actually, I do need some help."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Yeah, I'm good.",
+      "Well, my back hurts a bit."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Everything's fine here.",
+      "My wrist hurts."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Yes, I'm okay.",
+      "Actually, I do need some help."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "I'm doing fine.",
+      "Actually, I do need some help."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "I'm okay, nothing happened.",
+      "My wrist hurts."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "I'm fine.",
+      "My wrist hurts."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I'm well, thanks.",
+      "Actually, my hip hurts."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Everything's fine here.",
+      "Now that you ask, my head hurts."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "My knee is hurting."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "Everything's fine here.",
+      "Actually, I can't get up."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "Actually, I do need some help."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "I'm well, thanks.",
+      "Well, my back hurts a bit."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "I'm fine.",
+      "My knee is hurting."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "Actually, my hip hurts."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_d_cp",
+   "situation": "help: D > CP",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "No fall, I dropped a book.",
+      "Actually, my hip hurts."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "Actually, I can't get up."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I didn't fall.",
+      "Actually, my hip hurts."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "I feel a bit dizzy, to be honest."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "My wrist hurts."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "Well, my back hurts a bit."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "No, I didn't fall, I was just bending down.",
+      "I feel a bit dizzy, to be honest."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "No fall, I dropped a book.",
+      "I feel a bit dizzy, to be honest."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Nothing fell, it was the cat.",
+      "My wrist hurts."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I didn't fall, don't worry.",
+      "Actually, I do need some help."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_uns_h",
+   "situation": "help: UNS > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I don't really know.",
+      "I need a doctor."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I don't know.",
+      "My arm hurts."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I'm not sure.",
+      "I don't feel well."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I don't know.",
+      "My chest hurts."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I'm not sure what happened.",
+      "I need help."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I don't really know.",
+      "Please help me."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I'm not sure.",
+      "I'm not feeling good."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I don't know.",
+      "I cut my hand."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I'm not sure what happened.",
+      "My chest hurts."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I don't really know.",
+      "Please send someone."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_ho_h",
+   "situation": "help: HO > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Wait a second.",
+      "I can't breathe well."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Hold on.",
+      "I feel very weak."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Just a moment.",
+      "I'm in pain."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Wait a second.",
+      "I feel faint."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Wait a second.",
+      "My leg hurts."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Just a moment.",
+      "Please send someone."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_fi_cf",
+   "situation": "fine: FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "All good here.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "All good here.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I'm well, thanks.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Yes, I'm okay.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I'm okay, nothing happened.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I'm perfectly fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I'm okay, nothing happened.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I'm alright, thank you.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "I'm alright, thank you.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Everything's fine here.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "I'm well, thanks.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "I'm alright, thank you.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "I'm fine.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I'm doing fine.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Everything's fine here.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "All good here.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "Yeah, I'm good.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "Yeah, I'm good.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Yes, I'm okay.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "Yeah, I'm good.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "I'm fine.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "Yes, I'm okay.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "I'm perfectly fine.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "I'm alright, thank you.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "I'm perfectly fine.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w30",
+     "turns": [
+      "I'm fine.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w31",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w32",
+     "turns": [
+      "I'm perfectly fine.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w33",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w34",
+     "turns": [
+      "I'm well, thanks.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w35",
+     "turns": [
+      "I'm fine.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w36",
+     "turns": [
+      "I'm okay, nothing happened.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w37",
+     "turns": [
+      "I'm doing fine.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w38",
+     "turns": [
+      "All good here.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w39",
+     "turns": [
+      "I'm alright, thank you.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w40",
+     "turns": [
+      "Everything's fine here.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w41",
+     "turns": [
+      "I'm well, thanks.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w42",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w43",
+     "turns": [
+      "I'm alright, thank you.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w44",
+     "turns": [
+      "I'm doing fine.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w45",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w46",
+     "turns": [
+      "I'm okay, nothing happened.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w47",
+     "turns": [
+      "I'm okay, nothing happened.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w48",
+     "turns": [
+      "Everything's fine here.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w49",
+     "turns": [
+      "I'm doing fine.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w50",
+     "turns": [
+      "I'm doing fine.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w51",
+     "turns": [
+      "Yes, I'm okay.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w52",
+     "turns": [
+      "I'm well, thanks.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w53",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w54",
+     "turns": [
+      "Everything's fine here.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w55",
+     "turns": [
+      "Yes, I'm okay.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w56",
+     "turns": [
+      "All good here.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w57",
+     "turns": [
+      "I'm fine.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w58",
+     "turns": [
+      "Yeah, I'm good.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w59",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w60",
+     "turns": [
+      "I'm doing fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w61",
+     "turns": [
+      "I'm fine.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w62",
+     "turns": [
+      "Yes, I'm okay.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w63",
+     "turns": [
+      "Everything's fine here.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w64",
+     "turns": [
+      "Yes, I'm okay.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w65",
+     "turns": [
+      "Yeah, I'm good.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w66",
+     "turns": [
+      "I'm perfectly fine.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w67",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w68",
+     "turns": [
+      "Yeah, I'm good.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w69",
+     "turns": [
+      "Yeah, I'm good.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w70",
+     "turns": [
+      "All good here.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w71",
+     "turns": [
+      "I'm perfectly fine.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w72",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_d_cf",
+   "situation": "fine: D > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "No fall, I dropped a book.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Nothing fell, it was the cat.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "No, I didn't fall, I was just bending down.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "No fall, I dropped a book.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Nothing fell, it was the cat.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I didn't fall, don't worry.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Nothing fell, it was the cat.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I didn't fall, don't worry.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Nothing fell, it was the cat.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "No, I didn't fall, I was just bending down.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "I didn't fall.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "No, I didn't fall, I was just bending down.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "No, I didn't fall, I was just bending down.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "I didn't fall.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "I didn't fall.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "I didn't fall.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "I didn't fall, don't worry.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "I didn't fall, don't worry.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "I didn't fall, don't worry.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "No fall, I dropped a book.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Nothing fell, it was the cat.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "I didn't fall, don't worry.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "Nothing fell, it was the cat.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "No fall, I dropped a book.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "No fall, I dropped a book.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "No, I didn't fall, I just sat down.",
+      "Honestly, nothing is wrong."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_u_fi_cf",
+   "situation": "fine: U > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "What?",
+      "I'm doing fine.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Hello?",
+      "I'm perfectly fine.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "What?",
+      "I'm perfectly fine.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Hello?",
+      "I'm okay, thanks for checking.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Pardon?",
+      "Yeah, I'm good.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I can't hear you.",
+      "I'm perfectly fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I can't hear you.",
+      "I'm okay, thanks for checking.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Pardon?",
+      "I'm fine.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Pardon?",
+      "Yeah, I'm good.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Hmm?",
+      "I'm doing fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Hello?",
+      "I'm alright, thank you.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "What did you say?",
+      "I'm well, thanks.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Hello?",
+      "Yes, I'm okay.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Hmm?",
+      "Yeah, I'm good.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_s_fi_cf",
+   "situation": "fine: S > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      "I'm doing fine.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      "Yes, I'm okay.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      "I'm alright, thank you.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      "I'm alright, thank you.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      "All good here.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      "Oh, I'm fine, dear.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      "I'm well, thanks.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      "Everything's fine here.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      "Everything's fine here.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      "I'm alright, thank you.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "",
+      "All good here.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "",
+      "Yes, I'm okay.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "",
+      "I'm fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "",
+      "I'm well, thanks.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_ho_fi_cf",
+   "situation": "fine: HO > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Hold on.",
+      "I'm okay, nothing happened.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Just a moment.",
+      "Everything's fine here.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Hold on.",
+      "I'm fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Hold on.",
+      "I'm well, thanks.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Just a moment.",
+      "I'm well, thanks.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Just a moment.",
+      "Oh, I'm fine, dear.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "One moment, please.",
+      "I'm fine.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "One moment, please.",
+      "Everything's fine here.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "One moment, please.",
+      "All good here.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Just a moment.",
+      "Everything's fine here.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_ho_s_fi_cf",
+   "situation": "fine: HO > S > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "One moment, please.",
+      "",
+      "Yeah, I'm good.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Hold on.",
+      "",
+      "Yeah, I'm good.",
+      "I'm not hurt at all, and I don't need anything."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Hold on.",
+      "",
+      "I'm alright, thank you.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Hold on.",
+      "",
+      "Yes, I'm okay.",
+      "I'm sure, I'm perfectly fine."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Wait a second.",
+      "",
+      "I'm okay, nothing happened.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "One moment, please.",
+      "",
+      "All good here.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Just a moment.",
+      "",
+      "I'm perfectly fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "One moment, please.",
+      "",
+      "I'm perfectly fine.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Hold on.",
+      "",
+      "I'm fine.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Wait a second.",
+      "",
+      "I'm alright, thank you.",
+      "Everything is fine, nothing hurts."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_uns_fi_cf",
+   "situation": "fine: UNS > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I'm not sure.",
+      "Oh, I'm fine, dear.",
+      "Everything is fine, nothing hurts."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I don't know.",
+      "I'm doing fine.",
+      "All good, I'm walking around normally."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I'm not sure.",
+      "I'm fine.",
+      "I'm really okay, nothing hurts and I'm up and about."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I'm not sure what happened.",
+      "I'm well, thanks.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I'm not sure what happened.",
+      "Yes, I'm okay.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I don't know.",
+      "I'm alright, thank you.",
+      "Honestly, nothing is wrong."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I'm not sure.",
+      "Yes, I'm okay.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I don't really know.",
+      "I'm alright, thank you.",
+      "I'm absolutely fine, no pain at all."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I don't know.",
+      "Everything's fine here.",
+      "Nothing hurts, I'm fine, thank you."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I don't know.",
+      "Yeah, I'm good.",
+      "Honestly, nothing is wrong."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_u_u",
+   "situation": "unclear: U > U",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "What?",
+      "I can't hear you."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Sorry?",
+      "What?"
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Hello?",
+      "Who is this?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "What?",
+      "What did you say?"
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Pardon?",
+      "Hmm?"
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Pardon?",
+      "Sorry?"
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Hello?",
+      "Sorry?"
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Who is this?",
+      "What?"
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Hello?",
+      "What did you say?"
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Who is this?",
+      "Hmm?"
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "What did you say?",
+      "Sorry?"
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "What did you say?",
+      "Who is this?"
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "What?",
+      "Pardon?"
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Sorry?",
+      "Hello?"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_fi_s_s",
+   "situation": "unclear: FI > S > S",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I'm okay, thanks for checking.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "All good here.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I'm doing fine.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Oh, I'm fine, dear.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I'm perfectly fine.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I'm alright, thank you.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Everything's fine here.",
+      "",
+      ""
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_uns_uns",
+   "situation": "unclear: UNS > UNS",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "I'm not sure what happened.",
+      "I'm not sure what happened."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "I don't really know.",
+      "I'm not sure."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I don't really know.",
+      "I don't know."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "I don't really know.",
+      "I'm not sure what happened."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "I'm not sure what happened.",
+      "I don't know."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I'm not sure.",
+      "I'm not sure."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "I'm not sure.",
+      "I'm not sure what happened."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "I don't really know.",
+      "I don't really know."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "I'm not sure.",
+      "I don't really know."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "I don't know.",
+      "I'm not sure."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_s_s",
+   "situation": "silent: S > S",
+   "truth": "silent",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    }
+   ]
+  },
+  {
+   "id": "real_unk_uf",
+   "situation": "fall: UF",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "My wife has fallen."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "My husband fell in the kitchen."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Yes, my mother fell."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "My father fell on the stairs."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Someone fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "I fell."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "My wife has fallen."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "My husband fell in the kitchen."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Yes, my mother fell."
+     ],
+     "repeat_of": "w3"
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "My father fell on the stairs."
+     ],
+     "repeat_of": "w4"
+    }
+   ]
+  },
+  {
+   "id": "real_unk_u_uf",
+   "situation": "fall: U > UF",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Hello?",
+      "Someone fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "What?",
+      "My father fell on the stairs."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I can't hear you.",
+      "My father fell on the stairs."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Sorry?",
+      "Someone fell in the bathroom."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "What did you say?",
+      "I fell."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Hello?",
+      "My husband fell in the kitchen."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_uh",
+   "situation": "help: UH",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Please send someone."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "My mother can't get up."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "We need an ambulance."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Yes, we need help."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Yes, my wife feels very dizzy."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "My husband is in pain."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Please send someone."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "My mother can't get up."
+     ],
+     "repeat_of": "w2"
+    }
+   ]
+  },
+  {
+   "id": "real_unk_u_uh",
+   "situation": "help: U > UH",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Sorry?",
+      "Please send someone."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "What?",
+      "Please send someone."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "I can't hear you.",
+      "My husband is in pain."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Pardon?",
+      "Please send someone."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_ufine_ucf",
+   "situation": "fine: UFINE > UCF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Nobody needs help, thank you.",
+      "Really, we're all okay, nobody fell."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "No help needed, we're fine.",
+      "Nobody is hurt, everyone is fine."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Everyone is fine here.",
+      "Everyone is up and nothing hurts."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "No, we're all fine here.",
+      "Really, we're all okay, nobody fell."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Everyone is fine here.",
+      "Really, we're all okay, nobody fell."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "We're okay, nothing happened.",
+      "Really, we're all okay, nobody fell."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "No, we're all fine here.",
+      "Everyone is up and nothing hurts."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "We're okay, nothing happened.",
+      "Nobody is hurt, everyone is fine."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Everyone is fine here.",
+      "Nobody is hurt, everyone is fine."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Nobody needs help, thank you.",
+      "Nobody is hurt, everyone is fine."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "No, we're all fine here.",
+      "Nobody is hurt, everyone is fine."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "No help needed, we're fine.",
+      "Really, we're all okay, nobody fell."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_u_u",
+   "situation": "unclear: U > U",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Sorry?",
+      "Who is this?"
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Hello?",
+      "What?"
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Hello?",
+      "Sorry?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Hello?",
+      "Hello?"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_s_s",
+   "situation": "silent: S > S",
+   "truth": "silent",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    }
+   ]
+  }
+ ]
+}

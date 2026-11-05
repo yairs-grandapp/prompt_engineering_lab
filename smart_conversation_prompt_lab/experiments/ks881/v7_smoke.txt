@@ -1,0 +1,19 @@
+# KS-881 v7 smoke run (2026-11-02): one wording per main path of the state machine, English, 1 run.
+fell/w1
+fell_and_help/w1
+asks_help/w6
+fine_confirmed/w1
+unclear_then_fine/w1
+silent_twice/w1
+still_unclear/w1
+hold_then_fell/w1
+hold_wait_then_fine/w1
+hold_repeated/w1
+fine_hold_then_fine/w1
+hold_used_then_hold_again/w1
+soso_then_help/w1
+fine_soso_then_help/w1
+unclear_fine_then_fell/w2
+fine_then_refuses/w1
+help_during_goodbye/w1
+unknown_bare_yes/w1

@@ -1,0 +1,103 @@
+v8n_he_fall_r5_gpt-6-sol: 3 scenarios, 18 wordings x 5 runs = 90 conversations (gpt-6-sol, temperature=None, prompt=v8n_java, inputs_ks881_he.json, server checks on)
+Estimated cost: ~$1.13 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+[1/90 6s] fell/w1#0: PASS distress_fall_confirmed@1
+[2/90 7s] fell/w1#1: PASS distress_fall_confirmed@1
+[3/90 7s] fell/w1#2: PASS distress_fall_confirmed@1
+[4/90 11s] fell/w2#0: PASS distress_fall_confirmed@1
+[5/90 11s] fell/w1#4: PASS distress_fall_confirmed@1
+[6/90 11s] fell/w1#3: PASS distress_fall_confirmed@1
+[7/90 15s] fell/w2#3: PASS distress_fall_confirmed@1
+[8/90 15s] fell/w2#1: PASS distress_fall_confirmed@1
+[9/90 16s] fell/w2#2: PASS distress_fall_confirmed@1
+[10/90 19s] fell/w2#4: PASS distress_fall_confirmed@1
+[11/90 19s] fell/w3#0: PASS distress_fall_confirmed@1
+[12/90 20s] fell/w3#1: PASS distress_fall_confirmed@1
+[13/90 23s] fell/w3#2: PASS distress_fall_confirmed@1
+[14/90 23s] fell/w3#3: PASS distress_fall_confirmed@1
+[15/90 24s] fell/w3#4: PASS distress_fall_confirmed@1
+[16/90 27s] fell/w4#0: PASS distress_fall_confirmed@1
+[17/90 28s] fell/w4#1: PASS distress_fall_confirmed@1
+[18/90 28s] fell/w4#2: PASS distress_fall_confirmed@1
+[19/90 31s] fell/w4#4: PASS distress_fall_confirmed@1
+[20/90 31s] fell/w4#3: PASS distress_fall_confirmed@1
+[21/90 33s] fell/w5#0: PASS distress_fall_confirmed@1
+[22/90 36s] fell/w5#1: PASS distress_fall_confirmed@1
+[23/90 37s] fell/w5#2: PASS distress_fall_confirmed@1
+[24/90 38s] fell/w5#3: PASS distress_fall_confirmed@1
+[25/90 40s] fell/w5#4: PASS distress_fall_confirmed@1
+[26/90 40s] fell/w6#0: PASS distress_fall_confirmed@1
+[27/90 42s] fell/w6#1: PASS distress_fall_confirmed@1
+[28/90 44s] fell/w6#2: PASS distress_fall_confirmed@1
+[29/90 45s] fell/w6#3: PASS distress_fall_confirmed@1
+[30/90 47s] fell/w6#4: PASS distress_fall_confirmed@1
+[31/90 48s] fell/w7#0: PASS distress_fall_confirmed@1
+[32/90 49s] fell/w7#1: PASS distress_fall_confirmed@1
+[33/90 50s] fell/w7#2: PASS distress_fall_confirmed@1
+[34/90 52s] fell/w7#3: PASS distress_fall_confirmed@1
+[35/90 54s] fell/w7#4: PASS distress_fall_confirmed@1
+[36/90 55s] fell/w8#0: PASS distress_fall_confirmed@1
+[37/90 56s] fell/w8#1: PASS distress_fall_confirmed@1
+[38/90 58s] fell/w8#2: PASS distress_fall_confirmed@1
+[39/90 59s] fell/w8#3: PASS distress_fall_confirmed@1
+[40/90 60s] fell/w8#4: PASS distress_fall_confirmed@1
+[41/90 63s] fell/w9#1: PASS distress_fall_confirmed@1
+[42/90 64s] fell/w9#0: PASS distress_fall_confirmed@1
+[43/90 65s] fell/w9#2: PASS distress_fall_confirmed@1
+[44/90 68s] fell/w9#3: PASS distress_fall_confirmed@1
+[45/90 69s] fell/w10#0: PASS distress_fall_confirmed@1
+[46/90 69s] fell/w9#4: PASS distress_fall_confirmed@1
+[47/90 72s] fell/w10#1: PASS distress_fall_confirmed@1
+[48/90 73s] fell/w10#3: PASS distress_fall_confirmed@1
+[49/90 73s] fell/w10#2: PASS distress_fall_confirmed@1
+[50/90 76s] fell_and_help/w1#1: PASS distress_fall_confirmed@1
+[51/90 76s] fell_and_help/w1#0: PASS distress_fall_confirmed@1
+[52/90 77s] fell/w10#4: PASS distress_fall_confirmed@1
+[53/90 80s] fell_and_help/w1#3: PASS distress_fall_confirmed@1
+[54/90 80s] fell_and_help/w1#2: PASS distress_fall_confirmed@1
+[55/90 80s] fell_and_help/w1#4: PASS distress_fall_confirmed@1
+[56/90 83s] fell_and_help/w2#0: PASS distress_fall_confirmed@1
+[57/90 85s] fell_and_help/w2#2: PASS distress_fall_confirmed@1
+[58/90 85s] fell_and_help/w2#1: PASS distress_fall_confirmed@1
+[59/90 87s] fell_and_help/w2#3: PASS distress_fall_confirmed@1
+[60/90 89s] fell_and_help/w2#4: PASS distress_fall_confirmed@1
+[61/90 89s] fell_and_help/w3#0: PASS distress_fall_confirmed@1
+[62/90 93s] fell_and_help/w3#1: PASS distress_fall_confirmed@1
+[63/90 93s] fell_and_help/w3#2: PASS distress_fall_confirmed@1
+[64/90 94s] fell_and_help/w3#3: PASS distress_fall_confirmed@1
+[65/90 97s] fell_and_help/w3#4: PASS distress_fall_confirmed@1
+[66/90 97s] fell_and_help/w4#0: PASS distress_fall_confirmed@1
+[67/90 98s] fell_and_help/w4#1: PASS distress_fall_confirmed@1
+[68/90 102s] fell_and_help/w4#3: PASS distress_fall_confirmed@1
+[69/90 102s] fell_and_help/w4#2: PASS distress_fall_confirmed@1
+[70/90 102s] fell_and_help/w4#4: PASS distress_fall_confirmed@1
+[71/90 105s] fell_and_help/w5#0: PASS distress_fall_confirmed@1
+[72/90 105s] fell_and_help/w5#2: PASS distress_fall_confirmed@1
+[73/90 106s] fell_and_help/w5#1: PASS distress_fall_confirmed@1
+[74/90 108s] fell_and_help/w5#3: PASS distress_fall_confirmed@1
+[75/90 109s] fell_and_help/w5#4: PASS distress_fall_confirmed@1
+[76/90 110s] misheard_alert/w1#0: PASS distress_unable_to_verify@1
+[77/90 114s] misheard_alert/w1#1: PASS distress_unable_to_verify@1
+[78/90 115s] misheard_alert/w1#2: PASS distress_unable_to_verify@1
+[79/90 115s] misheard_alert/w1#3: PASS distress_unable_to_verify@1
+[80/90 118s] misheard_alert/w1#4: PASS distress_unable_to_verify@1
+[81/90 119s] misheard_alert/w2#0: PASS distress_unable_to_verify@1
+[82/90 121s] misheard_alert/w2#1: PASS distress_unable_to_verify@1
+[83/90 124s] misheard_alert/w2#2: PASS distress_unable_to_verify@1
+[84/90 125s] misheard_alert/w2#3: PASS distress_unable_to_verify@1
+[85/90 126s] misheard_alert/w2#4: PASS distress_unable_to_verify@1
+[86/90 128s] misheard_alert/w3#0: PASS distress_unable_to_verify@1
+[87/90 129s] misheard_alert/w3#1: PASS distress_unable_to_verify@1
+[88/90 131s] misheard_alert/w3#2: PASS distress_unable_to_verify@1
+[89/90 132s] misheard_alert/w3#3: PASS distress_unable_to_verify@1
+[90/90 133s] misheard_alert/w3#4: PASS distress_unable_to_verify@1
+# KS-881 eval: v8n_he_fall_r5_gpt-6-sol — PASS
+
+2026-11-05T15:06:53 | gpt-6-sol | temperature=None | prompt=v8n_java | he | inputs_ks881_he.json | runs=5
+
+Pass rule (KS-881 TR v3): every wording passes every run.
+
+| Wordings passing every run | Runs passed | p50 ms | p95 ms | Errors | Cost |
+|---|---|---|---|---|---|
+| 18/18 | 90/90 | 2061 | 3290 | 0 | $0.38 |
+Summary: C:\Users\CMS\Desktop\prompt_engineering_lab\smart_conversation_prompt_lab\experiments\ks881\v8n_he_fall_r5_gpt-6-sol\summary.md

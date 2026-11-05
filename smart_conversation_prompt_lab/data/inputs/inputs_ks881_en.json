@@ -1,0 +1,2309 @@
+{
+ "version": "ks881-3",
+ "language": "en",
+ "description": "KS-881 fall-call test set: every FR v5 situation and every ending transition of the v7 state machine, in several wordings, the same in en, pt and he; every scenario of the earlier sets is kept or covered (see experiments/ks881/coverage.md). close_after = senior answers before the call must close; \"\" = silence.",
+ "scenarios": [
+  {
+   "id": "fell",
+   "situation": "Clearly fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Yes, I fell in the kitchen."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I've fallen and I can't get up."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I took a tumble next to the bed."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I fell this morning in the bathroom."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "I went down on the bathroom floor, I'm still lying here."
+     ],
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "I lost my footing on the stairs and fell."
+     ],
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "I tripped over the rug in the hallway.",
+      "My hip is really hurting."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_002",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "I rolled off the bed.",
+      "I'm on the floor next to my bed, my arm hurts."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_056",
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "I collapsed while walking to the bathroom.",
+      "My legs just stopped working and I went down."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_083",
+     "id": "w9"
+    },
+    {
+     "turns": [
+      "Oh my God, I fell here!"
+     ],
+     "source": "inputs_ks833_ptpt.json:help_nossa_senhora",
+     "id": "w10"
+    }
+   ]
+  },
+  {
+   "id": "fell_not_hurt",
+   "situation": "Clearly fell (says not hurt)",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I fell, but I'm not hurt."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I had a little fall, nothing's broken, I'm fine really."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Yes I slipped and fell down, but no pain at all."
+     ],
+     "id": "w3"
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "hurt_no_fall",
+   "situation": "Hurt without saying they fell",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "My hip hurts a lot, I can't get up."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I've cut my hand and it's bleeding quite badly."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I think I broke my wrist, it's really swollen."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Ow, my back, it's killing me."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "I'm bleeding, I hit my head on the floor.",
+      "There's blood everywhere, please help me."
+     ],
+     "also_accepted": [
+      "distress_fall_confirmed"
+     ],
+     "source": "inputs_v0.json:scenario_10",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "I twisted my ankle on the stairs.",
+      "It's really swollen, I'm sitting on the bottom step."
+     ],
+     "source": "inputs_v1.json:scenario_021",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "AAAHH! Oh God, it hurts!",
+      "My leg! I think I broke my leg!"
+     ],
+     "source": "inputs_v1.json:scenario_074",
+     "id": "w7"
+    }
+   ]
+  },
+  {
+   "id": "fell_and_help",
+   "situation": "Fell and asks for help",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I fell and I need help."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I've fallen, please help me."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I had a fall and I'm hurt, I need someone."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I... the... fell... kitchen... help... can't... head..."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "also_accepted": [
+      "distress_assistance_requested"
+     ],
+     "source": "inputs_v0.json:scenario_15",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "I... I... I fell... please send someone..."
+     ],
+     "source": "inputs_v1.json:scenario_036",
+     "id": "w5"
+    }
+   ],
+   "assistance_flag": true
+  },
+  {
+   "id": "asks_help",
+   "situation": "Needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Please, I need help."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Help me, please."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Can you send someone over? I need a hand."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Call an ambulance, please."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "help... please..."
+     ],
+     "source": "inputs_v1.json:scenario_066",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "No.",
+      "I'm not well."
+     ],
+     "close_after": 1,
+     "source": "inputs_ks833_ptpt.json:help_nao",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "Call my daughter, please."
+     ],
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "I'm scared."
+     ],
+     "id": "w8"
+    }
+   ]
+  },
+  {
+   "id": "misheard_alert",
+   "situation": "A misheard fall or help word",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I well down in the kitchen.",
+      "Yes, I fell."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_qi_cozinha",
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I well off the sofa and it hearts a lot.",
+      "Yes, I fell and it hurts."
+     ],
+     "source": "inputs_ks833_ptpt.json:help_misrec_sai",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Hep me, pease."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unwell_no_fall",
+   "situation": "Unwell without a fall",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I feel really dizzy."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm having trouble breathing."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I feel like I'm going to faint."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I feel very sick, something isn't right."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Everything looks blurry and strange.",
+      "I can't see properly and I feel very confused."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_070",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "I feel terrible."
+     ],
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "no_fall_but_problem",
+   "situation": "Denial with a problem",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I didn't fall, but I can't get up."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm not hurt, but I need some help."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "No, I didn't fall, I just feel awful and dizzy."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "fine_confirmed",
+   "situation": "Says they're fine and confirms it",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine, thank you.",
+      "I'm not hurt at all, I can move fine."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Oh, that was just the cat knocking a chair over. I'm okay.",
+      "Nothing hurts, I'm standing up."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I'm perfectly well.",
+      "Nothing hurts, I can move around fine."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Oh for heaven's sake, stop bothering me! I'm fine!",
+      "I'm perfectly alright, I told you. I was just watching my show."
+     ],
+     "source": "inputs_v1.json:scenario_008",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "I'm doing my physical therapy exercises on the floor.",
+      "The therapist told me to do these stretches every day. I'm fine!"
+     ],
+     "source": "inputs_v1.json:scenario_047",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Ah'm fine, ah'm fine.",
+      "Nah, ain't hurt nothin'."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_azorean",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "Yes.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_sim_nao",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "I told you, I'm fine!"
+     ],
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "I nearly fell, but I grabbed the table.",
+      "Nothing hurts, and I can get up fine."
+     ],
+     "id": "w9"
+    }
+   ]
+  },
+  {
+   "id": "denial_then_fine",
+   "situation": "Denial alone, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I didn't fall.",
+      "No, I don't need any help, I'm fine."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm not hurt.",
+      "No, I don't need anything, everything is okay."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I don't need help.",
+      "I'm sure, I'm absolutely fine."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I didn't fall, I was just picking something up off the floor.",
+      "No, I'm fine."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_apanhar",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "denial_then_help",
+   "situation": "Denial alone, then a problem",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I didn't fall.",
+      "Well, actually I can't get up off the sofa."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm not hurt.",
+      "But I do need someone to help me."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "No, I didn't fall.",
+      "I feel very dizzy though."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I didn't fall.",
+      "Yes."
+     ],
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_pain",
+   "situation": "Says they're fine, then mentions pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm okay.",
+      "Well, my knee does hurt quite a bit."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm fine, don't worry.",
+      "Actually my head is aching badly."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Yes, I'm alright.",
+      "Hmm, my shoulder is very sore."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I'm okay I think.",
+      "But there's some blood on my forehead from where I hit the shelf."
+     ],
+     "source": "inputs_v1.json:scenario_080",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "It hurts a little."
+     ],
+     "id": "w5"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_fell",
+   "situation": "Says they're fine, then mentions a fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm alright.",
+      "Well, actually I did fall a little while ago."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I didn't fall.",
+      "Okay, yes, I did have a tumble earlier."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "I slipped and fell, but I got back up."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Yes.",
+      "Fell. Hurts."
+     ],
+     "source": "inputs_v1.json:scenario_090",
+     "assistance_flag": true,
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "I'm fine, don't worry.",
+      "Well actually I did slip a little bit.",
+      "Yes, I fell, my hip hurts."
+     ],
+     "close_after": [
+      2,
+      3
+     ],
+     "source": "inputs_baseline.json:scenario_08",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "Actually I fell, and I need help getting up."
+     ],
+     "assistance_flag": true,
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_fell",
+   "situation": "Unclear, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I, I, I...",
+      "I fell."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "The kettle, the... what...",
+      "I've fallen on the floor."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Gardens and she was one of twelve sisters.",
+      "Yes, I fell down in the hallway."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I managed to stand back up on my own.",
+      "But my shoulder is very sore from the fall."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_054",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "I don't know what happened.",
+      "I was standing and then I was on the floor somehow."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_072",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "What?",
+      "I fell, I can't get up, please help."
+     ],
+     "assistance_flag": true,
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_problem",
+   "situation": "Unclear, then hurt or needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I think that with my leg.",
+      "My leg hurts, I can't get up."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Mm, the... the thing.",
+      "Please help me."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "What day is it today?",
+      "I feel really dizzy."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_fine",
+   "situation": "Unclear, then clearly okay (D16)",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Huh? What?",
+      "Oh sorry, I was half asleep. I'm fine.",
+      "I'm not hurt at all, I can move fine."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "The bus didn't come on Tuesday.",
+      "Oh, yes, I'm okay.",
+      "Nothing hurts at all, I'm fine."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Who's this?",
+      "Ah, Vega. I'm fine, thanks.",
+      "No, I don't need anything."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I lost my balance for a second but I grabbed the table.",
+      "I didn't actually fall. I'm standing up and I feel fine now.",
+      "I'm not hurt at all, I can move fine."
+     ],
+     "close_after": 2,
+     "source": "inputs_v1.json:scenario_097",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "No, I didn't ball.",
+      "Yes, I didn't fall, I'm fine.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_nao_qi",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Na na, not hurt a tall.",
+      "I'm fine, I'm not hurt at all.",
+      "I'm fine, nothing hurts."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_maguinada",
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "silence_then_problem",
+   "situation": "Silent, then fell or needs help",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "I just fell, I was trying to get to the phone."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "",
+      "Yes, I'm on the floor, I fell."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "",
+      "...help..."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "source": "inputs_v1.json:scenario_081",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "",
+      "My back hurts so much."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "silence_then_fine",
+   "situation": "Silent, then clearly okay",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "Sorry, I was in the other room. I'm fine.",
+      "I'm not hurt at all, I can move fine."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "",
+      "Oh, I didn't hear you. All good here.",
+      "No, I don't need any help."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_silent",
+   "situation": "Says fine, then goes silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "",
+      ""
+     ],
+     "source": "inputs_v1.json:scenario_099",
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Yes, I'm okay.",
+      "",
+      ""
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "still_unclear",
+   "situation": "Still unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I think that with my leg.",
+      "I, I, I."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "The story topology is the island of the government slowly.",
+      "Purple seven the window."
+     ],
+     "source": "inputs_ks831.json:u5_asr_noise",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I don't know.",
+      "I'm not sure."
+     ],
+     "source": "inputs_ks833_ptpt.json:unclear_nao_sei",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Where is Mary? Is Mary here?",
+      "I want Mary."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_ks831.json:u4_confused",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Leave me alone!",
+      "Go away, stop calling me."
+     ],
+     "source": "inputs_v1.json:scenario_028",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "I don't know where I am.",
+      "What is this place? I'm scared."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "close_after": 2,
+     "source": "inputs_v0.json:scenario_11",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "Oh, it's such a lovely day outside, isn't it?",
+      "Have you seen how nice the garden looks today?"
+     ],
+     "source": "inputs_v1.json:scenario_013",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "Hmm... I guess so...",
+      "I'm not really sure, to be honest."
+     ],
+     "close_after": 3,
+     "source": "inputs_v1.json:scenario_084",
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "Wha... the... um.",
+      "Is it the. No the."
+     ],
+     "source": "inputs_ks831.json:u3_broken_fragments",
+     "id": "w9"
+    },
+    {
+     "turns": [
+      "Na na.",
+      "Na na."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_na_na",
+     "id": "w10"
+    },
+    {
+     "turns": [
+      "Tee.",
+      "Tee."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_bare_ti",
+     "id": "w11"
+    }
+   ]
+  },
+  {
+   "id": "what_twice",
+   "situation": "\"What?\" twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "What?",
+      "What? I can't hear you."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Huh?",
+      "Sorry, what are you saying?"
+     ],
+     "source": "inputs_ks833_ptpt.json:unclear_ha",
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "mixed_no_restart",
+   "situation": "Mixed unclear and silence: the re-ask never restarts",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "The garden, the... Tuesday.",
+      "What?"
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "The garden, the... Tuesday.",
+      ""
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "",
+      "What?"
+     ],
+     "source": "inputs_v1.json:scenario_053",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "What?",
+      ""
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Mm, the thing.",
+      "What?"
+     ],
+     "id": "w5"
+    }
+   ]
+  },
+  {
+   "id": "interrupted",
+   "situation": "Answer cut off",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Yes, I'm fine, but I",
+      "my hip hurts."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Yes... but I",
+      "I fell."
+     ],
+     "expected_outcome": "distress_fall_confirmed",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Yes, but",
+      "the... the"
+     ],
+     "expected_outcome": "distress_unable_to_verify",
+     "source": "inputs_ks833_ptpt.json:unclear_cut_off",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I'm fine... no, I'm not."
+     ],
+     "close_after": 1,
+     "source": "inputs_ks833_ptpt.json:unclear_contradiction",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "silent_twice",
+   "situation": "Silent twice",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      ""
+     ],
+     "source": "inputs_baseline.json:scenario_04",
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "past_fall_now_fine",
+   "situation": "Past fall, fine now",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I fell last year, but not today.",
+      "Yes, I'm fine today.",
+      "Nothing hurts at all, I'm fine."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I had a fall last month.",
+      "I'm okay now, thank you.",
+      "I'm not hurt at all, I can move fine."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "past_fall_now_hurt",
+   "situation": "Past fall, hurt now",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I had a fall last week.",
+      "My back still hurts badly."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I fell a few days ago.",
+      "And now my knee is very swollen."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "help_during_goodbye",
+   "situation": "Help asked during the goodbye",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "I'm not hurt at all, I can move fine."
+     ],
+     "after_close": {
+      "text": "Wait, actually my leg hurts.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "All good here.",
+      "No, I don't need anything."
+     ],
+     "after_close": {
+      "text": "Hold on, I need help.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I'm okay.",
+      "Nothing hurts, I'm fine."
+     ],
+     "after_close": {
+      "text": "Actually, I did fall.",
+      "expected_outcome": "distress_fall_confirmed"
+     },
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "after_close": {
+      "text": "Wait, I feel very dizzy.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "thanks_during_goodbye",
+   "situation": "Thanks during the goodbye: no alert",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "I'm not hurt at all, I can move fine."
+     ],
+     "after_close": {
+      "text": "Thank you, bye.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "after_close": {
+      "text": "The kettle, the... Tuesday.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I'm okay.",
+      "Nothing hurts, I can get up fine."
+     ],
+     "after_close": {
+      "text": "Hold on.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unknown_other_fell",
+   "situation": "Another person says someone fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "My husband fell, he's on the floor."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Yes, my mother has fallen in the bathroom."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_other_needs_help",
+   "situation": "Another person says someone needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "My wife hurt her back, she needs help."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Yes, my dad needs help, he can't get up."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_silent_twice",
+   "situation": "Nobody identified, silent twice",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_visitor_fine",
+   "situation": "Another person's \"I'm fine\" (closes until NUN-1591)",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Nobody needs help, we're all fine.",
+      "Everyone's okay, nobody is hurt."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm just visiting, everything is fine here.",
+      "No, nobody fell."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_silent_then_fine",
+   "situation": "B12: fine, silent, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "",
+      "Sorry, yes, I'm okay, nothing hurts."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_twice",
+   "situation": "B13: fine, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "The kettle, the... Tuesday.",
+      "Mm, the garden."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_fine",
+   "situation": "B14: fine, unclear, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "What? Who's this?",
+      "Oh, Vega. No, I'm not hurt at all, I can move fine."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "denial_unclear_twice",
+   "situation": "B19: denial, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I didn't fall.",
+      "Hmm, the... what?",
+      "The thing, the..."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_silent",
+   "situation": "B27: unclear, fine, then silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Is it Sunday?",
+      "Oh, I'm fine.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "silent_fine_then_silent",
+   "situation": "B39: silent, fine, then silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "Oh, I'm fine.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "turn_limit",
+   "situation": "B40: fine, then keeps talking off-topic",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine, but let me tell you about my garden.",
+      "The roses are lovely this year, my daughter planted them.",
+      "And the tomatoes too, we had so many.",
+      "Oh, and the neighbour's cat...",
+      "And then on Sunday..."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_still_unclear",
+   "situation": "B49: nobody identified, still unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Who? What is this?",
+      "The kettle, the... Tuesday."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_silence_then_fell",
+   "situation": "B50: nobody identified, silent, then someone fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "Yes, my husband fell in the kitchen."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_self_fell",
+   "situation": "B51: nobody identified, the person who fell answers",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "I fell, I'm on the floor."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_fell",
+   "situation": "v7: hold on, then says they fell during the wait",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on, let me get to the phone.",
+      "I fell, I'm on the floor."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Wait a moment.",
+      "I fell and I need help."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_help",
+   "situation": "v7: hold on, then needs help during the wait",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "My back hurts, I can't get up."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_fine",
+   "situation": "v7: hold on, then fine during the wait, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "Okay, I'm here. I'm fine.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_unclear",
+   "situation": "v7: hold on, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "The kettle, the... Tuesday.",
+      "What?"
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_fell",
+   "situation": "v7: hold on, silent (free), then fell when asked again",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "",
+      "Sorry, I fell in the bathroom."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Wait.",
+      "",
+      "I fell, please help me."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_help",
+   "situation": "v7: hold on, silent (free), then needs help when asked again",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "",
+      "I need help, I feel very dizzy."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_fine",
+   "situation": "v7: hold on, silent (free), then fine and confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "",
+      "Sorry, I'm fine.",
+      "Nothing hurts, and I can get up fine."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_repeated",
+   "situation": "v7: keeps saying hold on (no endless loop)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "",
+      "Hold on.",
+      "Hold on."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Wait.",
+      "Wait.",
+      "Wait."
+     ],
+     "close_after": 3,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_fine",
+   "situation": "v7: fine, hold on, then confirms during the wait",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "Hold on.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I didn't fall.",
+      "Wait a second.",
+      "No, I don't need any help."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_fell",
+   "situation": "v7: fine, hold on, then says they fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm okay.",
+      "Hold on.",
+      "Actually, I did fall."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm okay.",
+      "Hold on.",
+      "I fell and I need help to get up."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_help",
+   "situation": "v7: fine, hold on, then mentions pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "Hold on.",
+      "My knee hurts quite a bit."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_fine",
+   "situation": "v7: fine, hold on, silent (free), then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "Hold on.",
+      "",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I didn't fall.",
+      "Hold on.",
+      "",
+      "Sorry, I'm fine, really."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_fell",
+   "situation": "v7: fine, hold on, silent (free), then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "Hold on.",
+      "",
+      "Well, I did fall."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "Hold on.",
+      "",
+      "I fell, please send someone."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_help",
+   "situation": "v7: fine, hold on, silent (free), then help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "Hold on.",
+      "",
+      "Actually, I can't get up."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_used_then_hold_again",
+   "situation": "v7: wait used at the first question, hold on again later",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 5,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "",
+      "I'm fine.",
+      "Hold on.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "soso_then_help",
+   "situation": "v7: so-so, then says what is wrong",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "More or less.",
+      "My hip hurts."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "soso_twice",
+   "situation": "v7: so-so after the re-ask is used",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "So-so.",
+      "Just so-so."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "What?",
+      "More or less."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "soso_then_fine",
+   "situation": "v7: so-so, then fine, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "So-so.",
+      "Just tired, I'm okay.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_soso_then_help",
+   "situation": "v7: fine, so-so, then says what is wrong",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "So-so.",
+      "My knee."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_soso_twice",
+   "situation": "v7: fine, so-so, so-so again",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm okay.",
+      "More or less.",
+      "So-so."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_hold",
+   "situation": "v7: unclear, then hold on (no longer free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "What?",
+      "Hold on."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_fell",
+   "situation": "v7: unclear, fine, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "What?",
+      "Oh, I'm fine.",
+      "Well, I did fall a moment ago."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Who's this?",
+      "I'm okay.",
+      "I fell and I need help."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_help",
+   "situation": "v7: unclear, fine, then pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "What?",
+      "Oh, I'm fine.",
+      "My wrist hurts a bit."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_soso",
+   "situation": "v7: unclear, fine, then so-so",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Huh?",
+      "I'm fine.",
+      "So-so."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_unclear",
+   "situation": "v7: unclear, fine, then unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "What?",
+      "I'm fine.",
+      "The garden, the... Tuesday."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_hold",
+   "situation": "v7: unclear, fine, then hold on (not free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "What?",
+      "I'm fine.",
+      "Hold on."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_denial_then_denial",
+   "situation": "v7: unclear, denial, then denial",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "What?",
+      "I didn't fall.",
+      "No, I don't need any help."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_fell",
+   "situation": "v7: fine, unclear, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "The... the kettle.",
+      "I fell in the kitchen."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "What?",
+      "I fell, I can't get up."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_help",
+   "situation": "v7: fine, unclear, then help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "What?",
+      "I need help, my back hurts."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_hold",
+   "situation": "v7: fine, unclear, then hold on (not free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "What?",
+      "Hold on."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unsure_then_fine",
+   "situation": "v7: fine, unsure, then sure",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "I'm not sure.",
+      "I'm sure, nothing hurts."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm fine.",
+      "I haven't tried.",
+      "I can get up fine, nothing hurts."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "I'm okay.",
+      "A bit shaken.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_refuses",
+   "situation": "v7: fine, then refuses",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "Leave me alone.",
+      "Go away."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "overlap_fine_then_hurt",
+   "situation": "v7: \"I'm fine\" continued with a problem in the same answer",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine... but I hit my head."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "sad_but_fine",
+   "situation": "v7: a bit lonely, not hurt",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm okay, just a bit lonely today.",
+      "I'm not hurt, and I can get up fine."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_silent_silent",
+   "situation": "v7: hold on, silent (free), silent, silent (state machine row 287)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hold on.",
+      "",
+      "",
+      ""
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "One moment, please.",
+      "",
+      "",
+      ""
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "feels_terrible_during_goodbye",
+   "situation": "v7: feels terrible during the no-fall goodbye",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "I'm fine.",
+      "Nothing hurts, I can get up."
+     ],
+     "after_close": {
+      "text": "Actually, I feel terrible.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "I'm okay.",
+      "No, I'm not hurt."
+     ],
+     "after_close": {
+      "text": "Wait, call my daughter.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_bare_yes",
+   "situation": "v7: nobody identified, a bare yes",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Yes."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_bare_no",
+   "situation": "v7: nobody identified, a bare no, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "No.",
+      "Nobody is hurt, everyone is fine."
+     ],
+     "id": "w1"
+    }
+   ]
+  }
+ ]
+}

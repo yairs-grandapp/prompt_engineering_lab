@@ -1,0 +1,5 @@
+v6_en_r1: 31 scenarios, 123 wordings x 1 runs = 123 conversations (gpt-4o, temperature=None, prompt=v6, inputs_ks881_en.json)
+Estimated cost: ~$5.59 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https:/)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https:/)

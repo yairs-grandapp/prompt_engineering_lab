@@ -1,0 +1,656 @@
+v7g_real_en_t1_gpt-4o: 28 scenarios, 481 wordings x 1 runs = 481 conversations (gpt-4o, temperature=None, prompt=v7g, inputs_ks881_realistic_en.json, server checks on)
+Estimated cost: ~$28.84 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+[1/481 3s] real_f/w3#0: PASS distress_fall_confirmed@1
+[2/481 3s] real_f/w1#0: PASS distress_fall_confirmed@1
+[3/481 3s] real_f/w4#0: FAIL distress_fall_confirmed@1
+[4/481 4s] real_f/w2#0: PASS distress_fall_confirmed@1
+[5/481 6s] real_f/w5#0: FAIL distress_fall_confirmed@1
+[6/481 6s] real_f/w6#0: PASS distress_fall_confirmed@1
+[7/481 6s] real_f/w7#0: FAIL distress_fall_confirmed@1
+[8/481 6s] real_f/w8#0: PASS distress_fall_confirmed@1
+[9/481 8s] real_f/w9#0: PASS distress_fall_confirmed@1
+[10/481 8s] real_f/w10#0: FAIL distress_fall_confirmed@1
+[11/481 8s] real_f/w11#0: FAIL distress_fall_confirmed@1
+[12/481 8s] real_f/w12#0: FAIL distress_fall_confirmed@1
+[13/481 10s] real_f/w14#0: FAIL distress_fall_confirmed@1
+[14/481 10s] real_f/w13#0: PASS distress_fall_confirmed@1
+[15/481 10s] real_f/w15#0: FAIL distress_fall_confirmed@1
+[16/481 12s] real_f/w16#0: FAIL distress_fall_confirmed@1
+[17/481 12s] real_f/w19#0: FAIL distress_fall_confirmed@1
+[18/481 12s] real_f/w17#0: FAIL distress_fall_confirmed@1
+[19/481 13s] real_f/w18#0: FAIL distress_fall_confirmed@1
+[20/481 15s] real_f/w21#0: PASS distress_fall_confirmed@1
+[21/481 15s] real_f/w20#0: PASS distress_fall_confirmed@1
+[22/481 15s] real_f/w23#0: PASS distress_fall_confirmed@1
+[23/481 16s] real_f/w22#0: FAIL distress_fall_confirmed@1
+[24/481 17s] real_f/w25#0: FAIL distress_fall_confirmed@1
+[25/481 17s] real_f/w24#0: FAIL distress_fall_confirmed@1
+[26/481 18s] real_f/w26#0: PASS distress_fall_confirmed@1
+[27/481 19s] real_f/w27#0: FAIL distress_fall_confirmed@1
+[28/481 20s] real_f/w28#0: PASS distress_fall_confirmed@1
+[29/481 20s] real_f/w29#0: FAIL distress_fall_confirmed@1
+[30/481 20s] real_f/w30#0: PASS distress_fall_confirmed@1
+[31/481 22s] real_f/w31#0: FAIL distress_fall_confirmed@1
+[32/481 22s] real_f/w32#0: PASS distress_fall_confirmed@1
+[33/481 22s] real_f/w33#0: PASS distress_fall_confirmed@1
+[34/481 23s] real_f/w34#0: PASS distress_fall_confirmed@1
+[35/481 25s] real_f/w36#0: FAIL distress_fall_confirmed@1
+[36/481 25s] real_f/w37#0: FAIL distress_fall_confirmed@1
+[37/481 25s] real_f/w38#0: PASS distress_fall_confirmed@1
+[38/481 27s] real_f/w39#0: FAIL distress_fall_confirmed@1
+[39/481 27s] real_f/w40#0: FAIL distress_fall_confirmed@1
+[40/481 27s] real_f/w41#0: FAIL distress_fall_confirmed@1
+[41/481 28s] real_f/w35#0: FAIL distress_fall_confirmed@1
+[42/481 29s] real_f/w42#0: PASS distress_fall_confirmed@1
+[43/481 30s] real_f/w44#0: FAIL distress_fall_confirmed@1
+[44/481 30s] real_f/w45#0: FAIL distress_fall_confirmed@1
+[45/481 30s] real_f/w43#0: FAIL distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[46/481 33s] real_f/w46#0: PASS distress_fall_confirmed@1
+[47/481 41s] real_fh/w2#0: PASS distress_fall_confirmed@1
+[48/481 43s] real_fh/w3#0: PASS distress_fall_confirmed@1
+[49/481 46s] real_fh/w4#0: PASS distress_fall_confirmed@1
+[50/481 48s] real_fh/w5#0: PASS distress_fall_confirmed@1
+[51/481 50s] real_fh/w6#0: PASS distress_fall_confirmed@1
+[52/481 52s] real_f/w47#0: FAIL distress_fall_confirmed@1
+[53/481 52s] real_f/w48#0: FAIL distress_fall_confirmed@1
+[54/481 53s] real_fh/w7#0: PASS distress_fall_confirmed@1
+[55/481 53s] real_fh/w1#0: PASS distress_fall_confirmed@1
+[56/481 54s] real_fh/w8#0: PASS distress_fall_confirmed@1
+[57/481 55s] real_fh/w9#0: PASS distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[58/481 55s] real_fh/w10#0: PASS distress_fall_confirmed@1
+[59/481 55s] real_fh/w11#0: PASS distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[60/481 58s] real_fh/w14#0: PASS distress_fall_confirmed@1
+[61/481 61s] real_fh/w16#0: PASS distress_fall_confirmed@1
+[62/481 63s] real_fh/w17#0: PASS distress_fall_confirmed@1
+[63/481 65s] real_fh/w18#0: PASS distress_fall_confirmed@1
+[64/481 67s] real_fh/w19#0: PASS distress_fall_confirmed@1
+[65/481 70s] real_mis_yf/w1#0: FAIL distress_fall_confirmed@1
+[66/481 72s] real_mis_yf/w2#0: FAIL distress_fall_confirmed@1
+[67/481 76s] real_mis_yf/w3#0: PASS distress_fall_confirmed@1
+[68/481 77s] real_fh/w12#0: PASS distress_fall_confirmed@1
+[69/481 78s] real_fh/w13#0: PASS distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[70/481 79s] real_fh/w15#0: PASS distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[71/481 80s] real_mis_yf/w6#0: FAIL distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[72/481 82s] real_mis_yf/w7#0: PASS distress_fall_confirmed@1
+[73/481 84s] real_mis_yf/w9#0: PASS distress_fall_confirmed@1
+[74/481 86s] real_mis_yf/w10#0: PASS distress_fall_confirmed@1
+[75/481 89s] real_mis_yf/w11#0: PASS distress_fall_confirmed@1
+[76/481 92s] real_mis_yf/w12#0: PASS distress_fall_confirmed@1
+[77/481 94s] real_mis_yf/w13#0: FAIL distress_fall_confirmed@1
+[78/481 97s] real_mis_yf/w14#0: FAIL distress_fall_confirmed@1
+[79/481 100s] real_mis_yf/w5#0: FAIL distress_fall_confirmed@1
+[80/481 103s] real_mis_yf/w4#0: FAIL distress_fall_confirmed@1
+[81/481 103s] real_mis_yf/w15#0: PASS distress_fall_confirmed@1
+[82/481 103s] real_mis_yf/w8#0: PASS distress_fall_confirmed@1
+[83/481 104s] real_mis_yf/w16#0: FAIL distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[84/481 105s] real_mis_yf/w17#0: PASS distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[85/481 105s] real_mis_yf/w18#0: PASS distress_fall_confirmed@1
+[86/481 106s] real_mis_yf/w19#0: PASS distress_fall_confirmed@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[87/481 109s] real_u_f/w3#0: PASS distress_fall_confirmed@2
+[88/481 113s] real_u_f/w5#0: FAIL distress_fall_confirmed@2
+[89/481 116s] real_u_f/w6#0: PASS distress_fall_confirmed@2
+[90/481 120s] real_u_f/w7#0: FAIL distress_fall_confirmed@2
+[91/481 123s] real_u_f/w8#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[92/481 130s] real_u_f/w1#0: FAIL distress_fall_confirmed@2
+[93/481 130s] real_u_f/w4#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[94/481 134s] real_u_f/w11#0: PASS distress_fall_confirmed@2
+[95/481 138s] real_u_f/w12#0: FAIL distress_fall_confirmed@2
+[96/481 141s] real_u_f/w13#0: PASS distress_fall_confirmed@2
+[97/481 145s] real_u_f/w14#0: PASS distress_fall_confirmed@2
+[98/481 150s] real_u_f/w15#0: FAIL distress_fall_confirmed@2
+[99/481 154s] real_u_f/w10#0: PASS distress_fall_confirmed@2
+[100/481 154s] real_u_f/w16#0: PASS distress_fall_confirmed@2
+[101/481 154s] real_u_f/w9#0: FAIL distress_fall_confirmed@2
+[102/481 155s] real_u_f/w2#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Request too large for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on to)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[103/481 158s] real_u_f/w17#0: PASS distress_fall_confirmed@2
+[104/481 162s] real_s_f/w4#0: PASS distress_fall_confirmed@2
+[105/481 165s] real_s_f/w5#0: PASS distress_fall_confirmed@2
+[106/481 169s] real_s_f/w6#0: PASS distress_fall_confirmed@2
+[107/481 173s] real_s_f/w7#0: FAIL distress_fall_confirmed@2
+[108/481 177s] real_s_f/w8#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[109/481 178s] real_s_f/w1#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[110/481 179s] real_s_f/w2#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[111/481 181s] real_s_f/w10#0: PASS distress_fall_confirmed@2
+[112/481 185s] real_s_f/w12#0: FAIL distress_fall_confirmed@2
+[113/481 189s] real_s_f/w13#0: PASS distress_fall_confirmed@2
+[114/481 193s] real_s_f/w14#0: PASS distress_fall_confirmed@2
+[115/481 196s] real_ho_f/w1#0: PASS distress_fall_confirmed@2
+[116/481 199s] real_s_f/w3#0: PASS distress_fall_confirmed@2
+[117/481 200s] real_ho_f/w2#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[118/481 201s] real_s_f/w9#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[119/481 202s] real_ho_f/w3#0: FAIL distress_fall_confirmed@2
+[120/481 206s] real_ho_f/w6#0: PASS distress_fall_confirmed@2
+[121/481 210s] real_ho_f/w7#0: PASS distress_fall_confirmed@2
+[122/481 214s] real_ho_f/w8#0: PASS distress_fall_confirmed@2
+[123/481 217s] real_ho_f/w9#0: PASS distress_fall_confirmed@2
+[124/481 220s] real_ho_f/w10#0: PASS distress_fall_confirmed@2
+[125/481 223s] real_s_f/w11#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[126/481 224s] real_ho_f/w4#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[127/481 226s] real_ho_s_f/w1#0: FAIL distress_fall_confirmed@3
+[128/481 231s] real_ho_s_f/w4#0: FAIL distress_fall_confirmed@3
+[129/481 235s] real_ho_s_f/w5#0: PASS distress_fall_confirmed@3
+[130/481 239s] real_ho_s_f/w6#0: FAIL distress_fall_confirmed@3
+[131/481 244s] real_ho_s_f/w7#0: PASS distress_fall_confirmed@3
+  429 rate limit, waiting 40 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[132/481 244s] real_ho_f/w5#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[133/481 247s] real_ho_s_f/w2#0: FAIL distress_fall_confirmed@3
+[134/481 253s] real_fi_cfall/w3#0: PASS distress_fall_confirmed@2
+[135/481 257s] real_fi_cfall/w4#0: PASS distress_fall_confirmed@2
+[136/481 263s] real_fi_cfall/w5#0: PASS distress_fall_confirmed@2
+[137/481 268s] real_fi_cfall/w1#0: PASS distress_fall_confirmed@2
+[138/481 268s] real_fi_cfall/w2#0: PASS distress_fall_confirmed@2
+[139/481 272s] real_fi_cfall/w7#0: PASS distress_fall_confirmed@2
+[140/481 272s] real_fi_cfall/w8#0: FAIL distress_fall_confirmed@2
+[141/481 273s] real_fi_cfall/w6#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[142/481 275s] real_fi_cfall/w10#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[143/481 276s] real_uns_f/w1#0: PASS distress_fall_confirmed@2
+[144/481 279s] real_uns_f/w3#0: FAIL distress_fall_confirmed@2
+[145/481 284s] real_uns_f/w4#0: FAIL distress_fall_confirmed@2
+[146/481 287s] real_uns_f/w5#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[147/481 291s] real_uns_f/w6#0: FAIL distress_fall_confirmed@2
+[148/481 295s] real_uns_f/w7#0: FAIL distress_fall_confirmed@2
+[149/481 295s] real_fi_cfall/w9#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[150/481 299s] real_uns_f/w2#0: FAIL distress_fall_confirmed@2
+[151/481 303s] real_uns_f/w10#0: PASS distress_fall_confirmed@2
+[152/481 306s] real_h/w1#0: PASS distress_assistance_requested@1
+[153/481 308s] real_h/w2#0: PASS distress_assistance_requested@1
+[154/481 309s] real_ho_s_f/w3#0: PASS distress_fall_confirmed@3
+[155/481 311s] real_h/w3#0: PASS distress_assistance_requested@1
+[156/481 312s] real_h/w4#0: PASS distress_assistance_requested@1
+[157/481 313s] real_h/w5#0: PASS distress_assistance_requested@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[158/481 314s] real_h/w6#0: PASS distress_assistance_requested@1
+  429 rate limit, waiting 40 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 40 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[159/481 317s] real_h/w8#0: PASS distress_assistance_requested@1
+[160/481 319s] real_h/w9#0: PASS distress_assistance_requested@1
+[161/481 322s] real_h/w10#0: PASS distress_assistance_requested@1
+[162/481 324s] real_h/w11#0: PASS distress_assistance_requested@1
+[163/481 327s] real_h/w12#0: PASS distress_assistance_requested@1
+[164/481 329s] real_h/w13#0: PASS distress_assistance_requested@1
+[165/481 332s] real_h/w14#0: PASS distress_assistance_requested@1
+[166/481 334s] real_h/w15#0: PASS distress_assistance_requested@1
+[167/481 336s] real_h/w7#0: PASS distress_assistance_requested@1
+[168/481 337s] real_h/w16#0: PASS distress_assistance_requested@1
+[169/481 338s] real_h/w17#0: PASS distress_assistance_requested@1
+[170/481 340s] real_h/w18#0: PASS distress_assistance_requested@1
+[171/481 341s] real_h/w19#0: PASS distress_assistance_requested@1
+[172/481 342s] real_h/w20#0: PASS distress_assistance_requested@1
+[173/481 343s] real_h/w21#0: PASS distress_assistance_requested@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[174/481 346s] real_h/w23#0: PASS distress_assistance_requested@1
+[175/481 348s] real_h/w24#0: PASS distress_assistance_requested@1
+[176/481 350s] real_h/w25#0: PASS distress_assistance_requested@1
+[177/481 353s] real_h/w26#0: PASS distress_assistance_requested@1
+[178/481 356s] real_h/w27#0: PASS distress_assistance_requested@1
+[179/481 359s] real_uns_f/w8#0: PASS distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[180/481 359s] real_h/w28#0: PASS distress_assistance_requested@1
+[181/481 360s] real_uns_f/w9#0: FAIL distress_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[182/481 362s] real_h/w30#0: PASS distress_assistance_requested@1
+[183/481 364s] real_h/w32#0: PASS distress_assistance_requested@1
+[184/481 365s] real_h/w22#0: PASS distress_assistance_requested@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[185/481 368s] real_h/w34#0: PASS distress_assistance_requested@1
+[186/481 372s] real_h/w35#0: PASS distress_assistance_requested@1
+[187/481 374s] real_h/w36#0: PASS distress_assistance_requested@1
+[188/481 377s] real_h/w37#0: PASS distress_assistance_requested@1
+[189/481 380s] real_h/w38#0: PASS distress_assistance_requested@1
+[190/481 381s] real_h/w29#0: PASS distress_assistance_requested@1
+[191/481 382s] real_h/w39#0: PASS distress_assistance_requested@1
+[192/481 382s] real_h/w31#0: PASS distress_assistance_requested@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[193/481 384s] real_h/w41#0: PASS distress_assistance_requested@1
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[194/481 387s] real_h/w33#0: PASS distress_assistance_requested@1
+[195/481 390s] real_u_h/w3#0: PASS distress_assistance_requested@2
+[196/481 393s] real_u_h/w4#0: PASS distress_assistance_requested@2
+[197/481 399s] real_u_h/w5#0: PASS distress_assistance_requested@2
+[198/481 404s] real_h/w40#0: PASS distress_assistance_requested@1
+[199/481 405s] real_u_h/w6#0: PASS distress_assistance_requested@2
+[200/481 407s] real_u_h/w1#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[201/481 408s] real_u_h/w2#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[202/481 408s] real_u_h/w7#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[203/481 411s] real_u_h/w9#0: PASS distress_assistance_requested@2
+[204/481 414s] real_u_h/w12#0: PASS distress_assistance_requested@2
+[205/481 419s] real_s_h/w1#0: PASS distress_assistance_requested@2
+[206/481 423s] real_s_h/w2#0: PASS distress_assistance_requested@2
+[207/481 426s] real_s_h/w3#0: PASS distress_assistance_requested@2
+[208/481 429s] real_u_h/w8#0: PASS distress_assistance_requested@2
+[209/481 430s] real_s_h/w4#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[210/481 432s] real_u_h/w11#0: PASS distress_assistance_requested@2
+[211/481 436s] real_s_h/w7#0: PASS distress_assistance_requested@2
+[212/481 439s] real_s_h/w8#0: PASS distress_assistance_requested@2
+[213/481 442s] real_s_h/w9#0: PASS distress_assistance_requested@2
+[214/481 446s] real_s_h/w10#0: PASS distress_assistance_requested@2
+[215/481 450s] real_fi_cp/w1#0: PASS distress_assistance_requested@2
+[216/481 452s] real_u_h/w10#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[217/481 453s] real_s_h/w5#0: PASS distress_assistance_requested@2
+[218/481 453s] real_s_h/w6#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[219/481 458s] real_fi_cp/w4#0: PASS distress_assistance_requested@2
+[220/481 462s] real_fi_cp/w6#0: PASS distress_assistance_requested@2
+[221/481 468s] real_fi_cp/w7#0: PASS distress_assistance_requested@2
+[222/481 471s] real_fi_cp/w8#0: PASS distress_assistance_requested@2
+[223/481 474s] real_fi_cp/w2#0: PASS distress_assistance_requested@2
+[224/481 475s] real_fi_cp/w9#0: PASS distress_assistance_requested@2
+[225/481 476s] real_fi_cp/w3#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[226/481 478s] real_fi_cp/w10#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[227/481 479s] real_fi_cp/w11#0: PASS distress_assistance_requested@2
+[228/481 484s] real_fi_cp/w14#0: PASS distress_assistance_requested@2
+[229/481 487s] real_fi_cp/w15#0: PASS distress_assistance_requested@2
+[230/481 492s] real_fi_cp/w16#0: PASS distress_assistance_requested@2
+[231/481 496s] real_fi_cp/w17#0: PASS distress_assistance_requested@2
+[232/481 498s] real_fi_cp/w5#0: PASS distress_assistance_requested@2
+[233/481 500s] real_fi_cp/w18#0: PASS distress_assistance_requested@2
+[234/481 501s] real_fi_cp/w12#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[235/481 502s] real_fi_cp/w13#0: PASS distress_assistance_requested@2
+[236/481 507s] real_fi_cp/w22#0: PASS distress_assistance_requested@2
+[237/481 511s] real_fi_cp/w23#0: PASS distress_assistance_requested@2
+[238/481 514s] real_fi_cp/w24#0: PASS distress_assistance_requested@2
+[239/481 518s] real_d_cp/w1#0: PASS distress_assistance_requested@2
+[240/481 521s] real_d_cp/w2#0: PASS distress_assistance_requested@2
+[241/481 522s] real_fi_cp/w19#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[242/481 524s] real_fi_cp/w20#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[243/481 525s] real_d_cp/w3#0: PASS distress_assistance_requested@2
+[244/481 529s] real_d_cp/w6#0: PASS distress_assistance_requested@2
+[245/481 533s] real_d_cp/w7#0: PASS distress_assistance_requested@2
+[246/481 536s] real_d_cp/w8#0: PASS distress_assistance_requested@2
+[247/481 541s] real_d_cp/w9#0: PASS distress_assistance_requested@2
+[248/481 544s] real_d_cp/w10#0: PASS distress_assistance_requested@2
+[249/481 545s] real_fi_cp/w21#0: PASS distress_assistance_requested@2
+[250/481 546s] real_d_cp/w4#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[251/481 548s] real_d_cp/w5#0: PASS distress_assistance_requested@2
+[252/481 552s] real_uns_h/w4#0: PASS distress_assistance_requested@2
+[253/481 555s] real_uns_h/w5#0: PASS distress_assistance_requested@2
+[254/481 560s] real_uns_h/w6#0: PASS distress_assistance_requested@2
+[255/481 564s] real_uns_h/w7#0: PASS distress_assistance_requested@2
+[256/481 568s] real_uns_h/w8#0: PASS distress_assistance_requested@2
+[257/481 568s] real_uns_h/w1#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[258/481 569s] real_uns_h/w2#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[259/481 572s] real_ho_h/w1#0: PASS distress_assistance_requested@2
+[260/481 576s] real_ho_h/w2#0: PASS distress_assistance_requested@2
+[261/481 580s] real_ho_h/w3#0: PASS distress_assistance_requested@2
+[262/481 587s] real_ho_h/w4#0: PASS distress_assistance_requested@2
+[263/481 590s] real_uns_h/w3#0: PASS distress_assistance_requested@2
+[264/481 590s] real_ho_h/w5#0: PASS distress_assistance_requested@2
+[265/481 592s] real_uns_h/w9#0: PASS distress_assistance_requested@2
+[266/481 592s] real_uns_h/w10#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[267/481 594s] real_fi_cf/w1#0: PASS no_fall_confirmed@2
+[268/481 598s] real_fi_cf/w4#0: PASS no_fall_confirmed@2
+[269/481 601s] real_fi_cf/w5#0: PASS no_fall_confirmed@2
+[270/481 605s] real_fi_cf/w6#0: PASS no_fall_confirmed@2
+[271/481 608s] real_fi_cf/w7#0: PASS no_fall_confirmed@2
+[272/481 612s] real_fi_cf/w8#0: PASS no_fall_confirmed@2
+[273/481 614s] real_ho_h/w6#0: PASS distress_assistance_requested@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[274/481 616s] real_fi_cf/w9#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[275/481 618s] real_fi_cf/w10#0: PASS no_fall_confirmed@2
+[276/481 621s] real_fi_cf/w12#0: PASS no_fall_confirmed@2
+[277/481 624s] real_fi_cf/w13#0: PASS no_fall_confirmed@2
+[278/481 628s] real_fi_cf/w14#0: PASS no_fall_confirmed@2
+[279/481 632s] real_fi_cf/w15#0: PASS no_fall_confirmed@2
+[280/481 636s] real_fi_cf/w2#0: PASS no_fall_confirmed@2
+[281/481 636s] real_fi_cf/w3#0: PASS no_fall_confirmed@2
+[282/481 636s] real_fi_cf/w16#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[283/481 640s] real_fi_cf/w17#0: PASS no_fall_confirmed@2
+[284/481 644s] real_fi_cf/w20#0: PASS no_fall_confirmed@2
+[285/481 649s] real_fi_cf/w21#0: PASS no_fall_confirmed@2
+[286/481 653s] real_fi_cf/w22#0: PASS no_fall_confirmed@2
+[287/481 656s] real_fi_cf/w23#0: PASS no_fall_confirmed@2
+[288/481 660s] real_fi_cf/w18#0: PASS no_fall_confirmed@2
+[289/481 660s] real_fi_cf/w11#0: PASS no_fall_confirmed@2
+[290/481 660s] real_fi_cf/w24#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[291/481 661s] real_fi_cf/w19#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[292/481 664s] real_fi_cf/w25#0: PASS no_fall_confirmed@2
+[293/481 668s] real_fi_cf/w29#0: PASS no_fall_confirmed@2
+[294/481 672s] real_fi_cf/w30#0: PASS no_fall_confirmed@2
+[295/481 676s] real_fi_cf/w31#0: PASS no_fall_confirmed@2
+[296/481 680s] real_fi_cf/w32#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[297/481 684s] real_fi_cf/w26#0: PASS no_fall_confirmed@2
+[298/481 684s] real_fi_cf/w27#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[299/481 684s] real_fi_cf/w33#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[300/481 687s] real_fi_cf/w34#0: PASS no_fall_confirmed@2
+[301/481 691s] real_fi_cf/w37#0: PASS no_fall_confirmed@2
+[302/481 695s] real_fi_cf/w38#0: PASS no_fall_confirmed@2
+[303/481 699s] real_fi_cf/w39#0: PASS no_fall_confirmed@2
+[304/481 702s] real_fi_cf/w40#0: PASS no_fall_confirmed@2
+[305/481 706s] real_fi_cf/w28#0: PASS no_fall_confirmed@2
+[306/481 706s] real_fi_cf/w41#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[307/481 708s] real_fi_cf/w35#0: PASS no_fall_confirmed@2
+[308/481 713s] real_fi_cf/w44#0: PASS no_fall_confirmed@2
+[309/481 717s] real_fi_cf/w45#0: PASS no_fall_confirmed@2
+[310/481 720s] real_fi_cf/w46#0: PASS no_fall_confirmed@2
+[311/481 724s] real_fi_cf/w47#0: PASS no_fall_confirmed@2
+[312/481 728s] real_fi_cf/w36#0: PASS no_fall_confirmed@2
+[313/481 728s] real_fi_cf/w48#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[314/481 730s] real_fi_cf/w43#0: PASS no_fall_confirmed@2
+[315/481 730s] real_fi_cf/w42#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[316/481 734s] real_fi_cf/w51#0: PASS no_fall_confirmed@2
+[317/481 740s] real_fi_cf/w53#0: PASS no_fall_confirmed@2
+[318/481 744s] real_fi_cf/w54#0: PASS no_fall_confirmed@2
+[319/481 748s] real_fi_cf/w55#0: PASS no_fall_confirmed@2
+[320/481 752s] real_fi_cf/w56#0: PASS no_fall_confirmed@2
+[321/481 752s] real_fi_cf/w49#0: PASS no_fall_confirmed@2
+[322/481 752s] real_fi_cf/w50#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[323/481 756s] real_fi_cf/w59#0: PASS no_fall_confirmed@2
+[324/481 759s] real_fi_cf/w60#0: PASS no_fall_confirmed@2
+[325/481 764s] real_fi_cf/w61#0: PASS no_fall_confirmed@2
+[326/481 769s] real_fi_cf/w62#0: PASS no_fall_confirmed@2
+[327/481 772s] real_fi_cf/w63#0: PASS no_fall_confirmed@2
+[328/481 774s] real_fi_cf/w52#0: PASS no_fall_confirmed@2
+[329/481 775s] real_fi_cf/w57#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[330/481 776s] real_fi_cf/w58#0: PASS no_fall_confirmed@2
+[331/481 776s] real_fi_cf/w64#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[332/481 778s] real_fi_cf/w65#0: PASS no_fall_confirmed@2
+[333/481 781s] real_fi_cf/w69#0: PASS no_fall_confirmed@2
+[334/481 786s] real_fi_cf/w70#0: PASS no_fall_confirmed@2
+[335/481 789s] real_fi_cf/w71#0: PASS no_fall_confirmed@2
+[336/481 794s] real_fi_cf/w72#0: PASS no_fall_confirmed@2
+[337/481 798s] real_d_cf/w1#0: PASS no_fall_confirmed@2
+[338/481 799s] real_fi_cf/w66#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[339/481 800s] real_fi_cf/w68#0: PASS no_fall_confirmed@2
+[340/481 804s] real_d_cf/w4#0: PASS no_fall_confirmed@2
+[341/481 807s] real_d_cf/w5#0: PASS no_fall_confirmed@2
+[342/481 810s] real_d_cf/w6#0: PASS no_fall_confirmed@2
+[343/481 814s] real_d_cf/w7#0: PASS no_fall_confirmed@2
+[344/481 818s] real_d_cf/w8#0: PASS no_fall_confirmed@2
+[345/481 821s] real_fi_cf/w67#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[346/481 822s] real_d_cf/w9#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[347/481 822s] real_d_cf/w2#0: PASS no_fall_confirmed@2
+[348/481 823s] real_d_cf/w3#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[349/481 829s] real_d_cf/w13#0: PASS no_fall_confirmed@2
+[350/481 833s] real_d_cf/w14#0: PASS no_fall_confirmed@2
+[351/481 837s] real_d_cf/w15#0: PASS no_fall_confirmed@2
+[352/481 840s] real_d_cf/w16#0: PASS no_fall_confirmed@2
+[353/481 844s] real_d_cf/w17#0: PASS no_fall_confirmed@2
+[354/481 845s] real_d_cf/w10#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[355/481 846s] real_d_cf/w11#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[356/481 850s] real_d_cf/w20#0: PASS no_fall_confirmed@2
+[357/481 853s] real_d_cf/w21#0: PASS no_fall_confirmed@2
+[358/481 857s] real_d_cf/w22#0: PASS no_fall_confirmed@2
+[359/481 861s] real_d_cf/w23#0: PASS no_fall_confirmed@2
+[360/481 864s] real_d_cf/w24#0: PASS no_fall_confirmed@2
+[361/481 867s] real_d_cf/w12#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[362/481 868s] real_d_cf/w18#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[363/481 869s] real_d_cf/w19#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[364/481 873s] real_d_cf/w28#0: PASS no_fall_confirmed@2
+[365/481 877s] real_d_cf/w29#0: PASS no_fall_confirmed@2
+[366/481 882s] real_u_fi_cf/w1#0: PASS no_fall_confirmed@3
+[367/481 887s] real_u_fi_cf/w2#0: PASS no_fall_confirmed@3
+[368/481 889s] real_d_cf/w25#0: PASS no_fall_confirmed@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[369/481 891s] real_d_cf/w26#0: PASS no_fall_confirmed@2
+[370/481 892s] real_u_fi_cf/w3#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[371/481 897s] real_u_fi_cf/w5#0: PASS no_fall_confirmed@3
+[372/481 903s] real_u_fi_cf/w7#0: PASS no_fall_confirmed@3
+[373/481 908s] real_u_fi_cf/w8#0: PASS no_fall_confirmed@3
+[374/481 912s] real_d_cf/w27#0: PASS no_fall_confirmed@2
+[375/481 913s] real_u_fi_cf/w9#0: PASS no_fall_confirmed@3
+[376/481 914s] real_u_fi_cf/w4#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[377/481 918s] real_u_fi_cf/w10#0: PASS no_fall_confirmed@3
+[378/481 923s] real_u_fi_cf/w13#0: PASS no_fall_confirmed@3
+[379/481 928s] real_u_fi_cf/w14#0: PASS no_fall_confirmed@3
+[380/481 933s] real_s_fi_cf/w1#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[381/481 937s] real_u_fi_cf/w6#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[382/481 942s] real_s_fi_cf/w3#0: PASS no_fall_confirmed@3
+[383/481 946s] real_s_fi_cf/w4#0: PASS no_fall_confirmed@3
+[384/481 950s] real_s_fi_cf/w5#0: PASS no_fall_confirmed@3
+[385/481 956s] real_s_fi_cf/w6#0: PASS no_fall_confirmed@3
+[386/481 958s] real_s_fi_cf/w2#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[387/481 958s] real_u_fi_cf/w11#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[388/481 959s] real_u_fi_cf/w12#0: PASS no_fall_confirmed@3
+[389/481 961s] real_s_fi_cf/w7#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[390/481 966s] real_s_fi_cf/w11#0: PASS no_fall_confirmed@3
+[391/481 970s] real_s_fi_cf/w12#0: PASS no_fall_confirmed@3
+[392/481 975s] real_s_fi_cf/w13#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[393/481 982s] real_s_fi_cf/w14#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[394/481 985s] real_s_fi_cf/w10#0: PASS no_fall_confirmed@3
+[395/481 990s] real_ho_fi_cf/w2#0: PASS no_fall_confirmed@3
+[396/481 995s] real_ho_fi_cf/w3#0: PASS no_fall_confirmed@3
+[397/481 1000s] real_ho_fi_cf/w4#0: PASS no_fall_confirmed@3
+[398/481 1005s] real_s_fi_cf/w8#0: PASS no_fall_confirmed@3
+[399/481 1005s] real_s_fi_cf/w9#0: PASS no_fall_confirmed@3
+[400/481 1006s] real_ho_fi_cf/w5#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[401/481 1011s] real_ho_fi_cf/w8#0: PASS no_fall_confirmed@3
+[402/481 1015s] real_ho_fi_cf/w9#0: PASS no_fall_confirmed@3
+[403/481 1020s] real_ho_fi_cf/w10#0: PASS no_fall_confirmed@3
+[404/481 1026s] real_ho_s_fi_cf/w1#0: PASS no_fall_confirmed@4
+[405/481 1028s] real_ho_fi_cf/w1#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[406/481 1030s] real_ho_fi_cf/w6#0: PASS no_fall_confirmed@3
+[407/481 1036s] real_ho_s_fi_cf/w4#0: PASS no_fall_confirmed@4
+[408/481 1042s] real_ho_s_fi_cf/w5#0: PASS no_fall_confirmed@4
+[409/481 1049s] real_ho_s_fi_cf/w6#0: PASS no_fall_confirmed@4
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[410/481 1050s] real_ho_fi_cf/w7#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[411/481 1057s] real_ho_s_fi_cf/w8#0: PASS no_fall_confirmed@4
+[412/481 1063s] real_ho_s_fi_cf/w9#0: PASS no_fall_confirmed@4
+[413/481 1069s] real_ho_s_fi_cf/w10#0: PASS no_fall_confirmed@4
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[414/481 1072s] real_ho_s_fi_cf/w2#0: PASS no_fall_confirmed@4
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[415/481 1073s] real_fi_uns_cf/w1#0: PASS no_fall_confirmed@3
+[416/481 1078s] real_fi_uns_cf/w3#0: PASS no_fall_confirmed@3
+[417/481 1082s] real_fi_uns_cf/w4#0: PASS no_fall_confirmed@3
+[418/481 1087s] real_fi_uns_cf/w5#0: PASS no_fall_confirmed@3
+[419/481 1091s] real_fi_uns_cf/w6#0: FAIL distress_unable_to_verify@2
+[420/481 1094s] real_ho_s_fi_cf/w3#0: PASS no_fall_confirmed@4
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[421/481 1098s] real_fi_uns_cf/w8#0: PASS no_fall_confirmed@3
+[422/481 1102s] real_fi_uns_cf/w9#0: PASS no_fall_confirmed@3
+[423/481 1108s] real_fi_uns_cf/w10#0: PASS no_fall_confirmed@3
+[424/481 1112s] real_uns_fi_cf/w1#0: PASS no_fall_confirmed@3
+[425/481 1115s] real_ho_s_fi_cf/w7#0: PASS no_fall_confirmed@4
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[426/481 1116s] real_fi_uns_cf/w7#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[427/481 1120s] real_uns_fi_cf/w4#0: PASS no_fall_confirmed@3
+[428/481 1125s] real_uns_fi_cf/w5#0: PASS no_fall_confirmed@3
+[429/481 1130s] real_uns_fi_cf/w6#0: PASS no_fall_confirmed@3
+[430/481 1136s] real_uns_fi_cf/w7#0: PASS no_fall_confirmed@3
+[431/481 1137s] real_uns_fi_cf/w2#0: PASS no_fall_confirmed@3
+[432/481 1138s] real_fi_uns_cf/w2#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[433/481 1140s] real_uns_fi_cf/w3#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[434/481 1145s] real_uns_fi_cf/w10#0: PASS no_fall_confirmed@3
+[435/481 1149s] real_u_u/w2#0: PASS distress_unable_to_verify@2
+[436/481 1155s] real_u_u/w3#0: FAIL distress_unable_to_verify@3
+[437/481 1159s] real_u_u/w4#0: PASS distress_unable_to_verify@2
+[438/481 1161s] real_uns_fi_cf/w8#0: PASS no_fall_confirmed@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[439/481 1163s] real_u_u/w5#0: PASS distress_unable_to_verify@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[440/481 1167s] real_u_u/w7#0: PASS distress_unable_to_verify@2
+[441/481 1172s] real_u_u/w8#0: FAIL distress_unable_to_verify@3
+[442/481 1176s] real_u_u/w9#0: PASS distress_unable_to_verify@2
+[443/481 1180s] real_u_u/w10#0: PASS distress_unable_to_verify@2
+[444/481 1183s] real_uns_fi_cf/w9#0: PASS no_fall_confirmed@3
+[445/481 1184s] real_u_u/w1#0: PASS distress_unable_to_verify@2
+[446/481 1184s] real_u_u/w11#0: PASS distress_unable_to_verify@2
+[447/481 1184s] real_u_u/w6#0: PASS distress_unable_to_verify@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[448/481 1189s] real_u_u/w13#0: PASS distress_unable_to_verify@2
+[449/481 1193s] real_fi_s_s/w2#0: PASS distress_unable_to_verify@3
+[450/481 1199s] real_fi_s_s/w3#0: PASS distress_unable_to_verify@3
+[451/481 1205s] real_fi_s_s/w4#0: PASS distress_unable_to_verify@3
+[452/481 1207s] real_u_u/w12#0: FAIL distress_unable_to_verify@2
+[453/481 1208s] real_u_u/w14#0: PASS distress_unable_to_verify@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[454/481 1210s] real_fi_s_s/w5#0: PASS distress_unable_to_verify@3
+[455/481 1213s] real_uns_uns/w1#0: PASS distress_unable_to_verify@2
+[456/481 1217s] real_uns_uns/w2#0: PASS distress_unable_to_verify@2
+[457/481 1222s] real_uns_uns/w3#0: FAIL distress_unable_to_verify@3
+[458/481 1226s] real_uns_uns/w4#0: PASS distress_unable_to_verify@2
+[459/481 1229s] real_uns_uns/w5#0: PASS distress_unable_to_verify@2
+[460/481 1230s] real_fi_s_s/w1#0: PASS distress_unable_to_verify@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[461/481 1233s] real_uns_uns/w6#0: PASS distress_unable_to_verify@2
+[462/481 1238s] real_uns_uns/w8#0: PASS distress_unable_to_verify@2
+[463/481 1242s] real_uns_uns/w9#0: PASS distress_unable_to_verify@2
+[464/481 1247s] real_uns_uns/w10#0: FAIL distress_unable_to_verify@3
+[465/481 1250s] real_s_s/w1#0: PASS no_response_from_resident@2
+[466/481 1252s] real_fi_s_s/w6#0: PASS distress_unable_to_verify@3
+[467/481 1253s] real_fi_s_s/w7#0: PASS distress_unable_to_verify@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[468/481 1255s] real_s_s/w2#0: PASS no_response_from_resident@2
+[469/481 1255s] real_uns_uns/w7#0: FAIL distress_unable_to_verify@3
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[470/481 1259s] real_s_s/w6#0: PASS no_response_from_resident@2
+[471/481 1263s] real_s_s/w7#0: PASS no_response_from_resident@2
+[472/481 1266s] real_s_s/w8#0: PASS no_response_from_resident@2
+[473/481 1270s] real_s_s/w9#0: PASS no_response_from_resident@2
+[474/481 1273s] real_s_s/w10#0: PASS no_response_from_resident@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[475/481 1275s] real_s_s/w3#0: PASS no_response_from_resident@2
+  429 rate limit, waiting 20 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+  429 rate limit, waiting 40 s (Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-pgHm4rd1QdeSukC7Z43ZiXJr on t)
+[476/481 1279s] real_s_s/w12#0: PASS no_response_from_resident@2
+[477/481 1282s] real_s_s/w13#0: PASS no_response_from_resident@2
+[478/481 1286s] real_s_s/w14#0: PASS no_response_from_resident@2
+[479/481 1296s] real_s_s/w11#0: PASS no_response_from_resident@2
+[480/481 1297s] real_s_s/w4#0: PASS no_response_from_resident@2
+[481/481 1319s] real_s_s/w5#0: PASS no_response_from_resident@2
+# KS-881 eval: v7g_real_en_t1_gpt-4o — FAIL
+
+2026-11-03T13:40:28 | gpt-4o | temperature=None | prompt=v7g | en | inputs_ks881_realistic_en.json | runs=1
+
+Pass rule (KS-881 TR v3): every wording passes every run.
+
+| Wordings passing every run | Runs passed | p50 ms | p95 ms | Errors | Cost |
+|---|---|---|---|---|---|
+| 410/481 | 410/481 | 1226 | 1841 | 0 | $13.59 |
+Summary: C:\Users\CMS\Desktop\prompt_engineering_lab\smart_conversation_prompt_lab\experiments\ks881\v7g_real_en_t1_gpt-4o\summary.md
