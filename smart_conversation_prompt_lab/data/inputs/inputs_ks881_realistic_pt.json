@@ -1,0 +1,3992 @@
+{
+ "version": "ks881-realistic-3",
+ "language": "pt",
+ "description": "KS-881 realistic set: likely fall-call conversations (Yair, Alon, Tony 2026-11-03), named and unidentified callers; expectations from the v7 state machine with the 5-message limit. pt and he are the lab's own wordings, for native review.",
+ "scenarios": [
+  {
+   "id": "real_f",
+   "situation": "fall: F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Fui ao chão na cozinha."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Dei um trambolhão na sala."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Dei uma queda."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Sim, dei uma queda no quarto."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Caí nas escadas."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Caí para trás."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Escorreguei no tapete e caí."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Caí quando me levantei."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Caí hoje de manhã."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Escorreguei e caí."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Caí ao sair da banheira."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Escorreguei no duche e caí."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Caí ao pé da porta."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Estou no chão."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Caí."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Tropecei e caí no corredor."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Caí na cozinha."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Perdi o equilíbrio e caí."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Sim, caí, estou no chão."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "Caí por cima do cão."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "Caí ao pé da cama."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Sim, caí, mas estou bem."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "Caí da cadeira."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "Caí, mas já me levantei."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "Caí na casa de banho."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "Caí no jardim."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "Caí, estou sentado no chão."
+     ]
+    },
+    {
+     "id": "w30",
+     "turns": [
+      "Caí da cama."
+     ]
+    },
+    {
+     "id": "w31",
+     "turns": [
+      "Fui ao chão na cozinha."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w32",
+     "turns": [
+      "Dei um trambolhão na sala."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w33",
+     "turns": [
+      "Dei uma queda."
+     ],
+     "repeat_of": "w3"
+    },
+    {
+     "id": "w34",
+     "turns": [
+      "Sim, dei uma queda no quarto."
+     ],
+     "repeat_of": "w4"
+    },
+    {
+     "id": "w35",
+     "turns": [
+      "Caí nas escadas."
+     ],
+     "repeat_of": "w5"
+    },
+    {
+     "id": "w36",
+     "turns": [
+      "Caí para trás."
+     ],
+     "repeat_of": "w6"
+    },
+    {
+     "id": "w37",
+     "turns": [
+      "Escorreguei no tapete e caí."
+     ],
+     "repeat_of": "w7"
+    },
+    {
+     "id": "w38",
+     "turns": [
+      "Caí quando me levantei."
+     ],
+     "repeat_of": "w8"
+    },
+    {
+     "id": "w39",
+     "turns": [
+      "Caí hoje de manhã."
+     ],
+     "repeat_of": "w9"
+    },
+    {
+     "id": "w40",
+     "turns": [
+      "Escorreguei e caí."
+     ],
+     "repeat_of": "w10"
+    },
+    {
+     "id": "w41",
+     "turns": [
+      "Caí ao sair da banheira."
+     ],
+     "repeat_of": "w11"
+    },
+    {
+     "id": "w42",
+     "turns": [
+      "Escorreguei no duche e caí."
+     ],
+     "repeat_of": "w12"
+    },
+    {
+     "id": "w43",
+     "turns": [
+      "Caí ao pé da porta."
+     ],
+     "repeat_of": "w13"
+    },
+    {
+     "id": "w44",
+     "turns": [
+      "Estou no chão."
+     ],
+     "repeat_of": "w14"
+    },
+    {
+     "id": "w45",
+     "turns": [
+      "Caí."
+     ],
+     "repeat_of": "w15"
+    },
+    {
+     "id": "w46",
+     "turns": [
+      "Tropecei e caí no corredor."
+     ],
+     "repeat_of": "w16"
+    },
+    {
+     "id": "w47",
+     "turns": [
+      "Caí na cozinha."
+     ],
+     "repeat_of": "w17"
+    },
+    {
+     "id": "w48",
+     "turns": [
+      "Perdi o equilíbrio e caí."
+     ],
+     "repeat_of": "w18"
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_fh",
+   "situation": "fall: FH",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Caí e estou a sangrar."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Caí e magoei a anca."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Caí e não consigo pôr-me de pé."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Caí e não consigo mexer a perna."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Caí e estou tonto."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Caí e dói-me o braço."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Caí, ligue ao meu filho por favor."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Caí de costas e dói."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Caí e bati com a cabeça."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Caí e dói-me muito o pulso."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Caí e não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Caí na casa de banho e dói-me a cabeça."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Caí, ajude-me por favor."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Caí e preciso de ajuda."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Caí, preciso de uma ambulância."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Socorro, caí."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Caí e estou a sangrar."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Caí e magoei a anca."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Caí e não consigo pôr-me de pé."
+     ],
+     "repeat_of": "w3"
+    }
+   ],
+   "assistance_flag": true
+  },
+  {
+   "id": "real_mis_yf",
+   "situation": "fall: MIS > YF",
+   "truth": "fall",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Kí nas escadas.",
+      "Caí, sim."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Ei TI no chão.",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Kí no quarto.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Ki na cozinha.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "K í da cadeira.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Kí na casa de banho.",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Ei TI no chão.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "QI na cozinha.",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "QI no chão.",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Kí na casa de banho.",
+      "Caí, sim."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "QI da cama.",
+      "Caí, sim."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "TI no corredor.",
+      "Caí, sim."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Kí na casa de banho.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "QI no chão.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "QI na cozinha.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "QI da cama.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Kí nas escadas.",
+      "Sim, caí ao chão."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Kí nas escadas.",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "QI no chão.",
+      "Caí, sim."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_u_f",
+   "situation": "fall: U > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Hã?",
+      "Caí na casa de banho."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Desculpe?",
+      "Dei um trambolhão na sala."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "O que disse?",
+      "Escorreguei e caí."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "O quê?",
+      "Caí, estou sentado no chão."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Não a estou a ouvir.",
+      "Caí ao sair da banheira."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Como?",
+      "Escorreguei no duche e caí."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "O quê?",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "O que disse?",
+      "Caí da cama."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Desculpe?",
+      "Dei uma queda."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "O quê?",
+      "Caí no jardim."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "O que disse?",
+      "Sim, caí, mas estou bem."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Está?",
+      "Caí para trás."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "O que disse?",
+      "Caí quando me levantei."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Como?",
+      "Caí por cima do cão."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Desculpe?",
+      "Sim, caí, estou no chão."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Hã?",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Não a estou a ouvir.",
+      "Sim, caí, mas estou bem."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_s_f",
+   "situation": "fall: S > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      "Sim, dei uma queda no quarto."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      "Perdi o equilíbrio e caí."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      "Caí ao pé da cama."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      "Caí para trás."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      "Caí nas escadas."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      "Escorreguei no tapete e caí."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      "Caí na cozinha."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      "Escorreguei e caí."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      "Sim, caí, mas estou bem."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "",
+      "Caí da cama."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "",
+      "Caí ao sair da banheira."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "",
+      "Estou no chão."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "",
+      "Caí, mas já me levantei."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_ho_f",
+   "situation": "fall: HO > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Espere.",
+      "Caí da cadeira."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Espere.",
+      "Sim, caí, estou no chão."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Só um momento.",
+      "Caí quando me levantei."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Espere um segundo.",
+      "Caí quando me levantei."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Um momento, por favor.",
+      "Caí da cama."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Um momento, por favor.",
+      "Fui ao chão na cozinha."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Só um momento.",
+      "Caí por cima do cão."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Um momento, por favor.",
+      "Sim, caí."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Só um momento.",
+      "Dei um trambolhão na sala."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Um momento, por favor.",
+      "Sim, caí."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_ho_s_f",
+   "situation": "fall: HO > S > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Um momento, por favor.",
+      "",
+      "Caí nas escadas."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Um momento, por favor.",
+      "",
+      "Caí, estou sentado no chão."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Espere.",
+      "",
+      "Caí hoje de manhã."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Espere.",
+      "",
+      "Caí."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Só um momento.",
+      "",
+      "Caí na casa de banho."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Um momento, por favor.",
+      "",
+      "Escorreguei no tapete e caí."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Espere.",
+      "",
+      "Caí da cama."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_fi_cfall",
+   "situation": "fall: FI > CFALL",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "Afinal, caí."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Afinal, caí."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Sim, estou bem.",
+      "Afinal, caí há um minuto."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Afinal, caí."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Estou a andar bem.",
+      "Afinal, caí há um minuto."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Estou bem.",
+      "Afinal, caí."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Tudo bem por aqui.",
+      "Bem, caí no corredor."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Afinal, caí há um minuto."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Afinal, caí."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "Bem, caí no corredor."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_uns_f",
+   "situation": "fall: UNS > F",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Não sei.",
+      "Caí na casa de banho."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Não sei.",
+      "Caí no jardim."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Caí por cima do cão."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Não sei bem.",
+      "Escorreguei no tapete e caí."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Escorreguei e caí."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não sei.",
+      "Estou no chão."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Caí na casa de banho."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Caí, mas já me levantei."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Não sei bem.",
+      "Sim, caí, estou no chão."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Não sei mesmo.",
+      "Caí da cama."
+     ]
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "real_h",
+   "situation": "help: H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Sinto-me mal disposto."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Tenho dores."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Pode ligar à minha filha?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Cortei a mão."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Dói-me o braço."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não consigo pôr-me de pé."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Ajude-me, por favor."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Mande alguém, por favor."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Preciso que venha alguém."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Dói-me o peito."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Não estou a sentir-me bem."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Magoei o joelho."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Sinto que vou desmaiar."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Dói."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Preciso de ajuda."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Bati com a cabeça."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Preciso de um médico."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Estou tonto."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "Magoei as costas."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "Não consigo respirar bem."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "Dói-me a cabeça."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Socorro."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "Dói-me as costas."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "Não me sinto bem."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "Sinto-me muito fraco."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "Dói-me a perna."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "Chame uma ambulância."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "Sinto-me mal disposto."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w30",
+     "turns": [
+      "Tenho dores."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w31",
+     "turns": [
+      "Pode ligar à minha filha?"
+     ],
+     "repeat_of": "w3"
+    },
+    {
+     "id": "w32",
+     "turns": [
+      "Cortei a mão."
+     ],
+     "repeat_of": "w4"
+    },
+    {
+     "id": "w33",
+     "turns": [
+      "Dói-me o braço."
+     ],
+     "repeat_of": "w5"
+    },
+    {
+     "id": "w34",
+     "turns": [
+      "Não consigo pôr-me de pé."
+     ],
+     "repeat_of": "w6"
+    },
+    {
+     "id": "w35",
+     "turns": [
+      "Ajude-me, por favor."
+     ],
+     "repeat_of": "w7"
+    },
+    {
+     "id": "w36",
+     "turns": [
+      "Mande alguém, por favor."
+     ],
+     "repeat_of": "w8"
+    },
+    {
+     "id": "w37",
+     "turns": [
+      "Preciso que venha alguém."
+     ],
+     "repeat_of": "w9"
+    },
+    {
+     "id": "w38",
+     "turns": [
+      "Dói-me o peito."
+     ],
+     "repeat_of": "w10"
+    },
+    {
+     "id": "w39",
+     "turns": [
+      "Não estou a sentir-me bem."
+     ],
+     "repeat_of": "w11"
+    },
+    {
+     "id": "w40",
+     "turns": [
+      "Magoei o joelho."
+     ],
+     "repeat_of": "w12"
+    },
+    {
+     "id": "w41",
+     "turns": [
+      "Não me consigo levantar."
+     ],
+     "repeat_of": "w13"
+    }
+   ]
+  },
+  {
+   "id": "real_u_h",
+   "situation": "help: U > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Não a estou a ouvir.",
+      "Dói-me o peito."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Desculpe?",
+      "Bati com a cabeça."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "O que disse?",
+      "Pode ligar à minha filha?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Desculpe?",
+      "Não estou a sentir-me bem."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Está?",
+      "Tenho dores."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Está?",
+      "Não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "O quê?",
+      "Dói-me o peito."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "O quê?",
+      "Bati com a cabeça."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "O que disse?",
+      "Magoei as costas."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Quem fala?",
+      "Estou tonto."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Hã?",
+      "Dói-me as costas."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Está?",
+      "Magoei o joelho."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_s_h",
+   "situation": "help: S > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      "Cortei a mão."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      "Chame uma ambulância."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      "Não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      "Não me sinto bem."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      "Ajude-me, por favor."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      "Sinto-me muito fraco."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      "Dói-me o braço."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      "Estou tonto."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      "Bati com a cabeça."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      "Dói-me as costas."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_fi_cp",
+   "situation": "help: FI > CP",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Sim, estou bem.",
+      "Afinal, dói-me a anca."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Tudo bem por aqui.",
+      "Dói-me o joelho."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Afinal, preciso de alguma ajuda."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Estou a andar bem.",
+      "Afinal, não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Sim, estou bem.",
+      "Dói-me o pulso."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Sinto-me um bocado tonto, para ser sincero."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "Bem, dói-me um bocadinho as costas."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Sinto-me um bocado tonto, para ser sincero."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Afinal, não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Estou bem.",
+      "Afinal, preciso de alguma ajuda."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Bem, dói-me um bocadinho as costas."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Dói-me o pulso."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Sim, estou bem.",
+      "Afinal, preciso de alguma ajuda."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Estou a andar bem.",
+      "Afinal, preciso de alguma ajuda."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Estou bem, não aconteceu nada.",
+      "Dói-me o pulso."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Estou bem.",
+      "Dói-me o pulso."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Afinal, dói-me a anca."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Agora que pergunta, dói-me a cabeça."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Dói-me o joelho."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Afinal, não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Afinal, preciso de alguma ajuda."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Bem, dói-me um bocadinho as costas."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Estou bem.",
+      "Dói-me o joelho."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "Afinal, dói-me a anca."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_d_cp",
+   "situation": "help: D > CP",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Não caí, deixei cair um livro.",
+      "Afinal, dói-me a anca."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "Afinal, não me consigo levantar."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não caí.",
+      "Afinal, dói-me a anca."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "Sinto-me um bocado tonto, para ser sincero."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "Dói-me o pulso."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "Bem, dói-me um bocadinho as costas."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não, não caí, só me estava a baixar.",
+      "Sinto-me um bocado tonto, para ser sincero."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Não caí, deixei cair um livro.",
+      "Sinto-me um bocado tonto, para ser sincero."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Não caiu nada, foi o gato.",
+      "Dói-me o pulso."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Não caí, não se preocupe.",
+      "Afinal, preciso de alguma ajuda."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_uns_h",
+   "situation": "help: UNS > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Não sei mesmo.",
+      "Preciso de um médico."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Não sei.",
+      "Dói-me o braço."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não sei bem.",
+      "Não me sinto bem."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Não sei.",
+      "Dói-me o peito."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Preciso de ajuda."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não sei mesmo.",
+      "Ajude-me, por favor."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não sei bem.",
+      "Não estou a sentir-me bem."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Não sei.",
+      "Cortei a mão."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Dói-me o peito."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Não sei mesmo.",
+      "Mande alguém, por favor."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_ho_h",
+   "situation": "help: HO > H",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Espere um segundo.",
+      "Não consigo respirar bem."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Espere.",
+      "Sinto-me muito fraco."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Só um momento.",
+      "Tenho dores."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Espere um segundo.",
+      "Sinto que vou desmaiar."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Espere um segundo.",
+      "Dói-me a perna."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Só um momento.",
+      "Mande alguém, por favor."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_fi_cf",
+   "situation": "fine: FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Tudo bem por aqui.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Tudo bem por aqui.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Sim, estou bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Estou bem, não aconteceu nada.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Estou bem, não aconteceu nada.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Está tudo bem aqui.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Estou bem.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Estou a andar bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "Tudo bem por aqui.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "Sim, estou ótimo.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Sim, estou bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "Estou bem.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "Sim, estou bem.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w30",
+     "turns": [
+      "Estou bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w31",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w32",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w33",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w34",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w35",
+     "turns": [
+      "Estou bem.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w36",
+     "turns": [
+      "Estou bem, não aconteceu nada.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w37",
+     "turns": [
+      "Estou a andar bem.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w38",
+     "turns": [
+      "Tudo bem por aqui.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w39",
+     "turns": [
+      "Estou bem, obrigado.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w40",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w41",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w42",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w43",
+     "turns": [
+      "Estou bem, obrigado.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w44",
+     "turns": [
+      "Estou a andar bem.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w45",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w46",
+     "turns": [
+      "Estou bem, não aconteceu nada.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w47",
+     "turns": [
+      "Estou bem, não aconteceu nada.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w48",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w49",
+     "turns": [
+      "Estou a andar bem.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w50",
+     "turns": [
+      "Estou a andar bem.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w51",
+     "turns": [
+      "Sim, estou bem.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w52",
+     "turns": [
+      "Estou bem, obrigado.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w53",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w54",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w55",
+     "turns": [
+      "Sim, estou bem.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w56",
+     "turns": [
+      "Tudo bem por aqui.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w57",
+     "turns": [
+      "Estou bem.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w58",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w59",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w60",
+     "turns": [
+      "Estou a andar bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w61",
+     "turns": [
+      "Estou bem.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w62",
+     "turns": [
+      "Sim, estou bem.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w63",
+     "turns": [
+      "Está tudo bem aqui.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w64",
+     "turns": [
+      "Sim, estou bem.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w65",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w66",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w67",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w68",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w69",
+     "turns": [
+      "Sim, estou ótimo.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w70",
+     "turns": [
+      "Tudo bem por aqui.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w71",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w72",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_d_cf",
+   "situation": "fine: D > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Não caí, deixei cair um livro.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Não caiu nada, foi o gato.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não, não caí, só me estava a baixar.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Não caí, deixei cair um livro.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Não caiu nada, foi o gato.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não caí, não se preocupe.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não caiu nada, foi o gato.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Não caí, não se preocupe.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Não caiu nada, foi o gato.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Não, não caí, só me estava a baixar.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Não caí.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Não, não caí, só me estava a baixar.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Não, não caí, só me estava a baixar.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w15",
+     "turns": [
+      "Não caí.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w16",
+     "turns": [
+      "Não caí.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w17",
+     "turns": [
+      "Não caí.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w18",
+     "turns": [
+      "Não caí, não se preocupe.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w19",
+     "turns": [
+      "Não caí, não se preocupe.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w20",
+     "turns": [
+      "Não caí, não se preocupe.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w21",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w22",
+     "turns": [
+      "Não caí, deixei cair um livro.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w23",
+     "turns": [
+      "Não caiu nada, foi o gato.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w24",
+     "turns": [
+      "Não caí, não se preocupe.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w25",
+     "turns": [
+      "Não caiu nada, foi o gato.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w26",
+     "turns": [
+      "Não caí, deixei cair um livro.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w27",
+     "turns": [
+      "Não caí, deixei cair um livro.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w28",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w29",
+     "turns": [
+      "Não, não caí, só me sentei.",
+      "A sério, não se passa nada."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_u_fi_cf",
+   "situation": "fine: U > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "O quê?",
+      "Estou a andar bem.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Está?",
+      "Estou perfeitamente bem.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "O quê?",
+      "Estou perfeitamente bem.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Está?",
+      "Estou bem, obrigado por perguntar.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Desculpe?",
+      "Sim, estou ótimo.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não a estou a ouvir.",
+      "Estou perfeitamente bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não a estou a ouvir.",
+      "Estou bem, obrigado por perguntar.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Desculpe?",
+      "Estou bem.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Desculpe?",
+      "Sim, estou ótimo.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Hã?",
+      "Estou a andar bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Está?",
+      "Estou bem, obrigado.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "O que disse?",
+      "Estou bem, obrigado.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "Está?",
+      "Sim, estou bem.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Hã?",
+      "Sim, estou ótimo.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_s_fi_cf",
+   "situation": "fine: S > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      "Estou a andar bem.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      "Sim, estou bem.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      "Estou bem, obrigado.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      "Estou bem, obrigado.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      "Tudo bem por aqui.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      "Ah, estou bem, querida.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      "Estou bem, obrigado.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      "Está tudo bem aqui.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      "Está tudo bem aqui.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      "Estou bem, obrigado.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "",
+      "Tudo bem por aqui.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "",
+      "Sim, estou bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "",
+      "Estou bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "",
+      "Estou bem, obrigado.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_ho_fi_cf",
+   "situation": "fine: HO > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Espere.",
+      "Estou bem, não aconteceu nada.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Só um momento.",
+      "Está tudo bem aqui.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Espere.",
+      "Estou bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Espere.",
+      "Estou bem, obrigado.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Só um momento.",
+      "Estou bem, obrigado.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Só um momento.",
+      "Ah, estou bem, querida.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Um momento, por favor.",
+      "Estou bem.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Um momento, por favor.",
+      "Está tudo bem aqui.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Um momento, por favor.",
+      "Tudo bem por aqui.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Só um momento.",
+      "Está tudo bem aqui.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_ho_s_fi_cf",
+   "situation": "fine: HO > S > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Um momento, por favor.",
+      "",
+      "Sim, estou ótimo.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Espere.",
+      "",
+      "Sim, estou ótimo.",
+      "Não me magoei nada e não preciso de nada."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Espere.",
+      "",
+      "Estou bem, obrigado.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Espere.",
+      "",
+      "Sim, estou bem.",
+      "Tenho a certeza, estou perfeitamente bem."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Espere um segundo.",
+      "",
+      "Estou bem, não aconteceu nada.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Um momento, por favor.",
+      "",
+      "Tudo bem por aqui.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Só um momento.",
+      "",
+      "Estou perfeitamente bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Um momento, por favor.",
+      "",
+      "Estou perfeitamente bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Espere.",
+      "",
+      "Estou bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Espere um segundo.",
+      "",
+      "Estou bem, obrigado.",
+      "Está tudo bem, não me dói nada."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_uns_fi_cf",
+   "situation": "fine: UNS > FI > CF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Não sei bem.",
+      "Ah, estou bem, querida.",
+      "Está tudo bem, não me dói nada."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Não sei.",
+      "Estou a andar bem.",
+      "Tudo bem, ando normalmente."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não sei bem.",
+      "Estou bem.",
+      "Estou mesmo bem, não me dói nada e já ando por aqui."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Estou bem, obrigado.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Sim, estou bem.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não sei.",
+      "Estou bem, obrigado.",
+      "A sério, não se passa nada."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não sei bem.",
+      "Sim, estou bem.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Não sei mesmo.",
+      "Estou bem, obrigado.",
+      "Estou ótimo, nenhuma dor."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Não sei.",
+      "Está tudo bem aqui.",
+      "Não me dói nada, estou bem, obrigado."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Não sei.",
+      "Sim, estou ótimo.",
+      "A sério, não se passa nada."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_u_u",
+   "situation": "unclear: U > U",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "O quê?",
+      "Não a estou a ouvir."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Como?",
+      "O quê?"
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Está?",
+      "Quem fala?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "O quê?",
+      "O que disse?"
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Desculpe?",
+      "Hã?"
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Desculpe?",
+      "Como?"
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Está?",
+      "Como?"
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Quem fala?",
+      "O quê?"
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Está?",
+      "O que disse?"
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Quem fala?",
+      "Hã?"
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "O que disse?",
+      "Como?"
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "O que disse?",
+      "Quem fala?"
+     ]
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "O quê?",
+      "Desculpe?"
+     ]
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "Como?",
+      "Está?"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_fi_s_s",
+   "situation": "unclear: FI > S > S",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Estou bem, obrigado por perguntar.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Tudo bem por aqui.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Estou a andar bem.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Ah, estou bem, querida.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Estou perfeitamente bem.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Estou bem, obrigado.",
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Está tudo bem aqui.",
+      "",
+      ""
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_uns_uns",
+   "situation": "unclear: UNS > UNS",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Não sei bem o que aconteceu."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Não sei mesmo.",
+      "Não sei bem."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não sei mesmo.",
+      "Não sei."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Não sei mesmo.",
+      "Não sei bem o que aconteceu."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Não sei bem o que aconteceu.",
+      "Não sei."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Não sei bem.",
+      "Não sei bem."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não sei bem.",
+      "Não sei bem o que aconteceu."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Não sei mesmo.",
+      "Não sei mesmo."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Não sei bem.",
+      "Não sei mesmo."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Não sei.",
+      "Não sei bem."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_s_s",
+   "situation": "silent: S > S",
+   "truth": "silent",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w13",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w14",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    }
+   ]
+  },
+  {
+   "id": "real_unk_uf",
+   "situation": "fall: UF",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "A minha mulher caiu."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "O meu marido caiu na cozinha."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Sim, a minha mãe caiu."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "O meu pai caiu nas escadas."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Alguém caiu na casa de banho."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Caí."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "A minha mulher caiu."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "O meu marido caiu na cozinha."
+     ],
+     "repeat_of": "w2"
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Sim, a minha mãe caiu."
+     ],
+     "repeat_of": "w3"
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "O meu pai caiu nas escadas."
+     ],
+     "repeat_of": "w4"
+    }
+   ]
+  },
+  {
+   "id": "real_unk_u_uf",
+   "situation": "fall: U > UF",
+   "truth": "fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Está?",
+      "Alguém caiu na casa de banho."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "O quê?",
+      "O meu pai caiu nas escadas."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não a estou a ouvir.",
+      "O meu pai caiu nas escadas."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Como?",
+      "Alguém caiu na casa de banho."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "O que disse?",
+      "Caí."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Está?",
+      "O meu marido caiu na cozinha."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_uh",
+   "situation": "help: UH",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Mande alguém, por favor."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "A minha mãe não se consegue levantar."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Precisamos de uma ambulância."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Sim, precisamos de ajuda."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Sim, a minha mulher está muito tonta."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "O meu marido tem dores."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Mande alguém, por favor."
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "A minha mãe não se consegue levantar."
+     ],
+     "repeat_of": "w2"
+    }
+   ]
+  },
+  {
+   "id": "real_unk_u_uh",
+   "situation": "help: U > UH",
+   "truth": "help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Como?",
+      "Mande alguém, por favor."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "O quê?",
+      "Mande alguém, por favor."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Não a estou a ouvir.",
+      "O meu marido tem dores."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Desculpe?",
+      "Mande alguém, por favor."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_ufine_ucf",
+   "situation": "fine: UFINE > UCF",
+   "truth": "fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Ninguém precisa de ajuda, obrigado.",
+      "A sério, estamos todos bem, ninguém caiu."
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Não é preciso ajuda, estamos bem.",
+      "Ninguém se magoou, está tudo bem."
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Está toda a gente bem.",
+      "Estão todos de pé e não dói nada a ninguém."
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Não, estamos todos bem.",
+      "A sério, estamos todos bem, ninguém caiu."
+     ]
+    },
+    {
+     "id": "w5",
+     "turns": [
+      "Está toda a gente bem.",
+      "A sério, estamos todos bem, ninguém caiu."
+     ]
+    },
+    {
+     "id": "w6",
+     "turns": [
+      "Estamos bem, não aconteceu nada.",
+      "A sério, estamos todos bem, ninguém caiu."
+     ]
+    },
+    {
+     "id": "w7",
+     "turns": [
+      "Não, estamos todos bem.",
+      "Estão todos de pé e não dói nada a ninguém."
+     ]
+    },
+    {
+     "id": "w8",
+     "turns": [
+      "Estamos bem, não aconteceu nada.",
+      "Ninguém se magoou, está tudo bem."
+     ]
+    },
+    {
+     "id": "w9",
+     "turns": [
+      "Está toda a gente bem.",
+      "Ninguém se magoou, está tudo bem."
+     ]
+    },
+    {
+     "id": "w10",
+     "turns": [
+      "Ninguém precisa de ajuda, obrigado.",
+      "Ninguém se magoou, está tudo bem."
+     ]
+    },
+    {
+     "id": "w11",
+     "turns": [
+      "Não, estamos todos bem.",
+      "Ninguém se magoou, está tudo bem."
+     ]
+    },
+    {
+     "id": "w12",
+     "turns": [
+      "Não é preciso ajuda, estamos bem.",
+      "A sério, estamos todos bem, ninguém caiu."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_u_u",
+   "situation": "unclear: U > U",
+   "truth": "unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "Como?",
+      "Quem fala?"
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "Está?",
+      "O quê?"
+     ]
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "Está?",
+      "Como?"
+     ]
+    },
+    {
+     "id": "w4",
+     "turns": [
+      "Está?",
+      "Está?"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "real_unk_s_s",
+   "situation": "silent: S > S",
+   "truth": "silent",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "id": "w1",
+     "turns": [
+      "",
+      ""
+     ]
+    },
+    {
+     "id": "w2",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    },
+    {
+     "id": "w3",
+     "turns": [
+      "",
+      ""
+     ],
+     "repeat_of": "w1"
+    }
+   ]
+  }
+ ]
+}

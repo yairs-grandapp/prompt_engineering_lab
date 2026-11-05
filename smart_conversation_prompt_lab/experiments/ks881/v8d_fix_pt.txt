@@ -1,0 +1,4 @@
+thanks_during_goodbye/w1
+thanks_during_goodbye/w2
+thanks_during_goodbye/w3
+fine_confirmed/w3

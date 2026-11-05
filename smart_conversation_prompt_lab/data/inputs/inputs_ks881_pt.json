@@ -1,0 +1,2309 @@
+{
+ "version": "ks881-3",
+ "language": "pt",
+ "description": "KS-881 fall-call test set: every FR v5 situation and every ending transition of the v7 state machine, in several wordings, the same in en, pt and he; every scenario of the earlier sets is kept or covered (see experiments/ks881/coverage.md). close_after = senior answers before the call must close; \"\" = silence.",
+ "scenarios": [
+  {
+   "id": "fell",
+   "situation": "Clearly fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Sim, caí na cozinha."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Caí e não me consigo levantar."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Dei uma queda ao pé da cama."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Caí hoje de manhã na casa de banho."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Fui ao chão na casa de banho, ainda estou aqui deitado."
+     ],
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Escorreguei nas escadas e caí."
+     ],
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "Tropecei no tapete do corredor.",
+      "Dói-me muito a anca."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_002",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "Rebolei da cama abaixo.",
+      "Estou no chão ao pé da cama, dói-me o braço."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_056",
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "Fui abaixo quando ia para a casa de banho.",
+      "As pernas deixaram de funcionar e fui ao chão."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_083",
+     "id": "w9"
+    },
+    {
+     "turns": [
+      "Ai minha nossa senhora, caí aqui!"
+     ],
+     "source": "inputs_ks833_ptpt.json:help_nossa_senhora",
+     "id": "w10"
+    }
+   ]
+  },
+  {
+   "id": "fell_not_hurt",
+   "situation": "Clearly fell (says not hurt)",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Caí, mas não me magoei."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Dei uma quedinha, não parti nada, estou bem a sério."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Sim, escorreguei e caí, mas não me dói nada."
+     ],
+     "id": "w3"
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "hurt_no_fall",
+   "situation": "Hurt without saying they fell",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Dói-me muito a anca, não me consigo levantar."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Cortei-me na mão e está a sangrar muito."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Acho que parti o pulso, está muito inchado."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Ai, as costas, estão a matar-me."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Estou a sangrar, bati com a cabeça no chão.",
+      "Há sangue por todo o lado, ajude-me por favor."
+     ],
+     "also_accepted": [
+      "distress_fall_confirmed"
+     ],
+     "source": "inputs_v0.json:scenario_10",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Torci o tornozelo nas escadas.",
+      "Está muito inchado, estou sentado no último degrau."
+     ],
+     "source": "inputs_v1.json:scenario_021",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "AAAI! Ai meu Deus, dói!",
+      "A perna! Acho que parti a perna!"
+     ],
+     "source": "inputs_v1.json:scenario_074",
+     "id": "w7"
+    }
+   ]
+  },
+  {
+   "id": "fell_and_help",
+   "situation": "Fell and asks for help",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Caí e preciso de ajuda."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Caí, ajude-me por favor."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Dei uma queda e magoei-me, preciso de alguém."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Eu... a... caí... cozinha... ajuda... não... cabeça..."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "also_accepted": [
+      "distress_assistance_requested"
+     ],
+     "source": "inputs_v0.json:scenario_15",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Eu... eu... caí... mande alguém, por favor..."
+     ],
+     "source": "inputs_v1.json:scenario_036",
+     "id": "w5"
+    }
+   ],
+   "assistance_flag": true
+  },
+  {
+   "id": "asks_help",
+   "situation": "Needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Por favor, preciso de ajuda."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Socorro, ajude-me."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Pode mandar alguém? Preciso de uma mão."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Chame uma ambulância, por favor."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "ajuda... por favor..."
+     ],
+     "source": "inputs_v1.json:scenario_066",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Não.",
+      "Não estou bem."
+     ],
+     "close_after": 1,
+     "source": "inputs_ks833_ptpt.json:help_nao",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "Ligue à minha filha, por favor."
+     ],
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "Tenho medo."
+     ],
+     "id": "w8"
+    }
+   ]
+  },
+  {
+   "id": "misheard_alert",
+   "situation": "A misheard fall or help word",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "QI na cozinha.",
+      "Sim, caí."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_qi_cozinha",
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Saí do sofá e boi muito.",
+      "Sim, caí e dói muito."
+     ],
+     "source": "inputs_ks833_ptpt.json:help_misrec_sai",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Ajuta-me, por fafor."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unwell_no_fall",
+   "situation": "Unwell without a fall",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou com muitas tonturas."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Custa-me a respirar."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Sinto que vou desmaiar."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Sinto-me muito mal, alguma coisa não está bem."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Está tudo desfocado e estranho.",
+      "Não vejo bem e estou muito confuso."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_070",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Sinto-me péssimo."
+     ],
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "no_fall_but_problem",
+   "situation": "Denial with a problem",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Não caí, mas não me consigo levantar."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Não me magoei, mas preciso de ajuda."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Não, não caí, só me sinto muito mal e com tonturas."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "fine_confirmed",
+   "situation": "Says they're fine and confirms it",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem, obrigado.",
+      "Não me magoei nada, consigo mexer-me bem."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Foi só o gato que deitou a cadeira abaixo. Estou bem.",
+      "Não me dói nada, estou de pé."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Estou ótimo.",
+      "Não me dói nada, consigo andar bem."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Oh, por amor de Deus, deixe-me em paz! Estou bem!",
+      "Estou perfeitamente bem, já lhe disse. Estava só a ver o meu programa."
+     ],
+     "source": "inputs_v1.json:scenario_008",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Estou a fazer os exercícios da fisioterapia no chão.",
+      "O fisioterapeuta mandou-me fazer estes alongamentos todos os dias. Estou bem!"
+     ],
+     "source": "inputs_v1.json:scenario_047",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "tou bem tou bem",
+      "nã nã me magoei nada"
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_azorean",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "Sim.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_sim_nao",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Já lhe disse, estou bem!"
+     ],
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "Quase caí, mas agarrei-me à mesa.",
+      "Não me dói nada, e consigo levantar-me bem."
+     ],
+     "id": "w9"
+    }
+   ]
+  },
+  {
+   "id": "denial_then_fine",
+   "situation": "Denial alone, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Não caí.",
+      "Não, não preciso de ajuda, estou bem."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Não me magoei.",
+      "Não, não preciso de nada, está tudo bem."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Não preciso de ajuda.",
+      "Tenho a certeza, estou mesmo bem."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Não caí, estava só a apanhar uma coisa do chão.",
+      "Não, estou bem."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_apanhar",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "denial_then_help",
+   "situation": "Denial alone, then a problem",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Não caí.",
+      "Mas a verdade é que não me consigo levantar do sofá."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Não me magoei.",
+      "Mas preciso que alguém me ajude."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Não, não caí.",
+      "Mas estou com muitas tonturas."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Não caí.",
+      "Sim."
+     ],
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_pain",
+   "situation": "Says they're fine, then mentions pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Bem... dói-me bastante o joelho."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou bem, não se preocupe.",
+      "Aliás, dói-me muito a cabeça."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Sim, estou bem.",
+      "Hum, o ombro dói-me muito."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Acho que estou bem.",
+      "Mas tenho um bocado de sangue na testa, bati na prateleira."
+     ],
+     "source": "inputs_v1.json:scenario_080",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Dói um bocadinho."
+     ],
+     "id": "w5"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_fell",
+   "situation": "Says they're fine, then mentions a fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Bem, a verdade é que caí há bocado."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Não caí.",
+      "Pronto, sim, dei uma queda mais cedo."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Escorreguei e caí, mas já me levantei."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Sim.",
+      "Caí. Dói."
+     ],
+     "source": "inputs_v1.json:scenario_090",
+     "assistance_flag": true,
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Estou bem, não se preocupe.",
+      "Bem, na verdade escorreguei um bocadinho.",
+      "Sim, caí, dói-me a anca."
+     ],
+     "close_after": [
+      2,
+      3
+     ],
+     "source": "inputs_baseline.json:scenario_08",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Afinal caí, e preciso de ajuda para me levantar."
+     ],
+     "assistance_flag": true,
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_fell",
+   "situation": "Unclear, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Eu, eu, eu...",
+      "Caí."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "A chaleira, a... o quê...",
+      "Caí no chão."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Os jardins e ela era uma de doze irmãs.",
+      "Sim, caí no corredor."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Consegui levantar-me sozinho.",
+      "Mas o ombro dói-me muito da queda."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_054",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Não sei o que aconteceu.",
+      "Estava de pé e de repente estava no chão."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_072",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "O quê?",
+      "Caí, não me consigo levantar, ajude-me."
+     ],
+     "assistance_flag": true,
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_problem",
+   "situation": "Unclear, then hurt or needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Acho que com a minha perna.",
+      "Dói-me a perna, não me consigo levantar."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Hum, a... a coisa.",
+      "Ajude-me, por favor."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Que dia é hoje?",
+      "Estou com muitas tonturas."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_fine",
+   "situation": "Unclear, then clearly okay (D16)",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hã? O quê?",
+      "Ah, desculpe, estava meio a dormir. Estou bem.",
+      "Não me magoei nada, consigo mexer-me bem."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "O autocarro não veio na terça.",
+      "Ah, sim, estou bem.",
+      "Não me dói nada, estou bem."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Quem fala?",
+      "Ah, a Vega. Estou bem, obrigado.",
+      "Não, não preciso de nada."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Perdi o equilíbrio um segundo, mas agarrei-me à mesa.",
+      "Não cheguei a cair. Estou de pé e sinto-me bem.",
+      "Não me magoei nada, consigo mexer-me bem."
+     ],
+     "close_after": 2,
+     "source": "inputs_v1.json:scenario_097",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Não QI.",
+      "Sim, não caí, estou bem.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_nao_qi",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Na Na maguinada.",
+      "Estou bem, não me magoei nada.",
+      "Estou bem, não me dói nada."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_maguinada",
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "silence_then_problem",
+   "situation": "Silent, then fell or needs help",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "Acabei de cair, ia atender o telefone."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "",
+      "Sim, estou no chão, caí."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "",
+      "...ajuda..."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "source": "inputs_v1.json:scenario_081",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "",
+      "Doem-me tanto as costas."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "silence_then_fine",
+   "situation": "Silent, then clearly okay",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "Desculpe, estava na outra sala. Estou bem.",
+      "Não me magoei nada, consigo mexer-me bem."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "",
+      "Ah, não a ouvi. Está tudo bem.",
+      "Não, não preciso de ajuda."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_silent",
+   "situation": "Says fine, then goes silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "",
+      ""
+     ],
+     "source": "inputs_v1.json:scenario_099",
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Sim, estou bem.",
+      "",
+      ""
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "still_unclear",
+   "situation": "Still unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Acho que com a minha perna.",
+      "Eu, eu, eu."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "A topologia da história é a ilha do governo devagar.",
+      "Roxo sete a janela."
+     ],
+     "source": "inputs_ks831.json:u5_asr_noise",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Não sei.",
+      "Não sei bem."
+     ],
+     "source": "inputs_ks833_ptpt.json:unclear_nao_sei",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Onde está a Maria? A Maria está aqui?",
+      "Quero a Maria."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_ks831.json:u4_confused",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Deixe-me em paz!",
+      "Vá-se embora, pare de me ligar."
+     ],
+     "source": "inputs_v1.json:scenario_028",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "Não sei onde estou.",
+      "Que sítio é este? Tenho medo."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "close_after": 2,
+     "source": "inputs_v0.json:scenario_11",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "Está um dia tão bonito lá fora, não está?",
+      "Já viu como o jardim está bonito hoje?"
+     ],
+     "source": "inputs_v1.json:scenario_013",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "Hum... acho que sim...",
+      "Para ser sincero, não tenho bem a certeza."
+     ],
+     "close_after": 3,
+     "source": "inputs_v1.json:scenario_084",
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "O quê... o... hum.",
+      "É o. Não o."
+     ],
+     "source": "inputs_ks831.json:u3_broken_fragments",
+     "id": "w9"
+    },
+    {
+     "turns": [
+      "Na na.",
+      "Na na."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_na_na",
+     "id": "w10"
+    },
+    {
+     "turns": [
+      "TI.",
+      "TI."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_bare_ti",
+     "id": "w11"
+    }
+   ]
+  },
+  {
+   "id": "what_twice",
+   "situation": "\"What?\" twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "O quê?",
+      "O quê? Não a ouço."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Hã?",
+      "Desculpe, o que é que está a dizer?"
+     ],
+     "source": "inputs_ks833_ptpt.json:unclear_ha",
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "mixed_no_restart",
+   "situation": "Mixed unclear and silence: the re-ask never restarts",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "O jardim, a... terça.",
+      "O quê?"
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "O jardim, a... terça.",
+      ""
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "",
+      "O quê?"
+     ],
+     "source": "inputs_v1.json:scenario_053",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Hã?",
+      ""
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "Hum, a coisa.",
+      "O quê?"
+     ],
+     "id": "w5"
+    }
+   ]
+  },
+  {
+   "id": "interrupted",
+   "situation": "Answer cut off",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Sim, estou bem, mas eu",
+      "dói-me a anca."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Sim... mas eu",
+      "caí."
+     ],
+     "expected_outcome": "distress_fall_confirmed",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Sim, mas",
+      "o... o"
+     ],
+     "expected_outcome": "distress_unable_to_verify",
+     "source": "inputs_ks833_ptpt.json:unclear_cut_off",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Estou bem... não, não estou."
+     ],
+     "close_after": 1,
+     "source": "inputs_ks833_ptpt.json:unclear_contradiction",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "silent_twice",
+   "situation": "Silent twice",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      ""
+     ],
+     "source": "inputs_baseline.json:scenario_04",
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "past_fall_now_fine",
+   "situation": "Past fall, fine now",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Caí no ano passado, mas hoje não.",
+      "Sim, hoje estou bem.",
+      "Não me dói nada, estou bem."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Dei uma queda no mês passado.",
+      "Agora estou bem, obrigado.",
+      "Não me magoei nada, consigo mexer-me bem."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "past_fall_now_hurt",
+   "situation": "Past fall, hurt now",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Dei uma queda na semana passada.",
+      "As costas ainda me doem muito."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Caí há uns dias.",
+      "E agora o joelho está muito inchado."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "help_during_goodbye",
+   "situation": "Help asked during the goodbye",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Não me magoei nada, consigo mexer-me bem."
+     ],
+     "after_close": {
+      "text": "Espere, afinal dói-me a perna.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Está tudo bem.",
+      "Não, não preciso de nada."
+     ],
+     "after_close": {
+      "text": "Espere, preciso de ajuda.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Não me dói nada, estou bem."
+     ],
+     "after_close": {
+      "text": "Espere, afinal caí.",
+      "expected_outcome": "distress_fall_confirmed"
+     },
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "after_close": {
+      "text": "Espere, estou com muitas tonturas.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "thanks_during_goodbye",
+   "situation": "Thanks during the goodbye: no alert",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Não me magoei nada, consigo mexer-me bem."
+     ],
+     "after_close": {
+      "text": "Obrigado, adeus.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "after_close": {
+      "text": "A chaleira, a... terça.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Não me dói nada, consigo levantar-me bem."
+     ],
+     "after_close": {
+      "text": "Espere.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unknown_other_fell",
+   "situation": "Another person says someone fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "O meu marido caiu, está no chão."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Sim, a minha mãe caiu na casa de banho."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_other_needs_help",
+   "situation": "Another person says someone needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "A minha mulher magoou as costas, precisa de ajuda."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Sim, o meu pai precisa de ajuda, não se consegue levantar."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_silent_twice",
+   "situation": "Nobody identified, silent twice",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_visitor_fine",
+   "situation": "Another person's \"I'm fine\" (closes until NUN-1591)",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Ninguém precisa de ajuda, estamos todos bem.",
+      "Está toda a gente bem, ninguém se magoou."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou só de visita, está tudo bem aqui.",
+      "Não, ninguém caiu."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_silent_then_fine",
+   "situation": "B12: fine, silent, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "",
+      "Desculpe, sim, estou bem, não me dói nada."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_twice",
+   "situation": "B13: fine, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "A chaleira, a... terça.",
+      "Hum, o jardim."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_fine",
+   "situation": "B14: fine, unclear, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "O quê? Quem fala?",
+      "Ah, a Vega. Não, não me magoei nada, consigo mexer-me bem."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "denial_unclear_twice",
+   "situation": "B19: denial, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Não caí.",
+      "Hum, o... o quê?",
+      "A coisa, a..."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_silent",
+   "situation": "B27: unclear, fine, then silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "É domingo?",
+      "Ah, estou bem.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "silent_fine_then_silent",
+   "situation": "B39: silent, fine, then silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "Ah, estou bem.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "turn_limit",
+   "situation": "B40: fine, then keeps talking off-topic",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem, mas deixe-me falar-lhe do meu jardim.",
+      "As rosas estão lindas este ano, foi a minha filha que as plantou.",
+      "E os tomates também, tivemos tantos.",
+      "Ah, e o gato da vizinha...",
+      "E depois no domingo..."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_still_unclear",
+   "situation": "B49: nobody identified, still unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Quem? O que é isto?",
+      "A chaleira, a... terça."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_silence_then_fell",
+   "situation": "B50: nobody identified, silent, then someone fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "Sim, o meu marido caiu na cozinha."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_self_fell",
+   "situation": "B51: nobody identified, the person who fell answers",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Caí, estou no chão."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_fell",
+   "situation": "v7: hold on, then says they fell during the wait",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere, deixe-me chegar ao telefone.",
+      "Caí, estou no chão."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Espere um momento.",
+      "Caí e preciso de ajuda."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_help",
+   "situation": "v7: hold on, then needs help during the wait",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "Doem-me as costas, não me consigo levantar."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_fine",
+   "situation": "v7: hold on, then fine during the wait, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "Pronto, já cá estou. Estou bem.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_unclear",
+   "situation": "v7: hold on, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "A chaleira, a... terça.",
+      "O quê?"
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_fell",
+   "situation": "v7: hold on, silent (free), then fell when asked again",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "",
+      "Desculpe, caí na casa de banho."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Espere.",
+      "",
+      "Caí, ajude-me por favor."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_help",
+   "situation": "v7: hold on, silent (free), then needs help when asked again",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "",
+      "Preciso de ajuda, estou com muitas tonturas."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_fine",
+   "situation": "v7: hold on, silent (free), then fine and confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "",
+      "Desculpe, estou bem.",
+      "Não me dói nada, e consigo levantar-me bem."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_repeated",
+   "situation": "v7: keeps saying hold on (no endless loop)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "",
+      "Espere.",
+      "Espere."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Espere.",
+      "Espere.",
+      "Espere."
+     ],
+     "close_after": 3,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_fine",
+   "situation": "v7: fine, hold on, then confirms during the wait",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Não caí.",
+      "Espere um segundo.",
+      "Não, não preciso de ajuda."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_fell",
+   "situation": "v7: fine, hold on, then says they fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "Afinal, caí."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "Caí e preciso de ajuda para me levantar."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_help",
+   "situation": "v7: fine, hold on, then mentions pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "Dói-me bastante o joelho."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_fine",
+   "situation": "v7: fine, hold on, silent (free), then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Não caí.",
+      "Espere.",
+      "",
+      "Desculpe, estou bem, a sério."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_fell",
+   "situation": "v7: fine, hold on, silent (free), then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "",
+      "Bem, caí."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "",
+      "Caí, mande alguém por favor."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_help",
+   "situation": "v7: fine, hold on, silent (free), then help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Espere.",
+      "",
+      "Afinal, não me consigo levantar."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_used_then_hold_again",
+   "situation": "v7: wait used at the first question, hold on again later",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 5,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "",
+      "Estou bem.",
+      "Espere.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "soso_then_help",
+   "situation": "v7: so-so, then says what is wrong",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Mais ou menos.",
+      "Dói-me a anca."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "soso_twice",
+   "situation": "v7: so-so after the re-ask is used",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Mais ou menos.",
+      "Assim-assim."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "O quê?",
+      "Mais ou menos."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "soso_then_fine",
+   "situation": "v7: so-so, then fine, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Mais ou menos.",
+      "Só cansado, estou bem.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_soso_then_help",
+   "situation": "v7: fine, so-so, then says what is wrong",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Mais ou menos.",
+      "O joelho."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_soso_twice",
+   "situation": "v7: fine, so-so, so-so again",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Mais ou menos.",
+      "Assim-assim."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_hold",
+   "situation": "v7: unclear, then hold on (no longer free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "O quê?",
+      "Espere."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_fell",
+   "situation": "v7: unclear, fine, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "O quê?",
+      "Ah, estou bem.",
+      "Bem, caí há bocado."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Quem fala?",
+      "Estou bem.",
+      "Caí e preciso de ajuda."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_help",
+   "situation": "v7: unclear, fine, then pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "O quê?",
+      "Ah, estou bem.",
+      "Dói-me um bocado o pulso."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_soso",
+   "situation": "v7: unclear, fine, then so-so",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Hã?",
+      "Estou bem.",
+      "Mais ou menos."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_unclear",
+   "situation": "v7: unclear, fine, then unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "O quê?",
+      "Estou bem.",
+      "O jardim, a... terça."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_hold",
+   "situation": "v7: unclear, fine, then hold on (not free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "O quê?",
+      "Estou bem.",
+      "Espere."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_denial_then_denial",
+   "situation": "v7: unclear, denial, then denial",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "O quê?",
+      "Não caí.",
+      "Não, não preciso de ajuda."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_fell",
+   "situation": "v7: fine, unclear, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "A... a chaleira.",
+      "Caí na cozinha."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "O quê?",
+      "Caí, não me consigo levantar."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_help",
+   "situation": "v7: fine, unclear, then help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "O quê?",
+      "Preciso de ajuda, doem-me as costas."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_hold",
+   "situation": "v7: fine, unclear, then hold on (not free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "O quê?",
+      "Espere."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unsure_then_fine",
+   "situation": "v7: fine, unsure, then sure",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Não sei bem.",
+      "Tenho a certeza, não me dói nada."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Ainda não experimentei.",
+      "Consigo levantar-me bem, não me dói nada."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Um bocado abalado.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_refuses",
+   "situation": "v7: fine, then refuses",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Deixe-me em paz.",
+      "Vá-se embora."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "overlap_fine_then_hurt",
+   "situation": "v7: \"I'm fine\" continued with a problem in the same answer",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem... mas bati com a cabeça."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "sad_but_fine",
+   "situation": "v7: a bit lonely, not hurt",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem, só um bocadinho sozinho hoje.",
+      "Não me magoei, e consigo levantar-me bem."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_silent_silent",
+   "situation": "v7: hold on, silent (free), silent, silent (state machine row 287)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Espere.",
+      "",
+      "",
+      ""
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Só um momento, por favor.",
+      "",
+      "",
+      ""
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "feels_terrible_during_goodbye",
+   "situation": "v7: feels terrible during the no-fall goodbye",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "Estou bem.",
+      "Não me dói nada, consigo levantar-me."
+     ],
+     "after_close": {
+      "text": "Afinal, sinto-me muito mal.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "Estou bem.",
+      "Não, não me magoei."
+     ],
+     "after_close": {
+      "text": "Espere, ligue à minha filha.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_bare_yes",
+   "situation": "v7: nobody identified, a bare yes",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Sim."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_bare_no",
+   "situation": "v7: nobody identified, a bare no, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "Não.",
+      "Ninguém está magoado, está tudo bem."
+     ],
+     "id": "w1"
+    }
+   ]
+  }
+ ]
+}

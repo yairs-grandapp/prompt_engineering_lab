@@ -1,0 +1,2309 @@
+{
+ "version": "ks881-3",
+ "language": "he",
+ "description": "KS-881 fall-call test set: every FR v5 situation and every ending transition of the v7 state machine, in several wordings, the same in en, pt and he; every scenario of the earlier sets is kept or covered (see experiments/ks881/coverage.md). close_after = senior answers before the call must close; \"\" = silence.",
+ "scenarios": [
+  {
+   "id": "fell",
+   "situation": "Clearly fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "כן, נפלתי במטבח."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "נפלתי ואני לא מצליח לקום."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "עפתי ליד המיטה."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "נפלתי הבוקר באמבטיה."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "נחתתי על הרצפה באמבטיה, אני עדיין שוכב פה."
+     ],
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "מעדתי במדרגות ונפלתי."
+     ],
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "מעדתי על השטיח במסדרון.",
+      "הירך ממש כואבת לי."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_002",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "התגלגלתי מהמיטה.",
+      "אני על הרצפה ליד המיטה, כואבת לי היד."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_056",
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "קרסתי בדרך לשירותים.",
+      "הרגליים פשוט הפסיקו לעבוד ונחתתי על הרצפה."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_083",
+     "id": "w9"
+    },
+    {
+     "turns": [
+      "אוי אלוהים, נפלתי פה!"
+     ],
+     "source": "inputs_ks833_ptpt.json:help_nossa_senhora",
+     "id": "w10"
+    }
+   ]
+  },
+  {
+   "id": "fell_not_hurt",
+   "situation": "Clearly fell (says not hurt)",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "נפלתי, אבל לא נפגעתי."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "נפלתי קצת, שום דבר לא נשבר, אני באמת בסדר."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "כן, החלקתי ונפלתי, אבל שום דבר לא כואב."
+     ],
+     "id": "w3"
+    }
+   ],
+   "no_flag": true
+  },
+  {
+   "id": "hurt_no_fall",
+   "situation": "Hurt without saying they fell",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "הירך כואבת לי מאוד, אני לא מצליח לקום."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "חתכתי את היד והיא מדממת מאוד."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני חושב ששברתי את פרק היד, הוא ממש נפוח."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "איי, הגב, הוא הורג אותי."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "אני מדמם, קיבלתי מכה בראש מהרצפה.",
+      "יש דם בכל מקום, תעזרי לי בבקשה."
+     ],
+     "also_accepted": [
+      "distress_fall_confirmed"
+     ],
+     "source": "inputs_v0.json:scenario_10",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "נקע לי הקרסול במדרגות.",
+      "הוא ממש נפוח, אני יושב על המדרגה התחתונה."
+     ],
+     "source": "inputs_v1.json:scenario_021",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "אאאה! אלוהים, כואב!",
+      "הרגל! אני חושב ששברתי את הרגל!"
+     ],
+     "source": "inputs_v1.json:scenario_074",
+     "id": "w7"
+    }
+   ]
+  },
+  {
+   "id": "fell_and_help",
+   "situation": "Fell and asks for help",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "נפלתי ואני צריך עזרה."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "נפלתי, תעזרי לי בבקשה."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "נפלתי ונפגעתי, אני צריך מישהו."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "אני... ה... נפלתי... מטבח... עזרה... לא יכול... ראש..."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "also_accepted": [
+      "distress_assistance_requested"
+     ],
+     "source": "inputs_v0.json:scenario_15",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "אני... אני... נפלתי... בבקשה תשלחי מישהו..."
+     ],
+     "source": "inputs_v1.json:scenario_036",
+     "id": "w5"
+    }
+   ],
+   "assistance_flag": true
+  },
+  {
+   "id": "asks_help",
+   "situation": "Needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "בבקשה, אני צריך עזרה."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "תעזרי לי, בבקשה."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "את יכולה לשלוח מישהו? אני צריך עזרה."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "תזמיני אמבולנס, בבקשה."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "עזרה... בבקשה..."
+     ],
+     "source": "inputs_v1.json:scenario_066",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "לא.",
+      "אני לא בסדר."
+     ],
+     "close_after": 1,
+     "source": "inputs_ks833_ptpt.json:help_nao",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "תתקשרי לבת שלי, בבקשה."
+     ],
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "אני מפחד."
+     ],
+     "id": "w8"
+    }
+   ]
+  },
+  {
+   "id": "misheard_alert",
+   "situation": "A misheard fall or help word",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "נבלתי במטבח.",
+      "כן, נפלתי."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_qi_cozinha",
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "נבלתי מהספה וכועב לי מאוד.",
+      "כן, נפלתי וכואב לי."
+     ],
+     "source": "inputs_ks833_ptpt.json:help_misrec_sai",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני צריך אזרה."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unwell_no_fall",
+   "situation": "Unwell without a fall",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מסתובב לי הראש מאוד."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "קשה לי לנשום."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני מרגיש שאני עומד להתעלף."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "אני מרגיש מאוד רע, משהו לא בסדר."
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "הכל נראה מטושטש ומוזר.",
+      "אני לא רואה טוב ואני מאוד מבולבל."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_070",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "אני מרגיש נורא."
+     ],
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "no_fall_but_problem",
+   "situation": "Denial with a problem",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "לא נפלתי, אבל אני לא מצליח לקום."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "לא נפגעתי, אבל אני צריך עזרה."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "לא, לא נפלתי, אני פשוט מרגיש נורא ויש לי סחרחורת."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "fine_confirmed",
+   "situation": "Says they're fine and confirms it",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר, תודה.",
+      "לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "זה רק החתול שהפיל כיסא. אני בסדר.",
+      "שום דבר לא כואב לי, אני עומד."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני מרגיש מצוין.",
+      "שום דבר לא כואב, אני מסתובב בלי בעיה."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "נו באמת, תפסיקי להטריד אותי! אני בסדר!",
+      "אני לגמרי בסדר, אמרתי לך. רק ראיתי את התוכנית שלי."
+     ],
+     "source": "inputs_v1.json:scenario_008",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "אני עושה את תרגילי הפיזיותרפיה על הרצפה.",
+      "הפיזיותרפיסט אמר לי לעשות את המתיחות האלה כל יום. אני בסדר!"
+     ],
+     "source": "inputs_v1.json:scenario_047",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "סבבה, סבבה.",
+      "לא, כלום לא קרה לי."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_azorean",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "כן.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_sim_nao",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "אמרתי לך, אני בסדר!"
+     ],
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "כמעט נפלתי, אבל נתפסתי בשולחן.",
+      "שום דבר לא כואב, ואני מצליח לקום בסדר."
+     ],
+     "id": "w9"
+    }
+   ]
+  },
+  {
+   "id": "denial_then_fine",
+   "situation": "Denial alone, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "לא נפלתי.",
+      "לא, אני לא צריך עזרה, אני בסדר."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "לא נפגעתי.",
+      "לא, אני לא צריך כלום, הכל בסדר."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני לא צריך עזרה.",
+      "אני בטוח, אני לגמרי בסדר."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "לא נפלתי, רק הרמתי משהו מהרצפה.",
+      "לא, אני בסדר."
+     ],
+     "source": "inputs_ks833_ptpt.json:safe_apanhar",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "denial_then_help",
+   "situation": "Denial alone, then a problem",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "לא נפלתי.",
+      "אבל בעצם אני לא מצליח לקום מהספה."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "לא נפגעתי.",
+      "אבל אני צריך שמישהו יעזור לי."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "לא, לא נפלתי.",
+      "אבל יש לי סחרחורת חזקה."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "לא נפלתי.",
+      "כן."
+     ],
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_pain",
+   "situation": "Says they're fine, then mentions pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "טוב, הברך די כואבת לי."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני בסדר, אל תדאגי.",
+      "בעצם הראש כואב לי מאוד."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "כן, אני בסדר.",
+      "הממ, הכתף מאוד כואבת לי."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "אני חושב שאני בסדר.",
+      "אבל יש לי קצת דם על המצח, נתקלתי במדף."
+     ],
+     "source": "inputs_v1.json:scenario_080",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "כואב קצת."
+     ],
+     "id": "w5"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_fell",
+   "situation": "Says they're fine, then mentions a fall",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "טוב, בעצם נפלתי לפני רגע."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "לא נפלתי.",
+      "טוב, כן, נפלתי קצת קודם."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "החלקתי ונפלתי, אבל קמתי."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "כן.",
+      "נפלתי. כואב."
+     ],
+     "source": "inputs_v1.json:scenario_090",
+     "assistance_flag": true,
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "אני בסדר, אל תדאגי.",
+      "טוב, בעצם החלקתי קצת.",
+      "כן, נפלתי, כואבת לי הירך."
+     ],
+     "close_after": [
+      2,
+      3
+     ],
+     "source": "inputs_baseline.json:scenario_08",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "בעצם נפלתי, ואני צריך עזרה לקום."
+     ],
+     "assistance_flag": true,
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_fell",
+   "situation": "Unclear, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני, אני, אני...",
+      "נפלתי."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "הקומקום... מה...",
+      "נפלתי על הרצפה."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "גינות והיא הייתה אחת משתים עשרה אחיות.",
+      "כן, נפלתי במסדרון."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "הצלחתי לקום לבד.",
+      "אבל הכתף מאוד כואבת לי מהנפילה."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_054",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "אני לא יודע מה קרה.",
+      "עמדתי ופתאום הייתי על הרצפה."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_v1.json:scenario_072",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "מה?",
+      "נפלתי, אני לא מצליח לקום, תעזרי לי."
+     ],
+     "assistance_flag": true,
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_problem",
+   "situation": "Unclear, then hurt or needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני חושב שעם הרגל שלי.",
+      "כואבת לי הרגל, אני לא מצליח לקום."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "ממ, ה... הדבר.",
+      "תעזרי לי, בבקשה."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "איזה יום היום?",
+      "מסתובב לי הראש מאוד."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_fine",
+   "situation": "Unclear, then clearly okay (D16)",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה? מה?",
+      "אה סליחה, הייתי חצי ישן. אני בסדר.",
+      "לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "האוטובוס לא הגיע ביום שלישי.",
+      "אה, כן, אני בסדר.",
+      "שום דבר לא כואב, אני בסדר."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "מי זה?",
+      "אה, וגה. אני בסדר, תודה.",
+      "לא, אני לא צריך כלום."
+     ],
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "איבדתי שיווי משקל לשנייה אבל נתפסתי בשולחן.",
+      "לא באמת נפלתי. אני עומד ואני מרגיש בסדר.",
+      "לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "close_after": 2,
+     "source": "inputs_v1.json:scenario_097",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "לא נבלתי.",
+      "כן, לא נפלתי, אני בסדר.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_nao_qi",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "נה נה, לנפקתי בחלל.",
+      "אני בסדר, לא נפגעתי בכלל.",
+      "אני בסדר, שום דבר לא כואב."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_maguinada",
+     "id": "w6"
+    }
+   ]
+  },
+  {
+   "id": "silence_then_problem",
+   "situation": "Silent, then fell or needs help",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "הרגע נפלתי, ניסיתי להגיע לטלפון."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "",
+      "כן, אני על הרצפה, נפלתי."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "",
+      "...עזרה..."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "source": "inputs_v1.json:scenario_081",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "",
+      "הגב כל כך כואב לי."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "silence_then_fine",
+   "situation": "Silent, then clearly okay",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "סליחה, הייתי בחדר השני. אני בסדר.",
+      "לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "",
+      "אה, לא שמעתי אותך. הכל טוב פה.",
+      "לא, אני לא צריך עזרה."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_silent",
+   "situation": "Says fine, then goes silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "",
+      ""
+     ],
+     "source": "inputs_v1.json:scenario_099",
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "כן, אני בסדר.",
+      "",
+      ""
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "still_unclear",
+   "situation": "Still unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני חושב שעם הרגל שלי.",
+      "אני, אני, אני."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "הסיפור של הטופולוגיה הוא האי של הממשלה לאט.",
+      "סגול שבע החלון."
+     ],
+     "source": "inputs_ks831.json:u5_asr_noise",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני לא יודע.",
+      "אני לא בטוח."
+     ],
+     "source": "inputs_ks833_ptpt.json:unclear_nao_sei",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "איפה מרים? מרים פה?",
+      "אני רוצה את מרים."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_ks831.json:u4_confused",
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "תעזבי אותי בשקט!",
+      "לכי מפה, תפסיקי להתקשר אליי."
+     ],
+     "source": "inputs_v1.json:scenario_028",
+     "id": "w5"
+    },
+    {
+     "turns": [
+      "אני לא יודע איפה אני.",
+      "מה זה המקום הזה? אני מפחד."
+     ],
+     "expected_outcome": "distress_assistance_requested",
+     "close_after": 2,
+     "source": "inputs_v0.json:scenario_11",
+     "id": "w6"
+    },
+    {
+     "turns": [
+      "איזה יום יפה בחוץ, נכון?",
+      "ראית כמה הגינה יפה היום?"
+     ],
+     "source": "inputs_v1.json:scenario_013",
+     "id": "w7"
+    },
+    {
+     "turns": [
+      "הממ... אני מניח שכן...",
+      "האמת, אני לא ממש בטוח."
+     ],
+     "close_after": 3,
+     "source": "inputs_v1.json:scenario_084",
+     "id": "w8"
+    },
+    {
+     "turns": [
+      "מה... ה... אממ.",
+      "זה ה. לא ה."
+     ],
+     "source": "inputs_ks831.json:u3_broken_fragments",
+     "id": "w9"
+    },
+    {
+     "turns": [
+      "נה נה.",
+      "נה נה."
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_na_na",
+     "id": "w10"
+    },
+    {
+     "turns": [
+      "טי.",
+      "טי."
+     ],
+     "close_after": [
+      1,
+      2
+     ],
+     "source": "inputs_ks833_ptpt.json:asr_bare_ti",
+     "id": "w11"
+    }
+   ]
+  },
+  {
+   "id": "what_twice",
+   "situation": "\"What?\" twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה?",
+      "מה? אני לא שומע."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "הא?",
+      "סליחה, מה את אומרת?"
+     ],
+     "source": "inputs_ks833_ptpt.json:unclear_ha",
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "mixed_no_restart",
+   "situation": "Mixed unclear and silence: the re-ask never restarts",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "הגינה, ה... יום שלישי.",
+      "מה?"
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "הגינה, ה... יום שלישי.",
+      ""
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "",
+      "מה?"
+     ],
+     "source": "inputs_v1.json:scenario_053",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "מה?",
+      ""
+     ],
+     "id": "w4"
+    },
+    {
+     "turns": [
+      "ממ, הדבר.",
+      "מה?"
+     ],
+     "id": "w5"
+    }
+   ]
+  },
+  {
+   "id": "interrupted",
+   "situation": "Answer cut off",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "כן, אני בסדר, אבל אני",
+      "כואבת לי הירך."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "כן... אבל אני",
+      "נפלתי."
+     ],
+     "expected_outcome": "distress_fall_confirmed",
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "כן, אבל",
+      "ה... ה"
+     ],
+     "expected_outcome": "distress_unable_to_verify",
+     "source": "inputs_ks833_ptpt.json:unclear_cut_off",
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "אני בסדר... לא, אני לא."
+     ],
+     "close_after": 1,
+     "source": "inputs_ks833_ptpt.json:unclear_contradiction",
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "silent_twice",
+   "situation": "Silent twice",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      ""
+     ],
+     "source": "inputs_baseline.json:scenario_04",
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "past_fall_now_fine",
+   "situation": "Past fall, fine now",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "נפלתי בשנה שעברה, אבל לא היום.",
+      "כן, היום אני בסדר.",
+      "שום דבר לא כואב, אני בסדר."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "נפלתי בחודש שעבר.",
+      "עכשיו אני בסדר, תודה.",
+      "לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "past_fall_now_hurt",
+   "situation": "Past fall, hurt now",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "נפלתי בשבוע שעבר.",
+      "הגב עדיין כואב לי מאוד."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "נפלתי לפני כמה ימים.",
+      "ועכשיו הברך מאוד נפוחה."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "help_during_goodbye",
+   "situation": "Help asked during the goodbye",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "after_close": {
+      "text": "רגע, בעצם כואבת לי הרגל.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "הכל טוב פה.",
+      "לא, אני לא צריך כלום."
+     ],
+     "after_close": {
+      "text": "רגע, אני צריך עזרה.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "שום דבר לא כואב, אני בסדר."
+     ],
+     "after_close": {
+      "text": "רגע, בעצם נפלתי.",
+      "expected_outcome": "distress_fall_confirmed"
+     },
+     "id": "w3"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "after_close": {
+      "text": "רגע, יש לי סחרחורת חזקה.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w4"
+    }
+   ]
+  },
+  {
+   "id": "thanks_during_goodbye",
+   "situation": "Thanks during the goodbye: no alert",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "after_close": {
+      "text": "תודה, להתראות.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "after_close": {
+      "text": "הקומקום, ה... יום שלישי.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "שום דבר לא כואב, אני מצליח לקום בסדר."
+     ],
+     "after_close": {
+      "text": "רגע.",
+      "expected_outcome": "no_fall_confirmed"
+     },
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "unknown_other_fell",
+   "situation": "Another person says someone fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "בעלי נפל, הוא על הרצפה."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "כן, אמא שלי נפלה באמבטיה."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_other_needs_help",
+   "situation": "Another person says someone needs help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "אשתי נפגעה בגב, היא צריכה עזרה."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "כן, אבא שלי צריך עזרה, הוא לא מצליח לקום."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_silent_twice",
+   "situation": "Nobody identified, silent twice",
+   "expected_outcome": "no_response_from_resident",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_visitor_fine",
+   "situation": "Another person's \"I'm fine\" (closes until NUN-1591)",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "אף אחד לא צריך עזרה, כולנו בסדר.",
+      "כולם בסדר, אף אחד לא נפגע."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני רק מבקר, הכל בסדר פה.",
+      "לא, אף אחד לא נפל."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_silent_then_fine",
+   "situation": "B12: fine, silent, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "",
+      "סליחה, כן, אני בסדר, שום דבר לא כואב."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_twice",
+   "situation": "B13: fine, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "הקומקום, ה... יום שלישי.",
+      "ממ, הגינה."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_fine",
+   "situation": "B14: fine, unclear, then fine",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "מה? מי זה?",
+      "אה, וגה. לא, לא נפגעתי בכלל, אני זז בסדר."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "denial_unclear_twice",
+   "situation": "B19: denial, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "לא נפלתי.",
+      "הממ, ה... מה?",
+      "הדבר, ה..."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_silent",
+   "situation": "B27: unclear, fine, then silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "היום יום ראשון?",
+      "אה, אני בסדר.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "silent_fine_then_silent",
+   "situation": "B39: silent, fine, then silent",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "אה, אני בסדר.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "turn_limit",
+   "situation": "B40: fine, then keeps talking off-topic",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר, אבל תני לי לספר לך על הגינה שלי.",
+      "הוורדים יפים השנה, הבת שלי שתלה אותם.",
+      "וגם העגבניות, היו לנו כל כך הרבה.",
+      "אה, והחתול של השכנה...",
+      "ואז ביום ראשון..."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_still_unclear",
+   "situation": "B49: nobody identified, still unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "מי? מה זה?",
+      "הקומקום, ה... יום שלישי."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_silence_then_fell",
+   "situation": "B50: nobody identified, silent, then someone fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "",
+      "כן, בעלי נפל במטבח."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_self_fell",
+   "situation": "B51: nobody identified, the person who fell answers",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "נפלתי, אני על הרצפה."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_fell",
+   "situation": "v7: hold on, then says they fell during the wait",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע, תני לי להגיע לטלפון.",
+      "נפלתי, אני על הרצפה."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "חכי רגע.",
+      "נפלתי ואני צריך עזרה."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_help",
+   "situation": "v7: hold on, then needs help during the wait",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "הגב כואב לי, אני לא מצליח לקום."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_fine",
+   "situation": "v7: hold on, then fine during the wait, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "טוב, אני פה. אני בסדר.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_then_unclear",
+   "situation": "v7: hold on, then unclear twice",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "הקומקום, ה... יום שלישי.",
+      "מה?"
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_fell",
+   "situation": "v7: hold on, silent (free), then fell when asked again",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "",
+      "סליחה, נפלתי באמבטיה."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "חכי.",
+      "",
+      "נפלתי, תעזרי לי בבקשה."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_help",
+   "situation": "v7: hold on, silent (free), then needs help when asked again",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "",
+      "אני צריך עזרה, יש לי סחרחורת חזקה."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_wait_then_fine",
+   "situation": "v7: hold on, silent (free), then fine and confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "",
+      "סליחה, אני בסדר.",
+      "שום דבר לא כואב, ואני מצליח לקום בסדר."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_repeated",
+   "situation": "v7: keeps saying hold on (no endless loop)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "",
+      "רגע.",
+      "רגע."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "חכי.",
+      "חכי.",
+      "חכי."
+     ],
+     "close_after": 3,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_fine",
+   "situation": "v7: fine, hold on, then confirms during the wait",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "לא נפלתי.",
+      "חכי שנייה.",
+      "לא, אני לא צריך עזרה."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_fell",
+   "situation": "v7: fine, hold on, then says they fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "בעצם, נפלתי."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "נפלתי ואני צריך עזרה לקום."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_then_help",
+   "situation": "v7: fine, hold on, then mentions pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "הברך די כואבת לי."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_fine",
+   "situation": "v7: fine, hold on, silent (free), then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "לא נפלתי.",
+      "רגע.",
+      "",
+      "סליחה, אני בסדר, באמת."
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_fell",
+   "situation": "v7: fine, hold on, silent (free), then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "",
+      "טוב, נפלתי."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "",
+      "נפלתי, בבקשה תשלחי מישהו."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_hold_wait_then_help",
+   "situation": "v7: fine, hold on, silent (free), then help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "רגע.",
+      "",
+      "בעצם, אני לא מצליח לקום."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_used_then_hold_again",
+   "situation": "v7: wait used at the first question, hold on again later",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 5,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "",
+      "אני בסדר.",
+      "רגע.",
+      ""
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "soso_then_help",
+   "situation": "v7: so-so, then says what is wrong",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "ככה ככה.",
+      "הירך כואבת לי."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "soso_twice",
+   "situation": "v7: so-so after the re-ask is used",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "ככה ככה.",
+      "סתם ככה ככה."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "מה?",
+      "ככה ככה."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "soso_then_fine",
+   "situation": "v7: so-so, then fine, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "ככה ככה.",
+      "סתם עייף, אני בסדר.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_soso_then_help",
+   "situation": "v7: fine, so-so, then says what is wrong",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "ככה ככה.",
+      "הברך."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_soso_twice",
+   "situation": "v7: fine, so-so, so-so again",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "ככה ככה.",
+      "ככה ככה."
+     ],
+     "also_accepted": [
+      "distress_unable_to_verify"
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_then_hold",
+   "situation": "v7: unclear, then hold on (no longer free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה?",
+      "רגע."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_fell",
+   "situation": "v7: unclear, fine, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה?",
+      "אה, אני בסדר.",
+      "טוב, נפלתי לפני רגע."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "מי זה?",
+      "אני בסדר.",
+      "נפלתי ואני צריך עזרה."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_help",
+   "situation": "v7: unclear, fine, then pain",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה?",
+      "אה, אני בסדר.",
+      "פרק היד קצת כואב לי."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_soso",
+   "situation": "v7: unclear, fine, then so-so",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "הא?",
+      "אני בסדר.",
+      "ככה ככה."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_unclear",
+   "situation": "v7: unclear, fine, then unclear",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה?",
+      "אני בסדר.",
+      "הגינה, ה... יום שלישי."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_fine_then_hold",
+   "situation": "v7: unclear, fine, then hold on (not free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה?",
+      "אני בסדר.",
+      "רגע."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unclear_denial_then_denial",
+   "situation": "v7: unclear, denial, then denial",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "מה?",
+      "לא נפלתי.",
+      "לא, אני לא צריך עזרה."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_fell",
+   "situation": "v7: fine, unclear, then fell",
+   "expected_outcome": "distress_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "ה... הקומקום.",
+      "נפלתי במטבח."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "מה?",
+      "נפלתי, אני לא מצליח לקום."
+     ],
+     "assistance_flag": true,
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_help",
+   "situation": "v7: fine, unclear, then help",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "מה?",
+      "אני צריך עזרה, הגב כואב לי."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unclear_then_hold",
+   "situation": "v7: fine, unclear, then hold on (not free)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "מה?",
+      "רגע."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "fine_unsure_then_fine",
+   "situation": "v7: fine, unsure, then sure",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "אני לא בטוח.",
+      "אני בטוח, שום דבר לא כואב."
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "עוד לא ניסיתי.",
+      "אני מצליח לקום בסדר, שום דבר לא כואב."
+     ],
+     "id": "w2"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "קצת מזועזע.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "id": "w3"
+    }
+   ]
+  },
+  {
+   "id": "fine_then_refuses",
+   "situation": "v7: fine, then refuses",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 3,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "תעזבי אותי בשקט.",
+      "לכי מפה."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "overlap_fine_then_hurt",
+   "situation": "v7: \"I'm fine\" continued with a problem in the same answer",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר... אבל קיבלתי מכה בראש."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "sad_but_fine",
+   "situation": "v7: a bit lonely, not hurt",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר, רק קצת בודד היום.",
+      "לא נפגעתי, ואני מצליח לקום בסדר."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "hold_silent_silent",
+   "situation": "v7: hold on, silent (free), silent, silent (state machine row 287)",
+   "expected_outcome": "distress_unable_to_verify",
+   "close_after": 4,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "רגע.",
+      "",
+      "",
+      ""
+     ],
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "שנייה, בבקשה.",
+      "",
+      "",
+      ""
+     ],
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "feels_terrible_during_goodbye",
+   "situation": "v7: feels terrible during the no-fall goodbye",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "named",
+   "phrasings": [
+    {
+     "turns": [
+      "אני בסדר.",
+      "שום דבר לא כואב, אני מצליח לקום."
+     ],
+     "after_close": {
+      "text": "בעצם, אני מרגיש נורא.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w1"
+    },
+    {
+     "turns": [
+      "אני בסדר.",
+      "לא, לא נפגעתי."
+     ],
+     "after_close": {
+      "text": "רגע, תתקשרי לבת שלי.",
+      "expected_outcome": "distress_assistance_requested"
+     },
+     "id": "w2"
+    }
+   ]
+  },
+  {
+   "id": "unknown_bare_yes",
+   "situation": "v7: nobody identified, a bare yes",
+   "expected_outcome": "distress_assistance_requested",
+   "close_after": 1,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "כן."
+     ],
+     "id": "w1"
+    }
+   ]
+  },
+  {
+   "id": "unknown_bare_no",
+   "situation": "v7: nobody identified, a bare no, then confirms",
+   "expected_outcome": "no_fall_confirmed",
+   "close_after": 2,
+   "prompt": "unknown",
+   "phrasings": [
+    {
+     "turns": [
+      "לא.",
+      "אף אחד לא נפגע, כולם בסדר."
+     ],
+     "id": "w1"
+    }
+   ]
+  }
+ ]
+}

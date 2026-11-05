@@ -51,7 +51,9 @@ ALERT_PHRASE = "i'm raising an alert in the seniormatics system"
 
 # USD per 1M tokens (input, output), OpenAI list price as last checked; the summary's cost is an
 # estimate from the returned token counts, not the invoice.
-PRICES = {"gpt-4o": (2.50, 10.00)}
+# KS-881 (2026-11-03): gpt-5.4-mini and nano from the OpenAI price list João shared.
+PRICES = {"gpt-4o": (2.50, 10.00), "gpt-5.4-mini": (0.75, 4.50), "gpt-5.4-nano": (0.20, 1.25),
+          "gpt-6-sol": (2.00, 10.00), "gpt-5.6-terra": (2.00, 12.00), "gpt-6.1-terra": (1.00, 5.00)}
 # Keys the lab must never spend: sha256(key)[:10]. 4b1a8630d4 is the key in the local conversation
 # server config (C:\grandapp_server_local\startupConfigs\picmein.conversation.json).
 BLOCKED_KEY_FINGERPRINTS = {"4b1a8630d4": "conversation server key"}
@@ -158,9 +160,15 @@ def check_goodbye(text, outcome, senior_spoke, senior_text=""):
     for p in LANG["invitations"]:
         if p in low:
             violations.append(f"invites reply: '{p}'")
+    # KS-881 (4 Nov): Vega repeats the senior's own words ("I need someone to come", "I collapsed on the
+    # way to the toilet"). A phrase the senior said first is an echo, not a promise that help is coming.
+    senior_low = normalise(senior_text).lower()
     for p in LANG["promises"]:
         if p in low:
-            violations.append(f"promise: '{p}'")
+            if p in senior_low:
+                warnings.append(f"echoes the senior's words: '{p}'")
+            else:
+                violations.append(f"promise: '{p}'")
     if LANG["could_not_reach"].search(low):
         violations.append("could-not-reach")
     n = len(sentences(t))

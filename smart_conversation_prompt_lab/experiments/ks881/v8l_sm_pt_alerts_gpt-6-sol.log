@@ -1,0 +1,123 @@
+v8l_sm_pt_alerts_gpt-6-sol: 38 scenarios, 110 wordings x 1 runs = 110 conversations (gpt-6-sol, temperature=None, prompt=v8l_java, inputs_ks881_pt.json, server checks on)
+Estimated cost: ~$2.25 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+[1/110 7s] fell/w1#0: PASS distress_fall_confirmed@1
+[2/110 7s] fell/w2#0: PASS distress_fall_confirmed@1
+[3/110 10s] fell/w4#0: PASS distress_fall_confirmed@1
+[4/110 10s] fell/w3#0: PASS distress_fall_confirmed@1
+[5/110 13s] fell/w6#0: PASS distress_fall_confirmed@1
+[6/110 13s] fell/w5#0: PASS distress_fall_confirmed@1
+[7/110 16s] fell/w8#0: PASS distress_fall_confirmed@1
+[8/110 16s] fell/w7#0: PASS distress_fall_confirmed@1
+[9/110 19s] fell/w10#0: PASS distress_fall_confirmed@1
+[10/110 20s] fell/w9#0: PASS distress_fall_confirmed@1
+[11/110 22s] fell/w11#0: PASS distress_fall_confirmed@1
+[12/110 23s] fell/w12#0: PASS distress_assistance_requested@1
+[13/110 25s] fell_not_hurt/w1#0: PASS distress_fall_confirmed@1
+[14/110 27s] fell_not_hurt/w2#0: PASS distress_fall_confirmed@1
+[15/110 28s] fell_not_hurt/w3#0: PASS distress_fall_confirmed@1
+[16/110 30s] hurt_no_fall/w1#0: PASS distress_assistance_requested@1
+[17/110 31s] hurt_no_fall/w2#0: PASS distress_assistance_requested@1
+[18/110 33s] hurt_no_fall/w3#0: PASS distress_assistance_requested@1
+[19/110 35s] hurt_no_fall/w4#0: PASS distress_assistance_requested@1
+[20/110 37s] hurt_no_fall/w5#0: PASS distress_assistance_requested@1
+[21/110 38s] hurt_no_fall/w6#0: PASS distress_assistance_requested@1
+[22/110 40s] hurt_no_fall/w7#0: PASS distress_assistance_requested@1
+[23/110 40s] fell_and_help/w1#0: PASS distress_fall_confirmed@1
+[24/110 43s] fell_and_help/w3#0: PASS distress_fall_confirmed@1
+[25/110 43s] fell_and_help/w2#0: PASS distress_fall_confirmed@1
+[26/110 46s] fell_and_help/w4#0: PASS distress_fall_confirmed@1
+[27/110 46s] fell_and_help/w5#0: PASS distress_fall_confirmed@1
+[28/110 49s] asks_help/w1#0: PASS distress_assistance_requested@1
+[29/110 49s] asks_help/w2#0: PASS distress_assistance_requested@1
+[30/110 52s] asks_help/w3#0: PASS distress_assistance_requested@1
+[31/110 52s] asks_help/w4#0: PASS distress_assistance_requested@1
+[32/110 55s] asks_help/w6#0: PASS distress_assistance_requested@1
+[33/110 56s] asks_help/w5#0: PASS distress_assistance_requested@1
+[34/110 58s] asks_help/w7#0: PASS distress_assistance_requested@1
+[35/110 59s] asks_help/w8#0: PASS distress_assistance_requested@1
+[36/110 61s] unwell_no_fall/w1#0: PASS distress_assistance_requested@1
+[37/110 62s] unwell_no_fall/w2#0: PASS distress_assistance_requested@1
+[38/110 64s] unwell_no_fall/w3#0: PASS distress_assistance_requested@1
+[39/110 65s] unwell_no_fall/w4#0: PASS distress_assistance_requested@1
+[40/110 67s] unwell_no_fall/w5#0: PASS distress_assistance_requested@1
+[41/110 67s] unwell_no_fall/w6#0: PASS distress_assistance_requested@1
+[42/110 70s] no_fall_but_problem/w1#0: PASS distress_assistance_requested@1
+[43/110 70s] no_fall_but_problem/w2#0: PASS distress_assistance_requested@1
+[44/110 72s] no_fall_but_problem/w3#0: PASS distress_assistance_requested@1
+[45/110 74s] denial_then_help/w1#0: PASS distress_assistance_requested@2
+[46/110 76s] denial_then_help/w2#0: PASS distress_assistance_requested@2
+[47/110 78s] denial_then_help/w3#0: PASS distress_assistance_requested@2
+[48/110 80s] denial_then_help/w4#0: PASS distress_assistance_requested@2
+[49/110 84s] fine_then_pain/w1#0: PASS distress_assistance_requested@2
+[50/110 84s] fine_then_pain/w2#0: PASS distress_assistance_requested@2
+[51/110 88s] fine_then_pain/w3#0: PASS distress_assistance_requested@2
+[52/110 89s] fine_then_pain/w4#0: PASS distress_assistance_requested@2
+[53/110 92s] fine_then_pain/w5#0: PASS distress_assistance_requested@2
+[54/110 94s] fine_then_fell/w1#0: PASS distress_fall_confirmed@2
+[55/110 96s] fine_then_fell/w2#0: PASS distress_fall_confirmed@2
+[56/110 99s] fine_then_fell/w3#0: PASS distress_fall_confirmed@2
+[57/110 101s] fine_then_fell/w4#0: PASS distress_fall_confirmed@2
+[58/110 106s] fine_then_fell/w6#0: PASS distress_fall_confirmed@2
+[59/110 109s] fine_then_fell/w5#0: PASS distress_fall_confirmed@3
+[60/110 111s] unclear_then_fell/w1#0: PASS distress_fall_confirmed@2
+[61/110 115s] unclear_then_fell/w2#0: PASS distress_fall_confirmed@2
+[62/110 115s] unclear_then_fell/w3#0: PASS distress_fall_confirmed@2
+[63/110 119s] unclear_then_fell/w5#0: PASS distress_fall_confirmed@2
+[64/110 123s] unclear_then_fell/w4#0: PASS distress_fall_confirmed@2
+[65/110 124s] unclear_then_fell/w6#0: PASS distress_fall_confirmed@2
+[66/110 128s] unclear_then_problem/w2#0: PASS distress_assistance_requested@2
+[67/110 128s] unclear_then_problem/w1#0: PASS distress_assistance_requested@2
+[68/110 133s] silence_then_problem/w1#0: PASS distress_fall_confirmed@2
+[69/110 134s] unclear_then_problem/w3#0: PASS distress_assistance_requested@2
+[70/110 138s] silence_then_problem/w2#0: PASS distress_fall_confirmed@2
+[71/110 138s] silence_then_problem/w3#0: PASS distress_assistance_requested@2
+[72/110 142s] silence_then_problem/w4#0: PASS distress_assistance_requested@2
+[73/110 143s] interrupted/w1#0: PASS distress_assistance_requested@2
+[74/110 148s] interrupted/w2#0: PASS distress_fall_confirmed@2
+[75/110 149s] interrupted/w3#0: PASS distress_unable_to_verify@2
+[76/110 151s] interrupted/w4#0: PASS distress_assistance_requested@1
+[77/110 154s] past_fall_now_hurt/w1#0: PASS distress_assistance_requested@2
+[78/110 156s] past_fall_now_hurt/w2#0: PASS distress_assistance_requested@2
+[79/110 160s] unknown_other_fell/w1#0: PASS distress_fall_confirmed@1
+[80/110 160s] unknown_other_fell/w2#0: PASS distress_fall_confirmed@1
+[81/110 164s] unknown_other_needs_help/w1#0: PASS distress_assistance_requested@1
+[82/110 164s] unknown_other_needs_help/w2#0: PASS distress_assistance_requested@1
+[83/110 168s] unknown_self_fell/w1#0: PASS distress_fall_confirmed@1
+[84/110 170s] unknown_silence_then_fell/w1#0: PASS distress_fall_confirmed@2
+[85/110 172s] hold_then_fell/w1#0: PASS distress_fall_confirmed@2
+[86/110 174s] hold_then_fell/w2#0: PASS distress_fall_confirmed@2
+[87/110 176s] hold_then_help/w1#0: PASS distress_assistance_requested@2
+[88/110 179s] hold_wait_then_fell/w1#0: PASS distress_fall_confirmed@3
+[89/110 181s] hold_wait_then_fell/w2#0: PASS distress_fall_confirmed@3
+[90/110 186s] hold_wait_then_help/w1#0: PASS distress_assistance_requested@3
+[91/110 187s] fine_hold_then_fell/w1#0: PASS distress_fall_confirmed@3
+[92/110 192s] fine_hold_then_help/w1#0: PASS distress_assistance_requested@3
+[93/110 193s] fine_hold_then_fell/w2#0: PASS distress_fall_confirmed@3
+[94/110 199s] fine_hold_wait_then_fell/w1#0: PASS distress_fall_confirmed@4
+[95/110 200s] fine_hold_wait_then_fell/w2#0: PASS distress_fall_confirmed@4
+[96/110 205s] soso_then_help/w1#0: PASS distress_assistance_requested@2
+[97/110 207s] fine_hold_wait_then_help/w1#0: PASS distress_assistance_requested@4
+[98/110 209s] soso_twice/w1#0: PASS distress_assistance_requested@2
+[99/110 212s] soso_twice/w2#0: PASS distress_assistance_requested@2
+[100/110 215s] fine_soso_then_help/w1#0: PASS distress_assistance_requested@3
+[101/110 218s] fine_soso_twice/w1#0: PASS distress_assistance_requested@3
+[102/110 222s] unclear_fine_then_fell/w1#0: PASS distress_fall_confirmed@3
+[103/110 223s] unclear_fine_then_fell/w2#0: PASS distress_fall_confirmed@3
+[104/110 229s] unclear_fine_then_soso/w1#0: PASS distress_assistance_requested@3
+[105/110 230s] unclear_fine_then_help/w1#0: PASS distress_assistance_requested@3
+[106/110 237s] fine_unclear_then_fell/w1#0: PASS distress_fall_confirmed@3
+[107/110 238s] fine_unclear_then_fell/w2#0: PASS distress_fall_confirmed@3
+[108/110 241s] overlap_fine_then_hurt/w1#0: PASS distress_assistance_requested@1
+[109/110 244s] unknown_bare_yes/w1#0: PASS distress_assistance_requested@1
+[110/110 245s] fine_unclear_then_help/w1#0: PASS distress_assistance_requested@3
+# KS-881 eval: v8l_sm_pt_alerts_gpt-6-sol — PASS
+
+2026-11-05T11:13:50 | gpt-6-sol | temperature=None | prompt=v8l_java | pt | inputs_ks881_pt.json | runs=1
+
+Pass rule (KS-881 TR v3): every wording passes every run.
+
+| Wordings passing every run | Runs passed | p50 ms | p95 ms | Errors | Cost |
+|---|---|---|---|---|---|
+| 110/110 | 110/110 | 1520 | 2528 | 0 | $0.59 |
+Summary: C:\Users\CMS\Desktop\prompt_engineering_lab\smart_conversation_prompt_lab\experiments\ks881\v8l_sm_pt_alerts_gpt-6-sol\summary.md

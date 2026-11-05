@@ -1,0 +1,776 @@
+{
+ "meta": {
+  "label": "v8m_he_fails_r5_gpt-6-sol",
+  "date": "2026-11-05T13:43:01",
+  "model": "gpt-6-sol",
+  "temperature": null,
+  "reasoning_effort": null,
+  "server_checks": true,
+  "prompt_label": "v8m_java",
+  "language": "he",
+  "inputs": "inputs_ks881_he.json",
+  "runs": 5
+ },
+ "results": [
+  {
+   "scenario": "fell",
+   "phrasing": "w3",
+   "situation": "Clearly fell",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 1,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות",
+   "latencies_ms": [
+    4782.810899894685,
+    3413.7174000497907
+   ],
+   "tokens_in": 7332,
+   "tokens_out": 329,
+   "tokens_cached": 7164,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "עפתי ליד המיטה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fell",
+   "phrasing": "w3",
+   "situation": "Clearly fell",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 2,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+   "latencies_ms": [
+    5652.8789000585675,
+    4498.956200201064
+   ],
+   "tokens_in": 7334,
+   "tokens_out": 469,
+   "tokens_cached": 7164,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דייוויד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "עפתי ליד המיטה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fell",
+   "phrasing": "w3",
+   "situation": "Clearly fell",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 0,
+   "outcome": "distress_unable_to_verify",
+   "answers_before_close": 2,
+   "re_outcome": null,
+   "passed": false,
+   "violations": [
+    "outcome distress_unable_to_verify, expected distress_fall_confirmed",
+    "closed after 2 answer(s), expected 1 (asked again instead of closing)"
+   ],
+   "warnings": [],
+   "goodbye": "קשה לי להבין אותך, דוד. הבטיחות שלך היא בראש סדר העדיפויות שלי, ולכן אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+   "latencies_ms": [
+    5099.576800130308,
+    3945.326700108126,
+    3201.8474999349564
+   ],
+   "tokens_in": 11037,
+   "tokens_out": 598,
+   "tokens_cached": 10845,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "עפתי ליד המיטה."
+    },
+    {
+     "role": "assistant",
+     "text": "דוד, נפלתָ ליד המיטה?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 1,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "(silence)"
+    },
+    {
+     "role": "assistant",
+     "text": "קשה לי להבין אותך, דוד. הבטיחות שלך היא בראש סדר העדיפויות שלי, ולכן אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+     "outcome": "distress_unable_to_verify",
+     "after_answers": 2,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fell",
+   "phrasing": "w3",
+   "situation": "Clearly fell",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 3,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+   "latencies_ms": [
+    2100.841299863532,
+    3547.881199978292
+   ],
+   "tokens_in": 7332,
+   "tokens_out": 361,
+   "tokens_cached": 7326,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "עפתי ליד המיטה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "misheard_alert",
+   "phrasing": "w3",
+   "situation": "A misheard fall or help word",
+   "prompt": "named",
+   "expected": "distress_unable_to_verify",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 0,
+   "outcome": "distress_assistance_requested",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": false,
+   "violations": [
+    "outcome distress_assistance_requested, expected distress_unable_to_verify"
+   ],
+   "warnings": [],
+   "goodbye": "צר לי שאתה צריך עזרה, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+   "latencies_ms": [
+    2181.760899955407,
+    2264.4424000754952
+   ],
+   "tokens_in": 7339,
+   "tokens_out": 273,
+   "tokens_cached": 7164,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דייוויד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "תעזרי ני, בבקשה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שאתה צריך עזרה, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+     "outcome": "distress_assistance_requested",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "misheard_alert",
+   "phrasing": "w3",
+   "situation": "A misheard fall or help word",
+   "prompt": "named",
+   "expected": "distress_unable_to_verify",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 1,
+   "outcome": "distress_assistance_requested",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": false,
+   "violations": [
+    "outcome distress_assistance_requested, expected distress_unable_to_verify"
+   ],
+   "warnings": [],
+   "goodbye": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+   "latencies_ms": [
+    2212.0660000946373,
+    1788.8841999229044
+   ],
+   "tokens_in": 7337,
+   "tokens_out": 208,
+   "tokens_cached": 7164,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "תעזרי ני, בבקשה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+     "outcome": "distress_assistance_requested",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fell",
+   "phrasing": "w3",
+   "situation": "Clearly fell",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 4,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דיוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דיוויד. להתראות.",
+   "latencies_ms": [
+    3550.824499921873,
+    5595.923200016841
+   ],
+   "tokens_in": 7334,
+   "tokens_out": 516,
+   "tokens_cached": 7164,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דיוויד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "עפתי ליד המיטה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דיוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דיוויד. להתראות.",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "misheard_alert",
+   "phrasing": "w3",
+   "situation": "A misheard fall or help word",
+   "prompt": "named",
+   "expected": "distress_unable_to_verify",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 3,
+   "outcome": "distress_assistance_requested",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": false,
+   "violations": [
+    "outcome distress_assistance_requested, expected distress_unable_to_verify"
+   ],
+   "warnings": [],
+   "goodbye": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+   "latencies_ms": [
+    1698.658399982378,
+    1714.5335001405329
+   ],
+   "tokens_in": 7337,
+   "tokens_out": 194,
+   "tokens_cached": 7331,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "תעזרי ני, בבקשה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+     "outcome": "distress_assistance_requested",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "misheard_alert",
+   "phrasing": "w3",
+   "situation": "A misheard fall or help word",
+   "prompt": "named",
+   "expected": "distress_unable_to_verify",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 2,
+   "outcome": "distress_assistance_requested",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": false,
+   "violations": [
+    "outcome distress_assistance_requested, expected distress_unable_to_verify"
+   ],
+   "warnings": [],
+   "goodbye": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+   "latencies_ms": [
+    2751.7645000480115,
+    2421.0434001870453
+   ],
+   "tokens_in": 7337,
+   "tokens_out": 266,
+   "tokens_cached": 7331,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "תעזרי ני, בבקשה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+     "outcome": "distress_assistance_requested",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "misheard_alert",
+   "phrasing": "w3",
+   "situation": "A misheard fall or help word",
+   "prompt": "named",
+   "expected": "distress_unable_to_verify",
+   "close_after": 1,
+   "pending": null,
+   "source": "",
+   "run": 4,
+   "outcome": "distress_assistance_requested",
+   "answers_before_close": 1,
+   "re_outcome": null,
+   "passed": false,
+   "violations": [
+    "outcome distress_assistance_requested, expected distress_unable_to_verify"
+   ],
+   "warnings": [],
+   "goodbye": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+   "latencies_ms": [
+    2327.2745001595467,
+    1672.103499993682
+   ],
+   "tokens_in": 7337,
+   "tokens_out": 198,
+   "tokens_cached": 7331,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "תעזרי ני, בבקשה."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שאתה צריך עזרה, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+     "outcome": "distress_assistance_requested",
+     "after_answers": 1,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fine_then_fell",
+   "phrasing": "w1",
+   "situation": "Says they're fine, then mentions a fall",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 2,
+   "pending": null,
+   "source": "",
+   "run": 0,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 2,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות",
+   "latencies_ms": [
+    2371.8724998179823,
+    1710.012499941513,
+    1800.0593001488596
+   ],
+   "tokens_in": 11047,
+   "tokens_out": 326,
+   "tokens_cached": 10845,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דייוויד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "אני בסדר."
+    },
+    {
+     "role": "assistant",
+     "text": "נפגעתָ במקום כלשהו, דייוויד?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 1,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "טוב, בעצם נפלתי לפני רגע."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 2,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fine_then_fell",
+   "phrasing": "w1",
+   "situation": "Says they're fine, then mentions a fall",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 2,
+   "pending": null,
+   "source": "",
+   "run": 1,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 2,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+   "latencies_ms": [
+    2517.6947000436485,
+    1713.6735999956727,
+    1864.4629998598248
+   ],
+   "tokens_in": 11054,
+   "tokens_out": 303,
+   "tokens_cached": 10845,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דייוויד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "אני בסדר."
+    },
+    {
+     "role": "assistant",
+     "text": "אני שמחה לשמוע, דייוויד. נפגעתָ במקום כלשהו?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 1,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "טוב, בעצם נפלתי לפני רגע."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 2,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fine_then_fell",
+   "phrasing": "w1",
+   "situation": "Says they're fine, then mentions a fall",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 2,
+   "pending": null,
+   "source": "",
+   "run": 2,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 2,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+   "latencies_ms": [
+    1861.606900114566,
+    1732.5925999321043,
+    1515.3535001445562
+   ],
+   "tokens_in": 11047,
+   "tokens_out": 285,
+   "tokens_cached": 11038,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דייוויד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "אני בסדר."
+    },
+    {
+     "role": "assistant",
+     "text": "נפגעתָ במקום כלשהו, דייוויד?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 1,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "טוב, בעצם נפלתי לפני רגע."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 2,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fine_then_fell",
+   "phrasing": "w1",
+   "situation": "Says they're fine, then mentions a fall",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 2,
+   "pending": null,
+   "source": "",
+   "run": 4,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 2,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+   "latencies_ms": [
+    2488.7413000687957,
+    1831.173999933526,
+    1593.567700125277
+   ],
+   "tokens_in": 11048,
+   "tokens_out": 310,
+   "tokens_cached": 10843,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דוד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "אני בסדר."
+    },
+    {
+     "role": "assistant",
+     "text": "אני שמחה לשמוע, דוד. נפגעתָ במקום כלשהו?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 1,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "טוב, בעצם נפלתי לפני רגע."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דוד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דוד. להתראות.",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 2,
+     "assistance_requested": false
+    }
+   ]
+  },
+  {
+   "scenario": "fine_then_fell",
+   "phrasing": "w1",
+   "situation": "Says they're fine, then mentions a fall",
+   "prompt": "named",
+   "expected": "distress_fall_confirmed",
+   "close_after": 2,
+   "pending": null,
+   "source": "",
+   "run": 3,
+   "outcome": "distress_fall_confirmed",
+   "answers_before_close": 2,
+   "re_outcome": null,
+   "passed": true,
+   "violations": [],
+   "warnings": [],
+   "goodbye": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+   "latencies_ms": [
+    2778.6328000947833,
+    2346.0192000493407,
+    1692.1784998849034
+   ],
+   "tokens_in": 11047,
+   "tokens_out": 293,
+   "tokens_cached": 11038,
+   "transcript": [
+    {
+     "role": "assistant",
+     "text": "שלום דייוויד, כאן וגה. קיבלתי התראה שאולי נפלתָ. הכל בסדר?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 0,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "אני בסדר."
+    },
+    {
+     "role": "assistant",
+     "text": "נפגעתָ במקום כלשהו, דייוויד?",
+     "outcome": "conversation_in_progress",
+     "after_answers": 1,
+     "assistance_requested": false
+    },
+    {
+     "role": "user",
+     "text": "טוב, בעצם נפלתי לפני רגע."
+    },
+    {
+     "role": "assistant",
+     "text": "צר לי שנפלתָ, דייוויד. אני מעבירה התראה במערכת סניורמטיקס. שמור על עצמך, דייוויד. להתראות.",
+     "outcome": "distress_fall_confirmed",
+     "after_answers": 2,
+     "assistance_requested": false
+    }
+   ]
+  }
+ ]
+}

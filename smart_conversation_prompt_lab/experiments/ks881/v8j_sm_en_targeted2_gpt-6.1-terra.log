@@ -1,0 +1,28 @@
+v8j_sm_en_targeted2_gpt-6.1-terra: 2 scenarios, 5 wordings x 3 runs = 15 conversations (gpt-6.1-terra, temperature=None, prompt=v8j_java, inputs_ks881_en.json, server checks on)
+Estimated cost: ~$0.13 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+[1/15 5s] interrupted/w1#0: PASS distress_assistance_requested@2
+[2/15 6s] interrupted/w1#1: PASS distress_assistance_requested@2
+[3/15 6s] interrupted/w2#0: PASS distress_fall_confirmed@2
+[4/15 6s] interrupted/w1#2: PASS distress_assistance_requested@2
+[5/15 10s] interrupted/w2#1: PASS distress_fall_confirmed@2
+[6/15 10s] interrupted/w2#2: PASS distress_fall_confirmed@2
+[7/15 11s] interrupted/w3#0: PASS distress_unable_to_verify@2
+[8/15 11s] interrupted/w3#1: PASS distress_unable_to_verify@2
+[9/15 14s] interrupted/w4#0: PASS distress_assistance_requested@1
+[10/15 14s] interrupted/w4#1: PASS distress_assistance_requested@1
+[11/15 14s] interrupted/w4#2: PASS distress_assistance_requested@1
+[12/15 15s] interrupted/w3#2: PASS distress_unable_to_verify@2
+[13/15 20s] fine_then_refuses/w1#1: PASS distress_unable_to_verify@3
+[14/15 20s] fine_then_refuses/w1#2: PASS distress_unable_to_verify@3
+[15/15 21s] fine_then_refuses/w1#0: PASS distress_unable_to_verify@3
+# KS-881 eval: v8j_sm_en_targeted2_gpt-6.1-terra — PASS
+
+2026-11-04T10:36:21 | gpt-6.1-terra | temperature=None | prompt=v8j_java | en | inputs_ks881_en.json | runs=3
+
+Pass rule (KS-881 TR v3): every wording passes every run.
+
+| Wordings passing every run | Runs passed | p50 ms | p95 ms | Errors | Cost |
+|---|---|---|---|---|---|
+| 5/5 | 15/15 | 1645 | 2083 | 0 | $0.03 |
+Summary: C:\Users\CMS\Desktop\prompt_engineering_lab\smart_conversation_prompt_lab\experiments\ks881\v8j_sm_en_targeted2_gpt-6.1-terra\summary.md

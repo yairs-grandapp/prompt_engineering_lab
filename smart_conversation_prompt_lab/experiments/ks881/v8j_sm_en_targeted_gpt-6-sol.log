@@ -1,0 +1,67 @@
+v8j_sm_en_targeted_gpt-6-sol: 5 scenarios, 18 wordings x 3 runs = 54 conversations (gpt-6-sol, temperature=None, prompt=v8j_java, inputs_ks881_en.json, server checks on)
+Estimated cost: ~$1.19 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+[1/54 4s] still_unclear/w1#2: PASS distress_unable_to_verify@2
+[2/54 4s] still_unclear/w1#1: PASS distress_unable_to_verify@2
+[3/54 4s] still_unclear/w1#0: PASS distress_unable_to_verify@2
+[4/54 5s] still_unclear/w2#0: PASS distress_unable_to_verify@2
+[5/54 8s] still_unclear/w2#1: PASS distress_unable_to_verify@2
+[6/54 8s] still_unclear/w3#0: PASS distress_unable_to_verify@2
+[7/54 8s] still_unclear/w2#2: PASS distress_unable_to_verify@2
+[8/54 8s] still_unclear/w3#1: PASS distress_unable_to_verify@2
+[9/54 10s] still_unclear/w4#0: PASS distress_assistance_requested@1
+[10/54 10s] still_unclear/w4#2: PASS distress_assistance_requested@1
+[11/54 10s] still_unclear/w4#1: PASS distress_assistance_requested@1
+[12/54 11s] still_unclear/w3#2: PASS distress_unable_to_verify@2
+[13/54 13s] still_unclear/w5#0: PASS distress_unable_to_verify@2
+[14/54 14s] still_unclear/w5#2: PASS distress_unable_to_verify@2
+[15/54 14s] still_unclear/w6#0: PASS distress_unable_to_verify@2
+[16/54 15s] still_unclear/w5#1: PASS distress_unable_to_verify@2
+[17/54 17s] still_unclear/w6#1: PASS distress_unable_to_verify@2
+[18/54 17s] still_unclear/w6#2: PASS distress_unable_to_verify@2
+[19/54 18s] still_unclear/w7#0: PASS distress_unable_to_verify@2
+[20/54 18s] still_unclear/w7#1: PASS distress_unable_to_verify@2
+[21/54 20s] still_unclear/w7#2: PASS distress_unable_to_verify@2
+[22/54 21s] still_unclear/w8#0: PASS distress_unable_to_verify@3
+[23/54 22s] still_unclear/w8#1: PASS distress_unable_to_verify@3
+[24/54 23s] still_unclear/w8#2: PASS distress_unable_to_verify@3
+[25/54 23s] still_unclear/w9#0: PASS distress_unable_to_verify@2
+[26/54 25s] still_unclear/w9#1: PASS distress_unable_to_verify@2
+[27/54 26s] still_unclear/w9#2: PASS distress_unable_to_verify@2
+[28/54 26s] still_unclear/w10#0: PASS distress_unable_to_verify@2
+[29/54 27s] still_unclear/w10#1: PASS distress_unable_to_verify@2
+[30/54 29s] still_unclear/w10#2: PASS distress_unable_to_verify@2
+[31/54 30s] still_unclear/w11#0: PASS distress_unable_to_verify@2
+[32/54 30s] still_unclear/w11#1: PASS distress_unable_to_verify@2
+[33/54 30s] still_unclear/w11#2: PASS distress_unable_to_verify@2
+[34/54 33s] turn_limit/w1#0: PASS distress_unable_to_verify@3
+[35/54 34s] turn_limit/w1#1: PASS distress_unable_to_verify@3
+[36/54 35s] turn_limit/w1#2: PASS distress_unable_to_verify@3
+[37/54 37s] hold_used_then_hold_again/w1#0: PASS distress_unable_to_verify@5
+[38/54 39s] fine_unsure_then_fine/w1#0: PASS no_fall_confirmed@3
+[39/54 40s] hold_used_then_hold_again/w1#2: FAIL distress_unable_to_verify@4
+[40/54 40s] hold_used_then_hold_again/w1#1: PASS distress_unable_to_verify@5
+[41/54 41s] fine_unsure_then_fine/w1#1: PASS no_fall_confirmed@3
+[42/54 44s] fine_unsure_then_fine/w1#2: PASS no_fall_confirmed@3
+[43/54 44s] fine_unsure_then_fine/w2#0: PASS no_fall_confirmed@3
+[44/54 46s] fine_unsure_then_fine/w2#1: PASS no_fall_confirmed@3
+[45/54 46s] fine_unsure_then_fine/w2#2: PASS no_fall_confirmed@3
+[46/54 49s] fine_unsure_then_fine/w3#0: PASS no_fall_confirmed@3
+[47/54 50s] fine_unsure_then_fine/w3#2: PASS no_fall_confirmed@3
+[48/54 50s] fine_unsure_then_fine/w3#1: PASS no_fall_confirmed@3
+[49/54 52s] hold_silent_silent/w1#0: PASS distress_unable_to_verify@4
+[50/54 55s] hold_silent_silent/w1#1: PASS distress_unable_to_verify@4
+[51/54 56s] hold_silent_silent/w2#0: PASS distress_unable_to_verify@4
+[52/54 56s] hold_silent_silent/w1#2: PASS distress_unable_to_verify@4
+[53/54 58s] hold_silent_silent/w2#1: PASS distress_unable_to_verify@4
+[54/54 61s] hold_silent_silent/w2#2: PASS distress_unable_to_verify@4
+# KS-881 eval: v8j_sm_en_targeted_gpt-6-sol — FAIL
+
+2026-11-04T10:33:48 | gpt-6-sol | temperature=None | prompt=v8j_java | en | inputs_ks881_en.json | runs=3
+
+Pass rule (KS-881 TR v3): every wording passes every run.
+
+| Wordings passing every run | Runs passed | p50 ms | p95 ms | Errors | Cost |
+|---|---|---|---|---|---|
+| 17/18 | 53/54 | 1117 | 1634 | 0 | $0.23 |
+Summary: C:\Users\CMS\Desktop\prompt_engineering_lab\smart_conversation_prompt_lab\experiments\ks881\v8j_sm_en_targeted_gpt-6-sol\summary.md

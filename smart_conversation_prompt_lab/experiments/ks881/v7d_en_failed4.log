@@ -1,0 +1,17 @@
+v7d_en_failed4: 4 scenarios, 4 wordings x 1 runs = 4 conversations (gpt-4o, temperature=0.0, prompt=v7d, inputs_ks881_en.json)
+Estimated cost: ~$0.36 (list price, ~4 chars/token)
+Using OPENAI_DEV_API_KEY (fingerprint 5112ae0e8b)
+[1/4 4s] past_fall_now_fine/w1#0: FAIL no_fall_confirmed@2
+[2/4 6s] hold_repeated/w1#0: FAIL distress_unable_to_verify@3
+[3/4 6s] hold_silent_silent/w1#0: FAIL distress_unable_to_verify@3
+[4/4 7s] unclear_fine_then_hold/w1#0: FAIL distress_unable_to_verify@5
+# KS-881 eval: v7d_en_failed4 — FAIL
+
+2026-11-03T10:25:24 | gpt-4o | temperature=0.0 | prompt=v7d | en | inputs_ks881_en.json | runs=1
+
+Pass rule (KS-881 TR v3): every wording passes every run.
+
+| Wordings passing every run | Runs passed | p50 ms | p95 ms | Errors | Cost |
+|---|---|---|---|---|---|
+| 0/4 | 0/4 | 1144 | 2265 | 0 | $0.18 |
+Summary: C:\Users\CMS\Desktop\prompt_engineering_lab\smart_conversation_prompt_lab\experiments\ks881\v7d_en_failed4\summary.md
